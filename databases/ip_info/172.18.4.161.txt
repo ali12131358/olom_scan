@@ -1,0 +1,269 @@
+IP: 172.18.4.161
+Collected at: 2026-10-14T10:24:03.349411+00:00
+source: RouterOS API
+identity: RB-B-Valiasr-KH
+device_type: Router
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=false  mac=04:F4:1C:F9:7D:4F
+  2  name=ether2  type=ether  running=false  mac=04:F4:1C:F9:7D:50
+  3  name=ether3  type=ether  running=true  mac=04:F4:1C:F9:7D:51
+  4  name=ether4  type=ether  running=false  mac=04:F4:1C:F9:7D:52
+  5  name=ether5  type=ether  running=true  mac=04:F4:1C:F9:7D:53
+  6  name=ether6  type=ether  running=false  mac=04:F4:1C:F9:7D:54
+  7  name=ether7  type=ether  running=false  mac=04:F4:1C:F9:7D:55
+  8  name=ether8  type=ether  running=false  mac=04:F4:1C:F9:7D:56
+  9  name=sfp-sfpplus1  type=ether  running=false  mac=04:F4:1C:F9:7D:57
+ 10  name=lo  type=loopback  running=true  mac=00:00:00:00:00:00
+
+----- wireless -----
+(empty)
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.3.252/29  interface=ether2  network=172.18.3.248
+  2  address=172.18.1.60/29  interface=ether5  network=172.18.1.56
+  3  address=172.18.1.89/30  interface=ether3  network=172.18.1.88
+  4  address=172.18.4.161/29  interface=ether6  network=172.18.4.160
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.3.249  distance=1
+  2  dst=0.0.0.0/0  gw=172.18.1.57  distance=2
+  3  dst=172.18.1.49/32  gw=172.18.1.57  distance=1
+  4  dst=172.18.1.56/29  gw=ether5  distance=0
+  5  dst=172.18.1.88/30  gw=ether3  distance=0
+  6  dst=172.18.3.248/29  gw=ether2  distance=0
+  7  dst=172.18.4.160/29  gw=ether6  distance=0
+  8  dst=172.28.0.0/20  gw=172.18.1.90  distance=1
+  9  dst=172.28.16.0/20  gw=172.18.1.90  distance=1
+ 10  dst=172.29.130.0/24  gw=172.18.4.164  distance=1
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=R1KH  address=172.18.1.57  interface=ether5
+  2  identity=ShabakehKhoramshahr->Bimarestan.AP  address=172.18.1.58  interface=ether5
+  3  identity=CL-SHABAKEH-VALIASR  address=172.18.1.59  interface=ether5
+  4  identity=CL-SHABAKEH-VALIASR  address=172.18.1.59  interface=ether5
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:31:44
+# ساعت دستگاه (خام): 2026-01-10 09:47:40
+# افست اصلاحی (سرور − دستگاه): +6648:14:04
+  1  2025-10-18 09:31:34  [system,info,account]  user garnaf logged in from 172.18.4.76 via winbox
+  2  2025-10-18 10:17:16  [system,info,account]  user garnaf logged out from 172.18.4.76 via winbox
+  3  2025-10-18 10:55:15  [system,info,account]  user garnaf logged in from 172.18.4.76 via winbox
+  4  2025-10-18 11:02:03  [system,info,account]  user garnaf logged out from 172.18.4.76 via winbox
+  5  2025-10-24 04:02:23  [system,error,critical]  login failure for user  from 172.16.0.21 via ssh
+  6  2025-10-28 07:56:49  [system,info,account]  user garnaf logged in from 172.18.4.76 via winbox
+  7  2025-10-28 07:58:18  [system,info,account]  user garnaf logged out from 172.18.4.76 via winbox
+  8  2025-10-28 07:59:00  [system,info,account]  user garnaf logged in from 172.18.4.76 via winbox
+  9  2025-10-28 08:03:36  [system,info,account]  user garnaf logged out from 172.18.4.76 via winbox
+ 10  2025-11-04 00:02:16  [interface,info]  ether2 link down
+ 11  2025-11-04 00:02:20  [interface,info]  ether2 link up (speed 100M, full duplex)
+ 12  2025-11-11 07:16:34  [system,warning]  possible SYN flooding on tcp port 22
+ 13  2025-11-11 07:16:36  [system,warning]  possible SYN flooding on tcp port 8728
+ 14  2025-11-11 09:46:03  [system,warning]  possible SYN flooding on tcp port 8729
+ 15  2025-11-16 08:37:02  [system,info,account]  user garnaf logged in from 172.18.4.76 via winbox
+ 16  2025-11-16 08:43:21  [system,info,account]  user garnaf logged out from 172.18.4.76 via winbox
+ 17  2025-11-16 09:18:16  [system,info,account]  user garnaf logged in from 172.18.4.76 via winbox
+ 18  2025-11-16 09:20:48  [system,info,account]  user garnaf logged out from 172.18.4.76 via winbox
+ 19  2025-11-16 09:29:07  [system,info,account]  user garnaf logged in from 172.18.4.76 via winbox
+ 20  2025-11-16 09:32:25  [system,info,account]  user garnaf logged out from 172.18.4.76 via winbox
+ 21  2025-11-20 20:07:10  [system,error,critical]  login failure for user ums1 from 172.29.44.14 via winbox
+ 22  2025-11-28 09:11:55  [interface,info]  ether6 link down
+ 23  2025-11-28 09:12:10  [interface,info]  ether6 link up (speed 1G, full duplex)
+ 24  2025-11-28 09:12:34  [interface,info]  ether6 link down
+ 25  2025-11-28 09:12:41  [interface,info]  ether6 link up (speed 1G, full duplex)
+ 26  2025-11-28 09:13:01  [interface,info]  ether2 link down
+ 27  2025-11-28 10:16:25  [interface,info]  ether2 link up (speed 100M, full duplex)
+ 28  2025-11-28 10:16:48  [interface,info]  ether2 link down
+ 29  2025-11-28 10:16:51  [interface,info]  ether2 link up (speed 100M, full duplex)
+ 30  2025-11-28 10:17:44  [interface,info]  ether7 link up (speed 1G, full duplex)
+ 31  2025-11-28 10:19:59  [system,info,account]  user garnaf logged in from 68:F7:28:9D:69:12 via winbox
+ 32  2025-11-28 10:20:14  [system,info]  route 0.0.0.0/0 changed by mac-msg(winbox):garnaf@68:F7:28:9D:69:12 (/routing route set *80000002 disabled=no)
+ 33  2025-11-28 10:30:21  [system,info,account]  user garnaf logged in from 68:F7:28:9D:69:12 via winbox
+ 34  2025-11-28 10:30:53  [system,info]  route 0.0.0.0/0 changed by mac-msg(winbox):garnaf@68:F7:28:9D:69:12 (/routing route set *80000003 disabled=yes)
+ 35  2025-11-28 10:34:08  [system,info,account]  user garnaf logged out from 68:F7:28:9D:69:12 via winbox
+ 36  2025-11-28 10:34:08  [system,info,account]  user garnaf logged out from 68:F7:28:9D:69:12 via winbox
+ 37  2025-11-28 10:34:13  [interface,info]  ether7 link down
+ 38  2025-11-28 19:34:54  [system,info,account]  user garnaf logged in from 4C:5E:0C:9B:0E:72 via mac-telnet
+ 39  2025-11-28 19:36:30  [system,info]  route 0.0.0.0/0 changed by mac-telnet:garnaf@4C:5E:0C:9B:0E:72/action:0 (/ip route set *80000002 disabled=yes; /routing route set *80000002 disabled=yes)
+ 40  2025-11-28 19:44:44  [system,info,account]  user garnaf logged out from 4C:5E:0C:9B:0E:72 via mac-telnet
+ 41  2025-11-28 19:58:16  [system,info,account]  user garnaf logged in from 4C:5E:0C:9B:0E:72 via mac-telnet
+ 42  2025-11-28 19:58:43  [system,info]  route 0.0.0.0/0 changed by mac-telnet:garnaf@4C:5E:0C:9B:0E:72/action:0 (/ip route set *80000003 disabled=yes; /routing route set *80000003 disabled=yes)
+ 43  2025-11-28 19:59:10  [system,info]  route 0.0.0.0/0 changed by mac-telnet:garnaf@4C:5E:0C:9B:0E:72/action:1 (/ip route set *80000003 disabled=no; /routing route set *80000003 disabled=no)
+ 44  2025-11-28 19:59:19  [system,info]  route 0.0.0.0/0 changed by mac-telnet:garnaf@4C:5E:0C:9B:0E:72/action:2 (/ip route set *80000002 disabled=yes; /routing route set *80000002 disabled=yes)
+ 45  2025-11-28 19:59:54  [system,info,account]  user garnaf logged in from 172.18.4.76 via winbox
+ 46  2025-11-28 19:59:54  [system,info,account]  user garnaf logged out from 172.18.4.76 via winbox
+ 47  2025-11-28 20:00:03  [system,info,account]  user garnaf logged in from 172.18.4.76 via winbox
+ 48  2025-11-28 20:00:03  [system,info,account]  user garnaf logged out from 172.18.4.76 via winbox
+ 49  2025-11-28 20:01:56  [system,info,account]  user garnaf logged out from 4C:5E:0C:9B:0E:72 via mac-telnet
+ 50  2025-11-29 04:21:11  [system,info,account]  user garnaf logged in from 4C:5E:0C:9B:0E:72 via mac-telnet
+ 51  2025-11-29 04:24:21  [system,info,account]  user garnaf logged out from 4C:5E:0C:9B:0E:72 via mac-telnet
+ 52  2025-11-30 03:57:34  [system,info,account]  user garnaf logged in from 172.18.4.76 via winbox
+ 53  2025-11-30 03:57:35  [system,info,account]  user garnaf logged out from 172.18.4.76 via winbox
+ 54  2025-11-30 04:02:23  [system,info,account]  user garnaf logged in from 172.18.4.76 via winbox
+ 55  2025-11-30 04:02:58  [system,info,account]  user garnaf logged out from 172.18.4.76 via winbox
+ 56  2025-11-30 04:04:20  [system,info,account]  user garnaf logged in from 172.18.4.76 via winbox
+ 57  2025-11-30 04:04:21  [system,info,account]  user garnaf logged out from 172.18.4.76 via winbox
+ 58  2025-11-30 04:06:02  [system,info,account]  user garnaf logged in from 172.18.4.76 via winbox
+ 59  2025-11-30 04:06:21  [system,info,account]  user garnaf logged out from 172.18.4.76 via winbox
+ 60  2025-11-30 04:09:15  [system,info,account]  user garnaf logged in from 172.18.4.76 via winbox
+ 61  2025-11-30 04:09:16  [system,info,account]  user garnaf logged out from 172.18.4.76 via winbox
+ 62  2025-11-30 04:10:04  [system,info,account]  user garnaf logged in from 172.18.4.76 via winbox
+ 63  2025-11-30 04:10:07  [system,info,account]  user garnaf logged out from 172.18.4.76 via winbox
+ 64  2025-11-30 04:10:58  [system,info,account]  user garnaf logged in from 172.18.4.76 via winbox
+ 65  2025-11-30 04:11:04  [system,info,account]  user garnaf logged out from 172.18.4.76 via winbox
+ 66  2025-11-30 04:12:44  [system,info,account]  user garnaf logged in from 172.18.4.76 via winbox
+ 67  2025-11-30 04:13:05  [system,info,account]  user garnaf logged out from 172.18.4.76 via winbox
+ 68  2025-12-02 06:29:15  [system,info,account]  user garnaf logged in from 172.18.4.76 via winbox
+ 69  2025-12-02 06:29:22  [system,info,account]  user garnaf logged out from 172.18.4.76 via winbox
+ 70  2025-12-03 09:11:36  [system,error,critical]  login failure for user ums2 from 192.168.102.8 via winbox
+ 71  2025-12-03 09:29:24  [system,info,account]  user garnaf logged in from 172.18.4.76 via winbox
+ 72  2025-12-03 09:34:59  [system,info,account]  user garnaf logged out from 172.18.4.76 via winbox
+ 73  2025-12-04 07:55:20  [system,info,account]  user garnaf logged in from 172.18.4.76 via winbox
+ 74  2025-12-04 07:55:20  [system,info,account]  user garnaf logged out from 172.18.4.76 via winbox
+ 75  2025-12-04 07:55:53  [system,info,account]  user garnaf logged in from 172.18.4.76 via winbox
+ 76  2025-12-04 08:04:48  [system,info,account]  user garnaf logged out from 172.18.4.76 via winbox
+ 77  2025-12-10 17:23:49  [interface,info]  ether3 link down
+ 78  2025-12-10 17:23:53  [interface,info]  ether3 link up (speed 1G, full duplex)
+ 79  2025-12-10 17:24:54  [interface,info]  ether3 link down
+ 80  2025-12-10 17:24:58  [interface,info]  ether3 link up (speed 1G, full duplex)
+ 81  2025-12-10 17:25:09  [interface,info]  ether3 link down
+ 82  2025-12-10 17:25:11  [interface,info]  ether3 link up (speed 1G, full duplex)
+ 83  2025-12-10 19:43:24  [interface,info]  ether3 link down
+ 84  2025-12-10 19:43:27  [interface,info]  ether3 link up (speed 1G, full duplex)
+ 85  2025-12-10 19:43:50  [interface,info]  ether3 link down
+ 86  2025-12-10 19:43:52  [interface,info]  ether3 link up (speed 1G, full duplex)
+ 87  2025-12-10 19:56:29  [interface,info]  ether3 link down
+ 88  2025-12-10 19:56:31  [interface,info]  ether3 link up (speed 1G, full duplex)
+ 89  2025-12-10 19:59:35  [interface,info]  ether3 link down
+ 90  2025-12-10 19:59:38  [interface,info]  ether3 link up (speed 1G, full duplex)
+ 91  2025-12-10 22:00:37  [interface,info]  ether3 link down
+ 92  2025-12-10 22:00:39  [interface,info]  ether3 link up (speed 1G, full duplex)
+ 93  2025-12-10 22:05:58  [interface,info]  ether3 link down
+ 94  2025-12-10 22:06:01  [interface,info]  ether3 link up (speed 1G, full duplex)
+ 95  2025-12-10 22:06:07  [interface,info]  ether3 link down
+ 96  2025-12-10 22:06:09  [interface,info]  ether3 link up (speed 1G, full duplex)
+ 97  2025-12-10 22:40:35  [interface,info]  ether3 link down
+ 98  2025-12-10 22:40:38  [interface,info]  ether3 link up (speed 1G, full duplex)
+ 99  2025-12-10 22:47:34  [interface,info]  ether3 link down
+100  2025-12-10 22:47:37  [interface,info]  ether3 link up (speed 1G, full duplex)
+101  2025-12-11 13:43:31  [interface,info]  ether2 link down
+102  2025-12-11 14:05:03  [interface,info]  ether6 link down
+103  2025-12-24 07:33:14  [system,info,account]  user garnaf logged in from 172.18.4.76 via winbox
+104  2025-12-24 07:33:15  [system,info,account]  user garnaf logged out from 172.18.4.76 via winbox
+105  2025-12-24 07:33:27  [system,info,account]  user garnaf logged in from 172.18.4.76 via winbox
+106  2025-12-24 07:51:43  [system,info,account]  user garnaf logged out from 172.18.4.76 via winbox
+107  2025-12-24 08:22:42  [system,info,account]  user garnaf logged in from 172.18.4.76 via winbox
+108  2025-12-24 08:24:05  [system,info]  address changed by winbox-3.41/tcp-msg(winbox):garnaf@172.18.4.76 (/ip address set *3 address=172.18.1.60/29 comment=BackUP_Link disabled=no interface=ether5 network=172.18.1.56)
+109  2025-12-24 08:25:13  [system,info]  address changed by winbox-3.41/tcp-msg(winbox):garnaf@172.18.4.76 (/ip address set *4 address=172.18.1.89/30 comment=Firewall disabled=no interface=ether3 network=172.18.1.88)
+110  2025-12-24 08:25:24  [system,info,account]  user garnaf logged out from 172.18.4.76 via winbox
+111  2025-12-24 08:25:28  [system,info,account]  user garnaf logged in from 172.18.4.76 via winbox
+112  2025-12-24 08:26:01  [system,info,account]  user garnaf logged out from 172.18.4.76 via winbox
+113  2025-12-24 08:26:06  [system,info,account]  user garnaf logged in from 172.18.4.76 via winbox
+114  2025-12-24 08:26:12  [system,info,account]  user garnaf logged out from 172.18.4.76 via winbox
+115  2026-01-03 09:52:58  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+116  2026-01-03 09:52:58  [system,info]  changed snmp settings by api:garnaf@172.18.4.76 (/snmp set enabled=yes trap-version=2)
+117  2026-01-03 09:52:58  [system,info]  item changed by api:garnaf@172.18.4.76/action:0 (/snmp community set [ find ] addresses=0.0.0.0/0 name=Olom@Pez write-access=no)
+118  2026-01-03 09:52:58  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+119  2026-01-03 11:16:28  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+120  2026-01-03 11:16:28  [system,info]  user olom1 added by api:garnaf@172.18.4.76 (*3 = /user add group=full name=olom1)
+121  2026-01-03 11:16:28  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+122  2026-01-03 11:22:18  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+123  2026-01-03 11:22:18  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+124  2026-01-04 06:32:53  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+125  2026-01-04 06:32:54  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+126  2026-01-04 06:54:55  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+127  2026-01-04 06:54:56  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+128  2026-01-04 10:10:03  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+129  2026-01-04 10:10:04  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+130  2026-01-04 10:24:33  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+131  2026-01-04 10:24:33  [system,info]  changed snmp settings by api:garnaf@172.18.4.76 (/snmp set enabled=yes trap-version=2)
+132  2026-01-04 10:24:33  [system,info]  item changed by api:garnaf@172.18.4.76/action:0 (/snmp community set [ find ] addresses=0.0.0.0/0 name=Olom@Pez write-access=no)
+133  2026-01-04 10:24:33  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+134  2026-01-04 10:42:38  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+135  2026-01-04 10:42:39  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+136  2026-01-04 10:42:49  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+137  2026-01-04 10:42:49  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+138  2026-01-04 10:50:12  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+139  2026-01-04 10:50:13  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+140  2026-01-04 11:53:32  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+141  2026-01-04 11:53:33  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+142  2026-01-04 11:53:43  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+143  2026-01-04 11:53:44  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+144  2026-01-04 12:00:54  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+145  2026-01-04 12:00:55  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+146  2026-01-04 12:58:19  [system,info,account]  user garnaf logged in from 172.18.4.76 via winbox
+147  2026-01-04 12:58:23  [system,info,account]  user garnaf logged out from 172.18.4.76 via winbox
+148  2026-01-04 13:00:15  [system,info,account]  user garnaf logged in from 172.18.4.76 via winbox
+149  2026-01-04 13:00:31  [system,info,account]  user garnaf logged out from 172.18.4.76 via winbox
+150  2026-01-05 04:44:04  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+151  2026-01-05 04:44:07  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+152  2026-01-05 04:44:18  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+153  2026-01-05 04:44:19  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+154  2026-01-05 04:53:38  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+155  2026-01-05 04:53:40  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+156  2026-01-05 04:58:15  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+157  2026-01-05 04:58:16  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+158  2026-01-05 04:58:27  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+159  2026-01-05 04:58:29  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+160  2026-01-06 06:43:13  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+161  2026-01-06 06:43:14  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+162  2026-01-06 06:43:22  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+163  2026-01-06 06:43:23  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+164  2026-01-06 06:50:53  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+165  2026-01-06 06:50:53  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+166  2026-01-06 07:07:33  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+167  2026-01-06 07:07:34  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+168  2026-01-06 07:07:41  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+169  2026-01-06 07:07:42  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+170  2026-01-06 07:15:20  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+171  2026-01-06 07:15:21  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+172  2026-01-06 08:22:37  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+173  2026-01-06 08:22:37  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+174  2026-01-06 08:22:39  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+175  2026-01-06 08:22:39  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+176  2026-01-06 08:26:51  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+177  2026-01-06 08:26:52  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+178  2026-01-07 05:47:40  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+179  2026-01-07 05:47:42  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+180  2026-01-07 05:48:07  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+181  2026-01-07 05:48:08  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+182  2026-01-07 06:07:03  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+183  2026-01-07 06:07:05  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+184  2026-01-07 13:56:47  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+185  2026-01-07 13:56:48  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+186  2026-01-07 13:56:52  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+187  2026-01-07 13:56:52  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+188  2026-01-07 14:01:02  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+189  2026-01-07 14:01:02  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+190  2026-01-09 07:09:39  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+191  2026-01-09 07:09:41  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+192  2026-01-09 07:09:58  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+193  2026-01-09 07:10:00  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+194  2026-01-09 07:28:43  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+195  2026-01-09 07:28:45  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+196  2026-01-10 09:28:17  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+197  2026-01-10 09:28:19  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+198  2026-01-10 09:28:34  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+199  2026-01-10 09:28:35  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+200  2026-01-10 09:47:38  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  04:F4:1C:F9:7D:4F  (ether)
+ether2  04:F4:1C:F9:7D:50  (ether)
+ether3  04:F4:1C:F9:7D:51  (ether)
+ether4  04:F4:1C:F9:7D:52  (ether)
+ether5  04:F4:1C:F9:7D:53  (ether)
+ether6  04:F4:1C:F9:7D:54  (ether)
+ether7  04:F4:1C:F9:7D:55  (ether)
+ether8  04:F4:1C:F9:7D:56  (ether)
+sfp-sfpplus1  04:F4:1C:F9:7D:57  (ether)
+--- /ip arp ---
+ether5  4C:5E:0C:9B:0E:72  (arp 172.18.1.57)
+ether5  E4:8D:8C:F7:F3:37  (arp 172.18.1.59)
+ether3  90:6C:AC:C3:62:86  (arp 172.18.1.90)

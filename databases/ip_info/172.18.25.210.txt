@@ -1,0 +1,77 @@
+IP: 172.18.25.210
+Collected at: 2026-10-14T10:23:22.774205+00:00
+source: RouterOS API
+identity: Shadegan-Jafal1
+device_type: AP
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=6C:3B:6B:4A:2C:B7
+  2  name=wlan1  type=wlan  running=true  mac=6C:3B:6B:4A:2C:B8
+  3  name=bridge1  type=bridge  running=true  mac=6C:3B:6B:4A:2C:B7
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=ap-bridge  ssid=Shadegan-Jafal1  band=5ghz-a/n  frequency=5375
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.25.210/28  interface=ether1  network=172.18.25.208
+  2  address=192.168.80.1/29  interface=wlan1  network=192.168.80.0
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.25.209  distance=1
+  2  dst=172.18.25.208/28  gw=bridge1  distance=0
+  3  dst=192.168.80.0/29  gw=bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=MK_Jafal  address=172.18.25.209  interface=ether1,bridge1
+  2  identity=Emam3.Client  address=172.18.25.212  interface=wlan1,bridge1
+  3  identity=Maleki.Client  address=172.18.25.213  interface=wlan1,bridge1
+  4  identity=AboSadreh.Client  address=172.18.25.214  interface=wlan1,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:23:53
+# ساعت دستگاه (خام): 2025-04-06 05:27:17
+# افست اصلاحی (سرور − دستگاه): +13348:26:36
+  1  1405/07/22 08:56:39  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/22 08:56:40  [bridge,info]  "bridge1" mac address changed to 6C:3B:6B:4A:2C:B7
+  3  1405/07/22 08:56:42  [interface,info]  ether1 link up (speed 1G, full duplex)
+  4  1405/07/22 08:56:43  [interface,info]  ether1 link down
+  5  1405/07/22 08:56:47  [interface,info]  ether1 link up (speed 1G, full duplex)
+  6  1405/07/22 08:57:30  [wireless,info]  E4:8D:8C:B5:1E:69@wlan1: connected, signal strength -80
+  7  1405/07/22 08:57:30  [wireless,info]  6C:3B:6B:10:B1:EB@wlan1: connected, signal strength -68
+  8  1405/07/22 08:57:42  [wireless,info]  6C:3B:6B:10:B2:07@wlan1: connected, signal strength -78
+  9  1405/07/22 10:00:51  [interface,info]  ether1 link down
+ 10  1405/07/22 10:00:53  [interface,info]  ether1 link up (speed 1G, full duplex)
+ 11  1405/07/22 10:01:05  [interface,info]  ether1 link down
+ 12  1405/07/22 10:01:07  [interface,info]  ether1 link up (speed 1G, full duplex)
+ 13  1405/07/22 10:01:08  [interface,info]  ether1 link down
+ 14  1405/07/22 10:01:10  [interface,info]  ether1 link up (speed 1G, full duplex)
+ 15  1405/07/22 10:01:11  [interface,info]  ether1 link down
+ 16  1405/07/22 10:01:13  [interface,info]  ether1 link up (speed 1G, full duplex)
+ 17  1405/07/22 10:01:34  [interface,info]  ether1 link down
+ 18  1405/07/22 10:01:36  [interface,info]  ether1 link up (speed 1G, full duplex)
+ 19  1405/07/22 10:01:37  [interface,info]  ether1 link down
+ 20  1405/07/22 10:01:38  [interface,info]  ether1 link up (speed 1G, full duplex)
+ 21  1405/07/22 10:01:43  [interface,info]  ether1 link down
+ 22  1405/07/22 10:01:47  [interface,info]  ether1 link up (speed 1G, full duplex)
+ 23  1405/07/22 10:01:48  [interface,info]  ether1 link down
+ 24  1405/07/22 10:01:49  [interface,info]  ether1 link up (speed 1G, full duplex)
+ 25  1405/07/22 10:01:50  [interface,info]  ether1 link down
+ 26  1405/07/22 10:01:54  [interface,info]  ether1 link up (speed 1G, full duplex)
+ 27  1405/07/22 10:01:55  [interface,info]  ether1 link down
+ 28  1405/07/22 10:01:56  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 29  1405/07/22 11:35:27  [wireless,info]  E4:8D:8C:B5:1E:69@wlan1: disconnected, not responding
+ 30  1405/07/22 12:13:35  [wireless,info]  E4:8D:8C:B5:1B:6F@wlan1: connected, signal strength -60
+ 31  1405/07/22 13:23:52  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  6C:3B:6B:4A:2C:B7  (ether)
+wlan1  6C:3B:6B:4A:2C:B8  (wlan)
+bridge1  6C:3B:6B:4A:2C:B7  (bridge)
+--- /ip arp ---
+bridge1  6C:3B:6B:0C:28:9A  (arp 172.18.25.209)

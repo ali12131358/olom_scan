@@ -1,0 +1,63 @@
+IP: 172.18.8.66
+Collected at: 2026-10-14T10:24:17.067608+00:00
+source: RouterOS API
+identity: Abadan-Foriat1
+device_type: AP
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=6C:3B:6B:8F:51:61
+  2  name=VAP_Amiralmomenin  type=wlan  running=false  mac=6E:3B:6B:8F:51:62
+  3  name=wlan1  type=wlan  running=true  mac=6C:3B:6B:8F:51:62
+  4  name=bridge1  type=bridge  running=true  mac=6C:3B:6B:8F:51:62
+
+----- wireless -----
+=== /interface wireless ===
+name=VAP_Amiralmomenin  mode=ap-bridge  ssid=Amiralmomenin  band=-  frequency=-
+name=wlan1  mode=ap-bridge  ssid=Abadan-Foriat1  band=5ghz-a/n  frequency=5520
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.8.66/28  interface=ether1  network=172.18.8.64
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.8.65  distance=1
+  2  dst=172.18.8.64/28  gw=bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=RouerForiat10  address=172.18.8.65  interface=ether1,bridge1
+  2  identity=MamarehSangoor.Client  address=172.18.8.67  interface=wlan1,bridge1
+  3  identity=Sangour2.Client  address=172.18.8.68  interface=wlan1,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:33:39
+# ساعت دستگاه (خام): 1975-06-23 07:07:44
+# افست اصلاحی (سرور − دستگاه): +449786:55:55
+  1  1405/07/21 10:51:04  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/21 10:51:07  [bridge,info]  "bridge1" mac address changed to 6C:3B:6B:8F:51:62
+  3  1405/07/21 10:51:15  [wireless,info]  6C:3B:6B:74:E2:8E@wlan1: connected, signal strength -67, wants bridge
+  4  1405/07/21 10:51:16  [wireless,info]  B8:69:F4:69:8B:3D@wlan1: connected, signal strength -66, wants bridge
+  5  1405/07/21 10:51:37  [interface,info]  ether1 link up (speed 100M, full duplex)
+  6  1405/07/21 10:55:44  [interface,info]  ether1 link down
+  7  1405/07/21 10:56:20  [interface,info]  ether1 link up (speed 100M, full duplex)
+  8  1405/07/21 10:56:30  [interface,info]  ether1 link down
+  9  1405/07/21 10:56:46  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 10  1405/07/21 10:57:33  [interface,info]  ether1 link down
+ 11  1405/07/21 10:58:08  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 12  1405/07/21 10:58:17  [interface,info]  ether1 link down
+ 13  1405/07/21 10:58:33  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 14  1405/07/21 14:05:44  [wireless,info]  9C:5A:81:DF:28:20@wlan1: connected, signal strength -80
+ 15  1405/07/21 14:05:49  [wireless,info]  9C:5A:81:DF:28:20@wlan1: disconnected, unicast key exchange timeout, signal strength -88
+ 16  1405/07/22 13:33:38  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  6C:3B:6B:8F:51:61  (ether)
+VAP_Amiralmomenin  6E:3B:6B:8F:51:62  (wlan)
+wlan1  6C:3B:6B:8F:51:62  (wlan)
+bridge1  6C:3B:6B:8F:51:62  (bridge)
+--- /ip arp ---
+bridge1  B8:69:F4:69:8B:3D  (arp 172.18.8.68)
+bridge1  6C:3B:6B:87:6E:14  (arp 172.18.8.65)

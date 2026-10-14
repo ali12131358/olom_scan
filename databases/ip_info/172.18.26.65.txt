@@ -1,0 +1,106 @@
+IP: 172.18.26.65
+Collected at: 2026-10-14T10:23:40.032776+00:00
+source: RouterOS API
+identity: MK_OmolGhazlan
+device_type: Router
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=6C:3B:6B:A9:FE:77
+  2  name=ether2  type=ether  running=false  mac=6C:3B:6B:A9:FE:78
+  3  name=ether3  type=ether  running=true  mac=6C:3B:6B:A9:FE:79
+  4  name=ether4  type=ether  running=true  mac=6C:3B:6B:A9:FE:7A
+  5  name=ether5  type=ether  running=true  mac=6C:3B:6B:A9:FE:7B
+  6  name=ether6  type=ether  running=true  mac=6C:3B:6B:A9:FE:7C
+  7  name=ether7  type=ether  running=true  mac=6C:3B:6B:A9:FE:7D
+  8  name=ether8  type=ether  running=false  mac=6C:3B:6B:A9:FE:7E
+  9  name=ether9  type=ether  running=false  mac=6C:3B:6B:A9:FE:7F
+ 10  name=ether10  type=ether  running=false  mac=6C:3B:6B:A9:FE:80
+ 11  name=sfp1  type=ether  running=false  mac=6C:3B:6B:A9:FE:76
+ 12  name=bridge1  type=bridge  running=true  mac=6C:3B:6B:A9:FE:79
+
+----- wireless -----
+(empty)
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.26.12/29  interface=ether5  network=172.18.26.8
+  2  address=172.18.26.65/28  interface=ether1  network=172.18.26.64
+  3  address=172.18.26.81/28  interface=ether7  network=172.18.26.80
+  4  address=172.29.207.1/25  interface=bridge1  network=172.29.207.0
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.26.9  distance=1
+  2  dst=172.18.26.8/29  gw=ether5  distance=0
+  3  dst=172.18.26.64/28  gw=ether1  distance=0
+  4  dst=172.18.26.80/28  gw=ether7  distance=0
+  5  dst=172.29.207.0/25  gw=bridge1  distance=0
+  6  dst=172.29.207.128/27  gw=172.18.26.67  distance=1
+  7  dst=172.29.207.160/27  gw=172.18.26.68  distance=1
+  8  dst=172.29.207.192/27  gw=172.18.26.69  distance=1
+  9  dst=172.29.207.224/27  gw=172.18.26.83  distance=1
+ 10  dst=172.29.208.32/27  gw=172.18.26.84  distance=1
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=Shadegan-OmolGhazlan1  address=172.18.26.66  interface=ether1
+  2  identity=DerisiyehVasati.Client  address=172.18.26.68  interface=ether1
+  3  identity=RouterOS  address=172.18.26.69  interface=ether1
+  4  identity=MK_Darkhovein  address=172.18.26.9  interface=ether5
+  5  identity=Darkhovein->OmolGhazlan.AP  address=172.18.26.10  interface=ether5
+  6  identity=Darkhovein->OmolGhazlan.Client  address=172.18.26.11  interface=ether5
+  7  identity=MK_behdast-OmolGhazlan  address=172.18.26.82  interface=ether7
+  8  identity=OmolHejar.Client  address=172.18.26.84  interface=ether7
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:27:23
+# ساعت دستگاه (خام): 2024-08-26 13:15:48
+# افست اصلاحی (سرور − دستگاه): +18692:41:35
+  1  1405/07/22 12:39:46  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/22 12:39:48  [bridge,info]  "bridge1" mac address changed to 6C:3B:6B:A9:FE:79
+  3  1405/07/22 12:39:49  [interface,info]  ether3 link up (speed 100M, full duplex)
+  4  1405/07/22 12:39:49  [interface,info]  ether4 link up (speed 100M, full duplex)
+  5  1405/07/22 12:39:49  [interface,info]  ether6 link up (speed 100M, full duplex)
+  6  1405/07/22 12:39:49  [interface,info]  ether7 link up (speed 100M, full duplex)
+  7  1405/07/22 12:39:54  [interface,info]  ether6 link down
+  8  1405/07/22 12:39:55  [interface,info]  ether6 link up (speed 100M, full duplex)
+  9  1405/07/22 12:39:55  [dhcp,info]  dhcp1 deassigned 172.29.207.47 from 98:DE:D0:26:F9:B9
+ 10  1405/07/22 12:39:59  [dhcp,info]  dhcp1 assigned 172.29.207.47 to 98:DE:D0:26:F9:B9
+ 11  1405/07/22 12:39:59  [interface,info]  ether5 link up (speed 100M, full duplex)
+ 12  1405/07/22 12:40:06  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 13  1405/07/22 12:40:12  [interface,info]  ether7 link down
+ 14  1405/07/22 12:40:14  [interface,info]  ether7 link up (speed 100M, full duplex)
+ 15  1405/07/22 12:53:33  [dhcp,info]  dhcp1 assigned 172.29.207.45 to 84:3A:4B:3D:AC:B4
+ 16  1405/07/22 12:54:53  [dhcp,info]  dhcp1 deassigned 172.29.207.71 from 1C:1B:0D:A0:5A:EF
+ 17  1405/07/22 13:18:36  [dhcp,info]  dhcp1 deassigned 172.29.207.45 from 84:3A:4B:3D:AC:B4
+ 18  1405/07/22 13:23:29  [dhcp,info]  dhcp1 deassigned 172.29.207.126 from 28:ED:E0:A1:64:CC
+ 19  1405/07/22 13:24:17  [dhcp,info]  dhcp1 deassigned 172.29.207.46 from 7C:8B:CA:0A:9C:D8
+ 20  1405/07/22 13:24:59  [dhcp,info]  dhcp1 deassigned 172.29.207.47 from 98:DE:D0:26:F9:B9
+ 21  1405/07/22 13:26:15  [dhcp,info]  dhcp1 deassigned 172.29.207.125 from A2:E4:3A:74:A4:DE
+ 22  1405/07/22 13:26:28  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 23  1405/07/22 13:26:33  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 24  1405/07/22 13:27:21  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  6C:3B:6B:A9:FE:77  (ether)
+ether2  6C:3B:6B:A9:FE:78  (ether)
+ether3  6C:3B:6B:A9:FE:79  (ether)
+ether4  6C:3B:6B:A9:FE:7A  (ether)
+ether5  6C:3B:6B:A9:FE:7B  (ether)
+ether6  6C:3B:6B:A9:FE:7C  (ether)
+ether7  6C:3B:6B:A9:FE:7D  (ether)
+ether8  6C:3B:6B:A9:FE:7E  (ether)
+ether9  6C:3B:6B:A9:FE:7F  (ether)
+ether10  6C:3B:6B:A9:FE:80  (ether)
+sfp1  6C:3B:6B:A9:FE:76  (ether)
+bridge1  6C:3B:6B:A9:FE:79  (bridge)
+--- /ip arp ---
+ether1  6C:3B:6B:4D:A4:02  (arp 172.18.26.66)
+ether1  6C:3B:6B:4D:A3:16  (arp 172.18.26.68)
+bridge1  00:02:65:15:E0:AF  (arp 172.29.207.10)
+bridge1  7C:8B:CA:0A:9C:D8  (arp 172.29.207.46)
+ether7  6C:3B:6B:01:D5:4F  (arp 172.18.26.84)
+ether5  E4:8D:8C:0D:18:C0  (arp 172.18.26.9)
+bridge1  A2:E4:3A:74:A4:DE  (arp 172.29.207.125)

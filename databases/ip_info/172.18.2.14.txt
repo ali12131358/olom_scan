@@ -1,0 +1,142 @@
+IP: 172.18.2.14
+Collected at: 2026-10-14T10:22:46.841111+00:00
+source: RouterOS API
+identity: Foriat.B.AP
+device_type: AP
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=04:F4:1C:F9:D7:B1
+  2  name=wlan1  type=wlan  running=true  mac=04:F4:1C:F9:D7:B2
+  3  name=bridge1  type=bridge  running=true  mac=04:F4:1C:F9:D7:B2
+  4  name=lo  type=loopback  running=true  mac=00:00:00:00:00:00
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=bridge  ssid=Foriat.B  band=5ghz-a/n  frequency=5680
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.29.2.132/25  interface=bridge1  network=172.29.2.128
+  2  address=172.18.2.14/29  interface=bridge1  network=172.18.2.8
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.2.9  distance=1
+  2  dst=172.18.2.8/29  gw=bridge1  distance=0
+  3  dst=172.29.2.128/25  gw=bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=Foriat.B.Client  address=172.18.2.13  interface=wlan1,bridge1
+  2  identity=RouerForiat10  address=172.18.2.9  interface=ether1,bridge1
+  3  identity=Abadan-Foriat3  address=172.18.2.10  interface=ether1,bridge1
+  4  identity=abdn-foriat-alghadir-CL  address=172.18.2.11  interface=ether1,bridge1
+  5  identity=Router_Foriat_Alghadir  address=172.29.2.130  interface=ether1,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:14:43
+# ساعت دستگاه (خام): 2025-10-22 01:01:05
+# افست اصلاحی (سرور − دستگاه): +8576:43:38
+  1  2025-10-14 09:02:49  [system,error,critical]  router was rebooted without proper shutdown
+  2  2025-10-14 09:02:50  [interface,info]  lo link up
+  3  2025-10-14 09:02:56  [bridge,info]  hardware offloading activated on bridge "bridge1" ports: ether1
+  4  2025-10-14 09:02:57  [wireless,info]  04:F4:1C:F9:D7:B4@wlan1: connected, signal strength -52
+  5  2025-10-14 09:02:57  [interface,info]  ether1 link up (speed 100M, full duplex)
+  6  2025-10-15 01:16:23  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+  7  2025-10-15 01:16:24  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+  8  2025-10-15 01:16:24  [system,info]  changed snmp settings by api:garnaf@172.18.4.76 (/snmp set enabled=yes trap-version=2)
+  9  2025-10-15 01:16:24  [system,info]  item changed by api:garnaf@172.18.4.76/action:0 (/snmp community set [ find ] addresses=0.0.0.0/0 name=Olom@Pez write-access=no)
+ 10  2025-10-15 01:18:42  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 11  2025-10-15 01:18:42  [system,info]  changed snmp settings by api:garnaf@172.18.4.76 (/snmp set enabled=yes trap-version=2)
+ 12  2025-10-15 01:18:42  [system,info]  item changed by api:garnaf@172.18.4.76/action:0 (/snmp community set [ find ] addresses=0.0.0.0/0 name=Olom@Pez write-access=no)
+ 13  2025-10-15 01:18:42  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 14  2025-10-15 01:20:27  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 15  2025-10-15 01:20:27  [system,info]  changed snmp settings by api:garnaf@172.18.4.76 (/snmp set enabled=yes trap-version=2)
+ 16  2025-10-15 01:20:27  [system,info]  item changed by api:garnaf@172.18.4.76/action:0 (/snmp community set [ find ] addresses=0.0.0.0/0 name=Olom@Pez write-access=no)
+ 17  2025-10-15 01:20:27  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 18  2025-10-15 01:23:58  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 19  2025-10-15 01:23:58  [system,info]  changed snmp settings by api:garnaf@172.18.4.76 (/snmp set enabled=yes trap-version=2)
+ 20  2025-10-15 01:23:58  [system,info]  item changed by api:garnaf@172.18.4.76/action:0 (/snmp community set [ find ] addresses=0.0.0.0/0 name=Olom@Pez write-access=no)
+ 21  2025-10-15 01:23:58  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 22  2025-10-15 01:41:16  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 23  2025-10-15 01:41:16  [system,info]  changed snmp settings by api:garnaf@172.18.4.76 (/snmp set enabled=yes trap-version=2)
+ 24  2025-10-15 01:41:16  [system,info]  item changed by api:garnaf@172.18.4.76/action:0 (/snmp community set [ find ] addresses=0.0.0.0/0 name=Olom@Pez write-access=no)
+ 25  2025-10-15 01:41:16  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 26  2025-10-15 02:40:13  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 27  2025-10-15 02:40:13  [system,info]  user olom1 added by api:garnaf@172.18.4.76 (*3 = /user add group=full name=olom1)
+ 28  2025-10-15 02:40:14  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 29  2025-10-15 02:47:52  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 30  2025-10-15 02:47:52  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 31  2025-10-15 02:50:00  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 32  2025-10-15 02:50:01  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 33  2025-10-15 02:51:07  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 34  2025-10-15 02:51:07  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 35  2025-10-15 21:54:53  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 36  2025-10-15 21:54:54  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 37  2025-10-15 21:59:27  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 38  2025-10-15 21:59:29  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 39  2025-10-15 22:21:27  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 40  2025-10-15 22:21:28  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 41  2025-10-15 22:27:05  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 42  2025-10-15 22:27:06  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 43  2025-10-16 01:35:12  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 44  2025-10-16 01:35:13  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 45  2025-10-16 01:43:30  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 46  2025-10-16 01:43:31  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 47  2025-10-16 01:52:35  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 48  2025-10-16 01:52:35  [system,info]  changed snmp settings by api:garnaf@172.18.4.76 (/snmp set enabled=yes trap-version=2)
+ 49  2025-10-16 01:52:35  [system,info]  item changed by api:garnaf@172.18.4.76/action:0 (/snmp community set [ find ] addresses=0.0.0.0/0 name=Olom@Pez write-access=no)
+ 50  2025-10-16 01:52:35  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 51  2025-10-16 01:56:17  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 52  2025-10-16 01:56:17  [system,info]  changed snmp settings by api:garnaf@172.18.4.76 (/snmp set enabled=yes trap-version=2)
+ 53  2025-10-16 01:56:17  [system,info]  item changed by api:garnaf@172.18.4.76/action:0 (/snmp community set [ find ] addresses=0.0.0.0/0 name=Olom@Pez write-access=no)
+ 54  2025-10-16 01:56:17  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 55  2025-10-16 02:14:18  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 56  2025-10-16 02:14:19  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 57  2025-10-16 02:24:30  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 58  2025-10-16 02:24:31  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 59  2025-10-16 03:25:18  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 60  2025-10-16 03:25:20  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 61  2025-10-16 03:34:32  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 62  2025-10-16 03:34:33  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 63  2025-10-16 20:16:31  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 64  2025-10-16 20:16:32  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 65  2025-10-16 20:28:00  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 66  2025-10-16 20:28:02  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 67  2025-10-16 20:50:14  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 68  2025-10-16 20:50:15  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 69  2025-10-16 21:05:17  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 70  2025-10-16 21:05:19  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 71  2025-10-17 21:41:00  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 72  2025-10-17 21:41:00  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 73  2025-10-17 22:14:52  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 74  2025-10-17 22:14:53  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 75  2025-10-17 22:27:05  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 76  2025-10-17 22:27:07  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 77  2025-10-17 22:39:12  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 78  2025-10-17 22:39:13  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 79  2025-10-17 22:51:17  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 80  2025-10-17 22:51:17  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 81  2025-10-17 23:53:23  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 82  2025-10-17 23:53:24  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 83  2025-10-18 00:00:21  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 84  2025-10-18 00:00:21  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 85  2025-10-18 21:20:44  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 86  2025-10-18 21:20:46  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 87  2025-10-18 21:48:36  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 88  2025-10-18 21:48:38  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 89  2025-10-19 05:27:47  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+ 90  2025-10-19 05:27:48  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+ 91  2025-10-19 05:33:01  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+ 92  2025-10-19 05:33:01  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+ 93  2025-10-22 01:01:04  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  04:F4:1C:F9:D7:B1  (ether)
+wlan1  04:F4:1C:F9:D7:B2  (wlan)
+bridge1  04:F4:1C:F9:D7:B2  (bridge)
+--- /ip arp ---
+bridge1  6C:3B:6B:87:6E:19  (arp 172.18.2.9)
+bridge1  E4:8D:8C:DB:C0:36  (arp 172.29.2.129)

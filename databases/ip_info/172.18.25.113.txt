@@ -1,0 +1,75 @@
+IP: 172.18.25.113
+Collected at: 2026-10-14T10:23:16.658103+00:00
+source: RouterOS API
+identity: MK-Ghatrani
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1 - InPut  type=ether  running=true  mac=CC:2D:E0:6C:A2:69
+  2  name=ether2 - Lan  type=ether  running=true  mac=CC:2D:E0:6C:A2:6A
+  3  name=ether3 - Ghatrani 1  type=ether  running=true  mac=CC:2D:E0:6C:A2:6B
+  4  name=ether4 - Ghatrani 2  type=ether  running=true  mac=CC:2D:E0:6C:A2:6C
+  5  name=pwr-line1  type=ether  running=false  mac=CC:2D:E0:6C:A2:6C
+  6  name=wlan1  type=wlan  running=false  mac=CC:2D:E0:6C:A2:6D
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station  ssid=MK-Ghatrani  band=2ghz-b/g  frequency=2412
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.25.12/29  interface=ether1 - InPut  network=172.18.25.8
+  2  address=172.18.25.113/28  interface=ether3 - Ghatrani 1  network=172.18.25.112
+  3  address=172.18.25.105/28  interface=ether4 - Ghatrani 2  network=172.18.25.96
+  4  address=172.29.198.129/27  interface=ether2 - Lan  network=172.29.198.128
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.25.10  distance=1
+  2  dst=172.18.25.8/29  gw=ether1 - InPut  distance=0
+  3  dst=172.18.25.96/28  gw=ether4 - Ghatrani 2  distance=0
+  4  dst=172.18.25.112/28  gw=ether3 - Ghatrani 1  distance=0
+  5  dst=172.29.198.128/27  gw=ether2 - Lan  distance=0
+  6  dst=172.29.202.96/27  gw=172.18.25.107  distance=1
+  7  dst=172.29.205.160/27  gw=172.18.25.115  distance=1
+  8  dst=172.29.205.192/27  gw=172.18.25.116  distance=1
+  9  dst=172.29.205.224/27  gw=172.18.25.117  distance=1
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=MK_Alvan  address=172.18.25.9  interface=ether1 - InPut
+  2  identity=Alvan->Ghatrani.AP  address=172.18.25.10  interface=ether1 - InPut
+  3  identity=Alvan->Ghatrani.Client  address=172.18.25.11  interface=ether1 - InPut
+  4  identity=Shadegan-Ghatrani1_AP  address=172.18.25.114  interface=ether3 - Ghatrani 1
+  5  identity=mansooreh-olya  address=172.18.25.115  interface=ether3 - Ghatrani 1
+  6  identity=MasourehSofla .Client  address=172.18.25.116  interface=ether3 - Ghatrani 1
+  7  identity=Shadegan-Ghatrani2_AP  address=172.18.25.106  interface=ether4 - Ghatrani 2
+  8  identity=Farhani.Client  address=172.18.25.107  interface=ether4 - Ghatrani 2
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:21:32
+# ساعت دستگاه (خام): 1973-02-25 00:20:18
+# افست اصلاحی (سرور − دستگاه): +470145:31:14
+  1  1405/07/22 11:03:03  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/22 11:03:07  [interface,info]  ether1 - InPut link up (speed 100M, full duplex)
+  3  1405/07/22 11:03:07  [interface,info]  ether2 - Lan link up (speed 100M, full duplex)
+  4  1405/07/22 11:03:08  [interface,info]  ether4 - Ghatrani 2 link up (speed 100M, full duplex)
+  5  1405/07/22 11:03:13  [interface,info]  ether3 - Ghatrani 1 link up (speed 100M, full duplex)
+  6  1405/07/22 13:21:20  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+  7  1405/07/22 13:21:21  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+  8  1405/07/22 13:21:30  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1 - InPut  CC:2D:E0:6C:A2:69  (ether)
+ether2 - Lan  CC:2D:E0:6C:A2:6A  (ether)
+ether3 - Ghatrani 1  CC:2D:E0:6C:A2:6B  (ether)
+ether4 - Ghatrani 2  CC:2D:E0:6C:A2:6C  (ether)
+pwr-line1  CC:2D:E0:6C:A2:6C  (ether)
+wlan1  CC:2D:E0:6C:A2:6D  (wlan)
+--- /ip arp ---
+ether3 - Ghatrani 1  6C:3B:6B:4A:2C:BA  (arp 172.18.25.114)
+ether1 - InPut  48:8F:5A:8F:F1:46  (arp 172.18.25.10)
+ether4 - Ghatrani 2  64:D1:54:A7:E5:DC  (arp 172.18.25.106)
+ether4 - Ghatrani 2  E4:8D:8C:61:6E:2D  (arp 172.18.25.107)

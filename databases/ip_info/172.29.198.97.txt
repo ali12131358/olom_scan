@@ -1,0 +1,73 @@
+IP: 172.29.198.97
+Collected at: 2026-10-14T10:25:20.197761+00:00
+source: RouterOS API
+identity: SafrayeMoghadam.Client
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=6C:3B:6B:DF:E8:9C
+  2  name=wlan1  type=wlan  running=true  mac=6C:3B:6B:DF:E8:9D
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=Shadegan-Alvan2  band=5ghz-a/n  frequency=5260
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.25.53/28  interface=wlan1  network=172.18.25.48
+  2  address=172.29.198.97/27  interface=ether1  network=172.29.198.96
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.25.49  distance=1
+  2  dst=172.18.25.48/28  gw=wlan1  distance=0
+  3  dst=172.29.198.96/27  gw=ether1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=MK_Alvan  address=172.18.25.49  interface=wlan1
+  2  identity=Shadegan-Alvan2_AP  address=172.18.25.50  interface=wlan1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:44:54
+# ساعت دستگاه (خام): 1970-02-28 11:19:01
+# افست اصلاحی (سرور − دستگاه): +496366:55:53
+  1  1405/07/22 08:31:39  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/22 08:31:40  [interface,info]  ether1 link up (speed 100M, full duplex)
+  3  1405/07/22 08:32:00  [wireless,info]  64:D1:54:03:0D:24@wlan1 established connection on 5500000, SSID Shadegan-Alvan2
+  4  1405/07/22 08:32:02  [interface,info]  ether1 link down
+  5  1405/07/22 08:32:04  [interface,info]  ether1 link up (speed 100M, full duplex)
+  6  1405/07/22 08:32:07  [dhcp,info]  dhcp1 deassigned 172.29.198.126 from 1C:1B:0D:A0:58:5D
+  7  1405/07/22 08:32:07  [dhcp,info]  dhcp1 assigned 172.29.198.126 to 1C:1B:0D:A0:58:5D
+  8  1405/07/22 09:54:21  [system,info,account]  user garnaf logged in from 172.18.4.76 via winbox
+  9  1405/07/22 09:54:52  [system,info,account]  user garnaf logged in from 172.18.4.76 via telnet
+ 10  1405/07/22 09:54:57  [wireless,info]  64:D1:54:03:0D:24@wlan1: lost connection, disabling
+ 11  1405/07/22 09:55:27  [system,info,account]  user garnaf logged out from 172.18.4.76 via winbox
+ 12  1405/07/22 09:55:27  [system,info,account]  user garnaf logged out from 172.18.4.76 via telnet
+ 13  1405/07/22 09:56:06  [wireless,info]  64:D1:54:03:0D:24@wlan1 established connection on 5800000, SSID Shadegan-Alvan2
+ 14  1405/07/22 09:59:19  [wireless,info]  64:D1:54:03:0D:24@wlan1: lost connection, medium-access timeout
+ 15  1405/07/22 09:59:39  [wireless,info]  64:D1:54:03:0D:24@wlan1 established connection on 5800000, SSID Shadegan-Alvan2
+ 16  1405/07/22 10:01:01  [system,info,account]  user garnaf logged in from 64:D1:54:03:0D:23 via mac-telnet
+ 17  1405/07/22 10:01:34  [system,info,account]  user garnaf logged out from 64:D1:54:03:0D:23 via mac-telnet
+ 18  1405/07/22 10:02:26  [wireless,info]  64:D1:54:03:0D:24@wlan1: lost connection, medium-access timeout
+ 19  1405/07/22 10:17:24  [wireless,info]  64:D1:54:03:0D:24@wlan1 established connection on 5780000, SSID Shadegan-Alvan2
+ 20  1405/07/22 10:17:46  [system,info,account]  user garnaf logged in from 64:D1:54:03:0D:23 via mac-telnet
+ 21  1405/07/22 10:18:19  [system,info,account]  user garnaf logged out from 64:D1:54:03:0D:23 via mac-telnet
+ 22  1405/07/22 10:19:07  [wireless,info]  64:D1:54:03:0D:24@wlan1: lost connection, medium-access timeout
+ 23  1405/07/22 10:19:26  [wireless,info]  64:D1:54:03:0D:24@wlan1 established connection on 5780000, SSID Shadegan-Alvan2
+ 24  1405/07/22 10:27:03  [system,info,account]  user garnaf logged in from 172.18.4.76 via winbox
+ 25  1405/07/22 10:27:09  [system,info,account]  user garnaf logged out from 172.18.4.76 via winbox
+ 26  1405/07/22 11:45:46  [interface,info]  ether1 link down
+ 27  1405/07/22 11:45:48  [interface,info]  ether1 link up (speed 10M, full duplex)
+ 28  1405/07/22 11:52:07  [dhcp,info]  dhcp1 deassigned 172.29.198.126 from 1C:1B:0D:A0:58:5D
+ 29  1405/07/22 13:25:22  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 30  1405/07/22 13:25:24  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 31  1405/07/22 13:44:53  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  6C:3B:6B:DF:E8:9C  (ether)
+wlan1  6C:3B:6B:DF:E8:9D  (wlan)
+--- /ip arp ---
+wlan1  6C:3B:6B:0C:28:85  (arp 172.18.25.49)

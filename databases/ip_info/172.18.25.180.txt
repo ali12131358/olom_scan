@@ -1,0 +1,49 @@
+IP: 172.18.25.180
+Collected at: 2026-10-10T07:39:21.318935+00:00
+source: RouterOS API
+identity: Hadbeh.Client
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=E4:8D:8C:61:6C:B4
+  2  name=wlan1  type=wlan  running=true  mac=E4:8D:8C:61:6C:B5
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=Shadegan-Abshar4  band=5ghz-a/n  frequency=5260
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.25.180/28  interface=wlan1  network=172.18.25.176
+  2  address=172.29.202.65/27  interface=ether1  network=172.29.202.64
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.25.177  distance=1
+  2  dst=172.18.25.176/28  gw=wlan1  distance=0
+  3  dst=172.29.202.64/27  gw=ether1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=RB-ABSHAR  address=172.18.25.177  interface=wlan1
+  2  identity=Shadegan-Abshar4  address=172.18.25.178  interface=wlan1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/18 10:56:03
+# ساعت دستگاه (خام): 2018-01-14 10:06:25
+# افست اصلاحی (سرور − دستگاه): +76581:19:38
+  1  1405/07/18 10:45:42  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/18 10:45:49  [wireless,info]  6C:3B:6B:4A:2D:9A@wlan1 established connection on 5280000, SSID Shadegan-Abshar4
+  3  1405/07/18 10:45:51  [interface,info]  ether1 link up (speed 100M, full duplex)
+  4  1405/07/18 10:46:12  [wireless,info]  6C:3B:6B:4A:2D:9A@wlan1: lost connection, not polled for too long
+  5  1405/07/18 10:47:51  [wireless,info]  6C:3B:6B:4A:2D:9A@wlan1 established connection on 5280000, SSID Shadegan-Abshar4
+  6  1405/07/18 10:56:03  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  E4:8D:8C:61:6C:B4  (ether)
+wlan1  E4:8D:8C:61:6C:B5  (wlan)
+--- /ip arp ---
+wlan1  4C:5E:0C:9B:0F:02  (arp 172.18.25.177)
+ether1  B4:2E:99:2B:DC:D0  (arp 172.29.202.94)

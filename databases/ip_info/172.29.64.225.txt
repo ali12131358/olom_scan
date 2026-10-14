@@ -1,0 +1,73 @@
+IP: 172.29.64.225
+Collected at: 2026-10-14T10:25:37.652465+00:00
+source: RouterOS API
+identity: Chomeh.Client
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=E4:8D:8C:B5:1B:8A
+  2  name=wlan1  type=wlan  running=true  mac=E4:8D:8C:B5:1B:8B
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station  ssid=Abadan-Amoozesh1  band=5ghz-a/n  frequency=5280
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.8.116/28  interface=wlan1  network=172.18.8.112
+  2  address=172.29.64.225/27  interface=ether1  network=172.29.64.224
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.8.113  distance=1
+  2  dst=172.18.8.112/28  gw=wlan1  distance=0
+  3  dst=172.29.64.224/27  gw=ether1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=R2-MA(Router.Amozeshi)  address=172.18.8.113  interface=wlan1
+  2  identity=Abadan-Amoozesh1  address=172.18.8.114  interface=wlan1
+  3  identity=Samadieh.Client  address=172.18.8.115  interface=wlan1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:48:27
+# ساعت دستگاه (خام): 1973-04-26 19:50:01
+# افست اصلاحی (سرور − دستگاه): +468686:28:26
+  1  1405/07/19 08:28:43  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/19 08:28:51  [wireless,info]  6C:3B:6B:56:27:DF@wlan1 established connection on 5260000, SSID Abadan-Amoozesh1
+  3  1405/07/19 08:28:53  [interface,info]  ether1 link up (speed 100M, full duplex)
+  4  1405/07/19 08:29:21  [dhcp,info]  dhcp1 assigned 172.29.64.230 to 18:C0:4D:11:17:11
+  5  1405/07/19 09:52:21  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+  6  1405/07/19 09:52:23  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+  7  1405/07/19 10:04:59  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+  8  1405/07/19 10:05:00  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+  9  1405/07/19 13:14:21  [dhcp,info]  dhcp1 deassigned 172.29.64.230 from 18:C0:4D:11:17:11
+ 10  1405/07/19 15:51:41  [wireless,info]  6C:3B:6B:56:27:DF@wlan1: lost connection, not polled for too long
+ 11  1405/07/19 15:51:46  [wireless,info]  6C:3B:6B:56:27:DF@wlan1 established connection on 5260000, SSID Abadan-Amoozesh1
+ 12  1405/07/19 17:45:19  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+ 13  1405/07/19 17:45:19  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+ 14  1405/07/19 17:47:20  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+ 15  1405/07/19 17:47:20  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+ 16  1405/07/19 20:10:50  [wireless,info]  6C:3B:6B:56:27:DF@wlan1: lost connection, not polled for too long
+ 17  1405/07/19 20:10:56  [wireless,info]  6C:3B:6B:56:27:DF@wlan1 established connection on 5260000, SSID Abadan-Amoozesh1
+ 18  1405/07/20 08:33:26  [dhcp,info]  dhcp1 assigned 172.29.64.230 to 18:C0:4D:11:17:11
+ 19  1405/07/20 11:53:26  [dhcp,info]  dhcp1 deassigned 172.29.64.230 from 18:C0:4D:11:17:11
+ 20  1405/07/21 11:13:37  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 21  1405/07/21 11:13:40  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 22  1405/07/21 11:22:42  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 23  1405/07/21 11:22:43  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 24  1405/07/21 16:53:08  [wireless,info]  6C:3B:6B:56:27:DF@wlan1: lost connection, not polled for too long
+ 25  1405/07/21 16:53:13  [wireless,info]  6C:3B:6B:56:27:DF@wlan1 established connection on 5260000, SSID Abadan-Amoozesh1
+ 26  1405/07/22 07:56:35  [dhcp,info]  dhcp1 assigned 172.29.64.230 to 18:C0:4D:11:17:11
+ 27  1405/07/22 10:36:34  [dhcp,info]  dhcp1 deassigned 172.29.64.230 from 18:C0:4D:11:17:11
+ 28  1405/07/22 13:32:52  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 29  1405/07/22 13:32:53  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 30  1405/07/22 13:48:26  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  E4:8D:8C:B5:1B:8A  (ether)
+wlan1  E4:8D:8C:B5:1B:8B  (wlan)
+--- /ip arp ---
+wlan1  6C:3B:6B:09:28:B6  (arp 172.18.8.113)

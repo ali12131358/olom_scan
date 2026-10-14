@@ -1,0 +1,241 @@
+IP: 172.18.3.147
+Collected at: 2026-10-14T10:23:45.237266+00:00
+source: RouterOS API
+identity: Bargh.Client
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=64:D1:54:52:DE:A8
+  2  name=wlan1  type=wlan  running=true  mac=64:D1:54:52:DE:A9
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=Foriat-Bargh  band=5ghz-a/n  frequency=5260
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.3.147/29  interface=wlan1  network=172.18.3.144
+  2  address=172.29.5.193/26  interface=ether1  network=172.29.5.192
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.3.145  distance=1
+  2  dst=172.18.3.144/29  gw=wlan1  distance=0
+  3  dst=172.29.5.192/26  gw=ether1  distance=0
+
+----- neighbors -----
+(empty)
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:28:44
+# ساعت دستگاه (خام): 1978-04-17 21:25:52
+# افست اصلاحی (سرور − دستگاه): +425076:32:52
+  1  1405/07/17 05:10:20  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+  2  1405/07/17 05:10:36  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+  3  1405/07/17 05:10:41  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+  4  1405/07/17 05:10:47  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+  5  1405/07/17 08:35:42  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+  6  1405/07/17 08:35:44  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+  7  1405/07/17 12:08:37  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+  8  1405/07/17 12:08:53  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+  9  1405/07/17 13:35:29  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+ 10  1405/07/17 13:35:40  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+ 11  1405/07/17 16:00:02  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+ 12  1405/07/17 16:00:13  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+ 13  1405/07/17 19:48:35  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+ 14  1405/07/17 19:48:44  [wireless,info]  64:D1:54:83:74:4D@wlan1: failed to connect, on 5320/20-Ce/an, association timeout
+ 15  1405/07/17 19:48:55  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+ 16  1405/07/17 20:59:53  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+ 17  1405/07/17 20:59:59  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+ 18  1405/07/17 23:28:17  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+ 19  1405/07/17 23:28:25  [wireless,info]  64:D1:54:83:74:4D@wlan1: failed to connect, on 5320/20-Ce/an, association timeout
+ 20  1405/07/17 23:28:42  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+ 21  1405/07/18 00:20:38  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+ 22  1405/07/18 00:20:49  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+ 23  1405/07/18 01:19:46  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+ 24  1405/07/18 01:20:02  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+ 25  1405/07/18 03:55:11  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+ 26  1405/07/18 03:55:27  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+ 27  1405/07/18 07:00:15  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+ 28  1405/07/18 07:00:23  [wireless,info]  64:D1:54:83:74:4D@wlan1: failed to connect, on 5320/20-Ce/an, association timeout
+ 29  1405/07/18 07:00:34  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+ 30  1405/07/18 07:00:44  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+ 31  1405/07/18 07:00:53  [wireless,info]  64:D1:54:83:74:4D@wlan1: failed to connect, on 5320/20-Ce/an, association timeout
+ 32  1405/07/18 07:01:04  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+ 33  1405/07/18 08:02:06  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+ 34  1405/07/18 08:02:39  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+ 35  1405/07/18 10:01:58  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+ 36  1405/07/18 10:02:07  [wireless,info]  64:D1:54:83:74:4D@wlan1: failed to connect, on 5320/20-Ce/an, association timeout
+ 37  1405/07/18 10:02:18  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+ 38  1405/07/18 10:33:38  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 39  1405/07/18 10:33:40  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 40  1405/07/18 10:45:18  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+ 41  1405/07/18 10:45:29  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+ 42  1405/07/18 10:57:58  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 43  1405/07/18 10:58:02  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 44  1405/07/18 12:10:17  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 45  1405/07/18 12:10:18  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 46  1405/07/18 12:17:30  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+ 47  1405/07/18 12:17:39  [wireless,info]  64:D1:54:83:74:4D@wlan1: failed to connect, on 5320/20-Ce/an, association timeout
+ 48  1405/07/18 12:17:50  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+ 49  1405/07/18 12:59:55  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+ 50  1405/07/18 13:00:00  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+ 51  1405/07/18 19:11:03  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, management-protection failure
+ 52  1405/07/18 19:11:09  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+ 53  1405/07/18 20:40:29  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+ 54  1405/07/18 20:40:46  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+ 55  1405/07/18 20:40:51  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+ 56  1405/07/18 20:40:59  [wireless,info]  64:D1:54:83:74:4D@wlan1: failed to connect, on 5320/20-Ce/an, association timeout
+ 57  1405/07/18 20:41:10  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+ 58  1405/07/18 21:18:55  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+ 59  1405/07/18 21:19:17  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+ 60  1405/07/18 22:30:40  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+ 61  1405/07/18 22:31:00  [wireless,info]  64:D1:54:83:74:4D@wlan1: failed to connect, on 5320/20-Ce/an, association timeout
+ 62  1405/07/18 22:31:11  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+ 63  1405/07/19 01:31:07  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+ 64  1405/07/19 01:31:18  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+ 65  1405/07/19 02:08:58  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+ 66  1405/07/19 02:09:03  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+ 67  1405/07/19 02:09:09  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+ 68  1405/07/19 02:09:17  [wireless,info]  64:D1:54:83:74:4D@wlan1: failed to connect, on 5320/20-Ce/an, association timeout
+ 69  1405/07/19 02:09:34  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+ 70  1405/07/19 05:00:19  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+ 71  1405/07/19 05:00:28  [wireless,info]  64:D1:54:83:74:4D@wlan1: failed to connect, on 5320/20-Ce/an, association timeout
+ 72  1405/07/19 05:00:39  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+ 73  1405/07/19 06:01:56  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+ 74  1405/07/19 06:02:04  [wireless,info]  64:D1:54:83:74:4D@wlan1: failed to connect, on 5320/20-Ce/an, association timeout
+ 75  1405/07/19 06:02:15  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+ 76  1405/07/19 07:20:55  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+ 77  1405/07/19 07:21:09  [wireless,info]  64:D1:54:83:74:4D@wlan1: failed to connect, on 5320/20-Ce/an, association timeout
+ 78  1405/07/19 07:21:20  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+ 79  1405/07/19 07:46:18  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+ 80  1405/07/19 07:46:29  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+ 81  1405/07/19 09:47:51  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 82  1405/07/19 09:47:57  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 83  1405/07/19 10:28:33  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+ 84  1405/07/19 10:28:42  [wireless,info]  64:D1:54:83:74:4D@wlan1: failed to connect, on 5320/20-Ce/an, association timeout
+ 85  1405/07/19 10:28:56  [wireless,info]  64:D1:54:83:74:4D@wlan1: failed to connect, on 5320/20-Ce/an, association timeout
+ 86  1405/07/19 10:29:07  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+ 87  1405/07/19 10:49:29  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+ 88  1405/07/19 10:49:40  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+ 89  1405/07/19 11:08:18  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+ 90  1405/07/19 11:08:23  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+ 91  1405/07/19 12:05:15  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+ 92  1405/07/19 12:05:24  [wireless,info]  64:D1:54:83:74:4D@wlan1: failed to connect, on 5320/20-Ce/an, association timeout
+ 93  1405/07/19 12:05:35  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+ 94  1405/07/19 16:27:26  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+ 95  1405/07/19 16:27:35  [wireless,info]  64:D1:54:83:74:4D@wlan1: failed to connect, on 5320/20-Ce/an, association timeout
+ 96  1405/07/19 16:27:46  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+ 97  1405/07/19 17:44:13  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+ 98  1405/07/19 17:44:14  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+ 99  1405/07/19 19:44:29  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+100  1405/07/19 19:44:38  [wireless,info]  64:D1:54:83:74:4D@wlan1: failed to connect, on 5320/20-Ce/an, association timeout
+101  1405/07/19 19:44:49  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+102  1405/07/19 20:05:36  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+103  1405/07/19 20:05:45  [wireless,info]  64:D1:54:83:74:4D@wlan1: failed to connect, on 5320/20-Ce/an, association timeout
+104  1405/07/19 20:05:56  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+105  1405/07/20 03:19:23  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+106  1405/07/20 03:19:34  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+107  1405/07/20 03:39:36  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+108  1405/07/20 03:39:47  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+109  1405/07/20 04:27:53  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+110  1405/07/20 04:28:01  [wireless,info]  64:D1:54:83:74:4D@wlan1: failed to connect, on 5320/20-Ce/an, association timeout
+111  1405/07/20 04:28:12  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+112  1405/07/20 06:26:52  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+113  1405/07/20 06:27:03  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+114  1405/07/20 08:06:10  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+115  1405/07/20 08:06:18  [wireless,info]  64:D1:54:83:74:4D@wlan1: failed to connect, on 5320/20-Ce/an, association timeout
+116  1405/07/20 08:06:29  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+117  1405/07/20 21:49:53  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+118  1405/07/20 21:50:01  [wireless,info]  64:D1:54:83:74:4D@wlan1: failed to connect, on 5320/20-Ce/an, association timeout
+119  1405/07/20 21:50:12  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+120  1405/07/20 21:50:17  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+121  1405/07/20 21:50:26  [wireless,info]  64:D1:54:83:74:4D@wlan1: failed to connect, on 5320/20-Ce/an, association timeout
+122  1405/07/20 21:50:37  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+123  1405/07/20 23:54:32  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+124  1405/07/20 23:54:40  [wireless,info]  64:D1:54:83:74:4D@wlan1: failed to connect, on 5320/20-Ce/an, association timeout
+125  1405/07/20 23:54:51  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+126  1405/07/21 00:49:08  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+127  1405/07/21 00:49:19  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+128  1405/07/21 01:08:06  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+129  1405/07/21 01:08:14  [wireless,info]  64:D1:54:83:74:4D@wlan1: failed to connect, on 5320/20-Ce/an, association timeout
+130  1405/07/21 01:08:25  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+131  1405/07/21 03:32:13  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+132  1405/07/21 03:32:21  [wireless,info]  64:D1:54:83:74:4D@wlan1: failed to connect, on 5320/20-Ce/an, association timeout
+133  1405/07/21 03:32:32  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+134  1405/07/21 03:51:04  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+135  1405/07/21 03:51:13  [wireless,info]  64:D1:54:83:74:4D@wlan1: failed to connect, on 5320/20-Ce/an, association timeout
+136  1405/07/21 03:51:24  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+137  1405/07/21 06:30:53  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+138  1405/07/21 06:31:02  [wireless,info]  64:D1:54:83:74:4D@wlan1: failed to connect, on 5320/20-Ce/an, association timeout
+139  1405/07/21 06:31:13  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+140  1405/07/21 11:09:17  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+141  1405/07/21 11:09:21  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+142  1405/07/21 11:25:53  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+143  1405/07/21 11:26:20  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+144  1405/07/21 12:00:45  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+145  1405/07/21 12:00:53  [wireless,info]  64:D1:54:83:74:4D@wlan1: failed to connect, on 5320/20-Ce/an, association timeout
+146  1405/07/21 12:01:04  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+147  1405/07/21 13:16:28  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+148  1405/07/21 13:16:48  [wireless,info]  64:D1:54:83:74:4D@wlan1: failed to connect, on 5320/20-Ce/an, association timeout
+149  1405/07/21 13:16:59  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+150  1405/07/21 13:33:11  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+151  1405/07/21 13:33:38  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+152  1405/07/21 13:54:41  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+153  1405/07/21 13:54:49  [wireless,info]  64:D1:54:83:74:4D@wlan1: failed to connect, on 5320/20-Ce/an, association timeout
+154  1405/07/21 13:55:00  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+155  1405/07/21 15:54:00  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+156  1405/07/21 15:54:11  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+157  1405/07/21 19:03:53  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+158  1405/07/21 19:04:02  [wireless,info]  64:D1:54:83:74:4D@wlan1: failed to connect, on 5320/20-Ce/an, association timeout
+159  1405/07/21 19:04:13  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+160  1405/07/21 19:04:18  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+161  1405/07/21 19:04:23  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+162  1405/07/21 19:04:28  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+163  1405/07/21 19:04:37  [wireless,info]  64:D1:54:83:74:4D@wlan1: failed to connect, on 5320/20-Ce/an, association timeout
+164  1405/07/21 19:04:54  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+165  1405/07/21 21:09:59  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+166  1405/07/21 21:10:08  [wireless,info]  64:D1:54:83:74:4D@wlan1: failed to connect, on 5320/20-Ce/an, association timeout
+167  1405/07/21 21:10:19  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+168  1405/07/21 21:10:24  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+169  1405/07/21 21:10:32  [wireless,info]  64:D1:54:83:74:4D@wlan1: failed to connect, on 5320/20-Ce/an, association timeout
+170  1405/07/21 21:10:43  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+171  1405/07/21 22:08:45  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+172  1405/07/21 22:08:59  [wireless,info]  64:D1:54:83:74:4D@wlan1: failed to connect, on 5320/20-Ce/an, association timeout
+173  1405/07/21 22:09:10  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+174  1405/07/21 23:03:52  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+175  1405/07/21 23:04:00  [wireless,info]  64:D1:54:83:74:4D@wlan1: failed to connect, on 5320/20-Ce/an, association timeout
+176  1405/07/21 23:04:11  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+177  1405/07/22 00:39:43  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+178  1405/07/22 00:39:57  [wireless,info]  64:D1:54:83:74:4D@wlan1: failed to connect, on 5320/20-Ce/an, association timeout
+179  1405/07/22 00:40:08  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+180  1405/07/22 01:28:54  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+181  1405/07/22 01:29:16  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+182  1405/07/22 01:51:08  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+183  1405/07/22 01:51:22  [wireless,info]  64:D1:54:83:74:4D@wlan1: failed to connect, on 5320/20-Ce/an, association timeout
+184  1405/07/22 01:51:33  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+185  1405/07/22 02:30:08  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+186  1405/07/22 02:30:30  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+187  1405/07/22 06:22:13  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+188  1405/07/22 06:22:24  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+189  1405/07/22 06:22:29  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+190  1405/07/22 06:22:37  [wireless,info]  64:D1:54:83:74:4D@wlan1: failed to connect, on 5320/20-Ce/an, association timeout
+191  1405/07/22 06:22:48  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+192  1405/07/22 09:07:03  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+193  1405/07/22 09:07:09  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+194  1405/07/22 09:07:14  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+195  1405/07/22 09:07:22  [wireless,info]  64:D1:54:83:74:4D@wlan1: failed to connect, on 5320/20-Ce/an, association timeout
+196  1405/07/22 09:07:33  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+197  1405/07/22 10:08:10  [wireless,info]  64:D1:54:83:74:4D@wlan1: lost connection, no beacons received
+198  1405/07/22 10:08:19  [wireless,info]  64:D1:54:83:74:4D@wlan1: failed to connect, on 5320/20-Ce/an, association timeout
+199  1405/07/22 10:08:30  [wireless,info]  64:D1:54:83:74:4D@wlan1 established connection on 5320000, SSID Foriat-Bargh
+200  1405/07/22 13:28:42  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  64:D1:54:52:DE:A8  (ether)
+wlan1  64:D1:54:52:DE:A9  (wlan)
+--- /ip arp ---
+ether1  64:69:BC:04:D8:21  (arp 172.29.5.253)
+wlan1  6C:3B:6B:0A:DD:FC  (arp 172.18.3.145)

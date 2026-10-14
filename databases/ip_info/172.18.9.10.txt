@@ -1,0 +1,109 @@
+IP: 172.18.9.10
+Collected at: 2026-10-14T10:24:18.618649+00:00
+source: RouterOS API
+identity: Khezr->22Bahman.AP
+device_type: AP
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=E4:8D:8C:7C:E4:EE
+  2  name=wlan1  type=wlan  running=true  mac=E4:8D:8C:7C:E4:EF
+  3  name=bridge1  type=bridge  running=true  mac=E4:8D:8C:7C:E4:EF
+  4  name=wds23  type=wds  running=true  mac=E4:8D:8C:7C:E4:EF
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=ap-bridge  ssid=KHZR22BHMN  band=5ghz-a/n  frequency=5580
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.9.10/29  interface=ether1  network=172.18.9.8
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.9.9  distance=1
+  2  dst=172.18.9.8/29  gw=bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=KhezrNabi-MK  address=172.18.9.9  interface=ether1,bridge1
+  2  identity=CL-22BHMN  address=172.18.9.11  interface=wds23,bridge1
+  3  identity=22Bahman-MK  address=172.18.9.12  interface=wds23,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:34:09
+# ساعت دستگاه (خام): 1978-08-24 07:09:53
+# افست اصلاحی (سرور − دستگاه): +421994:54:16
+  1  1405/07/21 09:36:47  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/21 09:36:49  [bridge,info]  "bridge1" mac address changed to E4:8D:8C:7C:E4:EF
+  3  1405/07/21 09:36:57  [wireless,info]  48:A9:8A:56:35:36@wlan1: connected, signal strength -51, wants WDS
+  4  1405/07/21 09:41:23  [interface,info]  ether1 link up (speed 1G, full duplex)
+  5  1405/07/21 09:41:47  [interface,info]  ether1 link down
+  6  1405/07/21 09:41:51  [interface,info]  ether1 link up (speed 1G, full duplex)
+  7  1405/07/21 12:46:32  [wireless,info]  48:A9:8A:56:35:36@wlan1: disconnected, extensive data loss
+  8  1405/07/21 12:47:03  [wireless,info]  48:A9:8A:56:35:36@wlan1: connected, signal strength -51, wants WDS
+  9  1405/07/21 22:37:11  [wireless,info]  48:A9:8A:56:35:36@wlan1: disconnected, extensive data loss
+ 10  1405/07/21 22:37:44  [wireless,info]  48:A9:8A:56:35:36@wlan1: connected, signal strength -64, wants WDS
+ 11  1405/07/22 02:27:41  [wireless,info]  48:A9:8A:56:35:36@wlan1: disconnected, received deauth: authentication not valid (2)
+ 12  1405/07/22 02:27:48  [wireless,info]  48:A9:8A:56:35:36@wlan1: connected, signal strength -76, wants WDS
+ 13  1405/07/22 02:29:42  [wireless,info]  48:A9:8A:56:35:36@wlan1: disconnected, extensive data loss
+ 14  1405/07/22 02:30:20  [wireless,info]  48:A9:8A:56:35:36@wlan1: connected, signal strength -78, wants WDS
+ 15  1405/07/22 02:30:21  [wireless,info]  48:A9:8A:56:35:36@wlan1: reassociating
+ 16  1405/07/22 02:30:21  [wireless,info]  48:A9:8A:56:35:36@wlan1: disconnected, ok
+ 17  1405/07/22 02:30:21  [wireless,info]  48:A9:8A:56:35:36@wlan1: connected, signal strength -78, wants WDS
+ 18  1405/07/22 02:42:56  [wireless,info]  48:A9:8A:56:35:36@wlan1: disconnected, extensive data loss
+ 19  1405/07/22 02:43:04  [wireless,info]  48:A9:8A:56:35:36@wlan1: connected, signal strength -79, wants WDS
+ 20  1405/07/22 02:44:06  [wireless,info]  48:A9:8A:56:35:36@wlan1: disconnected, extensive data loss
+ 21  1405/07/22 02:44:46  [wireless,info]  48:A9:8A:56:35:36@wlan1: connected, signal strength -81, wants WDS
+ 22  1405/07/22 02:44:56  [wireless,info]  48:A9:8A:56:35:36@wlan1: disconnected, received deauth: authentication not valid (2)
+ 23  1405/07/22 02:45:51  [wireless,info]  48:A9:8A:56:35:36@wlan1: connected, signal strength -76, wants WDS
+ 24  1405/07/22 02:48:16  [wireless,info]  48:A9:8A:56:35:36@wlan1: disconnected, extensive data loss
+ 25  1405/07/22 02:48:24  [wireless,info]  48:A9:8A:56:35:36@wlan1: connected, signal strength -74, wants WDS
+ 26  1405/07/22 02:49:16  [wireless,info]  48:A9:8A:56:35:36@wlan1: disconnected, received deauth: authentication not valid (2)
+ 27  1405/07/22 02:49:19  [wireless,info]  48:A9:8A:56:35:36@wlan1: connected, signal strength -77, wants WDS
+ 28  1405/07/22 02:49:43  [wireless,info]  48:A9:8A:56:35:36@wlan1: disconnected, extensive data loss
+ 29  1405/07/22 02:49:58  [wireless,info]  48:A9:8A:56:35:36@wlan1: connected, signal strength -79, wants WDS
+ 30  1405/07/22 04:24:13  [wireless,info]  48:A9:8A:56:35:36@wlan1: disconnected, extensive data loss
+ 31  1405/07/22 04:24:20  [wireless,info]  48:A9:8A:56:35:36@wlan1: connected, signal strength -80, wants WDS
+ 32  1405/07/22 04:24:26  [wireless,info]  48:A9:8A:56:35:36@wlan1: disconnected, extensive data loss
+ 33  1405/07/22 04:24:37  [wireless,info]  48:A9:8A:56:35:36@wlan1: connected, signal strength -75, wants WDS
+ 34  1405/07/22 04:31:00  [wireless,info]  48:A9:8A:56:35:36@wlan1: disconnected, received deauth: authentication not valid (2)
+ 35  1405/07/22 04:31:07  [wireless,info]  48:A9:8A:56:35:36@wlan1: connected, signal strength -74, wants WDS
+ 36  1405/07/22 04:31:36  [wireless,info]  48:A9:8A:56:35:36@wlan1: disconnected, received deauth: authentication not valid (2)
+ 37  1405/07/22 04:31:45  [wireless,info]  48:A9:8A:56:35:36@wlan1: connected, signal strength -83, wants WDS
+ 38  1405/07/22 04:31:49  [wireless,info]  48:A9:8A:56:35:36@wlan1: disconnected, extensive data loss
+ 39  1405/07/22 04:31:55  [wireless,info]  48:A9:8A:56:35:36@wlan1: connected, signal strength -82, wants WDS
+ 40  1405/07/22 04:31:58  [wireless,info]  48:A9:8A:56:35:36@wlan1: disconnected, received deauth: authentication not valid (2)
+ 41  1405/07/22 04:32:32  [wireless,info]  48:A9:8A:56:35:36@wlan1: connected, signal strength -76, wants WDS
+ 42  1405/07/22 04:32:35  [wireless,info]  48:A9:8A:56:35:36@wlan1: disconnected, received deauth: authentication not valid (2)
+ 43  1405/07/22 04:32:42  [wireless,info]  48:A9:8A:56:35:36@wlan1: connected, signal strength -79, wants WDS
+ 44  1405/07/22 04:32:47  [wireless,info]  48:A9:8A:56:35:36@wlan1: disconnected, unicast key exchange timeout
+ 45  1405/07/22 04:32:53  [wireless,info]  48:A9:8A:56:35:36@wlan1: connected, signal strength -78, wants WDS
+ 46  1405/07/22 04:32:57  [wireless,info]  48:A9:8A:56:35:36@wlan1: disconnected, received deauth: authentication not valid (2)
+ 47  1405/07/22 04:33:05  [wireless,info]  48:A9:8A:56:35:36@wlan1: connected, signal strength -84, wants WDS
+ 48  1405/07/22 04:33:08  [wireless,info]  48:A9:8A:56:35:36@wlan1: disconnected, extensive data loss
+ 49  1405/07/22 04:33:29  [wireless,info]  48:A9:8A:56:35:36@wlan1: connected, signal strength -78, wants WDS
+ 50  1405/07/22 04:33:34  [wireless,info]  48:A9:8A:56:35:36@wlan1: disconnected, extensive data loss
+ 51  1405/07/22 04:33:41  [wireless,info]  48:A9:8A:56:35:36@wlan1: connected, signal strength -74, wants WDS
+ 52  1405/07/22 04:44:51  [wireless,info]  48:A9:8A:56:35:36@wlan1: disconnected, received deauth: authentication not valid (2)
+ 53  1405/07/22 04:45:14  [wireless,info]  48:A9:8A:56:35:36@wlan1: connected, signal strength -79, wants WDS
+ 54  1405/07/22 04:45:35  [wireless,info]  48:A9:8A:56:35:36@wlan1: disconnected, extensive data loss
+ 55  1405/07/22 04:45:39  [wireless,info]  48:A9:8A:56:35:36@wlan1: connected, signal strength -77, wants WDS
+ 56  1405/07/22 04:46:37  [wireless,info]  48:A9:8A:56:35:36@wlan1: disconnected, extensive data loss
+ 57  1405/07/22 04:46:47  [wireless,info]  48:A9:8A:56:35:36@wlan1: connected, signal strength -83, wants WDS
+ 58  1405/07/22 04:47:27  [wireless,info]  48:A9:8A:56:35:36@wlan1: disconnected, extensive data loss
+ 59  1405/07/22 04:47:53  [wireless,info]  48:A9:8A:56:35:36@wlan1: connected, signal strength -74, wants WDS
+ 60  1405/07/22 07:31:28  [wireless,info]  48:A9:8A:56:35:36@wlan1: disconnected, extensive data loss
+ 61  1405/07/22 07:31:59  [wireless,info]  48:A9:8A:56:35:36@wlan1: connected, signal strength -43, wants WDS
+ 62  1405/07/22 10:54:13  [wireless,info]  48:A9:8A:56:35:36@wlan1: disconnected, extensive data loss
+ 63  1405/07/22 10:54:44  [wireless,info]  48:A9:8A:56:35:36@wlan1: connected, signal strength -53, wants WDS
+ 64  1405/07/22 13:34:08  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  E4:8D:8C:7C:E4:EE  (ether)
+wlan1  E4:8D:8C:7C:E4:EF  (wlan)
+bridge1  E4:8D:8C:7C:E4:EF  (bridge)
+wds23  E4:8D:8C:7C:E4:EF  (wds)
+--- /ip arp ---
+bridge1  6C:3B:6B:85:AC:AF  (arp 172.18.9.9)

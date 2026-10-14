@@ -1,0 +1,129 @@
+IP: 172.18.4.103
+Collected at: 2026-10-14T10:24:01.024851+00:00
+source: RouterOS API
+identity: MikroTik
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=E4:8D:8C:61:6B:AE
+  2  name=wlan1  type=wlan  running=true  mac=E4:8D:8C:61:6B:AF
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=AbadanSetad-JamshidAbad  band=5ghz-a/n  frequency=5320
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.4.103/28  interface=wlan1  network=172.18.4.96
+  2  address=172.18.6.65/26  interface=ether1  network=172.18.6.64
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.4.97  distance=1
+  2  dst=172.18.4.96/28  gw=wlan1  distance=0
+  3  dst=172.18.6.64/26  gw=ether1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=AbadanSetad-JamshidAbad.AP  address=172.18.4.98  interface=wlan1
+  2  identity=SW-Wireless3.test.local  address=172.19.1.51  interface=wlan1
+  3  identity=Switch  address=172.18.6.122  interface=ether1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:31:11
+# ساعت دستگاه (خام): 1970-01-14 01:15:06
+# افست اصلاحی (سرور − دستگاه): +497456:46:05
+  1  1405/07/20 12:16:24  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/20 12:17:13  [wireless,info]  48:8F:5A:1C:31:66@wlan1 established connection on 5320000, SSID AbadanSetad-JamshidAbad
+  3  1405/07/20 12:22:03  [interface,info]  ether1 link up (speed 100M, full duplex)
+  4  1405/07/20 12:22:35  [dhcp,info]  server_dhcp1 deassigned 172.18.6.122 from 50:1C:B0:A0:D6:40
+  5  1405/07/20 12:22:35  [dhcp,info]  server_dhcp1 assigned 172.18.6.122 to 50:1C:B0:A0:D6:40
+  6  1405/07/20 12:22:47  [dhcp,info]  server_dhcp1 deassigned 172.18.6.116 from C4:E9:84:00:7A:DC
+  7  1405/07/20 12:22:47  [dhcp,info]  server_dhcp1 assigned 172.18.6.116 to C4:E9:84:00:7A:DC
+  8  1405/07/20 12:22:50  [dhcp,info]  server_dhcp1 deassigned 172.18.6.110 from F0:2F:74:F9:B9:ED
+  9  1405/07/20 12:22:50  [dhcp,info]  server_dhcp1 assigned 172.18.6.110 to F0:2F:74:F9:B9:ED
+ 10  1405/07/20 12:22:58  [dhcp,info]  server_dhcp1 assigned 172.18.6.111 to 40:8D:5C:96:90:F0
+ 11  1405/07/20 12:23:25  [dhcp,info]  server_dhcp1 deassigned 172.18.6.113 from 00:17:6F:38:C4:4D
+ 12  1405/07/20 12:23:25  [dhcp,info]  server_dhcp1 assigned 172.18.6.113 to 00:17:6F:38:C4:4D
+ 13  1405/07/20 12:52:53  [dhcp,info]  server_dhcp1 deassigned 172.18.6.114 from 00:17:6F:63:07:47
+ 14  1405/07/20 12:52:53  [dhcp,info]  server_dhcp1 assigned 172.18.6.114 to 00:17:6F:63:07:47
+ 15  1405/07/20 17:43:10  [dhcp,info]  server_dhcp1 deassigned 172.18.6.126 from 18:C0:4D:11:16:D5
+ 16  1405/07/20 17:52:46  [dhcp,info]  server_dhcp1 deassigned 172.18.6.119 from E0:D5:5E:55:A2:3A
+ 17  1405/07/20 17:52:50  [dhcp,info]  server_dhcp1 deassigned 172.18.6.110 from F0:2F:74:F9:B9:ED
+ 18  1405/07/20 17:52:58  [dhcp,info]  server_dhcp1 deassigned 172.18.6.111 from 40:8D:5C:96:90:F0
+ 19  1405/07/20 17:53:25  [dhcp,info]  server_dhcp1 deassigned 172.18.6.113 from 00:17:6F:38:C4:4D
+ 20  1405/07/20 18:22:53  [dhcp,info]  server_dhcp1 deassigned 172.18.6.114 from 00:17:6F:63:07:47
+ 21  1405/07/21 07:38:30  [dhcp,info]  server_dhcp1 assigned 172.18.6.123 to 74:D4:35:20:10:CA
+ 22  1405/07/21 08:08:03  [dhcp,info]  server_dhcp1 assigned 172.18.6.113 to 00:17:6F:38:C4:4D
+ 23  1405/07/21 08:08:16  [dhcp,info]  server_dhcp1 assigned 172.18.6.109 to 1C:1B:0D:3D:A4:AD
+ 24  1405/07/21 08:08:31  [dhcp,info]  server_dhcp1 assigned 172.18.6.114 to 00:17:6F:63:07:47
+ 25  1405/07/21 08:08:43  [dhcp,info]  server_dhcp1 assigned 172.18.6.119 to E0:D5:5E:55:A2:3A
+ 26  1405/07/21 08:13:16  [dhcp,info]  server_dhcp1 assigned 172.18.6.111 to 40:8D:5C:96:90:F0
+ 27  1405/07/21 08:17:19  [dhcp,info]  server_dhcp1 assigned 172.18.6.115 to 74:D4:35:D8:57:C7
+ 28  1405/07/21 08:30:16  [dhcp,info]  server_dhcp1 assigned 172.18.6.120 to 18:C0:4D:11:17:04
+ 29  1405/07/21 08:31:11  [dhcp,info]  server_dhcp1 assigned 172.18.6.108 to 40:8D:5C:93:C6:79
+ 30  1405/07/21 08:35:15  [dhcp,info]  server_dhcp1 assigned 172.18.6.126 to 18:C0:4D:11:16:D5
+ 31  1405/07/21 09:32:12  [dhcp,info]  server_dhcp1 deassigned 172.18.6.111 from 40:8D:5C:96:90:F0
+ 32  1405/07/21 09:32:12  [dhcp,info]  server_dhcp1 assigned 172.18.6.111 to 40:8D:5C:96:90:F0
+ 33  1405/07/21 11:12:30  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 34  1405/07/21 11:12:32  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 35  1405/07/21 11:39:54  [dhcp,info]  server_dhcp1 assigned 172.18.6.107 to B0:82:E2:3C:C9:A5
+ 36  1405/07/21 11:53:39  [dhcp,info]  server_dhcp1 deassigned 172.18.6.107 from B0:82:E2:3C:C9:A5
+ 37  1405/07/21 11:53:39  [dhcp,info]  server_dhcp1 assigned 172.18.6.107 to B0:82:E2:3C:C9:A5
+ 38  1405/07/21 11:57:03  [dhcp,info]  server_dhcp1 deassigned 172.18.6.107 from B0:82:E2:3C:C9:A5
+ 39  1405/07/21 11:57:03  [dhcp,info]  server_dhcp1 assigned 172.18.6.107 to B0:82:E2:3C:C9:A5
+ 40  1405/07/21 12:00:30  [dhcp,info]  server_dhcp1 deassigned 172.18.6.107 from B0:82:E2:3C:C9:A5
+ 41  1405/07/21 12:00:30  [dhcp,info]  server_dhcp1 assigned 172.18.6.107 to B0:82:E2:3C:C9:A5
+ 42  1405/07/21 12:37:17  [interface,info]  ether1 link down
+ 43  1405/07/21 12:37:19  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 44  1405/07/21 12:37:20  [interface,info]  ether1 link down
+ 45  1405/07/21 12:37:22  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 46  1405/07/21 12:37:23  [interface,info]  ether1 link down
+ 47  1405/07/21 12:37:24  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 48  1405/07/21 12:37:25  [interface,info]  ether1 link down
+ 49  1405/07/21 12:37:27  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 50  1405/07/21 12:37:28  [interface,info]  ether1 link down
+ 51  1405/07/21 12:37:29  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 52  1405/07/21 12:37:30  [interface,info]  ether1 link down
+ 53  1405/07/21 12:37:32  [interface,info]  ether1 link up (speed 10M, full duplex)
+ 54  1405/07/21 14:24:13  [dhcp,info]  server_dhcp1 deassigned 172.18.6.125 from 00:17:6F:5B:DF:63
+ 55  1405/07/21 15:02:12  [dhcp,info]  server_dhcp1 deassigned 172.18.6.111 from 40:8D:5C:96:90:F0
+ 56  1405/07/21 15:52:47  [dhcp,info]  server_dhcp1 deassigned 172.18.6.116 from C4:E9:84:00:7A:DC
+ 57  1405/07/21 15:53:29  [dhcp,info]  server_dhcp1 deassigned 172.18.6.123 from 74:D4:35:20:10:CA
+ 58  1405/07/21 16:23:04  [dhcp,info]  server_dhcp1 deassigned 172.18.6.113 from 00:17:6F:38:C4:4D
+ 59  1405/07/21 16:32:19  [dhcp,info]  server_dhcp1 deassigned 172.18.6.115 from 74:D4:35:D8:57:C7
+ 60  1405/07/21 16:45:15  [dhcp,info]  server_dhcp1 deassigned 172.18.6.120 from 18:C0:4D:11:17:04
+ 61  1405/07/21 16:46:10  [dhcp,info]  server_dhcp1 deassigned 172.18.6.108 from 40:8D:5C:93:C6:79
+ 62  1405/07/21 16:50:15  [dhcp,info]  server_dhcp1 deassigned 172.18.6.126 from 18:C0:4D:11:16:D5
+ 63  1405/07/21 17:30:30  [dhcp,info]  server_dhcp1 deassigned 172.18.6.107 from B0:82:E2:3C:C9:A5
+ 64  1405/07/21 17:46:01  [dhcp,info]  server_dhcp1 deassigned 172.18.6.114 from 00:17:6F:63:07:47
+ 65  1405/07/21 18:02:02  [dhcp,info]  server_dhcp1 deassigned 172.18.6.119 from E0:D5:5E:55:A2:3A
+ 66  1405/07/21 18:15:11  [dhcp,info]  server_dhcp1 deassigned 172.18.6.109 from 1C:1B:0D:3D:A4:AD
+ 67  1405/07/22 07:47:32  [dhcp,info]  server_dhcp1 assigned 172.18.6.123 to 74:D4:35:20:10:CA
+ 68  1405/07/22 07:57:13  [dhcp,info]  server_dhcp1 assigned 172.18.6.124 to A0:36:BC:2B:19:B6
+ 69  1405/07/22 08:09:43  [dhcp,info]  server_dhcp1 assigned 172.18.6.119 to E0:D5:5E:55:A2:3A
+ 70  1405/07/22 08:09:52  [dhcp,info]  server_dhcp1 assigned 172.18.6.109 to 1C:1B:0D:3D:A4:AD
+ 71  1405/07/22 08:10:01  [dhcp,info]  server_dhcp1 assigned 172.18.6.115 to 74:D4:35:D8:57:C7
+ 72  1405/07/22 08:11:22  [dhcp,info]  server_dhcp1 assigned 172.18.6.108 to 40:8D:5C:93:C6:79
+ 73  1405/07/22 08:17:19  [dhcp,info]  server_dhcp1 assigned 172.18.6.111 to 40:8D:5C:96:90:F0
+ 74  1405/07/22 08:27:37  [dhcp,info]  server_dhcp1 assigned 172.18.6.107 to B0:82:E2:3C:C9:A5
+ 75  1405/07/22 08:31:39  [dhcp,info]  server_dhcp1 assigned 172.18.6.120 to 18:C0:4D:11:17:04
+ 76  1405/07/22 08:38:46  [dhcp,info]  server_dhcp1 assigned 172.18.6.114 to 00:17:6F:63:07:47
+ 77  1405/07/22 08:38:49  [dhcp,info]  server_dhcp1 assigned 172.18.6.113 to 00:17:6F:38:C4:4D
+ 78  1405/07/22 08:41:17  [dhcp,info]  server_dhcp1 assigned 172.18.6.116 to C4:E9:84:00:7A:DC
+ 79  1405/07/22 08:50:40  [dhcp,info]  server_dhcp1 assigned 172.18.6.126 to 18:C0:4D:11:16:D5
+ 80  1405/07/22 09:14:38  [dhcp,info]  server_dhcp1 deassigned 172.18.6.116 from C4:E9:84:00:7A:DC
+ 81  1405/07/22 09:14:38  [dhcp,info]  server_dhcp1 assigned 172.18.6.116 to C4:E9:84:00:7A:DC
+ 82  1405/07/22 10:19:10  [dhcp,info]  server_dhcp1 assigned 172.18.6.125 to 00:17:6F:5B:DF:63
+ 83  1405/07/22 13:31:09  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  E4:8D:8C:61:6B:AE  (ether)
+wlan1  E4:8D:8C:61:6B:AF  (wlan)
+--- /ip arp ---
+wlan1  10:8C:CF:33:51:61  (arp 172.18.4.97)
+ether1  50:1C:B0:A0:D6:40  (arp 172.18.6.122)
+ether1  E0:D5:5E:55:A2:3A  (arp 172.18.6.119)
+ether1  18:C0:4D:11:17:04  (arp 172.18.6.120)

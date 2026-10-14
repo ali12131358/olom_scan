@@ -1,0 +1,62 @@
+IP: 172.29.209.161
+Collected at: 2026-10-14T10:25:30.261508+00:00
+source: RouterOS API
+identity: Soeichi->Sobeh1.Client
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=4C:5E:0C:A7:F6:32
+  2  name=wlan1  type=wlan  running=true  mac=4C:5E:0C:A7:F6:33
+  3  name=bridge1  type=bridge  running=true  mac=4C:5E:0C:A7:F6:32
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=SVCHSBH1  band=5ghz-a/n  frequency=auto
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.29.209.161/27  interface=ether1  network=172.29.209.160
+  2  address=172.18.26.107/28  interface=wlan1  network=172.18.26.96
+  3  address=172.29.209.161/27  interface=bridge1  network=172.29.209.160
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.26.105  distance=1
+  2  dst=172.18.26.96/28  gw=wlan1  distance=0
+  3  dst=172.29.209.160/27  gw=bridge1,bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=MK_Soeichi  address=172.18.26.105  interface=wlan1
+  2  identity=Soeichi->Sobeh1.AP  address=172.18.26.106  interface=wlan1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:47:03
+# ساعت دستگاه (خام): 2023-05-30 03:02:26
+# افست اصلاحی (سرور − دستگاه): +29599:14:37
+  1  1405/07/22 11:44:28  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/22 11:44:29  [bridge,info]  "bridge1" mac address changed to 4C:5E:0C:A7:F6:32
+  3  1405/07/22 11:44:29  [bridge,info]  hardware offloading activated on bridge "bridge1" ports: ether1
+  4  1405/07/22 11:44:29  [interface,info]  ether1 link up (speed 100M, full duplex)
+  5  1405/07/22 11:47:30  [wireless,info]  6C:3B:6B:94:8C:7C@wlan1 established connection on 5280000, SSID SVCHSBH1
+  6  1405/07/22 12:04:59  [dhcp,info]  dhcp1 deassigned 172.29.209.189 from A0:36:BC:34:77:76
+  7  1405/07/22 20:52:50  [wireless,info]  6C:3B:6B:94:8C:7C@wlan1: lost connection, not polled for too long
+  8  1405/07/22 20:52:56  [wireless,info]  6C:3B:6B:94:8C:7C@wlan1 established connection on 5280000, SSID SVCHSBH1
+  9  1405/07/23 00:23:40  [wireless,info]  6C:3B:6B:94:8C:7C@wlan1: lost connection, not polled for too long
+ 10  1405/07/23 00:23:47  [wireless,info]  6C:3B:6B:94:8C:7C@wlan1 established connection on 5280000, SSID SVCHSBH1
+ 11  1405/07/23 02:34:40  [wireless,info]  6C:3B:6B:94:8C:7C@wlan1: lost connection, not polled for too long
+ 12  1405/07/23 02:34:45  [wireless,info]  6C:3B:6B:94:8C:7C@wlan1 established connection on 5280000, SSID SVCHSBH1
+ 13  1405/07/23 08:14:40  [wireless,info]  6C:3B:6B:94:8C:7C@wlan1: lost connection, not polled for too long
+ 14  1405/07/23 08:14:45  [wireless,info]  6C:3B:6B:94:8C:7C@wlan1 established connection on 5280000, SSID SVCHSBH1
+ 15  1405/07/22 13:26:12  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 16  1405/07/22 13:26:14  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 17  1405/07/22 13:47:02  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  4C:5E:0C:A7:F6:32  (ether)
+wlan1  4C:5E:0C:A7:F6:33  (wlan)
+bridge1  4C:5E:0C:A7:F6:32  (bridge)
+--- /ip arp ---
+wlan1  6C:3B:6B:2B:BA:16  (arp 172.18.26.105)

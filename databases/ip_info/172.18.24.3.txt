@@ -1,0 +1,51 @@
+IP: 172.18.24.3
+Collected at: 2026-10-14T10:23:08.301500+00:00
+source: RouterOS API
+identity: Shabakeh->Jafal.Client
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=6C:3B:6B:3C:BB:45
+  2  name=wlan1  type=wlan  running=true  mac=6C:3B:6B:3C:BB:46
+  3  name=bridge1  type=bridge  running=true  mac=6C:3B:6B:3C:BB:46
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=SHBKJFL  band=5ghz-a/n  frequency=5580
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.24.3/29  interface=bridge1  network=172.18.24.0
+  2  address=192.168.111.2/30  interface=wlan1  network=192.168.111.0
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.24.1  distance=1
+  2  dst=172.18.24.0/29  gw=bridge1  distance=0
+  3  dst=192.168.111.0/30  gw=bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=MK_Jafal  address=172.18.24.4  interface=ether1,bridge1
+  2  identity=R2SH  address=-  interface=wlan1,bridge1
+  3  identity=RB-UMS-SHDGN-CoreRouter  address=172.18.24.1  interface=wlan1,bridge1
+  4  identity=Shabakeh->Jafal.AP  address=192.168.111.1  interface=wlan1,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:19:17
+# ساعت دستگاه (خام): 2025-04-01 14:43:38
+# افست اصلاحی (سرور − دستگاه): +13459:05:39
+  1  1405/07/22 08:56:39  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/22 08:56:43  [bridge,info]  "bridge1" mac address changed to 6C:3B:6B:3C:BB:46
+  3  1405/07/22 08:56:49  [interface,info]  ether1 link up (speed 100M, full duplex)
+  4  1405/07/22 08:57:35  [wireless,info]  6C:3B:6B:3C:BB:54@wlan1 established connection on 5210000, SSID SHBKJFL
+  5  1405/07/22 13:19:16  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  6C:3B:6B:3C:BB:45  (ether)
+wlan1  6C:3B:6B:3C:BB:46  (wlan)
+bridge1  6C:3B:6B:3C:BB:46  (bridge)
+--- /ip arp ---
+bridge1  64:D1:54:98:E3:2E  (arp 172.18.24.1)

@@ -1,0 +1,54 @@
+IP: 172.18.9.210
+Collected at: 2026-10-14T10:24:29.417890+00:00
+source: RouterOS API
+identity: Abadan-22Bahman2
+device_type: AP
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=6C:3B:6B:4E:0E:FC
+  2  name=VAP_OLD  type=wlan  running=false  mac=6E:3B:6B:4E:0E:FD
+  3  name=wlan1  type=wlan  running=true  mac=6C:3B:6B:4E:0E:FD
+  4  name=bridge1  type=bridge  running=true  mac=6C:3B:6B:4E:0E:FD
+
+----- wireless -----
+=== /interface wireless ===
+name=VAP_OLD  mode=ap-bridge  ssid=Abadan-22Bahman2  band=-  frequency=-
+name=wlan1  mode=ap-bridge  ssid=Abadan-22Bahman2  band=5ghz-a/n  frequency=5745
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.9.210/28  interface=ether1  network=172.18.9.208
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.9.209  distance=1
+  2  dst=172.18.9.208/28  gw=bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=22Bahman-MK  address=172.18.9.209  interface=ether1,bridge1
+  2  identity=NaghshehNasar  address=172.18.9.211  interface=wlan1,bridge1
+  3  identity=AlboSeyd.Client  address=172.18.9.212  interface=wlan1,bridge1
+  4  identity=AlboHamid.Client  address=172.18.9.213  interface=wlan1,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:35:48
+# ساعت دستگاه (خام): 1974-10-03 17:04:26
+# افست اصلاحی (سرور − دستگاه): +456089:01:22
+  1  1405/07/22 10:54:27  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/22 10:54:29  [bridge,info]  "bridge1" mac address changed to 6C:3B:6B:4E:0E:FD
+  3  1405/07/22 10:54:32  [wireless,info]  6C:3B:6B:34:02:57@wlan1: connected, signal strength -50, wants bridge
+  4  1405/07/22 10:54:36  [wireless,info]  6C:3B:6B:74:E2:96@wlan1: connected, signal strength -61, wants bridge
+  5  1405/07/22 10:54:36  [wireless,info]  6C:3B:6B:34:02:51@wlan1: connected, signal strength -62, wants bridge
+  6  1405/07/22 10:54:49  [interface,info]  ether1 link up (speed 100M, full duplex)
+  7  1405/07/22 13:35:47  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  6C:3B:6B:4E:0E:FC  (ether)
+VAP_OLD  6E:3B:6B:4E:0E:FD  (wlan)
+wlan1  6C:3B:6B:4E:0E:FD  (wlan)
+bridge1  6C:3B:6B:4E:0E:FD  (bridge)
+--- /ip arp ---
+bridge1  E4:8D:8C:0E:6E:41  (arp 172.18.9.209)

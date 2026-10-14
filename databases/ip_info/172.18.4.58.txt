@@ -1,0 +1,235 @@
+IP: 172.18.4.58
+Collected at: 2026-10-14T10:24:05.797054+00:00
+source: RouterOS API
+identity: ShahidSadeghiyan- AP
+device_type: AP
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=B8:69:F4:D1:EE:3C
+  2  name=wlan1  type=wlan  running=true  mac=B8:69:F4:D1:EE:3D
+  3  name=bridge1  type=bridge  running=true  mac=B8:69:F4:D1:EE:3D
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=bridge  ssid=MarkazLine15  band=5ghz-a/n  frequency=5260
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.4.58/29  interface=ether1  network=172.18.4.56
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.4.57  distance=1
+  2  dst=172.18.4.56/29  gw=bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=MarkazLine15.Client  address=172.18.4.59  interface=wlan1,bridge1
+  2  identity=R1B  address=172.18.4.60  interface=wlan1,bridge1
+  3  identity=SW-Wireless3.test.local  address=172.19.1.51  interface=ether1,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:32:08
+# ساعت دستگاه (خام): 1976-02-05 15:50:06
+# افست اصلاحی (سرور − دستگاه): +444330:12:02
+  1  1405/03/05 12:22:54  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/03/05 12:22:57  [bridge,info]  "bridge1" mac address changed to B8:69:F4:D1:EE:3D
+  3  1405/03/05 12:23:02  [bridge,info]  hardware offloading activated on bridge "bridge1" ports: ether1
+  4  1405/03/05 12:23:02  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: connected, signal strength -44, wants bridge
+  5  1405/03/05 12:26:30  [interface,info]  ether1 link up (speed 100M, full duplex)
+  6  1405/03/12 11:18:59  [system,info,account]  user garnaf logged in from 172.29.40.4 via winbox
+  7  1405/03/12 11:24:55  [system,info]  filter rule removed by garnaf
+  8  1405/03/12 11:24:55  [system,info]  filter rule removed by garnaf
+  9  1405/03/12 11:24:55  [system,info]  filter rule removed by garnaf
+ 10  1405/03/12 11:24:55  [system,info]  filter rule removed by garnaf
+ 11  1405/03/12 11:24:55  [system,info]  filter rule removed by garnaf
+ 12  1405/03/12 11:24:55  [system,info]  filter rule removed by garnaf
+ 13  1405/03/12 11:24:55  [system,info]  filter rule removed by garnaf
+ 14  1405/03/12 11:24:55  [system,info]  filter rule removed by garnaf
+ 15  1405/03/12 11:24:55  [system,info]  filter rule removed by garnaf
+ 16  1405/03/12 11:24:55  [system,info]  filter rule removed by garnaf
+ 17  1405/03/12 11:24:55  [system,info]  filter rule removed by garnaf
+ 18  1405/03/12 11:24:55  [system,info]  filter rule removed by garnaf
+ 19  1405/03/12 11:24:55  [system,info]  filter rule removed by garnaf
+ 20  1405/03/12 11:38:31  [system,info,account]  user garnaf logged out from 172.29.40.4 via winbox
+ 21  1405/03/13 09:45:30  [interface,info]  ether1 link down
+ 22  1405/03/13 09:45:32  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 23  1405/03/23 18:31:18  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: disconnected, too many poll timeouts, signal strength -47
+ 24  1405/03/23 18:37:13  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: connected, signal strength -43, wants bridge
+ 25  1405/03/24 11:18:51  [interface,info]  ether1 link down
+ 26  1405/03/24 11:18:53  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 27  1405/03/24 11:40:51  [interface,info]  ether1 link down
+ 28  1405/03/24 11:40:53  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 29  1405/03/24 12:05:22  [interface,info]  ether1 link down
+ 30  1405/03/24 12:05:24  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 31  1405/03/24 12:06:04  [interface,info]  ether1 link down
+ 32  1405/03/24 12:06:06  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 33  1405/03/28 17:34:00  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: disconnected, too many poll timeouts, signal strength -46
+ 34  1405/03/28 17:55:00  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: connected, signal strength -45, wants bridge
+ 35  1405/03/31 11:11:41  [interface,info]  ether1 link down
+ 36  1405/03/31 11:11:43  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 37  1405/03/31 17:29:01  [interface,info]  ether1 link down
+ 38  1405/03/31 17:29:03  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 39  1405/04/13 10:13:03  [interface,info]  ether1 link down
+ 40  1405/04/13 10:13:05  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 41  1405/04/13 11:54:46  [interface,info]  ether1 link down
+ 42  1405/04/13 11:54:48  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 43  1405/04/21 13:05:58  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: disconnected, too many poll timeouts, signal strength -45
+ 44  1405/04/21 15:07:58  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: connected, signal strength -45, wants bridge
+ 45  1405/04/23 13:10:25  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: disconnected, too many poll timeouts, signal strength -45
+ 46  1405/04/23 15:04:52  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: connected, signal strength -43, wants bridge
+ 47  1405/04/24 15:04:54  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: disconnected, too many poll timeouts, signal strength -47
+ 48  1405/04/24 17:06:43  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: connected, signal strength -43, wants bridge
+ 49  1405/04/28 12:08:41  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: disconnected, too many poll timeouts, signal strength -43
+ 50  1405/04/28 14:01:31  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: connected, signal strength -41, wants bridge
+ 51  1405/04/28 17:25:52  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: disconnected, too many poll timeouts, signal strength -41
+ 52  1405/04/28 17:30:51  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: connected, signal strength -43, wants bridge
+ 53  1405/04/28 23:55:15  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: disconnected, too many poll timeouts, signal strength -43
+ 54  1405/04/28 23:59:41  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: connected, signal strength -45, wants bridge
+ 55  1405/04/29 10:01:52  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: disconnected, too many poll timeouts, signal strength -45
+ 56  1405/04/29 10:41:01  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: connected, signal strength -41, wants bridge
+ 57  1405/05/04 13:55:56  [system,info,account]  user garnaf logged in from 172.18.4.76 via ssh
+ 58  1405/05/04 13:55:57  [system,info,account]  user garnaf logged out from 172.18.4.76 via ssh
+ 59  1405/05/04 14:00:07  [system,info,account]  user garnaf logged in from 172.18.4.76 via ssh
+ 60  1405/05/04 14:00:07  [system,info,account]  user garnaf logged out from 172.18.4.76 via ssh
+ 61  1405/05/04 14:19:15  [system,info,account]  user garnaf logged in from 172.18.4.76 via ssh
+ 62  1405/05/04 14:19:15  [system,info,account]  user garnaf logged out from 172.18.4.76 via ssh
+ 63  1405/05/04 14:24:22  [system,info,account]  user garnaf logged in from 172.18.4.76 via ssh
+ 64  1405/05/04 14:24:22  [system,info,account]  user garnaf logged out from 172.18.4.76 via ssh
+ 65  1405/05/04 14:38:01  [system,info,account]  user garnaf logged in from 172.18.4.76 via ssh
+ 66  1405/05/04 14:38:01  [system,info,account]  user garnaf logged out from 172.18.4.76 via ssh
+ 67  1405/05/04 14:45:50  [system,info,account]  user garnaf logged in from 172.18.4.76 via ssh
+ 68  1405/05/04 14:45:50  [system,info,account]  user garnaf logged out from 172.18.4.76 via ssh
+ 69  1405/05/04 14:47:45  [system,info,account]  user garnaf logged in from 172.18.4.76 via ssh
+ 70  1405/05/04 14:47:45  [system,info,account]  user garnaf logged out from 172.18.4.76 via ssh
+ 71  1405/05/04 14:50:53  [system,info,account]  user garnaf logged in from 172.18.4.76 via ssh
+ 72  1405/05/04 14:50:53  [system,info,account]  user garnaf logged out from 172.18.4.76 via ssh
+ 73  1405/05/05 13:03:58  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: disconnected, too many poll timeouts, signal strength -45
+ 74  1405/05/05 15:06:07  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: connected, signal strength -42, wants bridge
+ 75  1405/05/11 10:52:56  [interface,info]  ether1 link down
+ 76  1405/05/11 10:52:58  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 77  1405/05/11 11:08:13  [interface,info]  ether1 link down
+ 78  1405/05/11 11:08:15  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 79  1405/05/11 11:09:56  [interface,info]  ether1 link down
+ 80  1405/05/11 11:09:58  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 81  1405/05/11 11:15:42  [interface,info]  ether1 link down
+ 82  1405/05/11 11:15:44  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 83  1405/05/17 12:02:49  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: disconnected, too many poll timeouts, signal strength -45
+ 84  1405/05/17 14:05:44  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: connected, signal strength -46, wants bridge
+ 85  1405/05/19 16:05:01  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: disconnected, too many poll timeouts, signal strength -49
+ 86  1405/05/19 18:05:57  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: connected, signal strength -41, wants bridge
+ 87  1405/05/21 10:03:43  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: disconnected, too many poll timeouts, signal strength -45
+ 88  1405/05/21 11:02:27  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: connected, signal strength -41, wants bridge
+ 89  1405/05/24 09:04:17  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: disconnected, too many poll timeouts, signal strength -48
+ 90  1405/05/24 10:20:07  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: connected, signal strength -42, wants bridge
+ 91  1405/05/24 10:46:00  [interface,info]  ether1 link down
+ 92  1405/05/24 10:46:02  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 93  1405/05/24 11:05:05  [interface,info]  ether1 link down
+ 94  1405/05/24 11:05:07  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 95  1405/05/24 11:06:59  [interface,info]  ether1 link down
+ 96  1405/05/24 11:07:01  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 97  1405/05/24 11:08:19  [interface,info]  ether1 link down
+ 98  1405/05/24 11:08:21  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 99  1405/05/24 11:14:45  [interface,info]  ether1 link down
+100  1405/05/24 11:14:47  [interface,info]  ether1 link up (speed 100M, full duplex)
+101  1405/05/24 11:16:06  [interface,info]  ether1 link down
+102  1405/05/24 11:16:08  [interface,info]  ether1 link up (speed 100M, full duplex)
+103  1405/05/24 11:39:41  [interface,info]  ether1 link down
+104  1405/05/24 11:39:43  [interface,info]  ether1 link up (speed 100M, full duplex)
+105  1405/05/25 10:44:22  [interface,info]  ether1 link down
+106  1405/05/25 10:44:24  [interface,info]  ether1 link up (speed 100M, full duplex)
+107  1405/05/26 11:01:58  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: disconnected, too many poll timeouts, signal strength -43
+108  1405/05/26 12:06:22  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: connected, signal strength -44, wants bridge
+109  1405/05/27 13:00:25  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: disconnected, too many poll timeouts, signal strength -44
+110  1405/05/27 14:04:48  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: connected, signal strength -43, wants bridge
+111  1405/05/28 15:03:51  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: disconnected, too many poll timeouts, signal strength -43
+112  1405/05/28 16:05:52  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: connected, signal strength -43, wants bridge
+113  1405/05/30 17:04:05  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: disconnected, too many poll timeouts, signal strength -45
+114  1405/05/30 18:05:38  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: connected, signal strength -43, wants bridge
+115  1405/05/31 19:04:13  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: disconnected, extensive data loss, signal strength -49
+116  1405/05/31 19:49:35  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: connected, signal strength -44, wants bridge
+117  1405/06/01 10:07:10  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: disconnected, too many poll timeouts, signal strength -47
+118  1405/06/01 11:03:52  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: connected, signal strength -43, wants bridge
+119  1405/06/01 11:19:16  [interface,info]  ether1 link down
+120  1405/06/01 11:19:18  [interface,info]  ether1 link up (speed 100M, full duplex)
+121  1405/06/01 12:11:24  [interface,info]  ether1 link down
+122  1405/06/01 12:11:26  [interface,info]  ether1 link up (speed 100M, full duplex)
+123  1405/06/02 05:00:06  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: disconnected, too many poll timeouts, signal strength -48
+124  1405/06/02 06:51:01  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: connected, signal strength -46, wants bridge
+125  1405/06/04 13:03:58  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: disconnected, too many poll timeouts, signal strength -47
+126  1405/06/04 14:05:30  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: connected, signal strength -42, wants bridge
+127  1405/06/05 15:03:57  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: disconnected, too many poll timeouts, signal strength -44
+128  1405/06/05 16:05:26  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: connected, signal strength -43, wants bridge
+129  1405/06/06 17:05:00  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: disconnected, too many poll timeouts, signal strength -44
+130  1405/06/06 18:05:25  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: connected, signal strength -44, wants bridge
+131  1405/06/07 08:52:05  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: disconnected, too many poll timeouts, signal strength -44
+132  1405/06/07 10:04:55  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: connected, signal strength -44, wants bridge
+133  1405/06/07 12:39:05  [interface,info]  ether1 link down
+134  1405/06/07 12:39:07  [interface,info]  ether1 link up (speed 100M, full duplex)
+135  1405/06/09 11:02:33  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: disconnected, too many poll timeouts, signal strength -44
+136  1405/06/09 12:02:51  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: connected, signal strength -42, wants bridge
+137  1405/06/10 13:03:52  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: disconnected, too many poll timeouts, signal strength -44
+138  1405/06/10 14:05:21  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: connected, signal strength -45, wants bridge
+139  1405/06/11 15:03:51  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: disconnected, too many poll timeouts, signal strength -47
+140  1405/06/11 16:05:19  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: connected, signal strength -44, wants bridge
+141  1405/06/16 15:03:44  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: disconnected, too many poll timeouts, signal strength -49
+142  1405/06/16 16:05:14  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: connected, signal strength -43, wants bridge
+143  1405/06/18 13:03:57  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: disconnected, too many poll timeouts, signal strength -45
+144  1405/06/18 14:05:11  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: connected, signal strength -43, wants bridge
+145  1405/06/28 09:54:08  [interface,info]  ether1 link down
+146  1405/06/28 09:54:10  [interface,info]  ether1 link up (speed 100M, full duplex)
+147  1405/06/28 09:57:29  [interface,info]  ether1 link down
+148  1405/06/28 09:57:31  [interface,info]  ether1 link up (speed 100M, full duplex)
+149  1405/07/05 12:11:52  [interface,info]  ether1 link down
+150  1405/07/05 12:11:54  [interface,info]  ether1 link up (speed 100M, full duplex)
+151  1405/07/11 13:54:09  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: disconnected, too many poll timeouts, signal strength -42
+152  1405/07/11 14:31:03  [wireless,info]  CC:2D:E0:86:6C:FD@wlan1: connected, signal strength -43, wants bridge
+153  1405/07/15 13:37:15  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+154  1405/07/15 13:37:15  [system,info]  changed snmp settings by garnaf
+155  1405/07/15 13:37:15  [system,info]  item changed by garnaf
+156  1405/07/15 13:37:15  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+157  1405/07/15 15:00:45  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+158  1405/07/15 15:00:45  [system,info]  user olom1 added by garnaf
+159  1405/07/15 15:00:45  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+160  1405/07/15 15:06:35  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+161  1405/07/15 15:06:35  [system,info]  user ums1 removed by garnaf
+162  1405/07/15 15:06:35  [system,info]  user ums2 removed by garnaf
+163  1405/07/15 15:06:35  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+164  1405/07/16 10:17:09  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+165  1405/07/16 10:17:10  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+166  1405/07/16 10:39:11  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+167  1405/07/16 10:39:12  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+168  1405/07/16 13:54:21  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+169  1405/07/16 13:54:22  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+170  1405/07/16 14:08:49  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+171  1405/07/16 14:08:49  [system,info]  changed snmp settings by garnaf
+172  1405/07/16 14:08:49  [system,info]  item changed by garnaf
+173  1405/07/16 14:08:49  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+174  1405/07/16 14:34:30  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+175  1405/07/16 14:34:31  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+176  1405/07/16 15:45:12  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+177  1405/07/16 15:45:13  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+178  1405/07/17 08:38:03  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+179  1405/07/17 08:38:05  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+180  1405/07/18 10:35:10  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+181  1405/07/18 10:35:11  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+182  1405/07/18 10:59:39  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+183  1405/07/18 10:59:39  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+184  1405/07/18 12:11:05  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+185  1405/07/18 12:11:05  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+186  1405/07/19 09:51:34  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+187  1405/07/19 09:51:38  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+188  1405/07/19 17:45:12  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+189  1405/07/19 17:45:13  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+190  1405/07/21 11:12:58  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+191  1405/07/21 11:13:00  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+192  1405/07/22 13:32:07  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  B8:69:F4:D1:EE:3C  (ether)
+wlan1  B8:69:F4:D1:EE:3D  (wlan)
+bridge1  B8:69:F4:D1:EE:3D  (bridge)
+--- /ip arp ---
+bridge1  10:8C:CF:33:51:5E  (arp 172.18.4.57)

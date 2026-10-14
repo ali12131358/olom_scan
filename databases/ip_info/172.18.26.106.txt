@@ -1,0 +1,55 @@
+IP: 172.18.26.106
+Collected at: 2026-10-14T10:23:32.603795+00:00
+source: RouterOS API
+identity: Soeichi->Sobeh1.AP
+device_type: AP
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=6C:3B:6B:94:8C:7B
+  2  name=wlan1  type=wlan  running=true  mac=6C:3B:6B:94:8C:7C
+  3  name=bridge1  type=bridge  running=true  mac=6C:3B:6B:94:8C:7B
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=ap-bridge  ssid=SVCHSBH1  band=5ghz-onlyn  frequency=5280
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.26.106/29  interface=ether1  network=172.18.26.104
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.26.105  distance=1
+  2  dst=172.18.26.104/29  gw=bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=MK_Soeichi  address=172.18.26.105  interface=ether1,bridge1
+  2  identity=Soeichi->Sobeh1.Client  address=172.18.26.107  interface=wlan1,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:26:12
+# ساعت دستگاه (خام): 2024-05-09 02:38:49
+# افست اصلاحی (سرور − دستگاه): +21319:17:23
+  1  1405/07/22 11:47:23  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/22 11:47:23  [bridge,info]  "bridge1" mac address changed to 6C:3B:6B:94:8C:7B
+  3  1405/07/22 11:47:25  [interface,info]  ether1 link up (speed 100M, full duplex)
+  4  1405/07/22 11:47:30  [wireless,info]  4C:5E:0C:A7:F6:33@wlan1: connected, signal strength -64, wants bridge
+  5  1405/07/22 20:52:49  [wireless,info]  4C:5E:0C:A7:F6:33@wlan1: disconnected, extensive data loss, signal strength -64
+  6  1405/07/22 20:52:56  [wireless,info]  4C:5E:0C:A7:F6:33@wlan1: connected, signal strength -81, wants bridge
+  7  1405/07/23 00:23:39  [wireless,info]  4C:5E:0C:A7:F6:33@wlan1: disconnected, extensive data loss, signal strength -81
+  8  1405/07/23 00:23:47  [wireless,info]  4C:5E:0C:A7:F6:33@wlan1: connected, signal strength -82, wants bridge
+  9  1405/07/23 02:34:38  [wireless,info]  4C:5E:0C:A7:F6:33@wlan1: disconnected, extensive data loss, signal strength -82
+ 10  1405/07/23 02:34:46  [wireless,info]  4C:5E:0C:A7:F6:33@wlan1: connected, signal strength -71, wants bridge
+ 11  1405/07/23 08:14:38  [wireless,info]  4C:5E:0C:A7:F6:33@wlan1: disconnected, extensive data loss, signal strength -64
+ 12  1405/07/23 08:14:46  [wireless,info]  4C:5E:0C:A7:F6:33@wlan1: connected, signal strength -74, wants bridge
+ 13  1405/07/22 13:26:11  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  6C:3B:6B:94:8C:7B  (ether)
+wlan1  6C:3B:6B:94:8C:7C  (wlan)
+bridge1  6C:3B:6B:94:8C:7B  (bridge)
+--- /ip arp ---
+bridge1  6C:3B:6B:2B:BA:16  (arp 172.18.26.105)

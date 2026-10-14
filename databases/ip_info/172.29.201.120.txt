@@ -1,0 +1,77 @@
+IP: 172.29.201.120
+Collected at: 2026-10-13T07:56:28.679110+00:00
+source: RouterOS API
+identity: hAPlite-mosaier-shomali
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=B8:69:F4:50:C8:A9
+  2  name=ether2  type=ether  running=true  mac=B8:69:F4:50:C8:AA
+  3  name=ether3  type=ether  running=true  mac=B8:69:F4:50:C8:AB
+  4  name=ether4  type=ether  running=true  mac=B8:69:F4:50:C8:AC
+  5  name=pwr-line1  type=ether  running=false  mac=B8:69:F4:50:C8:AD
+  6  name=wlan1  type=wlan  running=false  mac=B8:69:F4:50:C8:AE
+  7  name=bridge1  type=bridge  running=true  mac=B8:69:F4:50:C8:A9
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station  ssid=MikroTik  band=2ghz-b/g  frequency=2412
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.29.201.120/25  interface=ether1  network=172.29.201.0
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.29.201.97  distance=1
+  2  dst=172.29.201.0/25  gw=bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=NahrMosayerShomali.Client  address=172.29.201.97  interface=ether1,bridge1
+  2  identity=-  address=-  interface=ether2,bridge1
+  3  identity=-  address=-  interface=ether4,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/21 11:20:21
+# ساعت دستگاه (خام): 1976-06-10 17:27:55
+# افست اصلاحی (سرور − دستگاه): +441278:22:26
+  1  1405/07/20 11:46:45  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/20 11:46:47  [bridge,info]  "bridge1" mac address changed to B8:69:F4:50:C8:A9
+  3  1405/07/20 11:46:47  [bridge,info]  hardware offloading activated on bridge "bridge1" ports: ether1,ether3,ether2,ether4
+  4  1405/07/20 11:46:50  [interface,info]  ether1 link up (speed 100M, full duplex)
+  5  1405/07/20 11:47:18  [interface,info]  ether4 link up (speed 100M, full duplex)
+  6  1405/07/20 11:47:19  [interface,info]  ether2 link up (speed 10M, full duplex)
+  7  1405/07/20 11:51:40  [interface,info]  ether4 link down
+  8  1405/07/20 11:51:41  [interface,info]  ether4 link up (speed 100M, full duplex)
+  9  1405/07/20 11:52:21  [interface,info]  ether3 link up (speed 100M, full duplex)
+ 10  1405/07/20 13:10:28  [interface,info]  ether4 link down
+ 11  1405/07/20 13:10:30  [interface,info]  ether4 link up (speed 10M, full duplex)
+ 12  1405/07/20 13:11:29  [interface,info]  ether2 link down
+ 13  1405/07/20 13:11:33  [interface,info]  ether4 link down
+ 14  1405/07/21 08:42:26  [interface,info]  ether4 link up (speed 100M, full duplex)
+ 15  1405/07/21 08:42:27  [interface,info]  ether2 link up (speed 10M, full duplex)
+ 16  1405/07/21 08:42:34  [interface,info]  ether2 link down
+ 17  1405/07/21 08:42:36  [interface,info]  ether2 link up (speed 10M, full duplex)
+ 18  1405/07/21 08:42:37  [interface,info]  ether2 link down
+ 19  1405/07/21 08:42:39  [interface,info]  ether2 link up (speed 100M, full duplex)
+ 20  1405/07/21 08:42:49  [interface,info]  ether2 link down
+ 21  1405/07/21 08:42:51  [interface,info]  ether2 link up (speed 100M, full duplex)
+ 22  1405/07/21 09:05:50  [interface,info]  ether4 link down
+ 23  1405/07/21 09:05:52  [interface,info]  ether4 link up (speed 100M, full duplex)
+ 24  1405/07/21 09:36:31  [interface,info]  ether3 link down
+ 25  1405/07/21 09:36:32  [interface,info]  ether3 link up (speed 100M, full duplex)
+ 26  1405/07/21 11:20:18  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  B8:69:F4:50:C8:A9  (ether)
+ether2  B8:69:F4:50:C8:AA  (ether)
+ether3  B8:69:F4:50:C8:AB  (ether)
+ether4  B8:69:F4:50:C8:AC  (ether)
+pwr-line1  B8:69:F4:50:C8:AD  (ether)
+wlan1  B8:69:F4:50:C8:AE  (wlan)
+bridge1  B8:69:F4:50:C8:A9  (bridge)
+--- /ip arp ---
+bridge1  6C:3B:6B:06:5C:0E  (arp 172.29.201.97)

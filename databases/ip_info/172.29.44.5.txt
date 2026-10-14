@@ -1,0 +1,84 @@
+IP: 172.29.44.5
+Collected at: 2026-10-14T10:25:36.182479+00:00
+source: RouterOS API
+identity: RouterSetadForiat
+device_type: Router
+
+----- interfaces -----
+=== /interface ===
+  1  name=combo1  type=ether  running=false  mac=08:55:31:05:A5:15
+  2  name=ether1  type=ether  running=false  mac=08:55:31:05:A5:16
+  3  name=ether2  type=ether  running=true  mac=08:55:31:05:A5:17
+  4  name=ether3  type=ether  running=true  mac=08:55:31:05:A5:18
+  5  name=ether4  type=ether  running=true  mac=08:55:31:05:A5:19
+  6  name=ether5  type=ether  running=true  mac=08:55:31:05:A5:1A
+  7  name=ether6  type=ether  running=false  mac=08:55:31:05:A5:1B
+  8  name=ether7  type=ether  running=false  mac=08:55:31:05:A5:1C
+  9  name=sfp-sfpplus1  type=ether  running=false  mac=08:55:31:05:A5:14
+ 10  name=bridge1  type=bridge  running=true  mac=08:55:31:05:A5:17
+
+----- wireless -----
+(empty)
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.29.44.5/29  interface=ether2  network=172.29.44.0
+  2  address=192.168.21.1/29  interface=ether4  network=192.168.21.0
+  3  address=172.18.6.129/26  interface=ether5  network=172.18.6.128
+  4  address=172.29.44.5/29  interface=ether3  network=172.29.44.0
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.29.44.1  distance=1
+  2  dst=172.18.6.128/26  gw=bridge1  distance=0
+  3  dst=172.29.44.0/29  gw=bridge1,bridge1  distance=0
+  4  dst=192.168.21.0/29  gw=bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=SW-Wireless1.aums.ir  address=192.168.12.1  interface=ether2,bridge1
+  2  identity=Foriat-Ha-Core  address=192.168.12.4  interface=ether3,bridge1
+  3  identity=Foriat-BT.Client  address=172.18.2.50  interface=ether4,bridge1
+  4  identity=Foriat-BT.Ap  address=172.29.44.3  interface=ether4,bridge1
+  5  identity=RouterBTalaghani  address=172.29.44.6  interface=ether4,bridge1
+  6  identity=Foriat115.Ap  address=172.18.6.130  interface=ether5,bridge1
+  7  identity=Foriat.Aba  address=172.18.6.131  interface=ether5,bridge1
+  8  identity=Foriat.Af  address=172.18.6.153  interface=ether5,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:48:01
+# ساعت دستگاه (خام): 1970-02-09 22:17:49
+# افست اصلاحی (سرور − دستگاه): +496812:00:12
+  1  1405/07/22 12:27:36  [system,error,critical]  router rebooted without proper shutdown, probably power outage
+  2  1405/07/22 12:27:40  [interface,info]  ether4 link up (speed 100M, full duplex)
+  3  1405/07/22 12:27:40  [interface,info]  ether5 link up (speed 1G, full duplex)
+  4  1405/07/22 12:27:40  [bridge,info]  "bridge1" mac address changed to 08:55:31:05:A5:19
+  5  1405/07/22 12:27:54  [interface,info]  ether2 link up (speed 100M, full duplex)
+  6  1405/07/22 12:27:54  [bridge,info]  "bridge1" mac address changed to 08:55:31:05:A5:17
+  7  1405/07/22 12:28:01  [system,info,account]  user garnaf logged in from 172.18.4.76 via winbox
+  8  1405/07/22 12:28:28  [system,info]  address added by garnaf
+  9  1405/07/22 12:31:29  [interface,info]  ether2 link down
+ 10  1405/07/22 12:31:42  [interface,info]  ether3 link up (speed 1G, full duplex)
+ 11  1405/07/22 12:31:46  [interface,info]  ether2 link up (speed 100M, full duplex)
+ 12  1405/07/22 12:32:00  [system,info,account]  user garnaf logged out from 172.18.4.76 via winbox
+ 13  1405/07/22 12:32:05  [system,info,account]  user garnaf logged in from 172.18.4.76 via winbox
+ 14  1405/07/22 12:34:05  [system,info,account]  user garnaf logged out from 172.18.4.76 via winbox
+ 15  1405/07/22 13:48:00  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+combo1  08:55:31:05:A5:15  (ether)
+ether1  08:55:31:05:A5:16  (ether)
+ether2  08:55:31:05:A5:17  (ether)
+ether3  08:55:31:05:A5:18  (ether)
+ether4  08:55:31:05:A5:19  (ether)
+ether5  08:55:31:05:A5:1A  (ether)
+ether6  08:55:31:05:A5:1B  (ether)
+ether7  08:55:31:05:A5:1C  (ether)
+sfp-sfpplus1  08:55:31:05:A5:14  (ether)
+bridge1  08:55:31:05:A5:17  (bridge)
+--- /ip arp ---
+bridge1  FC:5F:49:7C:6F:4E  (arp 172.18.6.155)
+bridge1  10:8C:CF:33:51:4D  (arp 172.29.44.1)
+bridge1  08:55:31:1D:7D:BE  (arp 172.18.6.131)
+bridge1  B8:69:F4:5F:9A:1B  (arp 172.18.6.153)

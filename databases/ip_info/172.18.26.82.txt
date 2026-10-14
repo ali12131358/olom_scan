@@ -1,0 +1,46 @@
+IP: 172.18.26.82
+Collected at: 2026-10-14T10:23:41.512768+00:00
+source: RouterOS API
+identity: MK_behdast-OmolGhazlan
+device_type: AP
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=B8:69:F4:35:0D:8E
+  2  name=wlan1  type=wlan  running=true  mac=B8:69:F4:35:0D:8F
+  3  name=bridgeLocal  type=bridge  running=true  mac=B8:69:F4:35:0D:8E
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=ap-bridge  ssid=Shadegan-OmolGhazlan2  band=5ghz-a/n  frequency=5500
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.26.82/28  interface=ether1  network=172.18.26.80
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.26.81  distance=1
+  2  dst=172.18.26.80/28  gw=bridgeLocal  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=MK_OmolGhazlan  address=172.18.26.81  interface=ether1,bridgeLocal
+  2  identity=OmolHejar.Client  address=172.18.26.84  interface=wlan1,bridgeLocal
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:27:46
+# ساعت دستگاه (خام): 1970-08-16 00:47:27
+# افست اصلاحی (سرور − دستگاه): +492321:10:19
+  1  1405/07/22 12:40:11  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/22 12:40:14  [interface,info]  ether1 link up (speed 100M, full duplex)
+  3  1405/07/22 12:40:21  [wireless,info]  6C:3B:6B:01:D5:4F@wlan1: connected, signal strength -66, wants bridge
+  4  1405/07/22 13:27:44  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  B8:69:F4:35:0D:8E  (ether)
+wlan1  B8:69:F4:35:0D:8F  (wlan)
+bridgeLocal  B8:69:F4:35:0D:8E  (bridge)
+--- /ip arp ---
+bridgeLocal  6C:3B:6B:A9:FE:7D  (arp 172.18.26.81)

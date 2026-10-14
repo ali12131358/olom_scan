@@ -1,0 +1,69 @@
+IP: 172.18.16.18
+Collected at: 2026-10-14T10:22:29.497482+00:00
+source: RouterOS API
+identity: Khoramshahr-Shabakeh2
+device_type: AP
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=6C:3B:6B:94:E8:4A
+  2  name=VAP_OLD  type=wlan  running=true  mac=6E:3B:6B:94:E8:4C
+  3  name=VAP_SHMNKH  type=wlan  running=false  mac=6E:3B:6B:94:E8:4B
+  4  name=wlan1  type=wlan  running=true  mac=6C:3B:6B:94:E8:4B
+  5  name=bridge1  type=bridge  running=true  mac=6E:3B:6B:94:E8:4C
+
+----- wireless -----
+=== /interface wireless ===
+name=VAP_OLD  mode=ap-bridge  ssid=Khoramshahr-Shabakeh2  band=-  frequency=-
+name=VAP_SHMNKH  mode=ap-bridge  ssid=SHMNKH  band=-  frequency=-
+name=wlan1  mode=ap-bridge  ssid=Khoramshahr-Shabakeh2  band=5ghz-a/n  frequency=5660
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.16.18/28  interface=ether1  network=172.18.16.16
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.16.17  distance=1
+  2  dst=172.18.16.16/28  gw=bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=R1KH  address=172.18.2.249  interface=ether1,bridge1
+  2  identity=khrmshr-shaneh-2-CL  address=172.18.16.19  interface=wlan1,bridge1
+  3  identity=Khoramshahr - ShabakeBehdasht - P2P - Behvarzi - Client  address=172.18.16.21  interface=wlan1,bridge1
+  4  identity=IT.M.M  address=172.28.23.2  interface=wlan1,bridge1
+  5  identity=ShahidMusavi.Client  address=172.18.2.251  interface=VAP_OLD,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:12:53
+# ساعت دستگاه (خام): 1978-12-02 12:11:50
+# افست اصلاحی (سرور − دستگاه): +419589:31:03
+  1  1405/07/19 08:42:43  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/19 08:42:46  [bridge,info]  "bridge1" mac address changed to 6E:3B:6B:94:E8:4C
+  3  1405/07/19 08:42:51  [wireless,info]  D4:01:C3:B6:BE:CA@VAP_OLD: connected, signal strength -75, wants bridge
+  4  1405/07/19 08:42:52  [wireless,info]  2C:C8:1B:42:EB:56@wlan1: connected, signal strength -66, wants bridge
+  5  1405/07/19 08:42:53  [interface,info]  ether1 link up (speed 1G, full duplex)
+  6  1405/07/19 08:42:54  [wireless,info]  D4:01:C3:B6:AE:17@VAP_OLD: connected, signal strength -62, wants bridge
+  7  1405/07/19 08:42:55  [wireless,info]  B8:69:F4:61:66:3D@wlan1: connected, signal strength -71, wants bridge
+  8  1405/07/19 08:44:14  [wireless,info]  80:2A:A8:32:49:E3@VAP_OLD: connected, signal strength -45
+  9  1405/07/19 09:32:24  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 10  1405/07/19 09:32:26  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 11  1405/07/19 17:41:01  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+ 12  1405/07/19 17:41:01  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+ 13  1405/07/21 10:52:54  [wireless,info]  D4:01:C3:B6:BE:CA@VAP_OLD: disconnected, group key exchange timeout, signal strength -78
+ 14  1405/07/21 10:52:59  [wireless,info]  D4:01:C3:B6:BE:CA@VAP_OLD: connected, signal strength -75, wants bridge
+ 15  1405/07/21 10:54:14  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 16  1405/07/21 10:54:16  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 17  1405/07/22 12:55:28  [wireless,info]  D4:01:C3:B6:AE:17@VAP_OLD: disconnected, extensive data loss, signal strength -65
+ 18  1405/07/22 13:12:52  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  6C:3B:6B:94:E8:4A  (ether)
+VAP_OLD  6E:3B:6B:94:E8:4C  (wlan)
+VAP_SHMNKH  6E:3B:6B:94:E8:4B  (wlan)
+wlan1  6C:3B:6B:94:E8:4B  (wlan)
+bridge1  6E:3B:6B:94:E8:4C  (bridge)
+--- /ip arp ---
+bridge1  4C:5E:0C:9B:0E:78  (arp 172.18.16.17)

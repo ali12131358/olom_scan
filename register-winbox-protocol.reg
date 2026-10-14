@@ -1,0 +1,25 @@
+Windows Registry Editor Version 5.00
+
+; ---------------------------------------------------------------
+; Registers the "winbox://" URL protocol on Windows so that links
+; like winbox://172.18.1.145 open WinBox directly instead of
+; showing a blank "Untitled" tab in Chrome.
+;
+; 1) Edit the path below to the real location of winbox64.exe
+;    (backslashes must be doubled).
+; 2) Double-click this file and confirm the UAC / regedit prompt.
+; ---------------------------------------------------------------
+
+[HKEY_CURRENT_USER\Software\Classes\winbox]
+@="URL:WinBox Protocol"
+"URL Protocol"=""
+
+[HKEY_CURRENT_USER\Software\Classes\winbox\DefaultIcon]
+@="C:\\Program Files\\Winbox\\winbox64.exe,0"
+
+[HKEY_CURRENT_USER\Software\Classes\winbox\shell]
+
+[HKEY_CURRENT_USER\Software\Classes\winbox\shell\open]
+
+[HKEY_CURRENT_USER\Software\Classes\winbox\shell\open\command]
+@="\"C:\\Program Files\\Winbox\\winbox64.exe\" \"%1\""

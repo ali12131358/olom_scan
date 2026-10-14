@@ -1,0 +1,49 @@
+IP: 172.18.25.114
+Collected at: 2026-10-14T10:23:16.821215+00:00
+source: RouterOS API
+identity: Shadegan-Ghatrani1_AP
+device_type: AP
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=6C:3B:6B:4A:2C:B9
+  2  name=wlan1  type=wlan  running=true  mac=6C:3B:6B:4A:2C:BA
+  3  name=bridge1  type=bridge  running=true  mac=6C:3B:6B:4A:2C:BA
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=ap-bridge  ssid=Shadegan-Ghatrani1  band=5ghz-a/n  frequency=5540
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.25.114/28  interface=ether1  network=172.18.25.112
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.25.113  distance=1
+  2  dst=172.18.25.112/28  gw=bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=MK-Ghatrani  address=172.18.25.113  interface=ether1,bridge1
+  2  identity=mansooreh-olya  address=172.18.25.115  interface=wlan1,bridge1
+  3  identity=MasourehSofla .Client  address=172.18.25.116  interface=wlan1,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:21:36
+# ساعت دستگاه (خام): 2024-10-23 01:18:34
+# افست اصلاحی (سرور − دستگاه): +17312:33:02
+  1  1405/07/23 11:03:02  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/23 11:03:06  [bridge,info]  "bridge1" mac address changed to 6C:3B:6B:4A:2C:BA
+  3  1405/07/23 11:03:13  [interface,info]  ether1 link up (speed 100M, full duplex)
+  4  1405/07/23 11:03:14  [wireless,info]  E4:8D:8C:56:7F:F5@wlan1: connected, signal strength -68
+  5  1405/07/23 11:03:14  [wireless,info]  6C:3B:6B:13:57:2B@wlan1: connected, signal strength -66
+  6  1405/07/22 13:21:33  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  6C:3B:6B:4A:2C:B9  (ether)
+wlan1  6C:3B:6B:4A:2C:BA  (wlan)
+bridge1  6C:3B:6B:4A:2C:BA  (bridge)
+--- /ip arp ---
+bridge1  CC:2D:E0:6C:A2:6B  (arp 172.18.25.113)

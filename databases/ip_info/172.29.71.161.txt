@@ -1,0 +1,60 @@
+IP: 172.29.71.161
+Collected at: 2026-10-14T10:25:42.295578+00:00
+source: RouterOS API
+identity: AlboHamid.Client
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=6C:3B:6B:34:02:56
+  2  name=wlan1  type=wlan  running=true  mac=6C:3B:6B:34:02:57
+  3  name=bridge1  type=bridge  running=true  mac=6C:3B:6B:34:02:56
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=Abadan-22Bahman2  band=5ghz-a/n  frequency=5260
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.9.213/28  interface=wlan1  network=172.18.9.208
+  2  address=172.29.71.161/27  interface=ether1  network=172.29.71.160
+  3  address=172.29.71.161/27  interface=bridge1  network=172.29.71.160
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.9.209  distance=1
+  2  dst=172.18.9.208/28  gw=wlan1  distance=0
+  3  dst=172.29.71.160/27  gw=bridge1,bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=22Bahman-MK  address=172.18.9.209  interface=wlan1
+  2  identity=Abadan-22Bahman2  address=172.18.9.210  interface=wlan1
+  3  identity=NaghshehNasar  address=172.18.9.211  interface=wlan1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:50:20
+# ساعت دستگاه (خام): 1972-01-04 20:49:28
+# افست اصلاحی (سرور − دستگاه): +480157:30:52
+  1  1405/07/22 08:24:00  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/22 08:24:00  [bridge,info]  "bridge1" mac address changed to 6C:3B:6B:34:02:56
+  3  1405/07/22 08:24:00  [bridge,info]  hardware offloading activated on bridge "bridge1" ports: ether1
+  4  1405/07/22 08:24:01  [interface,info]  ether1 link up (speed 100M, full duplex)
+  5  1405/07/22 08:24:06  [wireless,info]  6C:3B:6B:4E:0E:FD@wlan1 established connection on 5745000, SSID Abadan-22Bahman2
+  6  1405/07/22 08:28:13  [dhcp,info]  dhcp1 deassigned 172.29.71.189 from 1C:1B:0D:B9:16:00
+  7  1405/07/22 08:28:13  [dhcp,info]  dhcp1 assigned 172.29.71.189 to 1C:1B:0D:B9:16:00
+  8  1405/07/22 08:50:24  [dhcp,info]  dhcp1 deassigned 172.29.71.188 from 5C:87:9C:8C:1A:27
+  9  1405/07/22 09:58:13  [dhcp,info]  dhcp1 deassigned 172.29.71.189 from 1C:1B:0D:B9:16:00
+ 10  1405/07/22 10:54:10  [wireless,info]  6C:3B:6B:4E:0E:FD@wlan1: lost connection, not polled for too long
+ 11  1405/07/22 10:54:31  [wireless,info]  6C:3B:6B:4E:0E:FD@wlan1 established connection on 5745000, SSID Abadan-22Bahman2
+ 12  1405/07/22 13:35:53  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 13  1405/07/22 13:35:54  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 14  1405/07/22 13:50:19  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  6C:3B:6B:34:02:56  (ether)
+wlan1  6C:3B:6B:34:02:57  (wlan)
+bridge1  6C:3B:6B:34:02:56  (bridge)
+--- /ip arp ---
+wlan1  E4:8D:8C:0E:6E:41  (arp 172.18.9.209)

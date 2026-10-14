@@ -1,0 +1,52 @@
+IP: 172.18.3.163
+Collected at: 2026-10-14T10:23:46.145875+00:00
+source: RouterOS API
+identity: Markaz.Jodeydeh.Client
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=CC:2D:E0:48:66:CF
+  2  name=wlan1  type=wlan  running=true  mac=CC:2D:E0:48:66:D0
+  3  name=bridge1  type=bridge  running=true  mac=CC:2D:E0:48:66:CF
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=123452  band=5ghz-a/n  frequency=5180
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.3.163/29  interface=wlan1  network=172.18.3.160
+  2  address=172.29.33.129/26  interface=ether1  network=172.29.33.128
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.3.161  distance=1
+  2  dst=172.18.3.160/29  gw=bridge1  distance=0
+  3  dst=172.29.33.128/26  gw=bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=RouterJodeydeh  address=172.18.3.164  interface=ether1,bridge1
+  2  identity=R1KH  address=172.18.3.161  interface=wlan1,bridge1
+  3  identity=Shebakeh-> Jodedeh-.AP  address=172.18.3.162  interface=wlan1,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:29:01
+# ساعت دستگاه (خام): 1975-05-16 18:01:26
+# افست اصلاحی (سرور − دستگاه): +450687:57:35
+  1  1405/07/20 09:38:24  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/20 09:38:25  [bridge,info]  "bridge1" mac address changed to CC:2D:E0:48:66:CF
+  3  1405/07/20 09:38:32  [interface,info]  ether1 link up (speed 100M, full duplex)
+  4  1405/07/20 09:38:33  [wireless,info]  CC:2D:E0:BF:D4:4D@wlan1 established connection on 5240000, SSID 123452
+  5  1405/07/21 11:09:31  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+  6  1405/07/21 11:09:32  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+  7  1405/07/22 13:29:00  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  CC:2D:E0:48:66:CF  (ether)
+wlan1  CC:2D:E0:48:66:D0  (wlan)
+bridge1  CC:2D:E0:48:66:CF  (bridge)
+--- /ip arp ---
+bridge1  4C:5E:0C:9B:0E:7C  (arp 172.18.3.161)

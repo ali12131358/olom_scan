@@ -1,0 +1,274 @@
+IP: 172.18.24.132
+Collected at: 2026-10-14T10:23:04.776138+00:00
+source: RouterOS API
+identity: Router.Orzhans
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1 - anbarDaroei  type=ether  running=true  mac=E4:8D:8C:12:2D:E4
+  2  name=ether2-Input  type=ether  running=true  mac=E4:8D:8C:12:2D:E5
+  3  name=ether3-SW.Orzhans  type=ether  running=true  mac=E4:8D:8C:12:2D:E6
+  4  name=ether4-Markez1  type=ether  running=true  mac=E4:8D:8C:12:2D:E7
+  5  name=wlan1  type=wlan  running=false  mac=E4:8D:8C:12:2D:E8
+  6  name=bridge1  type=bridge  running=true  mac=E4:8D:8C:12:2D:E4
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station  ssid=MikroTik  band=2ghz-b/g  frequency=2412
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.24.132/29  interface=ether2-Input  network=172.18.24.128
+  2  address=172.29.17.129/25  interface=ether4-Markez1  network=172.29.17.128
+  3  address=172.29.35.17/28  interface=ether4-Markez1  network=172.29.35.16
+  4  address=172.29.35.33/27  interface=bridge1  network=172.29.35.32
+  5  address=172.29.196.65/27  interface=bridge1  network=172.29.196.64
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.24.129  distance=1
+  2  dst=172.18.24.128/29  gw=ether2-Input  distance=0
+  3  dst=172.29.17.128/25  gw=ether4-Markez1  distance=0
+  4  dst=172.29.35.32/27  gw=bridge1  distance=0
+  5  dst=172.29.196.64/27  gw=bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=shdgn-anbar-daruee-AP  address=172.29.196.66  interface=ether1 - anbarDaroei,bridge1
+  2  identity=shdgn-anbar-daruee-CL  address=172.29.196.67  interface=ether1 - anbarDaroei,bridge1
+  3  identity=RB-Anbar-daruei-HapLite  address=172.29.196.68  interface=ether1 - anbarDaroei,bridge1
+  4  identity=R2SH  address=-  interface=ether2-Input
+  5  identity=RB-UMS-SHDGN-CoreRouter  address=172.18.24.25  interface=ether2-Input
+  6  identity=Shadegan-Shabakeh1  address=172.18.24.26  interface=ether2-Input
+  7  identity=EMS.Shadegan.Client  address=172.18.24.131  interface=ether2-Input
+  8  identity=-  address=-  interface=ether3-SW.Orzhans,bridge1
+  9  identity=-  address=-  interface=ether4-Markez1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:18:20
+# ساعت دستگاه (خام): 1975-01-28 18:56:59
+# افست اصلاحی (سرور − دستگاه): +453278:51:21
+  1  1405/07/16 15:40:14  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+  2  1405/07/16 15:40:15  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+  3  1405/07/16 15:47:35  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+  4  1405/07/16 15:47:36  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+  5  1405/07/16 17:21:37  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.56 to 2A:2B:63:64:94:8C
+  6  1405/07/16 17:52:31  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.57 from 36:A6:77:EA:DF:96
+  7  1405/07/16 19:05:19  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.52 from 5E:F6:C2:18:7D:9F
+  8  1405/07/16 20:05:45  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.49 to 62:CF:4B:B9:A8:E5
+  9  1405/07/17 00:27:22  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.39 from 82:68:10:4F:A8:6E
+ 10  1405/07/17 01:15:00  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.58 from 24:11:45:99:2D:6D
+ 11  1405/07/17 08:07:12  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.36 from 1E:31:73:44:37:C9
+ 12  1405/07/17 08:08:56  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.37 from 74:D4:35:D9:A8:97
+ 13  1405/07/17 08:31:51  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 14  1405/07/17 08:31:53  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 15  1405/07/17 08:40:58  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 16  1405/07/17 08:41:00  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 17  1405/07/17 08:53:50  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.58 to 7A:BC:D6:B8:BB:79
+ 18  1405/07/17 09:08:27  [dhcp,warning]  Detected conflict by ARP response for 172.29.17.132 from 00:02:65:15:E0:32
+ 19  1405/07/17 09:08:29  [dhcp,warning]  Detected conflict by ARP response for 172.29.17.131 from 84:D8:1B:6C:2C:E6
+ 20  1405/07/17 09:08:33  [dhcp,warning]  Detected conflict by ARP response for 172.29.17.130 from F4:F2:6D:8E:08:C0
+ 21  1405/07/17 09:08:52  [dhcp,info]  dhcp1-markaz1 assigned 172.29.17.134 to DA:37:B6:7F:53:72
+ 22  1405/07/17 10:03:02  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.57 to 12:F8:A7:AF:02:4A
+ 23  1405/07/17 10:10:59  [dhcp,info]  dhcp1-markaz1 deassigned 172.29.17.144 from 50:3E:AA:3E:F7:97
+ 24  1405/07/17 10:36:36  [dhcp,info]  dhcp1-markaz1 deassigned 172.29.17.142 from 98:DE:D0:27:13:7D
+ 25  1405/07/17 10:39:53  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.47 from 50:E5:49:A1:28:A1
+ 26  1405/07/17 11:24:49  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.44 from 94:DE:80:4D:DD:BF
+ 27  1405/07/17 11:39:23  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.58 from 7A:BC:D6:B8:BB:79
+ 28  1405/07/17 11:39:23  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.58 to 7A:BC:D6:B8:BB:79
+ 29  1405/07/17 13:44:16  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.58 from 7A:BC:D6:B8:BB:79
+ 30  1405/07/17 13:44:16  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.58 to 7A:BC:D6:B8:BB:79
+ 31  1405/07/17 14:40:53  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.43 from 24:2E:02:83:91:9C
+ 32  1405/07/17 16:02:35  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.58 from 7A:BC:D6:B8:BB:79
+ 33  1405/07/17 16:02:35  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.58 to 7A:BC:D6:B8:BB:79
+ 34  1405/07/17 16:37:57  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.58 from 7A:BC:D6:B8:BB:79
+ 35  1405/07/17 16:37:57  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.58 to 7A:BC:D6:B8:BB:79
+ 36  1405/07/17 17:17:20  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.58 from 7A:BC:D6:B8:BB:79
+ 37  1405/07/17 17:17:20  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.58 to 7A:BC:D6:B8:BB:79
+ 38  1405/07/17 17:31:38  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.56 from 2A:2B:63:64:94:8C
+ 39  1405/07/17 18:07:18  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.58 from 7A:BC:D6:B8:BB:79
+ 40  1405/07/17 18:07:18  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.58 to 7A:BC:D6:B8:BB:79
+ 41  1405/07/17 19:01:59  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.56 to 3E:2C:52:CF:08:D2
+ 42  1405/07/17 19:02:25  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.54 to 6E:31:9C:79:64:93
+ 43  1405/07/17 19:18:36  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.46 to AA:D3:D4:1C:02:3E
+ 44  1405/07/17 20:15:45  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.49 from 62:CF:4B:B9:A8:E5
+ 45  1405/07/17 21:11:51  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.62 from D2:FE:64:06:CC:0F
+ 46  1405/07/17 21:27:19  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.62 to D2:FE:64:06:CC:0F
+ 47  1405/07/17 22:40:46  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.36 to 1E:31:73:44:37:C9
+ 48  1405/07/17 23:15:31  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.41 to 66:27:B6:1A:FD:A8
+ 49  1405/07/17 23:27:36  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.58 from 7A:BC:D6:B8:BB:79
+ 50  1405/07/17 23:27:36  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.58 to 7A:BC:D6:B8:BB:79
+ 51  1405/07/17 23:54:52  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.58 from 7A:BC:D6:B8:BB:79
+ 52  1405/07/17 23:54:53  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.58 to 7A:BC:D6:B8:BB:79
+ 53  1405/07/18 00:32:15  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.42 to 1A:E2:A1:D1:11:5C
+ 54  1405/07/18 07:39:40  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.44 to 94:DE:80:4D:DD:BF
+ 55  1405/07/18 07:41:01  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.37 to 74:D4:35:D9:A8:97
+ 56  1405/07/18 07:54:14  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.47 to 50:E5:49:A1:28:A1
+ 57  1405/07/18 08:01:53  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.53 to 94:DE:80:4D:E8:4E
+ 58  1405/07/18 08:10:56  [dhcp,info]  dhcp1-markaz1 deassigned 172.29.17.158 from 6C:5A:B0:4B:38:7A
+ 59  1405/07/18 08:15:16  [dhcp,info]  dhcp1-markaz1 assigned 172.29.17.144 to 50:3E:AA:3E:F7:97
+ 60  1405/07/18 08:28:35  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.56 from 3E:2C:52:CF:08:D2
+ 61  1405/07/18 08:28:35  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.56 to 3E:2C:52:CF:08:D2
+ 62  1405/07/18 08:34:35  [dhcp,info]  dhcp1-markaz1 deassigned 172.29.17.141 from D0:37:45:DD:4B:FA
+ 63  1405/07/18 08:34:35  [dhcp,info]  dhcp1-markaz1 assigned 172.29.17.141 to D0:37:45:DD:4B:FA
+ 64  1405/07/18 08:53:39  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.56 from 3E:2C:52:CF:08:D2
+ 65  1405/07/18 08:53:39  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.56 to 3E:2C:52:CF:08:D2
+ 66  1405/07/18 09:56:00  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 67  1405/07/18 09:56:02  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 68  1405/07/18 10:03:37  [dhcp,info]  dhcp1-markaz1 assigned 172.29.17.158 to 6C:5A:B0:4B:38:7A
+ 69  1405/07/18 10:13:02  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.57 from 12:F8:A7:AF:02:4A
+ 70  1405/07/18 10:30:12  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 71  1405/07/18 10:30:13  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 72  1405/07/18 10:40:15  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 73  1405/07/18 10:40:20  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 74  1405/07/18 10:44:43  [interface,info]  ether4-Markez1 link down
+ 75  1405/07/18 10:45:59  [interface,info]  ether4-Markez1 link up (speed 100M, full duplex)
+ 76  1405/07/18 10:46:11  [dhcp,info]  dhcp1-markaz1 deassigned 172.29.17.135 from B0:A7:B9:2C:61:88
+ 77  1405/07/18 10:46:48  [dhcp,warning]  dhcp1-markaz1 offering lease 172.29.17.135 for B0:A7:B9:2C:61:88 without success
+ 78  1405/07/18 10:46:48  [dhcp,info]  dhcp1-markaz1 assigned 172.29.17.135 to B0:A7:B9:2C:61:88
+ 79  1405/07/18 10:54:19  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 80  1405/07/18 10:54:20  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 81  1405/07/18 11:04:32  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 82  1405/07/18 11:04:33  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 83  1405/07/18 11:54:11  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.58 from 7A:BC:D6:B8:BB:79
+ 84  1405/07/18 11:54:11  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.58 to 7A:BC:D6:B8:BB:79
+ 85  1405/07/18 12:07:36  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 86  1405/07/18 12:07:36  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 87  1405/07/18 12:13:21  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 88  1405/07/18 12:13:21  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 89  1405/07/18 13:24:54  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.60 from 9A:FB:8F:58:A3:35
+ 90  1405/07/18 14:04:04  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.60 to 9A:FB:8F:58:A3:35
+ 91  1405/07/18 17:44:20  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.57 to 72:E2:BD:F4:DA:97
+ 92  1405/07/18 18:31:36  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.52 to 5E:F6:C2:18:7D:9F
+ 93  1405/07/18 18:38:26  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.58 from 7A:BC:D6:B8:BB:79
+ 94  1405/07/18 18:38:26  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.58 to 7A:BC:D6:B8:BB:79
+ 95  1405/07/18 19:12:25  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.54 from 6E:31:9C:79:64:93
+ 96  1405/07/18 19:28:37  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.46 from AA:D3:D4:1C:02:3E
+ 97  1405/07/18 19:30:28  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.56 from 3E:2C:52:CF:08:D2
+ 98  1405/07/18 19:30:28  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.56 to 3E:2C:52:CF:08:D2
+ 99  1405/07/18 21:02:18  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.54 to FC:AA:14:30:63:D5
+100  1405/07/18 21:19:37  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.51 to 2A:2B:63:64:94:8C
+101  1405/07/18 22:50:46  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.36 from 1E:31:73:44:37:C9
+102  1405/07/18 23:25:32  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.41 from 66:27:B6:1A:FD:A8
+103  1405/07/18 23:46:53  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.50 to 36:A6:77:EA:DF:96
+104  1405/07/18 23:51:48  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.58 from 7A:BC:D6:B8:BB:79
+105  1405/07/18 23:51:48  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.58 to 7A:BC:D6:B8:BB:79
+106  1405/07/19 00:08:26  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.58 from 7A:BC:D6:B8:BB:79
+107  1405/07/19 00:08:26  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.58 to 7A:BC:D6:B8:BB:79
+108  1405/07/19 00:10:10  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.58 from 7A:BC:D6:B8:BB:79
+109  1405/07/19 00:10:10  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.58 to 7A:BC:D6:B8:BB:79
+110  1405/07/19 00:17:48  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.58 from 7A:BC:D6:B8:BB:79
+111  1405/07/19 00:17:48  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.58 to 7A:BC:D6:B8:BB:79
+112  1405/07/19 00:42:15  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.42 from 1A:E2:A1:D1:11:5C
+113  1405/07/19 02:06:37  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.42 to 1A:E2:A1:D1:11:5C
+114  1405/07/19 03:14:32  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.58 from 7A:BC:D6:B8:BB:79
+115  1405/07/19 03:14:32  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.58 to 7A:BC:D6:B8:BB:79
+116  1405/07/19 07:43:28  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.37 from 74:D4:35:D9:A8:97
+117  1405/07/19 07:43:28  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.37 to 74:D4:35:D9:A8:97
+118  1405/07/19 07:43:32  [dhcp,warning]  dhcp2-ems-anbardaruee client 74:D4:35:D9:A8:97 declines IP address 172.29.35.37
+119  1405/07/19 07:43:32  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.37 from 74:D4:35:D9:A8:97
+120  1405/07/19 07:43:42  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.49 to 74:D4:35:D9:A8:97
+121  1405/07/19 07:58:59  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.47 from 50:E5:49:A1:28:A1
+122  1405/07/19 07:58:59  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.47 to 50:E5:49:A1:28:A1
+123  1405/07/19 08:10:56  [dhcp,info]  dhcp1-markaz1 assigned 172.29.17.136 to 84:16:F9:B0:8E:FD
+124  1405/07/19 08:11:53  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.53 from 94:DE:80:4D:E8:4E
+125  1405/07/19 08:33:41  [dhcp,info]  dhcp1-markaz1 deassigned 172.29.17.137 from 7C:F1:7E:F4:27:E8
+126  1405/07/19 08:33:50  [dhcp,info]  dhcp1-markaz1 assigned 172.29.17.137 to 7C:F1:7E:F4:27:E8
+127  1405/07/19 08:43:38  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.53 to 94:DE:80:4D:E8:4E
+128  1405/07/19 09:38:25  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+129  1405/07/19 09:38:30  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+130  1405/07/19 09:48:58  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.36 to 1E:31:73:44:37:C9
+131  1405/07/19 10:01:06  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+132  1405/07/19 10:01:09  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+133  1405/07/19 10:20:16  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.48 to CE:59:FD:12:E4:46
+134  1405/07/19 12:31:49  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.46 to A2:CA:BE:59:26:37
+135  1405/07/19 13:04:23  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.43 to 24:2E:02:83:91:9C
+136  1405/07/19 13:04:23  [dhcp,warning]  dhcp2-ems-anbardaruee client 24:2E:02:83:91:9C declines IP address 172.29.35.43
+137  1405/07/19 13:04:23  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.43 from 24:2E:02:83:91:9C
+138  1405/07/19 13:04:24  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.45 to 24:2E:02:83:91:9C
+139  1405/07/19 17:42:03  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+140  1405/07/19 17:42:03  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+141  1405/07/19 17:46:29  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+142  1405/07/19 17:46:29  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+143  1405/07/19 17:54:20  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.57 from 72:E2:BD:F4:DA:97
+144  1405/07/19 19:08:36  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.57 to 16:A9:A0:56:2A:C8
+145  1405/07/19 19:13:54  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.52 from 5E:F6:C2:18:7D:9F
+146  1405/07/19 19:40:28  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.56 from 3E:2C:52:CF:08:D2
+147  1405/07/19 20:34:24  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.56 to 8C:D9:D6:45:DA:A5
+148  1405/07/19 20:53:52  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.41 to 66:27:B6:1A:FD:A8
+149  1405/07/19 21:13:53  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.54 from FC:AA:14:30:63:D5
+150  1405/07/19 21:29:37  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.51 from 2A:2B:63:64:94:8C
+151  1405/07/19 22:00:44  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.62 from D2:FE:64:06:CC:0F
+152  1405/07/19 23:56:53  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.50 from 36:A6:77:EA:DF:96
+153  1405/07/20 02:18:59  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.42 from 1A:E2:A1:D1:11:5C
+154  1405/07/20 03:24:32  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.58 from 7A:BC:D6:B8:BB:79
+155  1405/07/20 08:35:38  [dhcp,info]  dhcp1-markaz1 assigned 172.29.17.142 to 98:DE:D0:27:13:7D
+156  1405/07/20 09:18:52  [dhcp,info]  dhcp1-markaz1 deassigned 172.29.17.134 from DA:37:B6:7F:53:72
+157  1405/07/20 10:30:16  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.48 from CE:59:FD:12:E4:46
+158  1405/07/20 11:41:28  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.62 to 2C:78:0E:8F:3B:64
+159  1405/07/20 12:41:49  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.46 from A2:CA:BE:59:26:37
+160  1405/07/20 16:34:10  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.52 to 5E:F6:C2:18:7D:9F
+161  1405/07/20 18:09:31  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.58 to 28:33:34:1A:FB:B6
+162  1405/07/20 19:00:07  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.54 to 46:5C:96:05:97:D0
+163  1405/07/20 19:18:36  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.57 from 16:A9:A0:56:2A:C8
+164  1405/07/20 20:44:24  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.56 from 8C:D9:D6:45:DA:A5
+165  1405/07/21 08:16:51  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.53 from 94:DE:80:4D:E8:4E
+166  1405/07/21 08:36:28  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.53 to 94:DE:80:4D:E8:4E
+167  1405/07/21 09:41:55  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.57 to FC:AA:14:30:63:D5
+168  1405/07/21 10:13:24  [dhcp,info]  dhcp1-markaz1 deassigned 172.29.17.145 from 00:17:6F:62:0B:4D
+169  1405/07/21 10:13:24  [dhcp,info]  dhcp1-markaz1 assigned 172.29.17.145 to 00:17:6F:62:0B:4D
+170  1405/07/21 10:19:12  [dhcp,info]  dhcp1-markaz1 deassigned 172.29.17.145 from 00:17:6F:62:0B:4D
+171  1405/07/21 10:19:12  [dhcp,info]  dhcp1-markaz1 assigned 172.29.17.145 to 00:17:6F:62:0B:4D
+172  1405/07/21 11:01:20  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+173  1405/07/21 11:01:23  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+174  1405/07/21 11:18:40  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+175  1405/07/21 11:18:43  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+176  1405/07/21 11:51:28  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.62 from 2C:78:0E:8F:3B:64
+177  1405/07/21 12:05:40  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.62 to EE:ED:06:CB:69:15
+178  1405/07/21 14:33:16  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.39 to 82:68:10:4F:A8:6E
+179  1405/07/21 17:10:39  [dhcp,info]  dhcp1-markaz1 deassigned 172.29.17.135 from B0:A7:B9:2C:61:88
+180  1405/07/21 17:10:39  [dhcp,info]  dhcp1-markaz1 assigned 172.29.17.135 to B0:A7:B9:2C:61:88
+181  1405/07/21 17:12:01  [dhcp,info]  dhcp1-markaz1 deassigned 172.29.17.135 from B0:A7:B9:2C:61:88
+182  1405/07/21 17:12:01  [dhcp,info]  dhcp1-markaz1 assigned 172.29.17.135 to B0:A7:B9:2C:61:88
+183  1405/07/21 17:36:07  [dhcp,info]  dhcp1-markaz1 assigned 172.29.17.147 to 0A:74:6D:1A:60:FB
+184  1405/07/21 18:19:31  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.58 from 28:33:34:1A:FB:B6
+185  1405/07/21 18:31:30  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.52 from 5E:F6:C2:18:7D:9F
+186  1405/07/21 19:10:07  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.54 from 46:5C:96:05:97:D0
+187  1405/07/21 19:44:56  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.58 to 9C:5A:81:F7:EC:22
+188  1405/07/21 20:40:05  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.56 to 4A:98:22:FD:69:F2
+189  1405/07/21 21:30:51  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.51 to 2A:2B:63:64:94:8C
+190  1405/07/21 23:41:40  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.54 to 62:CF:4B:B9:A8:E5
+191  1405/07/22 07:38:33  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.49 from 74:D4:35:D9:A8:97
+192  1405/07/22 07:38:46  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.49 to 74:D4:35:D9:A8:97
+193  1405/07/22 08:05:57  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.52 to 7A:BC:D6:B8:BB:79
+194  1405/07/22 08:06:49  [dhcp,info]  dhcp1-markaz1 deassigned 172.29.17.135 from B0:A7:B9:2C:61:88
+195  1405/07/22 08:06:49  [dhcp,info]  dhcp1-markaz1 assigned 172.29.17.135 to B0:A7:B9:2C:61:88
+196  1405/07/22 08:57:19  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.52 from 7A:BC:D6:B8:BB:79
+197  1405/07/22 08:57:19  [dhcp,info]  dhcp2-ems-anbardaruee assigned 172.29.35.52 to 7A:BC:D6:B8:BB:79
+198  1405/07/22 09:57:39  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.57 from FC:AA:14:30:63:D5
+199  1405/07/22 12:15:40  [dhcp,info]  dhcp2-ems-anbardaruee deassigned 172.29.35.62 from EE:ED:06:CB:69:15
+200  1405/07/22 13:18:18  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1 - anbarDaroei  E4:8D:8C:12:2D:E4  (ether)
+ether2-Input  E4:8D:8C:12:2D:E5  (ether)
+ether3-SW.Orzhans  E4:8D:8C:12:2D:E6  (ether)
+ether4-Markez1  E4:8D:8C:12:2D:E7  (ether)
+wlan1  E4:8D:8C:12:2D:E8  (wlan)
+bridge1  E4:8D:8C:12:2D:E4  (bridge)
+--- /ip arp ---
+bridge1  64:69:BC:05:0A:DB  (arp 172.29.35.40)
+bridge1  2E:C8:1B:2F:03:1E  (arp 172.29.196.66)
+bridge1  E4:8D:8C:65:4D:D8  (arp 172.29.196.68)
+ether2-Input  64:D1:54:98:E3:2E  (arp 172.18.24.129)
+ether4-Markez1  B0:A7:B9:2C:61:88  (arp 172.29.17.135)
+ether4-Markez1  58:11:22:9E:0B:10  (arp 172.29.17.183)
+bridge1  D4:01:C3:07:F2:22  (arp 172.29.196.67)
+bridge1  E0:D5:5E:55:A5:60  (arp 172.29.35.55)
+ether4-Markez1  00:02:65:15:E0:32  (arp 172.29.17.132)
+ether4-Markez1  50:3E:AA:3D:7C:9A  (arp 172.29.17.139)
+ether4-Markez1  D0:37:45:DD:4B:FA  (arp 172.29.17.141)
+bridge1  08:ED:ED:1C:C9:9C  (arp 172.29.35.38)
+bridge1  8A:2D:C9:1F:BD:6A  (arp 172.29.35.61)

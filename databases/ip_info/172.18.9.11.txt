@@ -1,0 +1,52 @@
+IP: 172.18.9.11
+Collected at: 2026-10-14T10:24:18.883826+00:00
+source: RouterOS API
+identity: CL-22BHMN
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=48:A9:8A:56:35:35
+  2  name=Abadan-22Bahman3  type=wlan  running=false  mac=4A:A9:8A:56:35:36
+  3  name=wlan1  type=wlan  running=true  mac=48:A9:8A:56:35:36
+  4  name=bridge1  type=bridge  running=true  mac=48:A9:8A:56:35:35
+
+----- wireless -----
+=== /interface wireless ===
+name=Abadan-22Bahman3  mode=ap-bridge  ssid=Abadan-22Bahman3  band=-  frequency=-
+name=wlan1  mode=station-wds  ssid=KHZR22BHMN  band=5ghz-a/n  frequency=5180
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.9.11/29  interface=wlan1  network=172.18.9.8
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.9.9  distance=1
+  2  dst=172.18.9.8/29  gw=bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=22Bahman-MK  address=172.18.9.12  interface=ether1,bridge1
+  2  identity=KhezrNabi-MK  address=172.18.9.9  interface=wlan1,bridge1
+  3  identity=Khezr->22Bahman.AP  address=172.18.9.10  interface=wlan1,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:34:12
+# ساعت دستگاه (خام): 1971-12-28 02:39:22
+# افست اصلاحی (سرور − دستگاه): +480343:24:50
+  1  1405/07/22 10:54:32  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/22 10:54:39  [bridge,info]  "bridge1" mac address changed to 48:A9:8A:56:35:35
+  3  1405/07/22 10:54:41  [interface,info]  ether1 link up (speed 100M, full duplex)
+  4  1405/07/22 10:54:43  [wireless,info]  E4:8D:8C:7C:E4:EF@wlan1 established connection on 5580000, SSID KHZR22BHMN
+  5  1405/07/22 13:34:10  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  48:A9:8A:56:35:35  (ether)
+Abadan-22Bahman3  4A:A9:8A:56:35:36  (wlan)
+wlan1  48:A9:8A:56:35:36  (wlan)
+bridge1  48:A9:8A:56:35:35  (bridge)
+--- /ip arp ---
+bridge1  E4:8D:8C:0E:6E:49  (arp 172.18.9.12)
+bridge1  6C:3B:6B:85:AC:AF  (arp 172.18.9.9)

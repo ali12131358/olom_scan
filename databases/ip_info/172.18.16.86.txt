@@ -1,0 +1,51 @@
+IP: 172.18.16.86
+Collected at: 2026-10-14T10:22:35.856746+00:00
+source: RouterOS API
+identity: PolNo.Client
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=64:D1:54:1E:56:7A
+  2  name=wlan1  type=wlan  running=true  mac=64:D1:54:1E:56:7B
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=Khoramshahr-Taleghani2  band=5ghz-a/n  frequency=5700
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.29.131.33/27  interface=ether1  network=172.29.131.32
+  2  address=172.18.16.68/28  interface=wlan1  network=172.18.16.64
+  3  address=172.18.16.86/28  interface=wlan1  network=172.18.16.80
+  4  address=172.29.131.113/28  interface=ether1  network=172.29.131.112
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.16.81  distance=1
+  2  dst=172.18.16.80/28  gw=wlan1  distance=0
+  3  dst=172.29.131.112/28  gw=ether1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=MikroTik  address=-  interface=ether1
+  2  identity=RouterMarkazTaleghzani  address=172.18.16.81  interface=wlan1
+  3  identity=Khoramshahr-Taleghani2  address=172.18.16.82  interface=wlan1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:14:06
+# ساعت دستگاه (خام): 1972-11-30 10:08:52
+# افست اصلاحی (سرور − دستگاه): +472223:35:14
+  1  1405/07/22 00:09:04  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/22 00:09:14  [interface,info]  ether1 link up (speed 100M, full duplex)
+  3  1405/07/22 00:10:08  [wireless,info]  6C:3B:6B:3E:4B:81@wlan1: failed to connect, on 5700/20-Ce/an, association timeout
+  4  1405/07/22 00:11:11  [wireless,info]  6E:3B:6B:3E:4B:81@wlan1: failed to connect, on 5700/20-Ce/an, association timeout
+  5  1405/07/22 00:12:12  [wireless,info]  6C:3B:6B:3E:4B:81@wlan1 established connection on 5700000, SSID Khoramshahr-Taleghani2
+  6  1405/07/22 13:14:04  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  64:D1:54:1E:56:7A  (ether)
+wlan1  64:D1:54:1E:56:7B  (wlan)
+--- /ip arp ---
+wlan1  6C:3B:6B:09:34:B6  (arp 172.18.16.81)

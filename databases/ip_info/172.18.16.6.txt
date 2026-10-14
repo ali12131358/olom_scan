@@ -1,0 +1,53 @@
+IP: 172.18.16.6
+Collected at: 2026-10-11T06:39:38.133376+00:00
+source: RouterOS API
+identity: MenikhHome.Client
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=6C:3B:6B:91:10:F3
+  2  name=wlan1  type=wlan  running=true  mac=6C:3B:6B:91:10:F4
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=Khoramshahr-Shabakeh1  band=5ghz-a/n  frequency=5520
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.29.128.97/27  interface=ether1  network=172.29.128.96
+  2  address=172.18.16.6/28  interface=wlan1  network=172.18.16.0
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.16.2  distance=1
+  2  dst=172.18.16.0/28  gw=wlan1  distance=0
+  3  dst=172.29.128.96/27  gw=ether1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=-  address=-  interface=ether1
+  2  identity=R1KH  address=172.18.16.1  interface=wlan1
+  3  identity=Khoramshahr-Shabakeh1  address=172.18.16.2  interface=wlan1
+  4  identity=Mehrzi.Client  address=172.18.16.3  interface=wlan1
+  5  identity=Sheneh.Client  address=172.18.16.5  interface=wlan1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/19 09:33:02
+# ساعت دستگاه (خام): 1970-03-02 02:28:26
+# افست اصلاحی (سرور − دستگاه): +496251:34:36
+  1  1405/07/19 08:01:21  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/19 08:01:32  [interface,info]  ether1 link up (speed 100M, full duplex)
+  3  1405/07/19 08:03:37  [dhcp,info]  dhcp1 deassigned 172.29.128.126 from 74:D4:35:20:12:C1
+  4  1405/07/19 08:03:37  [dhcp,info]  dhcp1 assigned 172.29.128.126 to 74:D4:35:20:12:C1
+  5  1405/07/19 08:43:04  [wireless,info]  6C:3B:6B:8F:3B:DE@wlan1 established connection on 5520000, SSID Khoramshahr-Shabakeh1
+  6  1405/07/19 09:33:01  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  6C:3B:6B:91:10:F3  (ether)
+wlan1  6C:3B:6B:91:10:F4  (wlan)
+--- /ip arp ---
+ether1  74:D4:35:20:12:C1  (arp 172.29.128.126)
+wlan1  6C:3B:6B:8F:3B:DE  (arp 172.18.16.2)
+wlan1  4C:5E:0C:9B:0E:77  (arp 172.18.16.1)

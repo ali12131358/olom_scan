@@ -1,0 +1,60 @@
+IP: 172.18.9.194
+Collected at: 2026-10-14T10:24:24.582647+00:00
+source: RouterOS API
+identity: Abadan-22Bahman1
+device_type: AP
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=6C:3B:6B:94:8C:99
+  2  name=wlan1  type=wlan  running=true  mac=6C:3B:6B:94:8C:9A
+  3  name=bridge1  type=bridge  running=true  mac=6C:3B:6B:94:8C:9A
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=ap-bridge  ssid=Abadan-22Bahman1  band=5ghz-a/n  frequency=5540
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.9.194/28  interface=ether1  network=172.18.9.192
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.9.193  distance=1
+  2  dst=172.18.9.192/28  gw=bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=22Bahman-MK  address=172.18.9.193  interface=ether1,bridge1
+  2  identity=KootShanoof.Client  address=172.18.9.196  interface=wlan1,bridge1
+  3  identity=KhazalAbad.Client  address=172.18.9.198  interface=wlan1,bridge1
+  4  identity=ObuKhazravi.Client  address=172.18.9.199  interface=wlan1,bridge1
+  5  identity=ObuShekr.Client  address=172.18.9.200  interface=wlan1,bridge1
+  6  identity=ObuDeyereh.Client  address=172.18.9.201  interface=wlan1,bridge1
+  7  identity=NahrSalim.Client  address=172.18.9.202  interface=wlan1,bridge1
+  8  identity=Afadeleh.Client  address=172.18.9.203  interface=wlan1,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:35:20
+# ساعت دستگاه (خام): 1974-10-01 15:43:57
+# افست اصلاحی (سرور − دستگاه): +456138:21:23
+  1  1405/07/22 10:54:27  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/22 10:54:30  [bridge,info]  "bridge1" mac address changed to 6C:3B:6B:94:8C:9A
+  3  1405/07/22 10:54:35  [wireless,info]  E4:8D:8C:D5:38:61@wlan1: connected, signal strength -58
+  4  1405/07/22 10:54:35  [wireless,info]  6C:3B:6B:97:E7:CD@wlan1: connected, signal strength -52
+  5  1405/07/22 10:54:35  [wireless,info]  6C:3B:6B:91:11:4C@wlan1: connected, signal strength -70
+  6  1405/07/22 10:54:35  [wireless,info]  6C:3B:6B:10:AF:73@wlan1: connected, signal strength -62
+  7  1405/07/22 10:54:36  [wireless,info]  6C:3B:6B:34:01:DB@wlan1: reconnecting
+  8  1405/07/22 10:54:36  [wireless,info]  6C:3B:6B:34:01:DB@wlan1: connected, signal strength -59
+  9  1405/07/22 10:54:37  [wireless,info]  64:D1:54:93:53:89@wlan1: connected, signal strength -66
+ 10  1405/07/22 10:54:38  [interface,info]  ether1 link up (speed 1G, full duplex)
+ 11  1405/07/22 10:54:51  [wireless,info]  6C:3B:6B:97:E7:E3@wlan1: connected, signal strength -64
+ 12  1405/07/22 13:35:19  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  6C:3B:6B:94:8C:99  (ether)
+wlan1  6C:3B:6B:94:8C:9A  (wlan)
+bridge1  6C:3B:6B:94:8C:9A  (bridge)
+--- /ip arp ---
+bridge1  E4:8D:8C:0E:6E:40  (arp 172.18.9.193)

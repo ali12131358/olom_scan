@@ -1,0 +1,93 @@
+IP: 172.18.2.19
+Collected at: 2026-10-14T10:22:51.171015+00:00
+source: RouterOS API
+identity: EmamHassan
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=E4:8D:8C:55:F7:08
+  2  name=wlan1  type=wlan  running=true  mac=08:55:31:D4:1E:4D
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=Abadan-Foriat4  band=5ghz-a/n  frequency=5825
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.2.19/29  interface=wlan1  network=172.18.2.16
+  2  address=172.29.3.1/25  interface=ether1  network=172.29.3.0
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.2.17  distance=1
+  2  dst=172.18.2.16/29  gw=wlan1  distance=0
+  3  dst=172.29.3.0/25  gw=ether1  distance=0
+
+----- neighbors -----
+(empty)
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:15:14
+# ساعت دستگاه (خام): 1970-06-21 00:56:37
+# افست اصلاحی (سرور − دستگاه): +493664:48:37
+  1  1405/07/21 10:23:30  [system,info]  router rebooted
+  2  1405/07/21 10:23:36  [wireless,info]  B8:69:F4:6C:5A:54@wlan1 established connection on 5520000, SSID Abadan-Foriat4
+  3  1405/07/21 10:23:39  [interface,info]  ether1 link up (speed 100M, full duplex)
+  4  1405/07/21 10:24:13  [system,info,account]  user garnaf logged in from 172.29.3.111 via winbox
+  5  1405/07/21 10:24:17  [system,info,account]  user garnaf logged in from 172.29.3.111 via telnet
+  6  1405/07/21 10:27:04  [system,info]  ip service changed by garnaf
+  7  1405/07/21 10:27:05  [system,info]  ip service changed by garnaf
+  8  1405/07/21 10:27:05  [system,info]  ip service changed by garnaf
+  9  1405/07/21 10:28:24  [system,info]  ipsec policy changed by garnaf
+ 10  1405/07/21 10:28:45  [system,info]  ipsec policy changed by garnaf
+ 11  1405/07/21 10:31:20  [system,info,account]  user garnaf logged out from 172.29.3.111 via telnet
+ 12  1405/07/21 10:31:21  [system,info,account]  user garnaf logged out from 172.29.3.111 via winbox
+ 13  1405/07/21 10:32:00  [system,info,account]  user garnaf logged in from 172.29.3.111 via winbox
+ 14  1405/07/21 10:33:10  [system,info,account]  user garnaf logged out from 172.29.3.111 via winbox
+ 15  1405/07/21 10:33:24  [dhcp,info]  dhcp1 deassigned 172.29.3.120 from 40:8D:5C:96:FC:89
+ 16  1405/07/21 10:34:40  [dhcp,info]  dhcp1 assigned 172.29.3.120 to 40:8D:5C:96:FC:89
+ 17  1405/07/21 10:38:18  [wireless,info]  B8:69:F4:6C:5A:54@wlan1: lost connection, no beacons received
+ 18  1405/07/21 10:39:33  [dhcp,info]  dhcp1 deassigned 172.29.3.111 from 40:B0:34:09:1E:FD
+ 19  1405/07/21 10:41:02  [wireless,info]  B8:69:F4:6C:5A:54@wlan1 established connection on 5520000, SSID Abadan-Foriat4
+ 20  1405/07/21 10:49:53  [wireless,info]  B8:69:F4:6C:5A:54@wlan1: lost connection, no beacons received
+ 21  1405/07/21 10:50:21  [wireless,info]  B8:69:F4:6C:5A:54@wlan1 established connection on 5520000, SSID Abadan-Foriat4
+ 22  1405/07/21 10:55:51  [wireless,info]  B8:69:F4:6C:5A:54@wlan1: lost connection, no beacons received
+ 23  1405/07/21 10:57:25  [wireless,info]  B8:69:F4:6C:5A:54@wlan1 established connection on 5520000, SSID Abadan-Foriat4
+ 24  1405/07/21 10:57:39  [wireless,info]  B8:69:F4:6C:5A:54@wlan1: lost connection, extensive data loss
+ 25  1405/07/21 10:58:50  [wireless,info]  B8:69:F4:6C:5A:54@wlan1 established connection on 5520000, SSID Abadan-Foriat4
+ 26  1405/07/21 11:43:22  [dhcp,info]  dhcp1 deassigned 172.29.3.122 from FC:AA:14:B0:22:DB
+ 27  1405/07/21 11:43:22  [dhcp,info]  dhcp1 assigned 172.29.3.122 to FC:AA:14:B0:22:DB
+ 28  1405/07/21 11:59:40  [dhcp,info]  dhcp1 deassigned 172.29.3.120 from 40:8D:5C:96:FC:89
+ 29  1405/07/21 12:00:11  [dhcp,info]  dhcp1 deassigned 172.29.3.121 from 18:C0:4D:11:16:67
+ 30  1405/07/21 12:12:02  [dhcp,info]  dhcp1 deassigned 172.29.3.123 from 74:D4:35:9C:11:46
+ 31  1405/07/21 12:23:21  [dhcp,info]  dhcp1 deassigned 172.29.3.122 from FC:AA:14:B0:22:DB
+ 32  1405/07/21 12:24:40  [dhcp,info]  dhcp1 deassigned 172.29.3.114 from FC:AA:14:B0:F5:9F
+ 33  1405/07/21 12:44:16  [dhcp,info]  dhcp1 deassigned 172.29.3.112 from 1C:1B:0D:B9:09:7C
+ 34  1405/07/22 08:05:05  [dhcp,info]  dhcp1 assigned 172.29.3.121 to 18:C0:4D:11:16:67
+ 35  1405/07/22 08:21:26  [dhcp,info]  dhcp1 assigned 172.29.3.122 to FC:AA:14:B0:22:DB
+ 36  1405/07/22 08:25:40  [dhcp,info]  dhcp1 assigned 172.29.3.112 to 1C:1B:0D:B9:09:7C
+ 37  1405/07/22 08:27:57  [dhcp,info]  dhcp1 assigned 172.29.3.120 to 40:8D:5C:96:FC:89
+ 38  1405/07/22 08:56:45  [dhcp,info]  dhcp1 deassigned 172.29.3.120 from 40:8D:5C:96:FC:89
+ 39  1405/07/22 08:56:45  [dhcp,info]  dhcp1 assigned 172.29.3.120 to 40:8D:5C:96:FC:89
+ 40  1405/07/22 10:34:53  [dhcp,info]  dhcp1 deassigned 172.29.3.120 from 40:8D:5C:96:FC:89
+ 41  1405/07/22 10:34:53  [dhcp,info]  dhcp1 assigned 172.29.3.120 to 40:8D:5C:96:FC:89
+ 42  1405/07/22 10:44:53  [dhcp,info]  dhcp1 deassigned 172.29.3.120 from 40:8D:5C:96:FC:89
+ 43  1405/07/22 11:22:35  [dhcp,info]  dhcp1 assigned 172.29.3.115 to B0:82:E2:3C:C9:9E
+ 44  1405/07/22 11:26:21  [dhcp,info]  dhcp1 deassigned 172.29.3.115 from B0:82:E2:3C:C9:9E
+ 45  1405/07/22 11:26:21  [dhcp,info]  dhcp1 assigned 172.29.3.115 to B0:82:E2:3C:C9:9E
+ 46  1405/07/22 11:29:20  [dhcp,info]  dhcp1 deassigned 172.29.3.116 from FC:AA:14:B0:F1:2A
+ 47  1405/07/22 12:05:05  [dhcp,info]  dhcp1 deassigned 172.29.3.121 from 18:C0:4D:11:16:67
+ 48  1405/07/22 12:16:21  [dhcp,info]  dhcp1 deassigned 172.29.3.115 from B0:82:E2:3C:C9:9E
+ 49  1405/07/22 12:30:41  [dhcp,info]  dhcp1 deassigned 172.29.3.112 from 1C:1B:0D:B9:09:7C
+ 50  1405/07/22 12:31:25  [dhcp,info]  dhcp1 deassigned 172.29.3.122 from FC:AA:14:B0:22:DB
+ 51  1405/07/22 13:15:13  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  E4:8D:8C:55:F7:08  (ether)
+wlan1  08:55:31:D4:1E:4D  (wlan)
+--- /ip arp ---
+ether1  70:F3:5A:8E:11:40  (arp 172.29.3.113)
+wlan1  6C:3B:6B:87:6E:1A  (arp 172.18.2.17)
+ether1  00:59:DC:DA:19:40  (arp 172.29.3.125)

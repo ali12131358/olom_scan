@@ -1,0 +1,52 @@
+IP: 172.18.26.10
+Collected at: 2026-10-14T10:23:32.221538+00:00
+source: RouterOS API
+identity: Darkhovein->OmolGhazlan.AP
+device_type: AP
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=4C:5E:0C:CD:FA:17
+  2  name=wlan1  type=wlan  running=true  mac=4C:5E:0C:CD:FA:18
+  3  name=bridge1  type=bridge  running=true  mac=4C:5E:0C:CD:FA:17
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=bridge  ssid=DRKHOMGH  band=5ghz-onlyn  frequency=5660
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.26.10/29  interface=ether1  network=172.18.26.8
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.26.9  distance=1
+  2  dst=172.18.26.8/29  gw=bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=MK_Darkhovein  address=172.18.26.9  interface=ether1,bridge1
+  2  identity=Darkhovein->OmolGhazlan.Client  address=172.18.26.11  interface=wlan1,bridge1
+  3  identity=MK_OmolGhazlan  address=172.18.26.12  interface=wlan1,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:26:07
+# ساعت دستگاه (خام): 2025-07-13 02:54:54
+# افست اصلاحی (سرور − دستگاه): +10999:01:13
+  1  1405/07/23 09:54:05  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/23 09:54:06  [bridge,info]  "bridge1" mac address changed to 4C:5E:0C:CD:FA:17
+  3  1405/07/23 09:54:08  [interface,info]  ether1 link up (speed 100M, full duplex)
+  4  1405/07/23 09:54:09  [interface,info]  ether1 link down
+  5  1405/07/23 09:54:11  [interface,info]  ether1 link up (speed 100M, full duplex)
+  6  1405/07/23 09:54:12  [wireless,info]  4C:5E:0C:CD:FE:A0@wlan1: connected, signal strength -63, wants bridge
+  7  1405/07/22 12:39:29  [wireless,info]  4C:5E:0C:CD:FE:A0@wlan1: disconnected, extensive data loss, signal strength -63
+  8  1405/07/22 12:39:52  [wireless,info]  4C:5E:0C:CD:FE:A0@wlan1: connected, signal strength -60, wants bridge
+  9  1405/07/22 13:26:05  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  4C:5E:0C:CD:FA:17  (ether)
+wlan1  4C:5E:0C:CD:FA:18  (wlan)
+bridge1  4C:5E:0C:CD:FA:17  (bridge)
+--- /ip arp ---
+bridge1  E4:8D:8C:0D:18:C0  (arp 172.18.26.9)

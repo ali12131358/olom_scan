@@ -1,0 +1,50 @@
+IP: 172.18.2.18
+Collected at: 2026-10-14T10:22:50.897831+00:00
+source: RouterOS API
+identity: Foriatha->Emamhasan.AP
+device_type: AP
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=B8:69:F4:6C:5A:53
+  2  name=wlan1  type=wlan  running=true  mac=B8:69:F4:6C:5A:54
+  3  name=bridge1  type=bridge  running=true  mac=B8:69:F4:6C:5A:54
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=ap-bridge  ssid=Abadan-Foriat4  band=5ghz-onlyn  frequency=5520
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.2.18/29  interface=ether1  network=172.18.2.16
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.2.17  distance=1
+  2  dst=172.18.2.16/29  gw=bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=Ghadr.Client  address=172.18.2.20  interface=wlan1,bridge1
+  2  identity=RouerForiat10  address=172.18.2.17  interface=ether1,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:15:12
+# ساعت دستگاه (خام): 1974-07-20 08:07:43
+# افست اصلاحی (سرور − دستگاه): +457897:37:29
+  1  1405/07/21 10:58:37  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/21 10:58:40  [bridge,info]  "bridge1" mac address changed to B8:69:F4:6C:5A:54
+  3  1405/07/21 10:58:46  [wireless,info]  D0:EA:11:18:20:79@wlan1: connected, signal strength -60
+  4  1405/07/21 10:58:49  [wireless,info]  08:55:31:D4:1E:4D@wlan1: connected, signal strength -67, wants bridge
+  5  1405/07/21 10:59:29  [interface,info]  ether1 link up (speed 100M, full duplex)
+  6  1405/07/21 19:18:01  [wireless,info]  DE:A4:7F:9F:40:D0@wlan1: connected, signal strength -86
+  7  1405/07/21 19:18:06  [wireless,info]  DE:A4:7F:9F:40:D0@wlan1: disconnected, unicast key exchange timeout, signal strength -85
+  8  1405/07/22 13:15:11  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  B8:69:F4:6C:5A:53  (ether)
+wlan1  B8:69:F4:6C:5A:54  (wlan)
+bridge1  B8:69:F4:6C:5A:54  (bridge)
+--- /ip arp ---
+bridge1  6C:3B:6B:87:6E:1A  (arp 172.18.2.17)

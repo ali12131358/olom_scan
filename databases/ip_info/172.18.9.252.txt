@@ -1,0 +1,53 @@
+IP: 172.18.9.252
+Collected at: 2026-10-14T10:24:35.837195+00:00
+source: RouterOS API
+identity: ShohadayeSaduni.Client
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=6C:3B:6B:91:10:47
+  2  name=wlan1  type=wlan  running=true  mac=6C:3B:6B:91:10:48
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=Abadan-ArvanKenar3  band=5ghz-a/n  frequency=5870
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.9.252/28  interface=wlan1  network=172.18.9.240
+  2  address=172.29.75.129/25  interface=ether1  network=172.29.75.128
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.9.249  distance=1
+  2  dst=172.18.9.240/28  gw=wlan1  distance=0
+  3  dst=172.29.75.128/25  gw=ether1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=RB-shohadaye-saduni  address=172.29.75.130  interface=ether1
+  2  identity=Router.Markaz.ArvandKanar  address=172.18.9.225  interface=wlan1
+  3  identity=Abadan-ArvanKenar1  address=172.18.9.226  interface=wlan1
+  4  identity=AbooShanakNasar.Client  address=172.18.9.228  interface=wlan1
+  5  identity=obuabood.Client  address=172.18.9.229  interface=wlan1
+  6  identity=NahrHamid.Client  address=172.18.9.231  interface=wlan1
+  7  identity=NahrAriz.Client  address=172.18.9.233  interface=wlan1
+  8  identity=CL-AbuShanak-Nasar  address=172.18.9.251  interface=wlan1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:36:43
+# ساعت دستگاه (خام): 1974-07-20 10:44:45
+# افست اصلاحی (سرور − دستگاه): +457895:21:58
+  1  1405/07/22 12:49:47  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/22 12:49:57  [interface,info]  ether1 link up (speed 100M, full duplex)
+  3  1405/07/22 12:50:41  [wireless,info]  6E:3B:6B:94:8C:48@wlan1 established connection on 5860000, SSID Abadan-ArvanKenar3
+  4  1405/07/22 13:36:42  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  6C:3B:6B:91:10:47  (ether)
+wlan1  6C:3B:6B:91:10:48  (wlan)
+--- /ip arp ---
+ether1  64:D1:54:58:B1:2F  (arp 172.29.75.130)
+wlan1  6C:3B:6B:B2:3D:1E  (arp 172.18.9.249)

@@ -1,0 +1,50 @@
+IP: 172.29.74.129
+Collected at: 2026-10-14T10:25:46.666507+00:00
+source: RouterOS API
+identity: NahrHamid.Client
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=false  mac=6C:3B:6B:34:02:3C
+  2  name=wlan1  type=wlan  running=true  mac=6C:3B:6B:34:02:3D
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=Abadan-ArvanKenar1  band=5ghz-a/n  frequency=5260
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.29.74.129/27  interface=ether1  network=172.29.74.128
+  2  address=172.18.9.231/28  interface=wlan1  network=172.18.9.224
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.9.225  distance=1
+  2  dst=172.18.9.224/28  gw=wlan1  distance=0
+  3  dst=172.29.74.128/27  gw=ether1  distance=255
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=Router.Markaz.ArvandKanar  address=172.18.9.225  interface=wlan1
+  2  identity=Abadan-ArvanKenar1  address=172.18.9.226  interface=wlan1
+  3  identity=ShohadayeSaduni.Client  address=172.18.9.252  interface=wlan1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:51:04
+# ساعت دستگاه (خام): 1972-04-29 10:35:11
+# افست اصلاحی (سرور − دستگاه): +477383:45:53
+  1  1405/07/22 06:44:41  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/22 06:45:34  [wireless,info]  6C:3B:6B:94:8C:48@wlan1 established connection on 5860000, SSID Abadan-ArvanKenar1
+  3  1405/07/22 06:59:32  [wireless,info]  6C:3B:6B:94:8C:48@wlan1: lost connection, extensive data loss
+  4  1405/07/22 07:00:24  [wireless,info]  6C:3B:6B:94:8C:48@wlan1 established connection on 5860000, SSID Abadan-ArvanKenar1
+  5  1405/07/22 13:36:15  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+  6  1405/07/22 13:36:18  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+  7  1405/07/22 13:51:03  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  6C:3B:6B:34:02:3C  (ether)
+wlan1  6C:3B:6B:34:02:3D  (wlan)
+--- /ip arp ---
+wlan1  6C:3B:6B:B2:3D:1E  (arp 172.18.9.225)

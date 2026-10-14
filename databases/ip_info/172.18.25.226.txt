@@ -1,0 +1,56 @@
+IP: 172.18.25.226
+Collected at: 2026-10-14T10:23:24.588421+00:00
+source: RouterOS API
+identity: Shadegan-Jafal2
+device_type: AP
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=6C:3B:6B:5D:72:80
+  2  name=wlan1  type=wlan  running=true  mac=6C:3B:6B:5D:72:81
+  3  name=bridge1  type=bridge  running=true  mac=6C:3B:6B:5D:72:80
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=ap-bridge  ssid=Shadegan-Jafal2  band=5ghz-a/n  frequency=5100
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.25.226/28  interface=ether1  network=172.18.25.224
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.25.225  distance=1
+  2  dst=172.18.25.224/28  gw=bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=MK_Jafal  address=172.18.25.225  interface=ether1,bridge1
+  2  identity=AlboObeyd.Client  address=172.18.25.228  interface=wlan1,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:24:14
+# ساعت دستگاه (خام): 2025-04-02 23:41:44
+# افست اصلاحی (سرور − دستگاه): +13426:12:30
+  1  1405/07/22 08:56:39  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/22 08:56:41  [bridge,info]  "bridge1" mac address changed to 6C:3B:6B:5D:72:80
+  3  1405/07/22 08:56:47  [interface,info]  ether1 link up (speed 1G, full duplex)
+  4  1405/07/22 08:57:44  [wireless,debug]  wlan1: 64:D1:54:52:DA:1B not in local ACL, by default accept
+  5  1405/07/22 08:57:44  [wireless,info]  64:D1:54:52:DA:1B@wlan1: connected, signal strength -56
+  6  1405/07/22 08:58:05  [wireless,debug]  wlan1: 78:9A:18:77:0D:A3 not in local ACL, by default accept
+  7  1405/07/22 08:58:06  [wireless,info]  78:9A:18:77:0D:A3@wlan1: connected, signal strength -60
+  8  1405/07/22 10:49:41  [wireless,info]  64:D1:54:52:DA:1B@wlan1: disconnected, control frame timeout
+  9  1405/07/22 10:49:42  [wireless,info]  78:9A:18:77:0D:A3@wlan1: disconnected, not responding
+ 10  1405/07/22 11:03:58  [wireless,debug]  wlan1: 64:D1:54:52:DA:1B not in local ACL, by default accept
+ 11  1405/07/22 11:03:58  [wireless,info]  64:D1:54:52:DA:1B@wlan1: connected, signal strength -56
+ 12  1405/07/22 11:08:05  [wireless,debug]  wlan1: 78:9A:18:77:0D:A3 not in local ACL, by default accept
+ 13  1405/07/22 11:08:05  [wireless,info]  78:9A:18:77:0D:A3@wlan1: connected, signal strength -58
+ 14  1405/07/22 13:24:13  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  6C:3B:6B:5D:72:80  (ether)
+wlan1  6C:3B:6B:5D:72:81  (wlan)
+bridge1  6C:3B:6B:5D:72:80  (bridge)
+--- /ip arp ---
+bridge1  6C:3B:6B:0C:28:9E  (arp 172.18.25.225)

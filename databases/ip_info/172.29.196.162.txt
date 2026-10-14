@@ -1,0 +1,51 @@
+IP: 172.29.196.162
+Collected at: 2026-10-14T10:25:15.008280+00:00
+source: RouterOS API
+identity: khaneh-nhdsht-slmnh
+device_type: AP
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=false  mac=64:D1:54:41:73:96
+  2  name=ether2  type=ether  running=false  mac=64:D1:54:41:73:97
+  3  name=ether3  type=ether  running=true  mac=64:D1:54:41:73:98
+  4  name=ether4  type=ether  running=false  mac=64:D1:54:41:73:99
+  5  name=wlan1  type=wlan  running=false  mac=64:D1:54:41:73:9A
+  6  name=bridgeLocal  type=bridge  running=true  mac=64:D1:54:41:73:96
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=ap-bridge  ssid=WiFi  band=2ghz-onlyn  frequency=2412
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.29.196.162/27  interface=bridgeLocal  network=172.29.196.160
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.29.196.161  distance=1
+  2  dst=172.29.196.160/27  gw=bridgeLocal  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=RB-Salmaneh  address=172.29.196.161  interface=ether3,bridgeLocal
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:43:01
+# ساعت دستگاه (خام): 1972-11-17 05:09:13
+# افست اصلاحی (سرور − دستگاه): +472541:03:48
+  1  1405/07/22 09:51:44  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/22 09:51:53  [bridge,info]  hardware offloading activated on bridge "bridgeLocal" ports: ether1
+  3  1405/07/22 09:51:55  [interface,info]  ether3 link up (speed 100M, full duplex)
+  4  1405/07/22 13:42:58  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  64:D1:54:41:73:96  (ether)
+ether2  64:D1:54:41:73:97  (ether)
+ether3  64:D1:54:41:73:98  (ether)
+ether4  64:D1:54:41:73:99  (ether)
+wlan1  64:D1:54:41:73:9A  (wlan)
+bridgeLocal  64:D1:54:41:73:96  (bridge)
+--- /ip arp ---
+bridgeLocal  6C:3B:6B:87:70:AF  (arp 172.29.196.161)

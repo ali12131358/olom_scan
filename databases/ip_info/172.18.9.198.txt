@@ -1,0 +1,75 @@
+IP: 172.18.9.198
+Collected at: 2026-10-14T10:24:25.420209+00:00
+source: RouterOS API
+identity: KhazalAbad.Client
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=64:D1:54:93:53:88
+  2  name=wlan1  type=wlan  running=true  mac=64:D1:54:93:53:89
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=Abadan-22Bahman1  band=5ghz-a/n  frequency=5260
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.9.198/28  interface=wlan1  network=172.18.9.192
+  2  address=172.29.73.1/27  interface=ether1  network=172.29.73.0
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.9.193  distance=1
+  2  dst=172.18.9.192/28  gw=wlan1  distance=0
+  3  dst=172.29.73.0/27  gw=ether1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=22Bahman-MK  address=172.18.9.193  interface=wlan1
+  2  identity=Abadan-22Bahman1  address=172.18.9.194  interface=wlan1
+  3  identity=KootShanoof.Client  address=172.18.9.196  interface=wlan1
+  4  identity=ObuKhazravi.Client  address=172.18.9.199  interface=wlan1
+  5  identity=ObuShekr.Client  address=172.18.9.200  interface=wlan1
+  6  identity=ObuDeyereh.Client  address=172.18.9.201  interface=wlan1
+  7  identity=NahrSalim.Client  address=172.18.9.202  interface=wlan1
+  8  identity=Afadeleh.Client  address=172.18.9.203  interface=wlan1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:35:25
+# ساعت دستگاه (خام): 1974-03-16 16:45:33
+# افست اصلاحی (سرور − دستگاه): +460913:19:52
+  1  1405/07/21 16:21:00  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/21 16:21:10  [wireless,info]  6C:3B:6B:94:8C:9A@wlan1 established connection on 5540000, SSID Abadan-22Bahman1
+  3  1405/07/21 16:21:11  [interface,info]  ether1 link up (speed 100M, full duplex)
+  4  1405/07/21 16:23:03  [interface,info]  ether1 link down
+  5  1405/07/21 16:23:04  [interface,info]  ether1 link up (speed 100M, full duplex)
+  6  1405/07/21 20:43:42  [wireless,info]  6C:3B:6B:94:8C:9A@wlan1: lost connection, not responding
+  7  1405/07/21 20:44:18  [wireless,info]  6C:3B:6B:94:8C:9A@wlan1 established connection on 5540000, SSID Abadan-22Bahman1
+  8  1405/07/21 21:00:58  [wireless,info]  6C:3B:6B:94:8C:9A@wlan1: lost connection, control frame timeout
+  9  1405/07/21 21:01:37  [wireless,info]  6C:3B:6B:94:8C:9A@wlan1: failed to connect, on 5540000, registration timeout
+ 10  1405/07/21 21:02:14  [wireless,info]  6C:3B:6B:94:8C:9A@wlan1: failed to connect, on 5540000, registration timeout
+ 11  1405/07/21 21:02:54  [wireless,info]  6C:3B:6B:94:8C:9A@wlan1: failed to connect, on 5540000, registration timeout
+ 12  1405/07/21 21:03:20  [wireless,info]  6C:3B:6B:94:8C:9A@wlan1 established connection on 5540000, SSID Abadan-22Bahman1
+ 13  1405/07/21 22:37:06  [wireless,info]  6C:3B:6B:94:8C:9A@wlan1: lost connection, synchronization timeout
+ 14  1405/07/21 22:37:42  [wireless,info]  6C:3B:6B:94:8C:9A@wlan1 established connection on 5540000, SSID Abadan-22Bahman1
+ 15  1405/07/22 00:18:44  [interface,info]  ether1 link down
+ 16  1405/07/22 00:18:45  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 17  1405/07/22 07:31:28  [wireless,info]  6C:3B:6B:94:8C:9A@wlan1: lost connection, synchronization timeout
+ 18  1405/07/22 07:31:54  [wireless,info]  6C:3B:6B:94:8C:9A@wlan1 established connection on 5540000, SSID Abadan-22Bahman1
+ 19  1405/07/22 10:16:34  [dhcp,info]  dhcp1 assigned 172.29.73.30 to 94:DE:80:4F:05:01
+ 20  1405/07/22 10:34:21  [interface,info]  ether1 link down
+ 21  1405/07/22 10:34:23  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 22  1405/07/22 10:54:13  [wireless,info]  6C:3B:6B:94:8C:9A@wlan1: lost connection, synchronization timeout
+ 23  1405/07/22 10:54:37  [wireless,info]  6C:3B:6B:94:8C:9A@wlan1 established connection on 5540000, SSID Abadan-22Bahman1
+ 24  1405/07/22 11:19:49  [interface,info]  ether1 link down
+ 25  1405/07/22 11:19:51  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 26  1405/07/22 12:41:33  [dhcp,info]  dhcp1 deassigned 172.29.73.30 from 94:DE:80:4F:05:01
+ 27  1405/07/22 13:35:23  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  64:D1:54:93:53:88  (ether)
+wlan1  64:D1:54:93:53:89  (wlan)
+--- /ip arp ---
+wlan1  E4:8D:8C:0E:6E:40  (arp 172.18.9.193)

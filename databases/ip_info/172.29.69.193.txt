@@ -1,0 +1,48 @@
+IP: 172.29.69.193
+Collected at: 2026-10-14T10:25:39.968018+00:00
+source: RouterOS API
+identity: Seydavieh2.Client
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=6C:3B:6B:91:10:DD
+  2  name=wlan1  type=wlan  running=true  mac=6C:3B:6B:91:10:DE
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=Abadan-Khezr4  band=5ghz-a/n  frequency=5260
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.9.69/28  interface=wlan1  network=172.18.9.64
+  2  address=172.29.69.193/27  interface=ether1  network=172.29.69.192
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.9.65  distance=1
+  2  dst=172.18.9.64/28  gw=wlan1  distance=0
+  3  dst=172.29.69.192/27  gw=ether1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=Abadan-Khezr4.AP  address=172.18.9.66  interface=wlan1
+  2  identity=Tangeh2.Client  address=172.18.9.71  interface=wlan1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:49:31
+# ساعت دستگاه (خام): 1974-10-26 06:57:53
+# افست اصلاحی (سرور − دستگاه): +455547:21:38
+  1  1405/07/21 09:36:50  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/21 09:36:58  [wireless,info]  6C:3B:6B:AB:D2:56@wlan1 established connection on 5745000, SSID Abadan-Khezr4
+  3  1405/07/21 09:37:00  [interface,info]  ether1 link up (speed 100M, full duplex)
+  4  1405/07/22 13:37:59  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+  5  1405/07/22 13:38:01  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+  6  1405/07/22 13:49:28  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  6C:3B:6B:91:10:DD  (ether)
+wlan1  6C:3B:6B:91:10:DE  (wlan)
+--- /ip arp ---
+wlan1  6C:3B:6B:85:AC:A9  (arp 172.18.9.65)

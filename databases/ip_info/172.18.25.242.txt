@@ -1,0 +1,97 @@
+IP: 172.18.25.242
+Collected at: 2026-10-14T10:23:25.955338+00:00
+source: RouterOS API
+identity: Shadegan-Jafal3
+device_type: AP
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=18:FD:74:BA:07:38
+  2  name=wlan1  type=wlan  running=true  mac=18:FD:74:BA:07:39
+  3  name=bridge1  type=bridge  running=true  mac=18:FD:74:BA:07:38
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=ap-bridge  ssid=Shadegan-Jafal3  band=5ghz-a/n  frequency=5750
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.25.242/28  interface=ether1  network=172.18.25.240
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.25.241  distance=1
+  2  dst=172.18.25.240/28  gw=bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=MK_Jafal  address=172.18.25.241  interface=ether1,bridge1
+  2  identity=AlboArabid.Client  address=172.18.25.243  interface=wlan1,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:24:23
+# ساعت دستگاه (خام): 1972-10-26 20:45:41
+# افست اصلاحی (سرور − دستگاه): +473053:08:42
+  1  1405/07/21 01:19:16  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/21 01:19:17  [bridge,info]  "bridge1" mac address changed to 18:FD:74:BA:07:38
+  3  1405/07/21 01:20:01  [interface,info]  ether1 link up (speed 1G, full duplex)
+  4  1405/07/21 01:20:24  [interface,info]  ether1 link down
+  5  1405/07/21 01:20:29  [interface,info]  ether1 link up (speed 1G, full duplex)
+  6  1405/07/21 01:23:28  [wireless,info]  E4:8D:8C:61:6D:F7@wlan1: connected, signal strength -70
+  7  1405/07/21 01:44:57  [interface,info]  ether1 link down
+  8  1405/07/21 01:45:59  [interface,info]  ether1 link up (speed 1G, full duplex)
+  9  1405/07/21 01:46:21  [interface,info]  ether1 link down
+ 10  1405/07/21 01:46:26  [interface,info]  ether1 link up (speed 1G, full duplex)
+ 11  1405/07/21 08:26:46  [wireless,info]  08:55:31:E2:76:BA@wlan1: connected, signal strength -76
+ 12  1405/07/21 11:05:35  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 13  1405/07/21 11:05:37  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 14  1405/07/21 12:01:58  [wireless,info]  08:55:31:E2:76:BA@wlan1: disconnected, not responding
+ 15  1405/07/21 21:25:40  [wireless,info]  E4:8D:8C:61:6D:F7@wlan1: disconnected, control frame timeout
+ 16  1405/07/21 21:27:32  [wireless,info]  E4:8D:8C:61:6D:F7@wlan1: connected, signal strength -86
+ 17  1405/07/22 06:24:24  [wireless,info]  E4:8D:8C:61:6D:F7@wlan1: disconnected, control frame timeout
+ 18  1405/07/22 06:27:10  [wireless,info]  E4:8D:8C:61:6D:F7@wlan1: connected, signal strength -88
+ 19  1405/07/22 06:35:05  [wireless,info]  E4:8D:8C:61:6D:F7@wlan1: disconnected, not responding
+ 20  1405/07/22 06:35:54  [wireless,info]  E4:8D:8C:61:6D:F7@wlan1: reconnecting
+ 21  1405/07/22 06:35:55  [wireless,info]  E4:8D:8C:61:6D:F7@wlan1: connected, signal strength -84
+ 22  1405/07/22 06:42:24  [wireless,info]  E4:8D:8C:61:6D:F7@wlan1: disconnected, control frame timeout
+ 23  1405/07/22 06:43:20  [wireless,info]  E4:8D:8C:61:6D:F7@wlan1: connected, signal strength -86
+ 24  1405/07/22 06:52:35  [wireless,info]  E4:8D:8C:61:6D:F7@wlan1: disconnected, control frame timeout
+ 25  1405/07/22 06:54:27  [wireless,info]  E4:8D:8C:61:6D:F7@wlan1: connected, signal strength -88
+ 26  1405/07/22 06:54:59  [wireless,info]  E4:8D:8C:61:6D:F7@wlan1: disconnected, not responding
+ 27  1405/07/22 06:55:51  [wireless,info]  E4:8D:8C:61:6D:F7@wlan1: connected, signal strength -84
+ 28  1405/07/22 06:58:34  [wireless,info]  E4:8D:8C:61:6D:F7@wlan1: disconnected, control frame timeout
+ 29  1405/07/22 07:01:21  [wireless,info]  E4:8D:8C:61:6D:F7@wlan1: connected, signal strength -82
+ 30  1405/07/22 07:32:13  [wireless,info]  E4:8D:8C:61:6D:F7@wlan1: disconnected, not responding
+ 31  1405/07/22 07:33:04  [wireless,info]  E4:8D:8C:61:6D:F7@wlan1: connected, signal strength -86
+ 32  1405/07/22 07:36:34  [wireless,info]  E4:8D:8C:61:6D:F7@wlan1: disconnected, control frame timeout
+ 33  1405/07/22 07:38:26  [wireless,info]  E4:8D:8C:61:6D:F7@wlan1: connected, signal strength -84
+ 34  1405/07/22 07:40:35  [wireless,info]  E4:8D:8C:61:6D:F7@wlan1: disconnected, not responding
+ 35  1405/07/22 07:43:20  [wireless,info]  E4:8D:8C:61:6D:F7@wlan1: reconnecting
+ 36  1405/07/22 07:43:21  [wireless,info]  E4:8D:8C:61:6D:F7@wlan1: connected, signal strength -85
+ 37  1405/07/22 08:54:07  [interface,info]  ether1 link down
+ 38  1405/07/22 08:54:09  [interface,info]  ether1 link up (speed 1G, full duplex)
+ 39  1405/07/22 08:54:15  [interface,info]  ether1 link down
+ 40  1405/07/22 08:54:17  [interface,info]  ether1 link up (speed 1G, full duplex)
+ 41  1405/07/22 08:54:22  [interface,info]  ether1 link down
+ 42  1405/07/22 08:54:24  [interface,info]  ether1 link up (speed 1G, full duplex)
+ 43  1405/07/22 08:54:29  [interface,info]  ether1 link down
+ 44  1405/07/22 08:54:31  [interface,info]  ether1 link up (speed 1G, full duplex)
+ 45  1405/07/22 08:55:54  [interface,info]  ether1 link down
+ 46  1405/07/22 08:56:20  [interface,info]  ether1 link up (speed 1G, full duplex)
+ 47  1405/07/22 08:56:21  [interface,info]  ether1 link down
+ 48  1405/07/22 08:56:23  [interface,info]  ether1 link up (speed 1G, full duplex)
+ 49  1405/07/22 08:56:33  [interface,info]  ether1 link down
+ 50  1405/07/22 08:56:37  [interface,info]  ether1 link up (speed 1G, full duplex)
+ 51  1405/07/22 08:56:44  [interface,info]  ether1 link down
+ 52  1405/07/22 08:56:48  [interface,info]  ether1 link up (speed 1G, full duplex)
+ 53  1405/07/22 08:58:31  [interface,info]  ether1 link down
+ 54  1405/07/22 08:58:33  [interface,info]  ether1 link up (speed 1G, full duplex)
+ 55  1405/07/22 13:24:21  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  18:FD:74:BA:07:38  (ether)
+wlan1  18:FD:74:BA:07:39  (wlan)
+bridge1  18:FD:74:BA:07:38  (bridge)
+--- /ip arp ---
+bridge1  6C:3B:6B:0C:28:9C  (arp 172.18.25.241)

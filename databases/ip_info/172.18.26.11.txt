@@ -1,0 +1,48 @@
+IP: 172.18.26.11
+Collected at: 2026-10-14T10:23:33.039087+00:00
+source: RouterOS API
+identity: Darkhovein->OmolGhazlan.Client
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=4C:5E:0C:CD:FE:9F
+  2  name=wlan1  type=wlan  running=true  mac=4C:5E:0C:CD:FE:A0
+  3  name=bridge1  type=bridge  running=true  mac=4C:5E:0C:CD:FE:9F
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=DRKHOMGH  band=5ghz-a/n  frequency=auto
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.26.11/29  interface=bridge1  network=172.18.26.8
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.26.9  distance=1
+  2  dst=172.18.26.8/29  gw=bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=MK_OmolGhazlan  address=172.18.26.12  interface=ether1,bridge1
+  2  identity=MK_Darkhovein  address=172.18.26.9  interface=wlan1,bridge1
+  3  identity=Darkhovein->OmolGhazlan.AP  address=172.18.26.10  interface=wlan1,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:26:17
+# ساعت دستگاه (خام): 2024-09-16 03:07:36
+# افست اصلاحی (سرور − دستگاه): +18198:48:41
+  1  1405/07/22 12:39:44  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/22 12:39:45  [bridge,info]  "bridge1" mac address changed to 4C:5E:0C:CD:FE:9F
+  3  1405/07/22 12:39:52  [wireless,info]  4C:5E:0C:CD:FA:18@wlan1 established connection on 5660000, SSID DRKHOMGH
+  4  1405/07/22 12:39:59  [interface,info]  ether1 link up (speed 100M, full duplex)
+  5  1405/07/22 13:26:16  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  4C:5E:0C:CD:FE:9F  (ether)
+wlan1  4C:5E:0C:CD:FE:A0  (wlan)
+bridge1  4C:5E:0C:CD:FE:9F  (bridge)
+--- /ip arp ---
+bridge1  E4:8D:8C:0D:18:C0  (arp 172.18.26.9)

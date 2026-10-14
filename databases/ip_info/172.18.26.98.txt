@@ -1,0 +1,47 @@
+IP: 172.18.26.98
+Collected at: 2026-10-14T10:23:42.217241+00:00
+source: RouterOS API
+identity: Soeichi->OmNoosheh.AP
+device_type: AP
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=6C:3B:6B:91:10:DB
+  2  name=wlan1  type=wlan  running=false  mac=6C:3B:6B:91:10:DC
+  3  name=bridge1  type=bridge  running=true  mac=6C:3B:6B:91:10:DB
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=bridge  ssid=SVCHOMN  band=5ghz-a/n  frequency=5640
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.26.98/29  interface=ether1  network=172.18.26.96
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.26.97  distance=1
+  2  dst=172.18.26.96/29  gw=bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=MK_Soeichi  address=172.18.26.97  interface=ether1,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:28:10
+# ساعت دستگاه (خام): 1973-11-03 14:14:53
+# افست اصلاحی (سرور − دستگاه): +464107:43:17
+  1  1405/07/21 11:47:26  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/21 11:47:27  [bridge,info]  "bridge1" mac address changed to 6C:3B:6B:91:10:DB
+  3  1405/07/21 11:47:28  [interface,info]  ether1 link up (speed 100M, full duplex)
+  4  1405/07/22 08:14:27  [wireless,info]  6C:3B:6B:34:00:8F@wlan1: connected, signal strength -67, wants bridge
+  5  1405/07/22 09:21:45  [wireless,info]  6C:3B:6B:34:00:8F@wlan1: disconnected, too many poll timeouts, signal strength -67
+  6  1405/07/22 13:28:08  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  6C:3B:6B:91:10:DB  (ether)
+wlan1  6C:3B:6B:91:10:DC  (wlan)
+bridge1  6C:3B:6B:91:10:DB  (bridge)
+--- /ip arp ---
+bridge1  6C:3B:6B:2B:BA:17  (arp 172.18.26.97)

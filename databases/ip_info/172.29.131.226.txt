@@ -1,0 +1,81 @@
+IP: 172.29.131.226
+Collected at: 2026-10-14T10:25:04.202035+00:00
+source: RouterOS API
+identity: hAP_Lite_jodadeh
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=E4:8D:8C:12:2D:EE
+  2  name=ether2  type=ether  running=false  mac=E4:8D:8C:12:2D:EF
+  3  name=ether3  type=ether  running=false  mac=E4:8D:8C:12:2D:F0
+  4  name=ether4  type=ether  running=false  mac=E4:8D:8C:12:2D:F1
+  5  name=wlan1  type=wlan  running=false  mac=E4:8D:8C:12:2D:F2
+  6  name=bridge1  type=bridge  running=true  mac=E4:8D:8C:12:2D:EE
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station  ssid=MikroTik  band=2ghz-b/g  frequency=2412
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.29.131.226/27  interface=bridge1  network=172.29.131.224
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.29.131.225  distance=1
+  2  dst=172.29.131.224/27  gw=bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=DorbandGharbi.Client  address=172.29.131.225  interface=ether1,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:40:42
+# ساعت دستگاه (خام): 1972-09-14 04:06:08
+# افست اصلاحی (سرور − دستگاه): +474078:04:34
+  1  1405/07/20 09:38:22  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/20 09:38:24  [bridge,info]  "bridge1" mac address changed to E4:8D:8C:12:2D:EE
+  3  1405/07/20 09:38:26  [interface,info]  ether1 link up (speed 100M, full duplex)
+  4  1405/07/20 09:38:28  [interface,info]  ether1 link down
+  5  1405/07/20 09:38:38  [interface,info]  ether1 link up (speed 100M, full duplex)
+  6  1405/07/20 09:38:38  [interface,info]  ether2 link up (speed 100M, full duplex)
+  7  1405/07/20 09:38:39  [interface,info]  ether3 link up (speed 100M, full duplex)
+  8  1405/07/20 09:39:40  [interface,info]  ether3 link down
+  9  1405/07/20 09:39:42  [interface,info]  ether3 link up (speed 100M, full duplex)
+ 10  1405/07/20 10:58:05  [interface,info]  ether2 link down
+ 11  1405/07/20 10:58:07  [interface,info]  ether2 link up (speed 100M, full duplex)
+ 12  1405/07/20 12:51:01  [interface,info]  ether3 link down
+ 13  1405/07/20 12:51:03  [interface,info]  ether3 link up (speed 10M, full duplex)
+ 14  1405/07/20 12:54:31  [interface,info]  ether2 link down
+ 15  1405/07/20 12:54:33  [interface,info]  ether2 link up (speed 100M, full duplex)
+ 16  1405/07/20 12:58:55  [interface,info]  ether3 link down
+ 17  1405/07/20 12:58:57  [interface,info]  ether2 link down
+ 18  1405/07/21 08:41:50  [interface,info]  ether2 link up (speed 100M, full duplex)
+ 19  1405/07/21 08:41:51  [interface,info]  ether3 link up (speed 100M, full duplex)
+ 20  1405/07/21 08:44:51  [interface,info]  ether3 link down
+ 21  1405/07/21 08:44:53  [interface,info]  ether3 link up (speed 100M, full duplex)
+ 22  1405/07/21 11:16:51  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 23  1405/07/21 11:16:54  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 24  1405/07/21 12:03:51  [interface,info]  ether3 link down
+ 25  1405/07/21 12:03:53  [interface,info]  ether2 link down
+ 26  1405/07/22 08:54:03  [interface,info]  ether2 link up (speed 100M, full duplex)
+ 27  1405/07/22 08:54:03  [interface,info]  ether3 link up (speed 100M, full duplex)
+ 28  1405/07/22 08:55:59  [interface,info]  ether3 link down
+ 29  1405/07/22 08:56:01  [interface,info]  ether3 link up (speed 100M, full duplex)
+ 30  1405/07/22 09:47:35  [interface,info]  ether3 link down
+ 31  1405/07/22 09:47:37  [interface,info]  ether3 link up (speed 10M, full duplex)
+ 32  1405/07/22 09:58:17  [interface,info]  ether3 link down
+ 33  1405/07/22 09:58:19  [interface,info]  ether2 link down
+ 34  1405/07/22 13:40:40  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  E4:8D:8C:12:2D:EE  (ether)
+ether2  E4:8D:8C:12:2D:EF  (ether)
+ether3  E4:8D:8C:12:2D:F0  (ether)
+ether4  E4:8D:8C:12:2D:F1  (ether)
+wlan1  E4:8D:8C:12:2D:F2  (wlan)
+bridge1  E4:8D:8C:12:2D:EE  (bridge)
+--- /ip arp ---
+bridge1  6C:3B:6B:34:02:4A  (arp 172.29.131.225)

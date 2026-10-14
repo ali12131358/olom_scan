@@ -1,0 +1,121 @@
+IP: 172.18.3.219
+Collected at: 2026-10-14T10:23:52.476120+00:00
+source: RouterOS API
+identity: Laberatory.GH.Client
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=CC:2D:E0:86:6D:B0
+  2  name=wlan1  type=wlan  running=true  mac=CC:2D:E0:86:6D:B1
+  3  name=bridge1  type=bridge  running=true  mac=CC:2D:E0:86:6D:B1
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=Laberatory.GH  band=5ghz-a/n  frequency=5260
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.3.219/29  interface=wlan1  network=172.18.3.216
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.3.217  distance=1
+  2  dst=172.18.3.216/29  gw=bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=router.Laberatory-ghaza-daroo-bereim  address=172.18.3.220  interface=ether1,bridge1
+  2  identity=RouerForiat10  address=172.18.3.217  interface=wlan1,bridge1
+  3  identity=Laberatory.GH  address=172.18.3.218  interface=wlan1,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:30:01
+# ساعت دستگاه (خام): 1976-09-17 15:56:18
+# افست اصلاحی (سرور − دستگاه): +438930:03:43
+  1  1405/06/10 04:02:38  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/06/10 04:02:40  [bridge,info]  "bridge1" mac address changed to CC:2D:E0:86:6D:B1
+  3  1405/06/10 04:02:46  [wireless,info]  6C:3B:6B:54:C3:37@wlan1 established connection on 5260000, SSID Laberatory.GH
+  4  1405/06/10 04:02:48  [interface,info]  ether1 link up (speed 100M, full duplex)
+  5  1405/06/14 08:47:59  [wireless,info]  6C:3B:6B:54:C3:37@wlan1: lost connection, synchronization timeout
+  6  1405/06/14 08:48:26  [wireless,info]  6C:3B:6B:54:C3:37@wlan1 established connection on 5260000, SSID Laberatory.GH
+  7  1405/06/14 08:49:06  [system,info,account]  user garnaf logged in from 172.18.4.76 via winbox
+  8  1405/06/14 08:53:05  [system,info,account]  user garnaf logged out from 172.18.4.76 via winbox
+  9  1405/06/14 08:55:14  [system,info,account]  user garnaf logged in from 172.18.4.76 via winbox
+ 10  1405/06/14 08:56:15  [system,info,account]  user garnaf logged out from 172.18.4.76 via winbox
+ 11  1405/06/29 13:14:49  [interface,info]  ether1 link down
+ 12  1405/06/29 13:14:51  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 13  1405/06/30 18:34:43  [interface,info]  ether1 link down
+ 14  1405/06/30 18:34:44  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 15  1405/06/30 20:08:15  [interface,info]  ether1 link down
+ 16  1405/06/30 20:08:16  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 17  1405/06/30 21:28:48  [interface,info]  ether1 link down
+ 18  1405/06/30 21:28:49  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 19  1405/06/30 22:25:03  [interface,info]  ether1 link down
+ 20  1405/06/30 22:25:04  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 21  1405/06/31 22:14:09  [interface,info]  ether1 link down
+ 22  1405/06/31 22:14:11  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 23  1405/06/31 22:53:48  [interface,info]  ether1 link down
+ 24  1405/06/31 22:53:50  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 25  1405/06/31 23:45:57  [interface,info]  ether1 link down
+ 26  1405/06/31 23:45:59  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 27  1405/07/01 23:54:29  [interface,info]  ether1 link down
+ 28  1405/07/01 23:54:30  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 29  1405/07/02 10:34:43  [interface,info]  ether1 link down
+ 30  1405/07/02 10:34:44  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 31  1405/07/02 16:18:40  [interface,info]  ether1 link down
+ 32  1405/07/02 16:18:42  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 33  1405/07/03 07:35:03  [interface,info]  ether1 link down
+ 34  1405/07/03 07:35:05  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 35  1405/07/03 07:51:03  [interface,info]  ether1 link down
+ 36  1405/07/03 07:51:05  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 37  1405/07/03 09:43:51  [interface,info]  ether1 link down
+ 38  1405/07/03 09:43:53  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 39  1405/07/03 14:29:08  [interface,info]  ether1 link down
+ 40  1405/07/03 14:29:10  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 41  1405/07/03 17:17:43  [interface,info]  ether1 link down
+ 42  1405/07/03 17:17:45  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 43  1405/07/03 19:23:09  [interface,info]  ether1 link down
+ 44  1405/07/03 19:23:11  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 45  1405/07/04 07:32:40  [interface,info]  ether1 link down
+ 46  1405/07/04 07:32:42  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 47  1405/07/04 19:28:28  [interface,info]  ether1 link down
+ 48  1405/07/04 19:28:29  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 49  1405/07/05 02:35:06  [interface,info]  ether1 link down
+ 50  1405/07/05 02:35:08  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 51  1405/07/05 05:47:15  [interface,info]  ether1 link down
+ 52  1405/07/05 05:47:17  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 53  1405/07/16 14:33:46  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 54  1405/07/16 14:33:47  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 55  1405/07/16 15:44:28  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 56  1405/07/16 15:44:29  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 57  1405/07/17 08:36:28  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 58  1405/07/17 08:36:29  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 59  1405/07/18 10:34:05  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 60  1405/07/18 10:34:05  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 61  1405/07/18 10:58:30  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 62  1405/07/18 10:58:31  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 63  1405/07/18 12:10:33  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 64  1405/07/18 12:10:33  [system,info]  user olom1 added by garnaf
+ 65  1405/07/18 12:10:33  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 66  1405/07/19 09:49:15  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 67  1405/07/19 09:49:17  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 68  1405/07/19 17:44:34  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+ 69  1405/07/19 17:44:35  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+ 70  1405/07/21 10:38:12  [wireless,info]  6C:3B:6B:54:C3:37@wlan1: lost connection, synchronization timeout
+ 71  1405/07/21 10:40:35  [wireless,info]  6C:3B:6B:54:C3:37@wlan1 established connection on 5260000, SSID Laberatory.GH
+ 72  1405/07/21 10:50:14  [wireless,info]  6C:3B:6B:54:C3:37@wlan1: lost connection, synchronization timeout
+ 73  1405/07/21 10:51:09  [wireless,info]  6C:3B:6B:54:C3:37@wlan1 established connection on 5260000, SSID Laberatory.GH
+ 74  1405/07/21 10:55:49  [wireless,info]  6C:3B:6B:54:C3:37@wlan1: lost connection, synchronization timeout
+ 75  1405/07/21 10:56:39  [wireless,info]  6C:3B:6B:54:C3:37@wlan1 established connection on 5260000, SSID Laberatory.GH
+ 76  1405/07/21 10:57:39  [wireless,info]  6C:3B:6B:54:C3:37@wlan1: lost connection, synchronization timeout
+ 77  1405/07/21 10:58:23  [wireless,info]  6C:3B:6B:54:C3:37@wlan1 established connection on 5260000, SSID Laberatory.GH
+ 78  1405/07/22 13:29:59  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  CC:2D:E0:86:6D:B0  (ether)
+wlan1  CC:2D:E0:86:6D:B1  (wlan)
+bridge1  CC:2D:E0:86:6D:B1  (bridge)
+--- /ip arp ---
+bridge1  6C:3B:6B:87:6E:15  (arp 172.18.3.217)

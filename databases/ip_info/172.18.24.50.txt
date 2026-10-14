@@ -1,0 +1,247 @@
+IP: 172.18.24.50
+Collected at: 2026-10-14T10:23:10.543003+00:00
+source: RouterOS API
+identity: Shadegan-Shabakeh3
+device_type: AP
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=6C:3B:6B:4D:A3:1B
+  2  name=wlan1  type=wlan  running=true  mac=6C:3B:6B:4D:A3:1C
+  3  name=bridge1  type=bridge  running=true  mac=6C:3B:6B:4D:A3:1B
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=ap-bridge  ssid=Shadegan-Shabakeh3  band=5ghz-a/n  frequency=5300
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.24.50/28  interface=ether1  network=172.18.24.48
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.24.49  distance=1
+  2  dst=172.18.24.48/28  gw=bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=R2SH  address=-  interface=ether1,bridge1
+  2  identity=RB-UMS-SHDGN-CoreRouter  address=172.18.24.49  interface=ether1,bridge1
+  3  identity=BeytDavood.Client  address=172.18.24.51  interface=wlan1,bridge1
+  4  identity=BeytAshour  address=172.18.24.53  interface=wlan1,bridge1
+  5  identity=Markaz-Shavli.Client  address=172.18.24.55  interface=wlan1,bridge1
+  6  identity=Shavli-Home-Client  address=172.18.24.56  interface=wlan1,bridge1
+  7  identity=Jeish.Client(Rogbeh)  address=172.18.24.57  interface=wlan1,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:19:37
+# ساعت دستگاه (خام): 2026-07-22 17:08:36
+# افست اصلاحی (سرور − دستگاه): +2008:41:01
+  1  1405/07/08 09:23:39  [wireless,info]  6C:3B:6B:10:AF:2B@wlan1: connected, signal strength -54, wants bridge
+  2  1405/07/08 11:57:56  [wireless,info]  6C:3B:6B:01:D0:57@wlan1: disconnected, extensive data loss
+  3  1405/07/08 12:02:46  [wireless,info]  6C:3B:6B:10:AF:2B@wlan1: disconnected, extensive data loss
+  4  1405/07/09 08:06:29  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: disconnected, extensive data loss
+  5  1405/07/09 08:14:07  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: connected, signal strength -71, wants bridge
+  6  1405/07/09 08:23:27  [wireless,info]  6C:3B:6B:01:D0:57@wlan1: connected, signal strength -64, wants bridge
+  7  1405/07/09 08:23:39  [wireless,info]  6C:3B:6B:01:D0:57@wlan1: disconnected, extensive data loss
+  8  1405/07/09 08:24:05  [wireless,info]  6C:3B:6B:01:D0:57@wlan1: connected, signal strength -66, wants bridge
+  9  1405/07/09 08:40:32  [wireless,info]  6C:3B:6B:10:AF:2B@wlan1: connected, signal strength -58, wants bridge
+ 10  1405/07/09 10:44:59  [wireless,info]  6C:3B:6B:01:D0:57@wlan1: disconnected, extensive data loss
+ 11  1405/07/09 11:12:18  [wireless,info]  6C:3B:6B:10:AF:2B@wlan1: disconnected, extensive data loss
+ 12  1405/07/09 18:41:05  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: disconnected, extensive data loss
+ 13  1405/07/09 18:43:12  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: connected, signal strength -88, wants bridge
+ 14  1405/07/09 19:19:26  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: disconnected, extensive data loss
+ 15  1405/07/09 19:19:46  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: connected, signal strength -86, wants bridge
+ 16  1405/07/09 23:33:05  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: disconnected, extensive data loss
+ 17  1405/07/09 23:34:00  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: connected, signal strength -85, wants bridge
+ 18  1405/07/09 23:43:34  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: disconnected, extensive data loss
+ 19  1405/07/09 23:44:57  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: connected, signal strength -87, wants bridge
+ 20  1405/07/09 23:53:09  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: disconnected, extensive data loss
+ 21  1405/07/09 23:53:33  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: connected, signal strength -89, wants bridge
+ 22  1405/07/09 23:53:45  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: disconnected, extensive data loss
+ 23  1405/07/09 23:56:55  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: connected, signal strength -87, wants bridge
+ 24  1405/07/11 08:26:19  [wireless,info]  6C:3B:6B:10:AF:2B@wlan1: connected, signal strength -57, wants bridge
+ 25  1405/07/11 08:40:24  [wireless,info]  6C:3B:6B:01:D0:57@wlan1: connected, signal strength -68, wants bridge
+ 26  1405/07/11 11:54:01  [wireless,info]  6C:3B:6B:10:AF:2B@wlan1: disconnected, extensive data loss
+ 27  1405/07/11 12:40:36  [wireless,info]  6C:3B:6B:01:D0:57@wlan1: disconnected, extensive data loss
+ 28  1405/07/12 08:27:57  [wireless,info]  6C:3B:6B:10:AF:2B@wlan1: connected, signal strength -57, wants bridge
+ 29  1405/07/12 09:00:53  [wireless,info]  6C:3B:6B:01:D0:57@wlan1: connected, signal strength -64, wants bridge
+ 30  1405/07/12 11:55:52  [wireless,info]  6C:3B:6B:10:AF:2B@wlan1: disconnected, extensive data loss
+ 31  1405/07/12 12:37:05  [wireless,info]  6C:3B:6B:01:D0:57@wlan1: disconnected, extensive data loss
+ 32  1405/07/13 08:31:00  [wireless,info]  6C:3B:6B:10:AF:2B@wlan1: connected, signal strength -57, wants bridge
+ 33  1405/07/13 08:41:26  [wireless,info]  6C:3B:6B:01:D0:57@wlan1: connected, signal strength -66, wants bridge
+ 34  1405/07/13 12:02:58  [wireless,info]  6C:3B:6B:10:AF:2B@wlan1: disconnected, extensive data loss
+ 35  1405/07/13 12:47:02  [wireless,info]  6C:3B:6B:01:D0:57@wlan1: disconnected, extensive data loss
+ 36  1405/07/14 08:23:15  [wireless,info]  6C:3B:6B:01:D0:57@wlan1: connected, signal strength -65, wants bridge
+ 37  1405/07/14 08:40:41  [wireless,info]  6C:3B:6B:10:AF:2B@wlan1: connected, signal strength -57, wants bridge
+ 38  1405/07/14 11:55:02  [wireless,info]  6C:3B:6B:10:AF:2B@wlan1: disconnected, extensive data loss
+ 39  1405/07/14 12:41:48  [wireless,info]  6C:3B:6B:01:D0:57@wlan1: disconnected, extensive data loss
+ 40  1405/07/14 17:44:49  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: disconnected, extensive data loss
+ 41  1405/07/14 17:45:24  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: connected, signal strength -86, wants bridge
+ 42  1405/07/14 17:45:53  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: disconnected, extensive data loss
+ 43  1405/07/14 17:46:27  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: connected, signal strength -86, wants bridge
+ 44  1405/07/15 08:18:54  [wireless,info]  6C:3B:6B:10:AF:2B@wlan1: connected, signal strength -56, wants bridge
+ 45  1405/07/15 09:19:08  [wireless,info]  6C:3B:6B:01:D0:57@wlan1: connected, signal strength -65, wants bridge
+ 46  1405/07/15 11:50:36  [wireless,info]  6C:3B:6B:10:AF:2B@wlan1: disconnected, extensive data loss
+ 47  1405/07/15 12:27:10  [wireless,info]  6C:3B:6B:01:D0:57@wlan1: disconnected, extensive data loss
+ 48  1405/07/15 13:33:00  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 49  1405/07/15 13:33:00  [system,info]  changed snmp settings by garnaf
+ 50  1405/07/15 13:33:00  [system,info]  item changed by garnaf
+ 51  1405/07/15 13:33:00  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 52  1405/07/15 13:34:45  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 53  1405/07/15 13:34:45  [system,info]  changed snmp settings by garnaf
+ 54  1405/07/15 13:34:45  [system,info]  item changed by garnaf
+ 55  1405/07/15 13:34:45  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 56  1405/07/15 13:38:16  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 57  1405/07/15 13:38:16  [system,info]  changed snmp settings by garnaf
+ 58  1405/07/15 13:38:16  [system,info]  item changed by garnaf
+ 59  1405/07/15 13:38:16  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 60  1405/07/15 14:56:08  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 61  1405/07/15 14:56:08  [system,info]  user olom1 added by garnaf
+ 62  1405/07/15 14:56:08  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 63  1405/07/15 15:05:29  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 64  1405/07/15 15:05:29  [system,info]  user ums1 removed by garnaf
+ 65  1405/07/15 15:05:29  [system,info]  user ums2 removed by garnaf
+ 66  1405/07/15 15:05:30  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 67  1405/07/15 18:48:15  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: disconnected, extensive data loss
+ 68  1405/07/15 18:48:22  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: connected, signal strength -90, wants bridge
+ 69  1405/07/15 18:48:27  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: disconnected, received deauth: authentication not valid (2)
+ 70  1405/07/15 18:49:25  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: connected, signal strength -88, wants bridge
+ 71  1405/07/15 20:15:13  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: disconnected, extensive data loss
+ 72  1405/07/15 20:15:48  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: connected, signal strength -87, wants bridge
+ 73  1405/07/15 20:16:44  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: disconnected, extensive data loss
+ 74  1405/07/15 20:16:48  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: connected, signal strength -90, wants bridge
+ 75  1405/07/15 20:30:52  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: disconnected, extensive data loss
+ 76  1405/07/15 20:32:23  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: connected, signal strength -90, wants bridge
+ 77  1405/07/15 20:32:33  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: disconnected, extensive data loss
+ 78  1405/07/15 20:33:17  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: connected, signal strength -87, wants bridge
+ 79  1405/07/15 20:33:34  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: disconnected, extensive data loss
+ 80  1405/07/15 20:33:41  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: connected, signal strength -89, wants bridge
+ 81  1405/07/15 20:34:02  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: disconnected, extensive data loss
+ 82  1405/07/15 20:34:16  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: connected, signal strength -88, wants bridge
+ 83  1405/07/15 20:34:54  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: disconnected, received deauth: authentication not valid (2)
+ 84  1405/07/15 20:35:13  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: connected, signal strength -89, wants bridge
+ 85  1405/07/15 21:40:11  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: reassociating
+ 86  1405/07/15 21:40:11  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: disconnected, ok
+ 87  1405/07/15 21:40:11  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: connected, signal strength -89, wants bridge
+ 88  1405/07/15 21:41:02  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: reassociating
+ 89  1405/07/15 21:41:02  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: disconnected, ok
+ 90  1405/07/15 21:41:02  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: connected, signal strength -87, wants bridge
+ 91  1405/07/16 04:06:01  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: disconnected, extensive data loss
+ 92  1405/07/16 04:08:21  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: connected, signal strength -87, wants bridge
+ 93  1405/07/16 04:08:41  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: disconnected, extensive data loss
+ 94  1405/07/16 04:10:08  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: connected, signal strength -87, wants bridge
+ 95  1405/07/16 04:11:26  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: disconnected, extensive data loss
+ 96  1405/07/16 04:14:08  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: connected, signal strength -85, wants bridge
+ 97  1405/07/16 04:22:23  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: disconnected, received deauth: authentication not valid (2)
+ 98  1405/07/16 04:26:18  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: connected, signal strength -85, wants bridge
+ 99  1405/07/16 06:33:42  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: disconnected, extensive data loss
+100  1405/07/16 08:38:35  [wireless,info]  6C:3B:6B:10:AF:2B@wlan1: connected, signal strength -56, wants bridge
+101  1405/07/16 08:50:55  [wireless,info]  6C:3B:6B:01:D0:57@wlan1: connected, signal strength -64, wants bridge
+102  1405/07/16 09:05:37  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: connected, signal strength -71, wants bridge
+103  1405/07/16 10:14:33  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+104  1405/07/16 10:14:34  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+105  1405/07/16 10:22:06  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: disconnected, extensive data loss
+106  1405/07/16 10:25:32  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: connected, signal strength -71, wants bridge
+107  1405/07/16 10:36:42  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+108  1405/07/16 10:36:43  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+109  1405/07/16 11:15:29  [wireless,info]  6C:3B:6B:10:AF:2B@wlan1: disconnected, extensive data loss
+110  1405/07/16 13:50:39  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+111  1405/07/16 13:50:40  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+112  1405/07/16 14:06:55  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+113  1405/07/16 14:06:55  [system,info]  changed snmp settings by garnaf
+114  1405/07/16 14:06:55  [system,info]  item changed by garnaf
+115  1405/07/16 14:06:55  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+116  1405/07/16 14:29:45  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+117  1405/07/16 14:29:48  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+118  1405/07/16 15:40:47  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+119  1405/07/16 15:40:48  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+120  1405/07/17 01:41:18  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: disconnected, received deauth: authentication not valid (2)
+121  1405/07/17 01:41:56  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: connected, signal strength -87, wants bridge
+122  1405/07/17 02:11:30  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: disconnected, received deauth: authentication not valid (2)
+123  1405/07/17 02:11:40  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: connected, signal strength -84, wants bridge
+124  1405/07/17 02:13:16  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: disconnected, received deauth: authentication not valid (2)
+125  1405/07/17 02:13:57  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: connected, signal strength -84, wants bridge
+126  1405/07/17 02:45:35  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: reassociating
+127  1405/07/17 02:45:35  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: disconnected, ok
+128  1405/07/17 02:45:35  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: connected, signal strength -87, wants bridge
+129  1405/07/17 02:47:20  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: disconnected, received deauth: authentication not valid (2)
+130  1405/07/17 02:47:37  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: connected, signal strength -85, wants bridge
+131  1405/07/18 08:30:35  [wireless,info]  6C:3B:6B:10:AF:2B@wlan1: connected, signal strength -58, wants bridge
+132  1405/07/18 10:30:40  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+133  1405/07/18 10:30:42  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+134  1405/07/18 10:54:46  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+135  1405/07/18 10:54:48  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+136  1405/07/18 11:56:57  [wireless,info]  6C:3B:6B:10:AF:2B@wlan1: disconnected, extensive data loss
+137  1405/07/18 12:07:40  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+138  1405/07/18 12:07:40  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+139  1405/07/18 12:38:54  [wireless,info]  6C:3B:6B:01:D0:57@wlan1: disconnected, extensive data loss
+140  1405/07/19 08:39:59  [wireless,info]  6C:3B:6B:10:AF:2B@wlan1: connected, signal strength -55, wants bridge
+141  1405/07/19 08:54:00  [wireless,info]  6C:3B:6B:01:D0:57@wlan1: connected, signal strength -64, wants bridge
+142  1405/07/19 09:39:42  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+143  1405/07/19 09:39:47  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+144  1405/07/19 12:01:39  [wireless,info]  6C:3B:6B:10:AF:2B@wlan1: disconnected, extensive data loss
+145  1405/07/19 12:49:17  [wireless,info]  6C:3B:6B:01:D0:57@wlan1: disconnected, extensive data loss
+146  1405/07/19 17:42:13  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+147  1405/07/19 17:42:13  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+148  1405/07/20 08:25:21  [wireless,info]  6C:3B:6B:01:D0:57@wlan1: connected, signal strength -64, wants bridge
+149  1405/07/20 08:35:51  [wireless,info]  6C:3B:6B:10:AF:2B@wlan1: connected, signal strength -56, wants bridge
+150  1405/07/20 12:07:07  [wireless,info]  6C:3B:6B:10:AF:2B@wlan1: disconnected, extensive data loss
+151  1405/07/20 12:42:53  [wireless,info]  6C:3B:6B:01:D0:57@wlan1: disconnected, extensive data loss
+152  1405/07/21 05:16:10  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: disconnected, extensive data loss
+153  1405/07/21 05:16:16  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: connected, signal strength -88, wants bridge
+154  1405/07/21 06:13:28  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: disconnected, received deauth: authentication not valid (2)
+155  1405/07/21 06:13:44  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: connected, signal strength -80, wants bridge
+156  1405/07/21 08:28:16  [wireless,info]  6C:3B:6B:10:AF:2B@wlan1: connected, signal strength -55, wants bridge
+157  1405/07/21 08:59:04  [wireless,info]  6C:3B:6B:01:D0:57@wlan1: connected, signal strength -65, wants bridge
+158  1405/07/21 11:02:29  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+159  1405/07/21 11:02:33  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+160  1405/07/21 12:05:43  [wireless,info]  6C:3B:6B:10:AF:2B@wlan1: disconnected, extensive data loss
+161  1405/07/21 12:41:59  [wireless,info]  6C:3B:6B:01:D0:57@wlan1: disconnected, extensive data loss
+162  1405/07/21 21:58:34  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: disconnected, extensive data loss
+163  1405/07/21 21:58:49  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: connected, signal strength -85, wants bridge
+164  1405/07/22 05:00:13  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: disconnected, extensive data loss
+165  1405/07/22 05:00:24  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: connected, signal strength -84, wants bridge
+166  1405/07/22 05:10:24  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: disconnected, extensive data loss
+167  1405/07/22 05:10:31  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: connected, signal strength -87, wants bridge
+168  1405/07/22 05:10:35  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: disconnected, extensive data loss
+169  1405/07/22 05:10:40  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: connected, signal strength -86, wants bridge
+170  1405/07/22 05:10:46  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: disconnected, extensive data loss
+171  1405/07/22 05:10:51  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: connected, signal strength -86, wants bridge
+172  1405/07/22 05:10:59  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: disconnected, extensive data loss
+173  1405/07/22 05:11:05  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: connected, signal strength -83, wants bridge
+174  1405/07/22 05:11:29  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: disconnected, extensive data loss
+175  1405/07/22 05:11:34  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: connected, signal strength -84, wants bridge
+176  1405/07/22 05:11:40  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: disconnected, extensive data loss
+177  1405/07/22 05:11:45  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: connected, signal strength -82, wants bridge
+178  1405/07/22 05:13:29  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: disconnected, extensive data loss
+179  1405/07/22 05:13:34  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: connected, signal strength -84, wants bridge
+180  1405/07/22 05:13:43  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: disconnected, extensive data loss
+181  1405/07/22 05:13:48  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: connected, signal strength -86, wants bridge
+182  1405/07/22 05:13:52  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: disconnected, extensive data loss
+183  1405/07/22 05:13:57  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: connected, signal strength -86, wants bridge
+184  1405/07/22 05:14:00  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: disconnected, extensive data loss
+185  1405/07/22 05:14:24  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: connected, signal strength -86, wants bridge
+186  1405/07/22 05:14:27  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: disconnected, extensive data loss
+187  1405/07/22 05:14:44  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: connected, signal strength -84, wants bridge
+188  1405/07/22 05:16:14  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: disconnected, extensive data loss
+189  1405/07/22 05:16:20  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: connected, signal strength -86, wants bridge
+190  1405/07/22 05:17:46  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: disconnected, extensive data loss
+191  1405/07/22 05:18:13  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: connected, signal strength -83, wants bridge
+192  1405/07/22 05:42:39  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: disconnected, extensive data loss
+193  1405/07/22 05:43:07  [wireless,info]  6C:3B:6B:DD:7B:D8@wlan1: connected, signal strength -86, wants bridge
+194  1405/07/22 08:00:55  [wireless,info]  6C:3B:6B:01:D0:57@wlan1: connected, signal strength -65, wants bridge
+195  1405/07/22 08:23:46  [wireless,info]  6C:3B:6B:10:AF:2B@wlan1: connected, signal strength -57, wants bridge
+196  1405/07/22 08:35:34  [wireless,info]  6C:3B:6B:01:D0:57@wlan1: disconnected, extensive data loss
+197  1405/07/22 08:36:16  [wireless,info]  6C:3B:6B:01:D0:57@wlan1: connected, signal strength -64, wants bridge
+198  1405/07/22 12:09:53  [wireless,info]  6C:3B:6B:10:AF:2B@wlan1: disconnected, extensive data loss
+199  1405/07/22 12:31:55  [wireless,info]  6C:3B:6B:01:D0:57@wlan1: disconnected, extensive data loss
+200  1405/07/22 13:19:35  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  6C:3B:6B:4D:A3:1B  (ether)
+wlan1  6C:3B:6B:4D:A3:1C  (wlan)
+bridge1  6C:3B:6B:4D:A3:1B  (bridge)
+--- /ip arp ---
+bridge1  64:D1:54:98:E3:2E  (arp 172.18.24.49)

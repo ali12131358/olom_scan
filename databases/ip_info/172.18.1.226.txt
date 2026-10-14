@@ -1,0 +1,98 @@
+IP: 172.18.1.226
+Collected at: 2026-10-14T10:21:47.343215+00:00
+source: RouterOS API
+identity: AP-AMANIPOUR
+device_type: AP
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=74:4D:28:AB:6F:EA
+  2  name=wlan1  type=wlan  running=false  mac=74:4D:28:AB:6F:EB
+  3  name=bridge1  type=bridge  running=true  mac=74:4D:28:AB:6F:EB
+  4  name=lo  type=loopback  running=true  mac=00:00:00:00:00:00
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=bridge  ssid=PTP-AP-AMANIPOUR-  band=5ghz-a/n  frequency=5485
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.1.226/29  interface=ether1  network=172.18.1.224
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.1.225  distance=1
+  2  dst=172.18.1.224/29  gw=bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=SW-Wireless1.aums.ir  address=172.18.1.225  interface=ether1,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:11:47
+# ساعت دستگاه (خام): 2026-10-14 13:06:57
+# افست اصلاحی (سرور − دستگاه): -03:25:09
+  1  2026-04-20 06:49:12  [system,info]  installed system-7.21.4
+  2  2026-04-20 06:49:12  [system,info]  installed wireless-7.21.4
+  3  2026-04-20 06:49:12  [system,info]  router rebooted
+  4  2026-04-20 06:49:16  [interface,info]  lo link up
+  5  2026-04-20 06:49:16  [bridge,info]  "bridge1" mac address changed to 76:AD:8D:1E:83:0A
+  6  2026-04-20 06:49:16  [bridge,info]  "bridge1" mac address changed to 74:4D:28:AB:6F:EB
+  7  2026-04-20 06:49:17  [route,ospf,info]  default-v2 { version: 2 router-id: 172.18.1.226 } created
+  8  2026-04-20 06:49:58  [interface,info]  ether1 link up (speed 100M, full duplex)
+  9  2026-04-20 06:49:59  [interface,info]  ether1 link down
+ 10  2026-04-20 06:50:18  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 11  2026-04-20 06:50:23  [system,info,account]  user garnaf logged in from 172.18.4.76 via winbox
+ 12  2026-04-20 06:50:26  [system,info]  ovpn server added by  (/interface ovpn-server server set)
+ 13  2026-04-20 06:52:17  [system,info]  device changed by winbox-3.42/tcp-msg(winbox):garnaf@172.18.4.76 (/interface set wlan1 disabled=yes l2mtu=1600 mtu=1500 name=wlan1; /queue interface set wlan1; /interface wireless set [ find ] ampdu-priorities=0 amsdu-limit=8192 amsdu-threshold=8192 antenna-gain=0 arp=enabled arp-timeout=auto band=5ghz-a/n bridge-mode=enabled channel-width=20/40mhz-XX country=uzbekistan default-ap-tx-limit=0 default-authentication=yes default-client-tx-limit=0 default-forwarding=yes disabled=yes frequency=5485 frequency-mode=superchannel frequency-offset=0 guard-interval=any hide-ssid=no ht-basic-mcs=mcs-0,mcs-1,mcs-2,mcs-3,mcs-4,mcs-5,mcs-6,mcs-7 ht-supported-mcs=mcs-0,mcs-1,mcs-2,mcs-3,mcs-4,mcs-5,mcs-6,mcs-7,mcs-8,mcs-9,mcs-10,mcs-11,mcs-12,mcs-13,mcs-14,mcs-15,mcs-16,mcs-17,mcs-18,mcs-19,mcs-20,mcs-21,mcs-22,mcs-23 installation=any interworking-profile=disabled keepalive-frames=enabled l2mtu=1600 mac-address=74:4D:28:AB:6F:EB mode=bridge mtu=1500 multicast-buffering=enabled multicast-helper=default name=wlan1 nv2-cell-radi
+ 14  2026-04-20 06:52:17  [system,info]  us=30 nv2-downlink-ratio=50 nv2-mode=dynamic-downlink nv2-qos=default nv2-queue-count=2 nv2-security=disabled nv2-sync-secret="" prism-cardtype=200mW radio-name=AP-AMANIPOUR rx-chains=0,1 scan-list=default,5000-5900:0,5320-5500:0,4900-5180:0 secondary-frequency="" security-profile=default skip-dfs-channels=disabled ssid=PTP-AP-AMANIPOUR- station-roaming=enabled tdma-period-size=2 tx-chains=0,1 vlan-id=1 vlan-mode=no-tag wds-cost-range=50-150 wds-default-bridge=none wds-default-cost=100 wds-ignore-ssid=no wds-mode=disabled wireless-protocol=any wmm-support=disabled wps-mode=disabled; /interface wireless nstreme set wlan1 disable-csma=no enable-nstreme=no enable-polling=yes framer-limit=3200 framer-policy=none; /interface wireless manual-tx-power-table set wlan1)
+ 15  2026-04-20 06:57:54  [system,info,account]  user garnaf logged out from 172.18.4.76 via winbox
+ 16  2026-05-29 07:59:52  [system,info,account]  user garnaf logged in from 172.18.4.76 via ssh
+ 17  2026-05-29 07:59:52  [system,info,account]  user garnaf logged out from 172.18.4.76 via ssh
+ 18  2026-05-29 08:04:08  [system,info,account]  user garnaf logged in from 172.18.4.76 via ssh
+ 19  2026-05-29 08:04:08  [system,info,account]  user garnaf logged out from 172.18.4.76 via ssh
+ 20  2026-05-29 08:23:12  [system,info,account]  user garnaf logged in from 172.18.4.76 via ssh
+ 21  2026-05-29 08:23:12  [system,info,account]  user garnaf logged out from 172.18.4.76 via ssh
+ 22  2026-05-29 08:28:19  [system,info,account]  user garnaf logged in from 172.18.4.76 via ssh
+ 23  2026-05-29 08:28:19  [system,info,account]  user garnaf logged out from 172.18.4.76 via ssh
+ 24  2026-05-29 08:42:03  [system,info,account]  user garnaf logged in from 172.18.4.76 via ssh
+ 25  2026-05-29 08:42:03  [system,info,account]  user garnaf logged out from 172.18.4.76 via ssh
+ 26  2026-05-29 08:49:52  [system,info,account]  user garnaf logged in from 172.18.4.76 via ssh
+ 27  2026-05-29 08:49:52  [system,info,account]  user garnaf logged out from 172.18.4.76 via ssh
+ 28  2026-05-29 08:51:41  [system,info,account]  user garnaf logged in from 172.18.4.76 via ssh
+ 29  2026-05-29 08:51:42  [system,info,account]  user garnaf logged out from 172.18.4.76 via ssh
+ 30  2026-05-29 08:54:49  [system,info,account]  user garnaf logged in from 172.18.4.76 via ssh
+ 31  2026-05-29 08:54:50  [system,info,account]  user garnaf logged out from 172.18.4.76 via ssh
+ 32  2026-08-18 08:35:53  [system,critical,info]  cloud change time Jun/21/2026 06:13:21 => Aug/18/2026 08:35:53
+ 33  2026-10-03 22:39:15  [interface,info]  ether1 link down
+ 34  2026-10-03 22:42:13  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 35  2026-10-08 14:21:48  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 36  2026-10-08 14:21:49  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 37  2026-10-08 15:32:42  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 38  2026-10-08 15:32:43  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 39  2026-10-09 08:23:04  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 40  2026-10-09 08:23:05  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 41  2026-10-09 08:37:16  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 42  2026-10-09 08:37:17  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 43  2026-10-10 10:22:19  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 44  2026-10-10 10:22:20  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 45  2026-10-10 10:46:35  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 46  2026-10-10 10:46:36  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 47  2026-10-10 12:01:57  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 48  2026-10-10 12:01:57  [system,info]  user olom1 added by api:garnaf@172.18.4.76 (*7 = /user add group=full name=olom1)
+ 49  2026-10-10 12:01:57  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 50  2026-10-11 09:26:10  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 51  2026-10-11 09:26:11  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 52  2026-10-11 17:35:58  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+ 53  2026-10-11 17:35:59  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+ 54  2026-10-13 10:47:49  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 55  2026-10-13 10:47:50  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 56  2026-10-14 13:06:56  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  74:4D:28:AB:6F:EA  (ether)
+wlan1  74:4D:28:AB:6F:EB  (wlan)
+bridge1  74:4D:28:AB:6F:EB  (bridge)
+--- /ip arp ---
+bridge1  10:8C:CF:33:51:4B  (arp 172.18.1.225)

@@ -1,0 +1,52 @@
+IP: 172.18.3.115
+Collected at: 2026-10-14T10:23:43.119846+00:00
+source: RouterOS API
+identity: 5Mehr.Client
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=E4:8D:8C:B5:1C:DC
+  2  name=wlan1  type=wlan  running=true  mac=E4:8D:8C:B5:1C:DD
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=Mydoon.Amiri5M  band=5ghz-a/n  frequency=5260
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.3.115/28  interface=wlan1  network=172.18.3.112
+  2  address=172.29.27.129/25  interface=ether1  network=172.29.27.128
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.3.113  distance=1
+  2  dst=172.18.3.112/28  gw=wlan1  distance=0
+  3  dst=172.29.27.128/25  gw=ether1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=Router5Mehr  address=-  interface=ether1
+  2  identity=RB.Meydoon.MK  address=172.18.3.113  interface=wlan1
+  3  identity=Mydoon.MultiAmiri  address=172.18.3.114  interface=wlan1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:28:21
+# ساعت دستگاه (خام): 1974-11-11 19:08:16
+# افست اصلاحی (سرور − دستگاه): +455150:50:05
+  1  1405/07/20 09:00:14  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/20 09:00:15  [interface,info]  ether1 link up (speed 100M, full duplex)
+  3  1405/07/20 09:00:21  [wireless,info]  6C:3B:6B:4D:A4:28@wlan1 established connection on 5785000, SSID Mydoon.Amiri5M
+  4  1405/07/21 08:06:01  [dhcp,info]  dhcp1 deassigned 172.29.27.154 from 7C:F1:7E:F4:12:68
+  5  1405/07/21 08:06:01  [dhcp,info]  dhcp1 assigned 172.29.27.154 to 7C:F1:7E:F4:12:68
+  6  1405/07/21 11:08:58  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+  7  1405/07/21 11:09:00  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+  8  1405/07/22 03:45:53  [dhcp,info]  dhcp1 deassigned 172.29.27.153 from EC:08:6B:95:D2:75
+  9  1405/07/22 13:28:20  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  E4:8D:8C:B5:1C:DC  (ether)
+wlan1  E4:8D:8C:B5:1C:DD  (wlan)
+--- /ip arp ---
+wlan1  6C:3B:6B:0A:DD:FA  (arp 172.18.3.113)

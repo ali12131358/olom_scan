@@ -1,0 +1,138 @@
+IP: 172.18.9.3
+Collected at: 2026-10-14T10:24:36.187428+00:00
+source: RouterOS API
+identity: Khezr->Choebdeh.Client
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=6C:3B:6B:AB:D2:0F
+  2  name=wlan1  type=wlan  running=true  mac=6C:3B:6B:AB:D2:10
+  3  name=bridge1  type=bridge  running=true  mac=6C:3B:6B:AB:D2:10
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=KHZRCHMH  band=5ghz-a/n  frequency=5260
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.9.3/29  interface=wlan1  network=172.18.9.0
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.9.2  distance=1
+  2  dst=172.18.9.0/29  gw=bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=Choebdeh-MK  address=172.18.9.4  interface=ether1,bridge1
+  2  identity=KhezrNabi-MK  address=172.18.9.1  interface=wlan1,bridge1
+  3  identity=Khezr->Choebdeh.AP  address=172.18.9.2  interface=wlan1,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:36:45
+# ساعت دستگاه (خام): 1974-09-09 16:22:25
+# افست اصلاحی (سرور − دستگاه): +456665:44:20
+  1  1405/07/21 08:01:16  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/21 08:01:19  [bridge,info]  "bridge1" mac address changed to 6C:3B:6B:AB:D2:10
+  3  1405/07/21 08:01:26  [interface,info]  ether1 link up (speed 100M, full duplex)
+  4  1405/07/21 09:36:57  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1 established connection on 5540000, SSID KHZRCHMH
+  5  1405/07/22 02:05:04  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1: lost connection, medium-access timeout
+  6  1405/07/22 02:05:30  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1 established connection on 5540000, SSID KHZRCHMH
+  7  1405/07/22 02:55:11  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1: lost connection, medium-access timeout
+  8  1405/07/22 02:55:18  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1 established connection on 5540000, SSID KHZRCHMH
+  9  1405/07/22 02:56:51  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1: lost connection, control frame timeout
+ 10  1405/07/22 02:57:04  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1 established connection on 5540000, SSID KHZRCHMH
+ 11  1405/07/22 02:57:40  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1: lost connection, control frame timeout
+ 12  1405/07/22 02:58:08  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1 established connection on 5540000, SSID KHZRCHMH
+ 13  1405/07/22 02:58:44  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1: lost connection, control frame timeout
+ 14  1405/07/22 02:59:12  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1 established connection on 5540000, SSID KHZRCHMH
+ 15  1405/07/22 02:59:19  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1: lost connection, control frame timeout
+ 16  1405/07/22 03:00:31  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1 established connection on 5540000, SSID KHZRCHMH
+ 17  1405/07/22 03:01:40  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1: lost connection, control frame timeout
+ 18  1405/07/22 03:03:01  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1 established connection on 5540000, SSID KHZRCHMH
+ 19  1405/07/22 03:03:12  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1: lost connection, medium-access timeout
+ 20  1405/07/22 03:04:11  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1 established connection on 5540000, SSID KHZRCHMH
+ 21  1405/07/22 03:04:53  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1: lost connection, synchronization timeout
+ 22  1405/07/22 03:05:20  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1 established connection on 5540000, SSID KHZRCHMH
+ 23  1405/07/22 03:07:19  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1: lost connection, medium-access timeout
+ 24  1405/07/22 03:07:53  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1 established connection on 5540000, SSID KHZRCHMH
+ 25  1405/07/22 03:08:34  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1: lost connection, medium-access timeout
+ 26  1405/07/22 03:08:43  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1: failed to connect, on 5540000, registration timeout
+ 27  1405/07/22 03:08:57  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1 established connection on 5540000, SSID KHZRCHMH
+ 28  1405/07/22 03:12:29  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1: lost connection, control frame timeout
+ 29  1405/07/22 03:12:36  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1 established connection on 5540000, SSID KHZRCHMH
+ 30  1405/07/22 03:13:36  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1: lost connection, control frame timeout
+ 31  1405/07/22 03:14:08  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1: failed to connect, on 5540000, registration timeout
+ 32  1405/07/22 03:14:54  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1 established connection on 5540000, SSID KHZRCHMH
+ 33  1405/07/22 03:17:20  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1: lost connection, control frame timeout
+ 34  1405/07/22 03:18:13  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1 established connection on 5540000, SSID KHZRCHMH
+ 35  1405/07/22 03:18:18  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1: lost connection, control frame timeout
+ 36  1405/07/22 03:18:31  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1: failed to connect, on 5540000, registration timeout
+ 37  1405/07/22 03:19:31  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1 established connection on 5540000, SSID KHZRCHMH
+ 38  1405/07/22 03:31:44  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1: lost connection, medium-access timeout
+ 39  1405/07/22 03:31:51  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1 established connection on 5540000, SSID KHZRCHMH
+ 40  1405/07/22 03:32:32  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1: lost connection, medium-access timeout
+ 41  1405/07/22 03:32:54  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1: failed to connect, on 5540000, registration timeout
+ 42  1405/07/22 03:33:17  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1 established connection on 5540000, SSID KHZRCHMH
+ 43  1405/07/22 04:05:39  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1: lost connection, medium-access timeout
+ 44  1405/07/22 04:06:38  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1 established connection on 5540000, SSID KHZRCHMH
+ 45  1405/07/22 04:11:23  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1: lost connection, control frame timeout
+ 46  1405/07/22 04:11:37  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1 established connection on 5540000, SSID KHZRCHMH
+ 47  1405/07/22 04:13:55  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1: lost connection, medium-access timeout
+ 48  1405/07/22 04:14:15  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1 established connection on 5540000, SSID KHZRCHMH
+ 49  1405/07/22 04:15:23  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1: lost connection, medium-access timeout
+ 50  1405/07/22 04:15:56  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1 established connection on 5540000, SSID KHZRCHMH
+ 51  1405/07/22 04:16:13  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1: lost connection, medium-access timeout
+ 52  1405/07/22 04:16:53  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1 established connection on 5540000, SSID KHZRCHMH
+ 53  1405/07/22 04:17:04  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1: lost connection, control frame timeout
+ 54  1405/07/22 04:20:53  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1 established connection on 5540000, SSID KHZRCHMH
+ 55  1405/07/22 04:21:15  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1: lost connection, medium-access timeout
+ 56  1405/07/22 04:21:42  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1 established connection on 5540000, SSID KHZRCHMH
+ 57  1405/07/22 04:22:05  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1: lost connection, medium-access timeout
+ 58  1405/07/22 04:23:13  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1: failed to connect, on 5540000, registration timeout
+ 59  1405/07/22 04:23:26  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1 established connection on 5540000, SSID KHZRCHMH
+ 60  1405/07/22 04:23:53  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1: lost connection, medium-access timeout
+ 61  1405/07/22 04:24:07  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1 established connection on 5540000, SSID KHZRCHMH
+ 62  1405/07/22 04:26:19  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1: lost connection, medium-access timeout
+ 63  1405/07/22 04:26:39  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1 established connection on 5540000, SSID KHZRCHMH
+ 64  1405/07/22 04:31:41  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1: lost connection, medium-access timeout
+ 65  1405/07/22 04:32:07  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1 established connection on 5540000, SSID KHZRCHMH
+ 66  1405/07/22 04:34:25  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1: lost connection, medium-access timeout
+ 67  1405/07/22 04:36:16  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1 established connection on 5540000, SSID KHZRCHMH
+ 68  1405/07/22 04:36:53  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1: lost connection, synchronization timeout
+ 69  1405/07/22 04:40:52  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1: failed to connect, on 5540000, registration timeout
+ 70  1405/07/22 04:44:34  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1 established connection on 5540000, SSID KHZRCHMH
+ 71  1405/07/22 04:47:27  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1: lost connection, synchronization timeout
+ 72  1405/07/22 04:50:11  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1 established connection on 5540000, SSID KHZRCHMH
+ 73  1405/07/22 04:50:26  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1: lost connection, medium-access timeout
+ 74  1405/07/22 04:50:48  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1 established connection on 5540000, SSID KHZRCHMH
+ 75  1405/07/22 04:51:54  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1: lost connection, synchronization timeout
+ 76  1405/07/22 04:53:26  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1 established connection on 5540000, SSID KHZRCHMH
+ 77  1405/07/22 04:53:48  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1: lost connection, synchronization timeout
+ 78  1405/07/22 04:57:17  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1: failed to connect, on 5540000, medium-access timeout
+ 79  1405/07/22 04:57:44  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1 established connection on 5540000, SSID KHZRCHMH
+ 80  1405/07/22 04:58:05  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1: lost connection, control frame timeout
+ 81  1405/07/22 04:58:17  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1: failed to connect, on 5540000, medium-access timeout
+ 82  1405/07/22 04:59:36  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1 established connection on 5540000, SSID KHZRCHMH
+ 83  1405/07/22 05:00:58  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1: lost connection, medium-access timeout
+ 84  1405/07/22 05:03:09  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1 established connection on 5540000, SSID KHZRCHMH
+ 85  1405/07/22 05:03:36  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1: lost connection, control frame timeout
+ 86  1405/07/22 05:04:09  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1 established connection on 5540000, SSID KHZRCHMH
+ 87  1405/07/22 05:13:11  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1: lost connection, control frame timeout
+ 88  1405/07/22 05:13:37  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1 established connection on 5540000, SSID KHZRCHMH
+ 89  1405/07/22 05:14:29  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1: lost connection, control frame timeout
+ 90  1405/07/22 05:15:02  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1 established connection on 5540000, SSID KHZRCHMH
+ 91  1405/07/22 05:31:38  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1: lost connection, medium-access timeout
+ 92  1405/07/22 05:33:43  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1 established connection on 5540000, SSID KHZRCHMH
+ 93  1405/07/22 05:36:14  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1: lost connection, control frame timeout
+ 94  1405/07/22 05:36:55  [wireless,info]  6C:3B:6B:AB:D2:2C@wlan1 established connection on 5540000, SSID KHZRCHMH
+ 95  1405/07/22 13:36:43  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  6C:3B:6B:AB:D2:0F  (ether)
+wlan1  6C:3B:6B:AB:D2:10  (wlan)
+bridge1  6C:3B:6B:AB:D2:10  (bridge)
+--- /ip arp ---
+bridge1  6C:3B:6B:AB:D2:2C  (arp 172.18.9.2)

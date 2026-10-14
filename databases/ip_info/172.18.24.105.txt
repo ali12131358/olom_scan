@@ -1,0 +1,51 @@
+IP: 172.18.24.105
+Collected at: 2026-10-11T06:43:43.981014+00:00
+source: RouterOS API
+identity: Albojnam.Client
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=08:55:31:CF:FD:51
+  2  name=wlan1  type=wlan  running=true  mac=08:55:31:CF:FD:52
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station  ssid=Shadegan-Shabakeh6  band=5ghz-a/n  frequency=5500
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.24.105/28  interface=wlan1  network=172.18.24.96
+  2  address=172.29.196.129/27  interface=ether1  network=172.29.196.128
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.24.97  distance=1
+  2  dst=172.18.24.96/28  gw=wlan1  distance=0
+  3  dst=172.29.196.128/27  gw=ether1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=R2SH  address=-  interface=wlan1
+  2  identity=RB-UMS-SHDGN-CoreRouter  address=172.18.24.97  interface=wlan1
+  3  identity=Shadegan-Shabakeh6  address=172.18.24.98  interface=wlan1
+  4  identity=-  address=-  interface=ether1
+  5  identity=-  address=-  interface=ether1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/19 09:37:00
+# ساعت دستگاه (خام): 1970-01-29 05:56:33
+# افست اصلاحی (سرور − دستگاه): +497016:10:27
+  1  1405/07/19 08:05:19  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/19 08:05:20  [interface,info]  ether1 link up (speed 100M, full duplex)
+  3  1405/07/19 08:05:26  [wireless,info]  E4:8D:8C:FF:67:D7@wlan1 established connection on 5720000, SSID Shadegan-Shabakeh6
+  4  1405/07/19 09:36:59  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  08:55:31:CF:FD:51  (ether)
+wlan1  08:55:31:CF:FD:52  (wlan)
+--- /ip arp ---
+wlan1  64:D1:54:98:E3:2E  (arp 172.18.24.97)
+ether1  18:C0:4D:11:17:E3  (arp 172.29.196.157)
+ether1  1C:1B:0D:3D:A8:60  (arp 172.29.196.156)

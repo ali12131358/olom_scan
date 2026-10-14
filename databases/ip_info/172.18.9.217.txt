@@ -1,0 +1,175 @@
+IP: 172.18.9.217
+Collected at: 2026-10-14T10:24:30.915894+00:00
+source: RouterOS API
+identity: 22Bahman-MK
+device_type: Router
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=E4:8D:8C:0E:6E:40
+  2  name=ether2  type=ether  running=true  mac=E4:8D:8C:0E:6E:41
+  3  name=ether3  type=ether  running=false  mac=E4:8D:8C:0E:6E:42
+  4  name=ether4  type=ether  running=true  mac=E4:8D:8C:0E:6E:43
+  5  name=ether5  type=ether  running=true  mac=E4:8D:8C:0E:6E:44
+  6  name=ether6  type=ether  running=false  mac=E4:8D:8C:0E:6E:45
+  7  name=ether7-POS  type=ether  running=false  mac=E4:8D:8C:0E:6E:46
+  8  name=ether8  type=ether  running=false  mac=E4:8D:8C:0E:6E:47
+  9  name=ether9  type=ether  running=true  mac=E4:8D:8C:0E:6E:48
+ 10  name=ether10  type=ether  running=true  mac=E4:8D:8C:0E:6E:49
+ 11  name=sfp1  type=ether  running=false  mac=E4:8D:8C:0E:6E:3F
+ 12  name=bridge1  type=bridge  running=true  mac=E4:8D:8C:0E:6E:42
+
+----- wireless -----
+(empty)
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.9.12/29  interface=ether10  network=172.18.9.8
+  2  address=172.18.9.177/29  interface=ether4  network=172.18.9.176
+  3  address=172.29.72.1/25  interface=bridge1  network=172.29.72.0
+  4  address=172.18.9.193/28  interface=ether1  network=172.18.9.192
+  5  address=172.18.9.209/29  interface=ether2  network=172.18.9.208
+  6  address=192.168.10.2/30  interface=ether1  network=192.168.10.0
+  7  address=172.18.4.49/29  interface=ether6  network=172.18.4.48
+  8  address=192.168.0.5/24  interface=bridge1  network=192.168.0.0
+  9  address=172.18.9.217/29  interface=ether8  network=172.18.9.216
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.9.9  distance=1
+  2  dst=0.0.0.0/0  gw=172.18.9.9  distance=1
+  3  dst=172.18.4.48/29  gw=ether6  distance=255
+  4  dst=172.18.9.8/29  gw=ether10  distance=0
+  5  dst=172.18.9.176/29  gw=ether4  distance=0
+  6  dst=172.18.9.192/28  gw=ether1  distance=0
+  7  dst=172.18.9.208/29  gw=ether2  distance=0
+  8  dst=172.18.9.216/29  gw=bridge1  distance=0
+  9  dst=172.18.9.224/27  gw=172.18.9.180  distance=1
+ 10  dst=172.18.9.224/27  gw=172.18.9.180  distance=1
+ 11  dst=172.29.31.80/28  gw=172.18.9.180  distance=1
+ 12  dst=172.29.31.80/28  gw=172.18.9.180  distance=1
+ 13  dst=172.29.33.64/28  gw=172.18.4.51  distance=1
+ 14  dst=172.29.33.64/28  gw=172.18.4.51  distance=1
+ 15  dst=172.29.71.160/27  gw=172.18.9.213  distance=1
+ 16  dst=172.29.71.160/27  gw=172.18.9.213  distance=1
+ 17  dst=172.29.71.192/27  gw=172.18.9.196  distance=1
+ 18  dst=172.29.71.192/27  gw=172.18.9.196  distance=1
+ 19  dst=172.29.71.224/27  gw=172.18.9.197  distance=1
+ 20  dst=172.29.71.224/27  gw=172.18.9.197  distance=1
+ 21  dst=172.29.72.0/25  gw=bridge1  distance=0
+ 22  dst=172.29.72.128/25  gw=172.18.9.219  distance=1
+ 23  dst=172.29.72.128/25  gw=172.18.9.219  distance=1
+ 24  dst=172.29.73.0/27  gw=172.18.9.198  distance=1
+ 25  dst=172.29.73.0/27  gw=172.18.9.198  distance=1
+ 26  dst=172.29.73.32/27  gw=172.18.9.199  distance=1
+ 27  dst=172.29.73.32/27  gw=172.18.9.199  distance=1
+ 28  dst=172.29.73.64/27  gw=172.18.9.200  distance=1
+ 29  dst=172.29.73.64/27  gw=172.18.9.200  distance=1
+ 30  dst=172.29.73.96/27  gw=172.18.9.201  distance=1
+ 31  dst=172.29.73.96/27  gw=172.18.9.201  distance=1
+ 32  dst=172.29.73.128/27  gw=172.18.9.202  distance=1
+ 33  dst=172.29.73.128/27  gw=172.18.9.202  distance=1
+ 34  dst=172.29.73.160/27  gw=172.18.9.203  distance=1
+ 35  dst=172.29.73.160/27  gw=172.18.9.203  distance=1
+ 36  dst=172.29.73.192/27  gw=172.18.9.211  distance=1
+ 37  dst=172.29.73.192/27  gw=172.18.9.211  distance=1
+ 38  dst=172.29.74.0/27  gw=172.18.9.212  distance=1
+ 39  dst=172.29.74.0/27  gw=172.18.9.212  distance=1
+ 40  dst=172.29.74.32/27  gw=172.18.9.180  distance=1
+ 41  dst=172.29.74.32/27  gw=172.18.9.180  distance=1
+ 42  dst=172.29.74.64/26  gw=172.18.9.180  distance=1
+ 43  dst=172.29.74.64/26  gw=172.18.9.180  distance=1
+ 44  dst=172.29.74.128/25  gw=172.18.9.180  distance=1
+ 45  dst=172.29.74.128/25  gw=172.18.9.180  distance=1
+ 46  dst=172.29.74.224/27  gw=172.18.9.180  distance=1
+ 47  dst=172.29.74.224/27  gw=172.18.9.180  distance=1
+ 48  dst=172.29.75.0/24  gw=172.18.9.180  distance=1
+ 49  dst=172.29.75.0/24  gw=172.18.9.180  distance=1
+ 50  dst=192.168.10.0/30  gw=ether1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=Abadan-22Bahman1  address=172.18.9.194  interface=ether1
+  2  identity=KootShanoof.Client  address=172.18.9.196  interface=ether1
+  3  identity=KhazalAbad.Client  address=172.18.9.198  interface=ether1
+  4  identity=ObuKhazravi.Client  address=172.18.9.199  interface=ether1
+  5  identity=ObuShekr.Client  address=172.18.9.200  interface=ether1
+  6  identity=ObuDeyereh.Client  address=172.18.9.201  interface=ether1
+  7  identity=NahrSalim.Client  address=172.18.9.202  interface=ether1
+  8  identity=Afadeleh.Client  address=172.18.9.203  interface=ether1
+  9  identity=Abadan-22Bahman2  address=172.18.9.210  interface=ether2
+ 10  identity=NaghshehNasar  address=172.18.9.211  interface=ether2
+ 11  identity=AlboSeyd.Client  address=172.18.9.212  interface=ether2
+ 12  identity=AlboHamid.Client  address=172.18.9.213  interface=ether2
+ 13  identity=PTP-AP-22BAHMAN-ARVAN  address=172.18.9.178  interface=ether4
+ 14  identity=22Bahman->Arvandkenar.Client  address=172.18.9.179  interface=ether4
+ 15  identity=Router.Markaz.ArvandKanar  address=172.18.9.180  interface=ether4
+ 16  identity=22bahman_kotshanoof_AP  address=172.18.9.218  interface=ether9,bridge1
+ 17  identity=valiasr-kut-shanuf-CL  address=172.18.9.219  interface=ether9,bridge1
+ 18  identity=KhezrNabi-MK  address=172.18.9.9  interface=ether10
+ 19  identity=Khezr->22Bahman.AP  address=172.18.9.10  interface=ether10
+ 20  identity=CL-22BHMN  address=172.18.9.11  interface=ether10
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:35:57
+# ساعت دستگاه (خام): 1974-09-15 17:17:29
+# افست اصلاحی (سرور − دستگاه): +456520:48:28
+  1  1405/07/22 10:54:34  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/22 10:54:36  [bridge,info]  "bridge1" mac address changed to E4:8D:8C:0E:6E:42
+  3  1405/07/22 10:54:37  [poe-out,info]  ether10 detected poe-out status: on
+  4  1405/07/22 10:54:37  [interface,info]  ether5 link up (speed 100M, full duplex)
+  5  1405/07/22 10:54:38  [interface,info]  ether1 link up (speed 1G, full duplex)
+  6  1405/07/22 10:54:40  [interface,info]  ether9 link up (speed 100M, full duplex)
+  7  1405/07/22 10:54:42  [interface,info]  ether10 link up (speed 100M, full duplex)
+  8  1405/07/22 10:54:44  [interface,info]  ether4 link up (speed 1G, full duplex)
+  9  1405/07/22 10:54:49  [interface,info]  ether2 link up (speed 100M, full duplex)
+ 10  1405/07/22 11:03:13  [dhcp,info]  dhcp1 deassigned 172.29.72.21 from 76:E4:6E:A9:F9:17
+ 11  1405/07/22 11:15:27  [dhcp,info]  dhcp1 assigned 172.29.72.21 to 76:E4:6E:A9:F9:17
+ 12  1405/07/22 11:54:38  [dhcp,info]  dhcp1 deassigned 172.29.72.27 from D0:37:45:DF:E2:94
+ 13  1405/07/22 11:59:58  [dhcp,info]  dhcp1 deassigned 172.29.72.24 from 7C:F1:7E:F4:33:10
+ 14  1405/07/22 13:32:06  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 15  1405/07/22 13:32:08  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 16  1405/07/22 13:34:14  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 17  1405/07/22 13:34:15  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 18  1405/07/22 13:35:01  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 19  1405/07/22 13:35:03  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 20  1405/07/22 13:35:16  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 21  1405/07/22 13:35:17  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 22  1405/07/22 13:35:44  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 23  1405/07/22 13:35:46  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 24  1405/07/22 13:35:55  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  E4:8D:8C:0E:6E:40  (ether)
+ether2  E4:8D:8C:0E:6E:41  (ether)
+ether3  E4:8D:8C:0E:6E:42  (ether)
+ether4  E4:8D:8C:0E:6E:43  (ether)
+ether5  E4:8D:8C:0E:6E:44  (ether)
+ether6  E4:8D:8C:0E:6E:45  (ether)
+ether7-POS  E4:8D:8C:0E:6E:46  (ether)
+ether8  E4:8D:8C:0E:6E:47  (ether)
+ether9  E4:8D:8C:0E:6E:48  (ether)
+ether10  E4:8D:8C:0E:6E:49  (ether)
+sfp1  E4:8D:8C:0E:6E:3F  (ether)
+bridge1  E4:8D:8C:0E:6E:42  (bridge)
+--- /ip arp ---
+ether1  E4:8D:8C:D5:38:61  (arp 172.18.9.203)
+ether1  6C:3B:6B:97:E7:CD  (arp 172.18.9.201)
+ether4  6C:3B:6B:B2:3D:27  (arp 172.18.9.180)
+bridge1  6C:3B:6B:10:B1:A5  (arp 172.18.9.219)
+ether2  6C:3B:6B:34:02:57  (arp 172.18.9.213)
+ether4  48:A9:8A:56:43:A2  (arp 172.18.9.178)
+ether2  6C:3B:6B:74:E2:96  (arp 172.18.9.211)
+bridge1  76:E4:6E:A9:F9:17  (arp 172.29.72.21)
+ether1  64:D1:54:93:53:89  (arp 172.18.9.198)
+ether1  6C:3B:6B:97:E7:E3  (arp 172.18.9.196)
+ether1  6C:3B:6B:94:8C:9A  (arp 172.18.9.194)
+ether1  6C:3B:6B:91:11:4C  (arp 172.18.9.202)
+ether1  6C:3B:6B:34:01:DB  (arp 172.18.9.200)
+ether2  6C:3B:6B:34:02:51  (arp 172.18.9.212)
+ether10  6C:3B:6B:85:AC:AF  (arp 172.18.9.9)
+ether10  48:A9:8A:56:35:35  (arp 172.18.9.11)
+ether2  6C:3B:6B:4E:0E:FD  (arp 172.18.9.210)
+ether4  E4:8D:8C:7C:E4:FB  (arp 172.18.9.179)
+ether1  6C:3B:6B:10:AF:73  (arp 172.18.9.199)

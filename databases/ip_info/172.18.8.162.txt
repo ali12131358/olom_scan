@@ -1,0 +1,73 @@
+IP: 172.18.8.162
+Collected at: 2026-10-14T10:24:15.757730+00:00
+source: RouterOS API
+identity: FORIYAT.AP
+device_type: AP
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=64:D1:54:95:EB:AD
+  2  name=wlan1  type=wlan  running=false  mac=64:D1:54:95:EB:AE
+  3  name=bridge1  type=bridge  running=true  mac=64:D1:54:95:EB:AE
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=ap-bridge  ssid=FORIYAT.PTP  band=5ghz-a/n  frequency=5680
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=192.168.100.2/24  interface=ether1  network=192.168.100.0
+  2  address=172.18.8.162/29  interface=ether1  network=172.18.8.160
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.8.161  distance=1
+  2  dst=172.18.8.160/29  gw=bridge1  distance=0
+  3  dst=192.168.100.0/24  gw=bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=RB.Meydoon.MK  address=172.18.8.161  interface=ether1,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:33:28
+# ساعت دستگاه (خام): 1977-10-18 23:24:22
+# افست اصلاحی (سرور − دستگاه): +429418:39:06
+  1  1405/07/10 22:47:22  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/10 22:47:22  [system,error,critical]  kernel failure in previous boot
+  3  1405/07/10 22:47:25  [bridge,info]  "bridge1" mac address changed to 64:D1:54:95:EB:AE
+  4  1405/07/10 22:47:32  [interface,info]  ether1 link up (speed 1G, full duplex)
+  5  1405/07/16 13:54:49  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+  6  1405/07/16 13:54:50  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+  7  1405/07/16 14:08:58  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+  8  1405/07/16 14:08:59  [system,info]  changed snmp settings by garnaf
+  9  1405/07/16 14:08:59  [system,info]  item changed by garnaf
+ 10  1405/07/16 14:08:59  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 11  1405/07/16 14:35:08  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 12  1405/07/16 14:35:15  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 13  1405/07/16 15:45:44  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 14  1405/07/16 15:45:45  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 15  1405/07/17 08:38:47  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 16  1405/07/17 08:38:48  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 17  1405/07/18 10:35:40  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 18  1405/07/18 10:35:41  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 19  1405/07/18 11:00:12  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 20  1405/07/18 11:00:13  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 21  1405/07/18 12:11:10  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 22  1405/07/18 12:11:10  [system,info]  user olom1 added by garnaf
+ 23  1405/07/18 12:11:10  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 24  1405/07/19 09:52:58  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 25  1405/07/19 09:52:59  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 26  1405/07/19 17:45:28  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+ 27  1405/07/19 17:45:28  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+ 28  1405/07/21 11:14:09  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 29  1405/07/21 11:14:10  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 30  1405/07/22 13:33:27  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  64:D1:54:95:EB:AD  (ether)
+wlan1  64:D1:54:95:EB:AE  (wlan)
+bridge1  64:D1:54:95:EB:AE  (bridge)
+--- /ip arp ---
+bridge1  6C:3B:6B:0A:DD:FD  (arp 172.18.8.161)

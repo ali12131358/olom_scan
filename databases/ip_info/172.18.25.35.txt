@@ -1,0 +1,242 @@
+IP: 172.18.25.35
+Collected at: 2026-10-14T10:23:27.175155+00:00
+source: RouterOS API
+identity: NahrDeli
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=6C:3B:6B:10:AF:92
+  2  name=wlan1  type=wlan  running=true  mac=6C:3B:6B:10:AF:93
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=Shadegan-Alvan1  band=5ghz-a/n  frequency=5805
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.25.35/28  interface=wlan1  network=172.18.25.32
+  2  address=172.29.197.161/27  interface=ether1  network=172.29.197.160
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.25.33  distance=1
+  2  dst=172.18.25.32/28  gw=wlan1  distance=0
+  3  dst=172.29.197.160/27  gw=ether1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=MK_Alvan  address=172.18.25.33  interface=wlan1
+  2  identity=Shadegan-Alvan1  address=172.18.25.34  interface=wlan1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:24:42
+# ساعت دستگاه (خام): 2023-09-08 07:29:30
+# افست اصلاحی (سرور − دستگاه): +27170:25:12
+  1  1405/07/22 04:25:59  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+  2  1405/07/22 04:26:39  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+  3  1405/07/22 04:27:38  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+  4  1405/07/22 04:27:50  [wireless,info]  6C:3B:6B:4D:73:43@wlan1 established connection on 5745000, SSID Shadegan-Alvan1
+  5  1405/07/22 04:37:08  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: lost connection, not responding
+  6  1405/07/22 04:37:18  [wireless,info]  6C:3B:6B:4D:73:43@wlan1 established connection on 5745000, SSID Shadegan-Alvan1
+  7  1405/07/22 04:49:58  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: lost connection, control frame timeout
+  8  1405/07/22 04:50:50  [wireless,info]  6C:3B:6B:4D:73:43@wlan1 established connection on 5745000, SSID Shadegan-Alvan1
+  9  1405/07/22 04:59:23  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: lost connection, control frame timeout
+ 10  1405/07/22 05:00:19  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+ 11  1405/07/22 05:00:43  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, medium-access timeout
+ 12  1405/07/22 05:01:25  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, medium-access timeout
+ 13  1405/07/22 05:02:24  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+ 14  1405/07/22 05:03:07  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+ 15  1405/07/22 05:03:59  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+ 16  1405/07/22 05:04:39  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+ 17  1405/07/22 05:05:02  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, medium-access timeout
+ 18  1405/07/22 05:05:27  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, medium-access timeout
+ 19  1405/07/22 05:06:10  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, medium-access timeout
+ 20  1405/07/22 05:07:49  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+ 21  1405/07/22 05:08:43  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+ 22  1405/07/22 05:09:01  [wireless,info]  6C:3B:6B:4D:73:43@wlan1 established connection on 5745000, SSID Shadegan-Alvan1
+ 23  1405/07/22 05:09:14  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: lost connection, not responding
+ 24  1405/07/22 05:10:06  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+ 25  1405/07/22 05:10:51  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+ 26  1405/07/22 05:11:18  [wireless,info]  6C:3B:6B:4D:73:43@wlan1 established connection on 5745000, SSID Shadegan-Alvan1
+ 27  1405/07/22 05:11:38  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: lost connection, control frame timeout
+ 28  1405/07/22 05:12:16  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+ 29  1405/07/22 05:12:29  [wireless,info]  6C:3B:6B:4D:73:43@wlan1 established connection on 5745000, SSID Shadegan-Alvan1
+ 30  1405/07/22 05:13:29  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: lost connection, control frame timeout
+ 31  1405/07/22 05:13:46  [wireless,info]  6C:3B:6B:4D:73:43@wlan1 established connection on 5745000, SSID Shadegan-Alvan1
+ 32  1405/07/22 05:14:28  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: lost connection, medium-access timeout
+ 33  1405/07/22 05:15:01  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+ 34  1405/07/22 05:15:35  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+ 35  1405/07/22 05:16:24  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+ 36  1405/07/22 05:16:36  [wireless,info]  6C:3B:6B:4D:73:43@wlan1 established connection on 5745000, SSID Shadegan-Alvan1
+ 37  1405/07/22 05:19:23  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: lost connection, control frame timeout
+ 38  1405/07/22 05:19:42  [wireless,info]  6C:3B:6B:4D:73:43@wlan1 established connection on 5745000, SSID Shadegan-Alvan1
+ 39  1405/07/22 05:21:13  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: lost connection, not responding
+ 40  1405/07/22 05:21:31  [wireless,info]  6C:3B:6B:4D:73:43@wlan1 established connection on 5745000, SSID Shadegan-Alvan1
+ 41  1405/07/22 05:21:51  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: lost connection, control frame timeout
+ 42  1405/07/22 05:22:35  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+ 43  1405/07/22 05:23:22  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+ 44  1405/07/22 05:24:05  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+ 45  1405/07/22 05:24:16  [wireless,info]  6C:3B:6B:4D:73:43@wlan1 established connection on 5745000, SSID Shadegan-Alvan1
+ 46  1405/07/22 05:25:44  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: lost connection, control frame timeout
+ 47  1405/07/22 05:25:50  [wireless,info]  6C:3B:6B:4D:73:43@wlan1 established connection on 5745000, SSID Shadegan-Alvan1
+ 48  1405/07/22 05:26:19  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: lost connection, control frame timeout
+ 49  1405/07/22 05:27:00  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+ 50  1405/07/22 05:27:26  [wireless,info]  6C:3B:6B:4D:73:43@wlan1 established connection on 5745000, SSID Shadegan-Alvan1
+ 51  1405/07/22 05:34:49  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: lost connection, control frame timeout
+ 52  1405/07/22 05:34:57  [wireless,info]  6C:3B:6B:4D:73:43@wlan1 established connection on 5745000, SSID Shadegan-Alvan1
+ 53  1405/07/22 05:36:28  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: lost connection, control frame timeout
+ 54  1405/07/22 05:36:34  [wireless,info]  6C:3B:6B:4D:73:43@wlan1 established connection on 5745000, SSID Shadegan-Alvan1
+ 55  1405/07/22 05:36:53  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: lost connection, medium-access timeout
+ 56  1405/07/22 05:37:28  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+ 57  1405/07/22 05:37:47  [wireless,info]  6C:3B:6B:4D:73:43@wlan1 established connection on 5745000, SSID Shadegan-Alvan1
+ 58  1405/07/22 05:41:18  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: lost connection, control frame timeout
+ 59  1405/07/22 05:41:25  [wireless,info]  6C:3B:6B:4D:73:43@wlan1 established connection on 5745000, SSID Shadegan-Alvan1
+ 60  1405/07/22 05:43:05  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: lost connection, medium-access timeout
+ 61  1405/07/22 05:43:25  [wireless,info]  6C:3B:6B:4D:73:43@wlan1 established connection on 5745000, SSID Shadegan-Alvan1
+ 62  1405/07/22 05:51:51  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: lost connection, control frame timeout
+ 63  1405/07/22 05:52:03  [wireless,info]  6C:3B:6B:4D:73:43@wlan1 established connection on 5745000, SSID Shadegan-Alvan1
+ 64  1405/07/22 05:53:44  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: lost connection, control frame timeout
+ 65  1405/07/22 05:54:09  [wireless,info]  6C:3B:6B:4D:73:43@wlan1 established connection on 5745000, SSID Shadegan-Alvan1
+ 66  1405/07/22 05:58:18  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: lost connection, control frame timeout
+ 67  1405/07/22 05:59:12  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+ 68  1405/07/22 05:59:33  [wireless,info]  6C:3B:6B:4D:73:43@wlan1 established connection on 5745000, SSID Shadegan-Alvan1
+ 69  1405/07/22 05:59:52  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: lost connection, control frame timeout
+ 70  1405/07/22 06:00:09  [wireless,info]  6C:3B:6B:4D:73:43@wlan1 established connection on 5745000, SSID Shadegan-Alvan1
+ 71  1405/07/22 06:00:39  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: lost connection, control frame timeout
+ 72  1405/07/22 06:01:31  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, medium-access timeout
+ 73  1405/07/22 06:02:16  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+ 74  1405/07/22 06:03:00  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+ 75  1405/07/22 06:03:12  [wireless,info]  6C:3B:6B:4D:73:43@wlan1 established connection on 5745000, SSID Shadegan-Alvan1
+ 76  1405/07/22 06:03:23  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: lost connection, control frame timeout
+ 77  1405/07/22 06:03:58  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+ 78  1405/07/22 06:04:10  [wireless,info]  6C:3B:6B:4D:73:43@wlan1 established connection on 5745000, SSID Shadegan-Alvan1
+ 79  1405/07/22 06:04:20  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: lost connection, control frame timeout
+ 80  1405/07/22 06:04:30  [wireless,info]  6C:3B:6B:4D:73:43@wlan1 established connection on 5745000, SSID Shadegan-Alvan1
+ 81  1405/07/22 06:08:22  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: lost connection, medium-access timeout
+ 82  1405/07/22 06:09:13  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, medium-access timeout
+ 83  1405/07/22 06:09:25  [wireless,info]  6C:3B:6B:4D:73:43@wlan1 established connection on 5745000, SSID Shadegan-Alvan1
+ 84  1405/07/22 06:09:43  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: lost connection, control frame timeout
+ 85  1405/07/22 06:10:40  [wireless,info]  6C:3B:6B:4D:73:43@wlan1 established connection on 5745000, SSID Shadegan-Alvan1
+ 86  1405/07/22 06:11:43  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: lost connection, control frame timeout
+ 87  1405/07/22 06:11:56  [wireless,info]  6C:3B:6B:4D:73:43@wlan1 established connection on 5745000, SSID Shadegan-Alvan1
+ 88  1405/07/22 06:12:02  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: lost connection, control frame timeout
+ 89  1405/07/22 06:12:08  [wireless,info]  6C:3B:6B:4D:73:43@wlan1 established connection on 5745000, SSID Shadegan-Alvan1
+ 90  1405/07/22 06:12:30  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: lost connection, control frame timeout
+ 91  1405/07/22 06:12:39  [wireless,info]  6C:3B:6B:4D:73:43@wlan1 established connection on 5745000, SSID Shadegan-Alvan1
+ 92  1405/07/22 06:13:14  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: lost connection, not responding
+ 93  1405/07/22 06:13:37  [wireless,info]  6C:3B:6B:4D:73:43@wlan1 established connection on 5745000, SSID Shadegan-Alvan1
+ 94  1405/07/22 06:14:27  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: lost connection, medium-access timeout
+ 95  1405/07/22 06:15:13  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+ 96  1405/07/22 06:15:45  [wireless,info]  6C:3B:6B:4D:73:43@wlan1 established connection on 5745000, SSID Shadegan-Alvan1
+ 97  1405/07/22 06:16:43  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: lost connection, control frame timeout
+ 98  1405/07/22 06:16:53  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, medium-access timeout
+ 99  1405/07/22 06:17:45  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, medium-access timeout
+100  1405/07/22 06:18:37  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+101  1405/07/22 06:19:21  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+102  1405/07/22 06:20:09  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+103  1405/07/22 06:20:51  [wireless,info]  6C:3B:6B:4D:73:43@wlan1 established connection on 5745000, SSID Shadegan-Alvan1
+104  1405/07/22 06:21:27  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: lost connection, medium-access timeout
+105  1405/07/22 06:22:36  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+106  1405/07/22 06:23:25  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, medium-access timeout
+107  1405/07/22 06:23:41  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, medium-access timeout
+108  1405/07/22 06:24:23  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, medium-access timeout
+109  1405/07/22 06:24:40  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, medium-access timeout
+110  1405/07/22 06:24:56  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, medium-access timeout
+111  1405/07/22 06:25:29  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, medium-access timeout
+112  1405/07/22 06:26:34  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+113  1405/07/22 06:26:56  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, medium-access timeout
+114  1405/07/22 06:29:33  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, medium-access timeout
+115  1405/07/22 06:30:34  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+116  1405/07/22 06:32:11  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+117  1405/07/22 06:32:55  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, medium-access timeout
+118  1405/07/22 06:33:19  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, medium-access timeout
+119  1405/07/22 06:34:24  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, medium-access timeout
+120  1405/07/22 06:35:04  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, medium-access timeout
+121  1405/07/22 06:35:33  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, medium-access timeout
+122  1405/07/22 06:36:00  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, medium-access timeout
+123  1405/07/22 06:36:16  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, medium-access timeout
+124  1405/07/22 06:37:11  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+125  1405/07/22 06:37:56  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, medium-access timeout
+126  1405/07/22 06:39:33  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, medium-access timeout
+127  1405/07/22 06:40:45  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, medium-access timeout
+128  1405/07/22 06:42:55  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+129  1405/07/22 06:43:46  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+130  1405/07/22 06:44:28  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, medium-access timeout
+131  1405/07/22 06:45:33  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+132  1405/07/22 06:46:27  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+133  1405/07/22 06:46:58  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+134  1405/07/22 06:47:19  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, medium-access timeout
+135  1405/07/22 06:49:06  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+136  1405/07/22 06:49:28  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, medium-access timeout
+137  1405/07/22 06:50:29  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+138  1405/07/22 06:51:20  [wireless,info]  6C:3B:6B:4D:73:43@wlan1 established connection on 5745000, SSID Shadegan-Alvan1
+139  1405/07/22 06:52:18  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: lost connection, control frame timeout
+140  1405/07/22 06:53:32  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+141  1405/07/22 06:54:07  [wireless,info]  6C:3B:6B:4D:73:43@wlan1 established connection on 5745000, SSID Shadegan-Alvan1
+142  1405/07/22 06:55:38  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: lost connection, control frame timeout
+143  1405/07/22 06:56:25  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+144  1405/07/22 06:57:18  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+145  1405/07/22 06:57:59  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+146  1405/07/22 06:58:39  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, medium-access timeout
+147  1405/07/22 07:01:11  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, medium-access timeout
+148  1405/07/22 07:04:04  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+149  1405/07/22 07:05:01  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+150  1405/07/22 07:05:16  [wireless,info]  6C:3B:6B:4D:73:43@wlan1 established connection on 5745000, SSID Shadegan-Alvan1
+151  1405/07/22 07:05:28  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: lost connection, control frame timeout
+152  1405/07/22 07:06:29  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+153  1405/07/22 07:07:07  [wireless,info]  6C:3B:6B:4D:73:43@wlan1 established connection on 5745000, SSID Shadegan-Alvan1
+154  1405/07/22 07:07:15  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: lost connection, control frame timeout
+155  1405/07/22 07:08:39  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+156  1405/07/22 07:09:42  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+157  1405/07/22 07:10:37  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+158  1405/07/22 07:12:03  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, ranging timeout
+159  1405/07/22 07:12:42  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+160  1405/07/22 07:13:10  [wireless,info]  6C:3B:6B:4D:73:43@wlan1 established connection on 5745000, SSID Shadegan-Alvan1
+161  1405/07/22 07:13:24  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: lost connection, control frame timeout
+162  1405/07/22 07:13:37  [wireless,info]  6C:3B:6B:4D:73:43@wlan1 established connection on 5745000, SSID Shadegan-Alvan1
+163  1405/07/22 07:13:42  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: lost connection, control frame timeout
+164  1405/07/22 07:14:20  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, medium-access timeout
+165  1405/07/22 07:15:35  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+166  1405/07/22 07:16:21  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+167  1405/07/22 07:17:18  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+168  1405/07/22 07:18:12  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+169  1405/07/22 07:18:46  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+170  1405/07/22 07:19:08  [wireless,info]  6C:3B:6B:4D:73:43@wlan1 established connection on 5745000, SSID Shadegan-Alvan1
+171  1405/07/22 07:19:38  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: lost connection, control frame timeout
+172  1405/07/22 07:20:31  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+173  1405/07/22 07:21:18  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+174  1405/07/22 07:21:29  [wireless,info]  6C:3B:6B:4D:73:43@wlan1 established connection on 5745000, SSID Shadegan-Alvan1
+175  1405/07/22 07:27:23  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: lost connection, control frame timeout
+176  1405/07/22 07:27:29  [wireless,info]  6C:3B:6B:4D:73:43@wlan1 established connection on 5745000, SSID Shadegan-Alvan1
+177  1405/07/22 07:29:22  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: lost connection, control frame timeout
+178  1405/07/22 07:29:59  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+179  1405/07/22 07:30:16  [wireless,info]  6C:3B:6B:4D:73:43@wlan1 established connection on 5745000, SSID Shadegan-Alvan1
+180  1405/07/22 07:31:18  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: lost connection, control frame timeout
+181  1405/07/22 07:32:09  [wireless,info]  6C:3B:6B:4D:73:43@wlan1 established connection on 5745000, SSID Shadegan-Alvan1
+182  1405/07/22 07:32:27  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: lost connection, control frame timeout
+183  1405/07/22 07:33:19  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+184  1405/07/22 07:33:34  [wireless,info]  6C:3B:6B:4D:73:43@wlan1 established connection on 5745000, SSID Shadegan-Alvan1
+185  1405/07/22 07:33:40  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: lost connection, control frame timeout
+186  1405/07/22 07:34:24  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+187  1405/07/22 07:35:11  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+188  1405/07/22 07:35:55  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+189  1405/07/22 07:36:07  [wireless,info]  6C:3B:6B:4D:73:43@wlan1 established connection on 5745000, SSID Shadegan-Alvan1
+190  1405/07/22 08:30:31  [interface,info]  ether1 link down
+191  1405/07/22 08:30:33  [interface,info]  ether1 link up (speed 100M, full duplex)
+192  1405/07/22 08:30:35  [dhcp,info]  dhcp1 assigned 172.29.197.190 to 74:D4:35:9B:CC:BA
+193  1405/07/22 08:31:53  [interface,info]  ether1 link down
+194  1405/07/22 08:31:55  [interface,info]  ether1 link up (speed 10M, full duplex)
+195  1405/07/22 08:33:02  [interface,info]  ether1 link down
+196  1405/07/22 08:33:03  [interface,info]  ether1 link up (speed 100M, full duplex)
+197  1405/07/22 10:48:03  [interface,info]  ether1 link down
+198  1405/07/22 10:48:04  [interface,info]  ether1 link up (speed 10M, full duplex)
+199  1405/07/22 10:53:03  [dhcp,info]  dhcp1 deassigned 172.29.197.190 from 74:D4:35:9B:CC:BA
+200  1405/07/22 13:24:41  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  6C:3B:6B:10:AF:92  (ether)
+wlan1  6C:3B:6B:10:AF:93  (wlan)
+--- /ip arp ---
+wlan1  6C:3B:6B:0C:28:84  (arp 172.18.25.33)

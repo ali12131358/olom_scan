@@ -1,0 +1,462 @@
+IP: 172.18.4.137
+Collected at: 2026-10-14T10:24:02.611916+00:00
+source: RouterOS API
+identity: R1KH
+device_type: Router
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=4C:5E:0C:9B:0E:69
+  2  name=ether2  type=ether  running=false  mac=4C:5E:0C:9B:0E:6A
+  3  name=ether3  type=ether  running=true  mac=4C:5E:0C:9B:0E:6B
+  4  name=ether4  type=ether  running=true  mac=4C:5E:0C:9B:0E:6C
+  5  name=ether5  type=ether  running=false  mac=4C:5E:0C:9B:0E:6D
+  6  name=ether6  type=ether  running=false  mac=4C:5E:0C:9B:0E:6E
+  7  name=ether7  type=ether  running=true  mac=4C:5E:0C:9B:0E:6F
+  8  name=ether8  type=ether  running=true  mac=4C:5E:0C:9B:0E:70
+  9  name=ether9  type=ether  running=true  mac=4C:5E:0C:9B:0E:71
+ 10  name=ether10  type=ether  running=true  mac=4C:5E:0C:9B:0E:72
+ 11  name=ether11  type=ether  running=false  mac=4C:5E:0C:9B:0E:73
+ 12  name=ether12  type=ether  running=true  mac=4C:5E:0C:9B:0E:74
+ 13  name=ether13  type=ether  running=false  mac=4C:5E:0C:9B:0E:75
+ 14  name=ether14  type=ether  running=true  mac=4C:5E:0C:9B:0E:76
+ 15  name=ether15  type=ether  running=true  mac=4C:5E:0C:9B:0E:77
+ 16  name=ether16  type=ether  running=true  mac=4C:5E:0C:9B:0E:78
+ 17  name=ether17  type=ether  running=true  mac=4C:5E:0C:9B:0E:79
+ 18  name=ether18  type=ether  running=true  mac=4C:5E:0C:9B:0E:7A
+ 19  name=ether19  type=ether  running=false  mac=4C:5E:0C:9B:0E:7B
+ 20  name=ether20  type=ether  running=true  mac=4C:5E:0C:9B:0E:7C
+ 21  name=ether21  type=ether  running=false  mac=4C:5E:0C:9B:0E:7D
+ 22  name=ether22  type=ether  running=false  mac=4C:5E:0C:9B:0E:7E
+ 23  name=ether23  type=ether  running=false  mac=4C:5E:0C:9B:0E:7F
+ 24  name=ether24  type=ether  running=true  mac=4C:5E:0C:9B:0E:80
+ 25  name=sfp1  type=ether  running=false  mac=4C:5E:0C:9B:0E:81
+ 26  name=bridge1  type=bridge  running=false  mac=BE:64:A6:48:7B:F7
+
+----- wireless -----
+(empty)
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.1.52/29  interface=ether1  network=172.18.1.48
+  2  address=172.18.1.105/29  interface=ether4  network=172.18.1.104
+  3  address=172.18.1.169/29  interface=ether2  network=172.18.1.168
+  4  address=172.18.1.161/29  interface=ether23  network=172.18.1.160
+  5  address=172.28.20.1/24  interface=ether3  network=172.28.20.0
+  6  address=172.18.2.113/29  interface=ether7  network=172.18.2.112
+  7  address=172.18.2.121/29  interface=ether8  network=172.18.2.120
+  8  address=172.18.2.129/29  interface=ether22  network=172.18.2.128
+  9  address=172.18.1.177/29  interface=ether3  network=172.18.1.176
+ 10  address=172.18.1.57/29  interface=ether24  network=172.18.1.56
+ 11  address=172.18.16.1/28  interface=ether15  network=172.18.16.0
+ 12  address=172.18.16.33/28  interface=ether17  network=172.18.16.32
+ 13  address=172.18.16.49/28  interface=ether18  network=172.18.16.48
+ 14  address=172.18.16.17/28  interface=ether16  network=172.18.16.16
+ 15  address=172.29.16.65/26  interface=ether10  network=172.29.16.64
+ 16  address=172.18.2.249/29  interface=ether16  network=172.18.2.248
+ 17  address=172.18.3.161/29  interface=ether20  network=172.18.3.160
+ 18  address=172.18.3.185/29  interface=ether9  network=172.18.3.184
+ 19  address=172.18.48.9/29  interface=ether9  network=172.18.48.8
+ 20  address=172.18.2.97/29  interface=ether12  network=172.18.2.96
+ 21  address=172.18.4.137/29  interface=ether24  network=172.18.4.136
+ 22  address=192.168.88.2/24  interface=ether12  network=192.168.88.0
+ 23  address=172.18.1.57/29  interface=ether10  network=172.18.1.56
+ 24  address=192.168.94.1/29  interface=ether10  network=192.168.94.0
+ 25  address=192.168.55.1/30  interface=ether10  network=192.168.55.0
+ 26  address=192.168.96.1/24  interface=*1B  network=192.168.96.0
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.1.60  distance=1
+  2  dst=0.0.0.0/0  gw=172.18.1.49  distance=1
+  3  dst=172.18.1.48/29  gw=ether1  distance=0
+  4  dst=172.18.1.56/29  gw=ether10  distance=0
+  5  dst=172.18.1.88/30  gw=172.18.1.60  distance=1
+  6  dst=172.18.1.104/29  gw=ether4  distance=0
+  7  dst=172.18.1.176/29  gw=ether3  distance=0
+  8  dst=172.18.2.96/29  gw=ether12  distance=0
+  9  dst=172.18.2.112/29  gw=ether7  distance=0
+ 10  dst=172.18.2.120/29  gw=ether8  distance=0
+ 11  dst=172.18.2.128/29  gw=ether22  distance=255
+ 12  dst=172.18.2.144/29  gw=172.18.2.100  distance=1
+ 13  dst=172.18.2.152/29  gw=172.18.1.108  distance=1
+ 14  dst=172.18.2.160/29  gw=172.18.2.100  distance=1
+ 15  dst=172.18.2.168/29  gw=172.18.2.100  distance=1
+ 16  dst=172.18.2.248/29  gw=ether16  distance=0
+ 17  dst=172.18.3.72/29  gw=172.18.2.100  distance=1
+ 18  dst=172.18.3.160/29  gw=ether20  distance=0
+ 19  dst=172.18.3.168/29  gw=172.18.3.164  distance=1
+ 20  dst=172.18.3.184/29  gw=ether9  distance=0
+ 21  dst=172.18.3.248/29  gw=172.18.1.60  distance=1
+ 22  dst=172.18.4.128/29  gw=172.18.1.108  distance=1
+ 23  dst=172.18.4.136/29  gw=ether24  distance=0
+ 24  dst=172.18.4.160/29  gw=172.18.1.60  distance=1
+ 25  dst=172.18.16.0/28  gw=ether15  distance=0
+ 26  dst=172.18.16.16/28  gw=ether16  distance=0
+ 27  dst=172.18.16.32/28  gw=ether17  distance=0
+ 28  dst=172.18.16.48/28  gw=ether18  distance=0
+ 29  dst=172.18.16.64/28  gw=172.18.2.100  distance=1
+ 30  dst=172.18.16.80/28  gw=172.18.2.100  distance=1
+ 31  dst=172.18.36.32/30  gw=172.18.2.100  distance=1
+ 32  dst=172.18.36.40/29  gw=172.18.2.100  distance=1
+ 33  dst=172.18.48.8/29  gw=ether9  distance=0
+ 34  dst=172.18.48.16/30  gw=172.18.1.60  distance=1
+ 35  dst=172.28.0.0/16  gw=172.18.1.60  distance=1
+ 36  dst=172.28.0.0/20  gw=172.18.1.60  distance=1
+ 37  dst=172.28.16.0/22  gw=172.18.1.60  distance=1
+ 38  dst=172.28.20.0/24  gw=172.18.1.60  distance=1
+ 39  dst=172.28.21.0/24  gw=172.18.3.187  distance=1
+ 40  dst=172.28.22.0/24  gw=172.18.3.190  distance=1
+ 41  dst=172.28.23.0/24  gw=172.18.1.171  distance=1
+ 42  dst=172.28.23.0/28  gw=172.18.16.19  distance=1
+ 43  dst=172.28.23.16/28  gw=172.18.16.20  distance=1
+ 44  dst=172.28.23.32/28  gw=172.18.16.21  distance=1
+ 45  dst=172.28.24.0/21  gw=172.18.1.178  distance=1
+ 46  dst=172.29.12.0/25  gw=172.18.2.251  distance=1
+ 47  dst=172.29.12.128/25  gw=172.18.2.100  distance=1
+ 48  dst=172.29.13.128/25  gw=172.18.2.115  distance=1
+ 49  dst=172.29.14.0/25  gw=172.18.2.123  distance=1
+ 50  dst=172.29.14.128/25  gw=172.18.16.51  distance=1
+ 51  dst=172.29.15.0/25  gw=172.18.1.108  distance=1
+ 52  dst=172.29.15.128/25  gw=172.18.2.100  distance=1
+ 53  dst=172.29.16.0/26  gw=172.18.1.108  distance=1
+ 54  dst=172.29.16.64/26  gw=ether10  distance=0
+ 55  dst=172.29.16.128/25  gw=172.18.2.100  distance=1
+ 56  dst=172.29.17.0/25  gw=172.18.2.100  distance=1
+ 57  dst=172.29.27.0/25  gw=172.18.2.100  distance=1
+ 58  dst=172.29.30.224/28  gw=172.18.16.23  distance=1
+ 59  dst=172.29.31.16/28  gw=172.18.3.164  distance=1
+ 60  dst=172.29.31.32/28  gw=172.18.16.30  distance=1
+ 61  dst=172.29.31.64/28  gw=172.18.3.187  distance=1
+ 62  dst=172.29.32.160/28  gw=172.18.16.29  distance=1
+ 63  dst=172.29.32.176/28  gw=172.18.3.164  distance=1
+ 64  dst=172.29.33.128/26  gw=172.18.3.164  distance=1
+ 65  dst=172.29.33.240/28  gw=172.18.1.108  distance=1
+ 66  dst=172.29.34.0/25  gw=172.18.3.187  distance=1
+ 67  dst=172.29.128.0/27  gw=172.18.16.3  distance=1
+ 68  dst=172.29.128.32/27  gw=172.18.16.4  distance=1
+ 69  dst=172.29.128.64/27  gw=172.18.16.5  distance=1
+ 70  dst=172.29.128.96/27  gw=172.18.16.6  distance=1
+ 71  dst=172.29.128.128/27  gw=172.18.16.38  distance=1
+ 72  dst=172.29.128.160/27  gw=1.1.1.1  distance=1
+ 73  dst=172.29.128.192/26  gw=172.18.16.40  distance=1
+ 74  dst=172.29.129.0/27  gw=172.18.16.35  distance=1
+ 75  dst=172.29.129.32/27  gw=172.18.16.36  distance=1
+ 76  dst=172.29.129.64/27  gw=172.18.16.37  distance=1
+ 77  dst=172.29.129.96/27  gw=172.18.16.39  distance=1
+ 78  dst=172.29.130.0/24  gw=172.18.4.140  distance=1
+ 79  dst=172.29.131.0/25  gw=172.18.2.100  distance=1
+ 80  dst=172.29.131.128/26  gw=172.18.2.100  distance=1
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=SW-Wireless1.aums.ir  address=172.18.1.49  interface=ether1
+  2  identity=Setad-P2P-MKhoramshar.AP  address=172.18.1.50  interface=ether1
+  3  identity=KhoramsharPTPSetad.Client  address=172.18.1.51  interface=ether1
+  4  identity=CORE  address=172.18.1.178  interface=ether3
+  5  identity=Shabake-MarkazKhoramshahr.AP  address=172.18.1.106  interface=ether4
+  6  identity=MarkazKhoramshahr.Client  address=172.18.1.107  interface=ether4
+  7  identity=RB-khoramshahr-MK-behdasht-RB2011  address=172.18.1.108  interface=ether4
+  8  identity=ShabakeBehdasht->Menikh.AP  address=172.18.2.114  interface=ether7
+  9  identity=ShabakeBehdasht->Menikh.Client  address=172.18.2.115  interface=ether7
+ 10  identity=ShabakehBehdasht->Sotoongar.AP  address=172.18.2.122  interface=ether8
+ 11  identity=ShabakehBehdasht->Sotoongar.CL  address=172.18.2.123  interface=ether8
+ 12  identity=ShabakehBehdasht->Shohada.Kh  address=172.18.3.186  interface=ether9
+ 13  identity=Shohada.Kh.Client  address=172.18.3.187  interface=ether9
+ 14  identity=Ahle Beyt  address=172.18.3.190  interface=ether9
+ 15  identity=ShabakehKhoramshahr->Bimarestan.AP  address=172.18.1.58  interface=ether10
+ 16  identity=CL-SHABAKEH-VALIASR  address=172.18.1.59  interface=ether10
+ 17  identity=RB-B-Valiasr-KH  address=172.18.1.60  interface=ether10
+ 18  identity=Markez.Taleghani2AP  address=172.18.2.98  interface=ether12
+ 19  identity=Markaz-Taleghani.Client  address=172.18.2.99  interface=ether12
+ 20  identity=RouterMarkazTaleghzani  address=172.18.2.100  interface=ether12
+ 21  identity= Shabake  -> Mousavi.AP  address=172.18.2.250  interface=ether14
+ 22  identity=Khoramshahr-Shabakeh1  address=172.18.16.2  interface=ether15
+ 23  identity=Mehrzi.Client  address=172.18.16.3  interface=ether15
+ 24  identity=Sheneh.Client  address=172.18.16.5  interface=ether15
+ 25  identity=ShahidMusavi.Client  address=172.18.2.251  interface=ether16
+ 26  identity=Khoramshahr-Shabakeh2  address=172.18.16.18  interface=ether16
+ 27  identity=khrmshr-shaneh-2-CL  address=172.18.16.19  interface=ether16
+ 28  identity=Khoramshahr - ShabakeBehdasht - P2P - Behvarzi - Client  address=172.18.16.21  interface=ether16
+ 29  identity=IT.M.M  address=172.28.23.2  interface=ether16
+ 30  identity=Khoramshahr-Shabakeh3  address=172.18.16.34  interface=ether17
+ 31  identity=H.omaltolou-CL  address=172.18.16.38  interface=ether17
+ 32  identity=Anbar.GhazaDarou.Client  address=172.18.16.39  interface=ether17
+ 33  identity=ForiatKH-Link2  address=172.18.16.40  interface=ether17
+ 34  identity=CL-BEHBAHANIYAN  address=172.18.16.51  interface=ether18
+ 35  identity=Khoramshahr-Shabakeh4  address=172.18.16.60  interface=ether18
+ 36  identity=Shebakeh-> Jodedeh-.AP  address=172.18.3.162  interface=ether20
+ 37  identity=RouterJodeydeh  address=172.18.3.164  interface=ether20
+ 38  identity=Markaz.Jodeydeh.Client  address=172.29.33.129  interface=ether20
+ 39  identity=AP-PTP-SHALAMCHE-BK  address=172.18.4.138  interface=ether24
+ 40  identity=CL-PTP-SHALAMCHE-BK  address=172.18.4.139  interface=ether24
+ 41  identity=RB Shalamche  address=172.18.4.140  interface=ether24
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:31:36
+# ساعت دستگاه (خام): 2026-10-07 03:48:33
+# افست اصلاحی (سرور − دستگاه): +174:13:03
+  1  1405/07/22 09:20:47  [interface,info]  ether14 link up (speed 100M, full duplex)
+  2  1405/07/22 09:21:06  [interface,info]  ether14 link down
+  3  1405/07/22 09:21:09  [interface,info]  ether14 link up (speed 100M, full duplex)
+  4  1405/07/22 09:26:45  [interface,info]  ether14 link down
+  5  1405/07/22 09:26:48  [interface,info]  ether14 link up (speed 100M, full duplex)
+  6  1405/07/22 09:27:06  [interface,info]  ether14 link down
+  7  1405/07/22 09:27:09  [interface,info]  ether14 link up (speed 100M, full duplex)
+  8  1405/07/22 09:32:46  [interface,info]  ether14 link down
+  9  1405/07/22 09:32:48  [interface,info]  ether14 link up (speed 100M, full duplex)
+ 10  1405/07/22 09:33:06  [interface,info]  ether14 link down
+ 11  1405/07/22 09:33:09  [interface,info]  ether14 link up (speed 100M, full duplex)
+ 12  1405/07/22 09:38:46  [interface,info]  ether14 link down
+ 13  1405/07/22 09:38:49  [interface,info]  ether14 link up (speed 100M, full duplex)
+ 14  1405/07/22 09:39:08  [interface,info]  ether14 link down
+ 15  1405/07/22 09:39:09  [interface,info]  ether14 link up (speed 100M, full duplex)
+ 16  1405/07/22 09:44:46  [interface,info]  ether14 link down
+ 17  1405/07/22 09:44:49  [interface,info]  ether14 link up (speed 100M, full duplex)
+ 18  1405/07/22 09:45:06  [interface,info]  ether14 link down
+ 19  1405/07/22 09:45:17  [interface,info]  ether14 link up (speed 100M, full duplex)
+ 20  1405/07/22 09:50:47  [interface,info]  ether14 link down
+ 21  1405/07/22 09:50:50  [interface,info]  ether14 link up (speed 100M, full duplex)
+ 22  1405/07/22 09:51:08  [interface,info]  ether14 link down
+ 23  1405/07/22 09:51:10  [interface,info]  ether14 link up (speed 100M, full duplex)
+ 24  1405/07/22 09:56:48  [interface,info]  ether14 link down
+ 25  1405/07/22 09:56:51  [interface,info]  ether14 link up (speed 100M, full duplex)
+ 26  1405/07/22 09:57:09  [interface,info]  ether14 link down
+ 27  1405/07/22 09:57:11  [interface,info]  ether14 link up (speed 100M, full duplex)
+ 28  1405/07/22 10:02:48  [interface,info]  ether14 link down
+ 29  1405/07/22 10:02:51  [interface,info]  ether14 link up (speed 100M, full duplex)
+ 30  1405/07/22 10:03:09  [interface,info]  ether14 link down
+ 31  1405/07/22 10:03:11  [interface,info]  ether14 link up (speed 100M, full duplex)
+ 32  1405/07/22 10:08:49  [interface,info]  ether14 link down
+ 33  1405/07/22 10:08:51  [interface,info]  ether14 link up (speed 100M, full duplex)
+ 34  1405/07/22 10:09:10  [interface,info]  ether14 link down
+ 35  1405/07/22 10:09:12  [interface,info]  ether14 link up (speed 100M, full duplex)
+ 36  1405/07/22 10:14:49  [interface,info]  ether14 link down
+ 37  1405/07/22 10:14:52  [interface,info]  ether14 link up (speed 100M, full duplex)
+ 38  1405/07/22 10:15:10  [interface,info]  ether14 link down
+ 39  1405/07/22 10:15:13  [interface,info]  ether14 link up (speed 100M, full duplex)
+ 40  1405/07/22 10:20:50  [interface,info]  ether14 link down
+ 41  1405/07/22 10:20:53  [interface,info]  ether14 link up (speed 100M, full duplex)
+ 42  1405/07/22 10:21:10  [interface,info]  ether14 link down
+ 43  1405/07/22 10:21:13  [interface,info]  ether14 link up (speed 100M, full duplex)
+ 44  1405/07/22 10:26:50  [interface,info]  ether14 link down
+ 45  1405/07/22 10:26:53  [interface,info]  ether14 link up (speed 100M, full duplex)
+ 46  1405/07/22 10:27:11  [interface,info]  ether14 link down
+ 47  1405/07/22 10:27:14  [interface,info]  ether14 link up (speed 100M, full duplex)
+ 48  1405/07/22 10:32:52  [interface,info]  ether14 link down
+ 49  1405/07/22 10:32:54  [interface,info]  ether14 link up (speed 100M, full duplex)
+ 50  1405/07/22 10:33:12  [interface,info]  ether14 link down
+ 51  1405/07/22 10:33:14  [interface,info]  ether14 link up (speed 100M, full duplex)
+ 52  1405/07/22 10:38:52  [interface,info]  ether14 link down
+ 53  1405/07/22 10:38:55  [interface,info]  ether14 link up (speed 100M, full duplex)
+ 54  1405/07/22 10:39:13  [interface,info]  ether14 link down
+ 55  1405/07/22 10:39:23  [interface,info]  ether14 link up (speed 100M, full duplex)
+ 56  1405/07/22 10:40:48  [system,info,account]  user garnaf logged in from 172.18.4.76 via winbox
+ 57  1405/07/22 10:44:53  [interface,info]  ether14 link down
+ 58  1405/07/22 10:44:56  [interface,info]  ether14 link up (speed 100M, full duplex)
+ 59  1405/07/22 10:45:14  [interface,info]  ether14 link down
+ 60  1405/07/22 10:45:17  [interface,info]  ether14 link up (speed 100M, full duplex)
+ 61  1405/07/22 10:50:46  [system,info,account]  user garnaf logged out from 172.18.4.76 via winbox
+ 62  1405/07/22 10:50:54  [interface,info]  ether14 link down
+ 63  1405/07/22 10:50:57  [interface,info]  ether14 link up (speed 100M, full duplex)
+ 64  1405/07/22 10:51:16  [interface,info]  ether14 link down
+ 65  1405/07/22 10:51:18  [interface,info]  ether14 link up (speed 100M, full duplex)
+ 66  1405/07/22 10:56:55  [interface,info]  ether14 link down
+ 67  1405/07/22 10:56:57  [interface,info]  ether14 link up (speed 100M, full duplex)
+ 68  1405/07/22 10:57:16  [interface,info]  ether14 link down
+ 69  1405/07/22 10:57:18  [interface,info]  ether14 link up (speed 100M, full duplex)
+ 70  1405/07/22 11:02:55  [interface,info]  ether14 link down
+ 71  1405/07/22 11:02:58  [interface,info]  ether14 link up (speed 100M, full duplex)
+ 72  1405/07/22 11:03:16  [interface,info]  ether14 link down
+ 73  1405/07/22 11:03:18  [interface,info]  ether14 link up (speed 100M, full duplex)
+ 74  1405/07/22 11:08:56  [interface,info]  ether14 link down
+ 75  1405/07/22 11:08:59  [interface,info]  ether14 link up (speed 100M, full duplex)
+ 76  1405/07/22 11:09:17  [interface,info]  ether14 link down
+ 77  1405/07/22 11:09:20  [interface,info]  ether14 link up (speed 100M, full duplex)
+ 78  1405/07/22 11:14:57  [interface,info]  ether14 link down
+ 79  1405/07/22 11:14:59  [interface,info]  ether14 link up (speed 100M, full duplex)
+ 80  1405/07/22 11:15:18  [interface,info]  ether14 link down
+ 81  1405/07/22 11:15:21  [interface,info]  ether14 link up (speed 100M, full duplex)
+ 82  1405/07/22 11:20:57  [interface,info]  ether14 link down
+ 83  1405/07/22 11:21:00  [interface,info]  ether14 link up (speed 100M, full duplex)
+ 84  1405/07/22 11:21:18  [interface,info]  ether14 link down
+ 85  1405/07/22 11:21:20  [interface,info]  ether14 link up (speed 100M, full duplex)
+ 86  1405/07/22 11:26:58  [interface,info]  ether14 link down
+ 87  1405/07/22 11:27:01  [interface,info]  ether14 link up (speed 100M, full duplex)
+ 88  1405/07/22 11:27:19  [interface,info]  ether14 link down
+ 89  1405/07/22 11:27:21  [interface,info]  ether14 link up (speed 100M, full duplex)
+ 90  1405/07/22 11:32:59  [interface,info]  ether14 link down
+ 91  1405/07/22 11:33:01  [interface,info]  ether14 link up (speed 100M, full duplex)
+ 92  1405/07/22 11:33:19  [interface,info]  ether14 link down
+ 93  1405/07/22 11:33:21  [interface,info]  ether14 link up (speed 100M, full duplex)
+ 94  1405/07/22 11:39:00  [interface,info]  ether14 link down
+ 95  1405/07/22 11:39:02  [interface,info]  ether14 link up (speed 100M, full duplex)
+ 96  1405/07/22 11:39:21  [interface,info]  ether14 link down
+ 97  1405/07/22 11:39:23  [interface,info]  ether14 link up (speed 100M, full duplex)
+ 98  1405/07/22 11:45:00  [interface,info]  ether14 link down
+ 99  1405/07/22 11:45:03  [interface,info]  ether14 link up (speed 100M, full duplex)
+100  1405/07/22 11:45:21  [interface,info]  ether14 link down
+101  1405/07/22 11:45:23  [interface,info]  ether14 link up (speed 100M, full duplex)
+102  1405/07/22 11:51:00  [interface,info]  ether14 link down
+103  1405/07/22 11:51:03  [interface,info]  ether14 link up (speed 100M, full duplex)
+104  1405/07/22 11:51:22  [interface,info]  ether14 link down
+105  1405/07/22 11:51:24  [interface,info]  ether14 link up (speed 100M, full duplex)
+106  1405/07/22 11:57:00  [interface,info]  ether14 link down
+107  1405/07/22 11:57:03  [interface,info]  ether14 link up (speed 100M, full duplex)
+108  1405/07/22 11:57:22  [interface,info]  ether14 link down
+109  1405/07/22 11:57:24  [interface,info]  ether14 link up (speed 100M, full duplex)
+110  1405/07/22 12:03:01  [interface,info]  ether14 link down
+111  1405/07/22 12:03:04  [interface,info]  ether14 link up (speed 100M, full duplex)
+112  1405/07/22 12:03:22  [interface,info]  ether14 link down
+113  1405/07/22 12:03:24  [interface,info]  ether14 link up (speed 100M, full duplex)
+114  1405/07/22 12:09:02  [interface,info]  ether14 link down
+115  1405/07/22 12:09:04  [interface,info]  ether14 link up (speed 100M, full duplex)
+116  1405/07/22 12:09:23  [interface,info]  ether14 link down
+117  1405/07/22 12:09:25  [interface,info]  ether14 link up (speed 100M, full duplex)
+118  1405/07/22 12:15:02  [interface,info]  ether14 link down
+119  1405/07/22 12:15:05  [interface,info]  ether14 link up (speed 100M, full duplex)
+120  1405/07/22 12:15:23  [interface,info]  ether14 link down
+121  1405/07/22 12:15:26  [interface,info]  ether14 link up (speed 100M, full duplex)
+122  1405/07/22 12:21:02  [interface,info]  ether14 link down
+123  1405/07/22 12:21:05  [interface,info]  ether14 link up (speed 100M, full duplex)
+124  1405/07/22 12:21:23  [interface,info]  ether14 link down
+125  1405/07/22 12:21:25  [interface,info]  ether14 link up (speed 100M, full duplex)
+126  1405/07/22 12:27:02  [interface,info]  ether14 link down
+127  1405/07/22 12:27:05  [interface,info]  ether14 link up (speed 100M, full duplex)
+128  1405/07/22 12:27:23  [interface,info]  ether14 link down
+129  1405/07/22 12:27:25  [interface,info]  ether14 link up (speed 100M, full duplex)
+130  1405/07/22 12:33:04  [interface,info]  ether14 link down
+131  1405/07/22 12:33:06  [interface,info]  ether14 link up (speed 100M, full duplex)
+132  1405/07/22 12:33:24  [interface,info]  ether14 link down
+133  1405/07/22 12:33:27  [interface,info]  ether14 link up (speed 100M, full duplex)
+134  1405/07/22 12:39:04  [interface,info]  ether14 link down
+135  1405/07/22 12:39:07  [interface,info]  ether14 link up (speed 100M, full duplex)
+136  1405/07/22 12:39:25  [interface,info]  ether14 link down
+137  1405/07/22 12:39:27  [interface,info]  ether14 link up (speed 100M, full duplex)
+138  1405/07/22 12:45:05  [interface,info]  ether14 link down
+139  1405/07/22 12:45:08  [interface,info]  ether14 link up (speed 100M, full duplex)
+140  1405/07/22 12:45:26  [interface,info]  ether14 link down
+141  1405/07/22 12:45:28  [interface,info]  ether14 link up (speed 100M, full duplex)
+142  1405/07/22 12:51:06  [interface,info]  ether14 link down
+143  1405/07/22 12:51:09  [interface,info]  ether14 link up (speed 100M, full duplex)
+144  1405/07/22 12:51:27  [interface,info]  ether14 link down
+145  1405/07/22 12:51:29  [interface,info]  ether14 link up (speed 100M, full duplex)
+146  1405/07/22 12:57:06  [interface,info]  ether14 link down
+147  1405/07/22 12:57:09  [interface,info]  ether14 link up (speed 100M, full duplex)
+148  1405/07/22 12:57:27  [interface,info]  ether14 link down
+149  1405/07/22 12:57:29  [interface,info]  ether14 link up (speed 100M, full duplex)
+150  1405/07/22 13:03:07  [interface,info]  ether14 link down
+151  1405/07/22 13:03:10  [interface,info]  ether14 link up (speed 100M, full duplex)
+152  1405/07/22 13:03:28  [interface,info]  ether14 link down
+153  1405/07/22 13:03:30  [interface,info]  ether14 link up (speed 100M, full duplex)
+154  1405/07/22 13:09:07  [interface,info]  ether14 link down
+155  1405/07/22 13:09:10  [interface,info]  ether14 link up (speed 100M, full duplex)
+156  1405/07/22 13:09:28  [interface,info]  ether14 link down
+157  1405/07/22 13:09:30  [interface,info]  ether14 link up (speed 100M, full duplex)
+158  1405/07/22 13:10:47  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+159  1405/07/22 13:10:50  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+160  1405/07/22 13:11:30  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+161  1405/07/22 13:11:33  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+162  1405/07/22 13:12:12  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+163  1405/07/22 13:12:15  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+164  1405/07/22 13:12:15  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+165  1405/07/22 13:12:18  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+166  1405/07/22 13:12:45  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+167  1405/07/22 13:12:48  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+168  1405/07/22 13:12:49  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+169  1405/07/22 13:12:52  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+170  1405/07/22 13:13:18  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+171  1405/07/22 13:13:22  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+172  1405/07/22 13:14:17  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+173  1405/07/22 13:14:21  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+174  1405/07/22 13:14:27  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+175  1405/07/22 13:14:31  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+176  1405/07/22 13:14:36  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+177  1405/07/22 13:14:39  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+178  1405/07/22 13:15:08  [interface,info]  ether14 link down
+179  1405/07/22 13:15:11  [interface,info]  ether14 link up (speed 100M, full duplex)
+180  1405/07/22 13:15:29  [interface,info]  ether14 link down
+181  1405/07/22 13:15:31  [interface,info]  ether14 link up (speed 100M, full duplex)
+182  1405/07/22 13:16:14  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+183  1405/07/22 13:16:17  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+184  1405/07/22 13:16:43  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+185  1405/07/22 13:16:47  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+186  1405/07/22 13:21:08  [interface,info]  ether14 link down
+187  1405/07/22 13:21:11  [interface,info]  ether14 link up (speed 100M, full duplex)
+188  1405/07/22 13:21:29  [interface,info]  ether14 link down
+189  1405/07/22 13:21:31  [interface,info]  ether14 link up (speed 100M, full duplex)
+190  1405/07/22 13:25:35  [system,info,account]  user garnaf logged in from 172.18.4.76 via winbox
+191  1405/07/22 13:25:45  [system,info,account]  user garnaf logged out from 172.18.4.76 via winbox
+192  1405/07/22 13:27:09  [interface,info]  ether14 link down
+193  1405/07/22 13:27:12  [interface,info]  ether14 link up (speed 100M, full duplex)
+194  1405/07/22 13:27:29  [interface,info]  ether14 link down
+195  1405/07/22 13:27:39  [interface,info]  ether14 link up (speed 100M, full duplex)
+196  1405/07/22 13:28:53  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+197  1405/07/22 13:28:58  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+198  1405/07/22 13:29:14  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+199  1405/07/22 13:29:19  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+200  1405/07/22 13:31:33  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  4C:5E:0C:9B:0E:69  (ether)
+ether2  4C:5E:0C:9B:0E:6A  (ether)
+ether3  4C:5E:0C:9B:0E:6B  (ether)
+ether4  4C:5E:0C:9B:0E:6C  (ether)
+ether5  4C:5E:0C:9B:0E:6D  (ether)
+ether6  4C:5E:0C:9B:0E:6E  (ether)
+ether7  4C:5E:0C:9B:0E:6F  (ether)
+ether8  4C:5E:0C:9B:0E:70  (ether)
+ether9  4C:5E:0C:9B:0E:71  (ether)
+ether10  4C:5E:0C:9B:0E:72  (ether)
+ether11  4C:5E:0C:9B:0E:73  (ether)
+ether12  4C:5E:0C:9B:0E:74  (ether)
+ether13  4C:5E:0C:9B:0E:75  (ether)
+ether14  4C:5E:0C:9B:0E:76  (ether)
+ether15  4C:5E:0C:9B:0E:77  (ether)
+ether16  4C:5E:0C:9B:0E:78  (ether)
+ether17  4C:5E:0C:9B:0E:79  (ether)
+ether18  4C:5E:0C:9B:0E:7A  (ether)
+ether19  4C:5E:0C:9B:0E:7B  (ether)
+ether20  4C:5E:0C:9B:0E:7C  (ether)
+ether21  4C:5E:0C:9B:0E:7D  (ether)
+ether22  4C:5E:0C:9B:0E:7E  (ether)
+ether23  4C:5E:0C:9B:0E:7F  (ether)
+ether24  4C:5E:0C:9B:0E:80  (ether)
+sfp1  4C:5E:0C:9B:0E:81  (ether)
+bridge1  BE:64:A6:48:7B:F7  (bridge)
+--- /ip arp ---
+ether7  E4:8D:8C:58:DF:7A  (arp 172.18.2.114)
+ether1  10:8C:CF:33:51:47  (arp 172.18.1.49)
+ether15  6C:3B:6B:8F:3B:DE  (arp 172.18.16.2)
+ether12  64:D1:54:12:B7:F6  (arp 172.18.2.98)
+ether8  48:A9:8A:A2:F2:24  (arp 172.18.2.123)
+ether20  C4:AD:34:1C:5B:3B  (arp 172.18.3.164)
+ether17  78:9A:18:C0:6A:18  (arp 172.18.16.38)
+ether3  00:8E:73:BA:5C:C1  (arp 172.18.1.178)
+ether9  CC:2D:E0:F6:28:DD  (arp 172.18.3.186)
+ether4  C4:AD:34:1C:69:19  (arp 172.18.1.108)
+ether24  2C:C8:1B:04:29:AA  (arp 172.18.4.140)
+ether10  E4:8D:8C:F7:F3:37  (arp 172.18.1.59)
+ether7  E4:8D:8C:56:08:73  (arp 172.18.2.115)
+ether12  6C:3B:6B:09:34:B7  (arp 172.18.2.100)
+ether16  2C:C8:1B:42:EB:55  (arp 172.18.16.19)
+ether15  6C:3B:6B:91:10:0E  (arp 172.18.16.3)
+ether8  E4:8D:8C:56:7F:FC  (arp 172.18.2.122)
+ether16  B8:69:F4:61:66:3D  (arp 172.18.16.21)
+ether20  CC:2D:E0:48:66:CF  (arp 172.18.3.163)
+ether15  E4:8D:8C:6B:43:59  (arp 172.18.16.5)
+ether10  04:F4:1C:F9:7D:53  (arp 172.18.1.60)
+ether4  D4:CA:6D:B8:D3:91  (arp 172.18.1.107)
+ether9  CC:2D:E0:F6:29:0D  (arp 172.18.3.187)
+ether17  6C:3B:6B:9C:4B:23  (arp 172.18.16.34)
+ether10  6C:3B:6B:3D:BE:7E  (arp 172.18.1.58)
+ether16  6E:3B:6B:94:E8:4C  (arp 172.18.16.18)
+ether12  64:D1:54:7C:3C:7D  (arp 172.18.2.99)
+ether17  E4:8D:8C:B5:D9:D1  (arp 172.18.16.40)
+ether20  CC:2D:E0:BF:D4:4D  (arp 172.18.3.162)
+ether16  D4:01:C3:B6:BE:CA  (arp 172.18.2.251)
+ether18  E4:8D:8C:DB:C0:35  (arp 172.18.16.51)
+ether4  E4:8D:8C:71:74:4B  (arp 172.18.1.106)
+ether18  78:9A:18:B7:9E:3D  (arp 172.18.16.60)
+ether16  80:2A:A8:32:49:E3  (arp 172.18.16.30)

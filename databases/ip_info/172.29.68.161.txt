@@ -1,0 +1,63 @@
+IP: 172.29.68.161
+Collected at: 2026-10-14T10:25:39.000368+00:00
+source: RouterOS API
+identity: Moghitieyh
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=6C:3B:6B:97:E7:DC
+  2  name=wlan1  type=wlan  running=true  mac=6C:3B:6B:97:E7:DD
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=Abadan-Khezr2  band=5ghz-a/n  frequency=5300
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.29.68.161/27  interface=ether1  network=172.29.68.160
+  2  address=172.18.9.38/28  interface=wlan1  network=172.18.9.32
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.9.33  distance=1
+  2  dst=172.18.9.32/28  gw=wlan1  distance=0
+  3  dst=172.29.68.160/27  gw=ether1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=-  address=-  interface=ether1
+  2  identity=KhezrNabi-MK  address=172.18.9.33  interface=wlan1
+  3  identity=Abadan-Khezr2  address=172.18.9.34  interface=wlan1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:48:48
+# ساعت دستگاه (خام): 1974-08-10 09:25:24
+# افست اصلاحی (سرور − دستگاه): +457392:53:24
+  1  1405/07/21 09:37:50  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/21 09:37:58  [wireless,info]  6C:3B:6B:AB:D2:B0@wlan1 established connection on 5720000, SSID Abadan-Khezr2
+  3  1405/07/21 09:38:00  [interface,info]  ether1 link up (speed 100M, full duplex)
+  4  1405/07/21 09:38:01  [interface,info]  ether1 link down
+  5  1405/07/21 09:38:03  [interface,info]  ether1 link up (speed 100M, full duplex)
+  6  1405/07/21 09:42:18  [dhcp,info]  dhcp1 assigned 172.29.68.190 to D2:AE:F2:7F:17:DC
+  7  1405/07/21 09:42:28  [dhcp,info]  dhcp1 assigned 172.29.68.187 to 1C:1B:0D:B9:02:AA
+  8  1405/07/21 09:42:32  [dhcp,info]  dhcp1 assigned 172.29.68.189 to 7C:F1:7E:F4:1A:23
+  9  1405/07/21 10:00:26  [wireless,info]  6C:3B:6B:AB:D2:B0@wlan1: lost connection, not polled for too long
+ 10  1405/07/21 10:00:31  [wireless,info]  6C:3B:6B:AB:D2:B0@wlan1 established connection on 5720000, SSID Abadan-Khezr2
+ 11  1405/07/21 11:49:57  [dhcp,info]  dhcp1 deassigned 172.29.68.190 from D2:AE:F2:7F:17:DC
+ 12  1405/07/21 12:47:29  [dhcp,info]  dhcp1 deassigned 172.29.68.187 from 1C:1B:0D:B9:02:AA
+ 13  1405/07/21 12:47:31  [dhcp,info]  dhcp1 deassigned 172.29.68.189 from 7C:F1:7E:F4:1A:23
+ 14  1405/07/22 07:51:48  [dhcp,info]  dhcp1 assigned 172.29.68.187 to 1C:1B:0D:B9:02:AA
+ 15  1405/07/22 07:51:54  [dhcp,info]  dhcp1 assigned 172.29.68.189 to 7C:F1:7E:F4:1A:23
+ 16  1405/07/22 13:37:15  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 17  1405/07/22 13:37:18  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 18  1405/07/22 13:48:47  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  6C:3B:6B:97:E7:DC  (ether)
+wlan1  6C:3B:6B:97:E7:DD  (wlan)
+--- /ip arp ---
+ether1  1C:1B:0D:B9:02:AA  (arp 172.29.68.187)
+ether1  7C:F1:7E:F4:1A:23  (arp 172.29.68.189)
+wlan1  6C:3B:6B:85:AC:9C  (arp 172.18.9.33)

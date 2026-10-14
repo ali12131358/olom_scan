@@ -1,0 +1,7 @@
+.olom_net_scan/Lib/
+.olom_net_scan/Scripts/
+.olom_net_scan/Include/
+.olom_net_scan/pyvenv.cfg
+**/node_modules/
+**/__pycache__/
+.idea/

@@ -1,0 +1,80 @@
+IP: 172.18.2.235
+Collected at: 2026-10-11T06:42:22.625533+00:00
+source: RouterOS API
+identity: EmamReza.Client
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=64:D1:54:28:E3:DA
+  2  name=wlan1  type=wlan  running=true  mac=64:D1:54:28:E3:DB
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=FRERZ  band=5ghz-a/n  frequency=5240
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.2.235/29  interface=wlan1  network=172.18.2.232
+  2  address=172.29.11.1/25  interface=ether1  network=172.29.11.0
+  3  address=192.168.1.5/24  interface=ether1  network=192.168.1.0
+  4  address=192.168.0.5/24  interface=ether1  network=192.168.0.0
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.2.233  distance=1
+  2  dst=172.18.2.232/29  gw=wlan1  distance=0
+  3  dst=172.29.11.0/25  gw=ether1  distance=0
+  4  dst=192.168.0.0/24  gw=ether1  distance=0
+  5  dst=192.168.1.0/24  gw=ether1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=RouterMarkazRustaiiEmamReza  address=-  interface=ether1
+  2  identity=RouerForiat10  address=172.18.2.233  interface=wlan1
+  3  identity=Foriatha->EmamReza.AP  address=172.18.2.234  interface=wlan1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/19 09:35:46
+# ساعت دستگاه (خام): 1974-12-24 21:16:10
+# افست اصلاحی (سرور − دستگاه): +454040:49:36
+  1  1405/07/17 18:00:14  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/17 18:00:23  [wireless,info]  E4:8D:8C:74:FD:85@wlan1 established connection on 5280000, SSID FRERZ
+  3  1405/07/17 18:00:24  [interface,info]  ether1 link up (speed 100M, full duplex)
+  4  1405/07/17 18:01:18  [dhcp,info]  dhcp1 deassigned 172.29.11.21 from 00:02:65:15:E0:82
+  5  1405/07/17 18:01:19  [dhcp,info]  dhcp1 assigned 172.29.11.21 to 00:02:65:15:E0:82
+  6  1405/07/18 08:00:34  [dhcp,info]  dhcp1 deassigned 172.29.11.25 from 00:17:6F:63:26:3F
+  7  1405/07/18 08:00:34  [dhcp,info]  dhcp1 assigned 172.29.11.25 to 00:17:6F:63:26:3F
+  8  1405/07/18 08:24:19  [dhcp,info]  dhcp1 assigned 172.29.11.22 to C8:3A:35:CA:31:E9
+  9  1405/07/18 08:32:41  [dhcp,info]  dhcp1 assigned 172.29.11.28 to 50:3E:AA:3F:0C:75
+ 10  1405/07/18 09:27:11  [dhcp,info]  dhcp1 deassigned 172.29.11.26 from 18:D6:C7:C6:74:EA
+ 11  1405/07/18 09:27:15  [dhcp,info]  dhcp1 assigned 172.29.11.26 to 18:D6:C7:C6:74:EA
+ 12  1405/07/18 09:35:16  [dhcp,info]  dhcp1 deassigned 172.29.11.31 from E0:D5:5E:55:A6:2E
+ 13  1405/07/18 09:35:17  [dhcp,info]  dhcp1 assigned 172.29.11.31 to E0:D5:5E:55:A6:2E
+ 14  1405/07/18 09:55:13  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 15  1405/07/18 09:55:13  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 16  1405/07/18 10:29:13  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 17  1405/07/18 10:29:13  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 18  1405/07/18 10:53:31  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 19  1405/07/18 10:53:31  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 20  1405/07/18 12:07:07  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 21  1405/07/18 12:07:07  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 22  1405/07/19 09:35:45  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  64:D1:54:28:E3:DA  (ether)
+wlan1  64:D1:54:28:E3:DB  (wlan)
+--- /ip arp ---
+ether1  C8:3A:35:CA:31:93  (arp 172.29.11.23)
+ether1  7C:F1:7E:F4:12:BC  (arp 172.29.11.35)
+ether1  50:3E:AA:3F:15:6A  (arp 172.29.11.27)
+ether1  18:D6:C7:C6:74:EA  (arp 172.29.11.26)
+ether1  50:3E:AA:3F:0C:75  (arp 172.29.11.28)
+ether1  F0:2F:74:87:7A:61  (arp 172.29.11.39)
+ether1  00:02:65:15:E0:82  (arp 172.29.11.21)
+wlan1  6C:3B:6B:87:6E:11  (arp 172.18.2.233)
+ether1  50:3E:AA:3F:04:46  (arp 172.29.11.33)
+ether1  00:17:6F:63:26:3F  (arp 172.29.11.25)
+ether1  28:87:BA:25:3B:5A  (arp 172.29.11.20)
+ether1  7C:8B:CA:0B:10:AA  (arp 172.29.11.29)

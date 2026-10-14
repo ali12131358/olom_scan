@@ -1,0 +1,82 @@
+IP: 172.18.9.130
+Collected at: 2026-10-14T10:24:19.815451+00:00
+source: RouterOS API
+identity: Abadan-Choebdeh1
+device_type: AP
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=6C:3B:6B:94:8C:93
+  2  name=Home  type=wlan  running=false  mac=6E:3B:6B:94:8C:94
+  3  name=wlan1  type=wlan  running=true  mac=6C:3B:6B:94:8C:94
+  4  name=bridge1  type=bridge  running=true  mac=6C:3B:6B:94:8C:94
+  5  name=bridge2  type=bridge  running=false  mac=86:1D:2D:DA:EB:03
+
+----- wireless -----
+=== /interface wireless ===
+name=Home  mode=ap-bridge  ssid=choebdeh.Home  band=-  frequency=-
+name=wlan1  mode=ap-bridge  ssid=Abadan-Choebdeh1  band=5ghz-a/n  frequency=5620
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.9.130/28  interface=ether1  network=172.18.9.128
+  2  address=172.18.9.130/28  interface=bridge1  network=172.18.9.128
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.9.129  distance=1
+  2  dst=172.18.9.128/28  gw=bridge1,bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=Choebdeh-MK  address=172.18.9.129  interface=ether1,bridge1
+  2  identity=Tangeh1.2.Client  address=172.18.9.132  interface=wlan1,bridge1
+  3  identity=choebdeh.DandanPezeshki.Client  address=172.18.9.134  interface=wlan1,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:34:18
+# ساعت دستگاه (خام): 1974-09-11 18:39:44
+# افست اصلاحی (سرور − دستگاه): +456615:24:34
+  1  1405/07/21 15:04:20  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/21 15:04:24  [bridge,info]  "bridge1" mac address changed to 6C:3B:6B:94:8C:94
+  3  1405/07/21 15:04:28  [wireless,info]  6C:3B:6B:94:8C:70@wlan1: connected, signal strength -66, wants bridge
+  4  1405/07/21 15:04:28  [wireless,info]  64:D1:54:BD:B9:F9@wlan1: connected, signal strength -59, wants bridge
+  5  1405/07/21 15:04:42  [interface,info]  ether1 link up (speed 100M, full duplex)
+  6  1405/07/21 21:18:59  [wireless,info]  6C:3B:6B:94:8C:70@wlan1: disconnected, extensive data loss, signal strength -66
+  7  1405/07/21 21:19:06  [wireless,info]  6C:3B:6B:94:8C:70@wlan1: connected, signal strength -87, wants bridge
+  8  1405/07/21 21:19:23  [wireless,info]  6C:3B:6B:94:8C:70@wlan1: disconnected, extensive data loss, signal strength -87
+  9  1405/07/21 21:19:46  [wireless,info]  6C:3B:6B:94:8C:70@wlan1: connected, signal strength -86, wants bridge
+ 10  1405/07/21 21:54:55  [wireless,info]  6C:3B:6B:94:8C:70@wlan1: disconnected, too many poll timeouts, signal strength -86
+ 11  1405/07/21 21:55:03  [wireless,info]  6C:3B:6B:94:8C:70@wlan1: connected, signal strength -86, wants bridge
+ 12  1405/07/21 23:09:59  [wireless,info]  6C:3B:6B:94:8C:70@wlan1: disconnected, extensive data loss, signal strength -86
+ 13  1405/07/21 23:10:06  [wireless,info]  6C:3B:6B:94:8C:70@wlan1: connected, signal strength -74, wants bridge
+ 14  1405/07/21 23:55:23  [wireless,info]  6C:3B:6B:94:8C:70@wlan1: disconnected, extensive data loss, signal strength -74
+ 15  1405/07/21 23:55:30  [wireless,info]  6C:3B:6B:94:8C:70@wlan1: connected, signal strength -81, wants bridge
+ 16  1405/07/22 00:27:10  [wireless,info]  6C:3B:6B:94:8C:70@wlan1: disconnected, too many poll timeouts, signal strength -81
+ 17  1405/07/22 00:27:31  [wireless,info]  6C:3B:6B:94:8C:70@wlan1: connected, signal strength -85, wants bridge
+ 18  1405/07/22 00:28:08  [wireless,info]  6C:3B:6B:94:8C:70@wlan1: disconnected, too many poll timeouts, signal strength -85
+ 19  1405/07/22 00:28:15  [wireless,info]  6C:3B:6B:94:8C:70@wlan1: connected, signal strength -83, wants bridge
+ 20  1405/07/22 08:01:22  [wireless,info]  E4:8D:8C:61:6E:27@wlan1: connected, signal strength -66, wants bridge
+ 21  1405/07/22 09:18:05  [wireless,info]  6C:3B:6B:94:8C:70@wlan1: disconnected, too many poll timeouts, signal strength -74
+ 22  1405/07/22 09:18:09  [wireless,info]  6C:3B:6B:94:8C:70@wlan1: connected, signal strength -76, wants bridge
+ 23  1405/07/22 09:18:25  [wireless,info]  6C:3B:6B:94:8C:70@wlan1: disconnected, too many poll timeouts, signal strength -76
+ 24  1405/07/22 09:18:30  [wireless,info]  6C:3B:6B:94:8C:70@wlan1: connected, signal strength -75, wants bridge
+ 25  1405/07/22 09:18:38  [wireless,info]  6C:3B:6B:94:8C:70@wlan1: disconnected, too many poll timeouts, signal strength -75
+ 26  1405/07/22 09:18:56  [wireless,info]  6C:3B:6B:94:8C:70@wlan1: connected, signal strength -73, wants bridge
+ 27  1405/07/22 09:19:11  [wireless,info]  6C:3B:6B:94:8C:70@wlan1: disconnected, too many poll timeouts, signal strength -73
+ 28  1405/07/22 09:19:16  [wireless,info]  6C:3B:6B:94:8C:70@wlan1: connected, signal strength -75, wants bridge
+ 29  1405/07/22 09:19:19  [wireless,info]  6C:3B:6B:94:8C:70@wlan1: disconnected, too many poll timeouts, signal strength -75
+ 30  1405/07/22 09:19:23  [wireless,info]  6C:3B:6B:94:8C:70@wlan1: connected, signal strength -73, wants bridge
+ 31  1405/07/22 12:35:30  [wireless,info]  E4:8D:8C:61:6E:27@wlan1: disconnected, too many poll timeouts, signal strength -66
+ 32  1405/07/22 13:33:59  [wireless,info]  64:D1:54:BD:B9:F9@wlan1: disconnected, too many poll timeouts, signal strength -66
+ 33  1405/07/22 13:34:16  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  6C:3B:6B:94:8C:93  (ether)
+Home  6E:3B:6B:94:8C:94  (wlan)
+wlan1  6C:3B:6B:94:8C:94  (wlan)
+bridge1  6C:3B:6B:94:8C:94  (bridge)
+bridge2  86:1D:2D:DA:EB:03  (bridge)
+--- /ip arp ---
+bridge1  E4:8D:8C:0D:18:6B  (arp 172.18.9.129)

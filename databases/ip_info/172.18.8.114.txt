@@ -1,0 +1,150 @@
+IP: 172.18.8.114
+Collected at: 2026-10-14T10:24:11.474859+00:00
+source: RouterOS API
+identity: Abadan-Amoozesh1
+device_type: AP
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=6C:3B:6B:56:27:DE
+  2  name=wlan1  type=wlan  running=true  mac=6C:3B:6B:56:27:DF
+  3  name=bridge1  type=bridge  running=true  mac=6C:3B:6B:56:27:DF
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=ap-bridge  ssid=Abadan-Amoozesh1  band=5ghz-a/n  frequency=5260
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.8.114/28  interface=ether1  network=172.18.8.112
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.8.113  distance=1
+  2  dst=172.18.8.112/28  gw=bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=R2-MA(Router.Amozeshi)  address=172.18.8.113  interface=ether1,bridge1
+  2  identity=Samadieh.Client  address=172.18.8.115  interface=wlan1,bridge1
+  3  identity=Chomeh.Client  address=172.18.8.116  interface=wlan1,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:32:47
+# ساعت دستگاه (خام): 1978-10-24 09:39:11
+# افست اصلاحی (سرور − دستگاه): +420528:23:36
+  1  1405/07/08 09:30:55  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/08 09:30:58  [bridge,info]  "bridge1" mac address changed to 6C:3B:6B:56:27:DF
+  3  1405/07/08 09:31:05  [wireless,info]  E4:8D:8C:B5:1B:8B@wlan1: connected, signal strength -64
+  4  1405/07/08 09:31:05  [interface,info]  ether1 link up (speed 1G, full duplex)
+  5  1405/07/08 09:32:06  [wireless,info]  6C:3B:6B:34:02:43@wlan1: connected, signal strength -64
+  6  1405/07/08 18:39:23  [wireless,info]  E4:8D:8C:B5:1B:8B@wlan1: disconnected, extensive data loss, signal strength -64
+  7  1405/07/08 18:39:31  [wireless,info]  E4:8D:8C:B5:1B:8B@wlan1: connected, signal strength -65
+  8  1405/07/09 12:06:20  [wireless,info]  6C:3B:6B:34:02:43@wlan1: disconnected, too many poll timeouts, signal strength -64
+  9  1405/07/09 13:27:20  [wireless,info]  E4:8D:8C:B5:1B:8B@wlan1: disconnected, extensive data loss, signal strength -65
+ 10  1405/07/09 13:27:27  [wireless,info]  E4:8D:8C:B5:1B:8B@wlan1: connected, signal strength -67
+ 11  1405/07/10 06:53:53  [wireless,info]  E4:8D:8C:B5:1B:8B@wlan1: disconnected, extensive data loss, signal strength -67
+ 12  1405/07/10 06:54:01  [wireless,info]  E4:8D:8C:B5:1B:8B@wlan1: connected, signal strength -65
+ 13  1405/07/11 06:59:42  [wireless,info]  E4:8D:8C:B5:1B:8B@wlan1: disconnected, extensive data loss, signal strength -67
+ 14  1405/07/11 06:59:50  [wireless,info]  E4:8D:8C:B5:1B:8B@wlan1: connected, signal strength -67
+ 15  1405/07/11 08:27:17  [wireless,info]  6C:3B:6B:34:02:43@wlan1: connected, signal strength -64
+ 16  1405/07/11 09:30:52  [wireless,info]  E4:8D:8C:B5:1B:8B@wlan1: disconnected, extensive data loss, signal strength -67
+ 17  1405/07/11 09:31:00  [wireless,info]  E4:8D:8C:B5:1B:8B@wlan1: connected, signal strength -67
+ 18  1405/07/11 11:11:51  [wireless,info]  E4:8D:8C:B5:1B:8B@wlan1: disconnected, too many poll timeouts, signal strength -69
+ 19  1405/07/11 11:11:54  [wireless,info]  E4:8D:8C:B5:1B:8B@wlan1: connected, signal strength -67
+ 20  1405/07/11 15:26:00  [wireless,info]  6C:3B:6B:34:02:43@wlan1: disconnected, extensive data loss, signal strength -65
+ 21  1405/07/11 15:26:59  [wireless,info]  6C:3B:6B:34:02:43@wlan1: connected, signal strength -62
+ 22  1405/07/11 16:43:42  [wireless,info]  E4:8D:8C:B5:1B:8B@wlan1: disconnected, extensive data loss, signal strength -67
+ 23  1405/07/11 16:43:49  [wireless,info]  E4:8D:8C:B5:1B:8B@wlan1: connected, signal strength -67
+ 24  1405/07/12 11:03:02  [wireless,info]  E4:8D:8C:B5:1B:8B@wlan1: disconnected, too many poll timeouts, signal strength -67
+ 25  1405/07/12 11:03:05  [wireless,info]  E4:8D:8C:B5:1B:8B@wlan1: connected, signal strength -68
+ 26  1405/07/12 12:28:43  [wireless,info]  6C:3B:6B:34:02:43@wlan1: disconnected, too many poll timeouts, signal strength -64
+ 27  1405/07/13 08:18:48  [wireless,info]  6C:3B:6B:34:02:43@wlan1: connected, signal strength -62
+ 28  1405/07/13 08:25:51  [wireless,info]  E4:8D:8C:B5:1B:8B@wlan1: disconnected, too many poll timeouts, signal strength -68
+ 29  1405/07/13 08:25:55  [wireless,info]  E4:8D:8C:B5:1B:8B@wlan1: connected, signal strength -64
+ 30  1405/07/13 13:39:03  [wireless,info]  E4:8D:8C:B5:1B:8B@wlan1: disconnected, extensive data loss, signal strength -64
+ 31  1405/07/13 13:39:10  [wireless,info]  E4:8D:8C:B5:1B:8B@wlan1: connected, signal strength -67
+ 32  1405/07/13 18:25:11  [wireless,info]  E4:8D:8C:B5:1B:8B@wlan1: disconnected, extensive data loss, signal strength -66
+ 33  1405/07/13 18:25:19  [wireless,info]  E4:8D:8C:B5:1B:8B@wlan1: connected, signal strength -66
+ 34  1405/07/14 08:46:28  [wireless,info]  E4:8D:8C:B5:1B:8B@wlan1: disconnected, extensive data loss, signal strength -66
+ 35  1405/07/14 08:46:35  [wireless,info]  E4:8D:8C:B5:1B:8B@wlan1: connected, signal strength -66
+ 36  1405/07/14 15:58:48  [wireless,info]  6C:3B:6B:34:02:43@wlan1: disconnected, extensive data loss, signal strength -64
+ 37  1405/07/14 15:59:46  [wireless,info]  6C:3B:6B:34:02:43@wlan1: connected, signal strength -62
+ 38  1405/07/15 13:37:19  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 39  1405/07/15 13:37:19  [system,info]  changed snmp settings by garnaf
+ 40  1405/07/15 13:37:19  [system,info]  item changed by garnaf
+ 41  1405/07/15 13:37:19  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 42  1405/07/15 15:00:47  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 43  1405/07/15 15:00:48  [system,info]  user olom1 added by garnaf
+ 44  1405/07/15 15:00:48  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 45  1405/07/15 15:06:37  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 46  1405/07/15 15:06:37  [system,info]  user ums1 removed by garnaf
+ 47  1405/07/15 15:06:37  [system,info]  user ums2 removed by garnaf
+ 48  1405/07/15 15:06:37  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 49  1405/07/16 01:26:39  [wireless,info]  E4:8D:8C:B5:1B:8B@wlan1: disconnected, extensive data loss, signal strength -66
+ 50  1405/07/16 01:26:48  [wireless,info]  E4:8D:8C:B5:1B:8B@wlan1: connected, signal strength -68
+ 51  1405/07/16 09:44:07  [wireless,info]  E4:8D:8C:B5:1B:8B@wlan1: disconnected, too many poll timeouts, signal strength -68
+ 52  1405/07/16 09:44:10  [wireless,info]  E4:8D:8C:B5:1B:8B@wlan1: connected, signal strength -67
+ 53  1405/07/16 10:17:17  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 54  1405/07/16 10:17:18  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 55  1405/07/16 10:39:19  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 56  1405/07/16 10:39:20  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 57  1405/07/16 13:54:30  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 58  1405/07/16 13:54:33  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 59  1405/07/16 14:08:52  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 60  1405/07/16 14:08:52  [system,info]  changed snmp settings by garnaf
+ 61  1405/07/16 14:08:52  [system,info]  item changed by garnaf
+ 62  1405/07/16 14:08:52  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 63  1405/07/16 14:34:45  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 64  1405/07/16 14:34:46  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 65  1405/07/16 15:45:26  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 66  1405/07/16 15:45:27  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 67  1405/07/16 16:28:39  [wireless,info]  E4:8D:8C:B5:1B:8B@wlan1: disconnected, extensive data loss, signal strength -67
+ 68  1405/07/16 16:28:46  [wireless,info]  E4:8D:8C:B5:1B:8B@wlan1: connected, signal strength -63
+ 69  1405/07/17 05:21:38  [wireless,info]  E4:8D:8C:B5:1B:8B@wlan1: disconnected, extensive data loss, signal strength -68
+ 70  1405/07/17 05:21:46  [wireless,info]  E4:8D:8C:B5:1B:8B@wlan1: connected, signal strength -66
+ 71  1405/07/17 08:38:23  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 72  1405/07/17 08:38:25  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 73  1405/07/17 21:44:38  [wireless,info]  E4:8D:8C:B5:1B:8B@wlan1: disconnected, extensive data loss, signal strength -66
+ 74  1405/07/17 21:44:45  [wireless,info]  E4:8D:8C:B5:1B:8B@wlan1: connected, signal strength -64
+ 75  1405/07/18 10:35:24  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 76  1405/07/18 10:35:25  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 77  1405/07/18 10:59:55  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 78  1405/07/18 10:59:55  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 79  1405/07/18 12:11:07  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 80  1405/07/18 12:11:07  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 81  1405/07/18 14:23:54  [wireless,info]  E4:8D:8C:B5:1B:8B@wlan1: disconnected, extensive data loss, signal strength -68
+ 82  1405/07/18 14:24:02  [wireless,info]  E4:8D:8C:B5:1B:8B@wlan1: connected, signal strength -67
+ 83  1405/07/18 14:57:02  [wireless,info]  6C:3B:6B:34:02:43@wlan1: disconnected, extensive data loss, signal strength -67
+ 84  1405/07/18 14:58:01  [wireless,info]  6C:3B:6B:34:02:43@wlan1: connected, signal strength -65
+ 85  1405/07/18 17:30:19  [wireless,info]  E4:8D:8C:B5:1B:8B@wlan1: disconnected, extensive data loss, signal strength -67
+ 86  1405/07/18 17:30:27  [wireless,info]  E4:8D:8C:B5:1B:8B@wlan1: connected, signal strength -66
+ 87  1405/07/19 06:36:14  [wireless,info]  6C:3B:6B:34:02:43@wlan1: disconnected, too many poll timeouts, signal strength -65
+ 88  1405/07/19 06:36:14  [wireless,info]  E4:8D:8C:B5:1B:8B@wlan1: disconnected, too many poll timeouts, signal strength -67
+ 89  1405/07/19 08:15:58  [wireless,info]  E4:8D:8C:B5:1B:8B@wlan1: connected, signal strength -67
+ 90  1405/07/19 08:16:49  [wireless,info]  6C:3B:6B:34:02:43@wlan1: connected, signal strength -63
+ 91  1405/07/19 08:28:19  [wireless,info]  E4:8D:8C:B5:1B:8B@wlan1: disconnected, too many poll timeouts, signal strength -67
+ 92  1405/07/19 08:28:52  [wireless,info]  E4:8D:8C:B5:1B:8B@wlan1: connected, signal strength -66
+ 93  1405/07/19 09:52:17  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 94  1405/07/19 09:52:20  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 95  1405/07/19 15:51:39  [wireless,info]  E4:8D:8C:B5:1B:8B@wlan1: disconnected, extensive data loss, signal strength -66
+ 96  1405/07/19 15:51:47  [wireless,info]  E4:8D:8C:B5:1B:8B@wlan1: connected, signal strength -66
+ 97  1405/07/19 17:45:18  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+ 98  1405/07/19 17:45:19  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+ 99  1405/07/19 20:10:49  [wireless,info]  E4:8D:8C:B5:1B:8B@wlan1: disconnected, extensive data loss, signal strength -66
+100  1405/07/19 20:10:57  [wireless,info]  E4:8D:8C:B5:1B:8B@wlan1: connected, signal strength -67
+101  1405/07/21 11:13:34  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+102  1405/07/21 11:13:35  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+103  1405/07/21 14:07:24  [wireless,info]  6C:3B:6B:34:02:43@wlan1: disconnected, extensive data loss, signal strength -66
+104  1405/07/21 14:08:23  [wireless,info]  6C:3B:6B:34:02:43@wlan1: connected, signal strength -62
+105  1405/07/21 16:53:06  [wireless,info]  E4:8D:8C:B5:1B:8B@wlan1: disconnected, extensive data loss, signal strength -64
+106  1405/07/21 16:53:13  [wireless,info]  E4:8D:8C:B5:1B:8B@wlan1: connected, signal strength -65
+107  1405/07/22 13:32:46  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  6C:3B:6B:56:27:DE  (ether)
+wlan1  6C:3B:6B:56:27:DF  (wlan)
+bridge1  6C:3B:6B:56:27:DF  (bridge)
+--- /ip arp ---
+bridge1  6C:3B:6B:09:28:B6  (arp 172.18.8.113)

@@ -1,0 +1,51 @@
+IP: 172.18.24.102
+Collected at: 2026-10-14T10:23:00.986595+00:00
+source: RouterOS API
+identity: KhoroosiShomali.Client
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=E4:8D:8C:B4:C7:E0
+  2  name=wlan1  type=wlan  running=true  mac=E4:8D:8C:B4:C7:E1
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=Shadegan-Shabakeh6  band=5ghz-a/n  frequency=5680
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.24.102/28  interface=wlan1  network=172.18.24.96
+  2  address=172.29.194.193/28  interface=ether1  network=172.29.194.192
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.24.97  distance=1
+  2  dst=172.18.24.96/28  gw=wlan1  distance=0
+  3  dst=172.29.194.192/28  gw=ether1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=R2SH  address=-  interface=wlan1
+  2  identity=RB-UMS-SHDGN-CoreRouter  address=172.18.24.97  interface=wlan1
+  3  identity=Shadegan-Shabakeh6  address=172.18.24.98  interface=wlan1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:17:02
+# ساعت دستگاه (خام): 2022-06-30 17:06:42
+# افست اصلاحی (سرور − دستگاه): +37600:40:20
+  1  1405/07/22 10:10:24  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/22 10:10:32  [wireless,info]  E4:8D:8C:FF:67:D7@wlan1 established connection on 5720000, SSID Shadegan-Shabakeh6
+  3  1405/07/22 10:10:35  [interface,info]  ether1 link up (speed 100M, full duplex)
+  4  1405/07/22 10:18:20  [dhcp,info]  dhcp1 deassigned 172.29.194.206 from B4:2E:99:5A:09:A5
+  5  1405/07/22 10:19:55  [dhcp,info]  dhcp1 assigned 172.29.194.206 to B4:2E:99:5A:09:A5
+  6  1405/07/22 11:59:55  [dhcp,info]  dhcp1 deassigned 172.29.194.206 from B4:2E:99:5A:09:A5
+  7  1405/07/22 12:01:50  [dhcp,info]  dhcp1 deassigned 172.29.194.205 from E0:D5:5E:8F:F6:4F
+  8  1405/07/22 13:17:00  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  E4:8D:8C:B4:C7:E0  (ether)
+wlan1  E4:8D:8C:B4:C7:E1  (wlan)
+--- /ip arp ---
+wlan1  64:D1:54:98:E3:2E  (arp 172.18.24.97)

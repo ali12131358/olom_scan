@@ -1,0 +1,50 @@
+IP: 172.18.3.170
+Collected at: 2026-10-14T10:23:46.978432+00:00
+source: RouterOS API
+identity: Khoramshahr - Jodedeh - P2P - Dorbandgharbi - AP
+device_type: AP
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=08:55:31:A8:94:A9
+  2  name=wlan1  type=wlan  running=true  mac=08:55:31:A8:94:AA
+  3  name=bridge1  type=bridge  running=true  mac=08:55:31:A8:94:AA
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=bridge  ssid=Dorband  band=5ghz-a/n  frequency=5260
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.3.170/29  interface=ether1  network=172.18.3.168
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.3.169  distance=1
+  2  dst=172.18.3.168/29  gw=bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=DorbandGharbi.Client  address=172.18.3.171  interface=wlan1,bridge1
+  2  identity=RouterJodeydeh  address=172.18.3.169  interface=ether1,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:29:08
+# ساعت دستگاه (خام): 1974-05-01 09:47:58
+# افست اصلاحی (سرور − دستگاه): +459816:11:10
+  1  1405/07/20 09:38:28  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/20 09:38:31  [bridge,info]  "bridge1" mac address changed to 08:55:31:A8:94:AA
+  3  1405/07/20 09:38:36  [bridge,info]  hardware offloading activated on bridge "bridge1" ports: ether1
+  4  1405/07/20 09:38:37  [wireless,info]  6C:3B:6B:34:02:4B@wlan1: connected, signal strength -44
+  5  1405/07/20 09:38:38  [interface,info]  ether1 link up (speed 100M, full duplex)
+  6  1405/07/21 11:09:40  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+  7  1405/07/21 11:09:41  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+  8  1405/07/22 13:29:07  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  08:55:31:A8:94:A9  (ether)
+wlan1  08:55:31:A8:94:AA  (wlan)
+bridge1  08:55:31:A8:94:AA  (bridge)
+--- /ip arp ---
+bridge1  C4:AD:34:1C:5B:3A  (arp 172.18.3.169)

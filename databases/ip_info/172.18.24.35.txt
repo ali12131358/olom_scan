@@ -1,0 +1,67 @@
+IP: 172.18.24.35
+Collected at: 2026-10-14T10:23:09.521318+00:00
+source: RouterOS API
+identity: Badrani Home Client
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=E4:8D:8C:61:6D:C6
+  2  name=wlan1  type=wlan  running=true  mac=E4:8D:8C:61:6D:C7
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=Shadegan-Shabakeh2  band=5ghz-a/n  frequency=5580
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.24.35/28  interface=wlan1  network=172.18.24.32
+  2  address=172.29.192.33/27  interface=ether1  network=172.29.192.32
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.24.33  distance=1
+  2  dst=172.18.24.32/28  gw=wlan1  distance=0
+  3  dst=172.29.192.32/27  gw=ether1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=-  address=-  interface=ether1
+  2  identity=-  address=-  interface=ether1
+  3  identity=R2SH  address=-  interface=wlan1
+  4  identity=RB-UMS-SHDGN-CoreRouter  address=172.18.1.241  interface=wlan1
+  5  identity=Shadegan-Shabakeh2  address=172.18.1.242  interface=wlan1
+  6  identity=Bimarestan-Moarefi  address=172.18.1.243  interface=wlan1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:19:28
+# ساعت دستگاه (خام): 2022-04-04 13:00:12
+# افست اصلاحی (سرور − دستگاه): +39692:49:16
+  1  1405/07/21 01:19:16  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/21 01:19:26  [interface,info]  ether1 link up (speed 100M, full duplex)
+  3  1405/07/21 01:20:10  [wireless,info]  4C:5E:0C:CD:FE:8C@wlan1 established connection on 5880000, SSID Shadegan-Shabakeh2
+  4  1405/07/21 08:03:07  [dhcp,info]  dhcp1 assigned 172.29.192.43 to F8:75:A4:29:8A:9A
+  5  1405/07/21 08:12:07  [dhcp,info]  dhcp1 assigned 172.29.192.44 to B4:2E:99:5A:10:32
+  6  1405/07/21 10:16:45  [dhcp,info]  dhcp1 deassigned 172.29.192.43 from F8:75:A4:29:8A:9A
+  7  1405/07/21 10:41:59  [dhcp,info]  dhcp1 assigned 172.29.192.43 to F8:75:A4:29:8A:9A
+  8  1405/07/21 10:57:08  [dhcp,info]  dhcp1 deassigned 172.29.192.44 from B4:2E:99:5A:10:32
+  9  1405/07/21 11:02:20  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 10  1405/07/21 11:02:22  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 11  1405/07/21 12:46:10  [dhcp,info]  dhcp1 deassigned 172.29.192.43 from F8:75:A4:29:8A:9A
+ 12  1405/07/22 08:20:43  [dhcp,info]  dhcp1 assigned 172.29.192.44 to B4:2E:99:5A:10:32
+ 13  1405/07/22 08:31:46  [dhcp,warning]  dhcp1 offering lease 172.29.192.43 for F8:75:A4:29:8A:9A without success
+ 14  1405/07/22 08:32:11  [dhcp,info]  dhcp1 assigned 172.29.192.43 to F8:75:A4:29:8A:9A
+ 15  1405/07/22 09:30:56  [wireless,info]  4C:5E:0C:CD:FE:8C@wlan1: lost connection, received deauth: group key handshake timeout (16)
+ 16  1405/07/22 09:31:47  [wireless,info]  4C:5E:0C:CD:FE:8C@wlan1 established connection on 5880000, SSID Shadegan-Shabakeh2
+ 17  1405/07/22 10:07:25  [wireless,info]  4C:5E:0C:CD:FE:8C@wlan1: lost connection, extensive data loss
+ 18  1405/07/22 10:08:17  [wireless,info]  4C:5E:0C:CD:FE:8C@wlan1 established connection on 5880000, SSID Shadegan-Shabakeh2
+ 19  1405/07/22 13:13:55  [dhcp,info]  dhcp1 deassigned 172.29.192.44 from B4:2E:99:5A:10:32
+ 20  1405/07/22 13:17:11  [dhcp,info]  dhcp1 deassigned 172.29.192.43 from F8:75:A4:29:8A:9A
+ 21  1405/07/22 13:19:27  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  E4:8D:8C:61:6D:C6  (ether)
+wlan1  E4:8D:8C:61:6D:C7  (wlan)
+--- /ip arp ---
+wlan1  64:D1:54:98:E3:2E  (arp 172.18.24.33)

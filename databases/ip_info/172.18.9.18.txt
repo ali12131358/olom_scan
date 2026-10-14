@@ -1,0 +1,60 @@
+IP: 172.18.9.18
+Collected at: 2026-10-14T10:24:23.291782+00:00
+source: RouterOS API
+identity: Abadan-Khezr1
+device_type: AP
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=6C:3B:6B:AB:D2:6B
+  2  name=wlan1  type=wlan  running=true  mac=6C:3B:6B:AB:D2:6C
+  3  name=bridge1  type=bridge  running=true  mac=6C:3B:6B:AB:D2:6C
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=ap-bridge  ssid=Abadan-Khezr1  band=5ghz-a/n  frequency=5700
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.9.18/28  interface=ether1  network=172.18.9.16
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.9.17  distance=1
+  2  dst=172.18.9.16/28  gw=bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=KhezrNabi-MK  address=172.18.9.17  interface=ether1,bridge1
+  2  identity=ShahidRajaei.Client  address=172.18.9.20  interface=wlan1,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:35:09
+# ساعت دستگاه (خام): 1975-02-14 10:36:44
+# افست اصلاحی (سرور − دستگاه): +452879:28:25
+  1  1405/07/21 09:36:48  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/21 09:36:52  [bridge,info]  "bridge1" mac address changed to 6C:3B:6B:AB:D2:6C
+  3  1405/07/21 09:36:54  [wireless,info]  6C:3B:6B:34:02:59@wlan1: connected, signal strength -73, wants bridge
+  4  1405/07/21 09:37:04  [wireless,info]  6C:3B:6B:74:E1:DA@wlan1: connected, signal strength -67, wants bridge
+  5  1405/07/21 09:41:21  [interface,info]  ether1 link up (speed 1G, full duplex)
+  6  1405/07/21 09:41:45  [interface,info]  ether1 link down
+  7  1405/07/21 09:41:49  [interface,info]  ether1 link up (speed 1G, full duplex)
+  8  1405/07/21 12:33:36  [wireless,info]  6C:3B:6B:74:E1:DA@wlan1: disconnected, extensive data loss, signal strength -67
+  9  1405/07/21 23:23:47  [wireless,info]  6C:3B:6B:34:02:59@wlan1: disconnected, received deauth: authentication not valid (2), signal strength -73
+ 10  1405/07/21 23:23:50  [wireless,info]  6C:3B:6B:34:02:59@wlan1: connected, signal strength -87, wants bridge
+ 11  1405/07/21 23:24:41  [wireless,info]  6C:3B:6B:34:02:59@wlan1: disconnected, received deauth: authentication not valid (2), signal strength -87
+ 12  1405/07/21 23:24:47  [wireless,info]  6C:3B:6B:34:02:59@wlan1: connected, signal strength -85, wants bridge
+ 13  1405/07/21 23:26:46  [wireless,info]  6C:3B:6B:34:02:59@wlan1: disconnected, received deauth: authentication not valid (2), signal strength -85
+ 14  1405/07/21 23:26:51  [wireless,info]  6C:3B:6B:34:02:59@wlan1: connected, signal strength -87, wants bridge
+ 15  1405/07/21 23:27:23  [wireless,info]  6C:3B:6B:34:02:59@wlan1: reassociating
+ 16  1405/07/21 23:27:23  [wireless,info]  6C:3B:6B:34:02:59@wlan1: disconnected, ok, signal strength -87
+ 17  1405/07/21 23:27:23  [wireless,info]  6C:3B:6B:34:02:59@wlan1: connected, signal strength -88, wants bridge
+ 18  1405/07/22 13:35:08  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  6C:3B:6B:AB:D2:6B  (ether)
+wlan1  6C:3B:6B:AB:D2:6C  (wlan)
+bridge1  6C:3B:6B:AB:D2:6C  (bridge)
+--- /ip arp ---
+bridge1  6C:3B:6B:85:AC:9B  (arp 172.18.9.17)

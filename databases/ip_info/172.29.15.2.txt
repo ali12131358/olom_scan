@@ -1,0 +1,83 @@
+IP: 172.29.15.2
+Collected at: 2026-10-14T10:25:07.427197+00:00
+source: RouterOS API
+identity: RB-Ferdosi-RB2011
+device_type: Router
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=false  mac=C4:AD:34:1C:5C:3B
+  2  name=ether2  type=ether  running=false  mac=C4:AD:34:1C:5C:3C
+  3  name=ether3  type=ether  running=true  mac=C4:AD:34:1C:5C:3D
+  4  name=ether4  type=ether  running=false  mac=C4:AD:34:1C:5C:3E
+  5  name=ether5  type=ether  running=false  mac=C4:AD:34:1C:5C:3F
+  6  name=ether6  type=ether  running=false  mac=C4:AD:34:1C:5C:40
+  7  name=ether7  type=ether  running=false  mac=C4:AD:34:1C:5C:41
+  8  name=ether8  type=ether  running=true  mac=C4:AD:34:1C:5C:42
+  9  name=ether9  type=ether  running=false  mac=C4:AD:34:1C:5C:43
+ 10  name=ether10  type=ether  running=true  mac=C4:AD:34:1C:5C:44
+ 11  name=sfp1  type=ether  running=false  mac=C4:AD:34:1C:5C:3A
+ 12  name=bridge1  type=bridge  running=true  mac=C4:AD:34:1C:5C:3B
+
+----- wireless -----
+(empty)
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.29.15.2/25  interface=ether1  network=172.29.15.0
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.29.15.1  distance=1
+  2  dst=172.29.15.0/25  gw=bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=RB-khoramshahr-MK-behdasht-RB2011  address=-  interface=ether10,bridge1
+  2  identity=RB-khoramshahr-MK-behdasht-RB2011  address=172.29.15.1  interface=ether10,bridge1
+  3  identity=WIFI-OTAGH-IT  address=172.29.15.4  interface=ether10,bridge1
+  4  identity=MarkazBehdasht-KH  address=172.29.15.5  interface=ether10,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:41:11
+# ساعت دستگاه (خام): 1974-03-29 10:39:30
+# افست اصلاحی (سرور − دستگاه): +460607:31:41
+  1  1405/07/17 11:40:00  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/17 11:40:01  [bridge,info]  "bridge1" mac address changed to C4:AD:34:1C:5C:3B
+  3  1405/07/17 11:40:01  [bridge,info]  hardware offloading activated on bridge "bridge1" ports: ether1
+  4  1405/07/17 11:40:01  [bridge,info]  hardware offloading activated on bridge "bridge1" ports: ether2,ether3,ether4,ether5,ether6,ether7,ether8,ether9,ether10
+  5  1405/07/17 11:40:03  [interface,info]  ether3 link up (speed 100M, full duplex)
+  6  1405/07/17 11:40:03  [interface,info]  ether8 link up (speed 100M, full duplex)
+  7  1405/07/17 11:40:03  [interface,info]  ether10 link up (speed 100M, full duplex)
+  8  1405/07/18 09:07:52  [interface,info]  ether3 link down
+  9  1405/07/18 09:07:54  [interface,info]  ether3 link up (speed 100M, full duplex)
+ 10  1405/07/18 10:39:03  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 11  1405/07/18 10:39:11  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 12  1405/07/18 11:03:35  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 13  1405/07/18 11:03:36  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 14  1405/07/18 12:12:35  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 15  1405/07/18 12:12:35  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 16  1405/07/19 09:59:39  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 17  1405/07/19 09:59:41  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 18  1405/07/19 17:46:06  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+ 19  1405/07/19 17:46:06  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+ 20  1405/07/21 11:17:20  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 21  1405/07/21 11:17:22  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 22  1405/07/22 13:41:10  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  C4:AD:34:1C:5C:3B  (ether)
+ether2  C4:AD:34:1C:5C:3C  (ether)
+ether3  C4:AD:34:1C:5C:3D  (ether)
+ether4  C4:AD:34:1C:5C:3E  (ether)
+ether5  C4:AD:34:1C:5C:3F  (ether)
+ether6  C4:AD:34:1C:5C:40  (ether)
+ether7  C4:AD:34:1C:5C:41  (ether)
+ether8  C4:AD:34:1C:5C:42  (ether)
+ether9  C4:AD:34:1C:5C:43  (ether)
+ether10  C4:AD:34:1C:5C:44  (ether)
+sfp1  C4:AD:34:1C:5C:3A  (ether)
+bridge1  C4:AD:34:1C:5C:3B  (bridge)
+--- /ip arp ---
+bridge1  C4:AD:34:1C:69:10  (arp 172.29.15.1)

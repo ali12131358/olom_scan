@@ -1,0 +1,23 @@
+IP: 172.18.3.9
+Collected at: 2026-10-14T10:23:56.584874+00:00
+source: RouterOS API
+identity: -
+device_type: Router
+
+----- interfaces -----
+(empty)
+
+----- wireless -----
+(empty)
+
+----- ip_addresses / routes -----
+(empty)
+
+----- neighbors -----
+(empty)
+
+----- log -----
+(empty)
+
+----- mac -----
+(empty)

@@ -1,0 +1,119 @@
+IP: 172.18.25.19
+Collected at: 2026-10-14T10:23:21.724500+00:00
+source: RouterOS API
+identity: Alvan->DeymeHamood.Client
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=E4:8D:8C:B5:1E:E0
+  2  name=wlan1  type=wlan  running=true  mac=E4:8D:8C:B5:1E:E1
+  3  name=bridge1  type=bridge  running=true  mac=E4:8D:8C:B5:1E:E0
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=ALVNHMD  band=5ghz-a/n  frequency=5260
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.25.19/29  interface=wlan1  network=172.18.25.16
+  2  address=172.29.197.129/27  interface=ether1  network=172.29.197.128
+  3  address=172.29.197.129/27  interface=bridge1  network=172.29.197.128
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.25.17  distance=1
+  2  dst=172.18.25.16/29  gw=wlan1  distance=0
+  3  dst=172.29.197.128/27  gw=bridge1,bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=MK_Alvan  address=172.18.25.17  interface=wlan1
+  2  identity=Alvan->DeymehHamood.AP  address=172.18.25.18  interface=wlan1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:23:33
+# ساعت دستگاه (خام): 2021-02-12 09:07:05
+# افست اصلاحی (سرور − دستگاه): +49680:46:28
+  1  1405/07/18 10:45:37  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/18 10:45:37  [bridge,info]  "bridge1" mac address changed to E4:8D:8C:B5:1E:E0
+  3  1405/07/18 10:45:37  [bridge,info]  hardware offloading activated on bridge "bridge1" ports: ether1
+  4  1405/07/18 10:45:39  [interface,info]  ether1 link up (speed 100M, full duplex)
+  5  1405/07/18 10:45:39  [wireless,info]  6C:3B:6B:10:AE:53@wlan1 established connection on 5340000, SSID ALVNHMD
+  6  1405/07/18 10:47:56  [interface,info]  ether1 link down
+  7  1405/07/18 10:47:57  [interface,info]  ether1 link up (speed 100M, full duplex)
+  8  1405/07/18 10:56:07  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+  9  1405/07/18 10:56:07  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 10  1405/07/18 11:04:41  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 11  1405/07/18 11:04:41  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 12  1405/07/18 12:08:37  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 13  1405/07/18 12:08:37  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 14  1405/07/18 12:13:25  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 15  1405/07/18 12:13:25  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 16  1405/07/18 12:37:12  [interface,info]  ether1 link down
+ 17  1405/07/18 12:37:13  [interface,info]  ether1 link up (speed 10M, full duplex)
+ 18  1405/07/18 12:43:04  [dhcp,info]  dhcp1 deassigned 172.29.197.158 from 74:D4:35:20:14:E6
+ 19  1405/07/19 08:09:47  [interface,info]  ether1 link down
+ 20  1405/07/19 08:09:49  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 21  1405/07/19 08:10:01  [dhcp,info]  dhcp1 assigned 172.29.197.158 to 74:D4:35:20:14:E6
+ 22  1405/07/19 09:42:28  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 23  1405/07/19 09:42:30  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 24  1405/07/19 10:01:26  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 25  1405/07/19 10:01:28  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 26  1405/07/19 13:01:12  [interface,info]  ether1 link down
+ 27  1405/07/19 13:01:14  [interface,info]  ether1 link up (speed 10M, full duplex)
+ 28  1405/07/19 13:10:01  [dhcp,info]  dhcp1 deassigned 172.29.197.158 from 74:D4:35:20:14:E6
+ 29  1405/07/19 17:43:00  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+ 30  1405/07/19 17:43:00  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+ 31  1405/07/19 17:46:35  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+ 32  1405/07/19 17:46:35  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+ 33  1405/07/20 08:38:20  [interface,info]  ether1 link down
+ 34  1405/07/20 08:38:21  [interface,info]  ether1 link up (speed 10M, full duplex)
+ 35  1405/07/20 08:39:00  [interface,info]  ether1 link down
+ 36  1405/07/20 08:39:01  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 37  1405/07/20 08:39:26  [dhcp,info]  dhcp1 assigned 172.29.197.158 to 74:D4:35:20:14:E6
+ 38  1405/07/20 11:00:09  [interface,info]  ether1 link down
+ 39  1405/07/20 11:00:10  [interface,info]  ether1 link up (speed 10M, full duplex)
+ 40  1405/07/20 11:09:26  [dhcp,info]  dhcp1 deassigned 172.29.197.158 from 74:D4:35:20:14:E6
+ 41  1405/07/20 11:24:44  [interface,info]  ether1 link down
+ 42  1405/07/20 11:24:46  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 43  1405/07/20 11:24:55  [dhcp,info]  dhcp1 assigned 172.29.197.158 to 74:D4:35:20:14:E6
+ 44  1405/07/20 12:18:35  [interface,info]  ether1 link down
+ 45  1405/07/20 12:18:37  [interface,info]  ether1 link up (speed 10M, full duplex)
+ 46  1405/07/20 12:24:55  [dhcp,info]  dhcp1 deassigned 172.29.197.158 from 74:D4:35:20:14:E6
+ 47  1405/07/21 08:28:41  [interface,info]  ether1 link down
+ 48  1405/07/21 08:28:43  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 49  1405/07/21 08:28:52  [dhcp,info]  dhcp1 assigned 172.29.197.158 to 74:D4:35:20:14:E6
+ 50  1405/07/21 11:05:00  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 51  1405/07/21 11:05:02  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 52  1405/07/21 11:19:13  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 53  1405/07/21 11:19:15  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 54  1405/07/21 12:56:39  [interface,info]  ether1 link down
+ 55  1405/07/21 12:56:41  [interface,info]  ether1 link up (speed 10M, full duplex)
+ 56  1405/07/21 13:03:52  [dhcp,info]  dhcp1 deassigned 172.29.197.158 from 74:D4:35:20:14:E6
+ 57  1405/07/22 08:29:23  [interface,info]  ether1 link down
+ 58  1405/07/22 08:29:24  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 59  1405/07/22 08:29:30  [dhcp,info]  dhcp1 assigned 172.29.197.158 to 74:D4:35:20:14:E6
+ 60  1405/07/22 10:40:26  [interface,info]  ether1 link down
+ 61  1405/07/22 10:40:27  [interface,info]  ether1 link up (speed 10M, full duplex)
+ 62  1405/07/22 10:41:46  [interface,info]  ether1 link down
+ 63  1405/07/22 10:41:47  [interface,info]  ether1 link up (speed 10M, full duplex)
+ 64  1405/07/22 10:42:07  [interface,info]  ether1 link down
+ 65  1405/07/22 10:42:09  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 66  1405/07/22 11:32:08  [interface,info]  ether1 link down
+ 67  1405/07/22 11:32:09  [interface,info]  ether1 link up (speed 10M, full duplex)
+ 68  1405/07/22 11:37:23  [dhcp,info]  dhcp1 deassigned 172.29.197.158 from 74:D4:35:20:14:E6
+ 69  1405/07/22 12:14:40  [interface,info]  ether1 link down
+ 70  1405/07/22 12:14:41  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 71  1405/07/22 12:14:49  [dhcp,info]  dhcp1 assigned 172.29.197.158 to 74:D4:35:20:14:E6
+ 72  1405/07/22 13:16:13  [interface,info]  ether1 link down
+ 73  1405/07/22 13:16:15  [interface,info]  ether1 link up (speed 10M, full duplex)
+ 74  1405/07/22 13:23:32  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  E4:8D:8C:B5:1E:E0  (ether)
+wlan1  E4:8D:8C:B5:1E:E1  (wlan)
+bridge1  E4:8D:8C:B5:1E:E0  (bridge)
+--- /ip arp ---
+wlan1  6C:3B:6B:0C:28:8A  (arp 172.18.25.17)

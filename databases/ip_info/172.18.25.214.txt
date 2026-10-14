@@ -1,0 +1,64 @@
+IP: 172.18.25.214
+Collected at: 2026-10-14T10:23:23.453661+00:00
+source: RouterOS API
+identity: AboSadreh.Client
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=6C:3B:6B:10:B2:06
+  2  name=wlan1  type=wlan  running=true  mac=6C:3B:6B:10:B2:07
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=Shadegan-Jafal1  band=5ghz-a/n  frequency=5280
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.25.214/28  interface=wlan1  network=172.18.25.208
+  2  address=172.29.204.1/27  interface=ether1  network=172.29.204.0
+  3  address=192.168.80.2/29  interface=wlan1  network=192.168.80.0
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.25.209  distance=1
+  2  dst=172.18.25.208/28  gw=wlan1  distance=0
+  3  dst=172.29.204.0/27  gw=ether1  distance=0
+  4  dst=192.168.80.0/29  gw=wlan1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=-  address=-  interface=ether1
+  2  identity=MK_Jafal  address=172.18.25.209  interface=wlan1
+  3  identity=Shadegan-Jafal1  address=172.18.25.210  interface=wlan1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:24:09
+# ساعت دستگاه (خام): 2023-11-17 11:03:42
+# افست اصلاحی (سرور − دستگاه): +25486:50:27
+  1  1405/07/21 01:20:19  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/21 01:20:21  [interface,info]  ether1 link up (speed 100M, full duplex)
+  3  1405/07/21 01:21:17  [wireless,info]  6C:3B:6B:4A:2C:B8@wlan1 established connection on 5375000, SSID Shadegan-Jafal1
+  4  1405/07/21 01:45:01  [wireless,info]  6C:3B:6B:4A:2C:B8@wlan1: lost connection, synchronization timeout
+  5  1405/07/21 01:46:55  [wireless,info]  6C:3B:6B:4A:2C:B8@wlan1 established connection on 5375000, SSID Shadegan-Jafal1
+  6  1405/07/21 01:55:38  [dhcp,info]  dhcp1 deassigned 172.29.204.27 from B4:2E:99:6F:4D:FA
+  7  1405/07/21 08:23:04  [dhcp,info]  dhcp1 assigned 172.29.204.29 to B4:2E:99:5E:9B:25
+  8  1405/07/21 08:35:19  [dhcp,info]  dhcp1 assigned 172.29.204.27 to B4:2E:99:6F:4D:FA
+  9  1405/07/21 11:05:16  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 10  1405/07/21 11:05:19  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 11  1405/07/21 11:20:44  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 12  1405/07/21 11:20:46  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 13  1405/07/21 11:55:34  [dhcp,info]  dhcp1 deassigned 172.29.204.29 from B4:2E:99:5E:9B:25
+ 14  1405/07/22 08:24:29  [dhcp,info]  dhcp1 assigned 172.29.204.29 to B4:2E:99:5E:9B:25
+ 15  1405/07/22 08:55:48  [wireless,info]  6C:3B:6B:4A:2C:B8@wlan1: lost connection, synchronization timeout
+ 16  1405/07/22 08:57:42  [wireless,info]  6C:3B:6B:4A:2C:B8@wlan1 established connection on 5375000, SSID Shadegan-Jafal1
+ 17  1405/07/22 12:58:59  [dhcp,info]  dhcp1 deassigned 172.29.204.29 from B4:2E:99:5E:9B:25
+ 18  1405/07/22 13:24:08  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  6C:3B:6B:10:B2:06  (ether)
+wlan1  6C:3B:6B:10:B2:07  (wlan)
+--- /ip arp ---
+wlan1  6C:3B:6B:0C:28:9A  (arp 172.18.25.209)
+ether1  B4:2E:99:6F:4D:FA  (arp 172.29.204.27)

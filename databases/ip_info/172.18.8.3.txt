@@ -1,0 +1,53 @@
+IP: 172.18.8.3
+Collected at: 2026-10-14T10:24:16.320108+00:00
+source: RouterOS API
+identity: Setad->Khezr.Client
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=48:8F:5A:BF:85:30
+  2  name=wlan1  type=wlan  running=true  mac=48:8F:5A:BF:85:31
+  3  name=bridge1  type=bridge  running=true  mac=48:8F:5A:BF:85:31
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=STDKHZR  band=5ghz-a/n/ac  frequency=5180
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.8.3/29  interface=bridge1  network=172.18.8.0
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.8.1  distance=1
+  2  dst=172.18.8.0/29  gw=bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=Setad->Khezr.AP  address=172.18.8.2  interface=wlan1,bridge1
+  2  identity=SW-Wireless3.test.local  address=172.19.1.51  interface=wlan1,bridge1
+  3  identity=KhezrNabi-MK  address=172.18.8.4  interface=ether1,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:33:32
+# ساعت دستگاه (خام): 1974-12-24 08:31:29
+# افست اصلاحی (سرور − دستگاه): +454129:32:03
+  1  1405/07/21 09:41:37  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/21 09:41:39  [bridge,info]  "bridge1" mac address changed to 48:8F:5A:BF:85:31
+  3  1405/07/21 09:41:46  [wireless,info]  08:55:31:12:65:02@wlan1 established connection on 5240000, SSID STDKHZR
+  4  1405/07/21 09:41:55  [interface,info]  ether1 link up (speed 100M, full duplex)
+  5  1405/07/21 21:39:40  [wireless,info]  08:55:31:12:65:02@wlan1: lost connection, control frame timeout
+  6  1405/07/21 21:39:48  [wireless,info]  08:55:31:12:65:02@wlan1 established connection on 5240000, SSID STDKHZR
+  7  1405/07/21 23:25:43  [wireless,info]  08:55:31:12:65:02@wlan1: lost connection, control frame timeout
+  8  1405/07/21 23:26:03  [wireless,info]  08:55:31:12:65:02@wlan1 established connection on 5240000, SSID STDKHZR
+  9  1405/07/22 13:33:30  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  48:8F:5A:BF:85:30  (ether)
+wlan1  48:8F:5A:BF:85:31  (wlan)
+bridge1  48:8F:5A:BF:85:31  (bridge)
+--- /ip arp ---
+bridge1  10:8C:CF:33:51:56  (arp 172.18.8.1)
+bridge1  6C:3B:6B:85:AC:B2  (arp 172.18.8.4)

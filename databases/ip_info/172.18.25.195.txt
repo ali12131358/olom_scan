@@ -1,0 +1,60 @@
+IP: 172.18.25.195
+Collected at: 2026-10-10T07:39:22.462698+00:00
+source: RouterOS API
+identity: Om_sakhar_client
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=78:9A:18:76:FA:90
+  2  name=wlan1  type=wlan  running=true  mac=78:9A:18:76:FA:91
+  3  name=bridge1  type=bridge  running=true  mac=78:9A:18:76:FA:90
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=Jafal->OmSakhreh.AP  band=5ghz-a/n  frequency=5700
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.25.195/28  interface=wlan1  network=172.18.25.192
+  2  address=172.29.203.129/27  interface=ether1  network=172.29.203.128
+  3  address=172.29.203.129/27  interface=bridge1  network=172.29.203.128
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.25.193  distance=1
+  2  dst=172.18.25.192/28  gw=wlan1  distance=0
+  3  dst=172.29.203.128/27  gw=bridge1,bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=MK_Jafal  address=172.18.25.193  interface=wlan1
+  2  identity=Jafal->OmSakhreh.AP  address=172.18.25.194  interface=wlan1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/18 10:56:08
+# ساعت دستگاه (خام): 1970-05-07 02:42:11
+# افست اصلاحی (سرور − دستگاه): +494644:43:57
+  1  1405/07/18 08:14:02  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/18 08:14:09  [bridge,info]  "bridge1" mac address changed to 78:9A:18:76:FA:90
+  3  1405/07/18 08:14:09  [bridge,info]  hardware offloading activated on bridge "bridge1" ports: ether1
+  4  1405/07/18 08:14:11  [interface,info]  ether1 link up (speed 100M, full duplex)
+  5  1405/07/18 08:14:55  [wireless,info]  6C:3B:6B:13:54:8B@wlan1 established connection on 5490000, SSID Jafal->OmSakhreh.AP
+  6  1405/07/18 08:15:31  [interface,info]  ether1 link down
+  7  1405/07/18 08:15:32  [interface,info]  ether1 link up (speed 100M, full duplex)
+  8  1405/07/18 08:15:38  [dhcp,info]  dhcp1 deassigned 172.29.203.158 from 8C:89:A5:E3:F9:8C
+  9  1405/07/18 08:15:38  [dhcp,info]  dhcp1 assigned 172.29.203.158 to 8C:89:A5:E3:F9:8C
+ 10  1405/07/18 09:13:17  [wireless,info]  6C:3B:6B:13:54:8B@wlan1: lost connection, synchronization timeout
+ 11  1405/07/18 09:31:14  [wireless,info]  6C:3B:6B:13:54:8B@wlan1 established connection on 5490000, SSID Jafal->OmSakhreh.AP
+ 12  1405/07/18 10:31:52  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 13  1405/07/18 10:31:53  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 14  1405/07/18 10:56:07  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  78:9A:18:76:FA:90  (ether)
+wlan1  78:9A:18:76:FA:91  (wlan)
+bridge1  78:9A:18:76:FA:90  (bridge)
+--- /ip arp ---
+wlan1  6C:3B:6B:0C:28:A2  (arp 172.18.25.193)
+bridge1  8C:89:A5:E3:F9:8C  (arp 172.29.203.158)

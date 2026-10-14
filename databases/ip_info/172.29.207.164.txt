@@ -1,0 +1,53 @@
+IP: 172.29.207.164
+Collected at: 2026-10-14T10:25:29.889258+00:00
+source: RouterOS API
+identity: MARKAZ.DRISIE.CL
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=B8:69:F4:69:5F:0A
+  2  name=wlan1  type=wlan  running=true  mac=B8:69:F4:69:5F:0B
+  3  name=bridge1  type=bridge  running=true  mac=B8:69:F4:69:5F:0B
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=MRKAZ.DRESE.P2Pariant  band=5ghz-a/n  frequency=5260
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.29.207.164/27  interface=wlan1  network=172.29.207.160
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.29.207.162  distance=1
+  2  dst=172.29.207.160/27  gw=bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=DerisiyehVasati.Client  address=172.29.207.161  interface=wlan1,bridge1
+  2  identity=khaneh-behdasht-Derisieh  address=172.29.207.162  interface=wlan1,bridge1
+  3  identity=MARKAZ.DRISIE.AP  address=172.29.207.163  interface=wlan1,bridge1
+  4  identity=Switch  address=172.29.207.168  interface=ether1,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:46:35
+# ساعت دستگاه (خام): 1973-02-12 22:00:23
+# افست اصلاحی (سرور − دستگاه): +470436:16:12
+  1  1405/07/20 18:34:17  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/20 18:34:19  [bridge,info]  "bridge1" mac address changed to B8:69:F4:69:5F:0B
+  3  1405/07/20 18:34:25  [bridge,info]  hardware offloading activated on bridge "bridge1" ports: ether1
+  4  1405/07/20 18:34:30  [wireless,info]  6C:3B:6B:34:00:83@wlan1 established connection on 5260000, SSID MRKAZ.DRESE.P2Pariant
+  5  1405/07/20 18:38:05  [interface,info]  ether1 link up (speed 100M, full duplex)
+  6  1405/07/21 11:21:23  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+  7  1405/07/21 11:21:25  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+  8  1405/07/22 13:46:33  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  B8:69:F4:69:5F:0A  (ether)
+wlan1  B8:69:F4:69:5F:0B  (wlan)
+bridge1  B8:69:F4:69:5F:0B  (bridge)
+--- /ip arp ---
+bridge1  CC:2D:E0:44:EA:7D  (arp 172.29.207.162)
+bridge1  6C:3B:6B:4D:A3:15  (arp 172.29.207.161)

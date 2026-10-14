@@ -1,0 +1,168 @@
+IP: 172.18.26.24
+Collected at: 2026-10-14T10:23:36.736566+00:00
+source: RouterOS API
+identity: CRS-Darkhovein
+device_type: Router
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1-input-from-rb2011  type=ether  running=true  mac=6C:3B:6B:09:35:13
+  2  name=ether2  type=ether  running=false  mac=6C:3B:6B:09:35:14
+  3  name=ether3  type=ether  running=true  mac=6C:3B:6B:09:35:15
+  4  name=ether4  type=ether  running=false  mac=6C:3B:6B:09:35:16
+  5  name=ether5  type=ether  running=false  mac=6C:3B:6B:09:35:17
+  6  name=ether6  type=ether  running=false  mac=6C:3B:6B:09:35:18
+  7  name=ether7  type=ether  running=false  mac=6C:3B:6B:09:35:19
+  8  name=ether8  type=ether  running=true  mac=6C:3B:6B:09:35:1A
+  9  name=ether9  type=ether  running=false  mac=6C:3B:6B:09:35:1B
+ 10  name=ether10  type=ether  running=false  mac=6C:3B:6B:09:35:1C
+ 11  name=ether11  type=ether  running=false  mac=6C:3B:6B:09:35:1D
+ 12  name=ether12  type=ether  running=false  mac=6C:3B:6B:09:35:1E
+ 13  name=ether13  type=ether  running=false  mac=6C:3B:6B:09:35:1F
+ 14  name=ether14  type=ether  running=false  mac=6C:3B:6B:09:35:20
+ 15  name=ether15  type=ether  running=false  mac=6C:3B:6B:09:35:21
+ 16  name=ether16  type=ether  running=true  mac=6C:3B:6B:09:35:22
+ 17  name=ether17  type=ether  running=false  mac=6C:3B:6B:09:35:23
+ 18  name=ether18  type=ether  running=false  mac=6C:3B:6B:09:35:24
+ 19  name=ether19  type=ether  running=false  mac=6C:3B:6B:09:35:25
+ 20  name=ether20  type=ether  running=false  mac=6C:3B:6B:09:35:26
+ 21  name=ether21  type=ether  running=false  mac=6C:3B:6B:09:35:27
+ 22  name=ether22  type=ether  running=false  mac=6C:3B:6B:09:35:28
+ 23  name=ether23  type=ether  running=true  mac=6C:3B:6B:09:35:29
+ 24  name=ether24  type=ether  running=true  mac=6C:3B:6B:09:35:2A
+ 25  name=sfp1  type=ether  running=false  mac=6C:3B:6B:09:35:2B
+ 26  name=bridge-Local  type=bridge  running=true  mac=6C:3B:6B:09:35:14
+
+----- wireless -----
+(empty)
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.29.206.1/25  interface=bridge-Local  network=172.29.206.0
+  2  address=172.18.26.24/28  interface=ether1-input-from-rb2011  network=172.18.26.16
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.26.17  distance=1
+  2  dst=172.18.26.16/28  gw=ether1-input-from-rb2011  distance=0
+  3  dst=172.29.206.0/25  gw=bridge-Local  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=MK_Darkhovein  address=172.18.26.17  interface=ether1-input-from-rb2011
+  2  identity=Shadegan-Darkhovein1  address=172.18.26.18  interface=ether1-input-from-rb2011
+  3  identity=Seleyhavieh.Client  address=172.18.26.19  interface=ether1-input-from-rb2011
+  4  identity=Darkhovein.Client  address=172.18.26.21  interface=ether1-input-from-rb2011
+  5  identity=cl-vastaniye  address=172.18.26.25  interface=ether1-input-from-rb2011
+  6  identity=-  address=-  interface=ether3,bridge-Local
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:26:56
+# ساعت دستگاه (خام): 1972-04-04 04:26:30
+# افست اصلاحی (سرور − دستگاه): +477989:30:26
+  1  1405/07/22 09:54:10  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/22 09:54:10  [bridge,info]  "bridge-Local" mac address changed to 6C:3B:6B:09:35:14
+  3  1405/07/22 09:54:12  [interface,info]  ether1-input-from-rb2011 link up (speed 1G, full duplex)
+  4  1405/07/22 09:54:12  [interface,info]  ether3 link up (speed 100M, full duplex)
+  5  1405/07/22 09:54:13  [interface,info]  ether8 link up (speed 1G, full duplex)
+  6  1405/07/22 09:54:13  [interface,info]  ether23 link up (speed 100M, full duplex)
+  7  1405/07/22 09:54:13  [interface,info]  ether24 link up (speed 100M, full duplex)
+  8  1405/07/22 09:54:17  [dhcp,info]  dhcp1 deassigned 172.29.206.23 from 6C:5A:B0:4B:17:39
+  9  1405/07/22 09:54:17  [dhcp,info]  dhcp1 assigned 172.29.206.23 to 6C:5A:B0:4B:17:39
+ 10  1405/07/22 09:54:17  [dhcp,info]  dhcp1 deassigned 172.29.206.33 from 1C:1B:0D:77:9A:00
+ 11  1405/07/22 09:54:17  [dhcp,info]  dhcp1 assigned 172.29.206.33 to 1C:1B:0D:77:9A:00
+ 12  1405/07/22 09:54:25  [dhcp,info]  dhcp1 deassigned 172.29.206.21 from E0:D5:5E:46:0F:9E
+ 13  1405/07/22 09:54:25  [dhcp,info]  dhcp1 assigned 172.29.206.21 to E0:D5:5E:46:0F:9E
+ 14  1405/07/22 09:54:25  [interface,info]  ether16 link up (speed 100M, full duplex)
+ 15  1405/07/22 09:54:35  [dhcp,info]  dhcp1 deassigned 172.29.206.35 from 98:DE:D0:26:FD:62
+ 16  1405/07/22 09:54:35  [dhcp,info]  dhcp1 assigned 172.29.206.35 to 98:DE:D0:26:FD:62
+ 17  1405/07/22 09:54:39  [dhcp,info]  dhcp1 deassigned 172.29.206.36 from 98:DE:D0:26:FA:E3
+ 18  1405/07/22 09:54:43  [dhcp,info]  dhcp1 assigned 172.29.206.36 to 98:DE:D0:26:FA:E3
+ 19  1405/07/22 09:58:52  [dhcp,info]  dhcp1 deassigned 172.29.206.37 from D0:37:45:DD:2D:23
+ 20  1405/07/22 09:58:52  [dhcp,info]  dhcp1 assigned 172.29.206.37 to D0:37:45:DD:2D:23
+ 21  1405/07/22 10:00:34  [dhcp,info]  dhcp1 deassigned 172.29.206.24 from 50:3E:AA:6A:2F:6C
+ 22  1405/07/22 10:00:47  [dhcp,info]  dhcp1 deassigned 172.29.206.31 from 50:EB:F6:99:84:3A
+ 23  1405/07/22 10:07:17  [interface,info]  ether16 link down
+ 24  1405/07/22 10:07:39  [interface,info]  ether16 link up (speed 100M, full duplex)
+ 25  1405/07/22 10:07:48  [dhcp,info]  dhcp1 assigned 172.29.206.31 to 50:EB:F6:99:84:3A
+ 26  1405/07/22 10:07:53  [dhcp,info]  dhcp1 assigned 172.29.206.24 to 50:3E:AA:6A:2F:6C
+ 27  1405/07/22 10:26:43  [interface,info]  ether23 link down
+ 28  1405/07/22 10:26:48  [interface,info]  ether23 link up (speed 100M, full duplex)
+ 29  1405/07/22 10:36:51  [interface,info]  ether8 link down
+ 30  1405/07/22 10:36:53  [interface,info]  ether8 link up (speed 10M, full duplex)
+ 31  1405/07/22 10:36:59  [interface,info]  ether8 link down
+ 32  1405/07/22 10:37:01  [interface,info]  ether8 link up (speed 1G, full duplex)
+ 33  1405/07/22 11:07:02  [interface,info]  ether8 link down
+ 34  1405/07/22 11:07:04  [interface,info]  ether8 link up (speed 10M, full duplex)
+ 35  1405/07/22 11:07:10  [interface,info]  ether8 link down
+ 36  1405/07/22 11:07:13  [interface,info]  ether8 link up (speed 1G, full duplex)
+ 37  1405/07/22 11:14:26  [dhcp,info]  dhcp1 assigned 172.29.206.22 to 64:A2:00:37:30:9A
+ 38  1405/07/22 11:20:03  [dhcp,info]  dhcp1 deassigned 172.29.206.35 from 98:DE:D0:26:FD:62
+ 39  1405/07/22 11:30:07  [dhcp,info]  dhcp1 deassigned 172.29.206.22 from 64:A2:00:37:30:9A
+ 40  1405/07/22 11:30:09  [dhcp,info]  dhcp1 assigned 172.29.206.22 to 64:A2:00:37:30:9A
+ 41  1405/07/22 11:37:15  [interface,info]  ether8 link down
+ 42  1405/07/22 11:37:17  [interface,info]  ether8 link up (speed 10M, full duplex)
+ 43  1405/07/22 11:37:23  [interface,info]  ether8 link down
+ 44  1405/07/22 11:37:25  [interface,info]  ether8 link up (speed 1G, full duplex)
+ 45  1405/07/22 11:43:07  [dhcp,info]  dhcp1 assigned 172.29.206.35 to 98:DE:D0:26:FD:62
+ 46  1405/07/22 11:52:25  [interface,info]  ether16 link down
+ 47  1405/07/22 11:52:27  [interface,info]  ether16 link up (speed 10M, full duplex)
+ 48  1405/07/22 11:53:56  [interface,info]  ether16 link down
+ 49  1405/07/22 11:54:10  [interface,info]  ether16 link up (speed 100M, full duplex)
+ 50  1405/07/22 12:10:02  [dhcp,info]  dhcp1 deassigned 172.29.206.22 from 64:A2:00:37:30:9A
+ 51  1405/07/22 12:19:26  [interface,info]  ether16 link down
+ 52  1405/07/22 12:19:28  [interface,info]  ether16 link up (speed 10M, full duplex)
+ 53  1405/07/22 12:23:52  [interface,info]  ether16 link down
+ 54  1405/07/22 12:23:54  [dhcp,info]  dhcp1 deassigned 172.29.206.37 from D0:37:45:DD:2D:23
+ 55  1405/07/22 12:24:06  [interface,info]  ether16 link up (speed 100M, full duplex)
+ 56  1405/07/22 12:24:47  [interface,info]  ether16 link down
+ 57  1405/07/22 12:24:49  [interface,info]  ether16 link up (speed 10M, full duplex)
+ 58  1405/07/22 12:33:57  [dhcp,info]  dhcp1 deassigned 172.29.206.24 from 50:3E:AA:6A:2F:6C
+ 59  1405/07/22 12:34:09  [dhcp,info]  dhcp1 deassigned 172.29.206.31 from 50:EB:F6:99:84:3A
+ 60  1405/07/22 12:34:20  [dhcp,info]  dhcp1 deassigned 172.29.206.23 from 6C:5A:B0:4B:17:39
+ 61  1405/07/22 12:39:52  [dhcp,warning]  Detected conflict by ARP response for 172.29.206.22 from 64:A2:00:37:30:9A
+ 62  1405/07/22 12:39:55  [dhcp,info]  dhcp1 assigned 172.29.206.25 to 64:A2:00:37:30:9A
+ 63  1405/07/22 12:53:47  [dhcp,info]  dhcp1 deassigned 172.29.206.26 from D0:37:45:D9:66:0A
+ 64  1405/07/22 12:54:47  [dhcp,info]  dhcp1 deassigned 172.29.206.25 from 64:A2:00:37:30:9A
+ 65  1405/07/22 12:54:48  [dhcp,info]  dhcp1 assigned 172.29.206.25 to 64:A2:00:37:30:9A
+ 66  1405/07/22 13:06:01  [dhcp,info]  dhcp1 deassigned 172.29.206.25 from 64:A2:00:37:30:9A
+ 67  1405/07/22 13:06:03  [dhcp,info]  dhcp1 assigned 172.29.206.25 to 64:A2:00:37:30:9A
+ 68  1405/07/22 13:09:42  [dhcp,info]  dhcp1 deassigned 172.29.206.36 from 98:DE:D0:26:FA:E3
+ 69  1405/07/22 13:23:08  [dhcp,info]  dhcp1 deassigned 172.29.206.35 from 98:DE:D0:26:FD:62
+ 70  1405/07/22 13:26:55  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1-input-from-rb2011  6C:3B:6B:09:35:13  (ether)
+ether2  6C:3B:6B:09:35:14  (ether)
+ether3  6C:3B:6B:09:35:15  (ether)
+ether4  6C:3B:6B:09:35:16  (ether)
+ether5  6C:3B:6B:09:35:17  (ether)
+ether6  6C:3B:6B:09:35:18  (ether)
+ether7  6C:3B:6B:09:35:19  (ether)
+ether8  6C:3B:6B:09:35:1A  (ether)
+ether9  6C:3B:6B:09:35:1B  (ether)
+ether10  6C:3B:6B:09:35:1C  (ether)
+ether11  6C:3B:6B:09:35:1D  (ether)
+ether12  6C:3B:6B:09:35:1E  (ether)
+ether13  6C:3B:6B:09:35:1F  (ether)
+ether14  6C:3B:6B:09:35:20  (ether)
+ether15  6C:3B:6B:09:35:21  (ether)
+ether16  6C:3B:6B:09:35:22  (ether)
+ether17  6C:3B:6B:09:35:23  (ether)
+ether18  6C:3B:6B:09:35:24  (ether)
+ether19  6C:3B:6B:09:35:25  (ether)
+ether20  6C:3B:6B:09:35:26  (ether)
+ether21  6C:3B:6B:09:35:27  (ether)
+ether22  6C:3B:6B:09:35:28  (ether)
+ether23  6C:3B:6B:09:35:29  (ether)
+ether24  6C:3B:6B:09:35:2A  (ether)
+sfp1  6C:3B:6B:09:35:2B  (ether)
+bridge-Local  6C:3B:6B:09:35:14  (bridge)
+--- /ip arp ---
+bridge-Local  E0:D5:5E:46:0F:9E  (arp 172.29.206.21)
+ether1-input-from-rb2011  E4:8D:8C:0D:18:B8  (arp 172.18.26.17)
+bridge-Local  98:DE:D0:26:FD:62  (arp 172.29.206.35)
+bridge-Local  64:A2:00:37:30:9A  (arp 172.29.206.25)
+bridge-Local  00:17:6F:34:9C:59  (arp 172.29.206.99)
+bridge-Local  1C:1B:0D:77:9A:00  (arp 172.29.206.33)

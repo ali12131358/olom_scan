@@ -1,0 +1,173 @@
+IP: 172.18.16.19
+Collected at: 2026-10-14T10:22:30.014829+00:00
+source: RouterOS API
+identity: khrmshr-shaneh-2-CL
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=2C:C8:1B:42:EB:55
+  2  name=wlan1  type=wlan  running=true  mac=2C:C8:1B:42:EB:56
+  3  name=bridge1  type=bridge  running=true  mac=2C:C8:1B:42:EB:55
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=Khoramshahr-Shabakeh2  band=5ghz-a/n  frequency=5500
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.16.19/28  interface=bridge1  network=172.18.16.16
+  2  address=172.28.23.1/28  interface=ether1  network=172.28.23.0
+  3  address=172.28.23.1/28  interface=bridge1  network=172.28.23.0
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.16.17  distance=1
+  2  dst=172.18.16.16/28  gw=bridge1  distance=0
+  3  dst=172.28.23.0/28  gw=bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=R1KH  address=172.18.2.249  interface=wlan1,bridge1
+  2  identity=ShahidMusavi.Client  address=172.18.2.251  interface=wlan1,bridge1
+  3  identity=Khoramshahr-Shabakeh2  address=172.18.16.18  interface=wlan1,bridge1
+  4  identity=Khoramshahr - ShabakeBehdasht - P2P - Behvarzi - Client  address=172.18.16.21  interface=wlan1,bridge1
+  5  identity=IT.M.M  address=172.28.23.2  interface=ether1,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:12:56
+# ساعت دستگاه (خام): 1972-10-14 00:22:41
+# افست اصلاحی (سرور − دستگاه): +473361:20:15
+  1  1405/06/30 19:17:20  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/06/30 19:17:20  [bridge,info]  "bridge1" mac address changed to 2C:C8:1B:42:EB:55
+  3  1405/06/30 19:17:20  [bridge,info]  hardware offloading activated on bridge "bridge1" ports: ether1
+  4  1405/06/30 19:17:21  [interface,info]  ether1 link up (speed 100M, full duplex)
+  5  1405/06/30 19:17:26  [wireless,info]  6C:3B:6B:94:E8:4B@wlan1 established connection on 5660000, SSID Khoramshahr-Shabakeh2
+  6  1405/06/31 08:10:49  [dhcp,info]  dhcp1 assigned 172.28.23.11 to A0:36:BC:34:77:7F
+  7  1405/06/31 10:24:48  [dhcp,info]  dhcp1 assigned 172.28.23.13 to 18:C0:4D:11:17:DE
+  8  1405/06/31 11:07:31  [dhcp,info]  dhcp1 assigned 172.28.23.10 to 60:CF:84:69:5C:5C
+  9  1405/06/31 11:10:48  [dhcp,info]  dhcp1 deassigned 172.28.23.11 from A0:36:BC:34:77:7F
+ 10  1405/06/31 11:32:31  [dhcp,info]  dhcp1 deassigned 172.28.23.10 from 60:CF:84:69:5C:5C
+ 11  1405/06/31 12:10:37  [dhcp,info]  dhcp1 assigned 172.28.23.10 to 60:CF:84:69:5C:5C
+ 12  1405/06/31 12:12:27  [dhcp,info]  dhcp1 assigned 172.28.23.11 to A0:36:BC:34:77:7F
+ 13  1405/06/31 12:20:37  [dhcp,info]  dhcp1 deassigned 172.28.23.10 from 60:CF:84:69:5C:5C
+ 14  1405/06/31 12:22:27  [dhcp,info]  dhcp1 deassigned 172.28.23.11 from A0:36:BC:34:77:7F
+ 15  1405/06/31 12:49:49  [dhcp,info]  dhcp1 deassigned 172.28.23.13 from 18:C0:4D:11:17:DE
+ 16  1405/07/02 08:23:11  [dhcp,info]  dhcp1 assigned 172.28.23.13 to 18:C0:4D:11:17:DE
+ 17  1405/07/02 11:53:11  [dhcp,info]  dhcp1 deassigned 172.28.23.13 from 18:C0:4D:11:17:DE
+ 18  1405/07/04 08:06:52  [dhcp,info]  dhcp1 assigned 172.28.23.10 to 60:CF:84:69:5C:5C
+ 19  1405/07/04 08:06:57  [dhcp,info]  dhcp1 assigned 172.28.23.13 to 18:C0:4D:11:17:DE
+ 20  1405/07/04 08:38:11  [dhcp,info]  dhcp1 assigned 172.28.23.11 to A0:36:BC:34:77:7F
+ 21  1405/07/04 09:54:29  [dhcp,info]  dhcp1 deassigned 172.28.23.10 from 60:CF:84:69:5C:5C
+ 22  1405/07/04 10:01:44  [dhcp,info]  dhcp1 assigned 172.28.23.10 to 60:CF:84:69:5C:5C
+ 23  1405/07/04 12:16:45  [dhcp,info]  dhcp1 deassigned 172.28.23.10 from 60:CF:84:69:5C:5C
+ 24  1405/07/04 12:16:58  [dhcp,info]  dhcp1 deassigned 172.28.23.13 from 18:C0:4D:11:17:DE
+ 25  1405/07/04 12:53:10  [dhcp,info]  dhcp1 deassigned 172.28.23.11 from A0:36:BC:34:77:7F
+ 26  1405/07/05 08:52:27  [dhcp,info]  dhcp1 assigned 172.28.23.13 to 18:C0:4D:11:17:DE
+ 27  1405/07/05 08:52:28  [dhcp,info]  dhcp1 assigned 172.28.23.10 to 60:CF:84:69:5C:5C
+ 28  1405/07/05 09:17:29  [dhcp,info]  dhcp1 deassigned 172.28.23.10 from 60:CF:84:69:5C:5C
+ 29  1405/07/05 12:07:26  [dhcp,info]  dhcp1 deassigned 172.28.23.13 from 18:C0:4D:11:17:DE
+ 30  1405/07/06 08:50:07  [dhcp,info]  dhcp1 assigned 172.28.23.10 to 60:CF:84:69:5C:5C
+ 31  1405/07/06 08:50:37  [dhcp,info]  dhcp1 assigned 172.28.23.13 to 18:C0:4D:11:17:DE
+ 32  1405/07/06 09:03:06  [dhcp,info]  dhcp1 assigned 172.28.23.11 to A0:36:BC:34:77:7F
+ 33  1405/07/06 09:15:07  [dhcp,info]  dhcp1 deassigned 172.28.23.10 from 60:CF:84:69:5C:5C
+ 34  1405/07/06 10:27:13  [dhcp,info]  dhcp1 assigned 172.28.23.10 to 60:CF:84:69:5C:5C
+ 35  1405/07/06 11:52:14  [dhcp,info]  dhcp1 deassigned 172.28.23.10 from 60:CF:84:69:5C:5C
+ 36  1405/07/06 12:03:07  [dhcp,info]  dhcp1 deassigned 172.28.23.11 from A0:36:BC:34:77:7F
+ 37  1405/07/06 12:05:37  [dhcp,info]  dhcp1 deassigned 172.28.23.13 from 18:C0:4D:11:17:DE
+ 38  1405/07/06 21:13:11  [wireless,info]  6C:3B:6B:94:E8:4B@wlan1: lost connection, extensive data loss
+ 39  1405/07/06 21:24:29  [wireless,info]  6C:3B:6B:94:E8:4B@wlan1 established connection on 5660000, SSID Khoramshahr-Shabakeh2
+ 40  1405/07/07 08:21:26  [dhcp,info]  dhcp1 assigned 172.28.23.10 to 60:CF:84:69:5C:5C
+ 41  1405/07/07 08:25:57  [dhcp,info]  dhcp1 assigned 172.28.23.11 to A0:36:BC:34:77:7F
+ 42  1405/07/07 09:25:57  [dhcp,info]  dhcp1 deassigned 172.28.23.11 from A0:36:BC:34:77:7F
+ 43  1405/07/07 10:17:32  [dhcp,info]  dhcp1 assigned 172.28.23.11 to A0:36:BC:34:77:7F
+ 44  1405/07/07 11:02:32  [dhcp,info]  dhcp1 deassigned 172.28.23.11 from A0:36:BC:34:77:7F
+ 45  1405/07/07 11:46:52  [dhcp,info]  dhcp1 deassigned 172.28.23.10 from 60:CF:84:69:5C:5C
+ 46  1405/07/09 08:43:23  [dhcp,info]  dhcp1 assigned 172.28.23.13 to 18:C0:4D:11:17:DE
+ 47  1405/07/09 08:43:46  [dhcp,info]  dhcp1 assigned 172.28.23.10 to 60:CF:84:69:5C:5C
+ 48  1405/07/09 09:08:46  [dhcp,info]  dhcp1 deassigned 172.28.23.10 from 60:CF:84:69:5C:5C
+ 49  1405/07/09 11:43:23  [dhcp,info]  dhcp1 deassigned 172.28.23.13 from 18:C0:4D:11:17:DE
+ 50  1405/07/11 08:20:26  [dhcp,info]  dhcp1 assigned 172.28.23.11 to A0:36:BC:34:77:7F
+ 51  1405/07/11 08:22:41  [dhcp,info]  dhcp1 assigned 172.28.23.13 to 18:C0:4D:11:17:DE
+ 52  1405/07/11 11:01:51  [dhcp,info]  dhcp1 assigned 172.28.23.10 to 60:CF:84:69:5C:5C
+ 53  1405/07/11 12:11:51  [dhcp,info]  dhcp1 deassigned 172.28.23.10 from 60:CF:84:69:5C:5C
+ 54  1405/07/11 12:17:42  [dhcp,info]  dhcp1 deassigned 172.28.23.13 from 18:C0:4D:11:17:DE
+ 55  1405/07/11 12:35:25  [dhcp,info]  dhcp1 deassigned 172.28.23.11 from A0:36:BC:34:77:7F
+ 56  1405/07/12 08:55:33  [dhcp,info]  dhcp1 assigned 172.28.23.13 to 18:C0:4D:11:17:DE
+ 57  1405/07/12 08:59:50  [dhcp,info]  dhcp1 assigned 172.28.23.11 to A0:36:BC:34:77:7F
+ 58  1405/07/12 09:49:13  [dhcp,info]  dhcp1 assigned 172.28.23.10 to 60:CF:84:69:5C:5C
+ 59  1405/07/12 10:44:13  [dhcp,info]  dhcp1 deassigned 172.28.23.10 from 60:CF:84:69:5C:5C
+ 60  1405/07/12 12:25:34  [dhcp,info]  dhcp1 deassigned 172.28.23.13 from 18:C0:4D:11:17:DE
+ 61  1405/07/12 12:34:51  [dhcp,info]  dhcp1 deassigned 172.28.23.11 from A0:36:BC:34:77:7F
+ 62  1405/07/13 08:31:59  [dhcp,info]  dhcp1 assigned 172.28.23.11 to A0:36:BC:34:77:7F
+ 63  1405/07/13 08:45:11  [dhcp,info]  dhcp1 assigned 172.28.23.13 to 18:C0:4D:11:17:DE
+ 64  1405/07/13 12:15:13  [dhcp,info]  dhcp1 deassigned 172.28.23.13 from 18:C0:4D:11:17:DE
+ 65  1405/07/13 12:32:53  [dhcp,info]  dhcp1 deassigned 172.28.23.11 from A0:36:BC:34:77:7F
+ 66  1405/07/14 08:15:56  [dhcp,info]  dhcp1 assigned 172.28.23.11 to A0:36:BC:34:77:7F
+ 67  1405/07/14 08:25:49  [dhcp,info]  dhcp1 assigned 172.28.23.13 to 18:C0:4D:11:17:DE
+ 68  1405/07/14 11:45:49  [dhcp,info]  dhcp1 deassigned 172.28.23.13 from 18:C0:4D:11:17:DE
+ 69  1405/07/14 12:30:56  [dhcp,info]  dhcp1 deassigned 172.28.23.11 from A0:36:BC:34:77:7F
+ 70  1405/07/15 08:41:52  [dhcp,info]  dhcp1 assigned 172.28.23.13 to 18:C0:4D:11:17:DE
+ 71  1405/07/15 10:03:26  [dhcp,info]  dhcp1 assigned 172.28.23.11 to A0:36:BC:34:77:7F
+ 72  1405/07/15 10:48:27  [dhcp,info]  dhcp1 deassigned 172.28.23.11 from A0:36:BC:34:77:7F
+ 73  1405/07/15 11:10:45  [dhcp,info]  dhcp1 assigned 172.28.23.11 to A0:36:BC:34:77:7F
+ 74  1405/07/15 11:50:46  [dhcp,info]  dhcp1 deassigned 172.28.23.11 from A0:36:BC:34:77:7F
+ 75  1405/07/15 12:41:54  [dhcp,info]  dhcp1 deassigned 172.28.23.13 from 18:C0:4D:11:17:DE
+ 76  1405/07/16 08:53:11  [dhcp,info]  dhcp1 assigned 172.28.23.13 to 18:C0:4D:11:17:DE
+ 77  1405/07/16 12:03:12  [dhcp,info]  dhcp1 deassigned 172.28.23.13 from 18:C0:4D:11:17:DE
+ 78  1405/07/16 13:47:59  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 79  1405/07/16 13:48:00  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 80  1405/07/16 14:05:59  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 81  1405/07/16 14:05:59  [system,info]  changed snmp settings by garnaf
+ 82  1405/07/16 14:05:59  [system,info]  item changed by garnaf
+ 83  1405/07/16 14:05:59  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 84  1405/07/16 14:27:08  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 85  1405/07/16 14:27:09  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 86  1405/07/16 15:38:02  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 87  1405/07/16 15:38:03  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 88  1405/07/18 08:39:03  [dhcp,info]  dhcp1 assigned 172.28.23.11 to A0:36:BC:34:77:7F
+ 89  1405/07/18 08:53:17  [dhcp,info]  dhcp1 assigned 172.28.23.13 to 18:C0:4D:11:17:DE
+ 90  1405/07/18 09:58:38  [dhcp,info]  dhcp1 assigned 172.28.23.10 to 60:CF:84:69:5C:5C
+ 91  1405/07/18 10:03:53  [dhcp,info]  dhcp1 deassigned 172.28.23.10 from 60:CF:84:69:5C:5C
+ 92  1405/07/18 10:03:53  [dhcp,info]  dhcp1 assigned 172.28.23.10 to 60:CF:84:69:5C:5C
+ 93  1405/07/18 10:27:38  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 94  1405/07/18 10:27:39  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 95  1405/07/18 10:51:57  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 96  1405/07/18 10:51:58  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 97  1405/07/18 12:06:50  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 98  1405/07/18 12:06:50  [system,info]  user olom1 added by garnaf
+ 99  1405/07/18 12:06:50  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+100  1405/07/18 12:18:53  [dhcp,info]  dhcp1 deassigned 172.28.23.10 from 60:CF:84:69:5C:5C
+101  1405/07/18 12:33:20  [dhcp,info]  dhcp1 deassigned 172.28.23.13 from 18:C0:4D:11:17:DE
+102  1405/07/18 12:33:56  [dhcp,info]  dhcp1 deassigned 172.28.23.11 from A0:36:BC:34:77:7F
+103  1405/07/19 06:50:37  [wireless,info]  6C:3B:6B:94:E8:4B@wlan1: lost connection, no beacons received
+104  1405/07/19 08:40:13  [dhcp,info]  dhcp1 assigned 172.28.23.11 to A0:36:BC:34:77:7F
+105  1405/07/19 08:42:53  [wireless,info]  6C:3B:6B:94:E8:4B@wlan1 established connection on 5660000, SSID Khoramshahr-Shabakeh2
+106  1405/07/19 08:50:46  [dhcp,info]  dhcp1 assigned 172.28.23.13 to 18:C0:4D:11:17:DE
+107  1405/07/19 09:32:28  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+108  1405/07/19 09:32:30  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+109  1405/07/19 09:48:19  [dhcp,info]  dhcp1 assigned 172.28.23.10 to 60:CF:84:69:5C:5C
+110  1405/07/19 10:08:19  [dhcp,info]  dhcp1 deassigned 172.28.23.10 from 60:CF:84:69:5C:5C
+111  1405/07/19 12:20:46  [dhcp,info]  dhcp1 deassigned 172.28.23.13 from 18:C0:4D:11:17:DE
+112  1405/07/19 12:35:12  [dhcp,info]  dhcp1 deassigned 172.28.23.11 from A0:36:BC:34:77:7F
+113  1405/07/19 17:41:03  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+114  1405/07/19 17:41:03  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+115  1405/07/20 08:38:44  [dhcp,info]  dhcp1 assigned 172.28.23.11 to A0:36:BC:34:77:7F
+116  1405/07/20 10:53:44  [dhcp,info]  dhcp1 deassigned 172.28.23.11 from A0:36:BC:34:77:7F
+117  1405/07/21 08:31:39  [dhcp,info]  dhcp1 assigned 172.28.23.11 to A0:36:BC:34:77:7F
+118  1405/07/21 08:45:05  [dhcp,info]  dhcp1 assigned 172.28.23.13 to 18:C0:4D:11:17:DE
+119  1405/07/21 08:51:39  [dhcp,info]  dhcp1 deassigned 172.28.23.11 from A0:36:BC:34:77:7F
+120  1405/07/21 09:01:27  [dhcp,info]  dhcp1 assigned 172.28.23.11 to A0:36:BC:34:77:7F
+121  1405/07/21 10:54:17  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+122  1405/07/21 10:54:19  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+123  1405/07/21 11:50:05  [dhcp,info]  dhcp1 deassigned 172.28.23.13 from 18:C0:4D:11:17:DE
+124  1405/07/21 12:31:54  [dhcp,info]  dhcp1 deassigned 172.28.23.11 from A0:36:BC:34:77:7F
+125  1405/07/22 13:12:54  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  2C:C8:1B:42:EB:55  (ether)
+wlan1  2C:C8:1B:42:EB:56  (wlan)
+bridge1  2C:C8:1B:42:EB:55  (bridge)
+--- /ip arp ---
+bridge1  4C:5E:0C:9B:0E:78  (arp 172.18.16.17)

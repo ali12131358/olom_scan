@@ -1,0 +1,54 @@
+IP: 172.18.9.84
+Collected at: 2026-10-14T10:24:40.462296+00:00
+source: RouterOS API
+identity: EmamHassnAskari.Client
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=6C:3B:6B:74:E1:E1
+  2  name=wlan1  type=wlan  running=true  mac=6C:3B:6B:74:E1:E2
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=Abadan-Khezr5  band=5ghz-a/n  frequency=5280
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.9.84/28  interface=wlan1  network=172.18.9.80
+  2  address=172.29.70.65/27  interface=ether1  network=172.29.70.64
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.9.81  distance=1
+  2  dst=172.18.9.80/28  gw=wlan1  distance=0
+  3  dst=172.29.70.64/27  gw=ether1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=KhezrNabi-MK  address=172.18.9.81  interface=wlan1
+  2  identity=Abadan-Khezr5  address=172.18.9.82  interface=wlan1
+  3  identity=Savamer.Client  address=172.18.9.85  interface=wlan1
+  4  identity=NaghshehHir.Client  address=172.18.9.99  interface=wlan1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:38:22
+# ساعت دستگاه (خام): 1974-08-21 04:58:13
+# افست اصلاحی (سرور − دستگاه): +457133:10:09
+  1  1405/07/21 16:21:57  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/21 16:22:04  [wireless,info]  6C:3B:6B:AB:D2:9C@wlan1 established connection on 5700000, SSID Abadan-Khezr5
+  3  1405/07/21 16:22:07  [interface,info]  ether1 link up (speed 100M, full duplex)
+  4  1405/07/22 07:48:25  [dhcp,info]  dhcp1 assigned 172.29.70.90 to 1C:1B:0D:3D:A4:5E
+  5  1405/07/22 08:13:24  [dhcp,info]  dhcp1 deassigned 172.29.70.90 from 1C:1B:0D:3D:A4:5E
+  6  1405/07/22 09:29:51  [dhcp,info]  dhcp1 assigned 172.29.70.90 to 1C:1B:0D:3D:A4:5E
+  7  1405/07/22 10:44:51  [dhcp,info]  dhcp1 deassigned 172.29.70.90 from 1C:1B:0D:3D:A4:5E
+  8  1405/07/22 11:03:07  [dhcp,info]  dhcp1 assigned 172.29.70.90 to 1C:1B:0D:3D:A4:5E
+  9  1405/07/22 11:18:06  [dhcp,info]  dhcp1 deassigned 172.29.70.90 from 1C:1B:0D:3D:A4:5E
+ 10  1405/07/22 13:38:20  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  6C:3B:6B:74:E1:E1  (ether)
+wlan1  6C:3B:6B:74:E1:E2  (wlan)
+--- /ip arp ---
+wlan1  6C:3B:6B:85:AC:9F  (arp 172.18.9.81)

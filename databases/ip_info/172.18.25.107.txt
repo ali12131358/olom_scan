@@ -1,0 +1,46 @@
+IP: 172.18.25.107
+Collected at: 2026-10-14T10:23:16.229816+00:00
+source: RouterOS API
+identity: Farhani.Client
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=E4:8D:8C:61:6E:2C
+  2  name=wlan1  type=wlan  running=true  mac=E4:8D:8C:61:6E:2D
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=Shadegan-Ghatrani2  band=5ghz-a/n  frequency=5560
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.25.107/29  interface=wlan1  network=172.18.25.104
+  2  address=172.29.202.97/27  interface=ether1  network=172.29.202.96
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.25.105  distance=1
+  2  dst=172.18.25.104/29  gw=wlan1  distance=0
+  3  dst=172.29.202.96/27  gw=ether1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=MK-Ghatrani  address=172.18.25.105  interface=wlan1
+  2  identity=Shadegan-Ghatrani2_AP  address=172.18.25.106  interface=wlan1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:21:27
+# ساعت دستگاه (خام): 2022-09-19 14:54:24
+# افست اصلاحی (سرور − دستگاه): +35658:57:03
+  1  1405/07/22 11:03:07  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/22 11:03:09  [interface,info]  ether1 link up (speed 100M, full duplex)
+  3  1405/07/22 11:03:13  [wireless,info]  64:D1:54:A7:E5:DD@wlan1 established connection on 5500000, SSID Shadegan-Ghatrani2
+  4  1405/07/22 13:21:26  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  E4:8D:8C:61:6E:2C  (ether)
+wlan1  E4:8D:8C:61:6E:2D  (wlan)
+--- /ip arp ---
+wlan1  CC:2D:E0:6C:A2:6C  (arp 172.18.25.105)

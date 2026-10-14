@@ -1,0 +1,70 @@
+IP: 172.18.24.138
+Collected at: 2026-10-14T10:23:05.272470+00:00
+source: RouterOS API
+identity: MK_Behdasht_Abshar_138
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=18:FD:74:BA:03:EA
+  2  name=wlan1  type=wlan  running=false  mac=18:FD:74:BA:03:EB
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station  ssid=MikroTik  band=5ghz-a  frequency=5180
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.24.138/29  interface=ether1  network=172.18.24.136
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.24.137  distance=1
+  2  dst=172.18.24.136/29  gw=ether1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=RB-ABSHAR  address=172.18.24.137  interface=ether1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:18:40
+# ساعت دستگاه (خام): 1972-09-10 15:02:01
+# افست اصلاحی (سرور − دستگاه): +474162:46:39
+  1  1405/06/17 15:00:14  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/06/17 15:00:24  [interface,info]  ether1 link up (speed 1G, full duplex)
+  3  1405/06/23 00:20:23  [wireless,info]  04:F4:1C:CF:C6:6D@wlan1: failed to connect, on 5180/20/a, authentication timeout
+  4  1405/07/16 13:50:15  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+  5  1405/07/16 13:50:16  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+  6  1405/07/16 14:06:49  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+  7  1405/07/16 14:06:49  [system,info]  changed snmp settings by garnaf
+  8  1405/07/16 14:06:49  [system,info]  item changed by garnaf
+  9  1405/07/16 14:06:49  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 10  1405/07/16 14:29:23  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 11  1405/07/16 14:29:24  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 12  1405/07/16 15:40:26  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 13  1405/07/16 15:40:27  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 14  1405/07/17 08:32:06  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 15  1405/07/17 08:32:07  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 16  1405/07/18 09:56:05  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 17  1405/07/18 09:56:06  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 18  1405/07/18 10:30:15  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 19  1405/07/18 10:30:16  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 20  1405/07/18 10:54:21  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 21  1405/07/18 10:54:22  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 22  1405/07/18 12:07:35  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 23  1405/07/18 12:07:35  [system,info]  user olom1 added by garnaf
+ 24  1405/07/18 12:07:35  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 25  1405/07/19 09:38:37  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 26  1405/07/19 09:38:38  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 27  1405/07/19 17:42:04  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+ 28  1405/07/19 17:42:04  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+ 29  1405/07/21 11:01:30  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 30  1405/07/21 11:01:32  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 31  1405/07/22 13:18:39  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  18:FD:74:BA:03:EA  (ether)
+wlan1  18:FD:74:BA:03:EB  (wlan)
+--- /ip arp ---
+ether1  4C:5E:0C:9B:0F:07  (arp 172.18.24.137)

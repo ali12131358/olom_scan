@@ -1,0 +1,74 @@
+IP: 172.18.4.34
+Collected at: 2026-10-14T10:24:04.526199+00:00
+source: RouterOS API
+identity: Tongeh3.Ap
+device_type: AP
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=64:D1:54:08:D0:54
+  2  name=wlan1  type=wlan  running=true  mac=64:D1:54:08:D0:55
+  3  name=bridge1  type=bridge  running=true  mac=64:D1:54:08:D0:54
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=bridge  ssid=Foriat-Tongeh  band=5ghz-a/n  frequency=5720
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.4.34/29  interface=ether1  network=172.18.4.32
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.4.33  distance=1
+  2  dst=172.18.4.32/29  gw=bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=KhezrNabi-MK  address=172.18.4.33  interface=ether1,bridge1
+  2  identity=Tange 3.Client  address=172.29.68.33  interface=wlan1,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/22 13:31:50
+# ساعت دستگاه (خام): 1975-03-08 09:50:37
+# افست اصلاحی (سرور − دستگاه): +452352:11:13
+  1  1405/07/21 09:41:38  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/21 09:41:39  [bridge,info]  "bridge1" mac address changed to 64:D1:54:08:D0:54
+  3  1405/07/21 09:41:41  [interface,info]  ether1 link up (speed 1G, full duplex)
+  4  1405/07/21 09:41:44  [interface,info]  ether1 link down
+  5  1405/07/21 09:41:48  [interface,info]  ether1 link up (speed 1G, full duplex)
+  6  1405/07/21 09:42:19  [wireless,info]  6C:3B:6B:97:E7:DF@wlan1: reconnecting
+  7  1405/07/21 09:42:19  [wireless,info]  6C:3B:6B:97:E7:DF@wlan1: connected, signal strength -66
+  8  1405/07/21 20:53:45  [wireless,info]  6C:3B:6B:97:E7:DF@wlan1: disconnected, not responding
+  9  1405/07/21 20:55:28  [wireless,info]  6C:3B:6B:97:E7:DF@wlan1: connected, signal strength -70
+ 10  1405/07/21 21:51:38  [wireless,info]  6C:3B:6B:97:E7:DF@wlan1: disconnected, not responding
+ 11  1405/07/21 21:57:47  [wireless,info]  6C:3B:6B:97:E7:DF@wlan1: reconnecting
+ 12  1405/07/21 21:57:47  [wireless,info]  6C:3B:6B:97:E7:DF@wlan1: connected, signal strength -86
+ 13  1405/07/22 04:12:59  [wireless,info]  6C:3B:6B:97:E7:DF@wlan1: disconnected, not responding
+ 14  1405/07/22 04:14:41  [wireless,info]  6C:3B:6B:97:E7:DF@wlan1: connected, signal strength -80
+ 15  1405/07/22 04:47:47  [wireless,info]  6C:3B:6B:97:E7:DF@wlan1: disconnected, not responding
+ 16  1405/07/22 04:48:39  [wireless,info]  6C:3B:6B:97:E7:DF@wlan1: connected, signal strength -88
+ 17  1405/07/22 04:49:23  [wireless,info]  6C:3B:6B:97:E7:DF@wlan1: disconnected, not responding
+ 18  1405/07/22 04:51:03  [wireless,info]  6C:3B:6B:97:E7:DF@wlan1: connected, signal strength -84
+ 19  1405/07/22 05:03:01  [wireless,info]  6C:3B:6B:97:E7:DF@wlan1: disconnected, not responding
+ 20  1405/07/22 05:06:30  [wireless,info]  6C:3B:6B:97:E7:DF@wlan1: connected, signal strength -90
+ 21  1405/07/22 05:06:54  [wireless,info]  6C:3B:6B:97:E7:DF@wlan1: disconnected, not responding
+ 22  1405/07/22 05:12:03  [wireless,info]  6C:3B:6B:97:E7:DF@wlan1: connected, signal strength -80
+ 23  1405/07/22 05:16:41  [wireless,info]  6C:3B:6B:97:E7:DF@wlan1: disconnected, not responding
+ 24  1405/07/22 05:21:02  [wireless,info]  6C:3B:6B:97:E7:DF@wlan1: connected, signal strength -82
+ 25  1405/07/22 06:17:06  [wireless,info]  6C:3B:6B:97:E7:DF@wlan1: disconnected, not responding
+ 26  1405/07/22 06:19:37  [wireless,info]  6C:3B:6B:97:E7:DF@wlan1: connected, signal strength -86
+ 27  1405/07/22 06:26:59  [wireless,info]  6C:3B:6B:97:E7:DF@wlan1: disconnected, not responding
+ 28  1405/07/22 06:27:57  [wireless,info]  6C:3B:6B:97:E7:DF@wlan1: reconnecting
+ 29  1405/07/22 06:29:50  [wireless,info]  6C:3B:6B:97:E7:DF@wlan1: reconnecting
+ 30  1405/07/22 06:29:50  [wireless,info]  6C:3B:6B:97:E7:DF@wlan1: reconnecting
+ 31  1405/07/22 06:29:51  [wireless,info]  6C:3B:6B:97:E7:DF@wlan1: connected, signal strength -90
+ 32  1405/07/22 13:31:49  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  64:D1:54:08:D0:54  (ether)
+wlan1  64:D1:54:08:D0:55  (wlan)
+bridge1  64:D1:54:08:D0:54  (bridge)
+--- /ip arp ---
+bridge1  6C:3B:6B:85:AC:A0  (arp 172.18.4.33)
