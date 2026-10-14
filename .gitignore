@@ -1,7 +1,25 @@
-.olom_net_scan/Lib/
-.olom_net_scan/Scripts/
-.olom_net_scan/Include/
-.olom_net_scan/pyvenv.cfg
-**/node_modules/
-**/__pycache__/
-.idea/
+# دیتابیس‌ها
+*.db
+*.sqlite3
+databases/
+
+# فایل‌های تنظیمات حساس و رمزها
+smtp_config.json
+vpn_profiles.json
+snmp_profiles.json
+ip_*.txt
+*.env
+.env
+
+# فایل‌های باینری و کش پایتون
+__pycache__/
+*.pyc
+*.pyo
+venv/
+.venv/
+
+# فرانت‌اند: بیلد و کتابخانه‌ها
+node_modules/
+frontend/dist/
+*.zip
+*.log
