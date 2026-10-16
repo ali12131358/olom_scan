@@ -1149,6 +1149,39 @@ class PushConfigRequest(BaseModel):
 
 
 
+
+
+class DeviceRscExportRequest(BaseModel):
+    username: str = Field(min_length=1, max_length=128)
+    password: str = Field(default="", max_length=128)
+    port: int = Field(default=8728, ge=1, le=65535)
+    timeout: float = Field(default=20.0, ge=2.0, le=60.0)
+
+
+@app.post("/api/devices/{ip}/export-backup")
+def export_device_backup(ip: str, body: DeviceRscExportRequest):
+    """Download a regular RouterOS text export as an identity-named .rsc file."""
+    try:
+        result = routeros_api.export_device_rsc(
+            ip,
+            username=body.username,
+            password=body.password or "",
+            port=body.port,
+            timeout=body.timeout,
+        )
+    except Exception as exc:
+        raise HTTPException(502, f"دریافت بکاپ RSC از {ip} ناموفق بود: {str(exc)[:400]}") from exc
+
+    identity = (result.get("identity") or ip).strip()
+    safe_name = _re.sub(r'[<>:"/\\\\|?*\\x00-\\x1f]', "_", identity).strip(" .") or ip
+    filename = safe_name[:120] + ".rsc"
+    return Response(
+        content=result["content"],
+        media_type="text/plain; charset=utf-8",
+        headers={"Content-Disposition": f'attachment; filename="{filename}"'},
+    )
+
+
 class ApiProbeRequest(BaseModel):
     ips: list[str] = Field(min_length=1, max_length=1000)
     username: str = Field(min_length=1, max_length=128)
