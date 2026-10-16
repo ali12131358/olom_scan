@@ -1,12 +1,22 @@
-# Backup feature
+# قابلیت Backup (.rsc)
 
-See artifacts for full patched files. The file backend/routeros_api.py was accidentally overwritten with PLACEHOLDER and must be restored from the patch package.
+## بازیابی فوری backend/routeros_api.py
 
-Apply the files from the release or copy:
+این فایل به‌اشتباه با محتوای placeholder جایگزین شده بود.
+از تاریخچه Git بازیابی کنید:
+
+```bash
+git checkout 40c23821673292a6569f59df5cba10654511ae95 -- backend/routeros_api.py
+```
+
+سپس فایل‌های اصلاح‌شده را از پکیج patch جایگزین کنید:
 - backend/routeros_api.py
 - backend/db.py
 - backend/main.py
 - frontend/src.jsx
 - frontend/style.css
 
-After API probe (خواندن با API), each device stores device_backup (.rsc) and shows a Backup button next to Log.
+## رفتار جدید
+
+با «خواندن با API»، پیکربندی کامل دستگاه با `/export` گرفته می‌شود و در فیلد `device_backup` ذخیره می‌شود.
+دکمه **Backup** کنار **Log** متن `.rsc` را نشان می‌دهد و دکمه «دانلود .rsc» فایل را ذخیره می‌کند.
