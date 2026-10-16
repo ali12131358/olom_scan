@@ -1,5 +1,5 @@
 IP: 172.18.4.139
-Collected at: 2026-10-14T10:24:03.114252+00:00
+Collected at: 2026-10-15T10:09:28.253415+00:00
 source: RouterOS API
 identity: CL-PTP-SHALAMCHE-BK
 device_type: ST
@@ -30,8 +30,8 @@ name=wlan1  mode=station-bridge  ssid=PTP-SHALAMCHE-BK  band=5ghz-a/n  frequency
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:31:41
-# ساعت دستگاه (خام): 2026-10-06 22:29:12
+# زمان سرور هنگام خواندن: 1405/07/23 12:38:46
+# ساعت دستگاه (خام): 2026-10-07 21:36:17
 # افست اصلاحی (سرور − دستگاه): +179:32:29
   1  1405/06/14 21:03:26  [system,error,critical]  router was rebooted without proper shutdown
   2  1405/06/14 21:03:34  [wireless,info]  64:D1:54:95:F9:BA@wlan1 established connection on 5470000, SSID PTP-SHALAMCHE-BK
@@ -170,6 +170,11 @@ name=wlan1  mode=station-bridge  ssid=PTP-SHALAMCHE-BK  band=5ghz-a/n  frequency
 135  1405/07/21 11:12:46  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 136  1405/07/21 11:12:48  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
 137  1405/07/22 13:31:39  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+138  1405/07/22 13:31:42  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+139  1405/07/22 23:17:27  [wireless,info]  64:D1:54:95:F9:BA@wlan1: lost connection, control frame timeout
+140  1405/07/22 23:17:34  [wireless,info]  64:D1:54:95:F9:BA@wlan1: failed to connect, on 5470000, registration timeout
+141  1405/07/22 23:17:47  [wireless,info]  64:D1:54:95:F9:BA@wlan1 established connection on 5470000, SSID PTP-SHALAMCHE-BK
+142  1405/07/23 12:38:45  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===

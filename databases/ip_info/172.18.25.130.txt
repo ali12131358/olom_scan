@@ -1,5 +1,5 @@
 IP: 172.18.25.130
-Collected at: 2026-10-14T10:23:17.558707+00:00
+Collected at: 2026-10-15T10:08:28.568395+00:00
 source: RouterOS API
 identity: Shadegan-Abshar1
 device_type: AP
@@ -32,8 +32,8 @@ name=wlan1  mode=ap-bridge  ssid=Shadegan-Abshar1  band=5ghz-a/n  frequency=5765
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:22:00
-# ساعت دستگاه (خام): 2025-10-17 06:16:52
+# زمان سرور هنگام خواندن: 1405/07/23 12:29:42
+# ساعت دستگاه (خام): 2025-10-18 05:24:34
 # افست اصلاحی (سرور − دستگاه): +8691:35:08
   1  1405/06/17 16:00:16  [system,error,critical]  router was rebooted without proper shutdown
   2  1405/06/17 16:00:20  [bridge,info]  "bridge1" mac address changed to 6E:3B:6B:5D:72:4D
@@ -183,6 +183,8 @@ name=wlan1  mode=ap-bridge  ssid=Shadegan-Abshar1  band=5ghz-a/n  frequency=5765
 146  1405/07/22 11:46:03  [wireless,info]  6C:3B:6B:13:57:8D@wlan1: disconnected, not responding
 147  1405/07/22 12:23:48  [wireless,info]  6C:3B:6B:13:54:97@wlan1: disconnected, not responding
 148  1405/07/22 13:21:59  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+149  1405/07/22 13:22:01  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+150  1405/07/23 12:29:41  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===

@@ -1,5 +1,5 @@
 IP: 172.18.1.146
-Collected at: 2026-10-14T10:21:38.836512+00:00
+Collected at: 2026-10-15T10:07:04.786217+00:00
 source: RouterOS API
 identity: ptp-AP-moavenat-daneshjuei
 device_type: AP
@@ -30,8 +30,8 @@ name=wlan1  mode=bridge  ssid=PTP.AP.Mefda  band=5ghz-a/n  frequency=5240
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:11:14
-# ساعت دستگاه (خام): 1976-08-12 08:43:22
+# زمان سرور هنگام خواندن: 1405/07/23 12:19:24
+# ساعت دستگاه (خام): 1976-08-13 07:51:32
 # افست اصلاحی (سرور − دستگاه): +439800:57:52
   1  1405/07/08 09:30:25  [system,error,critical]  router was rebooted without proper shutdown
   2  1405/07/08 09:30:29  [bridge,info]  "bridge1" mac address changed to 6C:3B:6B:2C:6A:DB
@@ -65,6 +65,8 @@ name=wlan1  mode=bridge  ssid=PTP.AP.Mefda  band=5ghz-a/n  frequency=5240
  30  1405/07/21 10:52:07  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
  31  1405/07/21 10:52:08  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
  32  1405/07/22 13:11:13  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 33  1405/07/22 13:11:14  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 34  1405/07/23 12:19:23  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===

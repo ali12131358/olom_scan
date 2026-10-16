@@ -1,5 +1,5 @@
 IP: 172.18.8.115
-Collected at: 2026-10-14T10:24:11.928163+00:00
+Collected at: 2026-10-15T10:09:36.604013+00:00
 source: RouterOS API
 identity: Samadieh.Client
 device_type: ST
@@ -31,37 +31,13 @@ name=wlan1  mode=station  ssid=Abadan-Amoozesh1  band=5ghz-a/n  frequency=auto
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:32:50
-# ساعت دستگاه (خام): 1972-11-28 14:27:44
-# افست اصلاحی (سرور − دستگاه): +472267:35:06
-  1  1405/07/19 08:15:50  [system,error,critical]  router was rebooted without proper shutdown
-  2  1405/07/19 08:16:00  [interface,info]  ether1 link up (speed 100M, full duplex)
-  3  1405/07/19 08:16:49  [wireless,info]  6C:3B:6B:56:27:DF@wlan1 established connection on 5260000, SSID Abadan-Amoozesh1
-  4  1405/07/19 08:20:43  [dhcp,info]  dhcp1 assigned 172.29.64.221 to F8:75:A4:29:87:50
-  5  1405/07/19 08:32:52  [dhcp,info]  dhcp1 assigned 172.29.64.222 to B4:2E:99:4A:C0:9E
-  6  1405/07/19 09:52:20  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
-  7  1405/07/19 09:52:21  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
-  8  1405/07/19 10:04:58  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
-  9  1405/07/19 10:04:59  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
- 10  1405/07/19 12:12:51  [dhcp,info]  dhcp1 deassigned 172.29.64.222 from B4:2E:99:4A:C0:9E
- 11  1405/07/19 12:20:45  [dhcp,info]  dhcp1 deassigned 172.29.64.221 from F8:75:A4:29:87:50
- 12  1405/07/19 17:45:19  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
- 13  1405/07/19 17:45:19  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
- 14  1405/07/19 17:47:20  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
- 15  1405/07/19 17:47:20  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
- 16  1405/07/20 08:00:02  [dhcp,info]  dhcp1 assigned 172.29.64.222 to B4:2E:99:4A:C0:9E
- 17  1405/07/20 10:05:02  [dhcp,info]  dhcp1 deassigned 172.29.64.222 from B4:2E:99:4A:C0:9E
- 18  1405/07/21 07:35:19  [dhcp,info]  dhcp1 assigned 172.29.64.222 to B4:2E:99:4A:C0:9E
- 19  1405/07/21 08:14:14  [dhcp,info]  dhcp1 assigned 172.29.64.221 to F8:75:A4:29:87:50
- 20  1405/07/21 11:13:35  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
- 21  1405/07/21 11:13:37  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
- 22  1405/07/21 11:22:39  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
- 23  1405/07/21 11:22:41  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
- 24  1405/07/21 13:00:22  [dhcp,info]  dhcp1 deassigned 172.29.64.221 from F8:75:A4:29:87:50
- 25  1405/07/21 13:45:18  [dhcp,info]  dhcp1 deassigned 172.29.64.222 from B4:2E:99:4A:C0:9E
- 26  1405/07/21 14:07:26  [wireless,info]  6C:3B:6B:56:27:DF@wlan1: lost connection, not polled for too long
- 27  1405/07/21 14:08:22  [wireless,info]  6C:3B:6B:56:27:DF@wlan1 established connection on 5260000, SSID Abadan-Amoozesh1
- 28  1405/07/22 13:32:48  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+# زمان سرور هنگام خواندن: 1405/07/23 12:39:41
+# ساعت دستگاه (خام): 1972-11-28 13:39:53
+# افست اصلاحی (سرور − دستگاه): +472291:29:48
+  1  1405/07/23 08:10:33  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/23 08:10:42  [interface,info]  ether1 link up (speed 100M, full duplex)
+  3  1405/07/23 08:11:32  [wireless,info]  6C:3B:6B:56:27:DF@wlan1 established connection on 5260000, SSID Abadan-Amoozesh1
+  4  1405/07/23 12:39:40  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===

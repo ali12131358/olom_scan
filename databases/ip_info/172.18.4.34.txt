@@ -1,5 +1,5 @@
 IP: 172.18.4.34
-Collected at: 2026-10-14T10:24:04.526199+00:00
+Collected at: 2026-10-15T10:09:30.473902+00:00
 source: RouterOS API
 identity: Tongeh3.Ap
 device_type: AP
@@ -29,8 +29,8 @@ name=wlan1  mode=bridge  ssid=Foriat-Tongeh  band=5ghz-a/n  frequency=5720
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:31:50
-# ساعت دستگاه (خام): 1975-03-08 09:50:37
+# زمان سرور هنگام خواندن: 1405/07/23 12:38:53
+# ساعت دستگاه (خام): 1975-03-09 08:57:40
 # افست اصلاحی (سرور − دستگاه): +452352:11:13
   1  1405/07/21 09:41:38  [system,error,critical]  router was rebooted without proper shutdown
   2  1405/07/21 09:41:39  [bridge,info]  "bridge1" mac address changed to 64:D1:54:08:D0:54
@@ -64,6 +64,12 @@ name=wlan1  mode=bridge  ssid=Foriat-Tongeh  band=5ghz-a/n  frequency=5720
  30  1405/07/22 06:29:50  [wireless,info]  6C:3B:6B:97:E7:DF@wlan1: reconnecting
  31  1405/07/22 06:29:51  [wireless,info]  6C:3B:6B:97:E7:DF@wlan1: connected, signal strength -90
  32  1405/07/22 13:31:49  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 33  1405/07/22 13:31:50  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 34  1405/07/22 19:43:52  [wireless,info]  6C:3B:6B:97:E7:DF@wlan1: disconnected, not responding
+ 35  1405/07/22 19:44:49  [wireless,info]  6C:3B:6B:97:E7:DF@wlan1: connected, signal strength -76
+ 36  1405/07/23 05:19:29  [wireless,info]  6C:3B:6B:97:E7:DF@wlan1: disconnected, not responding
+ 37  1405/07/23 05:20:26  [wireless,info]  6C:3B:6B:97:E7:DF@wlan1: connected, signal strength -76
+ 38  1405/07/23 12:38:52  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===

@@ -1,5 +1,5 @@
 IP: 172.18.1.94
-Collected at: 2026-10-14T10:22:27.869389+00:00
+Collected at: 2026-10-15T10:07:25.108844+00:00
 source: RouterOS API
 identity: R1MB
 device_type: Router
@@ -42,8 +42,8 @@ device_type: Router
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:12:41
-# ساعت دستگاه (خام): 1975-03-05 21:00:08
+# زمان سرور هنگام خواندن: 1405/07/23 12:20:53
+# ساعت دستگاه (خام): 1975-03-06 20:08:20
 # افست اصلاحی (سرور − دستگاه): +452412:42:33
   1  1405/06/18 14:03:37  [system,error,critical]  router was rebooted without proper shutdown
   2  1405/06/18 14:03:46  [bridge,info]  "bridge1" mac address changed to 4C:5E:0C:E5:43:9F
@@ -103,6 +103,12 @@ device_type: Router
  56  1405/07/22 13:11:03  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
  57  1405/07/22 13:11:04  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
  58  1405/07/22 13:12:40  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 59  1405/07/22 13:12:42  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 60  1405/07/23 12:01:01  [system,info,account]  user garnaf logged in from 172.18.4.76 via winbox
+ 61  1405/07/23 12:01:05  [system,info,account]  user garnaf logged out from 172.18.4.76 via winbox
+ 62  1405/07/23 12:19:15  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 63  1405/07/23 12:19:16  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 64  1405/07/23 12:20:52  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===

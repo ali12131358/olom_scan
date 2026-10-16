@@ -1,5 +1,5 @@
 IP: 172.18.26.51
-Collected at: 2026-10-14T10:23:38.935041+00:00
+Collected at: 2026-10-15T10:08:57.940088+00:00
 source: RouterOS API
 identity: markaz-kofeyshe
 device_type: ST
@@ -32,47 +32,25 @@ name=wlan1  mode=station-bridge  ssid=Shadegan-Darkhovein3  band=5ghz-a/n  frequ
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:27:18
-# ساعت دستگاه (خام): 1971-02-11 01:41:24
-# افست اصلاحی (سرور − دستگاه): +488024:15:54
-  1  1405/07/21 11:45:08  [system,error,critical]  router was rebooted without proper shutdown
-  2  1405/07/21 11:45:16  [wireless,info]  18:FD:74:18:BD:16@wlan1 established connection on 5720000, SSID Shadegan-Darkhovein3
-  3  1405/07/21 11:45:18  [interface,info]  ether1 link up (speed 100M, full duplex)
-  4  1405/07/21 11:45:51  [dhcp,info]  dhcp1 deassigned 172.29.208.230 from 1C:6F:65:AD:6E:EE
-  5  1405/07/21 11:45:51  [dhcp,info]  dhcp1 assigned 172.29.208.230 to 1C:6F:65:AD:6E:EE
-  6  1405/07/21 11:49:52  [dhcp,info]  dhcp1 deassigned 172.29.208.229 from 50:3E:AA:EE:0F:9D
-  7  1405/07/21 11:49:52  [dhcp,info]  dhcp1 assigned 172.29.208.229 to 50:3E:AA:EE:0F:9D
-  8  1405/07/21 11:51:12  [dhcp,info]  dhcp1 deassigned 172.29.208.213 from 40:8D:5C:9B:11:7E
-  9  1405/07/21 11:51:15  [dhcp,info]  dhcp1 deassigned 172.29.208.214 from EC:08:6B:A0:4F:FB
- 10  1405/07/21 11:51:45  [dhcp,info]  dhcp1 deassigned 172.29.208.211 from 50:3E:AA:56:AC:02
- 11  1405/07/21 11:53:31  [dhcp,info]  dhcp1 deassigned 172.29.208.228 from 94:DE:80:4A:2D:A2
- 12  1405/07/21 11:53:42  [dhcp,info]  dhcp1 deassigned 172.29.208.212 from C8:3A:35:C9:E3:14
- 13  1405/07/21 11:54:03  [dhcp,info]  dhcp1 deassigned 172.29.208.215 from 50:3E:AA:8A:8E:7F
- 14  1405/07/21 13:00:51  [dhcp,info]  dhcp1 deassigned 172.29.208.230 from 1C:6F:65:AD:6E:EE
- 15  1405/07/21 13:24:53  [dhcp,info]  dhcp1 deassigned 172.29.208.229 from 50:3E:AA:EE:0F:9D
- 16  1405/07/22 08:01:21  [dhcp,info]  dhcp1 assigned 172.29.208.229 to 50:3E:AA:EE:0F:9D
- 17  1405/07/22 08:06:32  [dhcp,info]  dhcp1 assigned 172.29.208.228 to 94:DE:80:4A:2D:A2
- 18  1405/07/22 09:01:31  [dhcp,info]  dhcp1 deassigned 172.29.208.228 from 94:DE:80:4A:2D:A2
- 19  1405/07/22 09:03:19  [dhcp,info]  dhcp1 assigned 172.29.208.228 to 94:DE:80:4A:2D:A2
- 20  1405/07/22 09:03:33  [dhcp,info]  dhcp1 assigned 172.29.208.213 to 40:8D:5C:9B:11:7E
- 21  1405/07/22 09:03:38  [dhcp,info]  dhcp1 assigned 172.29.208.214 to EC:08:6B:A0:4F:FB
- 22  1405/07/22 09:06:08  [dhcp,info]  dhcp1 assigned 172.29.208.210 to 50:3E:AA:E9:97:14
- 23  1405/07/22 09:06:19  [dhcp,info]  dhcp1 assigned 172.29.208.212 to C8:3A:35:C9:E3:14
- 24  1405/07/22 09:14:12  [dhcp,info]  dhcp1 assigned 172.29.208.230 to 1C:6F:65:AD:6E:EE
- 25  1405/07/22 09:42:49  [wireless,info]  18:FD:74:18:BD:16@wlan1: lost connection, no beacons received
- 26  1405/07/22 09:54:13  [wireless,info]  18:FD:74:18:BD:16@wlan1 established connection on 5720000, SSID Shadegan-Darkhovein3
- 27  1405/07/22 11:08:33  [dhcp,info]  dhcp1 deassigned 172.29.208.213 from 40:8D:5C:9B:11:7E
- 28  1405/07/22 11:08:38  [dhcp,info]  dhcp1 deassigned 172.29.208.214 from EC:08:6B:A0:4F:FB
- 29  1405/07/22 11:11:20  [dhcp,info]  dhcp1 deassigned 172.29.208.212 from C8:3A:35:C9:E3:14
- 30  1405/07/22 11:13:19  [dhcp,info]  dhcp1 deassigned 172.29.208.228 from 94:DE:80:4A:2D:A2
- 31  1405/07/22 13:12:40  [dhcp,info]  dhcp1 deassigned 172.29.208.210 from 50:3E:AA:E9:97:14
- 32  1405/07/22 13:16:22  [dhcp,info]  dhcp1 deassigned 172.29.208.229 from 50:3E:AA:EE:0F:9D
- 33  1405/07/22 13:27:16  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+# زمان سرور هنگام خواندن: 1405/07/23 12:34:34
+# ساعت دستگاه (خام): 1971-02-11 05:42:03
+# افست اصلاحی (سرور − دستگاه): +488043:22:31
+  1  1405/07/23 06:51:44  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/23 06:51:52  [wireless,info]  18:FD:74:18:BD:16@wlan1 established connection on 5720000, SSID Shadegan-Darkhovein3
+  3  1405/07/23 06:51:53  [interface,info]  ether1 link up (speed 100M, full duplex)
+  4  1405/07/23 07:42:53  [wireless,info]  18:FD:74:18:BD:16@wlan1: lost connection, no beacons received
+  5  1405/07/23 07:51:10  [wireless,info]  18:FD:74:18:BD:16@wlan1 established connection on 5720000, SSID Shadegan-Darkhovein3
+  6  1405/07/23 07:59:51  [dhcp,info]  dhcp1 assigned 172.29.208.254 to 50:3E:AA:EE:0F:9D
+  7  1405/07/23 08:13:06  [dhcp,info]  dhcp1 assigned 172.29.208.253 to 94:DE:80:4A:2D:A2
+  8  1405/07/23 08:58:06  [dhcp,info]  dhcp1 deassigned 172.29.208.253 from 94:DE:80:4A:2D:A2
+  9  1405/07/23 09:16:25  [dhcp,info]  dhcp1 assigned 172.29.208.252 to C8:3A:35:C9:E3:14
+ 10  1405/07/23 10:46:26  [dhcp,info]  dhcp1 deassigned 172.29.208.252 from C8:3A:35:C9:E3:14
+ 11  1405/07/23 10:54:52  [dhcp,info]  dhcp1 deassigned 172.29.208.254 from 50:3E:AA:EE:0F:9D
+ 12  1405/07/23 12:34:32  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===
 ether1  D4:01:C3:C5:3A:FE  (ether)
 wlan1  D4:01:C3:C5:3A:FF  (wlan)
 --- /ip arp ---
-ether1  1C:6F:65:AD:6E:EE  (arp 172.29.208.230)
 wlan1  E4:8D:8C:0D:18:BA  (arp 172.18.26.49)

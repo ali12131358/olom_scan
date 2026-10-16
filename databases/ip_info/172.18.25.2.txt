@@ -1,5 +1,5 @@
 IP: 172.18.25.2
-Collected at: 2026-10-14T10:23:22.127772+00:00
+Collected at: 2026-10-15T10:08:35.622124+00:00
 source: RouterOS API
 identity: Alvan->Soofieh.AP
 device_type: AP
@@ -30,8 +30,8 @@ name=wlan1  mode=ap-bridge  ssid=ALVNSFIH  band=5ghz-a/n  frequency=5560
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:23:49
-# ساعت دستگاه (خام): 2024-12-11 22:17:12
+# زمان سرور هنگام خواندن: 1405/07/23 12:31:18
+# ساعت دستگاه (خام): 2024-12-12 21:24:41
 # افست اصلاحی (سرور − دستگاه): +16115:36:37
   1  1405/07/17 14:06:32  [system,error,critical]  router was rebooted without proper shutdown
   2  1405/07/17 14:06:33  [bridge,info]  "bridge1" mac address changed to 6C:3B:6B:4D:A3:BD
@@ -94,6 +94,8 @@ name=wlan1  mode=ap-bridge  ssid=ALVNSFIH  band=5ghz-a/n  frequency=5560
  59  1405/07/22 11:13:21  [wireless,info]  6C:3B:6B:5D:71:59@wlan1: disconnected, control frame timeout
  60  1405/07/22 11:14:37  [wireless,info]  6C:3B:6B:5D:71:59@wlan1: connected, signal strength -56
  61  1405/07/22 13:23:47  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 62  1405/07/22 13:23:49  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 63  1405/07/23 12:31:17  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===

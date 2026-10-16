@@ -1,5 +1,5 @@
 IP: 172.18.2.58
-Collected at: 2026-10-14T10:22:57.270104+00:00
+Collected at: 2026-10-15T10:08:03.254421+00:00
 source: RouterOS API
 identity: ap-mk-emam-hossein
 device_type: AP
@@ -29,8 +29,8 @@ name=wlan1  mode=bridge  ssid=STEHSN  band=5ghz-a/n  frequency=5720
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:16:29
-# ساعت دستگاه (خام): 1972-02-02 12:03:22
+# زمان سرور هنگام خواندن: 1405/07/23 12:24:20
+# ساعت دستگاه (خام): 1972-02-03 11:11:13
 # افست اصلاحی (سرور − دستگاه): +479469:43:07
   1  1405/07/14 01:30:35  [system,error,critical]  router was rebooted without proper shutdown
   2  1405/07/14 01:30:37  [bridge,info]  "bridge1" mac address changed to E4:8D:8C:74:FD:81
@@ -88,6 +88,8 @@ name=wlan1  mode=bridge  ssid=STEHSN  band=5ghz-a/n  frequency=5720
  54  1405/07/21 10:59:45  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
  55  1405/07/21 10:59:47  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
  56  1405/07/22 13:16:28  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 57  1405/07/22 13:16:29  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 58  1405/07/23 12:24:19  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===

@@ -1,5 +1,5 @@
 IP: 172.18.25.113
-Collected at: 2026-10-14T10:23:16.658103+00:00
+Collected at: 2026-10-15T10:08:27.308549+00:00
 source: RouterOS API
 identity: MK-Ghatrani
 device_type: ST
@@ -48,17 +48,26 @@ name=wlan1  mode=station  ssid=MK-Ghatrani  band=2ghz-b/g  frequency=2412
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:21:32
-# ساعت دستگاه (خام): 1973-02-25 00:20:18
-# افست اصلاحی (سرور − دستگاه): +470145:31:14
-  1  1405/07/22 11:03:03  [system,error,critical]  router was rebooted without proper shutdown
-  2  1405/07/22 11:03:07  [interface,info]  ether1 - InPut link up (speed 100M, full duplex)
-  3  1405/07/22 11:03:07  [interface,info]  ether2 - Lan link up (speed 100M, full duplex)
-  4  1405/07/22 11:03:08  [interface,info]  ether4 - Ghatrani 2 link up (speed 100M, full duplex)
-  5  1405/07/22 11:03:13  [interface,info]  ether3 - Ghatrani 1 link up (speed 100M, full duplex)
-  6  1405/07/22 13:21:20  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
-  7  1405/07/22 13:21:21  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
-  8  1405/07/22 13:21:30  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+# زمان سرور هنگام خواندن: 1405/07/23 12:29:17
+# ساعت دستگاه (خام): 1973-02-25 23:28:04
+# افست اصلاحی (سرور − دستگاه): +470145:31:13
+  1  1405/07/22 11:03:02  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/22 11:03:06  [interface,info]  ether1 - InPut link up (speed 100M, full duplex)
+  3  1405/07/22 11:03:06  [interface,info]  ether2 - Lan link up (speed 100M, full duplex)
+  4  1405/07/22 11:03:07  [interface,info]  ether4 - Ghatrani 2 link up (speed 100M, full duplex)
+  5  1405/07/22 11:03:12  [interface,info]  ether3 - Ghatrani 1 link up (speed 100M, full duplex)
+  6  1405/07/22 13:21:19  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+  7  1405/07/22 13:21:20  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+  8  1405/07/22 13:21:29  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+  9  1405/07/22 13:21:31  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 10  1405/07/22 13:21:50  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 11  1405/07/22 13:21:52  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 12  1405/07/22 13:44:09  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 13  1405/07/22 13:44:11  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 14  1405/07/23 11:28:48  [dhcp,info]  dhcp1 deassigned 172.29.198.158 from 94:DE:80:4D:E5:28
+ 15  1405/07/23 12:29:08  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 16  1405/07/23 12:29:10  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 17  1405/07/23 12:29:15  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===
@@ -73,3 +82,4 @@ ether3 - Ghatrani 1  6C:3B:6B:4A:2C:BA  (arp 172.18.25.114)
 ether1 - InPut  48:8F:5A:8F:F1:46  (arp 172.18.25.10)
 ether4 - Ghatrani 2  64:D1:54:A7:E5:DC  (arp 172.18.25.106)
 ether4 - Ghatrani 2  E4:8D:8C:61:6E:2D  (arp 172.18.25.107)
+ether1 - InPut  6C:3B:6B:0C:28:87  (arp 172.18.25.9)

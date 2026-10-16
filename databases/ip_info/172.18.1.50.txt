@@ -1,5 +1,5 @@
 IP: 172.18.1.50
-Collected at: 2026-10-14T10:22:04.716866+00:00
+Collected at: 2026-10-15T10:07:11.787913+00:00
 source: RouterOS API
 identity: Setad-P2P-MKhoramshar.AP
 device_type: AP
@@ -30,8 +30,8 @@ name=wlan1  mode=bridge  ssid=MARKH  band=5ghz-a/n  frequency=6025
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:12:09
-# ساعت دستگاه (خام): 1977-11-09 22:09:18
+# زمان سرور هنگام خواندن: 1405/07/23 12:20:17
+# ساعت دستگاه (خام): 1977-11-10 21:17:26
 # افست اصلاحی (سرور − دستگاه): +428891:32:51
   1  1405/07/11 22:45:08  [system,error,critical]  System rebooted because of ping watchdog timeout
   2  1405/07/11 22:45:08  [system,info]  router rebooted
@@ -64,6 +64,8 @@ name=wlan1  mode=bridge  ssid=MARKH  band=5ghz-a/n  frequency=6025
  29  1405/07/21 10:53:31  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
  30  1405/07/21 10:53:33  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
  31  1405/07/22 13:12:08  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 32  1405/07/22 13:12:10  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 33  1405/07/23 12:20:16  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===

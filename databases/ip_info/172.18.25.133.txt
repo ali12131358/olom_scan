@@ -1,5 +1,5 @@
 IP: 172.18.25.133
-Collected at: 2026-10-14T10:23:17.789862+00:00
+Collected at: 2026-10-15T10:08:28.837575+00:00
 source: RouterOS API
 identity: NahrMozif.client
 device_type: ST
@@ -31,8 +31,8 @@ name=wlan1  mode=station-bridge  ssid=Shadegan-Abshar1  band=5ghz-a/n  frequency
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:22:16
-# ساعت دستگاه (خام): 2022-02-08 02:52:48
+# زمان سرور هنگام خواندن: 1405/07/23 12:29:56
+# ساعت دستگاه (خام): 2022-02-09 02:00:28
 # افست اصلاحی (سرور − دستگاه): +41022:59:28
   1  1405/06/17 14:56:02  [system,error,critical]  router was rebooted without proper shutdown
   2  1405/06/17 14:56:12  [interface,info]  ether1 link up (speed 100M, full duplex)
@@ -74,9 +74,11 @@ name=wlan1  mode=station-bridge  ssid=Shadegan-Abshar1  band=5ghz-a/n  frequency
  38  1405/07/19 09:41:35  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
  39  1405/07/19 17:42:51  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
  40  1405/07/19 17:42:51  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
- 41  1405/07/22 11:04:06  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
- 42  1405/07/22 11:04:09  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
- 43  1405/07/22 13:22:13  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 41  1405/07/21 11:04:06  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 42  1405/07/21 11:04:09  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 43  1405/07/23 13:22:13  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 44  1405/07/23 13:22:16  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 45  1405/07/23 12:29:55  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===

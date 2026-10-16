@@ -1,5 +1,5 @@
 IP: 172.18.2.20
-Collected at: 2026-10-14T10:22:51.958543+00:00
+Collected at: 2026-10-15T10:07:53.638973+00:00
 source: RouterOS API
 identity: Ghadr.Client
 device_type: ST
@@ -31,9 +31,9 @@ name=wlan1  mode=station  ssid=Abadan-Foriat4  band=5ghz-a/n  frequency=5520
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:15:23
-# ساعت دستگاه (خام): 2025-12-25 08:16:20
-# افست اصلاحی (سرور − دستگاه): +7033:29:03
+# زمان سرور هنگام خواندن: 1405/07/23 12:23:24
+# ساعت دستگاه (خام): 2025-12-26 07:24:22
+# افست اصلاحی (سرور − دستگاه): +7033:29:02
   1  2025-12-15 09:02:38  [system,error,critical]  router was rebooted without proper shutdown
   2  2025-12-15 09:02:39  [interface,info]  lo link up
   3  2025-12-15 09:02:46  [wireless,info]  B8:69:F4:6C:5A:54@wlan1 established connection on 5520000, SSID Abadan-Foriat4
@@ -179,6 +179,9 @@ name=wlan1  mode=station  ssid=Abadan-Foriat4  band=5ghz-a/n  frequency=5520
 143  2025-12-25 07:42:07  [dhcp,info]  dhcp1 deassigned 172.29.3.254 for EC:08:6B:A0:3B:B9 BP1032
 144  2025-12-25 08:14:56  [dhcp,info]  dhcp1 deassigned 172.29.3.241 for 18:D6:C7:C6:72:A5 BB1028
 145  2025-12-25 08:16:18  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+146  2025-12-25 08:16:20  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+147  2025-12-25 08:27:40  [dhcp,info]  dhcp1 deassigned 172.29.3.242 for EC:08:6B:A0:2F:7F Jokari-PC
+148  2025-12-26 07:24:20  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===

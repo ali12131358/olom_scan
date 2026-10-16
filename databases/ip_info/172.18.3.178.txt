@@ -1,5 +1,5 @@
 IP: 172.18.3.178
-Collected at: 2026-10-14T10:23:47.564826+00:00
+Collected at: 2026-10-15T10:09:10.645608+00:00
 source: RouterOS API
 identity: -
 device_type: Router

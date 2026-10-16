@@ -1,5 +1,5 @@
 IP: 172.18.25.81
-Collected at: 2026-10-14T10:23:30.881640+00:00
+Collected at: 2026-10-15T10:08:44.856316+00:00
 source: RouterOS API
 identity: MK_Soofieh
 device_type: Router
@@ -53,8 +53,8 @@ device_type: Router
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:25:53
-# ساعت دستگاه (خام): 1970-03-04 06:02:25
+# زمان سرور هنگام خواندن: 1405/07/23 12:33:15
+# ساعت دستگاه (خام): 1970-03-05 05:09:47
 # افست اصلاحی (سرور − دستگاه): +496275:53:28
   1  1405/07/22 11:13:42  [system,error,critical]  router was rebooted without proper shutdown
   2  1405/07/22 11:13:42  [bridge,info]  "bridge1" mac address changed to 6C:3B:6B:0C:28:92
@@ -95,6 +95,16 @@ device_type: Router
  37  1405/07/22 13:25:29  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
  38  1405/07/22 13:25:36  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
  39  1405/07/22 13:25:52  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 40  1405/07/22 13:25:53  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 41  1405/07/22 15:52:45  [system,info,account]  user garnaf logged in from 172.18.4.76 via winbox
+ 42  1405/07/22 15:52:49  [system,info,account]  user garnaf logged out from 172.18.4.76 via winbox
+ 43  1405/07/23 12:32:41  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 44  1405/07/23 12:32:43  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 45  1405/07/23 12:32:52  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 46  1405/07/23 12:32:55  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 47  1405/07/23 12:32:57  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 48  1405/07/23 12:32:59  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 49  1405/07/23 12:33:13  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===

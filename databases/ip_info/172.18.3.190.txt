@@ -1,5 +1,5 @@
 IP: 172.18.3.190
-Collected at: 2026-10-14T10:23:49.001791+00:00
+Collected at: 2026-10-15T10:09:12.789044+00:00
 source: RouterOS API
 identity: Ahle Beyt
 device_type: ST
@@ -34,8 +34,8 @@ name=wlan1  mode=station-bridge  ssid=Shohada.Kh1  band=5ghz-a/n  frequency=5580
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:29:29
-# ساعت دستگاه (خام): 1971-02-18 01:37:22
+# زمان سرور هنگام خواندن: 1405/07/23 12:36:43
+# ساعت دستگاه (خام): 1971-02-19 00:44:36
 # افست اصلاحی (سرور − دستگاه): +487856:22:07
   1  1405/07/18 11:51:58  [system,error,critical]  router was rebooted without proper shutdown
   2  1405/07/18 11:52:08  [interface,info]  ether1 link up (speed 100M, full duplex)
@@ -99,6 +99,9 @@ name=wlan1  mode=station-bridge  ssid=Shohada.Kh1  band=5ghz-a/n  frequency=5580
  60  1405/07/22 13:18:51  [dhcp,info]  dhcp1 deassigned 172.28.22.95 from F8:32:E4:B9:DA:E2
  61  1405/07/22 13:23:08  [dhcp,info]  dhcp1 deassigned 172.28.22.98 from 84:16:F9:6D:E0:AB
  62  1405/07/22 13:29:28  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 63  1405/07/22 13:29:30  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 64  1405/07/22 13:33:35  [dhcp,info]  dhcp1 deassigned 172.28.22.96 from 84:16:F9:6D:D3:C9
+ 65  1405/07/23 12:36:42  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===

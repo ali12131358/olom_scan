@@ -1,5 +1,5 @@
 IP: 172.18.26.10
-Collected at: 2026-10-14T10:23:32.221538+00:00
+Collected at: 2026-10-15T10:08:46.815629+00:00
 source: RouterOS API
 identity: Darkhovein->OmolGhazlan.AP
 device_type: AP
@@ -30,18 +30,14 @@ name=wlan1  mode=bridge  ssid=DRKHOMGH  band=5ghz-onlyn  frequency=5660
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:26:07
-# ساعت دستگاه (خام): 2025-07-13 02:54:54
-# افست اصلاحی (سرور − دستگاه): +10999:01:13
-  1  1405/07/23 09:54:05  [system,error,critical]  router was rebooted without proper shutdown
-  2  1405/07/23 09:54:06  [bridge,info]  "bridge1" mac address changed to 4C:5E:0C:CD:FA:17
-  3  1405/07/23 09:54:08  [interface,info]  ether1 link up (speed 100M, full duplex)
-  4  1405/07/23 09:54:09  [interface,info]  ether1 link down
-  5  1405/07/23 09:54:11  [interface,info]  ether1 link up (speed 100M, full duplex)
-  6  1405/07/23 09:54:12  [wireless,info]  4C:5E:0C:CD:FE:A0@wlan1: connected, signal strength -63, wants bridge
-  7  1405/07/22 12:39:29  [wireless,info]  4C:5E:0C:CD:FE:A0@wlan1: disconnected, extensive data loss, signal strength -63
-  8  1405/07/22 12:39:52  [wireless,info]  4C:5E:0C:CD:FE:A0@wlan1: connected, signal strength -60, wants bridge
-  9  1405/07/22 13:26:05  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+# زمان سرور هنگام خواندن: 1405/07/23 12:33:30
+# ساعت دستگاه (خام): 2025-07-13 21:08:07
+# افست اصلاحی (سرور − دستگاه): +11003:55:23
+  1  1405/07/23 07:51:01  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/23 07:51:03  [bridge,info]  "bridge1" mac address changed to 4C:5E:0C:CD:FA:17
+  3  1405/07/23 07:51:07  [wireless,info]  4C:5E:0C:CD:FE:A0@wlan1: connected, signal strength -70, wants bridge
+  4  1405/07/23 07:51:07  [interface,info]  ether1 link up (speed 100M, full duplex)
+  5  1405/07/23 12:33:29  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===

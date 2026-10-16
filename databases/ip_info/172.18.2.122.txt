@@ -1,5 +1,5 @@
 IP: 172.18.2.122
-Collected at: 2026-10-14T10:22:45.208015+00:00
+Collected at: 2026-10-15T10:07:38.862066+00:00
 source: RouterOS API
 identity: ShabakehBehdasht->Sotoongar.AP
 device_type: AP
@@ -29,20 +29,22 @@ name=wlan1  mode=bridge  ssid=SHSTNGR  band=5ghz-onlyn  frequency=5280
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:14:31
-# ساعت دستگاه (خام): 1975-05-24 12:31:15
-# افست اصلاحی (سرور − دستگاه): +450501:13:16
-  1  1405/07/19 08:42:42  [system,error,critical]  router was rebooted without proper shutdown
-  2  1405/07/19 08:42:43  [bridge,info]  "bridge1" mac address changed to E4:8D:8C:56:7F:FC
-  3  1405/07/19 08:42:45  [interface,info]  ether1 link up (speed 100M, full duplex)
-  4  1405/07/19 08:42:54  [wireless,info]  48:A9:8A:A2:F2:24@wlan1: connected, signal strength -57, wants bridge
-  5  1405/07/19 09:34:10  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
-  6  1405/07/19 09:34:12  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
-  7  1405/07/19 17:41:21  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
-  8  1405/07/19 17:41:21  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
-  9  1405/07/21 10:56:00  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
- 10  1405/07/21 10:56:01  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
- 11  1405/07/22 13:14:30  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+# زمان سرور هنگام خواندن: 1405/07/23 12:22:32
+# ساعت دستگاه (خام): 1975-05-25 11:39:17
+# افست اصلاحی (سرور − دستگاه): +450501:13:15
+  1  1405/07/19 08:42:41  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/19 08:42:42  [bridge,info]  "bridge1" mac address changed to E4:8D:8C:56:7F:FC
+  3  1405/07/19 08:42:44  [interface,info]  ether1 link up (speed 100M, full duplex)
+  4  1405/07/19 08:42:53  [wireless,info]  48:A9:8A:A2:F2:24@wlan1: connected, signal strength -57, wants bridge
+  5  1405/07/19 09:34:09  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+  6  1405/07/19 09:34:11  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+  7  1405/07/19 17:41:20  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+  8  1405/07/19 17:41:20  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+  9  1405/07/21 10:55:59  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 10  1405/07/21 10:56:00  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 11  1405/07/22 13:14:29  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 12  1405/07/22 13:14:31  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 13  1405/07/23 12:22:31  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===

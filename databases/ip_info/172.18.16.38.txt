@@ -1,5 +1,5 @@
 IP: 172.18.16.38
-Collected at: 2026-10-14T10:22:31.839052+00:00
+Collected at: 2026-10-15T10:07:32.025481+00:00
 source: RouterOS API
 identity: H.omaltolou-CL
 device_type: ST
@@ -31,19 +31,23 @@ name=wlan1  mode=station-bridge  ssid=Khoramshahr-Shabakeh3  band=5ghz-a/n  freq
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:13:25
-# ساعت دستگاه (خام): 1971-10-31 22:52:31
-# افست اصلاحی (سرور − دستگاه): +481714:50:54
-  1  1405/07/20 14:20:09  [system,error,critical]  router was rebooted without proper shutdown
-  2  1405/07/20 14:20:18  [wireless,info]  6C:3B:6B:9C:4B:23@wlan1 established connection on 5500000, SSID Khoramshahr-Shabakeh3
-  3  1405/07/20 14:20:20  [interface,info]  ether1 link up (speed 100M, full duplex)
-  4  1405/07/20 14:27:13  [dhcp,info]  dhcp1 deassigned 172.29.128.156 from F0:2F:74:F9:BA:C8
-  5  1405/07/21 08:03:25  [dhcp,info]  dhcp1 assigned 172.29.128.156 to F0:2F:74:F9:BA:C8
-  6  1405/07/21 10:54:31  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
-  7  1405/07/21 10:54:33  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
-  8  1405/07/21 11:16:30  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
-  9  1405/07/21 11:16:32  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
- 10  1405/07/22 13:13:23  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+# زمان سرور هنگام خواندن: 1405/07/23 12:21:18
+# ساعت دستگاه (خام): 1971-11-01 22:00:25
+# افست اصلاحی (سرور − دستگاه): +481714:50:53
+  1  1405/07/20 14:20:08  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/20 14:20:17  [wireless,info]  6C:3B:6B:9C:4B:23@wlan1 established connection on 5500000, SSID Khoramshahr-Shabakeh3
+  3  1405/07/20 14:20:19  [interface,info]  ether1 link up (speed 100M, full duplex)
+  4  1405/07/20 14:27:12  [dhcp,info]  dhcp1 deassigned 172.29.128.156 from F0:2F:74:F9:BA:C8
+  5  1405/07/21 08:03:24  [dhcp,info]  dhcp1 assigned 172.29.128.156 to F0:2F:74:F9:BA:C8
+  6  1405/07/21 10:54:30  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+  7  1405/07/21 10:54:32  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+  8  1405/07/21 11:16:29  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+  9  1405/07/21 11:16:31  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 10  1405/07/22 13:13:22  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 11  1405/07/22 13:13:24  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 12  1405/07/22 13:40:06  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 13  1405/07/22 13:40:08  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 14  1405/07/23 12:21:17  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===

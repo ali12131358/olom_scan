@@ -1,7 +1,7 @@
 IP: 172.29.75.3
-Collected at: 2026-10-14T10:25:48.788932+00:00
+Collected at: 2026-10-14T13:56:20.322642+00:00
 source: RouterOS API
-identity: Hospital.AP
+identity: Hospital.ArvandKenar.AP
 device_type: AP
 
 ----- interfaces -----
@@ -28,8 +28,8 @@ name=wlan1  mode=ap-bridge  ssid=Hospital  band=5ghz-a/n  frequency=5280
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:51:20
-# ساعت دستگاه (خام): 1974-04-04 13:02:23
+# زمان سرور هنگام خواندن: 1405/07/22 17:26:19
+# ساعت دستگاه (خام): 1974-04-04 16:37:22
 # افست اصلاحی (سرور − دستگاه): +460461:18:57
   1  1405/07/14 08:35:33  [system,error,critical]  router was rebooted without proper shutdown
   2  1405/07/14 08:35:35  [bridge,info]  "bridge1" mac address changed to 6C:3B:6B:56:26:1A
@@ -52,6 +52,14 @@ name=wlan1  mode=ap-bridge  ssid=Hospital  band=5ghz-a/n  frequency=5280
  19  1405/07/22 12:33:44  [wireless,info]  0E:EB:A8:A5:C7:16@wlan1: connected, signal strength -83
  20  1405/07/22 12:33:49  [wireless,info]  0E:EB:A8:A5:C7:16@wlan1: disconnected, unicast key exchange timeout, signal strength -84
  21  1405/07/22 13:51:19  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 22  1405/07/22 13:51:20  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 23  1405/07/22 17:24:19  [system,info,account]  user garnaf logged in from 172.18.4.76 via winbox
+ 24  1405/07/22 17:24:28  [system,info,account]  user garnaf logged out from 172.18.4.76 via winbox
+ 25  1405/07/22 17:24:53  [system,info,account]  user garnaf logged in from 172.18.4.76 via winbox
+ 26  1405/07/22 17:25:13  [system,info]  system identity changed by garnaf
+ 27  1405/07/22 17:25:45  [system,info]  system identity changed by garnaf
+ 28  1405/07/22 17:25:51  [system,info,account]  user garnaf logged out from 172.18.4.76 via winbox
+ 29  1405/07/22 17:26:18  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===

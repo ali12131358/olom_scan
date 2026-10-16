@@ -1,5 +1,5 @@
 IP: 172.18.1.243
-Collected at: 2026-10-14T10:21:48.640086+00:00
+Collected at: 2026-10-15T10:07:09.796578+00:00
 source: RouterOS API
 identity: Bimarestan-Moarefi
 device_type: ST
@@ -31,8 +31,8 @@ name=wlan1  mode=station-bridge  ssid=PTP-BIMARESTAN  band=5ghz-a/n  frequency=5
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:11:56
-# ساعت دستگاه (خام): 1972-04-02 04:55:57
+# زمان سرور هنگام خواندن: 1405/07/23 12:20:04
+# ساعت دستگاه (خام): 1972-04-03 04:04:05
 # افست اصلاحی (سرور − دستگاه): +478036:45:59
   1  1405/06/18 08:39:13  [system,error,critical]  router was rebooted without proper shutdown
   2  1405/06/18 08:39:16  [bridge,info]  "bridge1" mac address changed to 6C:3B:6B:56:26:15
@@ -106,6 +106,8 @@ name=wlan1  mode=station-bridge  ssid=PTP-BIMARESTAN  band=5ghz-a/n  frequency=5
  70  1405/07/21 10:52:47  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
  71  1405/07/21 10:52:49  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
  72  1405/07/22 13:11:55  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 73  1405/07/22 13:11:56  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 74  1405/07/23 12:20:03  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===
@@ -114,3 +116,4 @@ wlan1  6C:3B:6B:56:26:15  (wlan)
 bridge1  6C:3B:6B:56:26:15  (bridge)
 --- /ip arp ---
 bridge1  4C:5E:0C:CD:FE:8B  (arp 172.18.1.242)
+bridge1  64:D1:54:98:E3:2E  (arp 172.18.1.241)

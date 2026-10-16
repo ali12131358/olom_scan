@@ -1,5 +1,5 @@
 IP: 172.18.2.13
-Collected at: 2026-10-14T10:22:46.260723+00:00
+Collected at: 2026-10-15T10:07:40.717309+00:00
 source: RouterOS API
 identity: Foriat.B.Client
 device_type: ST
@@ -39,9 +39,9 @@ name=wlan1  mode=station  ssid=Foriat.B  band=5ghz-a/n  frequency=5680
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:14:41
-# ساعت دستگاه (خام): 2025-10-19 14:33:50
-# افست اصلاحی (سرور − دستگاه): +8635:10:51
+# زمان سرور هنگام خواندن: 1405/07/23 12:22:40
+# ساعت دستگاه (خام): 2025-10-20 13:41:50
+# افست اصلاحی (سرور − دستگاه): +8635:10:50
   1  2025-10-09 12:08:50  [system,error,critical]  router was rebooted without proper shutdown
   2  2025-10-09 12:08:51  [interface,info]  lo link up
   3  2025-10-09 12:08:51  [interface,info]  ether1 link up (speed 100M, full duplex)
@@ -122,6 +122,10 @@ name=wlan1  mode=station  ssid=Foriat.B  band=5ghz-a/n  frequency=5680
  78  2025-10-16 19:05:49  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
  79  2025-10-16 19:05:49  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
  80  2025-10-19 14:33:49  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 81  2025-10-19 14:33:51  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 82  2025-10-19 15:04:14  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 83  2025-10-19 15:04:16  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 84  2025-10-20 13:41:48  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===

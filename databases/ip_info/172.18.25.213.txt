@@ -1,5 +1,5 @@
 IP: 172.18.25.213
-Collected at: 2026-10-14T10:23:23.188481+00:00
+Collected at: 2026-10-15T10:08:36.576765+00:00
 source: RouterOS API
 identity: Maleki.Client
 device_type: ST
@@ -31,8 +31,8 @@ name=wlan1  mode=station-bridge  ssid=Shadegan-Jafal1  band=5ghz-a/n  frequency=
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:24:07
-# ساعت دستگاه (خام): 2023-05-24 12:59:22
+# زمان سرور هنگام خواندن: 1405/07/23 12:31:36
+# ساعت دستگاه (خام): 2023-05-25 12:06:51
 # افست اصلاحی (سرور − دستگاه): +29732:54:45
   1  1405/07/21 01:24:37  [system,error,critical]  router was rebooted without proper shutdown
   2  1405/07/21 01:24:40  [interface,info]  ether1 link up (speed 100M, full duplex)
@@ -56,6 +56,12 @@ name=wlan1  mode=station-bridge  ssid=Shadegan-Jafal1  band=5ghz-a/n  frequency=
  20  1405/07/22 11:24:55  [dhcp,info]  dhcp1 deassigned 172.29.203.254 from 8C:89:A5:E3:FA:2D
  21  1405/07/22 11:53:18  [dhcp,info]  dhcp1 deassigned 172.29.203.250 from 00:E0:4C:4D:B6:BE
  22  1405/07/22 13:24:06  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 23  1405/07/22 13:24:08  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 24  1405/07/22 14:16:29  [dhcp,info]  dhcp1 assigned 172.29.203.254 to 8C:89:A5:E3:FA:2D
+ 25  1405/07/22 14:26:29  [dhcp,info]  dhcp1 deassigned 172.29.203.254 from 8C:89:A5:E3:FA:2D
+ 26  1405/07/22 20:47:12  [dhcp,info]  dhcp1 assigned 172.29.203.249 to A2:33:BA:FE:B9:5C
+ 27  1405/07/22 20:57:12  [dhcp,info]  dhcp1 deassigned 172.29.203.249 from A2:33:BA:FE:B9:5C
+ 28  1405/07/23 12:31:34  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===

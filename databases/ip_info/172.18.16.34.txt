@@ -1,5 +1,5 @@
 IP: 172.18.16.34
-Collected at: 2026-10-14T10:22:31.496822+00:00
+Collected at: 2026-10-15T10:07:31.737287+00:00
 source: RouterOS API
 identity: Khoramshahr-Shabakeh3
 device_type: AP
@@ -37,8 +37,8 @@ name=wlan2-Vira  mode=ap-bridge  ssid=Arianet.Bardia  band=-  frequency=-
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:13:23
-# ساعت دستگاه (خام): 1977-09-03 16:58:17
+# زمان سرور هنگام خواندن: 1405/07/23 12:21:17
+# ساعت دستگاه (خام): 1977-09-04 16:06:11
 # افست اصلاحی (سرور − دستگاه): +430504:45:06
   1  1405/07/19 08:42:43  [system,error,critical]  router was rebooted without proper shutdown
   2  1405/07/19 08:42:46  [bridge,info]  "bridge1" mac address changed to 6C:3B:6B:9C:4B:23
@@ -89,6 +89,20 @@ name=wlan2-Vira  mode=ap-bridge  ssid=Arianet.Bardia  band=-  frequency=-
  47  1405/07/22 11:22:01  [wireless,info]  64:D1:54:26:7A:AD@wlan1: connected, signal strength -64
  48  1405/07/22 11:30:15  [wireless,info]  64:D1:54:26:7A:AD@wlan1: disconnected, extensive data loss, signal strength -64
  49  1405/07/22 13:13:22  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 50  1405/07/22 13:13:24  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 51  1405/07/22 15:15:45  [wireless,info]  92:20:CB:62:81:CB@wlan1: connected, signal strength -84
+ 52  1405/07/22 15:15:48  [wireless,info]  92:20:CB:62:81:CB@wlan1: disconnected, extensive data loss, signal strength -84
+ 53  1405/07/22 17:00:57  [wireless,info]  E4:8D:8C:B5:D9:D1@wlan1: disconnected, extensive data loss, signal strength -53
+ 54  1405/07/22 19:54:45  [wireless,info]  BE:B1:88:F8:17:EE@wlan1: connected, signal strength -85
+ 55  1405/07/22 19:54:50  [wireless,info]  BE:B1:88:F8:17:EE@wlan1: disconnected, unicast key exchange timeout, signal strength -86
+ 56  1405/07/22 22:19:27  [wireless,info]  2E:CA:9F:6C:1D:EA@wlan1: connected, signal strength -89
+ 57  1405/07/22 22:19:30  [wireless,info]  2E:CA:9F:6C:1D:EA@wlan1: disconnected, extensive data loss, signal strength -89
+ 58  1405/07/22 22:22:32  [wireless,info]  2E:CA:9F:6C:1D:EA@wlan1: connected, signal strength -88
+ 59  1405/07/22 22:22:35  [wireless,info]  2E:CA:9F:6C:1D:EA@wlan1: disconnected, extensive data loss, signal strength -88
+ 60  1405/07/22 22:22:39  [wireless,info]  2E:CA:9F:6C:1D:EA@wlan1: connected, signal strength -81
+ 61  1405/07/22 22:22:42  [wireless,info]  2E:CA:9F:6C:1D:EA@wlan1: disconnected, extensive data loss, signal strength -81
+ 62  1405/07/23 08:06:04  [wireless,info]  E4:8D:8C:B5:D9:D1@wlan1: connected, signal strength -52, wants bridge
+ 63  1405/07/23 12:21:16  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===

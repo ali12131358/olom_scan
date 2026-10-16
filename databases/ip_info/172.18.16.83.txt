@@ -1,5 +1,5 @@
 IP: 172.18.16.83
-Collected at: 2026-10-14T10:22:34.644934+00:00
+Collected at: 2026-10-15T10:07:34.947442+00:00
 source: RouterOS API
 identity: sooreh.client
 device_type: ST
@@ -25,14 +25,16 @@ name=wlan1  mode=station-bridge  ssid=Khoramshahr-Taleghani2  band=5ghz-a/n  fre
 
 ----- neighbors -----
 === /ip neighbor ===
-  1  identity=Sooreh_Router  address=172.29.131.67  interface=ether1
-  2  identity=RouterMarkazTaleghzani  address=172.18.16.81  interface=wlan1
-  3  identity=Khoramshahr-Taleghani2  address=172.18.16.82  interface=wlan1
+  1  identity=-  address=-  interface=ether1
+  2  identity=Sooreh_Router  address=172.29.131.67  interface=ether1
+  3  identity=RouterMarkazTaleghzani  address=172.18.16.81  interface=wlan1
+  4  identity=Khoramshahr-Taleghani2  address=172.18.16.82  interface=wlan1
+  5  identity=PolNo.Client  address=172.18.16.86  interface=wlan1
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:14:00
-# ساعت دستگاه (خام): 1974-03-29 13:03:13
+# زمان سرور هنگام خواندن: 1405/07/23 12:21:56
+# ساعت دستگاه (خام): 1974-03-30 12:11:09
 # افست اصلاحی (سرور − دستگاه): +460604:40:47
   1  1405/07/20 09:38:27  [system,error,critical]  router was rebooted without proper shutdown
   2  1405/07/20 09:38:35  [wireless,info]  6C:3B:6B:3E:4B:81@wlan1 established connection on 5700000, SSID Khoramshahr-Taleghani2
@@ -54,6 +56,11 @@ name=wlan1  mode=station-bridge  ssid=Khoramshahr-Taleghani2  band=5ghz-a/n  fre
  18  1405/07/22 11:05:00  [dhcp,info]  dhcp1 assigned 172.29.131.66 to CC:28:AA:D1:0C:36
  19  1405/07/22 11:55:00  [dhcp,info]  dhcp1 deassigned 172.29.131.66 from CC:28:AA:D1:0C:36
  20  1405/07/22 13:13:59  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 21  1405/07/22 13:14:00  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 22  1405/07/22 13:40:42  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 23  1405/07/22 13:40:49  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 24  1405/07/23 12:00:46  [dhcp,info]  dhcp1 assigned 172.29.131.66 to CC:28:AA:D1:0C:36
+ 25  1405/07/23 12:21:54  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===
@@ -61,3 +68,4 @@ ether1  6C:3B:6B:10:AF:AC  (ether)
 wlan1  6C:3B:6B:10:AF:AD  (wlan)
 --- /ip arp ---
 wlan1  6C:3B:6B:09:34:B6  (arp 172.18.16.81)
+ether1  CC:28:AA:D1:0C:36  (arp 172.29.131.66)

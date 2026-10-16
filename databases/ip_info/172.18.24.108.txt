@@ -1,5 +1,5 @@
 IP: 172.18.24.108
-Collected at: 2026-10-14T10:23:01.445903+00:00
+Collected at: 2026-10-15T10:08:07.023948+00:00
 source: RouterOS API
 identity: khaneh-behdasht-salemi
 device_type: ST
@@ -31,8 +31,8 @@ name=wlan1  mode=station-bridge  ssid=Shadegan-Shabakeh6  band=5ghz-a/n  frequen
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:17:32
-# ساعت دستگاه (خام): 1972-07-04 21:52:04
+# زمان سرور هنگام خواندن: 1405/07/23 12:25:19
+# ساعت دستگاه (خام): 1972-07-05 20:59:51
 # افست اصلاحی (سرور − دستگاه): +475787:55:28
   1  1405/07/22 10:10:53  [system,error,critical]  router was rebooted without proper shutdown
   2  1405/07/22 10:11:01  [wireless,info]  E4:8D:8C:FF:67:D7@wlan1 established connection on 5720000, SSID Shadegan-Shabakeh6
@@ -44,6 +44,53 @@ name=wlan1  mode=station-bridge  ssid=Shadegan-Shabakeh6  band=5ghz-a/n  frequen
   8  1405/07/22 12:00:27  [dhcp,info]  dhcp1 deassigned 172.29.194.188 from 94:DE:80:4D:DB:FD
   9  1405/07/22 12:43:56  [dhcp,info]  dhcp1 deassigned 172.29.194.189 from B4:2E:99:57:77:5E
  10  1405/07/22 13:17:31  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 11  1405/07/22 13:17:33  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 12  1405/07/22 22:07:01  [wireless,info]  E4:8D:8C:FF:67:D7@wlan1: lost connection, extensive data loss
+ 13  1405/07/22 22:07:09  [wireless,info]  E4:8D:8C:FF:67:D7@wlan1: failed to connect, on 5720/20/an, association timeout
+ 14  1405/07/22 22:07:23  [wireless,info]  E4:8D:8C:FF:67:D7@wlan1: failed to connect, on 5720/20/an, authentication timeout
+ 15  1405/07/22 22:07:37  [wireless,info]  E4:8D:8C:FF:67:D7@wlan1: failed to connect, on 5720/20/an, authentication timeout
+ 16  1405/07/22 22:07:51  [wireless,info]  E4:8D:8C:FF:67:D7@wlan1: failed to connect, on 5720/20/an, authentication timeout
+ 17  1405/07/22 22:08:05  [wireless,info]  E4:8D:8C:FF:67:D7@wlan1: failed to connect, on 5720/20/an, authentication timeout
+ 18  1405/07/22 22:08:19  [wireless,info]  E4:8D:8C:FF:67:D7@wlan1: failed to connect, on 5720/20/an, authentication timeout
+ 19  1405/07/22 22:08:33  [wireless,info]  E4:8D:8C:FF:67:D7@wlan1: failed to connect, on 5720/20/an, authentication timeout
+ 20  1405/07/22 22:08:47  [wireless,info]  E4:8D:8C:FF:67:D7@wlan1: failed to connect, on 5720/20/an, authentication timeout
+ 21  1405/07/22 22:09:02  [wireless,info]  E4:8D:8C:FF:67:D7@wlan1 established connection on 5720000, SSID Shadegan-Shabakeh6
+ 22  1405/07/23 03:48:00  [wireless,info]  E4:8D:8C:FF:67:D7@wlan1: lost connection, extensive data loss
+ 23  1405/07/23 03:48:09  [wireless,info]  E4:8D:8C:FF:67:D7@wlan1: failed to connect, on 5720/20/an, authentication timeout
+ 24  1405/07/23 03:48:23  [wireless,info]  E4:8D:8C:FF:67:D7@wlan1: failed to connect, on 5720/20/an, authentication timeout
+ 25  1405/07/23 03:48:38  [wireless,info]  E4:8D:8C:FF:67:D7@wlan1: failed to connect, on 5720/20/an, association timeout
+ 26  1405/07/23 03:48:52  [wireless,info]  E4:8D:8C:FF:67:D7@wlan1: failed to connect, on 5720/20/an, authentication timeout
+ 27  1405/07/23 03:49:03  [wireless,info]  E4:8D:8C:FF:67:D7@wlan1 established connection on 5720000, SSID Shadegan-Shabakeh6
+ 28  1405/07/23 04:03:35  [wireless,info]  E4:8D:8C:FF:67:D7@wlan1: lost connection, extensive data loss
+ 29  1405/07/23 04:03:43  [wireless,info]  E4:8D:8C:FF:67:D7@wlan1: failed to connect, on 5720/20/an, authentication timeout
+ 30  1405/07/23 04:03:57  [wireless,info]  E4:8D:8C:FF:67:D7@wlan1: failed to connect, on 5720/20/an, authentication timeout
+ 31  1405/07/23 04:04:11  [wireless,info]  E4:8D:8C:FF:67:D7@wlan1: failed to connect, on 5720/20/an, authentication timeout
+ 32  1405/07/23 04:04:25  [wireless,info]  E4:8D:8C:FF:67:D7@wlan1: failed to connect, on 5720/20/an, authentication timeout
+ 33  1405/07/23 04:04:39  [wireless,info]  E4:8D:8C:FF:67:D7@wlan1: failed to connect, on 5720/20/an, authentication timeout
+ 34  1405/07/23 04:04:53  [wireless,info]  E4:8D:8C:FF:67:D7@wlan1: failed to connect, on 5720/20/an, authentication timeout
+ 35  1405/07/23 04:05:07  [wireless,info]  E4:8D:8C:FF:67:D7@wlan1: failed to connect, on 5720/20/an, authentication timeout
+ 36  1405/07/23 04:05:21  [wireless,info]  E4:8D:8C:FF:67:D7@wlan1: failed to connect, on 5720/20/an, authentication timeout
+ 37  1405/07/23 04:05:35  [wireless,info]  E4:8D:8C:FF:67:D7@wlan1: failed to connect, on 5720/20/an, authentication timeout
+ 38  1405/07/23 04:05:49  [wireless,info]  E4:8D:8C:FF:67:D7@wlan1: failed to connect, on 5720/20/an, authentication timeout
+ 39  1405/07/23 04:06:03  [wireless,info]  E4:8D:8C:FF:67:D7@wlan1: failed to connect, on 5720/20/an, authentication timeout
+ 40  1405/07/23 04:06:17  [wireless,info]  E4:8D:8C:FF:67:D7@wlan1: failed to connect, on 5720/20/an, authentication timeout
+ 41  1405/07/23 04:06:31  [wireless,info]  E4:8D:8C:FF:67:D7@wlan1: failed to connect, on 5720/20/an, authentication timeout
+ 42  1405/07/23 04:06:45  [wireless,info]  E4:8D:8C:FF:67:D7@wlan1: failed to connect, on 5720/20/an, authentication timeout
+ 43  1405/07/23 04:06:59  [wireless,info]  E4:8D:8C:FF:67:D7@wlan1: failed to connect, on 5720/20/an, association timeout
+ 44  1405/07/23 04:07:13  [wireless,info]  E4:8D:8C:FF:67:D7@wlan1: failed to connect, on 5720/20/an, association timeout
+ 45  1405/07/23 04:07:23  [wireless,info]  E4:8D:8C:FF:67:D7@wlan1 established connection on 5720000, SSID Shadegan-Shabakeh6
+ 46  1405/07/23 04:23:34  [wireless,info]  E4:8D:8C:FF:67:D7@wlan1: lost connection, extensive data loss
+ 47  1405/07/23 04:23:43  [wireless,info]  E4:8D:8C:FF:67:D7@wlan1: failed to connect, on 5720/20/an, authentication timeout
+ 48  1405/07/23 04:23:57  [wireless,info]  E4:8D:8C:FF:67:D7@wlan1: failed to connect, on 5720/20/an, authentication timeout
+ 49  1405/07/23 04:24:11  [wireless,info]  E4:8D:8C:FF:67:D7@wlan1: failed to connect, on 5720/20/an, authentication timeout
+ 50  1405/07/23 04:24:22  [wireless,info]  E4:8D:8C:FF:67:D7@wlan1 established connection on 5720000, SSID Shadegan-Shabakeh6
+ 51  1405/07/23 12:15:00  [wireless,info]  E4:8D:8C:FF:67:D7@wlan1: lost connection, extensive data loss
+ 52  1405/07/23 12:15:09  [wireless,info]  E4:8D:8C:FF:67:D7@wlan1: failed to connect, on 5720/20/an, authentication timeout
+ 53  1405/07/23 12:15:22  [wireless,info]  E4:8D:8C:FF:67:D7@wlan1: failed to connect, on 5720/20/an, authentication timeout
+ 54  1405/07/23 12:15:36  [wireless,info]  E4:8D:8C:FF:67:D7@wlan1: failed to connect, on 5720/20/an, authentication timeout
+ 55  1405/07/23 12:15:50  [wireless,info]  E4:8D:8C:FF:67:D7@wlan1: failed to connect, on 5720/20/an, authentication timeout
+ 56  1405/07/23 12:16:01  [wireless,info]  E4:8D:8C:FF:67:D7@wlan1 established connection on 5720000, SSID Shadegan-Shabakeh6
+ 57  1405/07/23 12:25:17  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===

@@ -1,5 +1,5 @@
 IP: 172.18.25.242
-Collected at: 2026-10-14T10:23:25.955338+00:00
+Collected at: 2026-10-15T10:08:38.714197+00:00
 source: RouterOS API
 identity: Shadegan-Jafal3
 device_type: AP
@@ -29,8 +29,8 @@ name=wlan1  mode=ap-bridge  ssid=Shadegan-Jafal3  band=5ghz-a/n  frequency=5750
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:24:23
-# ساعت دستگاه (خام): 1972-10-26 20:45:41
+# زمان سرور هنگام خواندن: 1405/07/23 12:31:52
+# ساعت دستگاه (خام): 1972-10-27 19:53:10
 # افست اصلاحی (سرور − دستگاه): +473053:08:42
   1  1405/07/21 01:19:16  [system,error,critical]  router was rebooted without proper shutdown
   2  1405/07/21 01:19:17  [bridge,info]  "bridge1" mac address changed to 18:FD:74:BA:07:38
@@ -87,6 +87,29 @@ name=wlan1  mode=ap-bridge  ssid=Shadegan-Jafal3  band=5ghz-a/n  frequency=5750
  53  1405/07/22 08:58:31  [interface,info]  ether1 link down
  54  1405/07/22 08:58:33  [interface,info]  ether1 link up (speed 1G, full duplex)
  55  1405/07/22 13:24:21  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 56  1405/07/22 13:24:24  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 57  1405/07/22 15:17:43  [interface,info]  ether1 link down
+ 58  1405/07/22 15:17:48  [interface,info]  ether1 link up (speed 1G, full duplex)
+ 59  1405/07/23 00:22:39  [wireless,info]  E4:8D:8C:61:6D:F7@wlan1: disconnected, control frame timeout
+ 60  1405/07/23 00:23:41  [wireless,info]  E4:8D:8C:61:6D:F7@wlan1: connected, signal strength -76
+ 61  1405/07/23 00:51:34  [wireless,info]  E4:8D:8C:61:6D:F7@wlan1: disconnected, control frame timeout
+ 62  1405/07/23 00:53:24  [wireless,info]  E4:8D:8C:61:6D:F7@wlan1: reconnecting
+ 63  1405/07/23 00:53:24  [wireless,info]  E4:8D:8C:61:6D:F7@wlan1: connected, signal strength -86
+ 64  1405/07/23 00:55:29  [wireless,info]  E4:8D:8C:61:6D:F7@wlan1: disconnected, control frame timeout
+ 65  1405/07/23 00:57:28  [wireless,info]  E4:8D:8C:61:6D:F7@wlan1: connected, signal strength -86
+ 66  1405/07/23 01:03:34  [wireless,info]  E4:8D:8C:61:6D:F7@wlan1: disconnected, control frame timeout
+ 67  1405/07/23 01:04:35  [wireless,info]  E4:8D:8C:61:6D:F7@wlan1: connected, signal strength -74
+ 68  1405/07/23 04:55:55  [wireless,info]  E4:8D:8C:61:6D:F7@wlan1: disconnected, control frame timeout
+ 69  1405/07/23 04:56:52  [wireless,info]  E4:8D:8C:61:6D:F7@wlan1: connected, signal strength -84
+ 70  1405/07/23 05:58:34  [wireless,info]  E4:8D:8C:61:6D:F7@wlan1: disconnected, control frame timeout
+ 71  1405/07/23 05:59:25  [wireless,info]  E4:8D:8C:61:6D:F7@wlan1: connected, signal strength -84
+ 72  1405/07/23 07:07:53  [wireless,info]  E4:8D:8C:61:6D:F7@wlan1: disconnected, not responding
+ 73  1405/07/23 07:08:48  [wireless,info]  E4:8D:8C:61:6D:F7@wlan1: connected, signal strength -82
+ 74  1405/07/23 07:17:55  [wireless,info]  E4:8D:8C:61:6D:F7@wlan1: disconnected, not responding
+ 75  1405/07/23 07:18:49  [wireless,info]  E4:8D:8C:61:6D:F7@wlan1: connected, signal strength -78
+ 76  1405/07/23 07:20:56  [wireless,info]  E4:8D:8C:61:6D:F7@wlan1: disconnected, not responding
+ 77  1405/07/23 07:21:56  [wireless,info]  E4:8D:8C:61:6D:F7@wlan1: connected, signal strength -76
+ 78  1405/07/23 12:31:51  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===

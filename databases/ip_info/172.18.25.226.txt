@@ -1,5 +1,5 @@
 IP: 172.18.25.226
-Collected at: 2026-10-14T10:23:24.588421+00:00
+Collected at: 2026-10-15T10:08:37.421331+00:00
 source: RouterOS API
 identity: Shadegan-Jafal2
 device_type: AP
@@ -29,8 +29,8 @@ name=wlan1  mode=ap-bridge  ssid=Shadegan-Jafal2  band=5ghz-a/n  frequency=5100
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:24:14
-# ساعت دستگاه (خام): 2025-04-02 23:41:44
+# زمان سرور هنگام خواندن: 1405/07/23 12:31:43
+# ساعت دستگاه (خام): 2025-04-03 22:49:13
 # افست اصلاحی (سرور − دستگاه): +13426:12:30
   1  1405/07/22 08:56:39  [system,error,critical]  router was rebooted without proper shutdown
   2  1405/07/22 08:56:41  [bridge,info]  "bridge1" mac address changed to 6C:3B:6B:5D:72:80
@@ -46,6 +46,8 @@ name=wlan1  mode=ap-bridge  ssid=Shadegan-Jafal2  band=5ghz-a/n  frequency=5100
  12  1405/07/22 11:08:05  [wireless,debug]  wlan1: 78:9A:18:77:0D:A3 not in local ACL, by default accept
  13  1405/07/22 11:08:05  [wireless,info]  78:9A:18:77:0D:A3@wlan1: connected, signal strength -58
  14  1405/07/22 13:24:13  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 15  1405/07/22 13:24:14  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 16  1405/07/23 12:31:41  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===

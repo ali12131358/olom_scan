@@ -1,5 +1,5 @@
 IP: 172.18.24.107
-Collected at: 2026-10-14T10:23:01.182726+00:00
+Collected at: 2026-10-15T10:08:06.769778+00:00
 source: RouterOS API
 identity: fayazi
 device_type: ST
@@ -31,8 +31,8 @@ name=wlan1  mode=station-bridge  ssid=Shadegan-Shabakeh6  band=5ghz-a/n  frequen
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:17:29
-# ساعت دستگاه (خام): 1972-08-18 20:47:29
+# زمان سرور هنگام خواندن: 1405/07/23 12:25:16
+# ساعت دستگاه (خام): 1972-08-19 19:55:16
 # افست اصلاحی (سرور − دستگاه): +474709:00:00
   1  1405/07/16 11:14:14  [system,error,critical]  router was rebooted without proper shutdown
   2  1405/07/16 11:14:22  [wireless,info]  E4:8D:8C:FF:67:D7@wlan1 established connection on 5720000, SSID Shadegan-Shabakeh6
@@ -100,6 +100,10 @@ name=wlan1  mode=station-bridge  ssid=Shadegan-Shabakeh6  band=5ghz-a/n  frequen
  64  1405/07/22 11:34:05  [dhcp,info]  dhcp1 deassigned 172.29.195.188 from 94:DE:80:4D:E5:5C
  65  1405/07/22 11:48:08  [dhcp,info]  dhcp1 deassigned 172.29.195.187 from 08:BF:B8:2B:66:C4
  66  1405/07/22 13:17:27  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 67  1405/07/22 13:17:30  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 68  1405/07/22 13:42:14  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 69  1405/07/22 13:42:15  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 70  1405/07/23 12:25:15  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===

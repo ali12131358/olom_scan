@@ -1,5 +1,5 @@
 IP: 172.18.26.105
-Collected at: 2026-10-14T10:23:32.459700+00:00
+Collected at: 2026-10-15T10:08:47.058791+00:00
 source: RouterOS API
 identity: MK_Soeichi
 device_type: ST
@@ -50,18 +50,18 @@ name=wlan1  mode=station  ssid=MikroTik  band=2ghz-b/g  frequency=2412
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:26:09
-# ساعت دستگاه (خام): 2024-06-10 02:38:43
-# افست اصلاحی (سرور − دستگاه): +20551:17:26
-  1  1405/07/22 11:47:21  [system,error,critical]  router was rebooted without proper shutdown
-  2  1405/07/22 11:47:24  [interface,info]  ether3 link up (speed 100M, full duplex)
-  3  1405/07/22 11:47:24  [interface,info]  ether4 link up (speed 100M, full duplex)
-  4  1405/07/22 11:47:25  [interface,info]  ether1 link up (speed 100M, full duplex)
-  5  1405/07/22 11:47:25  [interface,info]  ether2 link up (speed 100M, full duplex)
-  6  1405/07/22 11:47:25  [interface,info]  ether3 link down
-  7  1405/07/22 11:47:26  [interface,info]  ether5 link up (speed 100M, full duplex)
-  8  1405/07/22 11:47:28  [interface,info]  ether3 link up (speed 100M, full duplex)
-  9  1405/07/22 13:26:07  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+# زمان سرور هنگام خواندن: 1405/07/23 12:33:32
+# ساعت دستگاه (خام): 2024-06-10 06:39:10
+# افست اصلاحی (سرور − دستگاه): +20570:24:22
+  1  1405/07/23 06:54:15  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/23 06:54:19  [interface,info]  ether1 link up (speed 100M, full duplex)
+  3  1405/07/23 06:54:19  [interface,info]  ether3 link up (speed 100M, full duplex)
+  4  1405/07/23 06:54:19  [interface,info]  ether4 link up (speed 100M, full duplex)
+  5  1405/07/23 06:54:20  [interface,info]  ether2 link up (speed 100M, full duplex)
+  6  1405/07/23 06:54:20  [interface,info]  ether3 link down
+  7  1405/07/23 06:54:20  [interface,info]  ether5 link up (speed 100M, full duplex)
+  8  1405/07/23 06:54:22  [interface,info]  ether3 link up (speed 100M, full duplex)
+  9  1405/07/23 12:33:30  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===
@@ -72,9 +72,9 @@ ether4  6C:3B:6B:2B:BA:18  (ether)
 ether5  6C:3B:6B:2B:BA:19  (ether)
 wlan1  6C:3B:6B:2B:BA:1A  (wlan)
 --- /ip arp ---
-ether5  E4:8D:8C:0D:18:BE  (arp 172.18.26.129)
 ether3  6C:3B:6B:91:10:DB  (arp 172.18.26.98)
-ether1  6C:3B:6B:AB:D2:B5  (arp 172.18.26.114)
 ether2  4C:5E:0C:A7:F6:33  (arp 172.18.26.107)
 ether1  E4:8D:8C:B5:1C:9D  (arp 172.18.26.115)
+ether1  6C:3B:6B:AB:D2:B5  (arp 172.18.26.114)
+ether5  E4:8D:8C:0D:18:BE  (arp 172.18.26.129)
 ether2  6C:3B:6B:94:8C:7B  (arp 172.18.26.106)

@@ -1,5 +1,5 @@
 IP: 172.18.26.98
-Collected at: 2026-10-14T10:23:42.217241+00:00
+Collected at: 2026-10-15T10:09:02.969460+00:00
 source: RouterOS API
 identity: Soeichi->OmNoosheh.AP
 device_type: AP
@@ -28,15 +28,15 @@ name=wlan1  mode=bridge  ssid=SVCHOMN  band=5ghz-a/n  frequency=5640
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:28:10
-# ساعت دستگاه (خام): 1973-11-03 14:14:53
-# افست اصلاحی (سرور − دستگاه): +464107:43:17
-  1  1405/07/21 11:47:26  [system,error,critical]  router was rebooted without proper shutdown
-  2  1405/07/21 11:47:27  [bridge,info]  "bridge1" mac address changed to 6C:3B:6B:91:10:DB
-  3  1405/07/21 11:47:28  [interface,info]  ether1 link up (speed 100M, full duplex)
-  4  1405/07/22 08:14:27  [wireless,info]  6C:3B:6B:34:00:8F@wlan1: connected, signal strength -67, wants bridge
-  5  1405/07/22 09:21:45  [wireless,info]  6C:3B:6B:34:00:8F@wlan1: disconnected, too many poll timeouts, signal strength -67
-  6  1405/07/22 13:28:08  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+# زمان سرور هنگام خواندن: 1405/07/23 12:35:19
+# ساعت دستگاه (خام): 1973-11-03 18:15:07
+# افست اصلاحی (سرور − دستگاه): +464126:50:12
+  1  1405/07/23 06:54:20  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/23 06:54:21  [bridge,info]  "bridge1" mac address changed to 6C:3B:6B:91:10:DB
+  3  1405/07/23 06:54:22  [interface,info]  ether1 link up (speed 100M, full duplex)
+  4  1405/07/23 11:33:34  [wireless,info]  6C:3B:6B:34:00:8F@wlan1: connected, signal strength -57, wants bridge
+  5  1405/07/23 11:42:59  [wireless,info]  6C:3B:6B:34:00:8F@wlan1: disconnected, too many poll timeouts, signal strength -57
+  6  1405/07/23 12:35:18  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===

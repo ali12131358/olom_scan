@@ -1,5 +1,5 @@
 IP: 172.18.1.35
-Collected at: 2026-10-14T10:22:01.424658+00:00
+Collected at: 2026-10-15T10:07:11.192514+00:00
 source: RouterOS API
 identity: Setad-Foriat10.Client
 device_type: ST
@@ -30,8 +30,8 @@ name=wlan1  mode=station-bridge  ssid=Setad-Foriat10  band=5ghz-a/n  frequency=5
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:12:05
-# ساعت دستگاه (خام): 1972-11-03 13:33:46
+# زمان سرور هنگام خواندن: 1405/07/23 12:20:12
+# ساعت دستگاه (خام): 1972-11-04 12:41:53
 # افست اصلاحی (سرور − دستگاه): +472868:08:19
   1  1405/07/21 10:58:41  [system,error,critical]  router was rebooted without proper shutdown
   2  1405/07/21 10:58:45  [bridge,info]  "bridge1" mac address changed to 2C:C8:1B:14:6E:56
@@ -54,6 +54,8 @@ name=wlan1  mode=station-bridge  ssid=Setad-Foriat10  band=5ghz-a/n  frequency=5
  19  1405/07/21 11:08:34  [interface,info]  ether1 link down
  20  1405/07/21 11:08:49  [interface,info]  ether1 link up (speed 1G, full duplex)
  21  1405/07/22 13:12:04  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 22  1405/07/22 13:12:06  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 23  1405/07/23 12:20:11  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===

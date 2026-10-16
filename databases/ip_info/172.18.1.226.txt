@@ -1,5 +1,5 @@
 IP: 172.18.1.226
-Collected at: 2026-10-14T10:21:47.343215+00:00
+Collected at: 2026-10-15T10:07:08.794906+00:00
 source: RouterOS API
 identity: AP-AMANIPOUR
 device_type: AP
@@ -29,9 +29,9 @@ name=wlan1  mode=bridge  ssid=PTP-AP-AMANIPOUR-  band=5ghz-a/n  frequency=5485
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:11:47
-# ساعت دستگاه (خام): 2026-10-14 13:06:57
-# افست اصلاحی (سرور − دستگاه): -03:25:09
+# زمان سرور هنگام خواندن: 1405/07/23 12:19:52
+# ساعت دستگاه (خام): 2026-10-15 12:15:01
+# افست اصلاحی (سرور − دستگاه): -03:25:08
   1  2026-04-20 06:49:12  [system,info]  installed system-7.21.4
   2  2026-04-20 06:49:12  [system,info]  installed wireless-7.21.4
   3  2026-04-20 06:49:12  [system,info]  router rebooted
@@ -88,6 +88,8 @@ name=wlan1  mode=bridge  ssid=PTP-AP-AMANIPOUR-  band=5ghz-a/n  frequency=5485
  54  2026-10-13 10:47:49  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
  55  2026-10-13 10:47:50  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
  56  2026-10-14 13:06:56  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 57  2026-10-14 13:06:58  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 58  2026-10-15 12:15:00  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===

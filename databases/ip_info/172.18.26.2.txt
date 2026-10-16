@@ -1,5 +1,5 @@
 IP: 172.18.26.2
-Collected at: 2026-10-14T10:23:35.955044+00:00
+Collected at: 2026-10-15T10:08:52.323323+00:00
 source: RouterOS API
 identity: shadegan->Darkhovein.AP
 device_type: AP
@@ -34,209 +34,209 @@ name=wlan1  mode=bridge  ssid=SLMNDRKH  band=5ghz-onlyn  frequency=5405
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:26:49
-# ساعت دستگاه (خام): 1977-11-14 01:08:31
-# افست اصلاحی (سرور − دستگاه): +428792:48:18
-  1  1405/07/16 01:49:02  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -68, wants bridge
-  2  1405/07/16 02:12:48  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -68
-  3  1405/07/16 02:12:53  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -59, wants bridge
-  4  1405/07/16 07:55:08  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -59
-  5  1405/07/16 07:55:13  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -68, wants bridge
-  6  1405/07/16 08:58:01  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, group key exchange timeout, signal strength -69
-  7  1405/07/16 08:58:08  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -65, wants bridge
-  8  1405/07/16 09:36:57  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -65
-  9  1405/07/16 09:37:02  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -60, wants bridge
- 10  1405/07/16 09:44:41  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, extensive data loss, signal strength -60
- 11  1405/07/16 09:44:50  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -69, wants bridge
- 12  1405/07/16 09:45:27  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -69
- 13  1405/07/16 09:45:32  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -69, wants bridge
- 14  1405/07/16 09:47:59  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -69
- 15  1405/07/16 09:48:04  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -62, wants bridge
- 16  1405/07/16 09:48:19  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, extensive data loss, signal strength -62
- 17  1405/07/16 09:48:28  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -75, wants bridge
- 18  1405/07/16 09:49:13  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, extensive data loss, signal strength -75
- 19  1405/07/16 09:49:22  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -76, wants bridge
- 20  1405/07/16 09:50:20  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, extensive data loss, signal strength -76
- 21  1405/07/16 09:50:29  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -60, wants bridge
- 22  1405/07/16 09:51:22  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, extensive data loss, signal strength -60
- 23  1405/07/16 09:51:32  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -64, wants bridge
- 24  1405/07/16 10:00:33  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, extensive data loss, signal strength -64
- 25  1405/07/16 10:00:43  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -70, wants bridge
- 26  1405/07/16 10:05:14  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -70
- 27  1405/07/16 10:05:19  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -75, wants bridge
- 28  1405/07/16 10:05:32  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, extensive data loss, signal strength -75
- 29  1405/07/16 10:05:42  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -66, wants bridge
- 30  1405/07/16 10:06:22  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -66
- 31  1405/07/16 10:06:27  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -64, wants bridge
- 32  1405/07/16 10:14:11  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, extensive data loss, signal strength -64
- 33  1405/07/16 10:14:20  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -69, wants bridge
- 34  1405/07/16 10:15:15  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -69
- 35  1405/07/16 10:15:20  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -67, wants bridge
- 36  1405/07/16 10:16:10  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -67
- 37  1405/07/16 10:16:16  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -64, wants bridge
- 38  1405/07/16 10:16:28  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
- 39  1405/07/16 10:16:29  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
- 40  1405/07/16 10:21:15  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, extensive data loss, signal strength -64
- 41  1405/07/16 10:21:25  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -71, wants bridge
- 42  1405/07/16 10:22:16  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -71
- 43  1405/07/16 10:22:22  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -63, wants bridge
- 44  1405/07/16 10:38:29  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
- 45  1405/07/16 10:38:30  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
- 46  1405/07/16 13:53:00  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
- 47  1405/07/16 13:53:01  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
- 48  1405/07/16 14:08:17  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
- 49  1405/07/16 14:08:17  [system,info]  changed snmp settings by garnaf
- 50  1405/07/16 14:08:17  [system,info]  item changed by garnaf
- 51  1405/07/16 14:08:17  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
- 52  1405/07/16 14:32:38  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
- 53  1405/07/16 14:32:39  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
- 54  1405/07/16 15:43:24  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
- 55  1405/07/16 15:43:25  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
- 56  1405/07/16 17:56:47  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -63
- 57  1405/07/16 17:56:53  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -63, wants bridge
- 58  1405/07/16 23:41:14  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -64
- 59  1405/07/16 23:41:20  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -67, wants bridge
- 60  1405/07/17 00:27:05  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, extensive data loss, signal strength -67
- 61  1405/07/17 00:27:14  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -61, wants bridge
- 62  1405/07/17 01:02:42  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -61
- 63  1405/07/17 01:02:47  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -61, wants bridge
- 64  1405/07/17 06:27:40  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -61
- 65  1405/07/17 06:36:39  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -62, wants bridge
- 66  1405/07/17 08:35:01  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
- 67  1405/07/17 08:35:04  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
- 68  1405/07/17 09:03:58  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -62
- 69  1405/07/17 09:04:04  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -63, wants bridge
- 70  1405/07/17 09:09:01  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, extensive data loss, signal strength -63
- 71  1405/07/17 09:09:10  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -67, wants bridge
- 72  1405/07/17 09:10:10  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -67
- 73  1405/07/17 09:10:15  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -64, wants bridge
- 74  1405/07/17 09:12:50  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, extensive data loss, signal strength -64
- 75  1405/07/17 09:13:00  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -62, wants bridge
- 76  1405/07/17 09:13:07  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -62
- 77  1405/07/17 09:13:12  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -64, wants bridge
- 78  1405/07/17 09:13:53  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, extensive data loss, signal strength -64
- 79  1405/07/17 09:14:02  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -62, wants bridge
- 80  1405/07/17 10:18:01  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -62
- 81  1405/07/17 10:27:41  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -49, wants bridge
- 82  1405/07/17 12:15:24  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -49
- 83  1405/07/17 12:23:41  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -46, wants bridge
- 84  1405/07/17 18:22:56  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, extensive data loss, signal strength -46
- 85  1405/07/17 18:23:05  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -63, wants bridge
- 86  1405/07/17 20:25:20  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -63
- 87  1405/07/17 20:25:25  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -64, wants bridge
- 88  1405/07/17 22:39:39  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -54
- 89  1405/07/17 22:39:44  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -71, wants bridge
- 90  1405/07/17 22:41:37  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -71
- 91  1405/07/17 22:41:43  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -71, wants bridge
- 92  1405/07/17 23:12:23  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -71
- 93  1405/07/17 23:12:28  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -72, wants bridge
- 94  1405/07/17 23:45:44  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -72
- 95  1405/07/17 23:45:49  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -63, wants bridge
- 96  1405/07/17 23:47:13  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -63
- 97  1405/07/17 23:47:18  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -71, wants bridge
- 98  1405/07/17 23:47:52  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -71
- 99  1405/07/17 23:47:57  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -69, wants bridge
-100  1405/07/18 00:08:14  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -69
-101  1405/07/18 00:08:20  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -66, wants bridge
-102  1405/07/18 07:56:33  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -66
-103  1405/07/18 07:59:36  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -48, wants bridge
-104  1405/07/18 08:07:37  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -48
-105  1405/07/18 08:09:38  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -47, wants bridge
-106  1405/07/18 10:33:03  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
-107  1405/07/18 10:33:05  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
-108  1405/07/18 10:57:25  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
-109  1405/07/18 10:57:26  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
-110  1405/07/18 12:10:09  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
-111  1405/07/18 12:10:09  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
-112  1405/07/19 00:14:02  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -47
-113  1405/07/19 00:14:07  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -65, wants bridge
-114  1405/07/19 09:45:37  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
-115  1405/07/19 09:45:43  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
-116  1405/07/19 10:28:50  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -54
-117  1405/07/19 10:28:55  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -59, wants bridge
-118  1405/07/19 10:39:54  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -59
-119  1405/07/19 10:40:00  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -62, wants bridge
-120  1405/07/19 12:26:54  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -62
-121  1405/07/19 12:26:59  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -54, wants bridge
-122  1405/07/19 12:32:45  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -54
-123  1405/07/19 12:32:50  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -60, wants bridge
-124  1405/07/19 17:43:45  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
-125  1405/07/19 17:43:45  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
-126  1405/07/19 20:31:20  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -60
-127  1405/07/19 20:31:25  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -76, wants bridge
-128  1405/07/20 10:31:32  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -52
-129  1405/07/20 10:38:53  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -48, wants bridge
-130  1405/07/20 12:16:31  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -48
-131  1405/07/20 12:18:31  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -50, wants bridge
-132  1405/07/21 08:00:46  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -50
-133  1405/07/21 08:00:52  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -76, wants bridge
-134  1405/07/21 08:02:41  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -76
-135  1405/07/21 08:02:46  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -73, wants bridge
-136  1405/07/21 08:33:45  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -73
-137  1405/07/21 08:33:50  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -76, wants bridge
-138  1405/07/21 11:07:49  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
-139  1405/07/21 11:07:53  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
-140  1405/07/21 11:16:19  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -76
-141  1405/07/21 11:16:24  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -74, wants bridge
-142  1405/07/21 11:17:05  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -74
-143  1405/07/21 11:17:10  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -68, wants bridge
-144  1405/07/21 11:47:58  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, extensive data loss, signal strength -68
-145  1405/07/21 11:48:07  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -71, wants bridge
-146  1405/07/21 11:50:04  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -71
-147  1405/07/21 11:50:09  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -74, wants bridge
-148  1405/07/21 11:52:35  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -74
-149  1405/07/21 11:52:41  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -67, wants bridge
-150  1405/07/21 11:53:30  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, extensive data loss, signal strength -67
-151  1405/07/21 11:53:40  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -78, wants bridge
-152  1405/07/21 11:54:03  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, extensive data loss, signal strength -78
-153  1405/07/21 11:54:12  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -69, wants bridge
-154  1405/07/21 11:56:49  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -69
-155  1405/07/21 11:56:54  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -66, wants bridge
-156  1405/07/21 11:57:13  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, extensive data loss, signal strength -66
-157  1405/07/21 11:57:22  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -75, wants bridge
-158  1405/07/21 11:58:27  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -75
-159  1405/07/21 11:58:32  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -72, wants bridge
-160  1405/07/21 12:01:13  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -72
-161  1405/07/21 12:01:18  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -67, wants bridge
-162  1405/07/21 12:15:48  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, extensive data loss, signal strength -67
-163  1405/07/21 12:15:58  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -65, wants bridge
-164  1405/07/21 12:16:09  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -65
-165  1405/07/21 12:16:14  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -71, wants bridge
-166  1405/07/21 12:18:00  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -71
-167  1405/07/21 12:18:05  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -64, wants bridge
-168  1405/07/21 12:20:04  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -64
-169  1405/07/21 12:20:09  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -76, wants bridge
-170  1405/07/21 12:37:32  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -76
-171  1405/07/21 12:37:37  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -63, wants bridge
-172  1405/07/21 12:39:15  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, extensive data loss, signal strength -63
-173  1405/07/21 12:39:24  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -65, wants bridge
-174  1405/07/21 12:43:23  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, extensive data loss, signal strength -65
-175  1405/07/21 12:43:32  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -66, wants bridge
-176  1405/07/21 12:43:48  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -66
-177  1405/07/21 12:43:54  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -63, wants bridge
-178  1405/07/21 12:49:34  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, extensive data loss, signal strength -63
-179  1405/07/21 12:49:43  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -62, wants bridge
-180  1405/07/21 20:58:51  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, extensive data loss, signal strength -62
-181  1405/07/21 20:59:00  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -63, wants bridge
-182  1405/07/21 21:04:20  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -63
-183  1405/07/21 21:04:25  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -64, wants bridge
-184  1405/07/21 22:57:13  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -64
-185  1405/07/21 22:57:18  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -71, wants bridge
-186  1405/07/21 23:10:21  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -71
-187  1405/07/21 23:10:27  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -66, wants bridge
-188  1405/07/22 03:23:20  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, extensive data loss, signal strength -66
-189  1405/07/22 03:23:30  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -73, wants bridge
-190  1405/07/22 03:24:32  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, extensive data loss, signal strength -73
-191  1405/07/22 03:24:41  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -79, wants bridge
-192  1405/07/22 03:24:51  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, extensive data loss, signal strength -79
-193  1405/07/22 03:25:00  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -71, wants bridge
-194  1405/07/22 03:38:53  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, extensive data loss, signal strength -71
-195  1405/07/22 03:39:01  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -69, wants bridge
-196  1405/07/22 03:55:15  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, extensive data loss, signal strength -69
-197  1405/07/22 03:55:24  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -79, wants bridge
-198  1405/07/22 09:42:44  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -50
-199  1405/07/22 09:54:14  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -49, wants bridge
-200  1405/07/22 13:26:48  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+# زمان سرور هنگام خواندن: 1405/07/23 12:34:10
+# ساعت دستگاه (خام): 1977-11-15 00:15:49
+# افست اصلاحی (سرور − دستگاه): +428792:48:21
+  1  1405/07/16 10:05:45  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -66, wants bridge
+  2  1405/07/16 10:06:25  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -66
+  3  1405/07/16 10:06:30  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -64, wants bridge
+  4  1405/07/16 10:14:14  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, extensive data loss, signal strength -64
+  5  1405/07/16 10:14:23  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -69, wants bridge
+  6  1405/07/16 10:15:18  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -69
+  7  1405/07/16 10:15:23  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -67, wants bridge
+  8  1405/07/16 10:16:13  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -67
+  9  1405/07/16 10:16:19  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -64, wants bridge
+ 10  1405/07/16 10:16:31  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 11  1405/07/16 10:16:32  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 12  1405/07/16 10:21:18  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, extensive data loss, signal strength -64
+ 13  1405/07/16 10:21:28  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -71, wants bridge
+ 14  1405/07/16 10:22:19  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -71
+ 15  1405/07/16 10:22:25  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -63, wants bridge
+ 16  1405/07/16 10:38:32  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 17  1405/07/16 10:38:33  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 18  1405/07/16 13:53:03  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 19  1405/07/16 13:53:04  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 20  1405/07/16 14:08:20  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 21  1405/07/16 14:08:20  [system,info]  changed snmp settings by garnaf
+ 22  1405/07/16 14:08:20  [system,info]  item changed by garnaf
+ 23  1405/07/16 14:08:20  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 24  1405/07/16 14:32:41  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 25  1405/07/16 14:32:42  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 26  1405/07/16 15:43:27  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 27  1405/07/16 15:43:28  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 28  1405/07/16 17:56:50  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -63
+ 29  1405/07/16 17:56:56  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -63, wants bridge
+ 30  1405/07/16 23:41:17  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -64
+ 31  1405/07/16 23:41:23  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -67, wants bridge
+ 32  1405/07/17 00:27:08  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, extensive data loss, signal strength -67
+ 33  1405/07/17 00:27:17  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -61, wants bridge
+ 34  1405/07/17 01:02:45  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -61
+ 35  1405/07/17 01:02:50  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -61, wants bridge
+ 36  1405/07/17 06:27:43  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -61
+ 37  1405/07/17 06:36:42  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -62, wants bridge
+ 38  1405/07/17 08:35:04  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 39  1405/07/17 08:35:07  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 40  1405/07/17 09:04:01  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -62
+ 41  1405/07/17 09:04:07  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -63, wants bridge
+ 42  1405/07/17 09:09:04  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, extensive data loss, signal strength -63
+ 43  1405/07/17 09:09:13  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -67, wants bridge
+ 44  1405/07/17 09:10:13  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -67
+ 45  1405/07/17 09:10:18  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -64, wants bridge
+ 46  1405/07/17 09:12:53  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, extensive data loss, signal strength -64
+ 47  1405/07/17 09:13:03  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -62, wants bridge
+ 48  1405/07/17 09:13:10  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -62
+ 49  1405/07/17 09:13:15  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -64, wants bridge
+ 50  1405/07/17 09:13:56  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, extensive data loss, signal strength -64
+ 51  1405/07/17 09:14:05  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -62, wants bridge
+ 52  1405/07/17 10:18:04  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -62
+ 53  1405/07/17 10:27:44  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -49, wants bridge
+ 54  1405/07/17 12:15:27  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -49
+ 55  1405/07/17 12:23:44  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -46, wants bridge
+ 56  1405/07/17 18:22:59  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, extensive data loss, signal strength -46
+ 57  1405/07/17 18:23:08  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -63, wants bridge
+ 58  1405/07/17 20:25:23  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -63
+ 59  1405/07/17 20:25:28  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -64, wants bridge
+ 60  1405/07/17 22:39:42  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -54
+ 61  1405/07/17 22:39:47  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -71, wants bridge
+ 62  1405/07/17 22:41:40  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -71
+ 63  1405/07/17 22:41:46  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -71, wants bridge
+ 64  1405/07/17 23:12:26  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -71
+ 65  1405/07/17 23:12:31  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -72, wants bridge
+ 66  1405/07/17 23:45:47  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -72
+ 67  1405/07/17 23:45:52  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -63, wants bridge
+ 68  1405/07/17 23:47:16  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -63
+ 69  1405/07/17 23:47:21  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -71, wants bridge
+ 70  1405/07/17 23:47:55  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -71
+ 71  1405/07/17 23:48:00  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -69, wants bridge
+ 72  1405/07/18 00:08:17  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -69
+ 73  1405/07/18 00:08:23  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -66, wants bridge
+ 74  1405/07/18 07:56:36  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -66
+ 75  1405/07/18 07:59:39  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -48, wants bridge
+ 76  1405/07/18 08:07:40  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -48
+ 77  1405/07/18 08:09:41  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -47, wants bridge
+ 78  1405/07/18 10:33:06  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 79  1405/07/18 10:33:08  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 80  1405/07/18 10:57:28  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 81  1405/07/18 10:57:29  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 82  1405/07/18 12:10:12  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 83  1405/07/18 12:10:12  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 84  1405/07/19 00:14:05  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -47
+ 85  1405/07/19 00:14:10  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -65, wants bridge
+ 86  1405/07/19 09:45:40  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 87  1405/07/19 09:45:46  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 88  1405/07/19 10:28:53  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -54
+ 89  1405/07/19 10:28:58  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -59, wants bridge
+ 90  1405/07/19 10:39:57  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -59
+ 91  1405/07/19 10:40:03  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -62, wants bridge
+ 92  1405/07/19 12:26:57  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -62
+ 93  1405/07/19 12:27:02  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -54, wants bridge
+ 94  1405/07/19 12:32:48  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -54
+ 95  1405/07/19 12:32:53  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -60, wants bridge
+ 96  1405/07/19 17:43:48  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+ 97  1405/07/19 17:43:48  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+ 98  1405/07/19 20:31:23  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -60
+ 99  1405/07/19 20:31:28  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -76, wants bridge
+100  1405/07/20 10:31:35  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -52
+101  1405/07/20 10:38:56  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -48, wants bridge
+102  1405/07/20 12:16:34  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -48
+103  1405/07/20 12:18:34  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -50, wants bridge
+104  1405/07/21 08:00:49  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -50
+105  1405/07/21 08:00:55  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -76, wants bridge
+106  1405/07/21 08:02:44  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -76
+107  1405/07/21 08:02:49  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -73, wants bridge
+108  1405/07/21 08:33:48  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -73
+109  1405/07/21 08:33:53  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -76, wants bridge
+110  1405/07/21 11:07:52  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+111  1405/07/21 11:07:56  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+112  1405/07/21 11:16:22  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -76
+113  1405/07/21 11:16:27  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -74, wants bridge
+114  1405/07/21 11:17:08  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -74
+115  1405/07/21 11:17:13  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -68, wants bridge
+116  1405/07/21 11:48:01  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, extensive data loss, signal strength -68
+117  1405/07/21 11:48:10  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -71, wants bridge
+118  1405/07/21 11:50:07  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -71
+119  1405/07/21 11:50:12  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -74, wants bridge
+120  1405/07/21 11:52:38  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -74
+121  1405/07/21 11:52:44  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -67, wants bridge
+122  1405/07/21 11:53:33  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, extensive data loss, signal strength -67
+123  1405/07/21 11:53:43  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -78, wants bridge
+124  1405/07/21 11:54:06  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, extensive data loss, signal strength -78
+125  1405/07/21 11:54:15  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -69, wants bridge
+126  1405/07/21 11:56:52  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -69
+127  1405/07/21 11:56:57  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -66, wants bridge
+128  1405/07/21 11:57:16  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, extensive data loss, signal strength -66
+129  1405/07/21 11:57:25  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -75, wants bridge
+130  1405/07/21 11:58:30  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -75
+131  1405/07/21 11:58:35  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -72, wants bridge
+132  1405/07/21 12:01:16  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -72
+133  1405/07/21 12:01:21  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -67, wants bridge
+134  1405/07/21 12:15:51  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, extensive data loss, signal strength -67
+135  1405/07/21 12:16:01  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -65, wants bridge
+136  1405/07/21 12:16:12  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -65
+137  1405/07/21 12:16:17  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -71, wants bridge
+138  1405/07/21 12:18:03  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -71
+139  1405/07/21 12:18:08  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -64, wants bridge
+140  1405/07/21 12:20:07  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -64
+141  1405/07/21 12:20:12  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -76, wants bridge
+142  1405/07/21 12:37:35  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -76
+143  1405/07/21 12:37:40  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -63, wants bridge
+144  1405/07/21 12:39:18  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, extensive data loss, signal strength -63
+145  1405/07/21 12:39:27  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -65, wants bridge
+146  1405/07/21 12:43:26  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, extensive data loss, signal strength -65
+147  1405/07/21 12:43:35  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -66, wants bridge
+148  1405/07/21 12:43:51  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -66
+149  1405/07/21 12:43:57  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -63, wants bridge
+150  1405/07/21 12:49:37  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, extensive data loss, signal strength -63
+151  1405/07/21 12:49:46  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -62, wants bridge
+152  1405/07/21 20:58:54  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, extensive data loss, signal strength -62
+153  1405/07/21 20:59:03  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -63, wants bridge
+154  1405/07/21 21:04:23  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -63
+155  1405/07/21 21:04:28  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -64, wants bridge
+156  1405/07/21 22:57:16  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -64
+157  1405/07/21 22:57:21  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -71, wants bridge
+158  1405/07/21 23:10:24  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -71
+159  1405/07/21 23:10:30  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -66, wants bridge
+160  1405/07/22 03:23:23  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, extensive data loss, signal strength -66
+161  1405/07/22 03:23:33  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -73, wants bridge
+162  1405/07/22 03:24:35  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, extensive data loss, signal strength -73
+163  1405/07/22 03:24:44  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -79, wants bridge
+164  1405/07/22 03:24:54  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, extensive data loss, signal strength -79
+165  1405/07/22 03:25:03  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -71, wants bridge
+166  1405/07/22 03:38:56  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, extensive data loss, signal strength -71
+167  1405/07/22 03:39:04  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -69, wants bridge
+168  1405/07/22 03:55:18  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, extensive data loss, signal strength -69
+169  1405/07/22 03:55:27  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -79, wants bridge
+170  1405/07/22 09:42:47  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -50
+171  1405/07/22 09:54:17  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -49, wants bridge
+172  1405/07/22 13:26:51  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+173  1405/07/22 13:26:54  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+174  1405/07/22 14:24:17  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -49
+175  1405/07/22 14:24:22  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -75, wants bridge
+176  1405/07/22 21:04:25  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -75
+177  1405/07/22 21:04:30  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -71, wants bridge
+178  1405/07/23 00:12:28  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -71
+179  1405/07/23 00:12:33  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -72, wants bridge
+180  1405/07/23 00:59:07  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -72
+181  1405/07/23 00:59:13  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -70, wants bridge
+182  1405/07/23 02:22:12  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -70
+183  1405/07/23 02:22:17  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -78, wants bridge
+184  1405/07/23 04:44:31  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -78
+185  1405/07/23 04:44:36  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -81, wants bridge
+186  1405/07/23 06:18:21  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -81
+187  1405/07/23 06:18:26  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -79, wants bridge
+188  1405/07/23 06:18:38  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -79
+189  1405/07/23 06:18:43  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -77, wants bridge
+190  1405/07/23 06:21:20  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -77
+191  1405/07/23 06:21:25  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -67, wants bridge
+192  1405/07/23 06:56:58  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -67
+193  1405/07/23 06:57:03  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -59, wants bridge
+194  1405/07/23 07:42:50  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -59
+195  1405/07/23 07:51:10  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -62, wants bridge
+196  1405/07/23 08:00:30  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, too many poll timeouts, signal strength -62
+197  1405/07/23 08:00:35  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -79, wants bridge
+198  1405/07/23 08:04:10  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: disconnected, extensive data loss, signal strength -79
+199  1405/07/23 08:04:19  [wireless,info]  6C:3B:6B:5C:67:04@wlan1: connected, signal strength -72, wants bridge
+200  1405/07/23 12:34:07  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===

@@ -1,5 +1,5 @@
 IP: 172.18.26.115
-Collected at: 2026-10-14T10:23:33.576448+00:00
+Collected at: 2026-10-15T10:08:48.650860+00:00
 source: RouterOS API
 identity: Rahmanieh.Client
 device_type: ST
@@ -30,19 +30,15 @@ name=wlan1  mode=station-bridge  ssid=Khoramshahr-Soeichi1  band=5ghz-a/n  frequ
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:26:27
-# ساعت دستگاه (خام): 2024-02-08 22:04:11
-# افست اصلاحی (سرور − دستگاه): +23483:52:16
-  1  1405/07/21 11:44:29  [system,error,critical]  router was rebooted without proper shutdown
-  2  1405/07/21 11:44:30  [interface,info]  ether1 link up (speed 100M, full duplex)
-  3  1405/07/21 11:47:30  [wireless,info]  6C:3B:6B:AB:D2:B6@wlan1 established connection on 5280000, SSID Khoramshahr-Soeichi1
-  4  1405/07/21 20:27:33  [wireless,info]  6C:3B:6B:AB:D2:B6@wlan1: lost connection, not polled for too long
-  5  1405/07/21 20:27:38  [wireless,info]  6C:3B:6B:AB:D2:B6@wlan1 established connection on 5280000, SSID Khoramshahr-Soeichi1
-  6  1405/07/21 22:01:33  [wireless,info]  6C:3B:6B:AB:D2:B6@wlan1: lost connection, not polled for too long
-  7  1405/07/21 22:01:38  [wireless,info]  6C:3B:6B:AB:D2:B6@wlan1 established connection on 5280000, SSID Khoramshahr-Soeichi1
-  8  1405/07/22 10:27:29  [dhcp,info]  dhcp1 deassigned 172.29.209.222 from B4:2E:99:71:6D:4F
-  9  1405/07/22 10:27:29  [dhcp,info]  dhcp1 assigned 172.29.209.222 to B4:2E:99:71:6D:4F
- 10  1405/07/22 13:26:25  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+# زمان سرور هنگام خواندن: 1405/07/23 12:33:46
+# ساعت دستگاه (خام): 2024-02-09 17:56:37
+# افست اصلاحی (سرور − دستگاه): +23487:07:09
+  1  1405/07/23 06:51:05  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/23 06:51:06  [interface,info]  ether1 link up (speed 100M, full duplex)
+  3  1405/07/23 06:54:28  [wireless,info]  6C:3B:6B:AB:D2:B6@wlan1 established connection on 5280000, SSID Khoramshahr-Soeichi1
+  4  1405/07/23 07:14:31  [wireless,info]  6C:3B:6B:AB:D2:B6@wlan1: lost connection, not polled for too long
+  5  1405/07/23 07:14:36  [wireless,info]  6C:3B:6B:AB:D2:B6@wlan1 established connection on 5280000, SSID Khoramshahr-Soeichi1
+  6  1405/07/23 12:33:44  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===

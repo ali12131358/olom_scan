@@ -1,5 +1,5 @@
 IP: 172.18.1.251
-Collected at: 2026-10-14T10:21:51.846235+00:00
+Collected at: 2026-10-15T10:07:10.243878+00:00
 source: RouterOS API
 identity: EbnSina2.Client
 device_type: ST
@@ -28,14 +28,13 @@ name=wlan1  mode=station-bridge  ssid=Setad->GhDa.AP  band=5ghz-a/n  frequency=5
 
 ----- neighbors -----
 === /ip neighbor ===
-  1  identity=-  address=-  interface=ether1
-  2  identity=Setad-M-foriat-line15.AP  address=172.18.1.250  interface=wlan1,bridge1
-  3  identity=SW-Wireless3.test.local  address=172.19.1.51  interface=wlan1,bridge1
+  1  identity=Setad-M-foriat-line15.AP  address=172.18.1.250  interface=wlan1,bridge1
+  2  identity=SW-Wireless3.test.local  address=172.19.1.51  interface=wlan1,bridge1
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:12:01
-# ساعت دستگاه (خام): 1975-03-12 08:21:09
+# زمان سرور هنگام خواندن: 1405/07/23 12:20:09
+# ساعت دستگاه (خام): 1975-03-13 07:29:17
 # افست اصلاحی (سرور − دستگاه): +452257:20:52
   1  1405/07/20 08:43:49  [system,error,critical]  router was rebooted without proper shutdown
   2  1405/07/20 08:43:49  [bridge,info]  "bridge1" mac address changed to 4C:5E:0C:A7:F8:0B
@@ -62,6 +61,8 @@ name=wlan1  mode=station-bridge  ssid=Setad->GhDa.AP  band=5ghz-a/n  frequency=5
  23  1405/07/22 11:46:12  [dhcp,info]  dhcp1 deassigned 172.29.30.29 from 40:8D:5C:9C:D5:D5
  24  1405/07/22 12:40:34  [dhcp,info]  dhcp1 deassigned 172.29.30.30 from 40:8D:5C:28:19:95
  25  1405/07/22 13:12:00  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 26  1405/07/22 13:12:02  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 27  1405/07/23 12:20:08  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===

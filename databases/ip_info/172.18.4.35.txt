@@ -1,5 +1,5 @@
 IP: 172.18.4.35
-Collected at: 2026-10-14T10:24:04.881438+00:00
+Collected at: 2026-10-15T10:09:31.058294+00:00
 source: RouterOS API
 identity: Tange 3.Client
 device_type: ST
@@ -32,8 +32,8 @@ name=wlan1  mode=station-bridge  ssid=Foriat-Tongeh  band=5ghz-a/n  frequency=57
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:31:54
-# ساعت دستگاه (خام): 1972-08-25 04:56:36
+# زمان سرور هنگام خواندن: 1405/07/23 12:38:55
+# ساعت دستگاه (خام): 1972-08-26 04:03:37
 # افست اصلاحی (سرور − دستگاه): +474557:05:18
   1  1405/07/15 08:34:10  [system,error,critical]  router was rebooted without proper shutdown
   2  1405/07/15 08:34:10  [bridge,info]  "bridge1" mac address changed to 6C:3B:6B:97:E7:DE
@@ -180,6 +180,16 @@ name=wlan1  mode=station-bridge  ssid=Foriat-Tongeh  band=5ghz-a/n  frequency=57
 143  1405/07/22 12:44:52  [dhcp,info]  dhcp1 deassigned 172.29.68.36 from 60:CF:84:69:69:B5
 144  1405/07/22 12:45:46  [dhcp,info]  dhcp1 deassigned 172.29.68.35 from 7C:F1:7E:F4:1D:10
 145  1405/07/22 13:31:51  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+146  1405/07/22 13:31:55  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+147  1405/07/22 13:49:00  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+148  1405/07/22 13:49:04  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+149  1405/07/22 19:43:58  [wireless,info]  64:D1:54:08:D0:55@wlan1: lost connection, medium-access timeout
+150  1405/07/22 19:44:50  [wireless,info]  64:D1:54:08:D0:55@wlan1 established connection on 5720000, SSID Foriat-Tongeh
+151  1405/07/22 19:55:31  [dhcp,info]  dhcp1 assigned 172.29.68.37 to 5C:87:9C:99:85:EF
+152  1405/07/22 20:10:30  [dhcp,info]  dhcp1 deassigned 172.29.68.37 from 5C:87:9C:99:85:EF
+153  1405/07/23 05:19:34  [wireless,info]  64:D1:54:08:D0:55@wlan1: lost connection, medium-access timeout
+154  1405/07/23 05:20:26  [wireless,info]  64:D1:54:08:D0:55@wlan1 established connection on 5720000, SSID Foriat-Tongeh
+155  1405/07/23 12:38:54  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===

@@ -1,5 +1,5 @@
 IP: 172.18.26.106
-Collected at: 2026-10-14T10:23:32.603795+00:00
+Collected at: 2026-10-15T10:08:47.291948+00:00
 source: RouterOS API
 identity: Soeichi->Sobeh1.AP
 device_type: AP
@@ -29,22 +29,18 @@ name=wlan1  mode=ap-bridge  ssid=SVCHSBH1  band=5ghz-onlyn  frequency=5280
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:26:12
-# ساعت دستگاه (خام): 2024-05-09 02:38:49
-# افست اصلاحی (سرور − دستگاه): +21319:17:23
-  1  1405/07/22 11:47:23  [system,error,critical]  router was rebooted without proper shutdown
-  2  1405/07/22 11:47:23  [bridge,info]  "bridge1" mac address changed to 6C:3B:6B:94:8C:7B
-  3  1405/07/22 11:47:25  [interface,info]  ether1 link up (speed 100M, full duplex)
-  4  1405/07/22 11:47:30  [wireless,info]  4C:5E:0C:A7:F6:33@wlan1: connected, signal strength -64, wants bridge
-  5  1405/07/22 20:52:49  [wireless,info]  4C:5E:0C:A7:F6:33@wlan1: disconnected, extensive data loss, signal strength -64
-  6  1405/07/22 20:52:56  [wireless,info]  4C:5E:0C:A7:F6:33@wlan1: connected, signal strength -81, wants bridge
-  7  1405/07/23 00:23:39  [wireless,info]  4C:5E:0C:A7:F6:33@wlan1: disconnected, extensive data loss, signal strength -81
-  8  1405/07/23 00:23:47  [wireless,info]  4C:5E:0C:A7:F6:33@wlan1: connected, signal strength -82, wants bridge
-  9  1405/07/23 02:34:38  [wireless,info]  4C:5E:0C:A7:F6:33@wlan1: disconnected, extensive data loss, signal strength -82
- 10  1405/07/23 02:34:46  [wireless,info]  4C:5E:0C:A7:F6:33@wlan1: connected, signal strength -71, wants bridge
- 11  1405/07/23 08:14:38  [wireless,info]  4C:5E:0C:A7:F6:33@wlan1: disconnected, extensive data loss, signal strength -64
- 12  1405/07/23 08:14:46  [wireless,info]  4C:5E:0C:A7:F6:33@wlan1: connected, signal strength -74, wants bridge
- 13  1405/07/22 13:26:11  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+# زمان سرور هنگام خواندن: 1405/07/23 12:33:34
+# ساعت دستگاه (خام): 2024-05-09 06:39:16
+# افست اصلاحی (سرور − دستگاه): +21338:24:18
+  1  1405/07/23 06:54:17  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/23 06:54:18  [bridge,info]  "bridge1" mac address changed to 6C:3B:6B:94:8C:7B
+  3  1405/07/23 06:54:20  [interface,info]  ether1 link up (speed 100M, full duplex)
+  4  1405/07/23 06:54:28  [wireless,info]  4C:5E:0C:A7:F6:33@wlan1: connected, signal strength -76, wants bridge
+  5  1405/07/23 08:28:47  [wireless,info]  4C:5E:0C:A7:F6:33@wlan1: disconnected, extensive data loss, signal strength -76
+  6  1405/07/23 08:28:55  [wireless,info]  4C:5E:0C:A7:F6:33@wlan1: connected, signal strength -72, wants bridge
+  7  1405/07/23 08:43:37  [wireless,info]  4C:5E:0C:A7:F6:33@wlan1: disconnected, extensive data loss, signal strength -72
+  8  1405/07/23 08:43:45  [wireless,info]  4C:5E:0C:A7:F6:33@wlan1: connected, signal strength -71, wants bridge
+  9  1405/07/23 12:33:33  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===

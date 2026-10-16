@@ -1,5 +1,5 @@
 IP: 172.18.2.98
-Collected at: 2026-10-14T10:22:59.533622+00:00
+Collected at: 2026-10-15T10:08:05.056630+00:00
 source: RouterOS API
 identity: Markez.Taleghani2AP
 device_type: AP
@@ -30,8 +30,8 @@ name=wlan1  mode=ap-bridge  ssid=MTarash  band=5ghz-a/n  frequency=5240
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:16:48
-# ساعت دستگاه (خام): 1977-08-07 05:15:58
+# زمان سرور هنگام خواندن: 1405/07/23 12:24:37
+# ساعت دستگاه (خام): 1977-08-08 04:23:47
 # افست اصلاحی (سرور − دستگاه): +431164:30:50
   1  1405/07/19 08:42:44  [system,error,critical]  router was rebooted without proper shutdown
   2  1405/07/19 08:42:47  [bridge,info]  "bridge1" mac address changed to 64:D1:54:12:B7:F6
@@ -44,6 +44,8 @@ name=wlan1  mode=ap-bridge  ssid=MTarash  band=5ghz-a/n  frequency=5240
   9  1405/07/21 11:00:12  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
  10  1405/07/21 11:00:14  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
  11  1405/07/22 13:16:46  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 12  1405/07/22 13:16:48  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 13  1405/07/23 12:24:36  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===

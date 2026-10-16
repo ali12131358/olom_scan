@@ -1,5 +1,5 @@
 IP: 172.18.1.67
-Collected at: 2026-10-14T10:22:19.684902+00:00
+Collected at: 2026-10-15T10:07:22.306965+00:00
 source: RouterOS API
 identity: UMS-ABD-SLM-CL
 device_type: ST
@@ -35,16 +35,16 @@ name=wlan1  mode=station-wds  ssid=PTP-UMS-SALMANEH  band=5ghz-a/n  frequency=53
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:12:28
-# ساعت دستگاه (خام): 1972-03-20 15:50:37
-# افست اصلاحی (سرور − دستگاه): +478337:51:51
-  1  1405/07/22 09:51:45  [system,error,critical]  router was rebooted without proper shutdown
-  2  1405/07/22 09:51:49  [bridge,info]  "bridge1" mac address changed to CC:2D:E0:F6:65:45
-  3  1405/07/22 09:51:50  [system,info]  route changed
-  4  1405/07/22 09:51:56  [interface,info]  ether1 link up (speed 1G, full duplex)
-  5  1405/07/22 09:52:50  [wireless,info]  08:55:31:24:BE:FE@wlan1 established connection on 5800000, SSID PTP-UMS-SALMANEH
-  6  1405/07/22 09:52:51  [system,info]  route changed
-  7  1405/07/22 13:12:27  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+# زمان سرور هنگام خواندن: 1405/07/23 12:20:37
+# ساعت دستگاه (خام): 1972-03-20 17:01:49
+# افست اصلاحی (سرور − دستگاه): +478359:48:48
+  1  1405/07/23 07:48:42  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/23 07:48:47  [bridge,info]  "bridge1" mac address changed to CC:2D:E0:F6:65:45
+  3  1405/07/23 07:48:48  [system,info]  route changed
+  4  1405/07/23 07:48:53  [interface,info]  ether1 link up (speed 1G, full duplex)
+  5  1405/07/23 07:49:48  [wireless,info]  08:55:31:24:BE:FE@wlan1 established connection on 5800000, SSID PTP-UMS-SALMANEH
+  6  1405/07/23 07:49:49  [system,info]  route changed
+  7  1405/07/23 12:20:36  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===

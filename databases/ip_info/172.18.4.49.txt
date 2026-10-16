@@ -1,5 +1,5 @@
 IP: 172.18.4.49
-Collected at: 2026-10-14T10:24:05.578906+00:00
+Collected at: 2026-10-15T10:09:31.825809+00:00
 source: RouterOS API
 identity: 22Bahman-MK
 device_type: Router
@@ -111,23 +111,20 @@ device_type: Router
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:32:07
-# ساعت دستگاه (خام): 1974-09-15 17:13:39
-# افست اصلاحی (سرور − دستگاه): +456520:48:28
-  1  1405/07/22 10:54:34  [system,error,critical]  router was rebooted without proper shutdown
-  2  1405/07/22 10:54:36  [bridge,info]  "bridge1" mac address changed to E4:8D:8C:0E:6E:42
-  3  1405/07/22 10:54:37  [poe-out,info]  ether10 detected poe-out status: on
-  4  1405/07/22 10:54:37  [interface,info]  ether5 link up (speed 100M, full duplex)
-  5  1405/07/22 10:54:38  [interface,info]  ether1 link up (speed 1G, full duplex)
-  6  1405/07/22 10:54:40  [interface,info]  ether9 link up (speed 100M, full duplex)
-  7  1405/07/22 10:54:42  [interface,info]  ether10 link up (speed 100M, full duplex)
-  8  1405/07/22 10:54:44  [interface,info]  ether4 link up (speed 1G, full duplex)
-  9  1405/07/22 10:54:49  [interface,info]  ether2 link up (speed 100M, full duplex)
- 10  1405/07/22 11:03:13  [dhcp,info]  dhcp1 deassigned 172.29.72.21 from 76:E4:6E:A9:F9:17
- 11  1405/07/22 11:15:27  [dhcp,info]  dhcp1 assigned 172.29.72.21 to 76:E4:6E:A9:F9:17
- 12  1405/07/22 11:54:38  [dhcp,info]  dhcp1 deassigned 172.29.72.27 from D0:37:45:DF:E2:94
- 13  1405/07/22 11:59:58  [dhcp,info]  dhcp1 deassigned 172.29.72.24 from 7C:F1:7E:F4:33:10
- 14  1405/07/22 13:32:06  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+# زمان سرور هنگام خواندن: 1405/07/23 12:39:01
+# ساعت دستگاه (خام): 1974-09-16 09:59:44
+# افست اصلاحی (سرور − دستگاه): +456527:09:17
+  1  1405/07/22 19:38:28  [system,error,critical]  System rebooted because of ping watchdog timeout
+  2  1405/07/22 19:38:28  [system,info]  router rebooted
+  3  1405/07/22 19:38:29  [bridge,info]  "bridge1" mac address changed to E4:8D:8C:0E:6E:42
+  4  1405/07/22 19:38:31  [poe-out,info]  ether10 detected poe-out status: on
+  5  1405/07/22 19:38:31  [interface,info]  ether1 link up (speed 1G, full duplex)
+  6  1405/07/22 19:38:31  [interface,info]  ether4 link up (speed 1G, full duplex)
+  7  1405/07/22 19:38:31  [interface,info]  ether5 link up (speed 100M, full duplex)
+  8  1405/07/22 19:38:31  [interface,info]  ether9 link up (speed 100M, full duplex)
+  9  1405/07/22 19:38:31  [interface,info]  ether10 link up (speed 100M, full duplex)
+ 10  1405/07/22 19:38:43  [interface,info]  ether2 link up (speed 100M, full duplex)
+ 11  1405/07/23 12:39:00  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===
@@ -144,22 +141,22 @@ ether10  E4:8D:8C:0E:6E:49  (ether)
 sfp1  E4:8D:8C:0E:6E:3F  (ether)
 bridge1  E4:8D:8C:0E:6E:42  (bridge)
 --- /ip arp ---
-ether1  E4:8D:8C:D5:38:61  (arp 172.18.9.203)
+ether2  6C:3B:6B:34:02:51  (arp 172.18.9.212)
 ether1  6C:3B:6B:97:E7:CD  (arp 172.18.9.201)
-ether4  6C:3B:6B:B2:3D:27  (arp 172.18.9.180)
-bridge1  6C:3B:6B:10:B1:A5  (arp 172.18.9.219)
-ether2  6C:3B:6B:34:02:57  (arp 172.18.9.213)
-ether4  48:A9:8A:56:43:A2  (arp 172.18.9.178)
 ether2  6C:3B:6B:74:E2:96  (arp 172.18.9.211)
 bridge1  76:E4:6E:A9:F9:17  (arp 172.29.72.21)
-ether1  64:D1:54:93:53:89  (arp 172.18.9.198)
-ether1  6C:3B:6B:97:E7:E3  (arp 172.18.9.196)
-ether1  6C:3B:6B:94:8C:9A  (arp 172.18.9.194)
-ether1  6C:3B:6B:91:11:4C  (arp 172.18.9.202)
+ether4  48:A9:8A:56:43:A2  (arp 172.18.9.178)
+ether1  E4:8D:8C:D5:38:61  (arp 172.18.9.203)
+ether2  6C:3B:6B:34:02:57  (arp 172.18.9.213)
 ether1  6C:3B:6B:34:01:DB  (arp 172.18.9.200)
-ether2  6C:3B:6B:34:02:51  (arp 172.18.9.212)
-ether10  6C:3B:6B:85:AC:AF  (arp 172.18.9.9)
-ether10  48:A9:8A:56:35:35  (arp 172.18.9.11)
-ether2  6C:3B:6B:4E:0E:FD  (arp 172.18.9.210)
-ether4  E4:8D:8C:7C:E4:FB  (arp 172.18.9.179)
 ether1  6C:3B:6B:10:AF:73  (arp 172.18.9.199)
+ether1  6C:3B:6B:94:8C:9A  (arp 172.18.9.194)
+bridge1  6C:3B:6B:10:B1:A5  (arp 172.18.9.219)
+ether4  E4:8D:8C:7C:E4:FB  (arp 172.18.9.179)
+ether1  6C:3B:6B:91:11:4C  (arp 172.18.9.202)
+ether10  48:A9:8A:56:35:35  (arp 172.18.9.11)
+ether1  6C:3B:6B:97:E7:E3  (arp 172.18.9.196)
+ether2  6C:3B:6B:4E:0E:FD  (arp 172.18.9.210)
+ether4  6C:3B:6B:B2:3D:27  (arp 172.18.9.180)
+ether10  6C:3B:6B:85:AC:AF  (arp 172.18.9.9)
+ether1  64:D1:54:93:53:89  (arp 172.18.9.198)

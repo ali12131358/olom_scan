@@ -1,5 +1,5 @@
 IP: 172.18.2.11
-Collected at: 2026-10-14T10:22:37.376765+00:00
+Collected at: 2026-10-15T10:07:36.494478+00:00
 source: RouterOS API
 identity: abdn-foriat-alghadir-CL
 device_type: ST
@@ -36,8 +36,8 @@ name=wlan1  mode=station-bridge  ssid=Abadan-Foriat3  band=5ghz-a/n  frequency=5
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:14:16
-# ساعت دستگاه (خام): 1972-07-16 04:18:47
+# زمان سرور هنگام خواندن: 1405/07/23 12:22:15
+# ساعت دستگاه (خام): 1972-07-17 03:26:46
 # افست اصلاحی (سرور − دستگاه): +475517:25:29
   1  1405/07/14 21:16:22  [system,error,critical]  router was rebooted without proper shutdown
   2  1405/07/14 21:16:22  [bridge,info]  "bridge1" mac address changed to E4:8D:8C:DB:C0:36
@@ -138,6 +138,10 @@ name=wlan1  mode=station-bridge  ssid=Abadan-Foriat3  band=5ghz-a/n  frequency=5
  97  1405/07/21 10:57:39  [wireless,info]  C4:AD:34:06:2F:7C@wlan1: lost connection, synchronization timeout
  98  1405/07/21 10:58:17  [wireless,info]  C4:AD:34:06:2F:7C@wlan1 established connection on 5600000, SSID Abadan-Foriat3
  99  1405/07/22 13:14:14  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+100  1405/07/22 13:14:16  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+101  1405/07/22 13:44:57  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+102  1405/07/22 13:44:59  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+103  1405/07/23 12:22:14  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===

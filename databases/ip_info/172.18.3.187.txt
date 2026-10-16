@@ -1,5 +1,5 @@
 IP: 172.18.3.187
-Collected at: 2026-10-14T10:23:48.528478+00:00
+Collected at: 2026-10-15T10:09:12.137608+00:00
 source: RouterOS API
 identity: Shohada.Kh.Client
 device_type: ST
@@ -31,8 +31,8 @@ name=wlan1  mode=station-bridge  ssid=Shohada.Kh1  band=5ghz-a/n  frequency=5280
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:29:23
-# ساعت دستگاه (خام): 1976-05-20 03:26:27
+# زمان سرور هنگام خواندن: 1405/07/23 12:36:37
+# ساعت دستگاه (خام): 1976-05-21 02:33:41
 # افست اصلاحی (سرور − دستگاه): +441822:32:56
   1  1405/07/18 13:19:31  [system,error,critical]  router was rebooted without proper shutdown
   2  1405/07/18 13:19:40  [wireless,info]  CC:2D:E0:F6:28:DD@wlan1 established connection on 5280000, SSID Shohada.Kh1
@@ -158,6 +158,8 @@ name=wlan1  mode=station-bridge  ssid=Shohada.Kh1  band=5ghz-a/n  frequency=5280
 122  1405/07/22 13:14:36  [dhcp,info]  dhcp1 deassigned 172.28.21.174 from 18:D6:C7:C6:73:E2
 123  1405/07/22 13:22:56  [dhcp,info]  dhcp1 deassigned 172.28.21.175 from 7C:2A:31:6C:5F:2A
 124  1405/07/22 13:29:21  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+125  1405/07/22 13:29:24  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+126  1405/07/23 12:36:36  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===

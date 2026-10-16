@@ -1,5 +1,5 @@
 IP: 172.18.16.2
-Collected at: 2026-10-14T10:22:30.417098+00:00
+Collected at: 2026-10-15T10:07:27.780637+00:00
 source: RouterOS API
 identity: Khoramshahr-Shabakeh1
 device_type: AP
@@ -30,8 +30,8 @@ name=wlan1  mode=ap-bridge  ssid=Khoramshahr-Shabakeh1  band=5ghz-a/n  frequency
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:12:58
-# ساعت دستگاه (خام): 1975-05-20 16:10:46
+# زمان سرور هنگام خواندن: 1405/07/23 12:21:06
+# ساعت دستگاه (خام): 1975-05-21 15:18:54
 # افست اصلاحی (سرور − دستگاه): +450593:32:12
   1  1405/07/19 08:42:44  [system,error,critical]  router was rebooted without proper shutdown
   2  1405/07/19 08:42:48  [bridge,info]  "bridge1" mac address changed to 6C:3B:6B:8F:3B:DE
@@ -53,6 +53,12 @@ name=wlan1  mode=ap-bridge  ssid=Khoramshahr-Shabakeh1  band=5ghz-a/n  frequency
  18  1405/07/22 08:05:49  [wireless,info]  6C:3B:6B:91:10:F4@wlan1: connected, signal strength -58, wants bridge
  19  1405/07/22 11:28:46  [wireless,info]  6C:3B:6B:91:10:F4@wlan1: disconnected, extensive data loss, signal strength -58
  20  1405/07/22 13:12:57  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 21  1405/07/22 13:12:58  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 22  1405/07/23 06:58:28  [wireless,info]  6C:3B:6B:91:10:0E@wlan1: disconnected, extensive data loss, signal strength -69
+ 23  1405/07/23 07:00:04  [wireless,info]  E4:8D:8C:6B:43:59@wlan1: disconnected, extensive data loss, signal strength -53
+ 24  1405/07/23 08:10:58  [wireless,info]  6C:3B:6B:91:10:0E@wlan1: connected, signal strength -69, wants bridge
+ 25  1405/07/23 08:11:34  [wireless,info]  E4:8D:8C:6B:43:59@wlan1: connected, signal strength -51
+ 26  1405/07/23 12:21:05  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===

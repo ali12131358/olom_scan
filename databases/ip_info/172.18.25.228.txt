@@ -1,5 +1,5 @@
 IP: 172.18.25.228
-Collected at: 2026-10-14T10:23:25.115774+00:00
+Collected at: 2026-10-15T10:08:37.711525+00:00
 source: RouterOS API
 identity: AlboObeyd.Client
 device_type: ST
@@ -30,16 +30,20 @@ name=wlan1  mode=station-bridge  ssid=Shadegan-Jafal2  band=5ghz-a/n  frequency=
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:24:16
-# ساعت دستگاه (خام): 1972-05-01 03:25:28
-# افست اصلاحی (سرور − دستگاه): +477342:28:48
-  1  1405/07/22 11:03:05  [system,error,critical]  router was rebooted without proper shutdown
-  2  1405/07/22 11:03:15  [interface,info]  ether1 link up (speed 100M, full duplex)
-  3  1405/07/22 11:03:57  [wireless,info]  6C:3B:6B:5D:72:81@wlan1 established connection on 5100000, SSID Shadegan-Jafal2
-  4  1405/07/22 11:08:16  [dhcp,info]  dhcp1 deassigned 172.29.204.110 from 60:CF:84:69:5C:A2
-  5  1405/07/22 11:10:42  [dhcp,info]  dhcp1 assigned 172.29.204.110 to 60:CF:84:69:5C:A2
-  6  1405/07/22 12:05:43  [dhcp,info]  dhcp1 deassigned 172.29.204.110 from 60:CF:84:69:5C:A2
-  7  1405/07/22 13:24:14  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+# زمان سرور هنگام خواندن: 1405/07/23 12:31:45
+# ساعت دستگاه (خام): 1972-05-02 02:32:56
+# افست اصلاحی (سرور − دستگاه): +477342:28:49
+  1  1405/07/22 11:03:06  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/22 11:03:16  [interface,info]  ether1 link up (speed 100M, full duplex)
+  3  1405/07/22 11:03:58  [wireless,info]  6C:3B:6B:5D:72:81@wlan1 established connection on 5100000, SSID Shadegan-Jafal2
+  4  1405/07/22 11:08:17  [dhcp,info]  dhcp1 deassigned 172.29.204.110 from 60:CF:84:69:5C:A2
+  5  1405/07/22 11:10:43  [dhcp,info]  dhcp1 assigned 172.29.204.110 to 60:CF:84:69:5C:A2
+  6  1405/07/22 12:05:44  [dhcp,info]  dhcp1 deassigned 172.29.204.110 from 60:CF:84:69:5C:A2
+  7  1405/07/22 13:24:15  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+  8  1405/07/22 13:24:17  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+  9  1405/07/22 13:46:09  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 10  1405/07/22 13:46:11  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 11  1405/07/23 12:31:44  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===

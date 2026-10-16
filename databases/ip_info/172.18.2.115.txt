@@ -1,5 +1,5 @@
 IP: 172.18.2.115
-Collected at: 2026-10-14T10:22:40.736017+00:00
+Collected at: 2026-10-15T10:07:37.422100+00:00
 source: RouterOS API
 identity: ShabakeBehdasht->Menikh.Client
 device_type: ST
@@ -33,8 +33,8 @@ name=wlan1  mode=station  ssid=SHMNKH  band=5ghz-a/n  frequency=5560
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:14:23
-# ساعت دستگاه (خام): 1975-02-28 02:06:17
+# زمان سرور هنگام خواندن: 1405/07/23 12:22:24
+# ساعت دستگاه (خام): 1975-03-01 01:14:18
 # افست اصلاحی (سرور − دستگاه): +452551:38:06
   1  1405/07/20 08:28:47  [system,error,critical]  router was rebooted without proper shutdown
   2  1405/07/20 08:28:53  [interface,info]  ether1 link up (speed 100M, full duplex)
@@ -129,6 +129,17 @@ name=wlan1  mode=station  ssid=SHMNKH  band=5ghz-a/n  frequency=5560
  91  1405/07/22 10:06:08  [dhcp,info]  dhcp1 assigned 172.29.13.203 to 20:34:FB:AD:DC:A6
  92  1405/07/22 10:40:35  [dhcp,info]  dhcp1 deassigned 172.29.13.211 from 98:DE:D0:26:ED:27
  93  1405/07/22 13:14:21  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 94  1405/07/22 13:14:23  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 95  1405/07/22 13:40:24  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 96  1405/07/22 13:40:26  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 97  1405/07/23 07:25:35  [dhcp,info]  dhcp1 deassigned 172.29.13.253 from 80:5E:C0:41:5C:C4
+ 98  1405/07/23 07:26:39  [dhcp,info]  dhcp1 deassigned 172.29.13.252 from 7C:F1:7E:F4:33:80
+ 99  1405/07/23 08:10:09  [dhcp,info]  dhcp1 deassigned 172.29.13.205 from 84:16:F9:6D:DD:64
+100  1405/07/23 08:14:19  [dhcp,info]  dhcp1 deassigned 172.29.13.214 from 84:16:F9:6D:D9:CC
+101  1405/07/23 08:21:14  [dhcp,info]  dhcp1 deassigned 172.29.13.208 from 84:16:F9:6D:E4:B5
+102  1405/07/23 10:05:08  [dhcp,info]  dhcp1 deassigned 172.29.13.206 from 84:16:F9:6D:D8:02
+103  1405/07/23 10:06:08  [dhcp,info]  dhcp1 deassigned 172.29.13.203 from 20:34:FB:AD:DC:A6
+104  1405/07/23 12:22:22  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===
@@ -138,7 +149,5 @@ bridge1  AA:B3:B9:A4:DE:D1  (bridge)
 --- /ip arp ---
 ether1  00:00:00:00:00:00  (arp 172.29.13.132)
 ether1  00:02:65:15:E1:0C  (arp 172.29.13.210)
-ether1  80:5E:C0:41:5C:C4  (arp 172.29.13.253)
 ether1  74:4D:28:E9:4B:4E  (arp 172.29.13.130)
 wlan1  4C:5E:0C:9B:0E:6F  (arp 172.18.2.113)
-ether1  84:16:F9:6D:D9:CC  (arp 172.29.13.214)

@@ -1,5 +1,5 @@
 IP: 172.18.2.114
-Collected at: 2026-10-14T10:22:38.249349+00:00
+Collected at: 2026-10-15T10:07:37.068864+00:00
 source: RouterOS API
 identity: ShabakeBehdasht->Menikh.AP
 device_type: AP
@@ -29,22 +29,24 @@ name=wlan1  mode=bridge  ssid=SHMNKH  band=5ghz-a/n  frequency=5850
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:14:21
-# ساعت دستگاه (خام): 1977-07-30 17:36:47
-# افست اصلاحی (سرور − دستگاه): +431344:07:34
-  1  1405/07/19 08:42:39  [system,error,critical]  router was rebooted without proper shutdown
-  2  1405/07/19 08:42:40  [bridge,info]  "bridge1" mac address changed to E4:8D:8C:58:DF:7A
-  3  1405/07/19 08:42:44  [interface,info]  ether1 link up (speed 100M, full duplex)
-  4  1405/07/19 08:43:31  [wireless,info]  E4:8D:8C:56:08:73@wlan1: connected, signal strength -70
-  5  1405/07/19 09:33:56  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
-  6  1405/07/19 09:33:58  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
-  7  1405/07/19 17:41:18  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
-  8  1405/07/19 17:41:18  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
-  9  1405/07/20 08:19:01  [wireless,info]  E4:8D:8C:56:08:73@wlan1: disconnected, not responding
- 10  1405/07/20 08:29:41  [wireless,info]  E4:8D:8C:56:08:73@wlan1: connected, signal strength -70
- 11  1405/07/21 10:55:40  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
- 12  1405/07/21 10:55:41  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
- 13  1405/07/22 13:14:20  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+# زمان سرور هنگام خواندن: 1405/07/23 12:22:21
+# ساعت دستگاه (خام): 1977-07-31 16:44:49
+# افست اصلاحی (سرور − دستگاه): +431344:07:32
+  1  1405/07/19 08:42:37  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/19 08:42:38  [bridge,info]  "bridge1" mac address changed to E4:8D:8C:58:DF:7A
+  3  1405/07/19 08:42:42  [interface,info]  ether1 link up (speed 100M, full duplex)
+  4  1405/07/19 08:43:29  [wireless,info]  E4:8D:8C:56:08:73@wlan1: connected, signal strength -70
+  5  1405/07/19 09:33:54  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+  6  1405/07/19 09:33:56  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+  7  1405/07/19 17:41:16  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+  8  1405/07/19 17:41:16  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+  9  1405/07/20 08:18:59  [wireless,info]  E4:8D:8C:56:08:73@wlan1: disconnected, not responding
+ 10  1405/07/20 08:29:39  [wireless,info]  E4:8D:8C:56:08:73@wlan1: connected, signal strength -70
+ 11  1405/07/21 10:55:38  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 12  1405/07/21 10:55:39  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 13  1405/07/22 13:14:18  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 14  1405/07/22 13:14:20  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 15  1405/07/23 12:22:20  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===

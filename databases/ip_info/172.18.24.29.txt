@@ -1,5 +1,5 @@
 IP: 172.18.24.29
-Collected at: 2026-10-14T10:23:08.140393+00:00
+Collected at: 2026-10-15T10:08:16.456274+00:00
 source: RouterOS API
 identity: MarkazGirZamimeh2Saadi.client
 device_type: ST
@@ -31,8 +31,8 @@ name=wlan1  mode=station-bridge  ssid=Shadegan-Shabakeh1  band=5ghz-a/n  frequen
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:19:13
-# ساعت دستگاه (خام): 1973-07-09 18:05:45
+# زمان سرور هنگام خواندن: 1405/07/23 12:26:59
+# ساعت دستگاه (خام): 1973-07-10 17:13:31
 # افست اصلاحی (سرور − دستگاه): +466911:43:28
   1  1405/07/19 19:58:17  [system,error,critical]  router was rebooted without proper shutdown
   2  1405/07/19 19:58:27  [interface,info]  ether1 link up (speed 100M, full duplex)
@@ -128,6 +128,29 @@ name=wlan1  mode=station-bridge  ssid=Shadegan-Shabakeh1  band=5ghz-a/n  frequen
  92  1405/07/22 13:04:13  [dhcp,info]  dhcp1 assigned 172.29.196.233 to 5A:F5:18:0D:CF:C7
  93  1405/07/22 13:04:35  [dhcp,info]  dhcp1 deassigned 172.29.196.235 from 98:DE:D0:26:FC:A0
  94  1405/07/22 13:19:11  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 95  1405/07/22 13:19:15  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 96  1405/07/22 13:34:03  [dhcp,info]  dhcp1 assigned 172.29.196.232 to F6:4F:79:C3:D2:02
+ 97  1405/07/22 13:39:14  [dhcp,info]  dhcp1 deassigned 172.29.196.233 from 5A:F5:18:0D:CF:C7
+ 98  1405/07/22 13:43:05  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 99  1405/07/22 13:43:07  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+100  1405/07/22 14:08:53  [dhcp,info]  dhcp1 assigned 172.29.196.233 to 5A:F5:18:0D:CF:C7
+101  1405/07/22 14:28:53  [dhcp,info]  dhcp1 deassigned 172.29.196.233 from 5A:F5:18:0D:CF:C7
+102  1405/07/22 15:29:09  [dhcp,info]  dhcp1 deassigned 172.29.196.232 from F6:4F:79:C3:D2:02
+103  1405/07/22 17:21:22  [dhcp,info]  dhcp1 assigned 172.29.196.233 to 5A:F5:18:0D:CF:C7
+104  1405/07/22 17:32:58  [dhcp,info]  dhcp1 assigned 172.29.196.232 to F6:4F:79:C3:D2:02
+105  1405/07/22 18:12:58  [dhcp,info]  dhcp1 deassigned 172.29.196.232 from F6:4F:79:C3:D2:02
+106  1405/07/22 18:29:08  [dhcp,info]  dhcp1 assigned 172.29.196.232 to F6:4F:79:C3:D2:02
+107  1405/07/22 18:36:26  [dhcp,info]  dhcp1 deassigned 172.29.196.233 from 5A:F5:18:0D:CF:C7
+108  1405/07/22 19:29:11  [dhcp,info]  dhcp1 deassigned 172.29.196.232 from F6:4F:79:C3:D2:02
+109  1405/07/22 19:30:04  [dhcp,info]  dhcp1 assigned 172.29.196.233 to 5A:F5:18:0D:CF:C7
+110  1405/07/22 20:05:05  [dhcp,info]  dhcp1 deassigned 172.29.196.233 from 5A:F5:18:0D:CF:C7
+111  1405/07/23 01:25:17  [dhcp,info]  dhcp1 assigned 172.29.196.233 to 5A:F5:18:0D:CF:C7
+112  1405/07/23 04:01:11  [dhcp,info]  dhcp1 deassigned 172.29.196.233 from 5A:F5:18:0D:CF:C7
+113  1405/07/23 09:06:30  [dhcp,info]  dhcp1 assigned 172.29.196.232 to F6:4F:79:C3:D2:02
+114  1405/07/23 09:21:31  [dhcp,info]  dhcp1 deassigned 172.29.196.232 from F6:4F:79:C3:D2:02
+115  1405/07/23 10:51:06  [dhcp,info]  dhcp1 assigned 172.29.196.232 to F6:4F:79:C3:D2:02
+116  1405/07/23 11:12:12  [dhcp,info]  dhcp1 assigned 172.29.196.230 to 42:00:69:A9:F0:CE
+117  1405/07/23 12:26:57  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===
@@ -135,4 +158,5 @@ ether1  08:55:31:79:60:2F  (ether)
 wlan1  08:55:31:79:60:30  (wlan)
 --- /ip arp ---
 wlan1  64:D1:54:98:E3:2E  (arp 172.18.24.25)
-ether1  5A:F5:18:0D:CF:C7  (arp 172.29.196.233)
+ether1  F6:4F:79:C3:D2:02  (arp 172.29.196.232)
+ether1  42:00:69:A9:F0:CE  (arp 172.29.196.230)

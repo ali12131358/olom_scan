@@ -1,5 +1,5 @@
 IP: 172.18.25.158
-Collected at: 2026-10-14T10:23:18.804545+00:00
+Collected at: 2026-10-15T10:08:31.900630+00:00
 source: RouterOS API
 identity: EnayatiPaein.client
 device_type: ST
@@ -32,8 +32,8 @@ name=wlan1  mode=station-bridge  ssid=Shadegan-Abshar2  band=5ghz-a/n  frequency
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:22:57
-# ساعت دستگاه (خام): 2019-11-08 01:09:58
+# زمان سرور هنگام خواندن: 1405/07/23 12:30:34
+# ساعت دستگاه (خام): 2019-11-09 00:17:35
 # افست اصلاحی (سرور − دستگاه): +60776:42:59
   1  1405/07/17 11:12:56  [system,error,critical]  router was rebooted without proper shutdown
   2  1405/07/17 11:13:03  [wireless,info]  B8:69:F4:39:B9:9C@wlan1 established connection on 5260000, SSID Shadegan-Abshar2
@@ -88,12 +88,16 @@ name=wlan1  mode=station-bridge  ssid=Shadegan-Abshar2  band=5ghz-a/n  frequency
  51  1405/07/21 11:20:28  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
  52  1405/07/21 11:20:29  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
  53  1405/07/21 12:12:43  [dhcp,info]  dhcp1 deassigned 172.29.201.62 from FC:AA:14:D6:6F:4B
- 54  1405/07/23 09:24:08  [interface,info]  ether1 link down
- 55  1405/07/23 09:24:10  [interface,info]  ether1 link up (speed 100M, full duplex)
- 56  1405/07/23 09:24:17  [dhcp,info]  dhcp1 assigned 172.29.201.62 to FC:AA:14:D6:6F:4B
- 57  1405/07/23 12:09:49  [interface,info]  ether1 link down
- 58  1405/07/22 12:19:17  [dhcp,info]  dhcp1 deassigned 172.29.201.62 from FC:AA:14:D6:6F:4B
- 59  1405/07/22 13:22:54  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 54  1405/07/22 09:24:08  [interface,info]  ether1 link down
+ 55  1405/07/22 09:24:10  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 56  1405/07/22 09:24:17  [dhcp,info]  dhcp1 assigned 172.29.201.62 to FC:AA:14:D6:6F:4B
+ 57  1405/07/22 12:09:49  [interface,info]  ether1 link down
+ 58  1405/07/23 12:19:17  [dhcp,info]  dhcp1 deassigned 172.29.201.62 from FC:AA:14:D6:6F:4B
+ 59  1405/07/23 13:22:54  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 60  1405/07/23 13:22:58  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 61  1405/07/23 13:45:26  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 62  1405/07/23 13:45:28  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 63  1405/07/23 12:30:33  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===

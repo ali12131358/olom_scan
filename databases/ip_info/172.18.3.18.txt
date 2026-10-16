@@ -1,5 +1,5 @@
 IP: 172.18.3.18
-Collected at: 2026-10-14T10:23:47.795982+00:00
+Collected at: 2026-10-15T10:09:11.032867+00:00
 source: RouterOS API
 identity: Setad.AbuShanak.AP
 device_type: AP
@@ -31,8 +31,8 @@ name=wlan1  mode=ap-bridge  ssid=Setad Aboshanak.AP  band=5ghz-a/n  frequency=49
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:29:12
-# ساعت دستگاه (خام): 1975-05-13 15:57:55
+# زمان سرور هنگام خواندن: 1405/07/23 12:36:29
+# ساعت دستگاه (خام): 1975-05-14 15:05:12
 # افست اصلاحی (سرور − دستگاه): +450762:01:17
   1  1405/03/05 12:21:05  [system,error,critical]  router was rebooted without proper shutdown
   2  1405/03/05 12:21:09  [bridge,info]  "bridge1" mac address changed to 6C:3B:6B:3C:78:BF
@@ -188,6 +188,10 @@ name=wlan1  mode=ap-bridge  ssid=Setad Aboshanak.AP  band=5ghz-a/n  frequency=49
 152  1405/07/22 10:34:31  [system,info,account]  user garnaf logged in from 172.18.4.76 via winbox
 153  1405/07/22 10:50:42  [system,info,account]  user garnaf logged out from 172.18.4.76 via winbox
 154  1405/07/22 13:29:11  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+155  1405/07/22 13:29:13  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+156  1405/07/23 02:07:34  [wireless,info]  E4:8D:8C:FA:63:BD@wlan1: disconnected, control frame timeout
+157  1405/07/23 02:08:13  [wireless,info]  E4:8D:8C:FA:63:BD@wlan1: connected, signal strength -78
+158  1405/07/23 12:36:28  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===

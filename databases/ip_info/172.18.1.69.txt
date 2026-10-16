@@ -1,5 +1,5 @@
 IP: 172.18.1.69
-Collected at: 2026-10-14T10:22:22.511798+00:00
+Collected at: 2026-10-15T10:07:23.227582+00:00
 source: RouterOS API
 identity: UMS-SLMNH-AP
 device_type: AP
@@ -37,16 +37,16 @@ name=wlan1  mode=ap-bridge  ssid=UMS-SLMNH  band=5ghz-a/n  frequency=5850
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:12:31
-# ساعت دستگاه (خام): 2025-12-10 00:14:38
-# افست اصلاحی (سرور − دستگاه): +7401:27:53
-  1  1405/07/22 09:51:44  [system,error,critical]  router was rebooted without proper shutdown
-  2  1405/07/22 09:51:49  [bridge,info]  "bridge1" mac address changed to 18:FD:74:8E:D8:42
-  3  1405/07/22 09:51:49  [system,info]  route changed
-  4  1405/07/22 09:51:54  [interface,info]  ether1 link up (speed 1G, full duplex)
-  5  1405/07/22 09:52:07  [wireless,info]  18:FD:74:8E:D7:1E@wlan1: connected, signal strength -45, wants bridge
-  6  1405/07/22 09:52:53  [system,info]  route changed
-  7  1405/07/22 13:12:29  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+# زمان سرور هنگام خواندن: 1405/07/23 12:20:40
+# ساعت دستگاه (خام): 2025-12-10 01:25:50
+# افست اصلاحی (سرور − دستگاه): +7423:24:50
+  1  1405/07/23 07:48:42  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/23 07:48:46  [bridge,info]  "bridge1" mac address changed to 18:FD:74:8E:D8:42
+  3  1405/07/23 07:48:47  [system,info]  route changed
+  4  1405/07/23 07:48:52  [interface,info]  ether1 link up (speed 1G, full duplex)
+  5  1405/07/23 07:49:39  [wireless,info]  18:FD:74:8E:D7:1E@wlan1: connected, signal strength -64, wants bridge
+  6  1405/07/23 07:49:51  [system,info]  route changed
+  7  1405/07/23 12:20:39  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===

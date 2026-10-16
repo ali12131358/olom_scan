@@ -1,5 +1,5 @@
 IP: 172.18.26.84
-Collected at: 2026-10-14T10:23:41.664871+00:00
+Collected at: 2026-10-15T10:09:01.906748+00:00
 source: RouterOS API
 identity: OmolHejar.Client
 device_type: ST
@@ -25,14 +25,13 @@ name=wlan1  mode=station-bridge  ssid=Shadegan-OmolGhazlan2  band=5ghz-a/n  freq
 
 ----- neighbors -----
 === /ip neighbor ===
-  1  identity=-  address=-  interface=ether1
-  2  identity=MK_OmolGhazlan  address=172.18.26.81  interface=wlan1
-  3  identity=MK_behdast-OmolGhazlan  address=172.18.26.82  interface=wlan1
+  1  identity=MK_OmolGhazlan  address=172.18.26.81  interface=wlan1
+  2  identity=MK_behdast-OmolGhazlan  address=172.18.26.82  interface=wlan1
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:28:03
-# ساعت دستگاه (خام): 2024-11-20 17:50:27
+# زمان سرور هنگام خواندن: 1405/07/23 12:35:13
+# ساعت دستگاه (خام): 2024-11-21 16:57:37
 # افست اصلاحی (سرور − دستگاه): +16624:07:36
   1  1405/07/20 18:37:32  [system,error,critical]  router was rebooted without proper shutdown
   2  1405/07/20 18:37:40  [wireless,info]  B8:69:F4:35:0D:8F@wlan1 established connection on 5500000, SSID Shadegan-OmolGhazlan2
@@ -46,6 +45,9 @@ name=wlan1  mode=station-bridge  ssid=Shadegan-OmolGhazlan2  band=5ghz-a/n  freq
  10  1405/07/22 12:39:27  [wireless,info]  B8:69:F4:35:0D:8F@wlan1: lost connection, no beacons received
  11  1405/07/22 12:40:21  [wireless,info]  B8:69:F4:35:0D:8F@wlan1 established connection on 5500000, SSID Shadegan-OmolGhazlan2
  12  1405/07/22 13:28:02  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 13  1405/07/22 13:28:03  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 14  1405/07/23 08:30:19  [dhcp,info]  dhcp1 deassigned 172.29.208.62 from 1C:1B:0D:3D:A4:03
+ 15  1405/07/23 12:35:11  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===

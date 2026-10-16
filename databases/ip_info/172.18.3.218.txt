@@ -1,5 +1,5 @@
 IP: 172.18.3.218
-Collected at: 2026-10-14T10:23:51.993796+00:00
+Collected at: 2026-10-15T10:09:17.254038+00:00
 source: RouterOS API
 identity: Laberatory.GH
 device_type: AP
@@ -30,14 +30,16 @@ name=wlan1  mode=ap-bridge  ssid=Laberatory.GH  band=5ghz-a/n  frequency=5260
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:29:58
-# ساعت دستگاه (خام): 1974-02-07 07:38:36
+# زمان سرور هنگام خواندن: 1405/07/23 12:37:15
+# ساعت دستگاه (خام): 1974-02-08 06:45:53
 # افست اصلاحی (سرور − دستگاه): +461810:21:22
   1  1405/07/21 10:58:13  [system,error,critical]  router was rebooted without proper shutdown
   2  1405/07/21 10:58:16  [bridge,info]  "bridge1" mac address changed to 6C:3B:6B:54:C3:37
   3  1405/07/21 10:58:23  [interface,info]  ether1 link up (speed 1G, full duplex)
   4  1405/07/21 10:58:24  [wireless,info]  CC:2D:E0:86:6D:B1@wlan1: connected, signal strength -60
   5  1405/07/22 13:29:57  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+  6  1405/07/22 13:29:59  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+  7  1405/07/23 12:37:14  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===

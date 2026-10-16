@@ -1,5 +1,5 @@
 IP: 172.18.4.100
-Collected at: 2026-10-14T10:23:59.675955+00:00
+Collected at: 2026-10-15T10:09:24.699031+00:00
 source: RouterOS API
 identity: KherKhereh.Client
 device_type: ST
@@ -30,8 +30,8 @@ name=wlan1  mode=station-bridge  ssid=AbadanSetad-JamshidAbad  band=5ghz-a/n  fr
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:31:02
-# ساعت دستگاه (خام): 1972-05-12 21:00:29
+# زمان سرور هنگام خواندن: 1405/07/23 12:38:26
+# ساعت دستگاه (خام): 1972-05-13 20:07:53
 # افست اصلاحی (سرور − دستگاه): +477061:00:33
   1  1405/07/17 21:19:14  [system,error,critical]  router was rebooted without proper shutdown
   2  1405/07/17 21:19:23  [wireless,info]  48:8F:5A:1C:31:66@wlan1 established connection on 5320000, SSID AbadanSetad-JamshidAbad
@@ -70,11 +70,15 @@ name=wlan1  mode=station-bridge  ssid=AbadanSetad-JamshidAbad  band=5ghz-a/n  fr
  35  1405/07/21 13:38:36  [dhcp,info]  dhcp1 deassigned 172.29.64.24 from 9C:53:22:05:D8:C3
  36  1405/07/22 08:00:55  [dhcp,info]  dhcp1 assigned 172.29.64.24 to 9C:53:22:05:D8:C3
  37  1405/07/22 13:31:00  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 38  1405/07/22 13:31:02  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 39  1405/07/22 13:41:04  [dhcp,info]  dhcp1 deassigned 172.29.64.24 from 9C:53:22:05:D8:C3
+ 40  1405/07/22 13:48:08  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 41  1405/07/22 13:48:09  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 42  1405/07/23 12:38:25  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===
 ether1  64:D1:54:28:EB:14  (ether)
 wlan1  64:D1:54:28:EB:15  (wlan)
 --- /ip arp ---
-ether1  9C:53:22:05:D8:C3  (arp 172.29.64.24)
 wlan1  10:8C:CF:33:51:61  (arp 172.18.4.97)

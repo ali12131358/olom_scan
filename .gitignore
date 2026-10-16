@@ -1,25 +1,10 @@
-# دیتابیس‌ها
-*.db
-*.sqlite3
-databases/
-
-# فایل‌های تنظیمات حساس و رمزها
-smtp_config.json
-vpn_profiles.json
-snmp_profiles.json
-ip_*.txt
-*.env
-.env
-
-# فایل‌های باینری و کش پایتون
 __pycache__/
-*.pyc
-*.pyo
-venv/
+*.py[cod]
 .venv/
-
-# فرانت‌اند: بیلد و کتابخانه‌ها
+venv/
 node_modules/
-frontend/dist/
-*.zip
-*.log
+.env
+.pytest_cache/
+
+# Runtime SQLite device inventory
+devices.db

@@ -1,5 +1,5 @@
 IP: 172.18.26.19
-Collected at: 2026-10-14T10:23:35.540765+00:00
+Collected at: 2026-10-15T10:08:51.833993+00:00
 source: RouterOS API
 identity: Seleyhavieh.Client
 device_type: ST
@@ -32,8 +32,8 @@ name=wlan1  mode=station-bridge  ssid=Shadegan-Darkhovein1  band=5ghz-a/n  frequ
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:26:47
-# ساعت دستگاه (خام): 2024-11-19 17:49:19
+# زمان سرور هنگام خواندن: 1405/07/23 12:34:05
+# ساعت دستگاه (خام): 2024-11-20 16:56:37
 # افست اصلاحی (سرور − دستگاه): +16648:07:28
   1  1405/07/20 18:37:29  [system,error,critical]  router was rebooted without proper shutdown
   2  1405/07/20 18:37:41  [interface,info]  ether1 link up (speed 10M, full duplex)
@@ -84,6 +84,39 @@ name=wlan1  mode=station-bridge  ssid=Shadegan-Darkhovein1  band=5ghz-a/n  frequ
  47  1405/07/22 09:42:46  [wireless,info]  6C:3B:6B:4D:A3:0C@wlan1: lost connection, synchronization timeout
  48  1405/07/22 09:55:37  [wireless,info]  6C:3B:6B:4D:A3:0C@wlan1 established connection on 5155000, SSID Shadegan-Darkhovein1
  49  1405/07/22 13:26:45  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 50  1405/07/22 13:26:47  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 51  1405/07/22 13:46:13  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 52  1405/07/22 13:46:15  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 53  1405/07/23 00:26:33  [wireless,info]  6C:3B:6B:4D:A3:0C@wlan1: lost connection, not responding
+ 54  1405/07/23 00:27:46  [wireless,info]  6C:3B:6B:4D:A3:0C@wlan1 established connection on 5155000, SSID Shadegan-Darkhovein1
+ 55  1405/07/23 00:41:23  [wireless,info]  6C:3B:6B:4D:A3:0C@wlan1: lost connection, not responding
+ 56  1405/07/23 00:42:34  [wireless,info]  6C:3B:6B:4D:A3:0C@wlan1: failed to connect, on 5155000, registration timeout
+ 57  1405/07/23 00:43:57  [wireless,info]  6C:3B:6B:4D:A3:0C@wlan1: failed to connect, on 5155000, registration timeout
+ 58  1405/07/23 00:44:50  [wireless,info]  6C:3B:6B:4D:A3:0C@wlan1 established connection on 5155000, SSID Shadegan-Darkhovein1
+ 59  1405/07/23 00:49:04  [wireless,info]  6C:3B:6B:4D:A3:0C@wlan1: lost connection, control frame timeout
+ 60  1405/07/23 00:55:59  [wireless,info]  6C:3B:6B:4D:A3:0C@wlan1: failed to connect, on 5155000, medium-access timeout
+ 61  1405/07/23 00:57:43  [wireless,info]  6C:3B:6B:4D:A3:0C@wlan1 established connection on 5155000, SSID Shadegan-Darkhovein1
+ 62  1405/07/23 02:06:00  [wireless,info]  6C:3B:6B:4D:A3:0C@wlan1: lost connection, control frame timeout
+ 63  1405/07/23 02:09:14  [wireless,info]  6C:3B:6B:4D:A3:0C@wlan1: failed to connect, on 5155000, registration timeout
+ 64  1405/07/23 02:10:46  [wireless,info]  6C:3B:6B:4D:A3:0C@wlan1: failed to connect, on 5155000, registration timeout
+ 65  1405/07/23 02:12:09  [wireless,info]  6C:3B:6B:4D:A3:0C@wlan1: failed to connect, on 5155000, registration timeout
+ 66  1405/07/23 02:13:34  [wireless,info]  6C:3B:6B:4D:A3:0C@wlan1: failed to connect, on 5155000, registration timeout
+ 67  1405/07/23 02:14:26  [wireless,info]  6C:3B:6B:4D:A3:0C@wlan1 established connection on 5155000, SSID Shadegan-Darkhovein1
+ 68  1405/07/23 04:44:08  [wireless,info]  6C:3B:6B:4D:A3:0C@wlan1: lost connection, control frame timeout
+ 69  1405/07/23 04:45:24  [wireless,info]  6C:3B:6B:4D:A3:0C@wlan1 established connection on 5155000, SSID Shadegan-Darkhovein1
+ 70  1405/07/23 05:26:53  [wireless,info]  6C:3B:6B:4D:A3:0C@wlan1: lost connection, control frame timeout
+ 71  1405/07/23 05:28:20  [wireless,info]  6C:3B:6B:4D:A3:0C@wlan1 established connection on 5155000, SSID Shadegan-Darkhovein1
+ 72  1405/07/23 07:08:34  [wireless,info]  6C:3B:6B:4D:A3:0C@wlan1: lost connection, control frame timeout
+ 73  1405/07/23 07:09:26  [wireless,info]  6C:3B:6B:4D:A3:0C@wlan1 established connection on 5155000, SSID Shadegan-Darkhovein1
+ 74  1405/07/23 07:13:46  [wireless,info]  6C:3B:6B:4D:A3:0C@wlan1: lost connection, control frame timeout
+ 75  1405/07/23 07:14:39  [wireless,info]  6C:3B:6B:4D:A3:0C@wlan1 established connection on 5155000, SSID Shadegan-Darkhovein1
+ 76  1405/07/23 07:17:34  [wireless,info]  6C:3B:6B:4D:A3:0C@wlan1: lost connection, control frame timeout
+ 77  1405/07/23 07:19:00  [wireless,info]  6C:3B:6B:4D:A3:0C@wlan1: failed to connect, on 5155000, registration timeout
+ 78  1405/07/23 07:19:52  [wireless,info]  6C:3B:6B:4D:A3:0C@wlan1 established connection on 5155000, SSID Shadegan-Darkhovein1
+ 79  1405/07/23 07:42:52  [wireless,info]  6C:3B:6B:4D:A3:0C@wlan1: lost connection, synchronization timeout
+ 80  1405/07/23 07:52:16  [wireless,info]  6C:3B:6B:4D:A3:0C@wlan1 established connection on 5155000, SSID Shadegan-Darkhovein1
+ 81  1405/07/23 09:58:49  [dhcp,info]  dhcp1 deassigned 172.29.206.153 from D0:37:45:A9:24:52
+ 82  1405/07/23 12:34:03  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===

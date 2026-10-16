@@ -1,5 +1,5 @@
 IP: 172.18.26.52
-Collected at: 2026-10-14T10:23:39.760593+00:00
+Collected at: 2026-10-15T10:08:58.389389+00:00
 source: RouterOS API
 identity: KofeyshehHome.Client
 device_type: ST
@@ -32,15 +32,15 @@ name=wlan1  mode=station-bridge  ssid=Shadegan-Darkhovein3  band=5ghz-a/n  frequ
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:27:21
-# ساعت دستگاه (خام): 1973-02-13 06:55:24
-# افست اصلاحی (سرور − دستگاه): +470427:01:57
-  1  1405/07/21 11:44:28  [system,error,critical]  router was rebooted without proper shutdown
-  2  1405/07/21 11:44:29  [interface,info]  ether1 link up (speed 100M, full duplex)
-  3  1405/07/21 11:44:34  [wireless,info]  18:FD:74:18:BD:16@wlan1 established connection on 5720000, SSID Shadegan-Darkhovein3
-  4  1405/07/22 09:42:47  [wireless,info]  18:FD:74:18:BD:16@wlan1: lost connection, no beacons received
-  5  1405/07/22 09:54:16  [wireless,info]  18:FD:74:18:BD:16@wlan1 established connection on 5720000, SSID Shadegan-Darkhovein3
-  6  1405/07/22 13:27:19  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+# زمان سرور هنگام خواندن: 1405/07/23 12:34:36
+# ساعت دستگاه (خام): 1973-02-13 10:56:03
+# افست اصلاحی (سرور − دستگاه): +470446:08:33
+  1  1405/07/23 06:51:04  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/23 06:51:05  [interface,info]  ether1 link up (speed 100M, full duplex)
+  3  1405/07/23 06:51:10  [wireless,info]  18:FD:74:18:BD:16@wlan1 established connection on 5720000, SSID Shadegan-Darkhovein3
+  4  1405/07/23 07:42:51  [wireless,info]  18:FD:74:18:BD:16@wlan1: lost connection, no beacons received
+  5  1405/07/23 07:51:08  [wireless,info]  18:FD:74:18:BD:16@wlan1 established connection on 5720000, SSID Shadegan-Darkhovein3
+  6  1405/07/23 12:34:34  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===

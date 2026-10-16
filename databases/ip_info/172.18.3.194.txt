@@ -1,5 +1,5 @@
 IP: 172.18.3.194
-Collected at: 2026-10-14T10:23:49.639218+00:00
+Collected at: 2026-10-15T10:09:13.680643+00:00
 source: RouterOS API
 identity: GharbalGari.BT.AP
 device_type: AP
@@ -29,8 +29,8 @@ name=wlan1  mode=ap-bridge  ssid=Abadan-Taleghani2  band=5ghz-a/n  frequency=550
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:29:36
-# ساعت دستگاه (خام): 1977-09-23 12:12:22
+# زمان سرور هنگام خواندن: 1405/07/23 12:36:49
+# ساعت دستگاه (خام): 1977-09-24 11:19:35
 # افست اصلاحی (سرور − دستگاه): +430029:47:14
   1  1405/06/10 21:01:37  [system,error,critical]  router was rebooted without proper shutdown
   2  1405/06/10 21:01:40  [bridge,info]  "bridge1" mac address changed to 64:D1:54:10:99:A8
@@ -205,6 +205,18 @@ name=wlan1  mode=ap-bridge  ssid=Abadan-Taleghani2  band=5ghz-a/n  frequency=550
 171  1405/07/21 11:10:09  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 172  1405/07/21 11:10:11  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
 173  1405/07/22 13:29:33  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+174  1405/07/22 13:29:37  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+175  1405/07/23 04:57:30  [wireless,info]  2E:E2:EE:76:FF:C5@wlan1: connected, signal strength -85
+176  1405/07/23 04:57:30  [wireless,info]  2E:E2:EE:76:FF:C5@wlan1: disconnected, received deauth: class 3 frame received (7), signal strength -85
+177  1405/07/23 04:57:36  [wireless,info]  2E:E2:EE:76:FF:C5@wlan1: connected, signal strength -85
+178  1405/07/23 04:57:41  [wireless,info]  2E:E2:EE:76:FF:C5@wlan1: disconnected, unicast key exchange timeout, signal strength -90
+179  1405/07/23 10:40:38  [wireless,info]  FA:73:EB:C6:55:9E@wlan1: connected, signal strength -85
+180  1405/07/23 10:40:43  [wireless,info]  FA:73:EB:C6:55:9E@wlan1: disconnected, unicast key exchange timeout, signal strength -89
+181  1405/07/23 11:00:46  [wireless,info]  E0:3E:CB:F4:D8:5A@wlan1: connected, signal strength -85
+182  1405/07/23 11:00:49  [wireless,info]  E0:3E:CB:F4:D8:5A@wlan1: disconnected, extensive data loss, signal strength -85
+183  1405/07/23 12:31:21  [wireless,info]  E0:3E:CB:F4:D8:5A@wlan1: connected, signal strength -83
+184  1405/07/23 12:31:26  [wireless,info]  E0:3E:CB:F4:D8:5A@wlan1: disconnected, unicast key exchange timeout, signal strength -88
+185  1405/07/23 12:36:47  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===

@@ -1,5 +1,5 @@
 IP: 172.18.24.131
-Collected at: 2026-10-14T10:23:04.456922+00:00
+Collected at: 2026-10-15T10:08:09.432563+00:00
 source: RouterOS API
 identity: EMS.Shadegan.Client
 device_type: ST
@@ -31,8 +31,8 @@ name=wlan1  mode=station-bridge  ssid=Shadegan-Shabakeh1  band=5ghz-a/n  frequen
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:18:17
-# ساعت دستگاه (خام): 1976-05-30 20:48:16
+# زمان سرور هنگام خواندن: 1405/07/23 12:26:02
+# ساعت دستگاه (خام): 1976-05-31 19:56:01
 # افست اصلاحی (سرور − دستگاه): +441565:00:01
   1  1405/07/12 19:08:39  [system,error,critical]  router was rebooted without proper shutdown
   2  1405/07/12 19:08:42  [bridge,info]  "bridge1" mac address changed to E4:8D:8C:61:6B:17
@@ -89,6 +89,8 @@ name=wlan1  mode=station-bridge  ssid=Shadegan-Shabakeh1  band=5ghz-a/n  frequen
  53  1405/07/21 11:01:17  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
  54  1405/07/21 11:01:19  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
  55  1405/07/22 13:18:16  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 56  1405/07/22 13:18:18  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 57  1405/07/23 12:26:00  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===

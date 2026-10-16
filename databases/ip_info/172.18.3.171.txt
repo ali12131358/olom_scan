@@ -1,5 +1,5 @@
 IP: 172.18.3.171
-Collected at: 2026-10-14T10:23:47.317660+00:00
+Collected at: 2026-10-15T10:09:10.305379+00:00
 source: RouterOS API
 identity: DorbandGharbi.Client
 device_type: ST
@@ -31,25 +31,29 @@ name=wlan1  mode=station-bridge  ssid=Dorband  band=5ghz-a/n  frequency=5260
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:29:10
-# ساعت دستگاه (خام): 1974-12-26 11:21:18
-# افست اصلاحی (سرور − دستگاه): +454078:37:52
-  1  1405/07/20 09:38:28  [system,error,critical]  router was rebooted without proper shutdown
-  2  1405/07/20 09:38:36  [wireless,info]  08:55:31:A8:94:AA@wlan1 established connection on 5260000, SSID Dorband
-  3  1405/07/20 09:38:38  [interface,info]  ether1 link up (speed 100M, full duplex)
-  4  1405/07/20 09:39:50  [dhcp,info]  dhcp1 assigned 172.29.131.254 to 94:DE:80:4D:AF:C0
-  5  1405/07/20 10:58:13  [dhcp,info]  dhcp1 assigned 172.29.131.253 to B4:2E:99:22:56:E4
-  6  1405/07/20 12:59:51  [dhcp,info]  dhcp1 deassigned 172.29.131.254 from 94:DE:80:4D:AF:C0
-  7  1405/07/20 13:03:13  [dhcp,info]  dhcp1 deassigned 172.29.131.253 from B4:2E:99:22:56:E4
-  8  1405/07/21 08:44:57  [dhcp,info]  dhcp1 assigned 172.29.131.254 to 94:DE:80:4D:AF:C0
-  9  1405/07/21 11:09:42  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
- 10  1405/07/21 11:09:44  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
- 11  1405/07/21 11:16:48  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
- 12  1405/07/21 11:16:49  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
- 13  1405/07/21 12:09:58  [dhcp,info]  dhcp1 deassigned 172.29.131.254 from 94:DE:80:4D:AF:C0
- 14  1405/07/22 08:56:23  [dhcp,info]  dhcp1 assigned 172.29.131.254 to 94:DE:80:4D:AF:C0
- 15  1405/07/22 09:56:23  [dhcp,info]  dhcp1 deassigned 172.29.131.254 from 94:DE:80:4D:AF:C0
- 16  1405/07/22 13:29:08  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+# زمان سرور هنگام خواندن: 1405/07/23 12:36:26
+# ساعت دستگاه (خام): 1974-12-27 10:28:35
+# افست اصلاحی (سرور − دستگاه): +454078:37:51
+  1  1405/07/20 09:38:27  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/20 09:38:35  [wireless,info]  08:55:31:A8:94:AA@wlan1 established connection on 5260000, SSID Dorband
+  3  1405/07/20 09:38:37  [interface,info]  ether1 link up (speed 100M, full duplex)
+  4  1405/07/20 09:39:49  [dhcp,info]  dhcp1 assigned 172.29.131.254 to 94:DE:80:4D:AF:C0
+  5  1405/07/20 10:58:12  [dhcp,info]  dhcp1 assigned 172.29.131.253 to B4:2E:99:22:56:E4
+  6  1405/07/20 12:59:50  [dhcp,info]  dhcp1 deassigned 172.29.131.254 from 94:DE:80:4D:AF:C0
+  7  1405/07/20 13:03:12  [dhcp,info]  dhcp1 deassigned 172.29.131.253 from B4:2E:99:22:56:E4
+  8  1405/07/21 08:44:56  [dhcp,info]  dhcp1 assigned 172.29.131.254 to 94:DE:80:4D:AF:C0
+  9  1405/07/21 11:09:41  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 10  1405/07/21 11:09:43  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 11  1405/07/21 11:16:47  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 12  1405/07/21 11:16:48  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 13  1405/07/21 12:09:57  [dhcp,info]  dhcp1 deassigned 172.29.131.254 from 94:DE:80:4D:AF:C0
+ 14  1405/07/22 08:56:22  [dhcp,info]  dhcp1 assigned 172.29.131.254 to 94:DE:80:4D:AF:C0
+ 15  1405/07/22 09:56:22  [dhcp,info]  dhcp1 deassigned 172.29.131.254 from 94:DE:80:4D:AF:C0
+ 16  1405/07/22 13:29:07  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 17  1405/07/22 13:29:09  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 18  1405/07/22 13:40:38  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 19  1405/07/22 13:40:39  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 20  1405/07/23 12:36:25  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===

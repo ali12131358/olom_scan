@@ -1,5 +1,5 @@
 IP: 172.18.1.59
-Collected at: 2026-10-14T10:22:13.199552+00:00
+Collected at: 2026-10-15T10:07:20.600821+00:00
 source: RouterOS API
 identity: CL-SHABAKEH-VALIASR
 device_type: ST
@@ -30,8 +30,8 @@ name=wlan1  mode=station-bridge  ssid=Shabake  band=5ghz-a/n  frequency=5500
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:12:20
-# ساعت دستگاه (خام): 1970-11-01 00:23:13
+# زمان سرور هنگام خواندن: 1405/07/23 12:20:29
+# ساعت دستگاه (خام): 1970-11-01 23:31:22
 # افست اصلاحی (سرور − دستگاه): +490473:19:07
   1  1405/04/20 12:49:19  [system,error,critical]  router was rebooted without proper shutdown
   2  1405/04/20 12:49:22  [bridge,info]  "bridge1" mac address changed to E4:8D:8C:F7:F3:37
@@ -135,6 +135,8 @@ name=wlan1  mode=station-bridge  ssid=Shabake  band=5ghz-a/n  frequency=5500
 100  1405/07/21 10:53:42  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 101  1405/07/21 10:53:44  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
 102  1405/07/22 13:12:19  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+103  1405/07/22 13:12:20  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+104  1405/07/23 12:20:27  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===

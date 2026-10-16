@@ -1,5 +1,5 @@
 IP: 172.18.3.75
-Collected at: 2026-10-14T10:23:55.120894+00:00
+Collected at: 2026-10-15T10:09:20.296078+00:00
 source: RouterOS API
 identity: EmamReza.Client
 device_type: ST
@@ -35,8 +35,8 @@ name=wlan1  mode=station-bridge  ssid=EmamReza-Taleghani  band=5ghz-a/n  frequen
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:30:24
-# ساعت دستگاه (خام): 1970-07-29 04:02:24
+# زمان سرور هنگام خواندن: 1405/07/23 12:37:47
+# ساعت دستگاه (خام): 1970-07-30 03:09:47
 # افست اصلاحی (سرور − دستگاه): +492749:58:00
   1  1405/07/22 09:28:04  [system,error,critical]  router was rebooted without proper shutdown
   2  1405/07/22 09:28:11  [wireless,info]  E4:8D:8C:DB:BE:E3@wlan1 established connection on 5280000, SSID EmamReza-Taleghani
@@ -66,6 +66,8 @@ name=wlan1  mode=station-bridge  ssid=EmamReza-Taleghani  band=5ghz-a/n  frequen
  26  1405/07/22 13:10:13  [dhcp,info]  dhcp1 assigned 172.29.27.117 to 7C:F1:7E:F4:11:6F
  27  1405/07/22 13:25:14  [dhcp,info]  dhcp1 deassigned 172.29.27.117 from 7C:F1:7E:F4:11:6F
  28  1405/07/22 13:30:22  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 29  1405/07/22 13:30:24  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 30  1405/07/23 12:37:46  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===

@@ -1,5 +1,5 @@
 IP: 172.18.4.138
-Collected at: 2026-10-14T10:24:02.819054+00:00
+Collected at: 2026-10-15T10:09:27.833132+00:00
 source: RouterOS API
 identity: AP-PTP-SHALAMCHE-BK
 device_type: AP
@@ -30,8 +30,8 @@ name=wlan1  mode=ap-bridge  ssid=PTP-SHALAMCHE-BK  band=5ghz-a/n  frequency=5470
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:31:39
-# ساعت دستگاه (خام): 2026-04-24 13:52:13
+# زمان سرور هنگام خواندن: 1405/07/23 12:38:45
+# ساعت دستگاه (خام): 2026-04-25 12:59:19
 # افست اصلاحی (سرور − دستگاه): +4148:09:26
   1  1405/07/19 08:42:44  [system,error,critical]  router was rebooted without proper shutdown
   2  1405/07/19 08:42:47  [interface,info]  ether1 link up (speed 1G, full duplex)
@@ -43,6 +43,10 @@ name=wlan1  mode=ap-bridge  ssid=PTP-SHALAMCHE-BK  band=5ghz-a/n  frequency=5470
   8  1405/07/21 11:12:45  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
   9  1405/07/21 11:12:46  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
  10  1405/07/22 13:31:38  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 11  1405/07/22 13:31:40  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 12  1405/07/22 23:17:29  [wireless,info]  78:9A:18:8F:17:16@wlan1: disconnected, control frame timeout
+ 13  1405/07/22 23:17:47  [wireless,info]  78:9A:18:8F:17:16@wlan1: connected, signal strength -72
+ 14  1405/07/23 12:38:44  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===

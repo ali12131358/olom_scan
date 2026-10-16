@@ -1,5 +1,5 @@
 IP: 172.18.24.56
-Collected at: 2026-10-14T10:23:11.673762+00:00
+Collected at: 2026-10-15T10:08:19.937607+00:00
 source: RouterOS API
 identity: Shavli-Home-Client
 device_type: ST
@@ -35,8 +35,8 @@ name=wlan1  mode=station-bridge  ssid=Shadegan-Shabakeh3  band=5ghz-a/n  frequen
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:20:16
-# ساعت دستگاه (خام): 1971-07-12 02:57:21
+# زمان سرور هنگام خواندن: 1405/07/23 12:28:05
+# ساعت دستگاه (خام): 1971-07-13 02:05:10
 # افست اصلاحی (سرور − دستگاه): +484398:52:55
   1  1405/06/31 08:05:42  [system,error,critical]  router was rebooted without proper shutdown
   2  1405/06/31 08:05:43  [interface,info]  ether1 link up (speed 100M, full duplex)
@@ -121,6 +121,10 @@ name=wlan1  mode=station-bridge  ssid=Shadegan-Shabakeh3  band=5ghz-a/n  frequen
  81  1405/07/21 11:17:50  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
  82  1405/07/21 11:17:52  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
  83  1405/07/22 13:20:15  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 84  1405/07/22 13:20:17  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 85  1405/07/22 13:41:56  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 86  1405/07/22 13:41:58  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 87  1405/07/23 12:28:02  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===

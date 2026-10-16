@@ -1,5 +1,5 @@
 IP: 172.18.3.163
-Collected at: 2026-10-14T10:23:46.145875+00:00
+Collected at: 2026-10-15T10:09:08.857410+00:00
 source: RouterOS API
 identity: Markaz.Jodeydeh.Client
 device_type: ST
@@ -32,8 +32,8 @@ name=wlan1  mode=station-bridge  ssid=123452  band=5ghz-a/n  frequency=5180
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:29:01
-# ساعت دستگاه (خام): 1975-05-16 18:01:26
+# زمان سرور هنگام خواندن: 1405/07/23 12:36:19
+# ساعت دستگاه (خام): 1975-05-17 17:08:44
 # افست اصلاحی (سرور − دستگاه): +450687:57:35
   1  1405/07/20 09:38:24  [system,error,critical]  router was rebooted without proper shutdown
   2  1405/07/20 09:38:25  [bridge,info]  "bridge1" mac address changed to CC:2D:E0:48:66:CF
@@ -42,6 +42,8 @@ name=wlan1  mode=station-bridge  ssid=123452  band=5ghz-a/n  frequency=5180
   5  1405/07/21 11:09:31  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
   6  1405/07/21 11:09:32  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
   7  1405/07/22 13:29:00  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+  8  1405/07/22 13:29:02  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+  9  1405/07/23 12:36:18  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===

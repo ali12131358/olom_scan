@@ -1,5 +1,5 @@
 IP: 172.18.26.18
-Collected at: 2026-10-14T10:23:35.309609+00:00
+Collected at: 2026-10-15T10:08:51.450737+00:00
 source: RouterOS API
 identity: Shadegan-Darkhovein1
 device_type: AP
@@ -33,16 +33,16 @@ name=wlan1  mode=ap-bridge  ssid=Shadegan-Darkhovein1  band=5ghz-a/n  frequency=
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:26:46
-# ساعت دستگاه (خام): 2025-06-11 04:32:39
-# افست اصلاحی (سرور − دستگاه): +11765:24:07
-  1  1405/07/22 09:54:05  [system,error,critical]  router was rebooted without proper shutdown
-  2  1405/07/22 09:54:09  [bridge,info]  "bridge1" mac address changed to 6C:3B:6B:4D:A3:0C
-  3  1405/07/22 09:54:15  [interface,info]  ether1 link up (speed 1G, full duplex)
-  4  1405/07/22 09:55:05  [wireless,info]  64:D1:54:52:D3:FB@wlan1: connected, signal strength -58
-  5  1405/07/22 09:55:37  [wireless,info]  18:FD:74:92:95:E0@wlan1: connected, signal strength -78
-  6  1405/07/22 09:55:39  [wireless,info]  6C:3B:6B:13:57:B1@wlan1: connected, signal strength -82
-  7  1405/07/22 13:26:45  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+# زمان سرور هنگام خواندن: 1405/07/23 12:34:03
+# ساعت دستگاه (خام): 2025-06-11 05:43:01
+# افست اصلاحی (سرور − دستگاه): +11787:21:02
+  1  1405/07/23 07:51:00  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/23 07:51:03  [bridge,info]  "bridge1" mac address changed to 6C:3B:6B:4D:A3:0C
+  3  1405/07/23 07:51:10  [interface,info]  ether1 link up (speed 1G, full duplex)
+  4  1405/07/23 07:52:16  [wireless,info]  18:FD:74:92:95:E0@wlan1: connected, signal strength -72
+  5  1405/07/23 07:52:16  [wireless,info]  6C:3B:6B:13:57:B1@wlan1: connected, signal strength -80
+  6  1405/07/23 07:52:20  [wireless,info]  64:D1:54:52:D3:FB@wlan1: connected, signal strength -58
+  7  1405/07/23 12:34:00  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===

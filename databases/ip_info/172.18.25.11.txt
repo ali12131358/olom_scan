@@ -1,5 +1,5 @@
 IP: 172.18.25.11
-Collected at: 2026-10-14T10:23:16.440958+00:00
+Collected at: 2026-10-15T10:08:27.056381+00:00
 source: RouterOS API
 identity: Alvan->Ghatrani.Client
 device_type: ST
@@ -30,14 +30,16 @@ name=wlan1  mode=station-bridge  ssid=ALVNGHTRNI  band=5ghz-a/n  frequency=auto
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:21:30
-# ساعت دستگاه (خام): 2024-10-23 01:18:27
+# زمان سرور هنگام خواندن: 1405/07/23 12:29:16
+# ساعت دستگاه (خام): 2024-10-24 00:26:13
 # افست اصلاحی (سرور − دستگاه): +17312:33:03
-  1  1405/07/23 11:03:03  [system,error,critical]  router was rebooted without proper shutdown
-  2  1405/07/23 11:03:05  [bridge,info]  "bridge1" mac address changed to 6C:3B:6B:5D:71:62
-  3  1405/07/23 11:03:07  [interface,info]  ether1 link up (speed 100M, full duplex)
-  4  1405/07/23 11:03:11  [wireless,info]  48:8F:5A:8F:F1:47@wlan1 established connection on 5280000, SSID ALVNGHTRNI
-  5  1405/07/22 13:21:28  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+  1  1405/07/22 11:03:03  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/22 11:03:05  [bridge,info]  "bridge1" mac address changed to 6C:3B:6B:5D:71:62
+  3  1405/07/22 11:03:07  [interface,info]  ether1 link up (speed 100M, full duplex)
+  4  1405/07/22 11:03:11  [wireless,info]  48:8F:5A:8F:F1:47@wlan1 established connection on 5280000, SSID ALVNGHTRNI
+  5  1405/07/23 13:21:28  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+  6  1405/07/23 13:21:30  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+  7  1405/07/23 12:29:14  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===

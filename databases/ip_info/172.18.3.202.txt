@@ -1,5 +1,5 @@
 IP: 172.18.3.202
-Collected at: 2026-10-14T10:23:50.951097+00:00
+Collected at: 2026-10-15T10:09:16.065241+00:00
 source: RouterOS API
 identity: Khabgah.drifarm.Ap
 device_type: AP
@@ -30,8 +30,8 @@ name=wlan1  mode=bridge  ssid=Khabgah.drifarm  band=5ghz-a/n  frequency=5075
 
 ----- log -----
 === /log (تهران / هجری شمسی) ===
-# زمان سرور هنگام خواندن: 1405/07/22 13:29:50
-# ساعت دستگاه (خام): 2026-06-16 16:29:54
+# زمان سرور هنگام خواندن: 1405/07/23 12:37:04
+# ساعت دستگاه (خام): 2026-06-17 15:37:08
 # افست اصلاحی (سرور − دستگاه): +2873:29:56
   1  1405/07/08 09:30:30  [system,error,critical]  router was rebooted without proper shutdown
   2  1405/07/08 09:30:33  [bridge,info]  "bridge1" mac address changed to 64:D1:54:52:D0:9B
@@ -65,6 +65,10 @@ name=wlan1  mode=bridge  ssid=Khabgah.drifarm  band=5ghz-a/n  frequency=5075
  30  1405/07/21 11:10:28  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
  31  1405/07/21 11:10:30  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
  32  1405/07/22 13:29:49  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 33  1405/07/22 13:29:50  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 34  1405/07/23 06:57:48  [wireless,info]  64:D1:54:77:1E:0F@wlan1: disconnected, control frame timeout
+ 35  1405/07/23 08:10:22  [wireless,info]  64:D1:54:77:1E:0F@wlan1: connected, signal strength -60
+ 36  1405/07/23 12:37:02  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
 
 ----- mac -----
 === MAC addresses ===
