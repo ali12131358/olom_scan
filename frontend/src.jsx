@@ -176,7 +176,7 @@ function DeviceReports({mode="devices"}={}){
   const[winboxItems,setWinboxItems]=useState([]),[winboxPath,setWinboxPath]=useState(""),[winboxName,setWinboxName]=useState(""),[showWinboxCfg,setShowWinboxCfg]=useState(false),[busyAction,setBusyAction]=useState(false),[toolsDir,setToolsDir]=useState("");
   const[visibleCols,setVisibleCols]=useState(defaultVisible),[showColCfg,setShowColCfg]=useState(false);
   const[selected,setSelected]=useState({}),[editTagIp,setEditTagIp]=useState(null),[editTagVal,setEditTagVal]=useState(""),[editNameIp,setEditNameIp]=useState(null),[editNameVal,setEditNameVal]=useState("");// selected: { [ip]: true } only — never store false
-  const[snmpProfiles,setSnmpProfiles]=useState([]),[snmpId,setSnmpId]=useState(""),[snmpRaw,setSnmpRaw]=useState(""),[snmpName,setSnmpName]=useState(""),[showSnmp,setShowSnmp]=useState(false),[snmpBusy,setSnmpBusy]=useState(false);const[dbList,setDbList]=useState([]),[activeDb,setActiveDb]=useState("default"),[newDbName,setNewDbName]=useState(""),[showDbPanel,setShowDbPanel]=useState(false);const[showGroupCfg,setShowGroupCfg]=useState(false),[groupScript,setGroupScript]=useState(""),[groupUser,setGroupUser]=useState("admin"),[groupPass,setGroupPass]=useState("");const[apiUser,setApiUser]=useState("admin"),[apiPass,setApiPass]=useState(""),[apiBusy,setApiBusy]=useState(false);const apiAbortRef={current:null};
+  const[snmpProfiles,setSnmpProfiles]=useState([]),[snmpId,setSnmpId]=useState(""),[snmpRaw,setSnmpRaw]=useState(""),[snmpName,setSnmpName]=useState(""),[showSnmp,setShowSnmp]=useState(false),[snmpBusy,setSnmpBusy]=useState(false);const[dbList,setDbList]=useState([]),[activeDb,setActiveDb]=useState("default"),[newDbName,setNewDbName]=useState(""),[showDbPanel,setShowDbPanel]=useState(false);const[showGroupCfg,setShowGroupCfg]=useState(false),[groupScript,setGroupScript]=useState(""),[groupUser,setGroupUser]=useState("admin"),[groupPass,setGroupPass]=useState("");const[apiUser,setApiUser]=useState("admin"),[apiPass,setApiPass]=useState(""),[apiBusy,setApiBusy]=useState(false),[rscBusyIp,setRscBusyIp]=useState("");const apiAbortRef={current:null};
   const params=new URLSearchParams();if(classification)params.set("classification",classification);if(deviceTypeFilter)params.set("device_type",deviceTypeFilter);if(port)params.set("has_port",port);if(q)params.set("q",q);params.set("sort",sortBy);params.set("order",sortOrder);params.set("new_only",newOnly?"true":"false");params.set("limit",String(pageSize));params.set("offset",String(offset));
   function reloadRows(){return fetch(`${API}/devices?${params.toString()}`).then(async r=>{const d=await readJson(r);if(!r.ok)throw Error(typeof d.detail==="string"?d.detail:(Array.isArray(d.detail)?d.detail.map(x=>x.msg||JSON.stringify(x)).join("; "):(d.detail&&JSON.stringify(d.detail))||"خطا در دریافت"));setRows(d.devices||[]);setTotal(d.total||0);setError("")})}
   useEffect(()=>{let active=true;reloadRows().catch(e=>active&&setError(e.message));return()=>{active=false}},[classification,deviceTypeFilter,port,q,offset,pageSize,sortBy,sortOrder,newOnly]);
@@ -341,6 +341,28 @@ function DeviceReports({mode="devices"}={}){
   async function probeSnmp(ips){if(!ips.length){setError("دستگاهی انتخاب نشده");return}if(probeAbortRef.current){try{probeAbortRef.current.abort()}catch(e){}}const ac=new AbortController();probeAbortRef.current=ac;setSnmpBusy(true);setError("");setProbeProg({total:ips.length,done:0,percent:0,current_ip:"",running:true});setMsg("در حال خواندن اطلاعات دستگاه‌ها از SNMP…");const progTimer=setInterval(async()=>{try{const pr=await fetch(API+"/api/snmp/probe/progress");const pd=await pr.json();setProbeProg(pd)}catch(e){}},500);try{const r=await fetch(API+"/api/snmp/probe",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({ips,profile_id:snmpId||undefined,save_names:true,api_username:groupUser||undefined,api_password:groupPass||undefined,api_port:8728}),signal:ac.signal});const d=await r.json();if(!r.ok)throw Error(typeof d.detail==="string"?d.detail:"SNMP ناموفق");const ok=(d.results||[]).filter(x=>x.ok).length;const canceled=d.canceled?` (متوقف شد پس از ${d.probed||ok} دستگاه)`:"";setMsg(`اطلاعات ${ok} از ${ips.length} دستگاه خوانده شد${canceled} و در دیتابیس «${d.database||activeDb}» + پوشه ip_info ذخیره شد (${d.saved||0})`);reloadRows()}catch(e){if(e.name==="AbortError"){setMsg("خواندن اطلاعات متوقف شد.");reloadRows()}else setError(e.message)}finally{clearInterval(progTimer);probeAbortRef.current=null;setSnmpBusy(false);setProbeProg(p=>({...p,running:false}))}}
   async function stopProbe(){try{await fetch(API+"/api/snmp/probe/cancel",{method:"POST"});if(probeAbortRef.current)probeAbortRef.current.abort()}catch(e){}setMsg("درخواست توقف ارسال شد…")}
   async function stopApiProbe(){try{await fetch(API+"/api/devices/probe-api/cancel",{method:"POST"});if(apiAbortRef.current)apiAbortRef.current.abort()}catch(e){}setMsg("درخواست توقف API ارسال شد…")}
+  async function downloadDeviceRsc(ip){
+    if(!(apiUser||"").trim()){setError("برای دریافت RSC نام کاربری API را وارد کنید");return}
+    setRscBusyIp(ip);setError("");setMsg("در حال اجرای Export و دریافت فایل RSC از "+ip+"…");
+    try{
+      const r=await fetch(API+"/api/devices/"+encodeURIComponent(ip)+"/export-backup",{method:"POST",headers:{"Content-Type":"application/json"},
+        body:JSON.stringify({username:apiUser.trim(),password:apiPass||"",port:8728,timeout:20})});
+      if(!r.ok){
+        let detail="دریافت بکاپ RSC ناموفق بود";
+        try{const d=await r.json();detail=typeof d.detail==="string"?d.detail:detail}catch(e){}
+        throw Error(detail);
+      }
+      const blob=await r.blob();
+      const disposition=r.headers.get("Content-Disposition")||"";
+      const match=disposition.match(/filename="?([^";]+)"?/i);
+      const filename=match?.[1]||"router_export.rsc";
+      const objectUrl=URL.createObjectURL(blob);const a=document.createElement("a");
+      a.href=objectUrl;a.download=filename;document.body.appendChild(a);a.click();a.remove();
+      window.setTimeout(()=>URL.revokeObjectURL(objectUrl),1000);
+      setMsg("فایل RSC دستگاه "+ip+" دریافت شد.");
+    }catch(e){setError(e.message||"خطا در دریافت بکاپ RSC");setMsg("")}
+    finally{setRscBusyIp("")}
+  }
   async function probeApi(ips){
     if(!ips.length){setError("دستگاهی انتخاب نشده");return}
     if(!(apiUser||"").trim()){setError("نام کاربری API لازم است");return}
@@ -671,6 +693,7 @@ function DeviceReports({mode="devices"}={}){
           <button type="button" className={"btn-detail"+(d.wireless_info?"":" is-empty")} title="وایرلس" onClick={e=>{e.stopPropagation();setTextModal({title:"وایرلس — "+d.ip,text:d.wireless_info||"(خالی)"})}}>وایرلس</button>
           <button type="button" className={"btn-detail btn-mac"+(d.mac_info?"":" is-empty")} title="MAC آدرس اینترفیس‌ها" onClick={e=>{e.stopPropagation();setTextModal({title:"MAC — "+d.ip,text:d.mac_info||"(خالی — با API بخوانید)"})}}>MAC</button>
           <button type="button" className={"btn-detail btn-log-inline"+(d.device_log?"":" is-empty")} title="لاگ" onClick={e=>{e.stopPropagation();setTextModal({title:"لاگ — "+d.ip,text:d.device_log||"(خالی — با API بخوانید)"})}}>Log</button>
+          <button type="button" className="btn-detail btn-rsc-inline" title="دریافت بکاپ متنی RSC" disabled={!!rscBusyIp||!(apiUser||"").trim()} onClick={e=>{e.stopPropagation();downloadDeviceRsc(d.ip)}}>{rscBusyIp===d.ip?"RSC…":"RSC"}</button>
         </span>
       </div></td>}
       {colOn("device_type")&&<td className="col-device_type">{({AP:"AP",ST:"ST",Router:"Router"}[d.device_type]||d.device_type||"—")}</td>}
