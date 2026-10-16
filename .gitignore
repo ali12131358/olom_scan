@@ -1,10 +1,28 @@
+# کتابخانه‌ها و پوشه‌های محیط مجازی پایتون که در پروژه شما ساخته شده
+Lib/
+lib/
+Scripts/
+scripts/
+Include/
+include/
+pyvenv.cfg
+
+# کش‌های پایتون
 __pycache__/
 *.py[cod]
-.venv/
-venv/
-node_modules/
-.env
-.pytest_cache/
+*$py.class
+*.pyd
 
-# Runtime SQLite device inventory
-devices.db
+# تنظیمات خود PyCharm
+.idea/
+
+# کتابخانه‌ها و کش فرانت‌اند
+frontend/node_modules/
+node_modules/
+frontend/.cache/
+npm-debug.log*
+yarn-debug.log*
+
+# در صورت عدم تمایل به آپلود دیتابیس‌های تستی و کش
+*.log
+.pytest_cache/
