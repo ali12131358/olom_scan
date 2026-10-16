@@ -151,6 +151,7 @@ def parse_device_log(device, now=None, days_back=5, threshold_minutes=5):
             found.append({"datetime":latest[0].isoformat(sep=" "),
                           "datetime_jalali":jalali_datetime_string(latest[0]),
                           "device_name":device.get("device_name") or "",
+                          "tags":(device.get("tags") or "").strip(),
                           "ip":device.get("ip") or "", "interface":iface, "last_status":latest[1],
                           "flap_count":len(flaps)})
     return found
@@ -168,10 +169,11 @@ def interface_flaps_csv(report):
     """Return a UTF-8-BOM CSV for Excel, populated from a flap report."""
     output = StringIO(newline="")
     writer = csv.writer(output)
-    writer.writerow(["ردیف", "تاریخ و زمان (میلادی)", "تاریخ و زمان (شمسی)", "نام دستگاه", "آی‌پی دستگاه", "اینترفیس", "نوع آخرین رویداد"])
+    writer.writerow(["ردیف", "تاریخ و زمان (میلادی)", "تاریخ و زمان (شمسی)", "نام دستگاه", "تگ", "آی‌پی دستگاه", "اینترفیس", "نوع آخرین رویداد"])
     for event in report.get("events", []):
         writer.writerow([event.get("row", ""), event.get("datetime", ""),
-                         event.get("datetime_jalali", ""), event.get("device_name", ""), event.get("ip", ""),
+                         event.get("datetime_jalali", ""), event.get("device_name", ""),
+                         event.get("tags", ""), event.get("ip", ""),
                          event.get("interface", ""), event.get("last_status", "")])
     return "\ufeff" + output.getvalue()
 
@@ -179,10 +181,10 @@ def interface_flaps_xlsx(report):
     from openpyxl import Workbook
     from openpyxl.styles import Font, PatternFill, Border, Side, Alignment
     wb=Workbook(); ws=wb.active; ws.title="قطع وصل اینترفیس"; ws.sheet_view.rightToLeft=True
-    headers=["ردیف","تاریخ و زمان (میلادی)","تاریخ و زمان (شمسی)","نام دستگاه","آی‌پی دستگاه","اینترفیس","نوع آخرین رویداد"]
+    headers=["ردیف","تاریخ و زمان (میلادی)","تاریخ و زمان (شمسی)","نام دستگاه","تگ","آی‌پی دستگاه","اینترفیس","نوع آخرین رویداد"]
     ws.append(headers)
     for event in report.get("events",[]):
-        ws.append([event["row"],event["datetime"],event["datetime_jalali"],event["device_name"],event["ip"],event["interface"],event["last_status"]])
+        ws.append([event["row"],event["datetime"],event["datetime_jalali"],event["device_name"],event.get("tags") or "",event["ip"],event["interface"],event["last_status"]])
     fill=PatternFill("solid",fgColor="1F4E78"); white=Font(name="Arial",bold=True,color="FFFFFF",size=11)
     thin=Side(style="thin",color="D9E2F3")
     for cell in ws[1]:
