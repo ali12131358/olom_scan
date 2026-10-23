@@ -171,24 +171,30 @@ def interface_flap_report(devices, days_back=5, threshold_minutes=5, now=None):
             "days":int(days_back),"threshold_minutes":int(threshold_minutes)}
 
 def interface_flaps_csv(report):
-    """Return a UTF-8-BOM CSV for Excel, populated from a flap report."""
+    """Return a UTF-8-BOM CSV for Excel, populated from a flap report.
+
+    The CSV mirrors every field shown in the on-screen report table,
+    using the same column names and order as the UI.
+    """
     output = StringIO(newline="")
     writer = csv.writer(output)
-    writer.writerow(["ردیف", "تاریخ و زمان (میلادی)", "تاریخ و زمان (شمسی)", "نام دستگاه", "آی‌پی دستگاه", "تگ دستگاه", "اینترفیس", "نوع آخرین رویداد"])
+    writer.writerow(["ردیف", "نام دستگاه", "آی‌پی دستگاه", "تگ دستگاه", "اینترفیس", "تعداد تکرار لاگ", "تاریخ و زمان (میلادی)", "تاریخ و زمان (شمسی)", "نوع رویداد"])
     for event in report.get("events", []):
-        writer.writerow([event.get("row", ""), event.get("datetime", ""),
-                         event.get("datetime_jalali", ""), event.get("device_name", ""), event.get("ip", ""),
-                         event.get("device_tag", ""), event.get("interface", ""), event.get("last_status", "")])
+        writer.writerow([event.get("row", ""), event.get("device_name", ""),
+                         event.get("ip", ""), event.get("device_tag", ""),
+                         event.get("interface", ""), event.get("flap_count", 1),
+                         event.get("datetime", ""), event.get("datetime_jalali", ""),
+                         event.get("last_status", "")])
     return "\ufeff" + output.getvalue()
 
 def interface_flaps_xlsx(report):
     from openpyxl import Workbook
     from openpyxl.styles import Font, PatternFill, Border, Side, Alignment
     wb=Workbook(); ws=wb.active; ws.title="قطع وصل اینترفیس"; ws.sheet_view.rightToLeft=True
-    headers=["ردیف","تاریخ و زمان (میلادی)","تاریخ و زمان (شمسی)","نام دستگاه","آی‌پی دستگاه","تگ دستگاه","اینترفیس","نوع آخرین رویداد"]
+    headers=["ردیف","نام دستگاه","آی‌پی دستگاه","تگ دستگاه","اینترفیس","تعداد تکرار لاگ","تاریخ و زمان (میلادی)","تاریخ و زمان (شمسی)","نوع رویداد"]
     ws.append(headers)
     for event in report.get("events",[]):
-        ws.append([event["row"],event["datetime"],event["datetime_jalali"],event["device_name"],event["ip"],event.get("device_tag",""),event["interface"],event["last_status"]])
+        ws.append([event["row"],event["device_name"],event["ip"],event.get("device_tag",""),event["interface"],event.get("flap_count",1),event["datetime"],event["datetime_jalali"],event["last_status"]])
     fill=PatternFill("solid",fgColor="1F4E78"); white=Font(name="Arial",bold=True,color="FFFFFF",size=11)
     thin=Side(style="thin",color="D9E2F3")
     for cell in ws[1]:
