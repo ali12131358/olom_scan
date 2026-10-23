@@ -76,3 +76,19 @@ Stage Summary:
 - App now requires admin login (NetAdmin/NetAdmin); session survives restarts via persisted secret
 - Creative SVG logo on login page + favicon
 - Deployment: git pull + restart on server; Ctrl+Shift+R for new assets
+
+---
+Task ID: 5
+Agent: main (Z.ai)
+Task: Re-push complete project to GitHub after user reset the remote repository
+
+Work Log:
+- Fetched origin: remote main was force-replaced by user with a fresh "Initial commit" containing only an accidentally-committed Windows venv (Lib/, Scripts/, pyvenv.cfg) - zero project code
+- Enabled core.fileMode=false locally to silence 2264 permission-only diffs (644->755 noise, no content changes)
+- Extended .gitignore: Lib/, Scripts/, pyvenv.cfg (Windows root venv), .idea/, .net_scan/
+- Untracked pyvenv.cfg venv remnant
+- Force-pushed complete local project (full history: CSV fix, search optimization + report DB selector, admin login + logo, auth secret/test) to origin/main
+
+Stage Summary:
+- origin/main now holds the complete Net_Scan project with all 4 completed tasks
+- Remote's venv-only initial commit intentionally replaced (contained no project content)

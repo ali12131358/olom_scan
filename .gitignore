@@ -9,3 +9,12 @@ venv/
 
 # Runtime SQLite device inventory
 devices.db
+
+# Windows venv created at repo root (Lib/, Scripts/, pyvenv.cfg)
+Lib/
+Scripts/
+pyvenv.cfg
+
+# IDE / local tooling
+.idea/
+.net_scan/
