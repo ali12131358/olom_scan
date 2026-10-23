@@ -18,9 +18,9 @@ from threading import Lock, Event
 from datetime import datetime, timezone
 from uuid import uuid4
 
-from fastapi import FastAPI, HTTPException, Query, UploadFile, File
+from fastapi import FastAPI, HTTPException, Query, UploadFile, File, Request
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import Response
+from fastapi.responses import Response, JSONResponse
 from pydantic import BaseModel, Field
 import os
 import platform
@@ -83,8 +83,15 @@ try:
 except ImportError:
     import email_manager
 
+try:
+    from backend import auth
+except ImportError:
+    import auth
+
 app=FastAPI(title="Authorized IPv4 Scanner")
-app.add_middleware(CORSMiddleware,allow_origins=["*"],allow_methods=["*"],allow_headers=["*"],allow_credentials=False)
+# allow_origin_regex echoes any origin; combined with allow_credentials=True this
+# lets the session cookie work for both same-origin UI and LAN cross-port setups.
+app.add_middleware(CORSMiddleware,allow_origin_regex=".*",allow_methods=["*"],allow_headers=["*"],allow_credentials=True)
 
 # Chrome/Edge "Private Network Access": public UI (e.g. http://185.x:5001) calling http://127.0.0.1:8001
 # requires Access-Control-Allow-Private-Network on preflight and responses.
@@ -109,6 +116,61 @@ class PrivateNetworkAccessMiddleware(BaseHTTPMiddleware):
         return response
 
 app.add_middleware(PrivateNetworkAccessMiddleware)
+
+# ---------------- Admin authentication (session cookie) ----------------
+class AuthMiddleware(BaseHTTPMiddleware):
+    """Require a valid session cookie for every API route.
+
+    Open paths: login/logout/auth-check (bootstrapping) and everything that is
+    not an API prefix (SPA shell, static assets, /health).
+    """
+    OPEN_EXACT = {"/api/login", "/api/logout", "/api/auth/check"}
+    PROTECTED_PREFIXES = ("/api/", "/devices", "/reports", "/scans")
+
+    async def dispatch(self, request, call_next):
+        path = request.url.path
+        if request.method == "OPTIONS" or path in self.OPEN_EXACT or not path.startswith(self.PROTECTED_PREFIXES):
+            return await call_next(request)
+        user = auth.verify_token(request.cookies.get(auth.COOKIE_NAME))
+        if not user:
+            return JSONResponse({"detail": "احراز هویت لازم است"}, status_code=401)
+        request.state.user = user
+        return await call_next(request)
+
+app.add_middleware(AuthMiddleware)
+
+class LoginBody(BaseModel):
+    username: str = Field(default="", max_length=64)
+    password: str = Field(default="", max_length=128)
+
+
+@app.post("/api/login")
+def api_login(body: LoginBody, response: Response):
+    """Verify admin credentials and set the session cookie."""
+    if not auth.check_credentials(body.username, body.password):
+        raise HTTPException(401, "نام کاربری یا گذرواژه اشتباه است")
+    token = auth.create_token(body.username)
+    response.set_cookie(
+        auth.COOKIE_NAME, token,
+        max_age=auth.COOKIE_MAX_AGE, httponly=True, samesite="lax", path="/",
+    )
+    return {"ok": True, "username": body.username}
+
+
+@app.post("/api/logout")
+def api_logout(response: Response):
+    response.delete_cookie(auth.COOKIE_NAME, path="/")
+    return {"ok": True}
+
+
+@app.get("/api/auth/check")
+def api_auth_check(request: Request):
+    user = auth.verify_token(request.cookies.get(auth.COOKIE_NAME))
+    if not user:
+        raise HTTPException(401, "احراز هویت لازم است")
+    return {"authenticated": True, "username": user}
+
+
 JOBS={}; GUARD=Lock(); EXECUTOR=ThreadPoolExecutor(max_workers=4)
 PROBE_CANCEL=Event()  # cancel current SNMP probe
 API_PROBE_CANCEL=Event()

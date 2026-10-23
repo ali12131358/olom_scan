@@ -5,12 +5,91 @@ if((h==="127.0.0.1"||h==="localhost")&&(port==="8001"||port==="5001"||port==="51
 return `http://${h}:8001`;}return"http://127.0.0.1:8001";})();
 async function readJson(r){
   const text=await r.text();
+  if(r.status===401){try{window.dispatchEvent(new CustomEvent("netscan:unauthorized"))}catch(e){}}
   if(!text||!text.trim()){
     throw Error(r.ok?("پاسخ خالی از سرور (HTTP "+r.status+") — آیا بک‌اند روی پورت 8001 در حال اجراست؟"):("خطای سرور بدون متن (HTTP "+r.status+")"));
   }
   try{return JSON.parse(text)}catch(e){
     throw Error("پاسخ JSON نامعتبر (HTTP "+r.status+"): "+text.slice(0,120));
   }
+}
+// --- Creative brand logo: radar sweep + network blips (Net_Scan / شبکه‌بان) ---
+function Logo({size=64}){
+  return (
+    <svg viewBox="0 0 64 64" width={size} height={size} role="img" aria-label="Net_Scan logo" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="nsBg" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stopColor="#10406b"/><stop offset=".55" stopColor="#0b2b48"/><stop offset="1" stopColor="#061a2d"/>
+        </linearGradient>
+        <linearGradient id="nsSweep" x1="0" y1="1" x2="1" y2="0">
+          <stop offset="0" stopColor="#34d399" stopOpacity="0"/>
+          <stop offset="1" stopColor="#2fd38a" stopOpacity=".9"/>
+        </linearGradient>
+        <radialGradient id="nsCore" cx=".5" cy=".5" r=".5">
+          <stop offset="0" stopColor="#ffffff"/><stop offset="1" stopColor="#7dd3fc"/>
+        </radialGradient>
+      </defs>
+      <rect x="2" y="2" width="60" height="60" rx="15" fill="url(#nsBg)" stroke="#2b6c93" strokeWidth="1.4"/>
+      <circle cx="32" cy="31" r="23" fill="none" stroke="#1e5d85" strokeWidth="1"/>
+      <circle cx="32" cy="31" r="16" fill="none" stroke="#2b7ea8" strokeWidth="1" strokeDasharray="3 3"/>
+      <circle cx="32" cy="31" r="9.5" fill="none" stroke="#3ea3cc" strokeWidth="1.1"/>
+      <path d="M4 4h4M4 4v4M60 4h-4M60 4v4M4 60h4M4 60v-4M60 60h-4M60 60v-4" stroke="#2b6c93" strokeWidth="1.6" strokeLinecap="round"/>
+      <path d="M32 31 L32 8 A23 23 0 0 1 49.5 15.5 Z" fill="url(#nsSweep)"/>
+      <path d="M32 31 L49.5 15.5" stroke="#34d399" strokeWidth="1.6" strokeLinecap="round"/>
+      <circle cx="44" cy="20" r="3" fill="#34d399"/>
+      <circle cx="44" cy="20" r="6.5" fill="none" stroke="#34d399" strokeWidth="1" opacity=".55"/>
+      <circle cx="44" cy="20" r="9.5" fill="none" stroke="#34d399" strokeWidth=".8" opacity=".28"/>
+      <circle cx="20.5" cy="41" r="2.2" fill="#7dd3fc"/>
+      <circle cx="41.5" cy="42.5" r="1.8" fill="#7dd3fc" opacity=".9"/>
+      <circle cx="26.5" cy="21.5" r="1.5" fill="#7dd3fc" opacity=".7"/>
+      <path d="M20.5 41 L41.5 42.5" stroke="#2b7ea8" strokeWidth=".9" opacity=".7"/>
+      <path d="M20.5 41 L26.5 21.5" stroke="#2b7ea8" strokeWidth=".9" opacity=".5"/>
+      <circle cx="32" cy="31" r="3.4" fill="url(#nsCore)" stroke="#e0f2fe" strokeWidth=".8"/>
+    </svg>
+  );
+}
+// --- Admin login page ---
+function Login({onLogin}){
+  const[user,setUser]=useState("");const[pass,setPass]=useState("");
+  const[showPass,setShowPass]=useState(false);
+  const[busy,setBusy]=useState(false);const[err,setErr]=useState("");
+  async function submit(e){
+    e.preventDefault();if(busy)return;
+    setBusy(true);setErr("");
+    try{
+      const r=await fetch(API+"/api/login",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({username:user,password:pass})});
+      const d=await readJson(r);
+      if(!r.ok)throw Error(typeof d.detail==="string"?d.detail:"ورود ناموفق بود");
+      onLogin(d.username||"NetAdmin");
+    }catch(e2){setErr(e2.message||"ورود ناموفق بود")}
+    setBusy(false);
+  }
+  return (
+    <div className="login-shell" dir="rtl">
+      <div className="login-glow" aria-hidden="true"></div>
+      <form className="login-card" onSubmit={submit}>
+        <div className="login-logo"><Logo size={92}/></div>
+        <h1>شبکه‌بان <span className="login-en">Net_Scan</span></h1>
+        <p className="login-sub">پایش، اسکن و مدیریت دستگاه‌های MikroTik</p>
+        <label>نام کاربری
+          <input dir="ltr" value={user} onChange={e=>setUser(e.target.value)} autoComplete="username" autoFocus placeholder="NetAdmin"/>
+        </label>
+        <label>گذرواژه
+          <span className="login-pass">
+            <input dir="ltr" type={showPass?"text":"password"} value={pass} onChange={e=>setPass(e.target.value)} autoComplete="current-password" placeholder="••••••••"/>
+            <button type="button" className="login-eye" onClick={()=>setShowPass(v=>!v)} title={showPass?"پنهان کردن گذرواژه":"نمایش گذرواژه"} aria-label={showPass?"پنهان کردن گذرواژه":"نمایش گذرواژه"}>
+              {showPass
+                ?<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><path d="M14.12 14.12a3 3 0 1 1-4.24-4.24"/><path d="M1 1l22 22"/></svg>
+                :<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>}
+            </button>
+          </span>
+        </label>
+        {err&&<div className="login-error" role="alert">{err}</div>}
+        <button type="submit" className="login-btn" disabled={busy||!user||!pass}>{busy?"در حال ورود…":"ورود به سامانه"}</button>
+        <p className="login-hint">دسترسی مدیریت — ورود با حساب ادمین سامانه</p>
+      </form>
+    </div>
+  );
 }
 const keys=["ping_responders","mikrotik_candidates","potential_non_mikrotik","winbox_open_api_closed"];const labels={ping_responders:"پاسخ‌گو به پینگ",mikrotik_candidates:"دستگاه MikroTik",potential_non_mikrotik:"احتمالاً غیر MikroTik",winbox_open_api_closed:"Winbox باز / API بسته"};
 // --- Backend controller (dev only; Vite plugin endpoints, loopback-restricted) ---
@@ -916,7 +995,23 @@ function EmailServerCard(){
   );
 }
 
-function App(){const[mainTab,setMainTab]=useState("network");const[targets,setTargets]=useState("");const[ports,setPorts]=useState("22,80,443,8291,8728");const[workers,setWorkers]=useState(32),[ping,setPing]=useState(1000),[timeout,setTimeoutValue]=useState(1);const[job,setJob]=useState(null),[busy,setBusy]=useState(false),[error,setError]=useState("");const[resClass,setResClass]=useState(""),[resQ,setResQ]=useState(""),[resPageSize,setResPageSize]=useState(50),[resPage,setResPage]=useState(1);const[xferDb,setXferDb]=useState("default"),[dbOptions,setDbOptions]=useState([{name:"default"}]),[xferBusy,setXferBusy]=useState(false);
+function App(){
+const[authState,setAuthState]=useState("checking");const[authUser,setAuthUser]=useState("");
+useEffect(()=>{let active=true;fetch(API+"/api/auth/check").then(async r=>{if(!active)return;if(r.ok){try{const d=await r.json();setAuthUser(d.username||"")}catch(e){}setAuthState("in")}else setAuthState("out")}).catch(()=>{active&&setAuthState("out")});return()=>{active=false}},[]);
+useEffect(()=>{const h=()=>setAuthState("out");window.addEventListener("netscan:unauthorized",h);return()=>window.removeEventListener("netscan:unauthorized",h)},[]);
+async function doLogout(){try{await fetch(API+"/api/logout",{method:"POST"})}catch(e){}setAuthUser("");setAuthState("out")}
+if(authState!=="in")return (
+<main>
+  {authState==="checking"
+    ?<div className="login-shell" dir="rtl"><div className="login-card login-checking">در حال بررسی نشست…</div></div>
+    :<Login onLogin={u=>{setAuthUser(u||"");setAuthState("in")}}/>}
+</main>
+);
+return <MainApp authUser={authUser} onLogout={doLogout}/>;
+}
+
+function MainApp({authUser,onLogout}){
+const[mainTab,setMainTab]=useState("network");const[targets,setTargets]=useState("");const[ports,setPorts]=useState("22,80,443,8291,8728");const[workers,setWorkers]=useState(32),[ping,setPing]=useState(1000),[timeout,setTimeoutValue]=useState(1);const[job,setJob]=useState(null),[busy,setBusy]=useState(false),[error,setError]=useState("");const[resClass,setResClass]=useState(""),[resQ,setResQ]=useState(""),[resPageSize,setResPageSize]=useState(50),[resPage,setResPage]=useState(1);const[xferDb,setXferDb]=useState("default"),[dbOptions,setDbOptions]=useState([{name:"default"}]),[xferBusy,setXferBusy]=useState(false);
 useEffect(()=>{fetch(API+"/api/databases").then(r=>r.json()).then(d=>{if(d&&d.databases){setDbOptions(d.databases);setXferDb(d.active||"default")}}).catch(()=>{})},[job?.status]);
 async function transferScan(){if(!job?.scan_id)return;setXferBusy(true);setError("");try{const r=await fetch(`${API}/scans/${job.scan_id}/transfer`,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({database:xferDb})});const d=await r.json();if(!r.ok)throw Error(typeof d.detail==="string"?d.detail:"انتقال ناموفق");setError("");alert("به دیتابیس «"+d.database+"» منتقل شد: "+d.upserted+" دستگاه")}catch(e){setError(e.message)}setXferBusy(false)}
 async function start(){setError("");setBusy(true);try{const res=await fetch(API+"/scans",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({targets,ports:ports.split(",").map(x=>Number(x.trim())),workers:Number(workers),ping_timeout_ms:Number(ping),port_timeout:Number(timeout)})});const data=await res.json();if(!res.ok)throw Error(data.detail||"خطا در شروع اسکن");setJob({...data,progress:{completed:0,total:data.total_targets,ping_responders:0},records:[],summary:{}})}catch(e){setError(e.message);setBusy(false)}}
@@ -946,6 +1041,7 @@ return (
     <h1>شبکه‌بان</h1>
     <p>پایش، اسکن و مدیریت دستگاه‌های MikroTik</p>
   </div>
+  <button type="button" className="logout-btn" onClick={onLogout} title={authUser?("خروج از حساب "+authUser):"خروج از حساب"}>خروج{authUser?` (${authUser})`:""}</button>
 </header>
 {error&&<div className="error">{error}</div>}
 <div className="ribbon-shell" dir="rtl">
