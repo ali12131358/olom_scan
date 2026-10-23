@@ -1,0 +1,108 @@
+IP: 172.29.15.4
+Collected at: 2026-10-21T13:18:16.612399+00:00
+source: RouterOS API
+identity: WIFI-OTAGH-IT
+device_type: AP
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=false  mac=78:9A:18:A9:AD:B6
+  2  name=ether2  type=ether  running=false  mac=78:9A:18:A9:AD:B7
+  3  name=ether3  type=ether  running=false  mac=78:9A:18:A9:AD:B8
+  4  name=ether4  type=ether  running=true  mac=78:9A:18:A9:AD:B9
+  5  name=pwr-line1  type=ether  running=false  mac=78:9A:18:A9:AD:BA
+  6  name=wlan1  type=wlan  running=false  mac=78:9A:18:A9:AD:BB
+  7  name=bridge1  type=bridge  running=true  mac=78:9A:18:A9:AD:BB
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=ap-bridge  ssid=IT  band=2ghz-b/g/n  frequency=2442
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.29.15.4/25  interface=ether2  network=172.29.15.0
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.29.15.1  distance=1
+  2  dst=172.29.15.0/25  gw=bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=RB-khoramshahr-MK-behdasht-RB2011  address=-  interface=ether4,bridge1
+  2  identity=RB-khoramshahr-MK-behdasht-RB2011  address=172.29.15.1  interface=ether4,bridge1
+  3  identity=RB-Ferdosi-RB2011  address=172.29.15.2  interface=ether4,bridge1
+  4  identity=Switch  address=172.29.15.12  interface=ether4,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/29 16:42:49
+# ساعت دستگاه (خام): 1970-11-11 07:09:16
+# افست اصلاحی (سرور − دستگاه): +490398:03:33
+  1  1405/07/28 09:33:27  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/28 09:33:29  [bridge,info]  "bridge1" mac address changed to 78:9A:18:A9:AD:BB
+  3  1405/07/28 09:33:30  [bridge,info]  hardware offloading activated on bridge "bridge1" ports: ether1,ether2,ether3,ether4
+  4  1405/07/28 09:33:32  [wireless,info]  94:DB:C9:35:14:35@wlan1: connected, signal strength -52
+  5  1405/07/28 09:33:32  [interface,info]  ether4 link up (speed 100M, full duplex)
+  6  1405/07/28 09:55:04  [wireless,info]  26:21:B5:FE:5F:3A@wlan1: connected, signal strength -42
+  7  1405/07/28 11:59:30  [wireless,info]  26:21:B5:FE:5F:3A@wlan1: disconnected, received deauth: sending station leaving (3), signal strength -42
+  8  1405/07/28 12:23:26  [wireless,info]  26:21:B5:FE:5F:3A@wlan1: connected, signal strength -68
+  9  1405/07/28 13:05:13  [wireless,info]  26:21:B5:FE:5F:3A@wlan1: disconnected, extensive data loss, signal strength -68
+ 10  1405/07/28 13:19:03  [wireless,info]  94:DB:C9:35:14:35@wlan1: disconnected, received disassoc: sending station leaving (8), signal strength -52
+ 11  1405/07/29 07:35:59  [wireless,info]  C0:BD:C8:68:5F:CF@wlan1: connected, signal strength -72
+ 12  1405/07/29 07:36:04  [wireless,info]  C0:BD:C8:68:5F:CF@wlan1: disconnected, unicast key exchange timeout, signal strength -81
+ 13  1405/07/29 08:22:27  [wireless,info]  94:DB:C9:35:14:35@wlan1: connected, signal strength -47
+ 14  1405/07/29 08:50:06  [wireless,info]  C8:3A:35:C2:49:FA@wlan1: connected, signal strength -37
+ 15  1405/07/29 09:05:34  [wireless,info]  C8:3A:35:C2:49:FA@wlan1: disconnected, received disassoc: sending station leaving (8), signal strength -37
+ 16  1405/07/29 09:18:56  [wireless,info]  00:08:CA:77:20:E6@wlan1: connected, signal strength -53
+ 17  1405/07/29 09:35:42  [wireless,info]  C0:BD:C8:68:5F:CF@wlan1: connected, signal strength -76
+ 18  1405/07/29 09:35:47  [wireless,info]  C0:BD:C8:68:5F:CF@wlan1: disconnected, unicast key exchange timeout, signal strength -75
+ 19  1405/07/29 09:39:41  [wireless,info]  00:08:CA:77:20:E6@wlan1: disconnected, received disassoc: sending station leaving (8), signal strength -53
+ 20  1405/07/29 09:50:56  [wireless,info]  C0:BD:C8:68:5F:CF@wlan1: connected, signal strength -82
+ 21  1405/07/29 09:51:01  [wireless,info]  C0:BD:C8:68:5F:CF@wlan1: disconnected, unicast key exchange timeout, signal strength -79
+ 22  1405/07/29 09:54:22  [wireless,info]  00:08:CA:77:20:E6@wlan1: connected, signal strength -90
+ 23  1405/07/29 09:54:27  [wireless,info]  00:08:CA:77:20:E6@wlan1: disconnected, unicast key exchange timeout, signal strength -92
+ 24  1405/07/29 09:54:29  [wireless,info]  00:08:CA:77:20:E6@wlan1: connected, signal strength -90
+ 25  1405/07/29 09:54:40  [wireless,info]  00:08:CA:77:20:E6@wlan1: disconnected, received disassoc: sending station leaving (8), signal strength -90
+ 26  1405/07/29 09:54:44  [wireless,info]  00:08:CA:77:20:E6@wlan1: connected, signal strength -90
+ 27  1405/07/29 09:54:51  [wireless,info]  00:08:CA:77:20:E6@wlan1: reassociating
+ 28  1405/07/29 09:54:51  [wireless,info]  00:08:CA:77:20:E6@wlan1: disconnected, ok, signal strength -90
+ 29  1405/07/29 09:54:51  [wireless,info]  00:08:CA:77:20:E6@wlan1: connected, signal strength -92
+ 30  1405/07/29 09:55:48  [wireless,info]  00:08:CA:77:20:E6@wlan1: disconnected, received deauth: sending station leaving (3), signal strength -92
+ 31  1405/07/29 09:56:53  [wireless,info]  00:08:CA:77:20:E6@wlan1: connected, signal strength -89
+ 32  1405/07/29 09:59:50  [wireless,info]  D0:37:45:A8:DE:16@wlan1: connected, signal strength -84
+ 33  1405/07/29 10:09:05  [wireless,info]  00:08:CA:77:20:E6@wlan1: disconnected, received deauth: sending station leaving (3), signal strength -89
+ 34  1405/07/29 10:09:11  [wireless,info]  00:08:CA:77:20:E6@wlan1: connected, signal strength -90
+ 35  1405/07/29 10:09:29  [wireless,info]  00:08:CA:77:20:E6@wlan1: disconnected, received disassoc: sending station leaving (8), signal strength -90
+ 36  1405/07/29 10:09:34  [wireless,info]  00:08:CA:77:20:E6@wlan1: connected, signal strength -88
+ 37  1405/07/29 10:09:41  [wireless,info]  00:08:CA:77:20:E6@wlan1: disconnected, received disassoc: sending station leaving (8), signal strength -88
+ 38  1405/07/29 10:25:48  [wireless,info]  D0:37:45:A8:DE:16@wlan1: disconnected, received disassoc: sending station leaving (8), signal strength -84
+ 39  1405/07/29 10:40:04  [wireless,info]  26:21:B5:FE:5F:3A@wlan1: connected, signal strength -69
+ 40  1405/07/29 10:44:15  [wireless,info]  C0:BD:C8:68:5F:CF@wlan1: connected, signal strength -92
+ 41  1405/07/29 10:44:20  [wireless,info]  C0:BD:C8:68:5F:CF@wlan1: disconnected, unicast key exchange timeout, signal strength -81
+ 42  1405/07/29 11:01:37  [wireless,info]  26:21:B5:FE:5F:3A@wlan1: disconnected, extensive data loss, signal strength -69
+ 43  1405/07/29 11:04:00  [wireless,info]  26:21:B5:FE:5F:3A@wlan1: connected, signal strength -62
+ 44  1405/07/29 11:07:31  [wireless,info]  C0:BD:C8:68:5F:CF@wlan1: connected, signal strength -74
+ 45  1405/07/29 11:07:36  [wireless,info]  C0:BD:C8:68:5F:CF@wlan1: disconnected, unicast key exchange timeout, signal strength -74
+ 46  1405/07/29 11:37:26  [wireless,info]  26:21:B5:FE:5F:3A@wlan1: disconnected, extensive data loss, signal strength -62
+ 47  1405/07/29 11:45:58  [wireless,info]  26:21:B5:FE:5F:3A@wlan1: connected, signal strength -90
+ 48  1405/07/29 11:49:14  [wireless,info]  26:21:B5:FE:5F:3A@wlan1: disconnected, extensive data loss, signal strength -90
+ 49  1405/07/29 12:56:23  [wireless,info]  00:08:CA:77:20:E6@wlan1: connected, signal strength -90
+ 50  1405/07/29 12:57:09  [wireless,info]  00:08:CA:77:20:E6@wlan1: reassociating
+ 51  1405/07/29 12:57:09  [wireless,info]  00:08:CA:77:20:E6@wlan1: disconnected, ok, signal strength -90
+ 52  1405/07/29 12:57:09  [wireless,info]  00:08:CA:77:20:E6@wlan1: connected, signal strength -89
+ 53  1405/07/29 12:57:20  [wireless,info]  00:08:CA:77:20:E6@wlan1: disconnected, received disassoc: sending station leaving (8), signal strength -89
+ 54  1405/07/29 13:25:20  [wireless,info]  94:DB:C9:35:14:35@wlan1: disconnected, received disassoc: sending station leaving (8), signal strength -47
+ 55  1405/07/29 16:42:48  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  78:9A:18:A9:AD:B6  (ether)
+ether2  78:9A:18:A9:AD:B7  (ether)
+ether3  78:9A:18:A9:AD:B8  (ether)
+ether4  78:9A:18:A9:AD:B9  (ether)
+pwr-line1  78:9A:18:A9:AD:BA  (ether)
+wlan1  78:9A:18:A9:AD:BB  (wlan)
+bridge1  78:9A:18:A9:AD:BB  (bridge)
+--- /ip arp ---
+bridge1  C4:AD:34:1C:69:10  (arp 172.29.15.1)
+bridge1  8C:89:A5:E3:FB:20  (arp 172.29.15.19)

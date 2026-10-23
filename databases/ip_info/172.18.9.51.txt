@@ -1,0 +1,56 @@
+IP: 172.18.9.51
+Collected at: 2026-10-18T05:58:42.560188+00:00
+source: RouterOS API
+identity: KhezrNabi.Client
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=6C:3B:6B:74:E2:85
+  2  name=wlan1  type=wlan  running=true  mac=6C:3B:6B:74:E2:86
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=Abadan-Khezr3  band=5ghz-a/n  frequency=auto
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.29.68.193/27  interface=ether1  network=172.29.68.192
+  2  address=172.18.9.51/28  interface=wlan1  network=172.18.9.48
+  3  address=192.168.0.5/24  interface=ether1  network=192.168.0.0
+  4  address=192.168.1.5/24  interface=ether1  network=192.168.1.0
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.9.49  distance=1
+  2  dst=172.18.9.48/28  gw=wlan1  distance=0
+  3  dst=172.29.68.192/27  gw=ether1  distance=0
+  4  dst=192.168.0.0/24  gw=ether1  distance=0
+  5  dst=192.168.1.0/24  gw=ether1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=KhezrNabi-MK  address=172.18.9.49  interface=wlan1
+  2  identity=Abadan-Khezr3  address=172.18.9.50  interface=wlan1
+  3  identity=Tore Bokhakh 2  address=172.18.9.52  interface=wlan1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/26 09:14:59
+# ساعت دستگاه (خام): 1972-06-23 11:58:01
+# افست اصلاحی (سرور − دستگاه): +476153:46:58
+  1  1405/07/26 07:57:45  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/26 07:57:53  [wireless,info]  6C:3B:6B:94:8C:22@wlan1 established connection on 5260000, SSID Abadan-Khezr3
+  3  1405/07/26 07:57:55  [interface,info]  ether1 link up (speed 100M, full duplex)
+  4  1405/07/26 07:57:58  [dhcp,info]  dhcp1 deassigned 172.29.68.221 from B0:95:75:0B:D6:E7
+  5  1405/07/26 07:57:59  [dhcp,info]  dhcp1 assigned 172.29.68.221 to B0:95:75:0B:D6:E7
+  6  1405/07/26 09:12:29  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+  7  1405/07/26 09:12:30  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+  8  1405/07/26 09:14:57  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  6C:3B:6B:74:E2:85  (ether)
+wlan1  6C:3B:6B:74:E2:86  (wlan)
+--- /ip arp ---
+wlan1  6C:3B:6B:85:AC:9D  (arp 172.18.9.49)
+ether1  B0:95:75:0B:D6:E7  (arp 172.29.68.221)

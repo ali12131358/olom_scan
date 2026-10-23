@@ -1,0 +1,53 @@
+IP: 172.29.202.33
+Collected at: 2026-10-21T13:18:26.934282+00:00
+source: RouterOS API
+identity: Oseyfer.Client
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=E4:8D:8C:B5:1C:98
+  2  name=wlan1  type=wlan  running=true  mac=E4:8D:8C:B5:1C:99
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=Shadegan-Abshar4  band=5ghz-a/n  frequency=5660
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.25.179/28  interface=wlan1  network=172.18.25.176
+  2  address=172.29.202.33/27  interface=ether1  network=172.29.202.32
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.25.177  distance=1
+  2  dst=172.18.25.176/28  gw=wlan1  distance=0
+  3  dst=172.29.202.32/27  gw=ether1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=RB-ABSHAR  address=172.18.25.177  interface=wlan1
+  2  identity=Shadegan-Abshar4  address=172.18.25.178  interface=wlan1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/29 16:43:51
+# ساعت دستگاه (خام): 1974-04-20 01:34:33
+# افست اصلاحی (سرور − دستگاه): +460259:39:18
+  1  1405/07/26 10:15:58  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/26 10:16:00  [interface,info]  ether1 link up (speed 100M, full duplex)
+  3  1405/07/26 10:16:05  [wireless,info]  6C:3B:6B:4A:2D:9A@wlan1 established connection on 5280000, SSID Shadegan-Abshar4
+  4  1405/07/26 12:11:38  [dhcp,info]  dhcp1 deassigned 172.29.202.62 from 94:DE:80:4D:E7:92
+  5  1405/07/28 08:12:10  [dhcp,info]  dhcp1 assigned 172.29.202.62 to 94:DE:80:4D:E7:92
+  6  1405/07/28 10:12:10  [dhcp,info]  dhcp1 deassigned 172.29.202.62 from 94:DE:80:4D:E7:92
+  7  1405/07/28 10:58:05  [dhcp,info]  dhcp1 assigned 172.29.202.62 to 94:DE:80:4D:E7:92
+  8  1405/07/28 11:53:06  [dhcp,info]  dhcp1 deassigned 172.29.202.62 from 94:DE:80:4D:E7:92
+  9  1405/07/29 08:52:37  [dhcp,info]  dhcp1 assigned 172.29.202.62 to 94:DE:80:4D:E7:92
+ 10  1405/07/29 12:57:38  [dhcp,info]  dhcp1 deassigned 172.29.202.62 from 94:DE:80:4D:E7:92
+ 11  1405/07/29 16:43:49  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  E4:8D:8C:B5:1C:98  (ether)
+wlan1  E4:8D:8C:B5:1C:99  (wlan)
+--- /ip arp ---
+wlan1  4C:5E:0C:9B:0F:02  (arp 172.18.25.177)

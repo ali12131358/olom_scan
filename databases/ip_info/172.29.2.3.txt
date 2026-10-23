@@ -1,0 +1,64 @@
+IP: 172.29.2.3
+Collected at: 2026-10-21T13:18:25.274175+00:00
+source: RouterOS API
+identity: SalmanFarsi.Router
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=6C:3B:6B:2E:1E:D6
+  2  name=ether2  type=ether  running=true  mac=6C:3B:6B:2E:1E:D7
+  3  name=ether3  type=ether  running=true  mac=6C:3B:6B:2E:1E:D8
+  4  name=ether4  type=ether  running=true  mac=6C:3B:6B:2E:1E:D9
+  5  name=wlan1  type=wlan  running=false  mac=6C:3B:6B:2E:1E:DA
+  6  name=bridge1  type=bridge  running=true  mac=6C:3B:6B:2E:1E:D6
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station  ssid=MikroTik  band=2ghz-b/g  frequency=2412
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.29.2.3/25  interface=bridge1  network=172.29.2.0
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.29.2.1  distance=1
+  2  dst=172.29.2.0/25  gw=bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=SalmanFarsi.Client  address=172.29.2.1  interface=ether1,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/29 16:43:38
+# ساعت دستگاه (خام): 1972-08-15 19:36:23
+# افست اصلاحی (سرور − دستگاه): +474953:37:15
+  1  1405/07/23 22:26:57  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/23 22:27:00  [bridge,info]  "bridge1" mac address changed to 6C:3B:6B:2E:1E:D6
+  3  1405/07/23 22:27:02  [interface,info]  ether1 link up (speed 100M, full duplex)
+  4  1405/07/23 22:27:02  [interface,info]  ether2 link up (speed 100M, full duplex)
+  5  1405/07/23 22:27:02  [interface,info]  ether4 link up (speed 100M, full duplex)
+  6  1405/07/23 22:27:03  [interface,info]  ether1 link down
+  7  1405/07/23 22:27:12  [interface,info]  ether1 link up (speed 100M, full duplex)
+  8  1405/07/23 22:27:18  [interface,info]  ether3 link up (speed 100M, full duplex)
+  9  1405/07/24 15:42:21  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 10  1405/07/24 15:42:23  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 11  1405/07/24 16:06:25  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 12  1405/07/24 16:06:26  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 13  1405/07/26 09:18:42  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 14  1405/07/26 09:18:43  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 15  1405/07/26 09:20:37  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 16  1405/07/26 09:20:39  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 17  1405/07/29 16:43:36  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  6C:3B:6B:2E:1E:D6  (ether)
+ether2  6C:3B:6B:2E:1E:D7  (ether)
+ether3  6C:3B:6B:2E:1E:D8  (ether)
+ether4  6C:3B:6B:2E:1E:D9  (ether)
+wlan1  6C:3B:6B:2E:1E:DA  (wlan)
+bridge1  6C:3B:6B:2E:1E:D6  (bridge)
+--- /ip arp ---
+bridge1  64:D1:54:20:AD:32  (arp 172.29.2.1)

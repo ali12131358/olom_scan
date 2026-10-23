@@ -1,0 +1,63 @@
+IP: 172.18.25.50
+Collected at: 2026-10-21T13:16:57.193455+00:00
+source: RouterOS API
+identity: Shadegan-Alvan2_AP
+device_type: AP
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=64:D1:54:03:0D:23
+  2  name=wlan1  type=wlan  running=false  mac=64:D1:54:03:0D:24
+  3  name=bridge1  type=bridge  running=true  mac=64:D1:54:03:0D:23
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=ap-bridge  ssid=Shadegan-Alvan2  band=5ghz-a/n  frequency=5780
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.25.50/28  interface=ether1  network=172.18.25.48
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.25.49  distance=1
+  2  dst=172.18.25.48/28  gw=bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=MK_Alvan  address=172.18.25.49  interface=ether1,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/29 16:34:39
+# ساعت دستگاه (خام): 1976-01-22 20:53:05
+# افست اصلاحی (سرور − دستگاه): +444832:11:34
+  1  1405/07/26 10:16:29  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/26 10:16:31  [bridge,info]  "bridge1" mac address changed to 64:D1:54:03:0D:23
+  3  1405/07/26 10:16:32  [interface,info]  ether1 link up (speed 1G, full duplex)
+  4  1405/07/26 10:16:33  [interface,info]  ether1 link down
+  5  1405/07/26 10:16:36  [interface,info]  ether1 link up (speed 1G, full duplex)
+  6  1405/07/26 10:16:58  [wireless,info]  6C:3B:6B:DF:E8:9D@wlan1: connected, signal strength -62
+  7  1405/07/26 13:18:46  [interface,info]  ether1 link down
+  8  1405/07/26 13:18:48  [interface,info]  ether1 link up (speed 1G, full duplex)
+  9  1405/07/27 05:43:21  [interface,info]  ether1 link down
+ 10  1405/07/27 05:43:23  [interface,info]  ether1 link up (speed 1G, full duplex)
+ 11  1405/07/27 08:35:33  [wireless,info]  2C:C8:1B:B1:DD:E5@wlan1: connected, signal strength -80
+ 12  1405/07/27 11:55:15  [wireless,info]  2C:C8:1B:B1:DD:E5@wlan1: disconnected, not responding
+ 13  1405/07/27 15:00:00  [interface,info]  ether1 link down
+ 14  1405/07/27 15:00:02  [interface,info]  ether1 link up (speed 1G, full duplex)
+ 15  1405/07/28 09:13:46  [wireless,info]  2C:C8:1B:B1:DD:E5@wlan1: connected, signal strength -80
+ 16  1405/07/28 11:31:42  [wireless,info]  2C:C8:1B:B1:DD:E5@wlan1: disconnected, not responding
+ 17  1405/07/28 11:41:21  [wireless,info]  6C:3B:6B:DF:E8:9D@wlan1: disconnected, not responding
+ 18  1405/07/29 08:25:27  [wireless,info]  6C:3B:6B:DF:E8:9D@wlan1: connected, signal strength -62
+ 19  1405/07/29 08:38:27  [wireless,info]  2C:C8:1B:B1:DD:E5@wlan1: connected, signal strength -80
+ 20  1405/07/29 11:49:42  [wireless,info]  6C:3B:6B:DF:E8:9D@wlan1: disconnected, not responding
+ 21  1405/07/29 12:03:20  [wireless,info]  2C:C8:1B:B1:DD:E5@wlan1: disconnected, not responding
+ 22  1405/07/29 16:34:37  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  64:D1:54:03:0D:23  (ether)
+wlan1  64:D1:54:03:0D:24  (wlan)
+bridge1  64:D1:54:03:0D:23  (bridge)
+--- /ip arp ---
+bridge1  6C:3B:6B:0C:28:85  (arp 172.18.25.49)

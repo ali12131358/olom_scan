@@ -1,0 +1,13 @@
+{
+  "olom-pez": {
+    "name": "Olom@Pez",
+    "community": "Olom@Pez",
+    "addresses": "0.0.0.0/0",
+    "write_access": false,
+    "version": "2c",
+    "port": 161,
+    "timeout": 2.0,
+    "is_default": true,
+    "raw": "/snmp set enabled=yes trap-version=2\n/snmp community\nset [ find default=yes ] addresses=0.0.0.0/0 name=Olom@Pez write-access=no\n/snmp community remove [ find name=\"public\" ]"
+  }
+}

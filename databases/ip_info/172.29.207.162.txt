@@ -1,0 +1,73 @@
+IP: 172.29.207.162
+Collected at: 2026-10-21T13:18:28.365236+00:00
+source: RouterOS API
+identity: khaneh-behdasht-Derisieh
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=CC:2D:E0:44:EA:7D
+  2  name=ether2  type=ether  running=true  mac=CC:2D:E0:44:EA:7E
+  3  name=ether3  type=ether  running=true  mac=CC:2D:E0:44:EA:7F
+  4  name=ether4-UPLINK  type=ether  running=true  mac=CC:2D:E0:44:EA:80
+  5  name=pwr-line1  type=ether  running=false  mac=CC:2D:E0:44:EA:80
+  6  name=wlan1  type=wlan  running=false  mac=CC:2D:E0:44:EA:81
+  7  name=bridge2  type=bridge  running=true  mac=CC:2D:E0:44:EA:7D
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station  ssid=MikroTik  band=2ghz-b/g  frequency=2412
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.29.207.162/27  interface=ether4-UPLINK  network=172.29.207.160
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.29.207.161  distance=1
+  2  dst=172.29.207.160/27  gw=bridge2  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=MARKAZ.DRISIE.AP  address=172.29.207.163  interface=ether1,bridge2
+  2  identity=MARKAZ.DRISIE.CL  address=172.29.207.164  interface=ether1,bridge2
+  3  identity=Switch  address=172.29.207.168  interface=ether1,bridge2
+  4  identity=-  address=-  interface=ether2,bridge2
+  5  identity=DerisiyehVasati.Client  address=172.29.207.161  interface=ether4-UPLINK,bridge2
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/29 16:44:04
+# ساعت دستگاه (خام): 2025-05-08 20:47:25
+# افست اصلاحی (سرور − دستگاه): +12736:26:39
+  1  1405/07/27 20:56:40  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/27 20:56:42  [bridge,info]  "bridge2" mac address changed to CC:2D:E0:44:EA:7D
+  3  1405/07/27 20:56:43  [interface,info]  ether2 link up (speed 100M, full duplex)
+  4  1405/07/27 20:56:43  [interface,info]  ether3 link up (speed 100M, full duplex)
+  5  1405/07/27 20:56:46  [interface,info]  ether1 link up (speed 100M, full duplex)
+  6  1405/07/27 20:56:51  [interface,info]  ether4-UPLINK link up (speed 100M, full duplex)
+  7  1405/07/28 08:28:42  [interface,info]  ether3 link down
+  8  1405/07/28 08:28:43  [interface,info]  ether3 link up (speed 100M, full duplex)
+  9  1405/07/28 08:29:02  [interface,info]  ether2 link down
+ 10  1405/07/28 08:29:04  [interface,info]  ether2 link up (speed 100M, full duplex)
+ 11  1405/07/28 11:11:54  [interface,info]  ether2 link down
+ 12  1405/07/28 11:11:56  [interface,info]  ether2 link up (speed 10M, full duplex)
+ 13  1405/07/29 07:38:35  [interface,info]  ether3 link down
+ 14  1405/07/29 07:38:37  [interface,info]  ether3 link up (speed 100M, full duplex)
+ 15  1405/07/29 07:56:39  [interface,info]  ether2 link down
+ 16  1405/07/29 07:56:40  [interface,info]  ether2 link up (speed 100M, full duplex)
+ 17  1405/07/29 10:37:31  [interface,info]  ether3 link down
+ 18  1405/07/29 10:37:33  [interface,info]  ether3 link up (speed 100M, full duplex)
+ 19  1405/07/29 16:44:02  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  CC:2D:E0:44:EA:7D  (ether)
+ether2  CC:2D:E0:44:EA:7E  (ether)
+ether3  CC:2D:E0:44:EA:7F  (ether)
+ether4-UPLINK  CC:2D:E0:44:EA:80  (ether)
+pwr-line1  CC:2D:E0:44:EA:80  (ether)
+wlan1  CC:2D:E0:44:EA:81  (wlan)
+bridge2  CC:2D:E0:44:EA:7D  (bridge)
+--- /ip arp ---
+bridge2  6C:3B:6B:4D:A3:15  (arp 172.29.207.161)
+bridge2  B8:69:F4:69:5F:0B  (arp 172.29.207.164)

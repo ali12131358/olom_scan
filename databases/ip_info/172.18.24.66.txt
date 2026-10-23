@@ -1,0 +1,243 @@
+IP: 172.18.24.66
+Collected at: 2026-10-21T13:16:41.361901+00:00
+source: RouterOS API
+identity: ShabakehBehdasht->Markaz4.AP
+device_type: AP
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=18:FD:74:B9:FF:8C
+  2  name=wlan1  type=wlan  running=true  mac=18:FD:74:B9:FF:8D
+  3  name=bridge1  type=bridge  running=true  mac=18:FD:74:B9:FF:8C
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=ap-bridge  ssid=Shadegan-Shabakeh4  band=5ghz-a/n  frequency=5850
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.24.66/29  interface=ether1  network=172.18.24.64
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.24.65  distance=1
+  2  dst=172.18.24.64/29  gw=bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=R2SH  address=-  interface=ether1,bridge1
+  2  identity=RB-UMS-SHDGN-CoreRouter  address=172.18.24.65  interface=ether1,bridge1
+  3  identity=Markaz-Badrani.Client  address=172.18.24.69  interface=wlan1,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/29 16:32:43
+# ساعت دستگاه (خام): 1973-05-12 01:32:36
+# افست اصلاحی (سرور − دستگاه): +468491:30:07
+  1  1405/05/21 22:18:06  [wireless,info]  8E:8F:92:6D:B1:32@wlan1: connected, signal strength -89
+  2  1405/05/21 22:18:11  [wireless,info]  8E:8F:92:6D:B1:32@wlan1: disconnected, unicast key exchange timeout, signal strength -88
+  3  1405/05/21 22:18:48  [wireless,info]  8E:8F:92:6D:B1:32@wlan1: connected, signal strength -87
+  4  1405/05/21 22:18:53  [wireless,info]  8E:8F:92:6D:B1:32@wlan1: disconnected, unicast key exchange timeout, signal strength -90
+  5  1405/05/21 23:19:41  [wireless,info]  9E:7D:D9:FA:4B:FC@wlan1: connected, signal strength -87
+  6  1405/05/21 23:19:46  [wireless,info]  9E:7D:D9:FA:4B:FC@wlan1: disconnected, unicast key exchange timeout, signal strength -90
+  7  1405/05/22 01:48:01  [wireless,info]  E4:8D:8C:B4:C7:E3@wlan1: disconnected, extensive data loss, signal strength -64
+  8  1405/05/22 02:02:14  [wireless,info]  E4:8D:8C:B4:C7:E3@wlan1: connected, signal strength -63, wants bridge
+  9  1405/05/22 02:57:01  [wireless,info]  4E:09:77:DD:3B:45@wlan1: connected, signal strength -79
+ 10  1405/05/22 02:57:06  [wireless,info]  4E:09:77:DD:3B:45@wlan1: disconnected, unicast key exchange timeout, signal strength -80
+ 11  1405/05/24 15:16:06  [wireless,info]  4E:09:77:DD:3B:45@wlan1: connected, signal strength -79
+ 12  1405/05/24 15:16:10  [wireless,info]  4E:09:77:DD:3B:45@wlan1: disconnected, received deauth: sending station leaving (3), signal strength -79
+ 13  1405/05/24 16:27:27  [wireless,info]  4E:09:77:DD:3B:45@wlan1: connected, signal strength -79
+ 14  1405/05/24 16:27:29  [wireless,info]  4E:09:77:DD:3B:45@wlan1: disconnected, received deauth: sending station leaving (3), signal strength -79
+ 15  1405/05/24 18:36:13  [wireless,info]  FC:6D:77:8A:5D:4F@wlan1: connected, signal strength -85
+ 16  1405/05/24 18:36:15  [wireless,info]  FC:6D:77:8A:5D:4F@wlan1: disconnected, received deauth: unspecified (1), signal strength -85
+ 17  1405/05/24 20:31:33  [wireless,info]  4E:09:77:DD:3B:45@wlan1: connected, signal strength -84
+ 18  1405/05/24 20:31:38  [wireless,info]  4E:09:77:DD:3B:45@wlan1: disconnected, unicast key exchange timeout, signal strength -83
+ 19  1405/05/26 14:53:36  [wireless,info]  4E:09:77:DD:3B:45@wlan1: connected, signal strength -81
+ 20  1405/05/26 14:53:36  [wireless,info]  4E:09:77:DD:3B:45@wlan1: disconnected, received deauth: sending station leaving (3), signal strength -81
+ 21  1405/05/26 14:53:38  [wireless,info]  4E:09:77:DD:3B:45@wlan1: connected, signal strength -81
+ 22  1405/05/26 14:53:39  [wireless,info]  4E:09:77:DD:3B:45@wlan1: disconnected, received deauth: sending station leaving (3), signal strength -81
+ 23  1405/05/26 15:21:09  [wireless,info]  4E:09:77:DD:3B:45@wlan1: connected, signal strength -76
+ 24  1405/05/26 15:21:14  [wireless,info]  4E:09:77:DD:3B:45@wlan1: disconnected, unicast key exchange timeout, signal strength -78
+ 25  1405/05/28 20:04:59  [wireless,info]  22:26:05:08:D4:3E@wlan1: connected, signal strength -81
+ 26  1405/05/28 20:05:00  [wireless,info]  22:26:05:08:D4:3E@wlan1: disconnected, received deauth: sending station leaving (3), signal strength -81
+ 27  1405/05/28 20:05:03  [wireless,info]  22:26:05:08:D4:3E@wlan1: connected, signal strength -77
+ 28  1405/05/28 20:05:08  [wireless,info]  22:26:05:08:D4:3E@wlan1: disconnected, unicast key exchange timeout, signal strength -77
+ 29  1405/05/29 23:46:09  [wireless,info]  8E:8F:92:6D:B1:32@wlan1: connected, signal strength -85
+ 30  1405/05/29 23:46:14  [wireless,info]  8E:8F:92:6D:B1:32@wlan1: disconnected, unicast key exchange timeout, signal strength -86
+ 31  1405/05/30 01:10:02  [wireless,info]  D2:9F:A0:AC:29:5E@wlan1: connected, signal strength -87
+ 32  1405/05/30 01:10:07  [wireless,info]  D2:9F:A0:AC:29:5E@wlan1: disconnected, unicast key exchange timeout, signal strength -88
+ 33  1405/05/31 19:18:18  [wireless,info]  FC:6D:77:8A:5D:4F@wlan1: connected, signal strength -86
+ 34  1405/05/31 19:19:40  [wireless,info]  FC:6D:77:8A:5D:4F@wlan1: disconnected, 802.1x authentication timeout, signal strength -89
+ 35  1405/05/31 19:19:44  [wireless,info]  FC:6D:77:8A:5D:4F@wlan1: connected, signal strength -86
+ 36  1405/05/31 19:21:16  [wireless,info]  FC:6D:77:8A:5D:4F@wlan1: disconnected, received deauth: unspecified (1), signal strength -86
+ 37  1405/05/31 19:21:16  [wireless,info]  FC:6D:77:8A:5D:4F@wlan1: connected, signal strength -89
+ 38  1405/05/31 19:21:18  [wireless,info]  FC:6D:77:8A:5D:4F@wlan1: disconnected, received deauth: unspecified (1), signal strength -89
+ 39  1405/06/03 02:52:48  [wireless,info]  4E:09:77:DD:3B:45@wlan1: connected, signal strength -83
+ 40  1405/06/03 02:52:53  [wireless,info]  4E:09:77:DD:3B:45@wlan1: disconnected, unicast key exchange timeout, signal strength -81
+ 41  1405/06/03 02:52:57  [wireless,info]  4E:09:77:DD:3B:45@wlan1: connected, signal strength -80
+ 42  1405/06/03 02:53:02  [wireless,info]  4E:09:77:DD:3B:45@wlan1: disconnected, unicast key exchange timeout, signal strength -81
+ 43  1405/06/03 16:58:58  [wireless,info]  AA:83:EB:12:C5:05@wlan1: connected, signal strength -83
+ 44  1405/06/03 16:58:58  [wireless,info]  AA:83:EB:12:C5:05@wlan1: disconnected, received deauth: class 3 frame received (7), signal strength -83
+ 45  1405/06/03 16:59:03  [wireless,info]  AA:83:EB:12:C5:05@wlan1: connected, signal strength -83
+ 46  1405/06/03 16:59:08  [wireless,info]  AA:83:EB:12:C5:05@wlan1: disconnected, unicast key exchange timeout, signal strength -87
+ 47  1405/06/04 03:44:31  [wireless,info]  4E:09:77:DD:3B:45@wlan1: connected, signal strength -82
+ 48  1405/06/04 03:44:36  [wireless,info]  4E:09:77:DD:3B:45@wlan1: disconnected, unicast key exchange timeout, signal strength -82
+ 49  1405/06/04 03:44:42  [wireless,info]  4E:09:77:DD:3B:45@wlan1: connected, signal strength -82
+ 50  1405/06/04 03:44:46  [wireless,info]  4E:09:77:DD:3B:45@wlan1: disconnected, received deauth: sending station leaving (3), signal strength -82
+ 51  1405/06/04 03:45:00  [wireless,info]  4E:09:77:DD:3B:45@wlan1: connected, signal strength -80
+ 52  1405/06/04 03:45:03  [wireless,info]  4E:09:77:DD:3B:45@wlan1: disconnected, received deauth: sending station leaving (3), signal strength -80
+ 53  1405/06/04 04:16:06  [wireless,info]  4E:09:77:DD:3B:45@wlan1: connected, signal strength -81
+ 54  1405/06/04 04:16:08  [wireless,info]  4E:09:77:DD:3B:45@wlan1: disconnected, received deauth: sending station leaving (3), signal strength -81
+ 55  1405/06/04 05:52:54  [wireless,info]  4E:09:77:DD:3B:45@wlan1: connected, signal strength -79
+ 56  1405/06/04 05:52:59  [wireless,info]  4E:09:77:DD:3B:45@wlan1: disconnected, unicast key exchange timeout, signal strength -80
+ 57  1405/06/04 10:39:10  [wireless,info]  E4:8D:8C:B4:C7:E3@wlan1: disconnected, extensive data loss, signal strength -65
+ 58  1405/06/04 11:04:53  [wireless,info]  E4:8D:8C:B4:C7:E3@wlan1: connected, signal strength -64, wants bridge
+ 59  1405/06/05 02:16:46  [wireless,info]  4E:09:77:DD:3B:45@wlan1: connected, signal strength -84
+ 60  1405/06/05 02:16:51  [wireless,info]  4E:09:77:DD:3B:45@wlan1: disconnected, unicast key exchange timeout, signal strength -80
+ 61  1405/06/05 03:39:08  [wireless,info]  4E:09:77:DD:3B:45@wlan1: connected, signal strength -83
+ 62  1405/06/05 03:39:13  [wireless,info]  4E:09:77:DD:3B:45@wlan1: disconnected, unicast key exchange timeout, signal strength -84
+ 63  1405/06/06 01:41:15  [wireless,info]  96:3A:71:74:DA:74@wlan1: connected, signal strength -81
+ 64  1405/06/06 01:41:20  [wireless,info]  96:3A:71:74:DA:74@wlan1: disconnected, unicast key exchange timeout, signal strength -79
+ 65  1405/06/07 05:06:06  [wireless,info]  4E:09:77:DD:3B:45@wlan1: connected, signal strength -78
+ 66  1405/06/07 05:06:11  [wireless,info]  4E:09:77:DD:3B:45@wlan1: disconnected, unicast key exchange timeout, signal strength -82
+ 67  1405/06/07 05:09:57  [wireless,info]  4E:09:77:DD:3B:45@wlan1: connected, signal strength -81
+ 68  1405/06/07 05:10:01  [wireless,info]  4E:09:77:DD:3B:45@wlan1: disconnected, received deauth: sending station leaving (3), signal strength -81
+ 69  1405/06/07 05:17:59  [wireless,info]  4E:09:77:DD:3B:45@wlan1: connected, signal strength -73
+ 70  1405/06/07 05:18:04  [wireless,info]  4E:09:77:DD:3B:45@wlan1: disconnected, unicast key exchange timeout, signal strength -73
+ 71  1405/06/08 02:52:40  [wireless,info]  4E:09:77:DD:3B:45@wlan1: connected, signal strength -82
+ 72  1405/06/08 02:52:43  [wireless,info]  4E:09:77:DD:3B:45@wlan1: disconnected, received deauth: sending station leaving (3), signal strength -82
+ 73  1405/06/08 03:04:31  [wireless,info]  4E:09:77:DD:3B:45@wlan1: connected, signal strength -83
+ 74  1405/06/08 03:04:36  [wireless,info]  4E:09:77:DD:3B:45@wlan1: disconnected, unicast key exchange timeout, signal strength -85
+ 75  1405/06/08 05:01:23  [wireless,info]  0E:B2:85:8A:54:8C@wlan1: connected, signal strength -77
+ 76  1405/06/08 05:01:28  [wireless,info]  0E:B2:85:8A:54:8C@wlan1: disconnected, unicast key exchange timeout, signal strength -79
+ 77  1405/06/08 05:01:40  [wireless,info]  0E:B2:85:8A:54:8C@wlan1: connected, signal strength -81
+ 78  1405/06/08 05:01:40  [wireless,info]  0E:B2:85:8A:54:8C@wlan1: disconnected, received deauth: class 3 frame received (7), signal strength -81
+ 79  1405/06/08 05:02:07  [wireless,info]  0E:B2:85:8A:54:8C@wlan1: connected, signal strength -80
+ 80  1405/06/08 05:02:12  [wireless,info]  0E:B2:85:8A:54:8C@wlan1: disconnected, unicast key exchange timeout, signal strength -76
+ 81  1405/06/09 22:07:17  [wireless,info]  4A:2D:63:33:B6:1C@wlan1: connected, signal strength -86
+ 82  1405/06/09 22:07:17  [wireless,info]  4A:2D:63:33:B6:1C@wlan1: disconnected, received deauth: class 3 frame received (7), signal strength -86
+ 83  1405/06/09 22:07:20  [wireless,info]  4A:2D:63:33:B6:1C@wlan1: connected, signal strength -70
+ 84  1405/06/09 22:07:25  [wireless,info]  4A:2D:63:33:B6:1C@wlan1: disconnected, unicast key exchange timeout, signal strength -82
+ 85  1405/06/10 03:15:29  [wireless,info]  4E:09:77:DD:3B:45@wlan1: connected, signal strength -83
+ 86  1405/06/10 03:15:33  [wireless,info]  4E:09:77:DD:3B:45@wlan1: disconnected, received deauth: sending station leaving (3), signal strength -83
+ 87  1405/06/10 03:25:51  [wireless,info]  4E:09:77:DD:3B:45@wlan1: connected, signal strength -81
+ 88  1405/06/10 03:25:56  [wireless,info]  4E:09:77:DD:3B:45@wlan1: disconnected, unicast key exchange timeout, signal strength -81
+ 89  1405/06/10 05:23:24  [wireless,info]  E4:8D:8C:B4:C7:E3@wlan1: disconnected, extensive data loss, signal strength -63
+ 90  1405/06/10 07:46:44  [wireless,info]  E4:8D:8C:B4:C7:E3@wlan1: connected, signal strength -64, wants bridge
+ 91  1405/06/10 18:56:15  [wireless,info]  F0:6C:5D:5C:0D:88@wlan1: connected, signal strength -87
+ 92  1405/06/10 18:56:20  [wireless,info]  F0:6C:5D:5C:0D:88@wlan1: disconnected, unicast key exchange timeout, signal strength -88
+ 93  1405/06/11 00:42:27  [wireless,info]  22:26:05:08:D4:3E@wlan1: connected, signal strength -81
+ 94  1405/06/11 00:42:28  [wireless,info]  22:26:05:08:D4:3E@wlan1: disconnected, received deauth: sending station leaving (3), signal strength -81
+ 95  1405/06/11 00:42:30  [wireless,info]  22:26:05:08:D4:3E@wlan1: connected, signal strength -80
+ 96  1405/06/11 00:42:35  [wireless,info]  22:26:05:08:D4:3E@wlan1: disconnected, unicast key exchange timeout, signal strength -82
+ 97  1405/06/11 00:42:45  [wireless,info]  22:26:05:08:D4:3E@wlan1: connected, signal strength -82
+ 98  1405/06/11 00:42:47  [wireless,info]  22:26:05:08:D4:3E@wlan1: disconnected, received deauth: sending station leaving (3), signal strength -82
+ 99  1405/06/12 08:43:37  [wireless,info]  22:26:05:08:D4:3E@wlan1: connected, signal strength -83
+100  1405/06/12 08:43:42  [wireless,info]  22:26:05:08:D4:3E@wlan1: disconnected, unicast key exchange timeout, signal strength -80
+101  1405/06/13 02:38:11  [wireless,info]  4E:09:77:DD:3B:45@wlan1: connected, signal strength -81
+102  1405/06/13 02:38:11  [wireless,info]  4E:09:77:DD:3B:45@wlan1: disconnected, received deauth: sending station leaving (3), signal strength -81
+103  1405/06/13 02:42:48  [wireless,info]  4E:09:77:DD:3B:45@wlan1: connected, signal strength -83
+104  1405/06/13 02:42:53  [wireless,info]  4E:09:77:DD:3B:45@wlan1: disconnected, unicast key exchange timeout, signal strength -84
+105  1405/06/14 03:39:07  [wireless,info]  4E:09:77:DD:3B:45@wlan1: connected, signal strength -76
+106  1405/06/14 03:39:07  [wireless,info]  4E:09:77:DD:3B:45@wlan1: disconnected, received deauth: sending station leaving (3), signal strength -76
+107  1405/06/14 04:51:00  [wireless,info]  4E:09:77:DD:3B:45@wlan1: connected, signal strength -80
+108  1405/06/14 04:51:05  [wireless,info]  4E:09:77:DD:3B:45@wlan1: disconnected, unicast key exchange timeout, signal strength -80
+109  1405/06/15 09:01:31  [system,info,account]  user garnaf logged in from 172.18.4.76 via winbox
+110  1405/06/15 09:03:04  [wireless,info]  E4:8D:8C:B4:C7:E3@wlan1: disconnected, received deauth: sending station leaving (3), signal strength -69
+111  1405/06/15 09:03:23  [system,info,account]  user garnaf logged in from 172.18.4.76 via telnet
+112  1405/06/15 09:04:04  [system,info,account]  user garnaf logged out from 172.18.4.76 via telnet
+113  1405/06/15 09:05:00  [wireless,info]  E4:8D:8C:B4:C7:E3@wlan1: connected, signal strength -67, wants bridge
+114  1405/06/15 09:05:14  [wireless,info]  E4:8D:8C:B4:C7:E3@wlan1: disconnected, disabling, signal strength -67
+115  1405/06/15 09:05:14  [system,info]  device changed by garnaf
+116  1405/06/15 09:05:35  [system,info]  device changed by garnaf
+117  1405/06/15 09:06:00  [system,info]  device changed by garnaf
+118  1405/06/15 09:06:02  [system,info]  device changed by garnaf
+119  1405/06/15 09:07:13  [wireless,info]  E4:8D:8C:B4:C7:E3@wlan1: connected, signal strength -64
+120  1405/06/15 09:08:37  [system,info,account]  user garnaf logged in from 172.18.4.76 via telnet
+121  1405/06/15 09:09:35  [system,info,account]  user garnaf logged out from 172.18.4.76 via telnet
+122  1405/06/15 09:09:44  [system,info]  device changed by garnaf
+123  1405/06/15 09:10:47  [wireless,info]  E4:8D:8C:B4:C7:E3@wlan1: connected, signal strength -68
+124  1405/06/15 09:10:59  [system,info]  device changed by garnaf
+125  1405/06/15 09:12:01  [wireless,info]  E4:8D:8C:B4:C7:E3@wlan1: connected, signal strength -68
+126  1405/06/15 09:16:25  [wireless,info]  E4:8D:8C:B4:C7:E3@wlan1: disconnected, control frame timeout
+127  1405/06/15 09:17:11  [wireless,info]  E4:8D:8C:B4:C7:E3@wlan1: connected, signal strength -70
+128  1405/06/15 09:17:44  [wireless,info]  78:9A:18:77:0D:A3@wlan1: connected, signal strength -86
+129  1405/06/15 09:17:58  [wireless,info]  78:9A:18:77:0D:A3@wlan1: disconnected, control frame timeout
+130  1405/06/15 10:59:00  [system,info,account]  user garnaf logged out from 172.18.4.76 via winbox
+131  1405/06/15 11:00:32  [system,info,account]  user garnaf logged in from 172.18.4.76 via winbox
+132  1405/06/15 11:01:38  [system,info,account]  user garnaf logged out from 172.18.4.76 via winbox
+133  1405/06/16 15:51:40  [wireless,info]  E4:8D:8C:B4:C7:E3@wlan1: disconnected, not responding
+134  1405/06/16 15:58:31  [wireless,info]  E4:8D:8C:B4:C7:E3@wlan1: connected, signal strength -68
+135  1405/06/21 03:06:14  [wireless,info]  E4:8D:8C:B4:C7:E3@wlan1: disconnected, not responding
+136  1405/06/21 03:15:17  [wireless,info]  E4:8D:8C:B4:C7:E3@wlan1: connected, signal strength -64
+137  1405/06/29 11:58:26  [system,info,account]  user garnaf logged in from 172.18.4.76 via winbox
+138  1405/06/29 12:03:45  [system,info,account]  user garnaf logged out from 172.18.4.76 via winbox
+139  1405/06/31 07:54:35  [wireless,info]  E4:8D:8C:B4:C7:E3@wlan1: disconnected, not responding
+140  1405/06/31 08:03:39  [wireless,info]  E4:8D:8C:B4:C7:E3@wlan1: connected, signal strength -66
+141  1405/07/15 13:30:14  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+142  1405/07/15 13:30:14  [system,info]  changed snmp settings by garnaf
+143  1405/07/15 13:30:14  [system,info]  item changed by garnaf
+144  1405/07/15 13:30:14  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+145  1405/07/15 13:31:58  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+146  1405/07/15 13:31:59  [system,info]  changed snmp settings by garnaf
+147  1405/07/15 13:31:59  [system,info]  item changed by garnaf
+148  1405/07/15 13:31:59  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+149  1405/07/15 13:35:29  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+150  1405/07/15 13:35:29  [system,info]  changed snmp settings by garnaf
+151  1405/07/15 13:35:29  [system,info]  item changed by garnaf
+152  1405/07/15 13:35:30  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+153  1405/07/15 14:53:21  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+154  1405/07/15 14:53:22  [system,info]  user olom1 added by garnaf
+155  1405/07/15 14:53:22  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+156  1405/07/15 15:02:42  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+157  1405/07/15 15:02:42  [system,info]  user ums1 removed by garnaf
+158  1405/07/15 15:02:42  [system,info]  user ums2 removed by garnaf
+159  1405/07/15 15:02:43  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+160  1405/07/16 10:11:52  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+161  1405/07/16 10:11:54  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+162  1405/07/16 10:34:03  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+163  1405/07/16 10:34:04  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+164  1405/07/16 13:47:58  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+165  1405/07/16 13:47:59  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+166  1405/07/16 14:04:09  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+167  1405/07/16 14:04:09  [system,info]  changed snmp settings by garnaf
+168  1405/07/16 14:04:09  [system,info]  item changed by garnaf
+169  1405/07/16 14:04:09  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+170  1405/07/16 14:27:08  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+171  1405/07/16 14:27:09  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+172  1405/07/16 15:38:06  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+173  1405/07/16 15:38:07  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+174  1405/07/18 10:28:00  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+175  1405/07/18 10:28:03  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+176  1405/07/18 10:52:05  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+177  1405/07/18 10:52:07  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+178  1405/07/18 12:05:01  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+179  1405/07/18 12:05:01  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+180  1405/07/19 09:37:18  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+181  1405/07/19 09:37:24  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+182  1405/07/19 17:39:36  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+183  1405/07/19 17:39:37  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+184  1405/07/21 11:00:01  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+185  1405/07/21 11:00:05  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+186  1405/07/22 13:17:34  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+187  1405/07/22 13:17:37  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+188  1405/07/23 12:25:21  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+189  1405/07/23 12:25:26  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+190  1405/07/24 15:22:33  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+191  1405/07/24 15:22:38  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+192  1405/07/24 15:53:37  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+193  1405/07/24 15:53:46  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+194  1405/07/26 08:57:36  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+195  1405/07/26 08:57:41  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+196  1405/07/26 09:00:20  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+197  1405/07/26 09:00:24  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+198  1405/07/27 17:56:58  [wireless,info]  E4:8D:8C:B4:C7:E3@wlan1: disconnected, not responding
+199  1405/07/27 18:29:50  [wireless,info]  E4:8D:8C:B4:C7:E3@wlan1: connected, signal strength -64
+200  1405/07/29 16:32:42  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  18:FD:74:B9:FF:8C  (ether)
+wlan1  18:FD:74:B9:FF:8D  (wlan)
+bridge1  18:FD:74:B9:FF:8C  (bridge)
+--- /ip arp ---
+bridge1  64:D1:54:98:E3:2E  (arp 172.18.24.65)

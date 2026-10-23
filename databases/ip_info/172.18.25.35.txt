@@ -1,0 +1,74 @@
+IP: 172.18.25.35
+Collected at: 2026-10-21T13:16:56.707131+00:00
+source: RouterOS API
+identity: NahrDeli
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=6C:3B:6B:10:AF:92
+  2  name=wlan1  type=wlan  running=true  mac=6C:3B:6B:10:AF:93
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=Shadegan-Alvan1  band=5ghz-a/n  frequency=5805
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.25.35/28  interface=wlan1  network=172.18.25.32
+  2  address=172.29.197.161/27  interface=ether1  network=172.29.197.160
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.25.33  distance=1
+  2  dst=172.18.25.32/28  gw=wlan1  distance=0
+  3  dst=172.29.197.160/27  gw=ether1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=MK_Alvan  address=172.18.25.33  interface=wlan1
+  2  identity=Shadegan-Alvan1  address=172.18.25.34  interface=wlan1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/29 16:34:22
+# ساعت دستگاه (خام): 2023-09-15 08:33:37
+# افست اصلاحی (سرور − دستگاه): +27172:30:45
+  1  1405/07/26 10:15:34  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/26 10:15:45  [interface,info]  ether1 link up (speed 100M, full duplex)
+  3  1405/07/26 10:16:37  [wireless,info]  6C:3B:6B:4D:73:43@wlan1 established connection on 5745000, SSID Shadegan-Alvan1
+  4  1405/07/26 10:17:18  [interface,info]  ether1 link down
+  5  1405/07/26 10:17:20  [interface,info]  ether1 link up (speed 100M, full duplex)
+  6  1405/07/26 11:57:51  [interface,info]  ether1 link down
+  7  1405/07/26 11:57:53  [interface,info]  ether1 link up (speed 10M, full duplex)
+  8  1405/07/26 12:07:45  [dhcp,info]  dhcp1 deassigned 172.29.197.190 from 74:D4:35:9B:CC:BA
+  9  1405/07/27 05:35:37  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: lost connection, control frame timeout
+ 10  1405/07/27 05:35:51  [wireless,info]  6C:3B:6B:4D:73:43@wlan1 established connection on 5745000, SSID Shadegan-Alvan1
+ 11  1405/07/27 05:36:41  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: lost connection, control frame timeout
+ 12  1405/07/27 05:37:14  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+ 13  1405/07/27 05:37:57  [wireless,info]  6C:3B:6B:4D:73:43@wlan1 established connection on 5745000, SSID Shadegan-Alvan1
+ 14  1405/07/27 05:56:51  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: lost connection, control frame timeout
+ 15  1405/07/27 05:57:28  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+ 16  1405/07/27 05:57:41  [wireless,info]  6C:3B:6B:4D:73:43@wlan1 established connection on 5745000, SSID Shadegan-Alvan1
+ 17  1405/07/27 06:14:54  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: lost connection, control frame timeout
+ 18  1405/07/27 06:15:26  [wireless,info]  6C:3B:6B:4D:73:43@wlan1 established connection on 5745000, SSID Shadegan-Alvan1
+ 19  1405/07/27 06:26:57  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: lost connection, control frame timeout
+ 20  1405/07/27 06:27:40  [wireless,info]  6C:3B:6B:4D:73:43@wlan1: failed to connect, on 5745000, registration timeout
+ 21  1405/07/27 06:27:52  [wireless,info]  6C:3B:6B:4D:73:43@wlan1 established connection on 5745000, SSID Shadegan-Alvan1
+ 22  1405/07/28 09:32:43  [interface,info]  ether1 link down
+ 23  1405/07/28 09:32:45  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 24  1405/07/28 09:32:47  [dhcp,info]  dhcp1 assigned 172.29.197.190 to 74:D4:35:9B:CC:BA
+ 25  1405/07/28 09:42:48  [interface,info]  ether1 link down
+ 26  1405/07/28 09:42:50  [interface,info]  ether1 link up (speed 10M, full duplex)
+ 27  1405/07/28 09:43:34  [interface,info]  ether1 link down
+ 28  1405/07/28 09:43:35  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 29  1405/07/28 11:37:18  [interface,info]  ether1 link down
+ 30  1405/07/28 11:37:20  [interface,info]  ether1 link up (speed 10M, full duplex)
+ 31  1405/07/28 11:43:36  [dhcp,info]  dhcp1 deassigned 172.29.197.190 from 74:D4:35:9B:CC:BA
+ 32  1405/07/29 16:34:21  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  6C:3B:6B:10:AF:92  (ether)
+wlan1  6C:3B:6B:10:AF:93  (wlan)
+--- /ip arp ---
+wlan1  6C:3B:6B:0C:28:84  (arp 172.18.25.33)

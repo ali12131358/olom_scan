@@ -1,0 +1,74 @@
+IP: 172.18.2.20
+Collected at: 2026-10-21T13:16:20.350893+00:00
+source: RouterOS API
+identity: Ghadr.Client
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=D0:EA:11:18:20:78
+  2  name=wlan1  type=wlan  running=true  mac=D0:EA:11:18:20:79
+  3  name=lo  type=loopback  running=true  mac=00:00:00:00:00:00
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station  ssid=Abadan-Foriat4  band=5ghz-a/n  frequency=5520
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.2.20/29  interface=wlan1  network=172.18.2.16
+  2  address=172.29.3.129/25  interface=ether1  network=172.29.3.128
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.2.17  distance=1
+  2  dst=172.18.2.16/29  gw=wlan1  distance=0
+  3  dst=172.29.3.128/25  gw=ether1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=RouerForiat10  address=172.18.2.17  interface=wlan1
+  2  identity=Foriatha->Emamhasan.AP  address=172.18.2.18  interface=wlan1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/29 16:29:58
+# ساعت دستگاه (خام): 2025-12-31 08:28:09
+# افست اصلاحی (سرور − دستگاه): +7060:31:49
+  1  2025-12-27 09:02:38  [system,error,critical]  router was rebooted without proper shutdown
+  2  2025-12-27 09:02:38  [interface,info]  lo link up
+  3  2025-12-27 09:02:45  [wireless,info]  B8:69:F4:6C:5A:54@wlan1 established connection on 5520000, SSID Abadan-Foriat4
+  4  2025-12-27 09:02:46  [interface,info]  ether1 link up (speed 100M, full duplex)
+  5  2025-12-28 00:12:09  [dhcp,info]  dhcp1 assigned 172.29.3.254 for EC:08:6B:A0:3B:B9 BP1032
+  6  2025-12-28 00:31:43  [dhcp,info]  dhcp1 assigned 172.29.3.253 for 18:D6:C7:C6:72:A5 BB1028
+  7  2025-12-28 00:50:35  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+  8  2025-12-28 00:50:37  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+  9  2025-12-28 00:53:09  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 10  2025-12-28 00:53:11  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 11  2025-12-28 05:01:43  [dhcp,info]  dhcp1 deassigned 172.29.3.253 for 18:D6:C7:C6:72:A5 BB1028
+ 12  2025-12-28 05:12:08  [dhcp,info]  dhcp1 deassigned 172.29.3.254 for EC:08:6B:A0:3B:B9 BP1032
+ 13  2025-12-29 00:24:13  [dhcp,info]  dhcp1 assigned 172.29.3.253 for 18:D6:C7:C6:72:A5 BB1028
+ 14  2025-12-29 00:25:33  [dhcp,info]  dhcp1 assigned 172.29.3.254 for EC:08:6B:A0:3B:B9 BP1032
+ 15  2025-12-29 03:26:27  [dhcp,info]  dhcp1 deassigned 172.29.3.254 for EC:08:6B:A0:3B:B9 BP1032
+ 16  2025-12-29 03:27:42  [dhcp,info]  dhcp1 assigned 172.29.3.254 for EC:08:6B:A0:3B:B9 BP1032
+ 17  2025-12-29 04:39:13  [dhcp,info]  dhcp1 deassigned 172.29.3.253 for 18:D6:C7:C6:72:A5 BB1028
+ 18  2025-12-29 05:12:42  [dhcp,info]  dhcp1 deassigned 172.29.3.254 for EC:08:6B:A0:3B:B9 BP1032
+ 19  2025-12-30 00:11:50  [dhcp,info]  dhcp1 assigned 172.29.3.254 for EC:08:6B:A0:3B:B9 BP1032
+ 20  2025-12-30 01:08:11  [dhcp,info]  dhcp1 assigned 172.29.3.253 for 18:D6:C7:C6:72:A5 BB1028
+ 21  2025-12-30 04:42:38  [dhcp,info]  dhcp1 deassigned 172.29.3.253 for 18:D6:C7:C6:72:A5 BB1028
+ 22  2025-12-30 04:56:48  [dhcp,info]  dhcp1 deassigned 172.29.3.254 for EC:08:6B:A0:3B:B9 BP1032
+ 23  2025-12-30 23:59:17  [dhcp,info]  dhcp1 assigned 172.29.3.254 for EC:08:6B:A0:3B:B9 BP1032
+ 24  2025-12-31 00:13:59  [dhcp,info]  dhcp1 assigned 172.29.3.253 for 18:D6:C7:C6:72:A5 BB1028
+ 25  2025-12-31 04:28:59  [dhcp,info]  dhcp1 deassigned 172.29.3.253 for 18:D6:C7:C6:72:A5 BB1028
+ 26  2025-12-31 04:39:46  [dhcp,info]  dhcp1 assigned 172.29.3.253 for 18:D6:C7:C6:72:A5 BB1028
+ 27  2025-12-31 04:59:16  [dhcp,info]  dhcp1 deassigned 172.29.3.254 for EC:08:6B:A0:3B:B9 BP1032
+ 28  2025-12-31 05:09:46  [dhcp,info]  dhcp1 deassigned 172.29.3.253 for 18:D6:C7:C6:72:A5 BB1028
+ 29  2025-12-31 08:28:08  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  D0:EA:11:18:20:78  (ether)
+wlan1  D0:EA:11:18:20:79  (wlan)
+--- /ip arp ---
+ether1  18:D6:C7:C6:72:A5  (arp 172.29.3.253)
+ether1  EC:08:6B:A0:3B:B9  (arp 172.29.3.254)
+wlan1  6C:3B:6B:87:6E:1A  (arp 172.18.2.17)

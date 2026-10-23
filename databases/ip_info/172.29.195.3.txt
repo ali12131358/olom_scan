@@ -1,0 +1,81 @@
+IP: 172.29.195.3
+Collected at: 2026-10-21T13:18:20.973307+00:00
+source: RouterOS API
+identity: Salemi-hAplite
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1-Input  type=ether  running=true  mac=E4:8D:8C:C7:B9:C8
+  2  name=ether2-AccPoint  type=ether  running=true  mac=E4:8D:8C:C7:B9:C9
+  3  name=ether3  type=ether  running=true  mac=E4:8D:8C:C7:B9:CA
+  4  name=ether4  type=ether  running=true  mac=E4:8D:8C:C7:B9:CB
+  5  name=ether5-QRT  type=ether  running=true  mac=E4:8D:8C:C7:B9:CC
+  6  name=wlan1  type=wlan  running=false  mac=E4:8D:8C:C7:B9:CD
+  7  name=bridge1  type=bridge  running=true  mac=E4:8D:8C:C7:B9:C8
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station  ssid=MikroTik  band=2ghz-b/g  frequency=2412
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.29.195.3/25  interface=bridge1  network=172.29.195.0
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.29.195.1  distance=1
+  2  dst=172.29.195.0/25  gw=bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=Markaz-Salemi.Client  address=172.29.195.1  interface=ether1-Input,bridge1
+  2  identity=-  address=-  interface=ether4,bridge1
+  3  identity=AP.Fayah&Salemi2  address=172.29.195.4  interface=ether5-QRT,bridge1
+  4  identity=Salemi_2_client  address=172.29.195.5  interface=ether5-QRT,bridge1
+  5  identity=FayehShavardi.Client  address=172.29.195.6  interface=ether5-QRT,bridge1
+  6  identity=Salim Shavardi  address=172.29.195.8  interface=ether5-QRT,bridge1
+  7  identity=shdgn-kh-b-shahid-salim-shavardi-hap-lite  address=172.29.195.11  interface=ether5-QRT,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/29 16:43:00
+# ساعت دستگاه (خام): 2025-04-04 19:26:37
+# افست اصلاحی (سرور − دستگاه): +13553:46:23
+  1  1405/07/22 10:07:29  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/22 10:07:37  [bridge,info]  "bridge1" mac address changed to E4:8D:8C:C7:B9:C8
+  3  1405/07/22 10:07:39  [interface,info]  ether2-AccPoint link up (speed 100M, full duplex)
+  4  1405/07/22 10:07:39  [interface,info]  ether3 link up (speed 100M, full duplex)
+  5  1405/07/22 10:07:39  [interface,info]  ether4 link up (speed 100M, full duplex)
+  6  1405/07/22 10:07:39  [interface,info]  ether5-QRT link up (speed 100M, full duplex)
+  7  1405/07/22 10:07:41  [interface,info]  ether3 link down
+  8  1405/07/22 10:07:42  [interface,info]  ether1-Input link up (speed 100M, full duplex)
+  9  1405/07/22 10:07:42  [interface,info]  ether3 link up (speed 100M, full duplex)
+ 10  1405/07/22 13:39:39  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 11  1405/07/22 13:39:41  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 12  1405/07/24 15:40:16  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 13  1405/07/24 15:40:17  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 14  1405/07/24 16:05:19  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 15  1405/07/24 16:05:21  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 16  1405/07/26 09:17:15  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 17  1405/07/26 09:17:17  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 18  1405/07/26 09:19:11  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 19  1405/07/26 09:19:12  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 20  1405/07/26 12:04:57  [interface,info]  ether4 link down
+ 21  1405/07/27 08:36:24  [interface,info]  ether4 link up (speed 100M, full duplex)
+ 22  1405/07/27 12:11:54  [interface,info]  ether4 link down
+ 23  1405/07/28 08:16:15  [interface,info]  ether4 link up (speed 100M, full duplex)
+ 24  1405/07/29 12:15:29  [interface,info]  ether4 link down
+ 25  1405/07/29 15:27:12  [interface,info]  ether4 link up (speed 100M, full duplex)
+ 26  1405/07/29 16:42:58  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1-Input  E4:8D:8C:C7:B9:C8  (ether)
+ether2-AccPoint  E4:8D:8C:C7:B9:C9  (ether)
+ether3  E4:8D:8C:C7:B9:CA  (ether)
+ether4  E4:8D:8C:C7:B9:CB  (ether)
+ether5-QRT  E4:8D:8C:C7:B9:CC  (ether)
+wlan1  E4:8D:8C:C7:B9:CD  (wlan)
+bridge1  E4:8D:8C:C7:B9:C8  (bridge)
+--- /ip arp ---
+bridge1  6C:3B:6B:06:5B:C2  (arp 172.29.195.1)

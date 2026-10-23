@@ -1,0 +1,72 @@
+IP: 172.18.25.74
+Collected at: 2026-10-21T13:16:58.116069+00:00
+source: RouterOS API
+identity: Shadegan-Soofieh1.AP
+device_type: AP
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=2C:C8:1B:9D:40:7E
+  2  name=VAP_OLD  type=wlan  running=false  mac=2E:C8:1B:9D:40:7F
+  3  name=wlan1  type=wlan  running=false  mac=2C:C8:1B:9D:40:7F
+  4  name=bridge1  type=bridge  running=true  mac=2C:C8:1B:9D:40:7F
+
+----- wireless -----
+=== /interface wireless ===
+name=VAP_OLD  mode=ap-bridge  ssid=Shadegan-Soofieh1  band=-  frequency=-
+name=wlan1  mode=ap-bridge  ssid=Shadegan-Soofieh1  band=5ghz-a/n  frequency=5750
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.25.74/29  interface=bridge1  network=172.18.25.72
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.25.73  distance=1
+  2  dst=172.18.25.72/29  gw=bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=MK_Soofieh  address=172.18.25.73  interface=ether1,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/29 16:34:44
+# ساعت دستگاه (خام): 1972-10-11 04:57:37
+# افست اصلاحی (سرور − دستگاه): +473600:07:07
+  1  1405/07/24 19:28:47  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/24 19:28:50  [bridge,info]  "bridge1" mac address changed to 2C:C8:1B:9D:40:7F
+  3  1405/07/24 19:28:57  [interface,info]  ether1 link up (speed 100M, full duplex)
+  4  1405/07/26 09:02:08  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+  5  1405/07/26 09:02:09  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+  6  1405/07/26 09:04:43  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+  7  1405/07/26 09:04:44  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+  8  1405/07/27 08:53:45  [system,info,account]  user garnaf logged in from 172.18.4.76 via winbox
+  9  1405/07/27 08:54:24  [system,info,account]  user garnaf logged in from 172.18.4.76 via telnet
+ 10  1405/07/27 08:57:48  [system,info]  device changed by garnaf
+ 11  1405/07/27 08:58:21  [system,info]  device changed by garnaf
+ 12  1405/07/27 08:59:17  [wireless,info]  64:D1:54:83:72:6F@wlan1: connected, signal strength -72
+ 13  1405/07/27 09:00:16  [system,info,account]  user garnaf logged out from 172.18.4.76 via winbox
+ 14  1405/07/27 09:00:16  [system,info,account]  user garnaf logged out from 172.18.4.76 via telnet
+ 15  1405/07/27 10:50:31  [system,info,account]  user garnaf logged in from 172.18.4.76 via winbox
+ 16  1405/07/27 10:50:33  [system,info,account]  user garnaf logged in from 172.18.4.76 via telnet
+ 17  1405/07/27 10:50:58  [system,info,account]  user garnaf logged out from 172.18.4.76 via telnet
+ 18  1405/07/27 10:55:27  [system,info,account]  user garnaf logged out from 172.18.4.76 via winbox
+ 19  1405/07/27 12:35:14  [wireless,info]  64:D1:54:83:72:6F@wlan1: disconnected, not responding
+ 20  1405/07/28 07:46:49  [wireless,info]  64:D1:54:83:72:6F@wlan1: connected, signal strength -68
+ 21  1405/07/28 12:02:11  [wireless,info]  64:D1:54:83:72:6F@wlan1: disconnected, not responding
+ 22  1405/07/28 12:03:36  [wireless,info]  64:D1:54:83:72:6F@wlan1: connected, signal strength -72
+ 23  1405/07/28 12:04:31  [wireless,info]  64:D1:54:83:72:6F@wlan1: disconnected, not responding
+ 24  1405/07/28 12:05:55  [wireless,info]  64:D1:54:83:72:6F@wlan1: connected, signal strength -72
+ 25  1405/07/28 12:07:40  [wireless,info]  64:D1:54:83:72:6F@wlan1: disconnected, not responding
+ 26  1405/07/29 07:46:20  [wireless,info]  64:D1:54:83:72:6F@wlan1: connected, signal strength -68
+ 27  1405/07/29 11:41:01  [wireless,info]  64:D1:54:83:72:6F@wlan1: disconnected, not responding
+ 28  1405/07/29 16:34:42  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  2C:C8:1B:9D:40:7E  (ether)
+VAP_OLD  2E:C8:1B:9D:40:7F  (wlan)
+wlan1  2C:C8:1B:9D:40:7F  (wlan)
+bridge1  2C:C8:1B:9D:40:7F  (bridge)
+--- /ip arp ---
+bridge1  6C:3B:6B:0C:28:97  (arp 172.18.25.73)

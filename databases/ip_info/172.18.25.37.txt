@@ -1,0 +1,48 @@
+IP: 172.18.25.37
+Collected at: 2026-10-21T13:16:56.922275+00:00
+source: RouterOS API
+identity: NahrMosalem.Client
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=E4:8D:8C:B5:20:8C
+  2  name=wlan1  type=wlan  running=true  mac=E4:8D:8C:B5:20:8D
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=Shadegan-Alvan1  band=5ghz-a/n  frequency=5825
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.25.37/28  interface=wlan1  network=172.18.25.32
+  2  address=172.29.197.225/27  interface=ether1  network=172.29.197.224
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.25.33  distance=1
+  2  dst=172.18.25.32/28  gw=wlan1  distance=0
+  3  dst=172.29.197.224/27  gw=ether1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=MK_Alvan  address=172.18.25.33  interface=wlan1
+  2  identity=Shadegan-Alvan1  address=172.18.25.34  interface=wlan1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/29 16:34:24
+# ساعت دستگاه (خام): 2024-07-07 17:28:11
+# افست اصلاحی (سرور − دستگاه): +20059:36:13
+  1  1405/07/26 10:15:36  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/26 10:15:38  [interface,info]  ether1 link up (speed 100M, full duplex)
+  3  1405/07/26 10:16:37  [wireless,info]  6C:3B:6B:4D:73:43@wlan1 established connection on 5745000, SSID Shadegan-Alvan1
+  4  1405/07/27 08:16:09  [dhcp,info]  dhcp1 assigned 172.29.197.254 to 60:CF:84:69:5C:B1
+  5  1405/07/27 09:21:08  [dhcp,info]  dhcp1 deassigned 172.29.197.254 from 60:CF:84:69:5C:B1
+  6  1405/07/29 16:34:23  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  E4:8D:8C:B5:20:8C  (ether)
+wlan1  E4:8D:8C:B5:20:8D  (wlan)
+--- /ip arp ---
+wlan1  6C:3B:6B:0C:28:84  (arp 172.18.25.33)

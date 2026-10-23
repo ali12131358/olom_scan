@@ -1,0 +1,77 @@
+IP: 172.18.25.34
+Collected at: 2026-10-21T13:16:56.452960+00:00
+source: RouterOS API
+identity: Shadegan-Alvan1
+device_type: AP
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=6C:3B:6B:4D:73:42
+  2  name=wlan1  type=wlan  running=true  mac=6C:3B:6B:4D:73:43
+  3  name=bridge1  type=bridge  running=true  mac=6C:3B:6B:4D:73:42
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=ap-bridge  ssid=Shadegan-Alvan1  band=5ghz-a/n  frequency=5745
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.25.34/28  interface=ether1  network=172.18.25.32
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.25.33  distance=1
+  2  dst=172.18.25.32/28  gw=bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=NahrDeli  address=172.18.25.35  interface=wlan1,bridge1
+  2  identity=NahrMosalem.Client  address=172.18.25.37  interface=wlan1,bridge1
+  3  identity=MK_Alvan  address=172.18.25.33  interface=ether1,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/29 16:34:20
+# ساعت دستگاه (خام): 1975-10-06 22:24:07
+# افست اصلاحی (سرور − دستگاه): +447422:40:13
+  1  1405/07/26 10:16:29  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/26 10:16:30  [bridge,info]  "bridge1" mac address changed to 6C:3B:6B:4D:73:42
+  3  1405/07/26 10:16:32  [interface,info]  ether1 link up (speed 1G, full duplex)
+  4  1405/07/26 10:16:33  [interface,info]  ether1 link down
+  5  1405/07/26 10:16:35  [interface,info]  ether1 link up (speed 1G, full duplex)
+  6  1405/07/26 10:16:37  [wireless,info]  6C:3B:6B:10:AF:93@wlan1: connected, signal strength -70
+  7  1405/07/26 10:16:37  [wireless,info]  E4:8D:8C:B5:20:8D@wlan1: connected, signal strength -72
+  8  1405/07/26 10:16:38  [wireless,info]  6C:3B:6B:13:54:47@wlan1: connected, signal strength -76
+  9  1405/07/26 10:16:38  [wireless,info]  08:55:31:C1:88:12@wlan1: connected, signal strength -66
+ 10  1405/07/26 11:28:28  [wireless,info]  08:55:31:C1:88:12@wlan1: disconnected, not responding
+ 11  1405/07/26 11:53:09  [wireless,info]  6C:3B:6B:13:54:47@wlan1: disconnected, not responding
+ 12  1405/07/27 05:35:42  [wireless,info]  6C:3B:6B:10:AF:93@wlan1: disconnected, control frame timeout
+ 13  1405/07/27 05:35:52  [wireless,info]  6C:3B:6B:10:AF:93@wlan1: connected, signal strength -88
+ 14  1405/07/27 05:36:43  [wireless,info]  6C:3B:6B:10:AF:93@wlan1: disconnected, control frame timeout
+ 15  1405/07/27 05:37:57  [wireless,info]  6C:3B:6B:10:AF:93@wlan1: connected, signal strength -88
+ 16  1405/07/27 05:43:21  [interface,info]  ether1 link down
+ 17  1405/07/27 05:43:23  [interface,info]  ether1 link up (speed 1G, full duplex)
+ 18  1405/07/27 05:56:57  [wireless,info]  6C:3B:6B:10:AF:93@wlan1: disconnected, control frame timeout
+ 19  1405/07/27 05:57:41  [wireless,info]  6C:3B:6B:10:AF:93@wlan1: connected, signal strength -88
+ 20  1405/07/27 06:15:01  [wireless,info]  6C:3B:6B:10:AF:93@wlan1: disconnected, not responding
+ 21  1405/07/27 06:15:26  [wireless,info]  6C:3B:6B:10:AF:93@wlan1: connected, signal strength -90
+ 22  1405/07/27 06:27:02  [wireless,info]  6C:3B:6B:10:AF:93@wlan1: disconnected, control frame timeout
+ 23  1405/07/27 06:27:52  [wireless,info]  6C:3B:6B:10:AF:93@wlan1: connected, signal strength -88
+ 24  1405/07/27 08:40:28  [wireless,info]  6C:3B:6B:13:54:47@wlan1: connected, signal strength -74
+ 25  1405/07/27 11:57:34  [wireless,info]  6C:3B:6B:13:54:47@wlan1: disconnected, control frame timeout
+ 26  1405/07/28 08:52:58  [wireless,info]  64:D1:54:83:76:1B@wlan1: connected, signal strength -84
+ 27  1405/07/28 09:03:55  [wireless,info]  6C:3B:6B:13:54:47@wlan1: connected, signal strength -74
+ 28  1405/07/28 11:14:13  [wireless,info]  6C:3B:6B:13:54:47@wlan1: disconnected, not responding
+ 29  1405/07/28 11:44:09  [wireless,info]  64:D1:54:83:76:1B@wlan1: disconnected, not responding
+ 30  1405/07/29 08:28:18  [wireless,info]  64:D1:54:83:76:1B@wlan1: connected, signal strength -82
+ 31  1405/07/29 08:46:18  [wireless,info]  6C:3B:6B:13:54:47@wlan1: connected, signal strength -72
+ 32  1405/07/29 12:09:18  [wireless,info]  64:D1:54:83:76:1B@wlan1: disconnected, not responding
+ 33  1405/07/29 12:09:21  [wireless,info]  6C:3B:6B:13:54:47@wlan1: disconnected, control frame timeout
+ 34  1405/07/29 16:34:19  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  6C:3B:6B:4D:73:42  (ether)
+wlan1  6C:3B:6B:4D:73:43  (wlan)
+bridge1  6C:3B:6B:4D:73:42  (bridge)
+--- /ip arp ---
+bridge1  6C:3B:6B:0C:28:84  (arp 172.18.25.33)

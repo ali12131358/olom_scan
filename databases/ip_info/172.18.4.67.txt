@@ -1,0 +1,76 @@
+IP: 172.18.4.67
+Collected at: 2026-10-21T13:17:30.103394+00:00
+source: RouterOS API
+identity: Chamran
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=E4:8D:8C:71:04:48
+  2  name=wlan1  type=wlan  running=true  mac=E4:8D:8C:71:04:49
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=AbadanSetad-Zol30  band=5ghz-a/n  frequency=5500
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.4.67/28  interface=wlan1  network=172.18.4.64
+  2  address=172.29.4.129/25  interface=ether1  network=172.29.4.128
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.4.65  distance=1
+  2  dst=172.18.4.64/28  gw=wlan1  distance=0
+  3  dst=172.29.4.128/25  gw=ether1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=AbadanSetad-Zol30.AP  address=172.18.4.66  interface=wlan1
+  2  identity=Farabi  address=172.18.4.69  interface=wlan1
+  3  identity=AlboEbadi  address=172.18.4.72  interface=wlan1
+  4  identity=EbneSina.Client  address=172.18.4.73  interface=wlan1
+  5  identity=Mob  address=172.18.4.75  interface=wlan1
+  6  identity=ParsaRasaneh-PTP-Sonati  address=172.18.4.76  interface=wlan1
+  7  identity=Kanani.Home.Client  address=172.18.4.78  interface=wlan1
+  8  identity=SW-Wireless3.test.local  address=172.19.1.51  interface=wlan1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/29 16:38:18
+# ساعت دستگاه (خام): 1972-10-04 20:56:11
+# افست اصلاحی (سرور − دستگاه): +473752:12:07
+  1  1405/07/28 23:59:41  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/28 23:59:43  [interface,info]  ether1 link up (speed 100M, full duplex)
+  3  1405/07/28 23:59:48  [wireless,info]  48:8F:5A:1C:30:E7@wlan1 established connection on 5300000, SSID AbadanSetad-Zol30
+  4  1405/07/29 07:35:50  [dhcp,info]  dhcp1 assigned 172.29.4.254 to D0:37:45:DF:E2:5A
+  5  1405/07/29 07:46:21  [dhcp,info]  dhcp1 assigned 172.29.4.253 to 00:17:6F:3A:5D:9B
+  6  1405/07/29 07:55:33  [dhcp,info]  dhcp1 assigned 172.29.4.252 to 06:CA:B1:45:39:3E
+  7  1405/07/29 08:06:19  [dhcp,info]  dhcp1 assigned 172.29.4.140 to 98:DE:D0:26:FE:4B
+  8  1405/07/29 08:29:49  [dhcp,info]  dhcp1 assigned 172.29.4.137 to C8:3A:35:C1:25:81
+  9  1405/07/29 08:36:01  [dhcp,info]  dhcp1 assigned 172.29.4.141 to D0:37:45:D0:F8:FA
+ 10  1405/07/29 08:55:31  [dhcp,info]  dhcp1 deassigned 172.29.4.137 from C8:3A:35:C1:25:81
+ 11  1405/07/29 08:55:31  [dhcp,info]  dhcp1 assigned 172.29.4.137 to C8:3A:35:C1:25:81
+ 12  1405/07/29 09:01:19  [dhcp,info]  dhcp1 deassigned 172.29.4.140 from 98:DE:D0:26:FE:4B
+ 13  1405/07/29 09:05:24  [dhcp,info]  dhcp1 assigned 172.29.4.139 to 94:DE:80:4D:E5:30
+ 14  1405/07/29 09:10:20  [dhcp,info]  dhcp1 assigned 172.29.4.140 to 98:DE:D0:26:FE:4B
+ 15  1405/07/29 10:10:31  [dhcp,info]  dhcp1 deassigned 172.29.4.137 from C8:3A:35:C1:25:81
+ 16  1405/07/29 10:22:58  [dhcp,info]  dhcp1 deassigned 172.29.4.141 from D0:37:45:D0:F8:FA
+ 17  1405/07/29 10:24:54  [dhcp,info]  dhcp1 assigned 172.29.4.141 to D0:37:45:D0:F8:FA
+ 18  1405/07/29 10:35:25  [dhcp,info]  dhcp1 deassigned 172.29.4.139 from 94:DE:80:4D:E5:30
+ 19  1405/07/29 10:36:21  [dhcp,info]  dhcp1 deassigned 172.29.4.140 from 98:DE:D0:26:FE:4B
+ 20  1405/07/29 10:54:55  [dhcp,info]  dhcp1 deassigned 172.29.4.141 from D0:37:45:D0:F8:FA
+ 21  1405/07/29 11:10:21  [dhcp,info]  dhcp1 assigned 172.29.4.142 to 28:87:BA:25:3B:17
+ 22  1405/07/29 11:15:54  [dhcp,info]  dhcp1 deassigned 172.29.4.252 from 06:CA:B1:45:39:3E
+ 23  1405/07/29 12:00:21  [dhcp,info]  dhcp1 deassigned 172.29.4.142 from 28:87:BA:25:3B:17
+ 24  1405/07/29 12:45:56  [dhcp,info]  dhcp1 assigned 172.29.4.141 to D0:37:45:D0:F8:FA
+ 25  1405/07/29 13:00:55  [dhcp,info]  dhcp1 deassigned 172.29.4.141 from D0:37:45:D0:F8:FA
+ 26  1405/07/29 16:30:50  [dhcp,info]  dhcp1 deassigned 172.29.4.254 from D0:37:45:DF:E2:5A
+ 27  1405/07/29 16:38:16  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  E4:8D:8C:71:04:48  (ether)
+wlan1  E4:8D:8C:71:04:49  (wlan)
+--- /ip arp ---
+wlan1  E4:8D:8C:71:6E:BB  (arp 172.18.4.76)
+wlan1  10:8C:CF:33:51:5F  (arp 172.18.4.65)

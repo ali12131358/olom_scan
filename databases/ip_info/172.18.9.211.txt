@@ -1,0 +1,56 @@
+IP: 172.18.9.211
+Collected at: 2026-10-21T13:17:55.747490+00:00
+source: RouterOS API
+identity: NaghshehNasar
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=6C:3B:6B:74:E2:95
+  2  name=wlan1  type=wlan  running=true  mac=6C:3B:6B:74:E2:96
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=Abadan-22Bahman2  band=5ghz-a/n  frequency=5260
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.9.211/28  interface=wlan1  network=172.18.9.208
+  2  address=172.29.73.193/27  interface=ether1  network=172.29.73.192
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.9.209  distance=1
+  2  dst=172.18.9.208/28  gw=wlan1  distance=0
+  3  dst=172.29.73.192/27  gw=ether1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=22Bahman-MK  address=172.18.9.209  interface=wlan1
+  2  identity=Abadan-22Bahman2  address=172.18.9.210  interface=wlan1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/29 16:40:39
+# ساعت دستگاه (خام): 1974-04-29 20:24:06
+# افست اصلاحی (سرور − دستگاه): +460024:46:33
+  1  1405/07/26 21:06:49  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/26 21:06:57  [wireless,info]  6C:3B:6B:4E:0E:FD@wlan1 established connection on 5745000, SSID Abadan-22Bahman2
+  3  1405/07/26 21:07:00  [interface,info]  ether1 link up (speed 100M, full duplex)
+  4  1405/07/26 21:20:35  [wireless,info]  6C:3B:6B:4E:0E:FD@wlan1: lost connection, not polled for too long
+  5  1405/07/26 21:20:42  [wireless,info]  6C:3B:6B:4E:0E:FD@wlan1 established connection on 5745000, SSID Abadan-22Bahman2
+  6  1405/07/26 22:03:20  [wireless,info]  6C:3B:6B:4E:0E:FD@wlan1: lost connection, not polled for too long
+  7  1405/07/26 22:03:27  [wireless,info]  6C:3B:6B:4E:0E:FD@wlan1 established connection on 5745000, SSID Abadan-22Bahman2
+  8  1405/07/28 08:39:19  [wireless,info]  6C:3B:6B:4E:0E:FD@wlan1: lost connection, not polled for too long
+  9  1405/07/28 08:39:26  [wireless,info]  6E:3B:6B:4E:0E:FD@wlan1 established connection on 5745000, SSID Abadan-22Bahman2
+ 10  1405/07/28 08:39:31  [wireless,info]  6E:3B:6B:4E:0E:FD@wlan1: lost connection, received deauth: 4-way handshake timeout (15)
+ 11  1405/07/28 08:39:37  [wireless,info]  6E:3B:6B:4E:0E:FD@wlan1 established connection on 5745000, SSID Abadan-22Bahman2
+ 12  1405/07/28 08:39:44  [wireless,info]  6E:3B:6B:4E:0E:FD@wlan1: lost connection, not polled for too long
+ 13  1405/07/28 08:39:51  [wireless,info]  6C:3B:6B:4E:0E:FD@wlan1 established connection on 5745000, SSID Abadan-22Bahman2
+ 14  1405/07/29 16:40:37  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  6C:3B:6B:74:E2:95  (ether)
+wlan1  6C:3B:6B:74:E2:96  (wlan)
+--- /ip arp ---
+wlan1  E4:8D:8C:0E:6E:41  (arp 172.18.9.209)

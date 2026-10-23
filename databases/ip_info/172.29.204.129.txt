@@ -1,0 +1,46 @@
+IP: 172.29.204.129
+Collected at: 2026-10-21T13:18:27.433614+00:00
+source: RouterOS API
+identity: AlboArabid.Client
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=E4:8D:8C:61:6D:F6
+  2  name=wlan1  type=wlan  running=true  mac=E4:8D:8C:61:6D:F7
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=Shadegan-Jafal3  band=5ghz-a/n  frequency=5260
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.29.204.129/28  interface=ether1  network=172.29.204.128
+  2  address=172.18.25.243/28  interface=wlan1  network=172.18.25.240
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.25.241  distance=1
+  2  dst=172.18.25.240/28  gw=wlan1  distance=0
+  3  dst=172.29.204.128/28  gw=ether1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=MK_Jafal  address=172.18.25.241  interface=wlan1
+  2  identity=Shadegan-Jafal3  address=172.18.25.242  interface=wlan1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/29 16:43:56
+# ساعت دستگاه (خام): 2025-01-07 06:48:57
+# افست اصلاحی (سرور − دستگاه): +15654:24:59
+  1  1405/07/29 12:23:37  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/29 12:23:47  [interface,info]  ether1 link up (speed 100M, full duplex)
+  3  1405/07/29 12:24:36  [wireless,info]  18:FD:74:BA:07:39@wlan1 established connection on 5750000, SSID Shadegan-Jafal3
+  4  1405/07/29 16:43:54  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  E4:8D:8C:61:6D:F6  (ether)
+wlan1  E4:8D:8C:61:6D:F7  (wlan)
+--- /ip arp ---
+wlan1  6C:3B:6B:0C:28:9C  (arp 172.18.25.241)

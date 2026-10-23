@@ -1,0 +1,57 @@
+IP: 172.18.1.67
+Collected at: 2026-10-21T13:15:55.894588+00:00
+source: RouterOS API
+identity: UMS-ABD-SLM-CL
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=CC:2D:E0:F6:65:44
+  2  name=wlan1  type=wlan  running=true  mac=CC:2D:E0:F6:65:45
+  3  name=bridge1  type=bridge  running=true  mac=CC:2D:E0:F6:65:45
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-wds  ssid=PTP-UMS-SALMANEH  band=5ghz-a/n  frequency=5335
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.1.67/28  interface=ether1  network=172.18.1.64
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.1.65  distance=3
+  2  dst=0.0.0.0/0  gw=172.18.1.71  distance=4
+  3  dst=172.17.0.8/32  gw=172.18.1.65  distance=1
+  4  dst=172.18.1.64/28  gw=bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=RB-Salmaneh  address=172.18.1.68  interface=ether1,bridge1
+  2  identity=UMS-SLMNH-AP  address=172.18.1.69  interface=ether1,bridge1
+  3  identity=UMS-SLMNH-SHDGN-CL  address=172.18.1.70  interface=ether1,bridge1
+  4  identity=RB-UMS-SHDGN-CoreRouter  address=172.18.1.71  interface=ether1,bridge1
+  5  identity=SW-Wireless1.aums.ir  address=172.18.1.65  interface=wlan1,bridge1
+  6  identity=UMS-ABD-SLM-AP  address=172.18.1.66  interface=wlan1,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/29 16:28:12
+# ساعت دستگاه (خام): 1972-03-26 10:55:35
+# افست اصلاحی (سرور − دستگاه): +478370:02:37
+  1  1405/07/27 18:02:32  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/27 18:02:36  [bridge,info]  "bridge1" mac address changed to CC:2D:E0:F6:65:45
+  3  1405/07/27 18:02:37  [system,info]  route changed
+  4  1405/07/27 18:03:37  [wireless,info]  08:55:31:24:BE:FE@wlan1 established connection on 5800000, SSID PTP-UMS-SALMANEH
+  5  1405/07/27 18:03:38  [system,info]  route changed
+  6  1405/07/27 18:04:01  [interface,info]  ether1 link up (speed 1G, full duplex)
+  7  1405/07/27 18:04:24  [interface,info]  ether1 link down
+  8  1405/07/27 18:04:28  [interface,info]  ether1 link up (speed 1G, full duplex)
+  9  1405/07/29 16:28:11  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  CC:2D:E0:F6:65:44  (ether)
+wlan1  CC:2D:E0:F6:65:45  (wlan)
+bridge1  CC:2D:E0:F6:65:45  (bridge)
+--- /ip arp ---
+bridge1  10:8C:CF:33:51:49  (arp 172.18.1.65)

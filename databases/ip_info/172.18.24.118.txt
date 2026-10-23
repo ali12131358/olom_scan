@@ -1,0 +1,81 @@
+IP: 172.18.24.118
+Collected at: 2026-10-21T13:16:30.352560+00:00
+source: RouterOS API
+identity: AboodiBala.Client
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=6C:3B:6B:10:B2:3C
+  2  name=wlan1  type=wlan  running=true  mac=6C:3B:6B:10:B2:3D
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=Shadegan-Shabakeh7  band=5ghz-a/n  frequency=5680
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.24.118/28  interface=wlan1  network=172.18.24.112
+  2  address=172.29.196.1/27  interface=ether1  network=172.29.196.0
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.24.113  distance=1
+  2  dst=172.18.24.112/28  gw=wlan1  distance=0
+  3  dst=172.29.196.0/27  gw=ether1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=haplite-abodiPaeen-Router  address=172.29.196.2  interface=ether1
+  2  identity=R2SH  address=-  interface=wlan1
+  3  identity=RB-UMS-SHDGN-CoreRouter  address=172.18.24.113  interface=wlan1
+  4  identity=Shadegan-Shabakeh7  address=172.18.24.114  interface=wlan1
+  5  identity=Mansoori.Client  address=172.18.24.119  interface=wlan1
+  6  identity=Markaz Aboodi1 - Client  address=172.18.24.120  interface=wlan1
+  7  identity=GarmehKhoroosi.Client  address=172.18.24.121  interface=wlan1
+  8  identity=ParsaRasaneh-PTP-POP-Center-AP  address=172.29.35.98  interface=wlan1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/29 16:31:20
+# ساعت دستگاه (خام): 2025-01-01 16:07:56
+# افست اصلاحی (سرور − دستگاه): +15788:53:24
+  1  1405/07/24 16:28:27  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/24 16:28:35  [wireless,info]  6C:3B:6B:5D:71:7B@wlan1 established connection on 5560000, SSID Shadegan-Shabakeh7
+  3  1405/07/24 16:28:37  [interface,info]  ether1 link up (speed 100M, full duplex)
+  4  1405/07/25 08:34:55  [dhcp,info]  dhcp1 assigned 172.29.196.29 to 18:C0:4D:11:17:06
+  5  1405/07/25 08:37:48  [dhcp,info]  dhcp1 assigned 172.29.196.28 to 60:CF:84:69:62:EB
+  6  1405/07/25 11:22:48  [dhcp,info]  dhcp1 deassigned 172.29.196.28 from 60:CF:84:69:62:EB
+  7  1405/07/25 12:09:55  [dhcp,info]  dhcp1 deassigned 172.29.196.29 from 18:C0:4D:11:17:06
+  8  1405/07/26 08:37:24  [dhcp,info]  dhcp1 assigned 172.29.196.28 to 60:CF:84:69:62:EB
+  9  1405/07/26 08:54:39  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 10  1405/07/26 08:54:41  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 11  1405/07/26 08:57:42  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 12  1405/07/26 08:57:44  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 13  1405/07/26 09:17:25  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 14  1405/07/26 09:17:27  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 15  1405/07/26 09:19:23  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 16  1405/07/26 09:19:24  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 17  1405/07/26 09:40:27  [dhcp,info]  dhcp1 assigned 172.29.196.29 to 18:C0:4D:11:17:06
+ 18  1405/07/26 10:47:24  [dhcp,info]  dhcp1 deassigned 172.29.196.28 from 60:CF:84:69:62:EB
+ 19  1405/07/26 12:05:28  [dhcp,info]  dhcp1 deassigned 172.29.196.29 from 18:C0:4D:11:17:06
+ 20  1405/07/27 08:20:26  [dhcp,info]  dhcp1 assigned 172.29.196.29 to 18:C0:4D:11:17:06
+ 21  1405/07/27 08:35:22  [dhcp,info]  dhcp1 assigned 172.29.196.28 to 60:CF:84:69:62:EB
+ 22  1405/07/27 09:50:22  [dhcp,info]  dhcp1 deassigned 172.29.196.28 from 60:CF:84:69:62:EB
+ 23  1405/07/27 09:55:59  [dhcp,info]  dhcp1 assigned 172.29.196.28 to 60:CF:84:69:62:EB
+ 24  1405/07/27 10:40:59  [dhcp,info]  dhcp1 deassigned 172.29.196.28 from 60:CF:84:69:62:EB
+ 25  1405/07/27 12:02:11  [dhcp,info]  dhcp1 deassigned 172.29.196.29 from 18:C0:4D:11:17:06
+ 26  1405/07/28 08:08:09  [dhcp,info]  dhcp1 assigned 172.29.196.28 to 60:CF:84:69:62:EB
+ 27  1405/07/28 08:29:31  [dhcp,info]  dhcp1 assigned 172.29.196.29 to 18:C0:4D:11:17:06
+ 28  1405/07/28 11:08:08  [dhcp,info]  dhcp1 deassigned 172.29.196.28 from 60:CF:84:69:62:EB
+ 29  1405/07/28 12:00:40  [dhcp,info]  dhcp1 deassigned 172.29.196.29 from 18:C0:4D:11:17:06
+ 30  1405/07/29 08:08:39  [dhcp,info]  dhcp1 assigned 172.29.196.28 to 60:CF:84:69:62:EB
+ 31  1405/07/29 10:53:38  [dhcp,info]  dhcp1 deassigned 172.29.196.28 from 60:CF:84:69:62:EB
+ 32  1405/07/29 16:31:18  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  6C:3B:6B:10:B2:3C  (ether)
+wlan1  6C:3B:6B:10:B2:3D  (wlan)
+--- /ip arp ---
+wlan1  64:D1:54:98:E3:2E  (arp 172.18.24.113)
+ether1  B8:69:F4:50:AC:6C  (arp 172.29.196.2)
