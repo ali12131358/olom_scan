@@ -271,6 +271,8 @@ def get_devices(
     device_type: str | None = Query(default=None, pattern="^(AP|ST|Router)$"),
     has_port: int | None = Query(default=None, ge=1, le=65535),
     q: str | None = Query(default=None, max_length=128),
+    q_fields: str | None = Query(default=None, max_length=256,
+                                 description="محدوده جستجو: شناسه فیلدها جدا شده با کاما (خالی = همه فیلدها)"),
     ping_ok: bool | None = Query(default=None),
     new_only: bool = Query(default=False, description="فقط دستگاه‌های جدید"),
     sort: str = Query(default="ip", pattern="^(ip|ping|ports|ports_count|classification|device_type|first_seen|last_seen|seen_count|device_name|tags)$"),
@@ -282,6 +284,7 @@ def get_devices(
         classification=classification,
         has_port=has_port,
         q=q,
+        q_fields=q_fields,
         limit=limit,
         offset=offset,
         ping_ok=ping_ok,
@@ -299,6 +302,8 @@ def export_devices(
     ),
     has_port: int | None = Query(default=None, ge=1, le=65535),
     q: str | None = Query(default=None, max_length=128),
+    q_fields: str | None = Query(default=None, max_length=256,
+                                 description="محدوده جستجو: شناسه فیلدها جدا شده با کاما (خالی = همه فیلدها)"),
     ping_ok: bool | None = Query(default=None),
     new_only: bool = Query(default=False, description="فقط دستگاه‌های جدید"),
     sort: str = Query(default="ip", pattern="^(ip|ping|ports|ports_count|classification|first_seen|last_seen|seen_count|device_name|tags)$"),
@@ -307,7 +312,7 @@ def export_devices(
     offset: int = Query(default=0, ge=0),
 ):
     result = db.query_devices(classification, has_port, q, limit, offset, ping_ok=ping_ok,
-                              new_only=new_only, sort=sort, order=order)
+                              new_only=new_only, sort=sort, order=order, q_fields=q_fields)
     filename = "new_devices.csv" if new_only else "devices.csv"
     return Response(db.devices_to_csv(result["devices"]), media_type="text/csv; charset=utf-8",
                     headers={"Content-Disposition": f'attachment; filename="{filename}"'})
@@ -821,14 +826,30 @@ def download(scan_id:str,key:str):
 
 
 # ---------------- Smart reports: interface flaps ----------------
-@app.get("/reports/interface-flaps")
-def report_interface_flaps(days: int = 5, threshold_minutes: int = 5):
+def _resolve_report_database(database: str = "") -> str:
+    """Validate a database name for smart reports; empty means the active DB."""
+    name = (database or "").strip()
+    if not name:
+        return db.get_active_db_name()
     try:
-        devices = db.query_devices(limit=100000)
+        known = {item["name"] for item in db.list_databases()["databases"]}
+    except Exception:
+        known = set()
+    if name not in known:
+        raise HTTPException(404, f"دیتابیس «{name}» یافت نشد")
+    return name
+
+
+@app.get("/reports/interface-flaps")
+def report_interface_flaps(days: int = 5, threshold_minutes: int = 5, database: str = Query(default="", max_length=64)):
+    db_name = _resolve_report_database(database)
+    try:
+        devices = db.query_devices(limit=100000, db_path=str(db.db_path_for(db_name)))
     except Exception:
         devices = []
     rows = devices.get("devices") if isinstance(devices, dict) else devices
     report = smart_reports.interface_flap_report(rows or [], days_back=days, threshold_minutes=threshold_minutes)
+    report["database"] = db_name
     # Keep the report metadata and provide stable names for both API clients and the UI.
     items = []
     for event in report.get("events", []):
@@ -842,24 +863,28 @@ def report_interface_flaps(days: int = 5, threshold_minutes: int = 5):
     return report
 
 @app.get("/reports/interface-flaps/export.csv")
-def report_interface_flaps_csv(days: int = 5, threshold_minutes: int = 5):
-    rows = db.query_devices(limit=100000)
+def report_interface_flaps_csv(days: int = 5, threshold_minutes: int = 5, database: str = Query(default="", max_length=64)):
+    db_name = _resolve_report_database(database)
+    rows = db.query_devices(limit=100000, db_path=str(db.db_path_for(db_name)))
     if isinstance(rows, dict):
         rows = rows.get("devices", [])
     rep = smart_reports.interface_flap_report(rows or [], days_back=days, threshold_minutes=threshold_minutes)
+    rep["database"] = db_name
     csv_content = smart_reports.interface_flaps_csv(rep)
     return Response(content=csv_content, media_type="text/csv; charset=utf-8",
                     headers={"Content-Disposition": 'attachment; filename="interface_flaps_report.csv"'})
 
 
 @app.get("/reports/interface-flaps/export.xlsx")
-def report_interface_flaps_xlsx(days: int = 5, threshold_minutes: int = 5):
+def report_interface_flaps_xlsx(days: int = 5, threshold_minutes: int = 5, database: str = Query(default="", max_length=64)):
+    db_name = _resolve_report_database(database)
     try:
-        devices = db.query_devices(limit=100000)
+        devices = db.query_devices(limit=100000, db_path=str(db.db_path_for(db_name)))
     except Exception:
         devices = []
     rows = devices.get("devices") if isinstance(devices, dict) else devices
     rep = smart_reports.interface_flap_report(rows or [], days_back=days, threshold_minutes=threshold_minutes)
+    rep["database"] = db_name
     data = smart_reports.interface_flaps_xlsx(rep)
     return Response(
         data,

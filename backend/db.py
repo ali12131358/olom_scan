@@ -350,9 +350,61 @@ def _sort_clause(sort, order):
     direction = "DESC" if (order or "asc").lower() == "desc" else "ASC"
     return f" ORDER BY {col} {direction}, ip ASC"
 
+
+# Whitelist of fields the free-text search may target. Using a whitelist keeps
+# column names out of user input (SQL-injection safe) and lets the UI request a
+# narrow scope (faster than scanning every text column).
+SEARCH_FIELDS = {
+    "ip": "ip",
+    "device_name": "IFNULL(device_name,'')",
+    "tags": "IFNULL(tags,'')",
+    "device_type": "IFNULL(device_type,'')",
+    "interfaces": "IFNULL(interfaces,'')",
+    "ip_addresses": "IFNULL(ip_addresses,'')",
+    "ip_neighbors": "IFNULL(ip_neighbors,'')",
+    "wireless_info": "IFNULL(wireless_info,'')",
+    "device_log": "IFNULL(device_log,'')",
+    "mac_info": "IFNULL(mac_info,'')",
+    "classification": "IFNULL(classification,'')",
+}
+
+
+def build_search_clause(q, q_fields=None):
+    """Build the WHERE fragment for free-text search.
+
+    - Whitespace-separated terms are AND-ed: every term must match at least
+      one of the searched fields (OR across fields).
+    - q_fields: comma-separated field ids (see SEARCH_FIELDS). None, empty or
+      "all" searches every whitelisted field; unknown ids are ignored.
+    Returns (fragment, params); (None, []) when there is nothing to search.
+    """
+    terms = [t for t in (q or "").split() if t]
+    if not terms:
+        return None, []
+    wanted = (q_fields or "").strip()
+    if wanted and wanted.lower() != "all":
+        picked = []
+        for fid in wanted.split(","):
+            expr = SEARCH_FIELDS.get(fid.strip())
+            if expr and expr not in picked:
+                picked.append(expr)
+    else:
+        picked = []
+    if not picked:
+        picked = list(SEARCH_FIELDS.values())
+    term_clauses, term_params = [], []
+    for term in terms:
+        like = f"%{term}%"
+        term_clauses.append("(" + " OR ".join(f"{col} LIKE ?" for col in picked) + ")")
+        term_params.extend([like] * len(picked))
+    return " AND ".join(term_clauses), term_params
+
 def query_devices(classification=None, has_port=None, q=None, limit=500, offset=0, ping_ok=None,
-                  new_only=False, sort="ip", order="asc", device_type=None, db_path=None):
-    """Filter devices. has_port filters by open port number; q is an ip substring.
+                  new_only=False, sort="ip", order="asc", device_type=None, db_path=None, q_fields=None):
+    """Filter devices. has_port filters by open port number.
+    q: free-text search; whitespace-separated terms are AND-ed and each term
+    matches any of the searched fields.
+    q_fields: comma-separated scope (see SEARCH_FIELDS); None/"all" = every field.
     ping_ok: True -> only ping responders, False -> only non-responders, None -> all.
     new_only: only devices first discovered recently (seen_count == 1 or first_seen
     within NEW_DEVICE_WINDOW seconds) — the "دستگاه‌های جدید" report.
@@ -373,22 +425,11 @@ def query_devices(classification=None, has_port=None, q=None, limit=500, offset=
         clauses.append("EXISTS (SELECT 1 FROM json_each(devices.open_ports) WHERE json_each.value=?)")
         params.append(int(has_port))
     if q:
-        # Search across the main display / filter fields
-        like = f"%{q}%"
-        clauses.append(
-            "("
-            "ip LIKE ? OR "
-            "IFNULL(device_name,'') LIKE ? OR "
-            "IFNULL(tags,'') LIKE ? OR "
-            "IFNULL(device_type,'') LIKE ? OR "
-            "IFNULL(interfaces,'') LIKE ? OR "
-            "IFNULL(ip_addresses,'') LIKE ? OR "
-            "IFNULL(ip_neighbors,'') LIKE ? OR "
-            "IFNULL(wireless_info,'') LIKE ? OR IFNULL(device_log,'') LIKE ? OR IFNULL(mac_info,'') LIKE ? OR "
-            "IFNULL(classification,'') LIKE ?"
-            ")"
-        )
-        params.extend([like] * 11)
+        # Free-text search across the whitelisted display / filter fields
+        frag, q_params = build_search_clause(q, q_fields)
+        if frag:
+            clauses.append(frag)
+            params.extend(q_params)
     if new_only:
         clauses.append("(seen_count = 1 OR first_seen >= ?)")
         params.append(_now()[:10])  # same UTC day granularity as ISO timestamps

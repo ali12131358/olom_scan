@@ -171,17 +171,27 @@ function formatDate(value){if(!value)return "—";const d=new Date(value);if(Num
 function DeviceReports({mode="devices"}={}){
   const ALL_COLS=[{id:"select",label:"انتخاب",always:true},{id:"ip",label:"IP",always:true},{id:"device_name",label:"نام دستگاه (identity)",always:true},{id:"device_type",label:"نوع دستگاه"},{id:"tags",label:"تگ"},{id:"ping",label:"پینگ"},{id:"ports",label:"پورت‌های باز"},{id:"classification",label:"دسته‌بندی"},{id:"interfaces",label:"اینترفیس‌ها"},{id:"ip_addresses",label:"آدرس‌های IP"},{id:"ip_neighbors",label:"همسایه‌ها"},{id:"wireless_info",label:"وایرلس"},{id:"device_log",label:"لاگ"},{id:"mac_info",label:"MAC"},{id:"first_seen",label:"اولین مشاهده"},{id:"last_seen",label:"آخرین مشاهده"},{id:"seen_count",label:"تعداد مشاهده"},{id:"winbox",label:"Winbox (ستون جدا)"}];
   const defaultVisible=()=>{try{const s=JSON.parse(localStorage.getItem("device_cols")||"null");if(Array.isArray(s)&&s.length)return s}catch(e){}const hide=["interfaces","ip_addresses","ip_neighbors","wireless_info","device_log","mac_info","winbox"];return ALL_COLS.map(c=>c.id).filter(id=>!hide.includes(id))};
-  const[rows,setRows]=useState([]),[total,setTotal]=useState(0),[classification,setClassification]=useState("mikrotik_candidate"),[deviceTypeFilter,setDeviceTypeFilter]=useState(""),[port,setPort]=useState(""),[q,setQ]=useState(""),[offset,setOffset]=useState(0),[pageSize,setPageSize]=useState(50),[error,setError]=useState(""),[msg,setMsg]=useState("");const[textModal,setTextModal]=useState(null);const[probeProg,setProbeProg]=useState({total:0,done:0,percent:0,current_ip:"",running:false});
+  const[rows,setRows]=useState([]),[total,setTotal]=useState(0),[classification,setClassification]=useState("mikrotik_candidate"),[deviceTypeFilter,setDeviceTypeFilter]=useState(""),[port,setPort]=useState(""),[q,setQ]=useState(""),[qInput,setQInput]=useState(""),[qField,setQField]=useState(""),[offset,setOffset]=useState(0),[pageSize,setPageSize]=useState(50),[error,setError]=useState(""),[msg,setMsg]=useState("");const[textModal,setTextModal]=useState(null);const[probeProg,setProbeProg]=useState({total:0,done:0,percent:0,current_ip:"",running:false});
   const[sortBy,setSortBy]=useState("ip"),[sortOrder,setSortOrder]=useState("asc"),[newOnly,setNewOnly]=useState(false),[showAddModal,setShowAddModal]=useState(false),[newIp,setNewIp]=useState(""),[newPorts,setNewPorts]=useState("");
   const[winboxItems,setWinboxItems]=useState([]),[winboxPath,setWinboxPath]=useState(""),[winboxName,setWinboxName]=useState(""),[showWinboxCfg,setShowWinboxCfg]=useState(false),[busyAction,setBusyAction]=useState(false),[toolsDir,setToolsDir]=useState("");
   const[visibleCols,setVisibleCols]=useState(defaultVisible),[showColCfg,setShowColCfg]=useState(false);
   const[selected,setSelected]=useState({}),[editTagIp,setEditTagIp]=useState(null),[editTagVal,setEditTagVal]=useState(""),[editNameIp,setEditNameIp]=useState(null),[editNameVal,setEditNameVal]=useState("");// selected: { [ip]: true } only — never store false
   const[snmpProfiles,setSnmpProfiles]=useState([]),[snmpId,setSnmpId]=useState(""),[snmpRaw,setSnmpRaw]=useState(""),[snmpName,setSnmpName]=useState(""),[showSnmp,setShowSnmp]=useState(false),[snmpBusy,setSnmpBusy]=useState(false);const[dbList,setDbList]=useState([]),[activeDb,setActiveDb]=useState("default"),[newDbName,setNewDbName]=useState(""),[showDbPanel,setShowDbPanel]=useState(false);const[showGroupCfg,setShowGroupCfg]=useState(false),[groupScript,setGroupScript]=useState(""),[groupUser,setGroupUser]=useState("admin"),[groupPass,setGroupPass]=useState("");const[apiUser,setApiUser]=useState("admin"),[apiPass,setApiPass]=useState(""),[apiBusy,setApiBusy]=useState(false);const apiAbortRef={current:null};
-  const params=new URLSearchParams();if(classification)params.set("classification",classification);if(deviceTypeFilter)params.set("device_type",deviceTypeFilter);if(port)params.set("has_port",port);if(q)params.set("q",q);params.set("sort",sortBy);params.set("order",sortOrder);params.set("new_only",newOnly?"true":"false");params.set("limit",String(pageSize));params.set("offset",String(offset));
-  function reloadRows(){return fetch(`${API}/devices?${params.toString()}`).then(async r=>{const d=await readJson(r);if(!r.ok)throw Error(typeof d.detail==="string"?d.detail:(Array.isArray(d.detail)?d.detail.map(x=>x.msg||JSON.stringify(x)).join("; "):(d.detail&&JSON.stringify(d.detail))||"خطا در دریافت"));setRows(d.devices||[]);setTotal(d.total||0);setError("")})}
-  useEffect(()=>{let active=true;reloadRows().catch(e=>active&&setError(e.message));return()=>{active=false}},[classification,deviceTypeFilter,port,q,offset,pageSize,sortBy,sortOrder,newOnly]);
+  const params=new URLSearchParams();if(classification)params.set("classification",classification);if(deviceTypeFilter)params.set("device_type",deviceTypeFilter);if(port)params.set("has_port",port);if(q)params.set("q",q);if(qField)params.set("q_fields",qField);params.set("sort",sortBy);params.set("order",sortOrder);params.set("new_only",newOnly?"true":"false");params.set("limit",String(pageSize));params.set("offset",String(offset));
+  const searchAbortRef={current:null};
+  function reloadRows(){
+    // Abort any in-flight list request so responses never arrive out of order
+    if(searchAbortRef.current){try{searchAbortRef.current.abort()}catch(e){}}
+    const ctrl=new AbortController();searchAbortRef.current=ctrl;
+    return fetch(`${API}/devices?${params.toString()}`,{signal:ctrl.signal}).then(async r=>{const d=await readJson(r);if(!r.ok)throw Error(typeof d.detail==="string"?d.detail:(Array.isArray(d.detail)?d.detail.map(x=>x.msg||JSON.stringify(x)).join("; "):(d.detail&&JSON.stringify(d.detail))||"خطا در دریافت"));setRows(d.devices||[]);setTotal(d.total||0);setError("")}).catch(e=>{if(e&&e.name==="AbortError")return;throw e})
+  }
+  useEffect(()=>{let active=true;reloadRows().catch(e=>active&&setError(e.message));return()=>{active=false}},[classification,deviceTypeFilter,port,q,qField,offset,pageSize,sortBy,sortOrder,newOnly]);
+  // Debounce the free-text search: wait 350ms after the last keystroke before querying.
+  // Enter in the input clears the pending timer for an immediate search.
+  const searchTimerRef={current:null};
+  useEffect(()=>{if(searchTimerRef.current)clearTimeout(searchTimerRef.current);searchTimerRef.current=setTimeout(()=>{setQ(qInput);setOffset(0)},350);return()=>clearTimeout(searchTimerRef.current)},[qInput]);
   // Clear selection when the visible dataset context changes (not on every poll)
-  useEffect(()=>{setSelected({})},[classification,port,q,pageSize,sortBy,sortOrder,newOnly,activeDb]);
+  useEffect(()=>{setSelected({})},[classification,port,q,qField,pageSize,sortBy,sortOrder,newOnly,activeDb]);
   async function refreshWinbox(){try{const r=await fetch(API+"/api/winbox/list");const d=await r.json();if(r.ok){setWinboxItems(d.items||[]);setToolsDir(d.tools_dir||"")}}catch(e){}}
   async function refreshSnmp(){try{const r=await fetch(API+"/api/snmp/profiles");const d=await r.json();if(r.ok){const list=d.profiles||[];setSnmpProfiles(list);const def=list.find(x=>x.is_default)||list[0];if(def){setSnmpId(def.id);setSnmpRaw(def.raw||"");setSnmpName(def.name||def.community||"")}}}catch(e){}}
   async function refreshDb(){try{const r=await fetch(API+"/api/databases");const d=await readJson(r);if(r.ok){setDbList(d.databases||[]);setActiveDb(d.active||"default")}else{setError(typeof d.detail==="string"?d.detail:"خطا در لیست دیتابیس")}}catch(e){setError(e.message||String(e))}}
@@ -636,11 +646,30 @@ function DeviceReports({mode="devices"}={}){
         <option value="443">443 HTTPS</option>
       </select></label>
       <label className="filter-search">جست‌وجو در فیلدها
-        <input dir="ltr" value={q} onChange={e=>{setQ(e.target.value);setOffset(0)}}
-          placeholder="IP، نام، تگ، نوع، اینترفیس، همسایه…"
-          title="جستجو در: IP، نام دستگاه، تگ، نوع دستگاه، اینترفیس‌ها، آدرس‌های IP، همسایه‌ها، وایرلس"/>
+        <span style={{display:"flex",gap:6,alignItems:"stretch",width:"100%"}}>
+          <select value={qField} onChange={e=>{setQField(e.target.value);setOffset(0)}}
+            style={{width:"auto",minWidth:"9.5em",flex:"0 0 auto",padding:"8px",border:"1px solid #cbd5e1",borderRadius:7,background:"white",font:"inherit"}}
+            title="محدوده جستجو — با انتخاب یک فیلد خاص، جستجو سریع‌تر انجام می‌شود">
+            <option value="">همه فیلدها</option>
+            <option value="ip">فقط IP</option>
+            <option value="device_name">نام دستگاه</option>
+            <option value="tags">تگ</option>
+            <option value="device_type">نوع دستگاه</option>
+            <option value="classification">دسته‌بندی</option>
+            <option value="interfaces">اینترفیس‌ها</option>
+            <option value="ip_addresses">آدرس‌های IP</option>
+            <option value="ip_neighbors">همسایه‌ها</option>
+            <option value="wireless_info">وایرلس</option>
+            <option value="mac_info">MAC</option>
+            <option value="device_log">لاگ دستگاه</option>
+          </select>
+          <input dir="ltr" value={qInput} onChange={e=>setQInput(e.target.value)}
+            onKeyDown={e=>{if(e.key==="Enter"){clearTimeout(searchTimerRef.current);setQ(qInput);setOffset(0)}}}
+            placeholder="واژه‌ها را با فاصله جدا کنید…"
+            title="جستجوی هم‌زمان چند واژه (ترکیب AND)؛ انتخاب فیلد از منوی کناری، جستجو را سریع‌تر می‌کند"/>
+        </span>
       </label>
-      {q&&<button type="button" className="btn-clear-search" title="پاک کردن جستجو" onClick={()=>{setQ("");setOffset(0)}}>✕</button>}
+      {(q||qInput)&&<button type="button" className="btn-clear-search" title="پاک کردن جستجو" onClick={()=>{setQInput("");setQ("");setOffset(0)}}>✕</button>}
     </div>
     {paginationBar}
     {error&&<p className="error">{error}</p>}{msg&&<p className="backend-msg ok">{msg}</p>}
@@ -1127,21 +1156,32 @@ function SmartReports(){
   const[progress,setProgress]=useState(0);
   const[downloadingCsv,setDownloadingCsv]=useState(false);
   const[msg,setMsg]=useState("");const[err,setErr]=useState("");
+  const[dbList,setDbList]=useState([{name:"default"}]),[dbSel,setDbSel]=useState(""),[reportDb,setReportDb]=useState("");
+  useEffect(()=>{(async()=>{
+    try{
+      const r=await fetch(API+"/api/databases");const d=await readJson(r);
+      if(r.ok){
+        const list=(d.databases&&d.databases.length)?d.databases:[{name:"default"}];
+        setDbList(list);const active=d.active||"default";
+        setDbSel(prev=>prev||active);
+      }
+    }catch(e){/* keep fallback list */}
+  })()},[]);
   async function loadList(){
     setLoadingList(true);setProgress(8);setErr("");setMsg("در حال بررسی لاگ‌ها و بارگذاری فهرست دستگاه‌ها...");
     const progressTimer=window.setInterval(()=>setProgress(value=>value>=86?20:value+7),300);
     try{
-      const url=API+"/reports/interface-flaps?days="+encodeURIComponent(days)+"&threshold_minutes="+encodeURIComponent(thresholdMinutes);
+      const url=API+"/reports/interface-flaps?days="+encodeURIComponent(days)+"&threshold_minutes="+encodeURIComponent(thresholdMinutes)+(dbSel?("&database="+encodeURIComponent(dbSel)):"");
       const response=await fetch(url);if(!response.ok)throw Error("دریافت فهرست ناموفق بود ("+response.status+")");
       const data=await readJson(response);const items=Array.isArray(data)?data:(data.items||data.events||data.results||[]);
-      setFlapResults(items);setProgress(100);setMsg("فهرست دستگاه‌ها بارگذاری شد.");
+      setFlapResults(items);setReportDb((data&&data.database)||dbSel||"");setProgress(100);setMsg("فهرست دستگاه‌ها بارگذاری شد.");
     }catch(e){setErr(e.message||"خطا در بارگذاری فهرست");setMsg("");}
     finally{window.clearInterval(progressTimer);setLoadingList(false);window.setTimeout(()=>setProgress(0),800);}
   }
   async function downloadCsv(){
     setDownloadingCsv(true);setErr("");setMsg("در حال آماده‌سازی فایل CSV...");
     try{
-      const url=API+"/reports/interface-flaps/export.csv?days="+encodeURIComponent(days)+"&threshold_minutes="+encodeURIComponent(thresholdMinutes);
+      const url=API+"/reports/interface-flaps/export.csv?days="+encodeURIComponent(days)+"&threshold_minutes="+encodeURIComponent(thresholdMinutes)+(dbSel?("&database="+encodeURIComponent(dbSel)):"");
       const response=await fetch(url);if(!response.ok)throw Error("دریافت گزارش ناموفق بود ("+response.status+")");
       const blob=await response.blob();const objectUrl=URL.createObjectURL(blob);const a=document.createElement("a");
       a.href=objectUrl;a.download="interface_flaps_report.csv";document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(objectUrl);
@@ -1156,6 +1196,12 @@ function SmartReports(){
       <h3>گزارش هوشمند — نوسان (flap) اینترفیس‌ها</h3>
       <label>بازه (روز)<input type="number" min="1" value={days} onChange={e=>setDays(parseInt(e.target.value||"5",10))}/></label>
       <label>آستانه نوسان (دقیقه)<input type="number" min="1" value={thresholdMinutes} onChange={e=>setThresholdMinutes(parseInt(e.target.value||"5",10))}/></label>
+      <label>دیتابیس گزارش
+        <select value={dbSel} onChange={e=>{setDbSel(e.target.value);setFlapResults([]);setReportDb("");setMsg("دیتابیس تغییر کرد؛ برای گزارش جدید روی «مشاهده و بارگذاری لیست دستگاه‌ها» کلیک کنید.")}}
+          title="گزارش فقط از دیتابیس انتخاب‌شده گرفته می‌شود">
+          {dbList.map(d=><option key={d.name} value={d.name}>{d.name+(typeof d.devices==="number"?" ("+d.devices+" دستگاه)":"")+(d.active?" — فعال":"")}</option>)}
+        </select>
+      </label>
       <div style={{display:"flex",gap:8,flexWrap:"wrap",marginTop:12}}>
         <button type="button" className="tool-btn" disabled={loadingList||downloadingCsv} onClick={loadList}>مشاهده و بارگذاری لیست دستگاه‌ها</button>
         <button type="button" className="tool-btn" disabled={downloadingCsv} onClick={downloadCsv}>دانلود فایل CSV</button>
@@ -1171,6 +1217,7 @@ function SmartReports(){
       {flapResults!==null&&flapResults.length>=0&&<div style={{marginTop:16}}>
         <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:10,flexWrap:"wrap",gap:8}}>
           <strong style={{background:"#e8f5ee",color:"#176b43",borderRadius:16,padding:"6px 12px"}}>تعداد موارد یافت‌شده: {flapResults.length}</strong>
+          {reportDb&&<span style={{background:"#e0f2fe",color:"#075985",borderRadius:16,padding:"6px 12px",fontSize:13}}>دیتابیس: {reportDb}</span>}
           {flapResults.length>0&&<span style={{color:"#64748b",fontSize:13}}>برای دریافت فایل، روی «دانلود فایل CSV» کلیک کنید.</span>}
         </div>
         {flapResults.length>0?<div style={{overflowX:"auto",border:"1px solid #e5e7eb",borderRadius:8}}>
