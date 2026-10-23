@@ -1,0 +1,51 @@
+IP: 172.29.202.1
+Collected at: 2026-10-21T13:18:26.665102+00:00
+source: RouterOS API
+identity: Boozi seyf.Client
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=48:8F:5A:6F:A2:C4
+  2  name=wlan1  type=wlan  running=true  mac=48:8F:5A:6F:A2:C5
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=Shadegan-Abshar3-1  band=5ghz-a/n  frequency=5520
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.25.164/28  interface=wlan1  network=172.18.25.160
+  2  address=172.29.202.1/27  interface=ether1  network=172.29.202.0
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.25.162  distance=1
+  2  dst=172.18.25.160/28  gw=wlan1  distance=0
+  3  dst=172.29.202.0/27  gw=ether1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=RB-ABSHAR  address=172.18.25.161  interface=wlan1
+  2  identity=Shadegan-Abshar3  address=172.18.25.162  interface=wlan1
+  3  identity=Markaz.Boozi.client  address=172.18.25.163  interface=wlan1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/29 16:43:49
+# ساعت دستگاه (خام): 1972-10-06 09:39:31
+# افست اصلاحی (سرور − دستگاه): +473715:34:18
+  1  1405/07/26 10:15:35  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/26 10:15:36  [interface,info]  ether1 link up (speed 100M, full duplex)
+  3  1405/07/26 10:15:42  [wireless,info]  6E:3B:6B:4A:2C:B4@wlan1 established connection on 5540000, SSID Shadegan-Abshar3-1
+  4  1405/07/27 10:11:38  [dhcp,info]  dhcp1 deassigned 172.29.202.29 from 1C:1B:0D:A0:5A:ED
+  5  1405/07/28 08:27:55  [dhcp,info]  dhcp1 assigned 172.29.202.28 to 94:DE:80:4D:E7:FF
+  6  1405/07/28 09:00:07  [dhcp,info]  dhcp1 assigned 172.29.202.29 to 1C:1B:0D:A0:5A:ED
+  7  1405/07/29 16:43:47  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  48:8F:5A:6F:A2:C4  (ether)
+wlan1  48:8F:5A:6F:A2:C5  (wlan)
+--- /ip arp ---
+wlan1  4C:5E:0C:9B:0F:01  (arp 172.18.25.161)
+wlan1  6C:3B:6B:4A:2C:B4  (arp 172.18.25.162)

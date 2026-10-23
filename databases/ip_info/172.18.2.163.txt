@@ -1,0 +1,58 @@
+IP: 172.18.2.163
+Collected at: 2026-10-21T13:16:17.920272+00:00
+source: RouterOS API
+identity: 3khordad-CL
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=2C:C8:1B:42:EB:69
+  2  name=wlan1  type=wlan  running=true  mac=2C:C8:1B:42:EB:6A
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=TLGH3KH  band=5ghz-a/n  frequency=5720
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.2.163/29  interface=wlan1  network=172.18.2.160
+  2  address=172.29.16.129/25  interface=ether1  network=172.29.16.128
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.2.161  distance=1
+  2  dst=172.18.2.160/29  gw=wlan1  distance=0
+  3  dst=172.29.16.128/25  gw=ether1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=RouterMarkazTaleghzani  address=172.18.2.161  interface=wlan1
+  2  identity=Taleghani->3Khordad.AP  address=172.18.2.162  interface=wlan1
+  3  identity=MikroTik  address=-  interface=ether1
+  4  identity=MikroTik  address=-  interface=ether1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/29 16:29:43
+# ساعت دستگاه (خام): 1972-08-12 06:00:03
+# افست اصلاحی (سرور − دستگاه): +475038:59:40
+  1  1405/07/29 10:29:30  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/29 10:29:37  [wireless,info]  E4:8D:8C:6F:DB:D5@wlan1 established connection on 5500000, SSID TLGH3KH
+  3  1405/07/29 10:29:40  [interface,info]  ether1 link up (speed 100M, full duplex)
+  4  1405/07/29 10:29:45  [dhcp,info]  dhcp1 assigned 172.29.16.241 to A0:36:BC:34:86:E2
+  5  1405/07/29 10:29:46  [dhcp,info]  dhcp1 assigned 172.29.16.229 to E0:D5:5E:57:88:19
+  6  1405/07/29 10:30:11  [dhcp,info]  dhcp1 assigned 172.29.16.228 to 84:16:F9:6D:D3:A3
+  7  1405/07/29 10:58:38  [dhcp,info]  dhcp1 assigned 172.29.16.219 to 7C:F1:7E:F4:11:69
+  8  1405/07/29 11:18:01  [dhcp,info]  dhcp1 assigned 172.29.16.218 to 84:16:F9:B0:A5:34
+  9  1405/07/29 11:33:42  [dhcp,info]  dhcp1 deassigned 172.29.16.241 from A0:36:BC:34:86:E2
+ 10  1405/07/29 11:48:38  [dhcp,info]  dhcp1 deassigned 172.29.16.219 from 7C:F1:7E:F4:11:69
+ 11  1405/07/29 11:53:15  [dhcp,info]  dhcp1 deassigned 172.29.16.218 from 84:16:F9:B0:A5:34
+ 12  1405/07/29 12:05:11  [dhcp,info]  dhcp1 deassigned 172.29.16.228 from 84:16:F9:6D:D3:A3
+ 13  1405/07/29 12:27:20  [dhcp,info]  dhcp1 deassigned 172.29.16.229 from E0:D5:5E:57:88:19
+ 14  1405/07/29 16:29:41  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  2C:C8:1B:42:EB:69  (ether)
+wlan1  2C:C8:1B:42:EB:6A  (wlan)
+--- /ip arp ---
+wlan1  6C:3B:6B:09:34:B5  (arp 172.18.2.161)

@@ -1,0 +1,53 @@
+IP: 172.29.195.8
+Collected at: 2026-10-21T13:18:22.385249+00:00
+source: RouterOS API
+identity: Salim Shavardi
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=08:55:31:79:5E:25
+  2  name=wlan1  type=wlan  running=true  mac=08:55:31:79:5E:26
+  3  name=bridge1  type=bridge  running=true  mac=08:55:31:79:5E:25
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=Shadegan-salemi1  band=5ghz-a/n  frequency=5640
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.29.195.8/25  interface=wlan1  network=172.29.195.0
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.29.195.1  distance=1
+  2  dst=172.29.195.0/25  gw=bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=-  address=-  interface=wlan1,bridge1
+  2  identity=Markaz-Salemi.Client  address=172.29.195.1  interface=wlan1,bridge1
+  3  identity=Salemi-hAplite  address=172.29.195.3  interface=wlan1,bridge1
+  4  identity=AP.Fayah&Salemi2  address=172.29.195.4  interface=wlan1,bridge1
+  5  identity=Salemi_2_client  address=172.29.195.5  interface=wlan1,bridge1
+  6  identity=FayehShavardi.Client  address=172.29.195.6  interface=wlan1,bridge1
+  7  identity=shdgn-kh-b-shahid-salim-shavardi-hap-lite  address=172.29.195.11  interface=ether1,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/29 16:43:08
+# ساعت دستگاه (خام): 1972-09-23 01:26:50
+# افست اصلاحی (سرور − دستگاه): +474035:46:18
+  1  1405/07/28 16:01:02  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/28 16:01:03  [bridge,info]  "bridge1" mac address changed to 08:55:31:79:5E:25
+  3  1405/07/28 16:01:03  [bridge,info]  hardware offloading activated on bridge "bridge1" ports: ether1
+  4  1405/07/28 16:01:07  [interface,info]  ether1 link up (speed 100M, full duplex)
+  5  1405/07/28 16:01:56  [wireless,info]  6C:3B:6B:8F:3B:EE@wlan1 established connection on 5700000, SSID Shadegan-salemi1
+  6  1405/07/29 16:43:06  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  08:55:31:79:5E:25  (ether)
+wlan1  08:55:31:79:5E:26  (wlan)
+bridge1  08:55:31:79:5E:25  (bridge)
+--- /ip arp ---
+bridge1  6C:3B:6B:06:5B:C2  (arp 172.29.195.1)

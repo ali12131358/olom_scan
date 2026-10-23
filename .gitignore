@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+node_modules/
+.env
+.pytest_cache/
+
+# Runtime SQLite device inventory
+devices.db

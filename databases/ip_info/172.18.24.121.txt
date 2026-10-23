@@ -1,0 +1,96 @@
+IP: 172.18.24.121
+Collected at: 2026-10-21T13:16:31.718471+00:00
+source: RouterOS API
+identity: GarmehKhoroosi.Client
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=6C:3B:6B:06:5B:7E
+  2  name=wlan1  type=wlan  running=true  mac=6C:3B:6B:06:5B:7F
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=Shadegan-Shabakeh7  band=5ghz-a/n  frequency=5280
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.24.121/28  interface=wlan1  network=172.18.24.112
+  2  address=172.29.195.129/27  interface=ether1  network=172.29.195.128
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.24.113  distance=1
+  2  dst=172.18.24.112/28  gw=wlan1  distance=0
+  3  dst=172.29.195.128/27  gw=ether1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=R2SH  address=-  interface=wlan1
+  2  identity=RB-UMS-SHDGN-CoreRouter  address=172.18.24.113  interface=wlan1
+  3  identity=Shadegan-Shabakeh7  address=172.18.24.114  interface=wlan1
+  4  identity=AboodiBala.Client  address=172.18.24.118  interface=wlan1
+  5  identity=Mansoori.Client  address=172.18.24.119  interface=wlan1
+  6  identity=Markaz Aboodi1 - Client  address=172.18.24.120  interface=wlan1
+  7  identity=ParsaRasaneh-PTP-POP-Center-AP  address=172.29.35.98  interface=wlan1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/29 16:31:29
+# ساعت دستگاه (خام): 2024-01-31 21:44:45
+# افست اصلاحی (سرور − دستگاه): +23847:16:44
+  1  1405/07/27 18:17:47  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/27 18:17:56  [wireless,info]  6C:3B:6B:5D:71:7B@wlan1 established connection on 5560000, SSID Shadegan-Shabakeh7
+  3  1405/07/27 18:17:58  [interface,info]  ether1 link up (speed 100M, full duplex)
+  4  1405/07/27 20:31:46  [interface,info]  ether1 link down
+  5  1405/07/27 20:31:47  [interface,info]  ether1 link up (speed 100M, full duplex)
+  6  1405/07/27 22:04:44  [interface,info]  ether1 link down
+  7  1405/07/27 22:04:46  [interface,info]  ether1 link up (speed 100M, full duplex)
+  8  1405/07/27 22:05:06  [interface,info]  ether1 link down
+  9  1405/07/27 22:05:08  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 10  1405/07/27 22:05:11  [interface,info]  ether1 link down
+ 11  1405/07/27 22:05:13  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 12  1405/07/27 22:08:56  [interface,info]  ether1 link down
+ 13  1405/07/27 22:08:57  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 14  1405/07/28 02:31:16  [wireless,info]  6C:3B:6B:5D:71:7B@wlan1: lost connection, extensive data loss
+ 15  1405/07/28 02:31:22  [wireless,info]  6C:3B:6B:5D:71:7B@wlan1 established connection on 5560000, SSID Shadegan-Shabakeh7
+ 16  1405/07/28 02:33:22  [system,error,critical]  login failure for user  from 172.16.0.21 via ssh
+ 17  1405/07/28 03:03:36  [interface,info]  ether1 link down
+ 18  1405/07/28 03:03:38  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 19  1405/07/28 03:03:39  [interface,info]  ether1 link down
+ 20  1405/07/28 03:03:41  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 21  1405/07/28 03:04:20  [interface,info]  ether1 link down
+ 22  1405/07/28 03:04:21  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 23  1405/07/28 03:05:00  [interface,info]  ether1 link down
+ 24  1405/07/28 03:05:02  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 25  1405/07/28 03:06:55  [interface,info]  ether1 link down
+ 26  1405/07/28 03:06:56  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 27  1405/07/28 03:16:26  [interface,info]  ether1 link down
+ 28  1405/07/28 03:16:28  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 29  1405/07/28 03:25:15  [interface,info]  ether1 link down
+ 30  1405/07/28 03:25:17  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 31  1405/07/28 03:33:21  [interface,info]  ether1 link down
+ 32  1405/07/28 03:33:23  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 33  1405/07/28 14:17:56  [interface,info]  ether1 link down
+ 34  1405/07/28 14:17:58  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 35  1405/07/29 02:27:55  [wireless,info]  6C:3B:6B:5D:71:7B@wlan1: lost connection, extensive data loss
+ 36  1405/07/29 02:28:03  [wireless,info]  6C:3B:6B:5D:71:7B@wlan1: failed to connect, on 5560/20/an, authentication timeout
+ 37  1405/07/29 02:28:17  [wireless,info]  6C:3B:6B:5D:71:7B@wlan1: failed to connect, on 5560/20/an, authentication timeout
+ 38  1405/07/29 02:28:31  [wireless,info]  6C:3B:6B:5D:71:7B@wlan1: failed to connect, on 5560/20/an, authentication timeout
+ 39  1405/07/29 02:28:47  [wireless,info]  6C:3B:6B:5D:71:7B@wlan1: failed to connect, on 5560/20/an, association timeout
+ 40  1405/07/29 02:29:02  [wireless,info]  6C:3B:6B:5D:71:7B@wlan1: failed to connect, on 5560/20/an, association timeout
+ 41  1405/07/29 02:29:16  [wireless,info]  6C:3B:6B:5D:71:7B@wlan1: failed to connect, on 5560/20/an, authentication timeout
+ 42  1405/07/29 02:29:30  [wireless,info]  6C:3B:6B:5D:71:7B@wlan1: failed to connect, on 5560/20/an, authentication timeout
+ 43  1405/07/29 02:29:44  [wireless,info]  6C:3B:6B:5D:71:7B@wlan1: failed to connect, on 5560/20/an, authentication timeout
+ 44  1405/07/29 02:29:58  [wireless,info]  6C:3B:6B:5D:71:7B@wlan1: failed to connect, on 5560/20/an, authentication timeout
+ 45  1405/07/29 02:30:09  [wireless,info]  6C:3B:6B:5D:71:7B@wlan1 established connection on 5560000, SSID Shadegan-Shabakeh7
+ 46  1405/07/29 02:37:54  [wireless,info]  6C:3B:6B:5D:71:7B@wlan1: lost connection, extensive data loss
+ 47  1405/07/29 02:38:03  [wireless,info]  6C:3B:6B:5D:71:7B@wlan1: failed to connect, on 5560/20/an, authentication timeout
+ 48  1405/07/29 02:38:14  [wireless,info]  6C:3B:6B:5D:71:7B@wlan1 established connection on 5560000, SSID Shadegan-Shabakeh7
+ 49  1405/07/29 16:31:26  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  6C:3B:6B:06:5B:7E  (ether)
+wlan1  6C:3B:6B:06:5B:7F  (wlan)
+--- /ip arp ---
+wlan1  64:D1:54:98:E3:2E  (arp 172.18.24.113)

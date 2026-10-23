@@ -1,0 +1,58 @@
+IP: 172.18.25.38
+Collected at: 2026-10-18T05:56:51.599784+00:00
+source: RouterOS API
+identity: Alvan-Home.Clinet
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=6C:3B:6B:13:54:46
+  2  name=wlan1  type=wlan  running=true  mac=6C:3B:6B:13:54:47
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=Shadegan-Alvan1  band=5ghz-a/n  frequency=5220
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.25.38/28  interface=wlan1  network=172.18.25.32
+  2  address=172.29.198.1/28  interface=ether1  network=172.29.198.0
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.25.33  distance=1
+  2  dst=172.18.25.32/28  gw=wlan1  distance=0
+  3  dst=172.29.198.0/28  gw=ether1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=Router Kh Alvan  address=172.29.198.2  interface=ether1
+  2  identity=MK_Alvan  address=172.18.25.33  interface=wlan1
+  3  identity=Shadegan-Alvan1  address=172.18.25.34  interface=wlan1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/26 09:04:26
+# ساعت دستگاه (خام): 2022-09-13 14:23:44
+# افست اصلاحی (سرور − دستگاه): +35895:10:42
+  1  1405/07/25 08:34:37  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/25 08:34:46  [wireless,info]  6C:3B:6B:4D:73:43@wlan1 established connection on 5745000, SSID Shadegan-Alvan1
+  3  1405/07/25 08:34:47  [interface,info]  ether1 link up (speed 100M, full duplex)
+  4  1405/07/25 08:34:51  [dhcp,info]  dhcp1 assigned 172.29.198.14 to E0:D5:5E:55:A6:E4
+  5  1405/07/25 08:35:04  [dhcp,info]  dhcp1 assigned 172.29.198.13 to 60:CF:84:69:5C:8C
+  6  1405/07/25 11:49:52  [dhcp,info]  dhcp1 deassigned 172.29.198.14 from E0:D5:5E:55:A6:E4
+  7  1405/07/25 11:50:04  [dhcp,info]  dhcp1 deassigned 172.29.198.13 from 60:CF:84:69:5C:8C
+  8  1405/07/26 08:31:51  [dhcp,info]  dhcp1 assigned 172.29.198.13 to 60:CF:84:69:5C:8C
+  9  1405/07/26 08:36:01  [dhcp,info]  dhcp1 assigned 172.29.198.14 to E0:D5:5E:55:A6:E4
+ 10  1405/07/26 09:01:49  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 11  1405/07/26 09:01:52  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 12  1405/07/26 09:04:24  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  6C:3B:6B:13:54:46  (ether)
+wlan1  6C:3B:6B:13:54:47  (wlan)
+--- /ip arp ---
+wlan1  6C:3B:6B:0C:28:84  (arp 172.18.25.33)
+ether1  E0:D5:5E:55:A6:E4  (arp 172.29.198.14)
+ether1  60:CF:84:69:5C:8C  (arp 172.29.198.13)
+ether1  CC:2D:E0:6A:ED:2E  (arp 172.29.198.2)

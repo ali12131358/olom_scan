@@ -1,0 +1,83 @@
+IP: 172.18.16.39
+Collected at: 2026-10-21T13:15:59.267838+00:00
+source: RouterOS API
+identity: Anbar.GhazaDarou.Client
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=false  mac=78:9A:18:C4:D4:D8
+  2  name=wlan1  type=wlan  running=true  mac=78:9A:18:C4:D4:D9
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=Khoramshahr-Shabakeh3  band=5ghz-a/n  frequency=5500
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.16.39/28  interface=wlan1  network=172.18.16.32
+  2  address=172.29.129.97/27  interface=ether1  network=172.29.129.96
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.16.33  distance=1
+  2  dst=172.18.16.32/28  gw=wlan1  distance=0
+  3  dst=172.29.129.96/27  gw=ether1  distance=255
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=R1KH  address=172.18.16.33  interface=wlan1
+  2  identity=Khoramshahr-Shabakeh3  address=172.18.16.34  interface=wlan1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/29 16:28:46
+# ساعت دستگاه (خام): 1970-08-24 07:48:25
+# افست اصلاحی (سرور − دستگاه): +492293:10:21
+  1  1405/07/19 08:40:35  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/19 08:40:42  [wireless,info]  6C:3B:6B:9C:4B:23@wlan1 established connection on 5500000, SSID Khoramshahr-Shabakeh3
+  3  1405/07/19 09:30:09  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+  4  1405/07/19 09:30:10  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+  5  1405/07/19 17:38:23  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+  6  1405/07/19 17:38:23  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+  7  1405/07/20 12:34:27  [interface,info]  ether1 link up (speed 100M, full duplex)
+  8  1405/07/20 13:03:40  [interface,info]  ether1 link down
+  9  1405/07/21 10:51:46  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 10  1405/07/21 10:51:47  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 11  1405/07/22 13:10:38  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 12  1405/07/22 13:10:40  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 13  1405/07/23 12:18:32  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 14  1405/07/23 12:18:33  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 15  1405/07/24 15:15:13  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 16  1405/07/24 15:15:15  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 17  1405/07/24 15:48:49  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 18  1405/07/24 15:48:50  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 19  1405/07/25 09:00:03  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 20  1405/07/25 09:00:59  [interface,info]  ether1 link down
+ 21  1405/07/25 09:01:01  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 22  1405/07/25 09:01:23  [dhcp,info]  dhcp1 assigned 172.29.129.125 to 94:DE:80:4D:E8:3C
+ 23  1405/07/25 09:37:47  [interface,info]  ether1 link down
+ 24  1405/07/25 09:37:48  [interface,info]  ether1 link up (speed 10M, full duplex)
+ 25  1405/07/25 09:46:22  [dhcp,info]  dhcp1 deassigned 172.29.129.125 from 94:DE:80:4D:E8:3C
+ 26  1405/07/25 12:41:17  [interface,info]  ether1 link down
+ 27  1405/07/25 13:03:13  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 28  1405/07/25 13:07:45  [interface,info]  ether1 link down
+ 29  1405/07/26 08:49:55  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 30  1405/07/26 08:49:57  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 31  1405/07/26 08:50:49  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 32  1405/07/26 08:50:51  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 33  1405/07/27 08:11:24  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 34  1405/07/27 08:11:52  [interface,info]  ether1 link down
+ 35  1405/07/27 08:11:54  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 36  1405/07/27 08:12:11  [dhcp,info]  dhcp1 assigned 172.29.129.125 to 94:DE:80:4D:E8:3C
+ 37  1405/07/27 09:26:14  [interface,info]  ether1 link down
+ 38  1405/07/27 09:26:16  [interface,info]  ether1 link up (speed 10M, full duplex)
+ 39  1405/07/27 09:32:11  [dhcp,info]  dhcp1 deassigned 172.29.129.125 from 94:DE:80:4D:E8:3C
+ 40  1405/07/27 13:00:41  [interface,info]  ether1 link down
+ 41  1405/07/29 16:28:45  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  78:9A:18:C4:D4:D8  (ether)
+wlan1  78:9A:18:C4:D4:D9  (wlan)
+--- /ip arp ---
+wlan1  4C:5E:0C:9B:0E:79  (arp 172.18.16.33)

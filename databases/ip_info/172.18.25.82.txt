@@ -1,0 +1,49 @@
+IP: 172.18.25.82
+Collected at: 2026-10-21T13:16:58.408265+00:00
+source: RouterOS API
+identity: Shadegan-Soofieh-AP
+device_type: AP
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=6C:3B:6B:2A:94:A0
+  2  name=wlan1  type=wlan  running=false  mac=6C:3B:6B:2A:94:A1
+  3  name=bridge1  type=bridge  running=true  mac=6C:3B:6B:2A:94:A0
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=ap-bridge  ssid=Shadegan-Soofieh2  band=5ghz-a/n  frequency=5100
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.25.82/29  interface=ether1  network=172.18.25.80
+  2  address=172.18.25.82/29  interface=bridge1  network=172.18.25.80
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.25.81  distance=1
+  2  dst=172.18.25.80/29  gw=bridge1,bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=MK_Soofieh  address=172.18.25.81  interface=ether1,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/29 16:34:58
+# ساعت دستگاه (خام): 1970-03-06 21:05:45
+# افست اصلاحی (سرور − دستگاه): +496383:59:13
+  1  1405/07/24 19:29:16  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/24 19:29:31  [interface,info]  ether1 link up (speed 100M, full duplex)
+  3  1405/07/26 09:02:22  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+  4  1405/07/26 09:02:24  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+  5  1405/07/26 09:04:58  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+  6  1405/07/26 09:05:00  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+  7  1405/07/29 16:34:56  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  6C:3B:6B:2A:94:A0  (ether)
+wlan1  6C:3B:6B:2A:94:A1  (wlan)
+bridge1  6C:3B:6B:2A:94:A0  (bridge)
+--- /ip arp ---
+bridge1  6C:3B:6B:0C:28:90  (arp 172.18.25.81)

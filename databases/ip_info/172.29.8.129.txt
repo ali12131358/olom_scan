@@ -1,0 +1,77 @@
+IP: 172.29.8.129
+Collected at: 2026-10-18T05:59:41.804380+00:00
+source: RouterOS API
+identity: Markaz.Fajr
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=6C:3B:6B:13:53:DC
+  2  name=wlan1  type=wlan  running=true  mac=6C:3B:6B:13:53:DD
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=FRFJ10  band=5ghz-a/n  frequency=5765
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.2.203/29  interface=wlan1  network=172.18.2.200
+  2  address=172.29.8.129/25  interface=ether1  network=172.29.8.128
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.2.201  distance=1
+  2  dst=172.18.2.200/29  gw=wlan1  distance=0
+  3  dst=172.29.8.128/25  gw=ether1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=Router.Fajr  address=172.29.8.131  interface=ether1
+  2  identity=RB.Meydoon.MK  address=172.18.2.201  interface=wlan1
+  3  identity=Foriatha->Fajr10.AP  address=172.18.2.202  interface=wlan1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/26 09:24:13
+# ساعت دستگاه (خام): 1975-04-04 10:18:15
+# افست اصلاحی (سرور − دستگاه): +451795:35:58
+  1  1405/07/24 06:29:24  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/24 06:29:33  [wireless,info]  E4:8D:8C:DB:43:8F@wlan1 established connection on 5765000, SSID FRFJ10
+  3  1405/07/24 06:29:34  [interface,info]  ether1 link up (speed 100M, full duplex)
+  4  1405/07/24 15:17:35  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+  5  1405/07/24 15:17:37  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+  6  1405/07/24 15:45:54  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+  7  1405/07/24 15:45:55  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+  8  1405/07/24 15:50:38  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+  9  1405/07/24 15:50:39  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 10  1405/07/25 05:52:41  [dhcp,info]  dhcp1 deassigned 172.29.8.152 from 42:8D:17:B3:47:DB
+ 11  1405/07/25 08:06:20  [dhcp,info]  dhcp1 assigned 172.29.8.147 to 94:DB:C9:35:04:92
+ 12  1405/07/25 08:48:49  [dhcp,info]  dhcp1 deassigned 172.29.8.145 from 98:DE:D0:27:00:AE
+ 13  1405/07/25 08:48:49  [dhcp,info]  dhcp1 assigned 172.29.8.145 to 98:DE:D0:27:00:AE
+ 14  1405/07/25 08:51:00  [dhcp,info]  dhcp1 deassigned 172.29.8.145 from 98:DE:D0:27:00:AE
+ 15  1405/07/25 08:51:00  [dhcp,info]  dhcp1 assigned 172.29.8.145 to 98:DE:D0:27:00:AE
+ 16  1405/07/25 08:57:16  [dhcp,info]  dhcp1 assigned 172.29.8.152 to 42:8D:17:B3:47:DB
+ 17  1405/07/25 09:44:46  [dhcp,info]  dhcp1 deassigned 172.29.8.141 from 7C:F1:7E:F4:1D:11
+ 18  1405/07/25 09:44:46  [dhcp,info]  dhcp1 assigned 172.29.8.141 to 7C:F1:7E:F4:1D:11
+ 19  1405/07/25 13:22:32  [dhcp,info]  dhcp1 deassigned 172.29.8.140 from 00:17:6F:67:8C:6C
+ 20  1405/07/25 13:22:32  [dhcp,info]  dhcp1 assigned 172.29.8.140 to 00:17:6F:67:8C:6C
+ 21  1405/07/26 08:52:31  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 22  1405/07/26 08:52:33  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 23  1405/07/26 08:55:08  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 24  1405/07/26 08:55:09  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 25  1405/07/26 09:22:37  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 26  1405/07/26 09:22:38  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 27  1405/07/26 09:24:12  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  6C:3B:6B:13:53:DC  (ether)
+wlan1  6C:3B:6B:13:53:DD  (wlan)
+--- /ip arp ---
+wlan1  6C:3B:6B:0A:DD:F9  (arp 172.18.2.201)
+ether1  E4:8D:8C:5F:8D:4C  (arp 172.29.8.131)
+ether1  C8:3A:35:CA:31:92  (arp 172.29.8.146)
+ether1  EC:08:6B:A0:36:6B  (arp 172.29.8.143)
+ether1  98:DE:D0:26:FE:5B  (arp 172.29.8.142)
+ether1  98:DE:D0:27:0B:AB  (arp 172.29.8.148)
+ether1  94:DB:C9:35:04:92  (arp 172.29.8.147)
+ether1  C8:3A:35:C0:00:22  (arp 172.29.8.144)

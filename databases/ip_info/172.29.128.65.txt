@@ -1,0 +1,47 @@
+IP: 172.29.128.65
+Collected at: 2026-10-21T13:18:13.916604+00:00
+source: RouterOS API
+identity: Sheneh.Client
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=E4:8D:8C:6B:43:58
+  2  name=wlan1  type=wlan  running=true  mac=E4:8D:8C:6B:43:59
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station  ssid=Khoramshahr-Shabakeh1  band=5ghz-a/n  frequency=auto
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.16.5/28  interface=wlan1  network=172.18.16.0
+  2  address=172.29.128.65/27  interface=ether1  network=172.29.128.64
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.16.1  distance=1
+  2  dst=172.18.16.0/28  gw=wlan1  distance=0
+  3  dst=172.29.128.64/27  gw=ether1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=R1KH  address=172.18.16.1  interface=wlan1
+  2  identity=Khoramshahr-Shabakeh1  address=172.18.16.2  interface=wlan1
+  3  identity=Mehrzi.Client  address=172.18.16.3  interface=wlan1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/29 16:42:28
+# ساعت دستگاه (خام): 1974-10-06 07:14:45
+# افست اصلاحی (سرور − دستگاه): +456197:57:43
+  1  1405/07/28 15:07:26  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/28 15:07:33  [wireless,info]  6C:3B:6B:8F:3B:DE@wlan1 established connection on 5520000, SSID Khoramshahr-Shabakeh1
+  3  1405/07/28 15:07:35  [interface,info]  ether1 link up (speed 100M, full duplex)
+  4  1405/07/29 16:42:27  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  E4:8D:8C:6B:43:58  (ether)
+wlan1  E4:8D:8C:6B:43:59  (wlan)
+--- /ip arp ---
+wlan1  4C:5E:0C:9B:0E:77  (arp 172.18.16.1)

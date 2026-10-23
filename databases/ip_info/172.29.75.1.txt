@@ -1,0 +1,139 @@
+IP: 172.29.75.1
+Collected at: 2026-10-21T13:18:42.033347+00:00
+source: RouterOS API
+identity: Router.Markaz.ArvandKanar
+device_type: AP
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1-ArvandKanar1  type=ether  running=true  mac=6C:3B:6B:B2:3D:1E
+  2  name=ether2-ArvandKanar2  type=ether  running=true  mac=6C:3B:6B:B2:3D:1F
+  3  name=ether3  type=ether  running=true  mac=6C:3B:6B:B2:3D:20
+  4  name=ether4-AP3  type=ether  running=false  mac=6C:3B:6B:B2:3D:21
+  5  name=ether5-POS  type=ether  running=false  mac=6C:3B:6B:B2:3D:22
+  6  name=ether6-WIFI-MARKAZ  type=ether  running=true  mac=6C:3B:6B:B2:3D:23
+  7  name=ether7-AP4  type=ether  running=true  mac=6C:3B:6B:B2:3D:24
+  8  name=ether8-PTMP-3  type=ether  running=false  mac=6C:3B:6B:B2:3D:25
+  9  name=ether9-AP1  type=ether  running=false  mac=6C:3B:6B:B2:3D:26
+ 10  name=ether10-Input  type=ether  running=true  mac=6C:3B:6B:B2:3D:27
+ 11  name=sfp1  type=ether  running=false  mac=6C:3B:6B:B2:3D:1D
+ 12  name=bridge1  type=bridge  running=true  mac=6C:3B:6B:B2:3D:20
+
+----- wireless -----
+(empty)
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.9.180/29  interface=ether10-Input  network=172.18.9.176
+  2  address=172.18.9.225/28  interface=ether1-ArvandKanar1  network=172.18.9.224
+  3  address=172.18.9.241/29  interface=ether2-ArvandKanar2  network=172.18.9.240
+  4  address=172.29.75.1/25  interface=bridge1  network=172.29.75.0
+  5  address=192.168.0.5/24  interface=bridge1  network=192.168.0.0
+  6  address=172.18.9.249/28  interface=ether1-ArvandKanar1  network=172.18.9.240
+  7  address=192.168.1.5/24  interface=bridge1  network=192.168.1.0
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.9.177  distance=1
+  2  dst=172.18.9.176/29  gw=ether10-Input  distance=0
+  3  dst=172.18.9.224/28  gw=ether1-ArvandKanar1  distance=0
+  4  dst=172.18.9.240/28  gw=ether1-ArvandKanar1  distance=0
+  5  dst=172.18.9.240/29  gw=ether2-ArvandKanar2  distance=0
+  6  dst=172.29.31.80/28  gw=172.18.9.251  distance=1
+  7  dst=172.29.74.32/27  gw=172.18.9.228  distance=1
+  8  dst=172.29.74.64/29  gw=172.18.9.229  distance=1
+  9  dst=172.29.74.72/29  gw=172.18.9.243  distance=1
+ 10  dst=172.29.74.96/27  gw=172.18.9.230  distance=1
+ 11  dst=172.29.74.128/27  gw=172.18.9.231  distance=1
+ 12  dst=172.29.74.160/27  gw=172.18.9.232  distance=1
+ 13  dst=172.29.74.192/27  gw=172.18.9.233  distance=1
+ 14  dst=172.29.74.224/28  gw=172.18.9.243  distance=1
+ 15  dst=172.29.74.240/28  gw=172.18.9.252  distance=1
+ 16  dst=172.29.75.0/25  gw=bridge1  distance=0
+ 17  dst=172.29.75.128/25  gw=172.18.9.252  distance=1
+ 18  dst=192.168.0.0/24  gw=bridge1  distance=0
+ 19  dst=192.168.1.0/24  gw=bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=Abadan-ArvanKenar1  address=172.18.9.226  interface=ether1-ArvandKanar1
+  2  identity=AbooShanakNasar.Client  address=172.18.9.228  interface=ether1-ArvandKanar1
+  3  identity=obuabood.Client  address=172.18.9.229  interface=ether1-ArvandKanar1
+  4  identity=NahrHamid.Client  address=172.18.9.231  interface=ether1-ArvandKanar1
+  5  identity=CL-AbuShanak-Nasar  address=172.18.9.251  interface=ether1-ArvandKanar1
+  6  identity=ShohadayeSaduni.Client  address=172.18.9.252  interface=ether1-ArvandKanar1
+  7  identity=Abadan-ArvanKenar2  address=172.18.9.242  interface=ether2-ArvandKanar2
+  8  identity=22Bahman-MK  address=172.18.9.177  interface=ether10-Input
+  9  identity=PTP-AP-22BAHMAN-ARVAN  address=172.18.9.178  interface=ether10-Input
+ 10  identity=22Bahman->Arvandkenar.Client  address=172.18.9.179  interface=ether10-Input
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/29 16:45:43
+# ساعت دستگاه (خام): 1974-11-27 04:25:17
+# افست اصلاحی (سرور − دستگاه): +454952:50:26
+  1  1405/07/29 09:29:24  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/29 09:29:27  [bridge,info]  "bridge1" mac address changed to 6C:3B:6B:B2:3D:20
+  3  1405/07/29 09:29:28  [interface,info]  ether6-WIFI-MARKAZ link up (speed 100M, full duplex)
+  4  1405/07/29 09:29:29  [interface,info]  ether5-POS link up (speed 100M, full duplex)
+  5  1405/07/29 09:29:29  [interface,info]  ether7-AP4 link up (speed 100M, full duplex)
+  6  1405/07/29 09:29:31  [interface,info]  ether3 link up (speed 100M, full duplex)
+  7  1405/07/29 09:29:32  [interface,info]  ether10-Input link up (speed 100M, full duplex)
+  8  1405/07/29 09:29:33  [interface,info]  ether2-ArvandKanar2 link up (speed 1G, full duplex)
+  9  1405/07/29 09:29:34  [interface,info]  ether2-ArvandKanar2 link down
+ 10  1405/07/29 09:29:35  [interface,info]  ether1-ArvandKanar1 link up (speed 100M, full duplex)
+ 11  1405/07/29 09:29:40  [interface,info]  ether2-ArvandKanar2 link up (speed 1G, full duplex)
+ 12  1405/07/29 09:29:42  [interface,info]  ether2-ArvandKanar2 link down
+ 13  1405/07/29 09:29:44  [interface,info]  ether2-ArvandKanar2 link up (speed 100M, full duplex)
+ 14  1405/07/29 09:32:44  [dhcp,info]  dhcp1 deassigned 172.29.75.52 from 98:DE:D0:26:F9:36
+ 15  1405/07/29 09:32:44  [dhcp,info]  dhcp1 assigned 172.29.75.52 to 98:DE:D0:26:F9:36
+ 16  1405/07/29 09:37:51  [dhcp,info]  dhcp1 deassigned 172.29.75.52 from 98:DE:D0:26:F9:36
+ 17  1405/07/29 09:37:51  [dhcp,info]  dhcp1 assigned 172.29.75.52 to 98:DE:D0:26:F9:36
+ 18  1405/07/29 09:55:49  [dhcp,info]  dhcp1 deassigned 172.29.75.52 from 98:DE:D0:26:F9:36
+ 19  1405/07/29 09:55:49  [dhcp,info]  dhcp1 assigned 172.29.75.52 to 98:DE:D0:26:F9:36
+ 20  1405/07/29 10:09:49  [dhcp,info]  dhcp1 deassigned 172.29.75.52 from 98:DE:D0:26:F9:36
+ 21  1405/07/29 10:09:49  [dhcp,info]  dhcp1 assigned 172.29.75.52 to 98:DE:D0:26:F9:36
+ 22  1405/07/29 10:14:06  [dhcp,info]  dhcp1 deassigned 172.29.75.52 from 98:DE:D0:26:F9:36
+ 23  1405/07/29 10:14:06  [dhcp,info]  dhcp1 assigned 172.29.75.52 to 98:DE:D0:26:F9:36
+ 24  1405/07/29 10:26:11  [dhcp,info]  dhcp1 deassigned 172.29.75.52 from 98:DE:D0:26:F9:36
+ 25  1405/07/29 10:26:11  [dhcp,info]  dhcp1 assigned 172.29.75.52 to 98:DE:D0:26:F9:36
+ 26  1405/07/29 10:31:46  [dhcp,info]  dhcp1 deassigned 172.29.75.52 from 98:DE:D0:26:F9:36
+ 27  1405/07/29 10:31:50  [dhcp,info]  dhcp1 assigned 172.29.75.52 to 98:DE:D0:26:F9:36
+ 28  1405/07/29 12:36:28  [dhcp,info]  dhcp1 deassigned 172.29.75.35 from 34:F3:9A:FE:D8:B9
+ 29  1405/07/29 12:38:28  [interface,info]  ether5-POS link down
+ 30  1405/07/29 16:40:02  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 31  1405/07/29 16:40:04  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 32  1405/07/29 16:40:47  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 33  1405/07/29 16:40:48  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 34  1405/07/29 16:40:56  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 35  1405/07/29 16:40:58  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 36  1405/07/29 16:41:00  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 37  1405/07/29 16:41:02  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 38  1405/07/29 16:45:42  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1-ArvandKanar1  6C:3B:6B:B2:3D:1E  (ether)
+ether2-ArvandKanar2  6C:3B:6B:B2:3D:1F  (ether)
+ether3  6C:3B:6B:B2:3D:20  (ether)
+ether4-AP3  6C:3B:6B:B2:3D:21  (ether)
+ether5-POS  6C:3B:6B:B2:3D:22  (ether)
+ether6-WIFI-MARKAZ  6C:3B:6B:B2:3D:23  (ether)
+ether7-AP4  6C:3B:6B:B2:3D:24  (ether)
+ether8-PTMP-3  6C:3B:6B:B2:3D:25  (ether)
+ether9-AP1  6C:3B:6B:B2:3D:26  (ether)
+ether10-Input  6C:3B:6B:B2:3D:27  (ether)
+sfp1  6C:3B:6B:B2:3D:1D  (ether)
+bridge1  6C:3B:6B:B2:3D:20  (bridge)
+--- /ip arp ---
+ether1-ArvandKanar1  6E:3B:6B:94:8C:48  (arp 172.18.9.226)
+ether1-ArvandKanar1  CC:2D:E0:11:36:F7  (arp 172.18.9.229)
+ether2-ArvandKanar2  6C:3B:6B:AB:D2:9E  (arp 172.18.9.242)
+ether1-ArvandKanar1  6C:3B:6B:AB:D2:0A  (arp 172.18.9.228)
+ether1-ArvandKanar1  6C:3B:6B:34:02:3D  (arp 172.18.9.231)
+ether1-ArvandKanar1  6C:3B:6B:91:10:04  (arp 172.18.9.230)
+ether10-Input  E4:8D:8C:0E:6E:43  (arp 172.18.9.177)
+ether1-ArvandKanar1  6C:3B:6B:91:10:48  (arp 172.18.9.252)
+bridge1  00:02:65:15:E0:E9  (arp 172.29.75.23)
+bridge1  98:DE:D0:2E:D8:06  (arp 172.29.75.2)
+ether1-ArvandKanar1  48:A9:8A:5B:59:FA  (arp 172.18.9.251)
+ether1-ArvandKanar1  6E:3B:6B:94:8C:48  (arp 172.18.9.250)

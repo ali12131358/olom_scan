@@ -1,0 +1,49 @@
+IP: 172.18.9.231
+Collected at: 2026-10-21T13:17:59.662102+00:00
+source: RouterOS API
+identity: NahrHamid.Client
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=6C:3B:6B:34:02:3C
+  2  name=wlan1  type=wlan  running=true  mac=6C:3B:6B:34:02:3D
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=Abadan-ArvanKenar1  band=5ghz-a/n  frequency=5260
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.29.74.129/27  interface=ether1  network=172.29.74.128
+  2  address=172.18.9.231/28  interface=wlan1  network=172.18.9.224
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.9.225  distance=1
+  2  dst=172.18.9.224/28  gw=wlan1  distance=0
+  3  dst=172.29.74.128/27  gw=ether1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=Router.Markaz.ArvandKanar  address=172.18.9.225  interface=wlan1
+  2  identity=Abadan-ArvanKenar1  address=172.18.9.226  interface=wlan1
+  3  identity=ShohadayeSaduni.Client  address=172.18.9.252  interface=wlan1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/29 16:40:56
+# ساعت دستگاه (خام): 1972-05-04 07:14:06
+# افست اصلاحی (سرور − دستگاه): +477437:56:50
+  1  1405/07/28 12:55:36  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/28 12:55:47  [interface,info]  ether1 link up (speed 100M, full duplex)
+  3  1405/07/28 12:56:29  [wireless,info]  6C:3B:6B:94:8C:48@wlan1 established connection on 5860000, SSID Abadan-ArvanKenar1
+  4  1405/07/29 09:29:00  [wireless,info]  6C:3B:6B:94:8C:48@wlan1: lost connection, extensive data loss
+  5  1405/07/29 09:29:51  [wireless,info]  6C:3B:6B:94:8C:48@wlan1 established connection on 5860000, SSID Abadan-ArvanKenar1
+  6  1405/07/29 16:40:54  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  6C:3B:6B:34:02:3C  (ether)
+wlan1  6C:3B:6B:34:02:3D  (wlan)
+--- /ip arp ---
+wlan1  6C:3B:6B:B2:3D:1E  (arp 172.18.9.225)

@@ -1,0 +1,73 @@
+IP: 172.29.198.2
+Collected at: 2026-10-18T05:59:10.450640+00:00
+source: RouterOS API
+identity: Router Kh Alvan
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=CC:2D:E0:6A:ED:2E
+  2  name=ether2  type=ether  running=true  mac=CC:2D:E0:6A:ED:2F
+  3  name=ether3  type=ether  running=true  mac=CC:2D:E0:6A:ED:30
+  4  name=ether4  type=ether  running=false  mac=CC:2D:E0:6A:ED:31
+  5  name=pwr-line1  type=ether  running=false  mac=CC:2D:E0:6A:ED:31
+  6  name=wlan1  type=wlan  running=false  mac=CC:2D:E0:6A:ED:32
+  7  name=bridge1  type=bridge  running=true  mac=CC:2D:E0:6A:ED:2E
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station  ssid=MikroTik  band=2ghz-b/g  frequency=2412
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.29.198.2/27  interface=bridge1  network=172.29.198.0
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.29.198.1  distance=1
+  2  dst=172.29.198.0/27  gw=bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=Alvan-Home.Clinet  address=172.29.198.1  interface=ether1,bridge1
+  2  identity=-  address=-  interface=ether2,bridge1
+  3  identity=-  address=-  interface=ether3,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/26 09:20:23
+# ساعت دستگاه (خام): 1974-07-15 18:30:36
+# افست اصلاحی (سرور − دستگاه): +458099:19:47
+  1  1405/07/25 08:34:32  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/25 08:34:34  [bridge,info]  "bridge1" mac address changed to CC:2D:E0:6A:ED:2E
+  3  1405/07/25 08:34:36  [interface,info]  ether2 link up (speed 100M, full duplex)
+  4  1405/07/25 08:34:36  [interface,info]  ether3 link up (speed 100M, full duplex)
+  5  1405/07/25 08:34:46  [interface,info]  ether1 link up (speed 100M, full duplex)
+  6  1405/07/25 08:34:46  [interface,info]  ether2 link down
+  7  1405/07/25 08:34:47  [interface,info]  ether2 link up (speed 100M, full duplex)
+  8  1405/07/25 08:34:48  [interface,info]  ether3 link down
+  9  1405/07/25 08:34:49  [interface,info]  ether3 link up (speed 100M, full duplex)
+ 10  1405/07/25 08:34:57  [interface,info]  ether3 link down
+ 11  1405/07/25 08:34:59  [interface,info]  ether3 link up (speed 100M, full duplex)
+ 12  1405/07/25 11:29:09  [interface,info]  ether3 link down
+ 13  1405/07/25 11:29:11  [interface,info]  ether3 link up (speed 10M, full duplex)
+ 14  1405/07/26 08:31:37  [interface,info]  ether3 link down
+ 15  1405/07/26 08:31:38  [interface,info]  ether3 link up (speed 100M, full duplex)
+ 16  1405/07/26 08:31:45  [interface,info]  ether3 link down
+ 17  1405/07/26 08:31:46  [interface,info]  ether3 link up (speed 100M, full duplex)
+ 18  1405/07/26 08:35:56  [interface,info]  ether2 link down
+ 19  1405/07/26 08:35:57  [interface,info]  ether2 link up (speed 100M, full duplex)
+ 20  1405/07/26 09:18:26  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 21  1405/07/26 09:18:28  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 22  1405/07/26 09:20:21  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  CC:2D:E0:6A:ED:2E  (ether)
+ether2  CC:2D:E0:6A:ED:2F  (ether)
+ether3  CC:2D:E0:6A:ED:30  (ether)
+ether4  CC:2D:E0:6A:ED:31  (ether)
+pwr-line1  CC:2D:E0:6A:ED:31  (ether)
+wlan1  CC:2D:E0:6A:ED:32  (wlan)
+bridge1  CC:2D:E0:6A:ED:2E  (bridge)
+--- /ip arp ---
+bridge1  6C:3B:6B:13:54:46  (arp 172.29.198.1)

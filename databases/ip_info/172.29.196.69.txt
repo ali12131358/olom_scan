@@ -1,0 +1,55 @@
+IP: 172.29.196.69
+Collected at: 2026-10-21T13:18:24.868904+00:00
+source: RouterOS API
+identity: Misaghi
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1-local  type=ether  running=true  mac=E4:8D:8C:DB:8A:88
+  2  name=wlan1-gateway  type=wlan  running=true  mac=E4:8D:8C:DB:8A:89
+  3  name=bridge1  type=bridge  running=true  mac=E4:8D:8C:DB:8A:89
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1-gateway  mode=station-bridge  ssid=AP-MISAGHI  band=5ghz-a/n  frequency=5600
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.29.202.129/28  interface=ether1-local  network=172.29.202.128
+  2  address=172.29.196.69/27  interface=wlan1-gateway  network=172.29.196.64
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.29.196.65  distance=1
+  2  dst=172.29.196.64/27  gw=bridge1  distance=0
+
+----- neighbors -----
+(empty)
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/29 16:43:24
+# ساعت دستگاه (خام): 2026-08-06 00:21:34
+# افست اصلاحی (سرور − دستگاه): +1836:51:50
+  1  1405/07/24 16:52:20  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/24 16:52:21  [bridge,info]  "bridge1" mac address changed to E4:8D:8C:DB:8A:89
+  3  1405/07/24 16:52:27  [wireless,info]  2E:C8:1B:2F:03:1E@wlan1-gateway established connection on 5600000, SSID AP-MISAGHI
+  4  1405/07/24 16:52:27  [bridge,info]  hardware offloading activated on bridge "bridge1" ports: ether1-local
+  5  1405/07/24 16:52:29  [interface,info]  ether1-local link up (speed 100M, full duplex)
+  6  1405/07/26 09:17:54  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+  7  1405/07/26 09:17:56  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+  8  1405/07/26 09:19:48  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+  9  1405/07/26 09:19:49  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 10  1405/07/26 10:33:46  [wireless,info]  2E:C8:1B:2F:03:1E@wlan1-gateway: lost connection, no beacons received
+ 11  1405/07/26 10:33:52  [wireless,info]  2E:C8:1B:2F:03:1E@wlan1-gateway established connection on 5600000, SSID AP-MISAGHI
+ 12  1405/07/26 12:51:23  [wireless,info]  2E:C8:1B:2F:03:1E@wlan1-gateway: lost connection, no beacons received
+ 13  1405/07/26 12:51:29  [wireless,info]  2E:C8:1B:2F:03:1E@wlan1-gateway established connection on 5600000, SSID AP-MISAGHI
+ 14  1405/07/29 16:43:23  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1-local  E4:8D:8C:DB:8A:88  (ether)
+wlan1-gateway  E4:8D:8C:DB:8A:89  (wlan)
+bridge1  E4:8D:8C:DB:8A:89  (bridge)
+--- /ip arp ---
+bridge1  E4:8D:8C:12:2D:E4  (arp 172.29.196.65)

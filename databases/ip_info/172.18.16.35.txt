@@ -1,0 +1,51 @@
+IP: 172.18.16.35
+Collected at: 2026-10-11T06:39:29.747780+00:00
+source: RouterOS API
+identity: HafarSharghi.Client
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=6C:3B:6B:10:AF:D6
+  2  name=wlan1  type=wlan  running=true  mac=6C:3B:6B:10:AF:D7
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station  ssid=Khoramshahr-Shabakeh3  band=5ghz-a/n  frequency=5280
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.16.35/28  interface=wlan1  network=172.18.16.32
+  2  address=172.29.129.1/27  interface=ether1  network=172.29.129.0
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.16.33  distance=1
+  2  dst=172.18.16.32/28  gw=wlan1  distance=0
+  3  dst=172.29.129.0/27  gw=ether1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=-  address=-  interface=ether1
+  2  identity=R1KH  address=172.18.16.33  interface=wlan1
+  3  identity=Khoramshahr-Shabakeh3  address=172.18.16.34  interface=wlan1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/19 09:32:46
+# ساعت دستگاه (خام): 1970-02-21 09:11:43
+# افست اصلاحی (سرور − دستگاه): +496460:51:03
+  1  1405/07/19 08:17:57  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/19 08:17:59  [interface,info]  ether1 link up (speed 100M, full duplex)
+  3  1405/07/19 08:29:18  [dhcp,info]  dhcp1 assigned 172.29.129.30 to 74:D4:35:20:11:E4
+  4  1405/07/19 08:42:52  [wireless,info]  6C:3B:6B:9C:4B:23@wlan1 established connection on 5500000, SSID Khoramshahr-Shabakeh3
+  5  1405/07/19 08:56:42  [dhcp,info]  dhcp1 assigned 172.29.129.29 to B4:2E:99:22:57:1B
+  6  1405/07/19 09:32:44  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  6C:3B:6B:10:AF:D6  (ether)
+wlan1  6C:3B:6B:10:AF:D7  (wlan)
+--- /ip arp ---
+ether1  B4:2E:99:22:57:1B  (arp 172.29.129.29)
+wlan1  4C:5E:0C:9B:0E:79  (arp 172.18.16.33)
+ether1  74:D4:35:20:11:E4  (arp 172.29.129.30)

@@ -1,0 +1,57 @@
+IP: 172.18.4.72
+Collected at: 2026-10-21T13:17:31.473308+00:00
+source: RouterOS API
+identity: AlboEbadi
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=2C:C8:1B:AF:9E:10
+  2  name=wlan1  type=wlan  running=true  mac=2C:C8:1B:AF:9E:11
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=AbadanSetad-Zol30  band=5ghz-a/n  frequency=5600
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.4.72/27  interface=wlan1  network=172.18.4.64
+  2  address=172.29.64.33/27  interface=ether1  network=172.29.64.32
+  3  address=192.168.0.5/24  interface=ether1  network=192.168.0.0
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.4.65  distance=1
+  2  dst=172.18.4.64/27  gw=wlan1  distance=0
+  3  dst=172.29.64.32/27  gw=ether1  distance=0
+  4  dst=192.168.0.0/24  gw=ether1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=AbadanSetad-Zol30.AP  address=172.18.4.66  interface=wlan1
+  2  identity=Chamran  address=172.18.4.67  interface=wlan1
+  3  identity=Farabi  address=172.18.4.69  interface=wlan1
+  4  identity=EbneSina.Client  address=172.18.4.73  interface=wlan1
+  5  identity=Mob  address=172.18.4.75  interface=wlan1
+  6  identity=ParsaRasaneh-PTP-Sonati  address=172.18.4.76  interface=wlan1
+  7  identity=Kanani.Home.Client  address=172.18.4.78  interface=wlan1
+  8  identity=SW-Wireless3.test.local  address=172.19.1.51  interface=wlan1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/29 16:38:24
+# ساعت دستگاه (خام): 1971-04-18 01:28:08
+# افست اصلاحی (سرور − دستگاه): +486611:40:16
+  1  1405/07/28 15:09:57  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/28 15:10:06  [wireless,info]  48:8F:5A:1C:30:E7@wlan1 established connection on 5300000, SSID AbadanSetad-Zol30
+  3  1405/07/28 15:10:07  [interface,info]  ether1 link up (speed 100M, full duplex)
+  4  1405/07/29 08:40:07  [dhcp,info]  dhcp1 assigned 172.29.64.35 to 94:DE:80:4C:2F:8F
+  5  1405/07/29 11:35:06  [dhcp,info]  dhcp1 deassigned 172.29.64.35 from 94:DE:80:4C:2F:8F
+  6  1405/07/29 16:38:22  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  2C:C8:1B:AF:9E:10  (ether)
+wlan1  2C:C8:1B:AF:9E:11  (wlan)
+--- /ip arp ---
+wlan1  E4:8D:8C:71:6E:BB  (arp 172.18.4.76)
+wlan1  10:8C:CF:33:51:5F  (arp 172.18.4.65)

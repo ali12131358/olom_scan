@@ -1,0 +1,48 @@
+IP: 172.18.4.59
+Collected at: 2026-10-21T13:17:29.237819+00:00
+source: RouterOS API
+identity: MarkazLine15.Client
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=CC:2D:E0:86:6C:FC
+  2  name=wlan1  type=wlan  running=true  mac=CC:2D:E0:86:6C:FD
+  3  name=bridge1  type=bridge  running=true  mac=CC:2D:E0:86:6C:FC
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=MarkazLine15  band=5ghz-a/n  frequency=5260
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.4.59/29  interface=wlan1  network=172.18.4.56
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.4.57  distance=1
+  2  dst=172.18.4.56/29  gw=bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=ShahidSadeghiyan- AP  address=172.18.4.58  interface=wlan1,bridge1
+  2  identity=SW-Wireless3.test.local  address=172.19.1.51  interface=wlan1,bridge1
+  3  identity=R1B  address=172.18.4.60  interface=ether1,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/29 16:38:13
+# ساعت دستگاه (خام): 1975-10-03 14:48:22
+# افست اصلاحی (سرور − دستگاه): +447502:19:51
+  1  1405/07/27 08:39:47  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/27 08:39:47  [bridge,info]  "bridge1" mac address changed to CC:2D:E0:86:6C:FC
+  3  1405/07/27 08:39:49  [interface,info]  ether1 link up (speed 100M, full duplex)
+  4  1405/07/27 08:39:54  [wireless,info]  B8:69:F4:D1:EE:3D@wlan1 established connection on 5260000, SSID MarkazLine15
+  5  1405/07/29 16:38:12  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  CC:2D:E0:86:6C:FC  (ether)
+wlan1  CC:2D:E0:86:6C:FD  (wlan)
+bridge1  CC:2D:E0:86:6C:FC  (bridge)
+--- /ip arp ---
+bridge1  10:8C:CF:33:51:5E  (arp 172.18.4.57)

@@ -1,0 +1,62 @@
+IP: 172.18.26.50
+Collected at: 2026-10-21T13:17:05.845223+00:00
+source: RouterOS API
+identity: Darkhovain_Matkaz_behdasht_ap
+device_type: AP
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=18:FD:74:18:BD:15
+  2  name=wlan1  type=wlan  running=true  mac=18:FD:74:18:BD:16
+  3  name=bridge  type=bridge  running=true  mac=18:FD:74:18:BD:15
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=ap-bridge  ssid=Shadegan-Darkhovein3  band=5ghz-a/n  frequency=5720
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.26.50/29  interface=ether1  network=172.18.26.48
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.26.49  distance=1
+  2  dst=172.18.26.48/29  gw=bridge  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=MK_Darkhovein  address=172.18.26.49  interface=ether1,bridge
+  2  identity=markaz-kofeyshe  address=172.18.26.51  interface=wlan1,bridge
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/29 16:35:36
+# ساعت دستگاه (خام): 1971-09-22 23:32:56
+# افست اصلاحی (سرور − دستگاه): +482821:32:40
+  1  1405/07/27 17:01:56  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/27 17:02:04  [wireless,info]  D4:01:C3:C5:3A:FF@wlan1: connected, signal strength -58, wants bridge
+  3  1405/07/27 17:02:05  [interface,info]  ether1 link up (speed 1G, full duplex)
+  4  1405/07/27 17:02:07  [wireless,info]  64:D1:54:83:75:C3@wlan1: connected, signal strength -59, wants bridge
+  5  1405/07/28 07:12:12  [wireless,info]  64:D1:54:83:75:C3@wlan1: disconnected, extensive data loss
+  6  1405/07/28 07:12:13  [wireless,info]  D4:01:C3:C5:3A:FF@wlan1: disconnected, extensive data loss
+  7  1405/07/28 07:17:46  [wireless,info]  64:D1:54:83:75:C3@wlan1: connected, signal strength -59, wants bridge
+  8  1405/07/28 07:18:28  [wireless,info]  D4:01:C3:C5:3A:FF@wlan1: connected, signal strength -59, wants bridge
+  9  1405/07/28 12:11:38  [wireless,info]  64:D1:54:83:75:C3@wlan1: disconnected, extensive data loss
+ 10  1405/07/29 07:12:20  [wireless,info]  D4:01:C3:C5:3A:FF@wlan1: disconnected, extensive data loss
+ 11  1405/07/29 07:22:59  [wireless,info]  D4:01:C3:C5:3A:FF@wlan1: connected, signal strength -58, wants bridge
+ 12  1405/07/29 08:06:41  [wireless,info]  D4:01:C3:C5:3A:FF@wlan1: disconnected, extensive data loss
+ 13  1405/07/29 08:16:20  [wireless,info]  D4:01:C3:C5:3A:FF@wlan1: connected, signal strength -57, wants bridge
+ 14  1405/07/29 09:05:22  [wireless,info]  64:D1:54:83:75:C3@wlan1: connected, signal strength -61, wants bridge
+ 15  1405/07/29 11:28:51  [wireless,info]  64:D1:54:83:75:C3@wlan1: disconnected, extensive data loss
+ 16  1405/07/29 11:49:12  [wireless,info]  F2:0A:16:4C:7C:D7@wlan1: connected, signal strength -86
+ 17  1405/07/29 11:49:12  [wireless,info]  F2:0A:16:4C:7C:D7@wlan1: disconnected, received deauth: sending station leaving (3)
+ 18  1405/07/29 11:49:13  [wireless,info]  F2:0A:16:4C:7C:D7@wlan1: connected, signal strength -86
+ 19  1405/07/29 11:49:15  [wireless,info]  F2:0A:16:4C:7C:D7@wlan1: disconnected, received deauth: sending station leaving (3)
+ 20  1405/07/29 16:35:35  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  18:FD:74:18:BD:15  (ether)
+wlan1  18:FD:74:18:BD:16  (wlan)
+bridge  18:FD:74:18:BD:15  (bridge)
+--- /ip arp ---
+bridge  E4:8D:8C:0D:18:BA  (arp 172.18.26.49)

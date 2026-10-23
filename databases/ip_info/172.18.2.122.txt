@@ -1,0 +1,65 @@
+IP: 172.18.2.122
+Collected at: 2026-10-21T13:16:14.513001+00:00
+source: RouterOS API
+identity: ShabakehBehdasht->Sotoongar.AP
+device_type: AP
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=E4:8D:8C:56:7F:FC
+  2  name=wlan1  type=wlan  running=true  mac=E4:8D:8C:56:7F:FD
+  3  name=bridge1  type=bridge  running=true  mac=E4:8D:8C:56:7F:FC
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=bridge  ssid=SHSTNGR  band=5ghz-onlyn  frequency=5280
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.2.122/29  interface=ether1  network=172.18.2.120
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.2.121  distance=1
+  2  dst=172.18.2.120/29  gw=bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=R1KH  address=172.18.2.121  interface=ether1,bridge1
+  2  identity=ShabakehBehdasht->Sotoongar.CL  address=172.18.2.123  interface=wlan1,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/29 16:29:22
+# ساعت دستگاه (خام): 1975-05-31 15:48:59
+# افست اصلاحی (سرور − دستگاه): +450501:10:23
+  1  1405/07/19 08:39:49  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/19 08:39:50  [bridge,info]  "bridge1" mac address changed to E4:8D:8C:56:7F:FC
+  3  1405/07/19 08:39:52  [interface,info]  ether1 link up (speed 100M, full duplex)
+  4  1405/07/19 08:40:01  [wireless,info]  48:A9:8A:A2:F2:24@wlan1: connected, signal strength -57, wants bridge
+  5  1405/07/19 09:31:17  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+  6  1405/07/19 09:31:19  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+  7  1405/07/19 17:38:28  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+  8  1405/07/19 17:38:28  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+  9  1405/07/21 10:53:07  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 10  1405/07/21 10:53:08  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 11  1405/07/22 13:11:37  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 12  1405/07/22 13:11:39  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 13  1405/07/23 12:19:39  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 14  1405/07/23 12:19:40  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 15  1405/07/24 15:16:21  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 16  1405/07/24 15:16:23  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 17  1405/07/24 15:49:47  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 18  1405/07/24 15:49:48  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 19  1405/07/26 08:51:18  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 20  1405/07/26 08:51:20  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 21  1405/07/26 08:53:51  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 22  1405/07/26 08:53:53  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 23  1405/07/29 16:29:20  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  E4:8D:8C:56:7F:FC  (ether)
+wlan1  E4:8D:8C:56:7F:FD  (wlan)
+bridge1  E4:8D:8C:56:7F:FC  (bridge)
+--- /ip arp ---
+bridge1  4C:5E:0C:9B:0E:70  (arp 172.18.2.121)

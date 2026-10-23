@@ -1,0 +1,76 @@
+IP: 172.29.14.130
+Collected at: 2026-10-21T13:18:15.839885+00:00
+source: RouterOS API
+identity: RB-MK-Behbahanian
+device_type: Router
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=74:4D:28:E9:39:FA
+  2  name=ether2  type=ether  running=false  mac=74:4D:28:E9:39:FB
+  3  name=ether3  type=ether  running=false  mac=74:4D:28:E9:39:FC
+  4  name=ether4  type=ether  running=true  mac=74:4D:28:E9:39:FD
+  5  name=ether5  type=ether  running=false  mac=74:4D:28:E9:39:FE
+  6  name=ether6  type=ether  running=false  mac=74:4D:28:E9:39:FF
+  7  name=ether7  type=ether  running=false  mac=74:4D:28:E9:3A:00
+  8  name=ether8  type=ether  running=true  mac=74:4D:28:E9:3A:01
+  9  name=ether9  type=ether  running=false  mac=74:4D:28:E9:3A:02
+ 10  name=ether10  type=ether  running=false  mac=74:4D:28:E9:3A:03
+ 11  name=sfp1  type=ether  running=false  mac=74:4D:28:E9:39:F9
+ 12  name=bridge1  type=bridge  running=true  mac=74:4D:28:E9:39:FA
+
+----- wireless -----
+(empty)
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.29.14.130/25  interface=ether1  network=172.29.14.128
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.29.14.129  distance=1
+  2  dst=172.29.14.128/25  gw=bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=CL-BEHBAHANIYAN  address=172.29.14.129  interface=ether1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/29 16:42:45
+# ساعت دستگاه (خام): 1975-08-11 04:41:15
+# افست اصلاحی (سرور − دستگاه): +448784:31:30
+  1  1405/07/28 12:00:50  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/28 12:00:53  [bridge,info]  "bridge1" mac address changed to 74:4D:28:E9:39:FA
+  3  1405/07/28 12:00:53  [bridge,info]  hardware offloading activated on bridge "bridge1" ports: ether1
+  4  1405/07/28 12:00:53  [bridge,info]  hardware offloading activated on bridge "bridge1" ports: ether2
+  5  1405/07/28 12:00:53  [bridge,info]  hardware offloading activated on bridge "bridge1" ports: ether3
+  6  1405/07/28 12:00:53  [bridge,info]  hardware offloading activated on bridge "bridge1" ports: ether4
+  7  1405/07/28 12:00:53  [bridge,info]  hardware offloading activated on bridge "bridge1" ports: ether5
+  8  1405/07/28 12:00:53  [bridge,info]  hardware offloading activated on bridge "bridge1" ports: ether6
+  9  1405/07/28 12:00:53  [bridge,info]  hardware offloading activated on bridge "bridge1" ports: ether7
+ 10  1405/07/28 12:00:53  [bridge,info]  hardware offloading activated on bridge "bridge1" ports: ether8
+ 11  1405/07/28 12:00:53  [bridge,info]  hardware offloading activated on bridge "bridge1" ports: ether9
+ 12  1405/07/28 12:00:53  [bridge,info]  hardware offloading activated on bridge "bridge1" ports: ether10
+ 13  1405/07/28 12:00:55  [interface,info]  ether4 link up (speed 100M, full duplex)
+ 14  1405/07/28 12:00:55  [interface,info]  ether8 link up (speed 100M, full duplex)
+ 15  1405/07/28 12:00:56  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 16  1405/07/28 12:00:56  [interface,info]  ether8 link down
+ 17  1405/07/28 12:00:57  [interface,info]  ether8 link up (speed 100M, full duplex)
+ 18  1405/07/29 16:42:43  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  74:4D:28:E9:39:FA  (ether)
+ether2  74:4D:28:E9:39:FB  (ether)
+ether3  74:4D:28:E9:39:FC  (ether)
+ether4  74:4D:28:E9:39:FD  (ether)
+ether5  74:4D:28:E9:39:FE  (ether)
+ether6  74:4D:28:E9:39:FF  (ether)
+ether7  74:4D:28:E9:3A:00  (ether)
+ether8  74:4D:28:E9:3A:01  (ether)
+ether9  74:4D:28:E9:3A:02  (ether)
+ether10  74:4D:28:E9:3A:03  (ether)
+sfp1  74:4D:28:E9:39:F9  (ether)
+bridge1  74:4D:28:E9:39:FA  (bridge)
+--- /ip arp ---
+bridge1  E4:8D:8C:DB:C0:34  (arp 172.29.14.129)

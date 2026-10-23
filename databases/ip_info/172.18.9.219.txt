@@ -1,0 +1,70 @@
+IP: 172.18.9.219
+Collected at: 2026-10-21T13:17:57.732813+00:00
+source: RouterOS API
+identity: valiasr-kut-shanuf-CL
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=6C:3B:6B:10:B1:A4
+  2  name=wlan1  type=wlan  running=true  mac=6C:3B:6B:10:B1:A5
+  3  name=bridge1  type=bridge  running=true  mac=6C:3B:6B:10:B1:A4
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=Abadan-22Bahman3  band=5ghz-a/n  frequency=5500
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.9.219/29  interface=wlan1  network=172.18.9.216
+  2  address=172.29.72.129/25  interface=ether1  network=172.29.72.128
+  3  address=172.29.72.129/25  interface=bridge1  network=172.29.72.128
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.9.217  distance=1
+  2  dst=172.18.9.216/29  gw=wlan1  distance=0
+  3  dst=172.29.72.128/25  gw=bridge1,bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=22bahman_kotshanoof_AP  address=172.18.9.218  interface=wlan1
+  2  identity=22Bahman-MK  address=172.29.72.1  interface=wlan1
+  3  identity=Switch  address=172.29.72.149  interface=ether1,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/29 16:40:46
+# ساعت دستگاه (خام): 1971-01-09 04:53:53
+# افست اصلاحی (سرور − دستگاه): +488984:16:53
+  1  1405/07/29 11:32:54  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/29 11:32:57  [wireless,info]  D4:01:C3:13:28:DC@wlan1 established connection on 5380000, SSID Abadan-22Bahman3
+  3  1405/07/29 11:33:02  [bridge,info]  "bridge1" mac address changed to 6C:3B:6B:10:B1:A4
+  4  1405/07/29 11:33:02  [bridge,info]  hardware offloading activated on bridge "bridge1" ports: ether1
+  5  1405/07/29 11:38:05  [dhcp,info]  dhcp1 deassigned 172.29.72.151 from A0:36:BC:2C:E9:70
+  6  1405/07/29 11:38:24  [dhcp,info]  dhcp1 deassigned 172.29.72.135 from 60:CF:84:69:62:F2
+  7  1405/07/29 11:38:26  [interface,info]  ether1 link up (speed 100M, full duplex)
+  8  1405/07/29 11:38:31  [dhcp,info]  dhcp1 deassigned 172.29.72.149 from 84:8A:8D:86:9F:C0
+  9  1405/07/29 11:38:31  [dhcp,info]  dhcp1 assigned 172.29.72.149 to 84:8A:8D:86:9F:C0
+ 10  1405/07/29 11:39:03  [dhcp,info]  dhcp1 deassigned 172.29.72.138 from 1C:6F:65:7B:F7:4D
+ 11  1405/07/29 11:39:03  [dhcp,info]  dhcp1 assigned 172.29.72.138 to 1C:6F:65:7B:F7:4D
+ 12  1405/07/29 11:39:03  [dhcp,info]  dhcp1 deassigned 172.29.72.148 from F0:2F:74:23:C2:1E
+ 13  1405/07/29 11:39:03  [dhcp,info]  dhcp1 assigned 172.29.72.148 to F0:2F:74:23:C2:1E
+ 14  1405/07/29 11:39:07  [dhcp,info]  dhcp1 deassigned 172.29.72.137 from 00:17:6F:39:53:B3
+ 15  1405/07/29 11:39:07  [dhcp,info]  dhcp1 assigned 172.29.72.137 to 00:17:6F:39:53:B3
+ 16  1405/07/29 11:39:09  [dhcp,info]  dhcp1 deassigned 172.29.72.140 from 60:CF:84:69:25:E7
+ 17  1405/07/29 11:39:09  [dhcp,info]  dhcp1 assigned 172.29.72.140 to 60:CF:84:69:25:E7
+ 18  1405/07/29 11:39:29  [dhcp,info]  dhcp1 assigned 172.29.72.135 to 60:CF:84:69:62:F2
+ 19  1405/07/29 11:59:03  [dhcp,info]  dhcp1 deassigned 172.29.72.138 from 1C:6F:65:7B:F7:4D
+ 20  1405/07/29 12:04:29  [dhcp,info]  dhcp1 deassigned 172.29.72.135 from 60:CF:84:69:62:F2
+ 21  1405/07/29 14:34:03  [dhcp,info]  dhcp1 deassigned 172.29.72.148 from F0:2F:74:23:C2:1E
+ 22  1405/07/29 16:40:44  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  6C:3B:6B:10:B1:A4  (ether)
+wlan1  6C:3B:6B:10:B1:A5  (wlan)
+bridge1  6C:3B:6B:10:B1:A4  (bridge)
+--- /ip arp ---
+wlan1  E4:8D:8C:0E:6E:42  (arp 172.18.9.217)
+bridge1  84:8A:8D:86:9F:C0  (arp 172.29.72.149)
+bridge1  60:CF:84:69:25:E7  (arp 172.29.72.140)

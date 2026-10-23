@@ -1,0 +1,157 @@
+IP: 172.18.26.4
+Collected at: 2026-10-18T05:57:13.584326+00:00
+source: RouterOS API
+identity: MK_Darkhovein
+device_type: Router
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=E4:8D:8C:0D:18:B8
+  2  name=ether2  type=ether  running=true  mac=E4:8D:8C:0D:18:B9
+  3  name=ether3  type=ether  running=true  mac=E4:8D:8C:0D:18:BA
+  4  name=ether4  type=ether  running=false  mac=E4:8D:8C:0D:18:BB
+  5  name=ether5-LOCAL-darkhoveien  type=ether  running=true  mac=E4:8D:8C:0D:18:BC
+  6  name=ether6  type=ether  running=true  mac=E4:8D:8C:0D:18:BD
+  7  name=ether7  type=ether  running=true  mac=E4:8D:8C:0D:18:BE
+  8  name=ether8-InputLigo  type=ether  running=false  mac=E4:8D:8C:0D:18:BF
+  9  name=ether9  type=ether  running=true  mac=E4:8D:8C:0D:18:C0
+ 10  name=ether10  type=ether  running=false  mac=E4:8D:8C:0D:18:C1
+ 11  name=sfp1  type=ether  running=false  mac=E4:8D:8C:0D:18:B7
+ 12  name=bridge1-temp  type=bridge  running=true  mac=E4:8D:8C:0D:18:B8
+
+----- wireless -----
+(empty)
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.26.4/29  interface=ether6  network=172.18.26.0
+  2  address=172.29.206.1/25  interface=bridge1-temp  network=172.29.206.0
+  3  address=172.18.26.9/29  interface=ether9  network=172.18.26.8
+  4  address=172.18.26.17/28  interface=ether1  network=172.18.26.16
+  5  address=172.18.26.33/29  interface=ether2  network=172.18.26.32
+  6  address=172.18.26.49/28  interface=ether3  network=172.18.26.48
+  7  address=172.18.26.129/29  interface=ether7  network=172.18.26.128
+  8  address=172.18.4.44/29  interface=ether8-InputLigo  network=172.18.4.40
+  9  address=172.18.26.40/29  interface=ether5-LOCAL-darkhoveien  network=172.18.26.40
+ 10  address=172.18.26.4/29  interface=ether8-InputLigo  network=172.18.26.0
+ 11  address=172.18.26.4/29  interface=ether8-InputLigo  network=172.18.26.0
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.26.1  distance=1
+  2  dst=0.0.0.0/0  gw=172.18.4.41  distance=2
+  3  dst=172.18.0.72/30  gw=172.18.26.24  distance=1
+  4  dst=172.18.4.40/29  gw=ether8-InputLigo  distance=255
+  5  dst=172.18.26.0/29  gw=ether6  distance=0
+  6  dst=172.18.26.8/29  gw=ether9  distance=0
+  7  dst=172.18.26.16/28  gw=bridge1-temp  distance=0
+  8  dst=172.18.26.32/29  gw=ether2  distance=0
+  9  dst=172.18.26.48/28  gw=ether3  distance=0
+ 10  dst=172.18.26.64/27  gw=172.18.26.12  distance=1
+ 11  dst=172.18.26.96/27  gw=172.18.26.132  distance=1
+ 12  dst=172.18.26.128/29  gw=ether7  distance=0
+ 13  dst=172.29.206.0/25  gw=172.18.26.24  distance=1
+ 14  dst=172.29.206.128/27  gw=172.18.26.19  distance=1
+ 15  dst=172.29.206.160/27  gw=172.18.26.20  distance=1
+ 16  dst=172.29.206.192/27  gw=172.18.26.21  distance=1
+ 17  dst=172.29.206.224/27  gw=172.18.26.35  distance=1
+ 18  dst=172.29.207.0/24  gw=172.18.26.12  distance=1
+ 19  dst=172.29.208.0/27  gw=172.18.26.52  distance=1
+ 20  dst=172.29.208.32/27  gw=172.18.26.12  distance=1
+ 21  dst=172.29.208.64/27  gw=172.18.26.25  distance=1
+ 22  dst=172.29.208.128/25  gw=172.18.26.51  distance=1
+ 23  dst=172.29.209.0/24  gw=172.18.26.132  distance=1
+ 24  dst=185.84.220.225/32  gw=172.18.26.1  distance=1
+ 25  dst=185.84.220.236/30  gw=172.18.26.1  distance=1
+ 26  dst=192.168.40.5/32  gw=172.18.26.1  distance=1
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=Shadegan-Darkhovein1  address=172.18.26.18  interface=ether1,bridge1-temp
+  2  identity=Seleyhavieh.Client  address=172.18.26.19  interface=ether1,bridge1-temp
+  3  identity=Darkhovein.Client  address=172.18.26.21  interface=ether1,bridge1-temp
+  4  identity=cl-vastaniye  address=172.18.26.25  interface=ether1,bridge1-temp
+  5  identity=Shadegan-Darkhovein2  address=172.18.26.34  interface=ether2
+  6  identity=ShakhtolKhan.Client  address=172.18.26.35  interface=ether2
+  7  identity=Darkhovain_Matkaz_behdasht_ap  address=172.18.26.50  interface=ether3
+  8  identity=markaz-kofeyshe  address=172.18.26.51  interface=ether3
+  9  identity=KofeyshehHome.Client  address=172.18.26.52  interface=ether3
+ 10  identity=CRS-Darkhovein  address=172.18.26.24  interface=ether5-LOCAL-darkhoveien,bridge1-temp
+ 11  identity=R2SH  address=-  interface=ether6
+ 12  identity=RB-UMS-SHDGN-CoreRouter  address=172.18.26.1  interface=ether6
+ 13  identity=shadegan->Darkhovein.AP  address=172.18.26.2  interface=ether6
+ 14  identity=shadegan->Darkhovein-ST  address=172.18.26.3  interface=ether6
+ 15  identity=Darkhoein->Soeichi.AP  address=172.18.26.130  interface=ether7
+ 16  identity=Darkhoein->Soeichi.Client  address=172.18.26.131  interface=ether7
+ 17  identity=MK_Soeichi  address=172.18.26.132  interface=ether7
+ 18  identity=Darkhovein->OmolGhazlan.AP  address=172.18.26.10  interface=ether9
+ 19  identity=Darkhovein->OmolGhazlan.Client  address=172.18.26.11  interface=ether9
+ 20  identity=MK_OmolGhazlan  address=172.18.26.12  interface=ether9
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/26 09:06:14
+# ساعت دستگاه (خام): 2025-07-18 15:59:33
+# افست اصلاحی (سرور − دستگاه): +10957:36:41
+  1  1405/07/24 20:14:44  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/24 20:14:46  [bridge,info]  "bridge1-temp" mac address changed to E4:8D:8C:0D:18:B8
+  3  1405/07/24 20:14:46  [bridge,info]  hardware offloading activated on bridge "bridge1-temp" ports: ether1
+  4  1405/07/24 20:14:46  [bridge,info]  hardware offloading activated on bridge "bridge1-temp" ports: ether5-LOCAL-darkhoveien
+  5  1405/07/24 20:14:47  [interface,info]  ether2 link up (speed 100M, full duplex)
+  6  1405/07/24 20:14:47  [interface,info]  ether6 link up (speed 100M, full duplex)
+  7  1405/07/24 20:14:47  [interface,info]  ether7 link up (speed 100M, full duplex)
+  8  1405/07/24 20:14:47  [interface,info]  ether9 link up (speed 100M, full duplex)
+  9  1405/07/24 20:14:48  [interface,info]  ether5-LOCAL-darkhoveien link up (speed 1G, full duplex)
+ 10  1405/07/24 20:14:52  [interface,info]  ether1 link up (speed 1G, full duplex)
+ 11  1405/07/24 20:14:54  [interface,info]  ether3 link up (speed 1G, full duplex)
+ 12  1405/07/26 09:03:01  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 13  1405/07/26 09:03:03  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 14  1405/07/26 09:03:14  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 15  1405/07/26 09:03:17  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 16  1405/07/26 09:03:43  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 17  1405/07/26 09:03:45  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 18  1405/07/26 09:03:50  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 19  1405/07/26 09:03:52  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 20  1405/07/26 09:03:52  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 21  1405/07/26 09:03:54  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 22  1405/07/26 09:04:17  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 23  1405/07/26 09:04:19  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 24  1405/07/26 09:05:34  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 25  1405/07/26 09:05:36  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 26  1405/07/26 09:05:44  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 27  1405/07/26 09:05:46  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 28  1405/07/26 09:06:06  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 29  1405/07/26 09:06:08  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 30  1405/07/26 09:06:13  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  E4:8D:8C:0D:18:B8  (ether)
+ether2  E4:8D:8C:0D:18:B9  (ether)
+ether3  E4:8D:8C:0D:18:BA  (ether)
+ether4  E4:8D:8C:0D:18:BB  (ether)
+ether5-LOCAL-darkhoveien  E4:8D:8C:0D:18:BC  (ether)
+ether6  E4:8D:8C:0D:18:BD  (ether)
+ether7  E4:8D:8C:0D:18:BE  (ether)
+ether8-InputLigo  E4:8D:8C:0D:18:BF  (ether)
+ether9  E4:8D:8C:0D:18:C0  (ether)
+ether10  E4:8D:8C:0D:18:C1  (ether)
+sfp1  E4:8D:8C:0D:18:B7  (ether)
+bridge1-temp  E4:8D:8C:0D:18:B8  (bridge)
+--- /ip arp ---
+ether2  E4:8D:8C:61:6D:8D  (arp 172.18.26.35)
+bridge1-temp  18:FD:74:92:95:E0  (arp 172.18.26.25)
+ether3  18:FD:74:18:BD:15  (arp 172.18.26.50)
+ether7  6C:3B:6B:3C:DA:A0  (arp 172.18.26.131)
+ether6  64:D1:54:98:E3:2D  (arp 172.18.26.1)
+bridge1-temp  6C:3B:6B:09:35:13  (arp 172.18.26.24)
+ether9  6C:3B:6B:A9:FE:7B  (arp 172.18.26.12)
+bridge1-temp  6C:3B:6B:13:57:B1  (arp 172.18.26.19)
+ether3  D4:01:C3:C5:3A:FF  (arp 172.18.26.51)
+ether7  6C:3B:6B:3E:4B:82  (arp 172.18.26.130)
+ether9  4C:5E:0C:CD:FE:9F  (arp 172.18.26.11)
+bridge1-temp  64:D1:54:52:D3:FB  (arp 172.18.26.21)
+bridge1-temp  6C:3B:6B:4D:A3:0C  (arp 172.18.26.18)
+ether9  4C:5E:0C:CD:FA:17  (arp 172.18.26.10)
+ether7  6C:3B:6B:2B:BA:19  (arp 172.18.26.132)
+ether2  B8:69:F4:90:60:F6  (arp 172.18.26.34)
+ether3  64:D1:54:83:75:C3  (arp 172.18.26.52)

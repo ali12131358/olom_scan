@@ -1,0 +1,52 @@
+IP: 172.18.25.180
+Collected at: 2026-10-18T05:56:35.398065+00:00
+source: RouterOS API
+identity: Hadbeh.Client
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=E4:8D:8C:61:6C:B4
+  2  name=wlan1  type=wlan  running=true  mac=E4:8D:8C:61:6C:B5
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=Shadegan-Abshar4  band=5ghz-a/n  frequency=5260
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.25.180/28  interface=wlan1  network=172.18.25.176
+  2  address=172.29.202.65/27  interface=ether1  network=172.29.202.64
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.25.177  distance=1
+  2  dst=172.18.25.176/28  gw=wlan1  distance=0
+  3  dst=172.29.202.64/27  gw=ether1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=-  address=-  interface=ether1
+  2  identity=RB-ABSHAR  address=172.18.25.177  interface=wlan1
+  3  identity=Shadegan-Abshar4  address=172.18.25.178  interface=wlan1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/26 09:02:49
+# ساعت دستگاه (خام): 2018-01-14 11:07:59
+# افست اصلاحی (سرور − دستگاه): +76770:24:50
+  1  1405/07/26 07:50:55  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/26 07:50:58  [interface,info]  ether1 link up (speed 100M, full duplex)
+  3  1405/07/26 07:51:01  [wireless,info]  6C:3B:6B:4A:2D:9A@wlan1 established connection on 5280000, SSID Shadegan-Abshar4
+  4  1405/07/26 07:51:03  [dhcp,info]  dhcp1 deassigned 172.29.202.94 from B4:2E:99:2B:DC:D0
+  5  1405/07/26 07:51:03  [dhcp,info]  dhcp1 assigned 172.29.202.94 to B4:2E:99:2B:DC:D0
+  6  1405/07/26 09:00:09  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+  7  1405/07/26 09:00:19  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+  8  1405/07/26 09:02:48  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  E4:8D:8C:61:6C:B4  (ether)
+wlan1  E4:8D:8C:61:6C:B5  (wlan)
+--- /ip arp ---
+wlan1  4C:5E:0C:9B:0F:02  (arp 172.18.25.177)
+ether1  B4:2E:99:2B:DC:D0  (arp 172.29.202.94)

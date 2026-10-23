@@ -1,0 +1,48 @@
+IP: 172.18.9.179
+Collected at: 2026-10-21T13:17:48.496656+00:00
+source: RouterOS API
+identity: 22Bahman->Arvandkenar.Client
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=E4:8D:8C:7C:E4:FA
+  2  name=wlan1  type=wlan  running=true  mac=E4:8D:8C:7C:E4:FB
+  3  name=bridge1  type=bridge  running=true  mac=E4:8D:8C:7C:E4:FB
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=22BHMNAVKNR  band=5ghz-a/n/ac  frequency=5180
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.9.179/29  interface=wlan1  network=172.18.9.176
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.9.177  distance=1
+  2  dst=172.18.9.176/29  gw=bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=Router.Markaz.ArvandKanar  address=172.18.9.180  interface=ether1,bridge1
+  2  identity=22Bahman-MK  address=172.18.9.177  interface=wlan1,bridge1
+  3  identity=PTP-AP-22BAHMAN-ARVAN  address=172.18.9.178  interface=wlan1,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/29 16:40:00
+# ساعت دستگاه (خام): 1978-08-15 08:15:07
+# افست اصلاحی (سرور − دستگاه): +422380:54:53
+  1  1405/07/29 09:29:21  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/29 09:29:22  [bridge,info]  "bridge1" mac address changed to E4:8D:8C:7C:E4:FB
+  3  1405/07/29 09:29:32  [interface,info]  ether1 link up (speed 100M, full duplex)
+  4  1405/07/29 09:29:35  [wireless,info]  48:A9:8A:56:43:A2@wlan1 established connection on 5325000, SSID 22BHMNAVKNR
+  5  1405/07/29 16:39:59  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  E4:8D:8C:7C:E4:FA  (ether)
+wlan1  E4:8D:8C:7C:E4:FB  (wlan)
+bridge1  E4:8D:8C:7C:E4:FB  (bridge)
+--- /ip arp ---
+bridge1  E4:8D:8C:0E:6E:43  (arp 172.18.9.177)

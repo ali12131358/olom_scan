@@ -1,0 +1,67 @@
+IP: 172.18.16.21
+Collected at: 2026-10-21T13:15:58.294188+00:00
+source: RouterOS API
+identity: Khoramshahr - ShabakeBehdasht - P2P - Behvarzi - Client
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=B8:69:F4:61:66:3C
+  2  name=wlan1  type=wlan  running=true  mac=B8:69:F4:61:66:3D
+  3  name=bridge1  type=bridge  running=true  mac=B8:69:F4:61:66:3C
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=Khoramshahr-Shabakeh2  band=5ghz-a/n  frequency=5660
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.16.21/28  interface=wlan1  network=172.18.16.16
+  2  address=172.28.23.33/28  interface=ether1  network=172.28.23.32
+  3  address=172.28.23.33/28  interface=bridge1  network=172.28.23.32
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.16.17  distance=1
+  2  dst=172.18.16.16/28  gw=wlan1  distance=0
+  3  dst=172.28.23.32/28  gw=bridge1,bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=R1KH  address=172.18.2.249  interface=wlan1
+  2  identity=ShahidMusavi.Client  address=172.18.2.251  interface=wlan1
+  3  identity=Khoramshahr-Shabakeh2  address=172.18.16.18  interface=wlan1
+  4  identity=Paygah Salman Farsi  address=172.18.16.20  interface=wlan1
+  5  identity=RouterShahidMousavi  address=172.28.23.34  interface=ether1,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/29 16:28:41
+# ساعت دستگاه (خام): 1973-05-11 19:22:40
+# افست اصلاحی (سرور − دستگاه): +468497:36:01
+  1  1405/07/23 08:07:35  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/23 08:07:36  [bridge,info]  "bridge1" mac address changed to B8:69:F4:61:66:3C
+  3  1405/07/23 08:07:36  [bridge,info]  hardware offloading activated on bridge "bridge1" ports: ether1
+  4  1405/07/23 08:07:37  [interface,info]  ether1 link up (speed 100M, full duplex)
+  5  1405/07/23 08:07:42  [wireless,info]  6C:3B:6B:94:E8:4B@wlan1 established connection on 5660000, SSID Khoramshahr-Shabakeh2
+  6  1405/07/23 08:07:51  [dhcp,info]  dhcp1 assigned 172.28.23.36 to 00:02:65:15:E0:E1
+  7  1405/07/23 08:17:51  [dhcp,info]  dhcp1 deassigned 172.28.23.36 from 00:02:65:15:E0:E1
+  8  1405/07/23 12:18:24  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+  9  1405/07/23 12:18:26  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 10  1405/07/24 15:15:03  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 11  1405/07/24 15:15:04  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 12  1405/07/24 15:48:45  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 13  1405/07/24 15:48:46  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 14  1405/07/26 08:49:39  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 15  1405/07/26 08:49:40  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 16  1405/07/26 08:50:23  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 17  1405/07/26 08:50:37  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 18  1405/07/29 16:28:40  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  B8:69:F4:61:66:3C  (ether)
+wlan1  B8:69:F4:61:66:3D  (wlan)
+bridge1  B8:69:F4:61:66:3C  (bridge)
+--- /ip arp ---
+bridge1  00:02:65:15:E0:E1  (arp 172.28.23.36)
+wlan1  4C:5E:0C:9B:0E:78  (arp 172.18.16.17)

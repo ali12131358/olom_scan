@@ -1,0 +1,52 @@
+IP: 172.18.2.203
+Collected at: 2026-10-21T13:16:21.130412+00:00
+source: RouterOS API
+identity: Markaz.Fajr
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=6C:3B:6B:13:53:DC
+  2  name=wlan1  type=wlan  running=true  mac=6C:3B:6B:13:53:DD
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=FRFJ10  band=5ghz-a/n  frequency=5765
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.2.203/29  interface=wlan1  network=172.18.2.200
+  2  address=172.29.8.129/25  interface=ether1  network=172.29.8.128
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.2.201  distance=1
+  2  dst=172.18.2.200/29  gw=wlan1  distance=0
+  3  dst=172.29.8.128/25  gw=ether1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=Router.Fajr  address=172.29.8.131  interface=ether1
+  2  identity=RB.Meydoon.MK  address=172.18.2.201  interface=wlan1
+  3  identity=Foriatha->Fajr10.AP  address=172.18.2.202  interface=wlan1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/29 16:30:08
+# ساعت دستگاه (خام): 1975-04-07 13:55:06
+# افست اصلاحی (سرور − دستگاه): +451799:05:02
+  1  1405/07/29 09:58:29  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/29 09:58:37  [wireless,info]  E4:8D:8C:DB:43:8F@wlan1 established connection on 5765000, SSID FRFJ10
+  3  1405/07/29 09:58:39  [interface,info]  ether1 link up (speed 100M, full duplex)
+  4  1405/07/29 09:59:03  [dhcp,info]  dhcp1 deassigned 172.29.8.143 from EC:08:6B:A0:36:6B
+  5  1405/07/29 09:59:06  [dhcp,info]  dhcp1 assigned 172.29.8.143 to EC:08:6B:A0:36:6B
+  6  1405/07/29 10:03:39  [dhcp,info]  dhcp1 deassigned 172.29.8.150 from 98:DE:D0:26:F9:D8
+  7  1405/07/29 10:03:39  [dhcp,info]  dhcp1 assigned 172.29.8.150 to 98:DE:D0:26:F9:D8
+  8  1405/07/29 16:30:06  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  6C:3B:6B:13:53:DC  (ether)
+wlan1  6C:3B:6B:13:53:DD  (wlan)
+--- /ip arp ---
+ether1  E4:8D:8C:5F:8D:4C  (arp 172.29.8.131)
+wlan1  6C:3B:6B:0A:DD:F9  (arp 172.18.2.201)

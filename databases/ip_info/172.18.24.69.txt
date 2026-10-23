@@ -1,0 +1,77 @@
+IP: 172.18.24.69
+Collected at: 2026-10-21T13:16:41.697124+00:00
+source: RouterOS API
+identity: Markaz-Badrani.Client
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=E4:8D:8C:B4:C7:E2
+  2  name=wlan1  type=wlan  running=true  mac=E4:8D:8C:B4:C7:E3
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=Shadegan-Shabakeh4  band=5ghz-a/n  frequency=5540
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.24.69/29  interface=wlan1  network=172.18.24.64
+  2  address=172.29.192.129/25  interface=ether1  network=172.29.192.128
+  3  address=192.168.0.1/24  interface=ether1  network=192.168.0.0
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.24.65  distance=1
+  2  dst=172.18.24.64/29  gw=wlan1  distance=0
+  3  dst=172.18.25.215/32  gw=172.29.192.132  distance=1
+  4  dst=172.29.192.128/25  gw=ether1  distance=0
+  5  dst=172.29.204.32/27  gw=172.29.192.132  distance=1
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=RouterMarkazBadrani  address=172.29.192.132  interface=ether1
+  2  identity=CPE210  address=172.29.192.133  interface=ether1
+  3  identity=Shobeishi-AP  address=172.29.192.135  interface=ether1
+  4  identity=R2SH  address=-  interface=wlan1
+  5  identity=RB-UMS-SHDGN-CoreRouter  address=172.18.24.65  interface=wlan1
+  6  identity=ShabakehBehdasht->Markaz4.AP  address=172.18.24.66  interface=wlan1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/29 16:32:48
+# ساعت دستگاه (خام): 2025-10-04 21:03:54
+# افست اصلاحی (سرور − دستگاه): +9159:58:54
+  1  1405/07/27 18:28:57  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/27 18:29:07  [interface,info]  ether1 link up (speed 100M, full duplex)
+  3  1405/07/27 18:29:50  [wireless,info]  18:FD:74:B9:FF:8D@wlan1 established connection on 5850000, SSID Shadegan-Shabakeh4
+  4  1405/07/28 08:15:30  [dhcp,info]  dhcp1 deassigned 172.29.192.131 from 1C:1B:0D:A0:58:1A
+  5  1405/07/28 08:15:30  [dhcp,info]  dhcp1 assigned 172.29.192.131 to 1C:1B:0D:A0:58:1A
+  6  1405/07/28 08:35:12  [dhcp,warning]  Detected conflict by ARP response for 172.29.192.130 from A4:2B:B0:EF:80:E2
+  7  1405/07/28 08:35:13  [dhcp,info]  dhcp1 deassigned 172.29.192.145 from 7C:8B:CA:09:4A:77
+  8  1405/07/28 08:35:14  [dhcp,warning]  Detected conflict by ARP response for 172.29.192.132 from 64:D1:54:5A:34:DB
+  9  1405/07/28 08:35:16  [dhcp,info]  dhcp1 assigned 172.29.192.145 to 7C:8B:CA:09:4A:77
+ 10  1405/07/28 08:35:18  [dhcp,warning]  Detected conflict by ARP response for 172.29.192.133 from B0:4E:26:E7:A8:04
+ 11  1405/07/28 08:35:25  [dhcp,warning]  Detected conflict by ARP response for 172.29.192.135 from B8:69:F4:69:8B:77
+ 12  1405/07/28 08:35:35  [dhcp,info]  dhcp1 assigned 172.29.192.136 to DE:2E:C1:AA:9C:44
+ 13  1405/07/28 11:35:47  [dhcp,info]  dhcp1 assigned 172.29.192.137 to 72:8F:C2:67:53:3E
+ 14  1405/07/28 11:37:12  [dhcp,info]  dhcp1 deassigned 172.29.192.136 from DE:2E:C1:AA:9C:44
+ 15  1405/07/28 11:37:12  [dhcp,info]  dhcp1 assigned 172.29.192.136 to DE:2E:C1:AA:9C:44
+ 16  1405/07/28 14:39:37  [dhcp,info]  dhcp1 deassigned 172.29.192.134 from EA:73:38:79:91:DC
+ 17  1405/07/28 14:39:37  [dhcp,info]  dhcp1 assigned 172.29.192.134 to EA:73:38:79:91:DC
+ 18  1405/07/28 18:35:20  [dhcp,info]  dhcp1 deassigned 172.29.192.139 from B6:63:3B:30:42:FE
+ 19  1405/07/28 18:38:31  [dhcp,info]  dhcp1 deassigned 172.29.192.138 from A6:B4:99:CD:CF:34
+ 20  1405/07/28 23:45:41  [dhcp,info]  dhcp1 assigned 172.29.192.138 to A6:B4:99:CD:CF:34
+ 21  1405/07/29 08:32:04  [dhcp,info]  dhcp1 deassigned 172.29.192.131 from 1C:1B:0D:A0:58:1A
+ 22  1405/07/29 08:32:04  [dhcp,info]  dhcp1 assigned 172.29.192.131 to 1C:1B:0D:A0:58:1A
+ 23  1405/07/29 11:29:50  [dhcp,info]  dhcp1 deassigned 172.29.192.145 from 7C:8B:CA:09:4A:77
+ 24  1405/07/29 11:45:47  [dhcp,info]  dhcp1 deassigned 172.29.192.137 from 72:8F:C2:67:53:3E
+ 25  1405/07/29 11:47:12  [dhcp,info]  dhcp1 deassigned 172.29.192.136 from DE:2E:C1:AA:9C:44
+ 26  1405/07/29 14:49:37  [dhcp,info]  dhcp1 deassigned 172.29.192.134 from EA:73:38:79:91:DC
+ 27  1405/07/29 16:32:46  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  E4:8D:8C:B4:C7:E2  (ether)
+wlan1  E4:8D:8C:B4:C7:E3  (wlan)
+--- /ip arp ---
+wlan1  64:D1:54:98:E3:2E  (arp 172.18.24.65)
+ether1  B0:4E:26:E7:A8:04  (arp 172.29.192.133)

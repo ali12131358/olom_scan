@@ -1,0 +1,48 @@
+IP: 172.18.26.131
+Collected at: 2026-10-21T13:17:00.705798+00:00
+source: RouterOS API
+identity: Darkhoein->Soeichi.Client
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=6C:3B:6B:3C:DA:A0
+  2  name=wlan1  type=wlan  running=true  mac=6C:3B:6B:3C:DA:A1
+  3  name=bridge1  type=bridge  running=true  mac=6C:3B:6B:3C:DA:A0
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=DRKHSECH  band=5ghz-a/n  frequency=auto
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.26.131/29  interface=wlan1  network=172.18.26.128
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.26.129  distance=1
+  2  dst=172.18.26.128/29  gw=bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=MK_Soeichi  address=172.18.26.132  interface=ether1,bridge1
+  2  identity=MK_Darkhovein  address=172.18.26.129  interface=wlan1,bridge1
+  3  identity=Darkhoein->Soeichi.AP  address=172.18.26.130  interface=wlan1,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/29 16:35:19
+# ساعت دستگاه (خام): 2024-06-12 09:16:26
+# افست اصلاحی (سرور − دستگاه): +20667:48:53
+  1  1405/07/29 08:18:44  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/29 08:18:46  [bridge,info]  "bridge1" mac address changed to 6C:3B:6B:3C:DA:A0
+  3  1405/07/29 08:18:48  [interface,info]  ether1 link up (speed 100M, full duplex)
+  4  1405/07/29 08:18:52  [wireless,info]  6C:3B:6B:3E:4B:83@wlan1 established connection on 5520000, SSID DRKHSECH
+  5  1405/07/29 16:35:17  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  6C:3B:6B:3C:DA:A0  (ether)
+wlan1  6C:3B:6B:3C:DA:A1  (wlan)
+bridge1  6C:3B:6B:3C:DA:A0  (bridge)
+--- /ip arp ---
+bridge1  E4:8D:8C:0D:18:BE  (arp 172.18.26.129)

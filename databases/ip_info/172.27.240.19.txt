@@ -1,0 +1,67 @@
+IP: 172.27.240.19
+Collected at: 2026-10-21T13:18:11.260832+00:00
+source: RouterOS API
+identity: LINK-MALI-CL
+device_type: ST
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=E4:8D:8C:61:6E:32
+  2  name=wlan1  type=wlan  running=true  mac=E4:8D:8C:61:6E:33
+  3  name=bridge1  type=bridge  running=true  mac=E4:8D:8C:61:6E:33
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=station-bridge  ssid=LINK-MALI  band=5ghz-a/n  frequency=5765
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.27.240.19/28  interface=wlan1  network=172.27.240.16
+  2  address=172.27.20.129/26  interface=ether1  network=172.27.20.128
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.27.240.17  distance=1
+  2  dst=172.27.240.16/28  gw=bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=Switch  address=-  interface=ether1,bridge1
+  2  identity=R2SH  address=-  interface=wlan1,bridge1
+  3  identity=RB-UMS-SHDGN-CoreRouter  address=172.27.20.1  interface=wlan1,bridge1
+  4  identity=SW2-SHABAKEH-SH  address=172.27.20.67  interface=wlan1,bridge1
+  5  identity=LINK-MALI-AP  address=172.27.240.18  interface=wlan1,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/29 16:42:09
+# ساعت دستگاه (خام): 1972-12-26 05:11:33
+# افست اصلاحی (سرور − دستگاه): +471776:00:36
+  1  1405/07/19 15:21:30  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/19 15:21:32  [bridge,info]  "bridge1" mac address changed to E4:8D:8C:61:6E:33
+  3  1405/07/19 15:21:40  [interface,info]  ether1 link up (speed 100M, full duplex)
+  4  1405/07/19 15:21:47  [wireless,info]  E4:8D:8C:61:69:87@wlan1 established connection on 5460000, SSID LINK-MALI
+  5  1405/07/19 15:21:51  [interface,info]  ether1 link down
+  6  1405/07/19 15:22:00  [interface,info]  ether1 link up (speed 100M, full duplex)
+  7  1405/07/19 17:42:48  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+  8  1405/07/19 17:42:48  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+  9  1405/07/21 11:12:50  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 10  1405/07/21 11:12:52  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 11  1405/07/22 13:36:24  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 12  1405/07/22 13:36:26  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 13  1405/07/24 15:37:15  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 14  1405/07/24 15:37:17  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 15  1405/07/24 16:04:10  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 16  1405/07/24 16:04:11  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 17  1405/07/26 09:13:44  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 18  1405/07/26 09:13:45  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 19  1405/07/26 09:16:13  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 20  1405/07/26 09:16:14  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 21  1405/07/29 16:42:08  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  E4:8D:8C:61:6E:32  (ether)
+wlan1  E4:8D:8C:61:6E:33  (wlan)
+bridge1  E4:8D:8C:61:6E:33  (bridge)
+--- /ip arp ---
+bridge1  64:D1:54:98:E3:2E  (arp 172.27.240.17)

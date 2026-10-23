@@ -1,0 +1,97 @@
+IP: 172.18.3.186
+Collected at: 2026-10-21T13:17:13.215135+00:00
+source: RouterOS API
+identity: ShabakehBehdasht->Shohada.Kh
+device_type: AP
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=CC:2D:E0:F6:28:DC
+  2  name=wlan1  type=wlan  running=true  mac=CC:2D:E0:F6:28:DD
+  3  name=bridge1  type=bridge  running=true  mac=CC:2D:E0:F6:28:DD
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=ap-bridge  ssid=Shohada.Kh1  band=5ghz-a/n  frequency=5280
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.3.186/29  interface=ether1  network=172.18.3.184
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.3.185  distance=1
+  2  dst=172.18.3.184/29  gw=bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=Shohada.Kh.Client  address=172.18.3.187  interface=wlan1,bridge1
+  2  identity=Ahle Beyt  address=172.18.3.190  interface=wlan1,bridge1
+  3  identity=R1KH  address=172.18.3.185  interface=ether1,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/29 16:36:43
+# ساعت دستگاه (خام): 2026-05-19 20:22:09
+# افست اصلاحی (سرور − دستگاه): +3712:44:34
+  1  1405/07/19 08:39:52  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/19 08:39:55  [bridge,info]  "bridge1" mac address changed to CC:2D:E0:F6:28:DD
+  3  1405/07/19 08:40:02  [interface,info]  ether1 link up (speed 1G, full duplex)
+  4  1405/07/19 08:40:04  [wireless,info]  CC:2D:E0:F6:29:0D@wlan1: connected, signal strength -54, wants bridge
+  5  1405/07/19 08:40:39  [wireless,info]  D4:01:C3:B6:73:9D@wlan1: connected, signal strength -67, wants bridge
+  6  1405/07/19 09:45:39  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+  7  1405/07/19 09:45:40  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+  8  1405/07/19 17:41:32  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+  9  1405/07/19 17:41:33  [system,error,critical]  login failure for user grnaf from 172.18.4.76 via api
+ 10  1405/07/21 11:07:00  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 11  1405/07/21 11:07:02  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 12  1405/07/22 08:04:50  [wireless,info]  CC:2D:E0:F6:29:0D@wlan1: disconnected, received deauth: authentication not valid (2), signal strength -76
+ 13  1405/07/22 08:04:55  [wireless,info]  CC:2D:E0:F6:29:0D@wlan1: connected, signal strength -75, wants bridge
+ 14  1405/07/22 08:42:35  [wireless,info]  CC:2D:E0:F6:29:0D@wlan1: disconnected, received deauth: authentication not valid (2), signal strength -75
+ 15  1405/07/22 08:42:41  [wireless,info]  CC:2D:E0:F6:29:0D@wlan1: connected, signal strength -77, wants bridge
+ 16  1405/07/22 08:43:02  [wireless,info]  CC:2D:E0:F6:29:0D@wlan1: disconnected, received deauth: authentication not valid (2), signal strength -77
+ 17  1405/07/22 08:43:08  [wireless,info]  CC:2D:E0:F6:29:0D@wlan1: connected, signal strength -76, wants bridge
+ 18  1405/07/22 08:43:29  [wireless,info]  CC:2D:E0:F6:29:0D@wlan1: disconnected, received deauth: authentication not valid (2), signal strength -76
+ 19  1405/07/22 08:43:34  [wireless,info]  CC:2D:E0:F6:29:0D@wlan1: connected, signal strength -78, wants bridge
+ 20  1405/07/22 08:43:46  [wireless,info]  CC:2D:E0:F6:29:0D@wlan1: disconnected, extensive data loss, signal strength -78
+ 21  1405/07/22 08:43:47  [wireless,info]  CC:2D:E0:F6:29:0D@wlan1: connected, signal strength -76, wants bridge
+ 22  1405/07/22 08:44:25  [wireless,info]  CC:2D:E0:F6:29:0D@wlan1: disconnected, received deauth: authentication not valid (2), signal strength -76
+ 23  1405/07/22 08:44:30  [wireless,info]  CC:2D:E0:F6:29:0D@wlan1: connected, signal strength -78, wants bridge
+ 24  1405/07/22 08:49:22  [wireless,info]  CC:2D:E0:F6:29:0D@wlan1: disconnected, received deauth: authentication not valid (2), signal strength -78
+ 25  1405/07/22 08:49:27  [wireless,info]  CC:2D:E0:F6:29:0D@wlan1: connected, signal strength -78, wants bridge
+ 26  1405/07/22 08:49:41  [wireless,info]  CC:2D:E0:F6:29:0D@wlan1: disconnected, received deauth: authentication not valid (2), signal strength -78
+ 27  1405/07/22 08:49:47  [wireless,info]  CC:2D:E0:F6:29:0D@wlan1: connected, signal strength -78, wants bridge
+ 28  1405/07/22 09:39:42  [wireless,info]  CC:2D:E0:F6:29:0D@wlan1: disconnected, received deauth: authentication not valid (2), signal strength -78
+ 29  1405/07/22 09:39:47  [wireless,info]  CC:2D:E0:F6:29:0D@wlan1: connected, signal strength -72, wants bridge
+ 30  1405/07/22 10:33:46  [wireless,info]  CC:2D:E0:F6:29:0D@wlan1: disconnected, received deauth: authentication not valid (2), signal strength -72
+ 31  1405/07/22 10:33:51  [wireless,info]  CC:2D:E0:F6:29:0D@wlan1: connected, signal strength -74, wants bridge
+ 32  1405/07/22 10:39:06  [wireless,info]  CC:2D:E0:F6:29:0D@wlan1: disconnected, received deauth: authentication not valid (2), signal strength -74
+ 33  1405/07/22 10:39:12  [wireless,info]  CC:2D:E0:F6:29:0D@wlan1: connected, signal strength -75, wants bridge
+ 34  1405/07/22 10:39:19  [wireless,info]  CC:2D:E0:F6:29:0D@wlan1: disconnected, received deauth: authentication not valid (2), signal strength -75
+ 35  1405/07/22 10:39:24  [wireless,info]  CC:2D:E0:F6:29:0D@wlan1: connected, signal strength -71, wants bridge
+ 36  1405/07/22 10:53:14  [wireless,info]  CC:2D:E0:F6:29:0D@wlan1: disconnected, received deauth: authentication not valid (2), signal strength -71
+ 37  1405/07/22 10:53:19  [wireless,info]  CC:2D:E0:F6:29:0D@wlan1: connected, signal strength -72, wants bridge
+ 38  1405/07/22 13:26:28  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 39  1405/07/22 13:26:30  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 40  1405/07/23 12:33:44  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 41  1405/07/23 12:33:45  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 42  1405/07/24 03:42:25  [wireless,info]  D4:01:C3:B6:73:9D@wlan1: disconnected, extensive data loss, signal strength -68
+ 43  1405/07/24 03:59:03  [wireless,info]  D4:01:C3:B6:73:9D@wlan1: connected, signal strength -70, wants bridge
+ 44  1405/07/24 15:29:23  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 45  1405/07/24 15:29:25  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 46  1405/07/24 15:58:16  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 47  1405/07/24 15:58:18  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 48  1405/07/25 12:11:48  [wireless,info]  CC:2D:E0:F6:29:0D@wlan1: disconnected, received deauth: authentication not valid (2), signal strength -67
+ 49  1405/07/25 12:11:53  [wireless,info]  CC:2D:E0:F6:29:0D@wlan1: connected, signal strength -71, wants bridge
+ 50  1405/07/26 09:05:26  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 51  1405/07/26 09:05:28  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 52  1405/07/26 09:08:00  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+ 53  1405/07/26 09:08:01  [system,info,account]  user garnaf logged out from 172.18.4.76 via api
+ 54  1405/07/29 16:36:42  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  CC:2D:E0:F6:28:DC  (ether)
+wlan1  CC:2D:E0:F6:28:DD  (wlan)
+bridge1  CC:2D:E0:F6:28:DD  (bridge)
+--- /ip arp ---
+bridge1  4C:5E:0C:9B:0E:71  (arp 172.18.3.185)

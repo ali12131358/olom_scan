@@ -1,0 +1,55 @@
+IP: 172.18.25.242
+Collected at: 2026-10-21T13:16:55.867570+00:00
+source: RouterOS API
+identity: Shadegan-Jafal3
+device_type: AP
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=18:FD:74:BA:07:38
+  2  name=wlan1  type=wlan  running=true  mac=18:FD:74:BA:07:39
+  3  name=bridge1  type=bridge  running=true  mac=18:FD:74:BA:07:38
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=ap-bridge  ssid=Shadegan-Jafal3  band=5ghz-a/n  frequency=5750
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.25.242/28  interface=ether1  network=172.18.25.240
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.25.241  distance=1
+  2  dst=172.18.25.240/28  gw=bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=MK_Jafal  address=172.18.25.241  interface=ether1,bridge1
+  2  identity=AlboArabid.Client  address=172.18.25.243  interface=wlan1,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/29 16:34:16
+# ساعت دستگاه (خام): 1972-11-02 09:02:32
+# افست اصلاحی (سرور − دستگاه): +473068:01:44
+  1  1405/07/28 16:12:17  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/28 16:12:19  [bridge,info]  "bridge1" mac address changed to 18:FD:74:BA:07:38
+  3  1405/07/28 16:12:24  [interface,info]  ether1 link up (speed 1G, full duplex)
+  4  1405/07/28 16:13:36  [wireless,info]  08:55:31:E2:76:BA@wlan1: connected, signal strength -76
+  5  1405/07/28 16:16:31  [wireless,info]  E4:8D:8C:61:6D:F7@wlan1: connected, signal strength -74
+  6  1405/07/29 09:39:26  [interface,info]  ether1 link down
+  7  1405/07/29 09:39:30  [interface,info]  ether1 link up (speed 1G, full duplex)
+  8  1405/07/29 09:39:31  [interface,info]  ether1 link down
+  9  1405/07/29 09:39:41  [interface,info]  ether1 link up (speed 100M, full duplex)
+ 10  1405/07/29 11:59:55  [wireless,info]  08:55:31:E2:76:BA@wlan1: disconnected, not responding
+ 11  1405/07/29 12:20:32  [wireless,info]  E4:8D:8C:61:6D:F7@wlan1: disconnected, control frame timeout
+ 12  1405/07/29 12:24:36  [wireless,info]  E4:8D:8C:61:6D:F7@wlan1: connected, signal strength -78
+ 13  1405/07/29 16:34:15  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  18:FD:74:BA:07:38  (ether)
+wlan1  18:FD:74:BA:07:39  (wlan)
+bridge1  18:FD:74:BA:07:38  (bridge)
+--- /ip arp ---
+bridge1  6C:3B:6B:0C:28:9C  (arp 172.18.25.241)

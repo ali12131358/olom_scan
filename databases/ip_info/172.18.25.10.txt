@@ -1,0 +1,64 @@
+IP: 172.18.25.10
+Collected at: 2026-10-21T13:16:42.980979+00:00
+source: RouterOS API
+identity: Alvan->Ghatrani.AP
+device_type: AP
+
+----- interfaces -----
+=== /interface ===
+  1  name=ether1  type=ether  running=true  mac=48:8F:5A:8F:F1:46
+  2  name=wlan1  type=wlan  running=true  mac=48:8F:5A:8F:F1:47
+  3  name=bridge1  type=bridge  running=true  mac=48:8F:5A:8F:F1:46
+
+----- wireless -----
+=== /interface wireless ===
+name=wlan1  mode=bridge  ssid=ALVNGHTRNI  band=5ghz-a/n  frequency=5280
+
+----- ip_addresses / routes -----
+=== /ip address ===
+  1  address=172.18.25.10/29  interface=ether1  network=172.18.25.8
+
+=== /ip route ===
+  1  dst=0.0.0.0/0  gw=172.18.25.9  distance=1
+  2  dst=172.18.25.8/29  gw=bridge1  distance=0
+
+----- neighbors -----
+=== /ip neighbor ===
+  1  identity=Alvan->Ghatrani.Client  address=172.18.25.11  interface=wlan1,bridge1
+  2  identity=MK-Ghatrani  address=172.18.25.12  interface=wlan1,bridge1
+  3  identity=MK_Alvan  address=172.18.25.9  interface=ether1,bridge1
+
+----- log -----
+=== /log (تهران / هجری شمسی) ===
+# زمان سرور هنگام خواندن: 1405/07/29 16:33:00
+# ساعت دستگاه (خام): 1974-08-07 15:39:44
+# افست اصلاحی (سرور − دستگاه): +457629:23:16
+  1  1405/07/26 10:16:31  [system,error,critical]  router was rebooted without proper shutdown
+  2  1405/07/26 10:16:32  [bridge,info]  "bridge1" mac address changed to 48:8F:5A:8F:F1:46
+  3  1405/07/26 10:16:35  [interface,info]  ether1 link up (speed 10M, full duplex)
+  4  1405/07/26 10:16:44  [wireless,info]  6C:3B:6B:5D:71:63@wlan1: connected, signal strength -58
+  5  1405/07/27 05:22:05  [wireless,info]  6C:3B:6B:5D:71:63@wlan1: disconnected, control frame timeout
+  6  1405/07/27 05:22:32  [wireless,info]  6C:3B:6B:5D:71:63@wlan1: reconnecting
+  7  1405/07/27 05:22:32  [wireless,info]  6C:3B:6B:5D:71:63@wlan1: connected, signal strength -89
+  8  1405/07/27 05:42:36  [wireless,info]  6C:3B:6B:5D:71:63@wlan1: disconnected, not responding
+  9  1405/07/27 05:45:13  [wireless,info]  6C:3B:6B:5D:71:63@wlan1: reconnecting
+ 10  1405/07/27 05:45:20  [wireless,info]  6C:3B:6B:5D:71:63@wlan1: reconnecting
+ 11  1405/07/27 05:45:32  [wireless,info]  6C:3B:6B:5D:71:63@wlan1: connected, signal strength -84
+ 12  1405/07/27 05:46:18  [wireless,info]  6C:3B:6B:5D:71:63@wlan1: disconnected, control frame timeout
+ 13  1405/07/27 05:47:33  [wireless,info]  6C:3B:6B:5D:71:63@wlan1: reconnecting
+ 14  1405/07/27 05:47:33  [wireless,info]  6C:3B:6B:5D:71:63@wlan1: reconnecting
+ 15  1405/07/27 05:47:34  [wireless,info]  6C:3B:6B:5D:71:63@wlan1: connected, signal strength -89
+ 16  1405/07/29 03:53:07  [wireless,info]  6C:3B:6B:5D:71:63@wlan1: disconnected, not responding
+ 17  1405/07/29 03:53:27  [wireless,info]  6C:3B:6B:5D:71:63@wlan1: connected, signal strength -82
+ 18  1405/07/29 03:54:02  [wireless,info]  6C:3B:6B:5D:71:63@wlan1: disconnected, control frame timeout
+ 19  1405/07/29 03:54:18  [wireless,info]  6C:3B:6B:5D:71:63@wlan1: connected, signal strength -84
+ 20  1405/07/29 16:32:59  [system,info,account]  user garnaf logged in from 172.18.4.76 via api
+
+----- mac -----
+=== MAC addresses ===
+ether1  48:8F:5A:8F:F1:46  (ether)
+wlan1  48:8F:5A:8F:F1:47  (wlan)
+bridge1  48:8F:5A:8F:F1:46  (bridge)
+--- /ip arp ---
+bridge1  CC:2D:E0:6C:A2:69  (arp 172.18.25.12)
+bridge1  6C:3B:6B:0C:28:87  (arp 172.18.25.9)
