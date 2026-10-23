@@ -57,3 +57,22 @@ Stage Summary:
 - Search: debounced, cancellable, multi-term AND, per-field scope (faster than scanning all columns incl. device_log)
 - Smart reports: report generated from user-selected database; badge shows source; backend enforces validation
 - Deployment: remote server needs git pull + service restart; browser hard-refresh for new hashed assets
+
+---
+Task ID: 4
+Agent: main (Z.ai)
+Task: Add admin login page (NetAdmin/NetAdmin), creative logo, session auth; push to GitHub
+
+Work Log:
+- backend/auth.py (new): HMAC-SHA256 signed tokens, persisted secret in databases/.auth_secret (0600), constant-time creds check, default NetAdmin/NetAdmin (env: NETSCAN_ADMIN_USER/PASSWORD, NETSCAN_SESSION_DAYS)
+- backend/main.py: AuthMiddleware (protects /api/, /devices, /reports, /scans; OPTIONS + login/logout/auth-check + non-API paths open), POST /api/login (sets HttpOnly SameSite=Lax cookie, 7d), POST /api/logout, GET /api/auth/check; CORS -> allow_origin_regex=".*" + allow_credentials=True
+- frontend/src.jsx: Logo component (radar sweep + network blips SVG), Login component (RTL card, show/hide password, error/loading), App wrapper auth gate (checking->out->in) with netscan:unauthorized global 401 listener via readJson, MainApp receives authUser/onLogout, header logout button
+- frontend/style.css: login page styles (gradient backdrop, glow, card, inputs, button); frontend/public/logo.svg favicon + index.html icon link
+- Fixed React hooks-order bug by splitting App (gate) / MainApp (content)
+- Tests: scripts/test_auth.py — 24/24 PASS (401s, login ok/wrong, cookie flags, token tamper/expiry, logout, preflight CORS w/ credentials)
+- Rebuilt dist; committed 1d545d2, pushed 76b3303..1d545d2 to origin/main
+
+Stage Summary:
+- App now requires admin login (NetAdmin/NetAdmin); session survives restarts via persisted secret
+- Creative SVG logo on login page + favicon
+- Deployment: git pull + restart on server; Ctrl+Shift+R for new assets
