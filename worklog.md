@@ -38,3 +38,22 @@ Stage Summary:
 - CSV/XLSX flap exports now contain ALL report fields identical to the on-screen table
 - Commit pushed to GitHub: 2572284 "Include all report fields in interface flap CSV export"
 - Deployment note: server at 185.110.29.189:5001 needs git pull + service restart to pick up the change
+
+---
+Task ID: 3
+Agent: main (Z.ai)
+Task: Optimize device-management search + add database selection to smart reports, push to GitHub
+
+Work Log:
+- backend/db.py: added SEARCH_FIELDS whitelist + build_search_clause() (multi-term AND, scoped fields, injection-safe); query_devices gained q_fields param
+- backend/main.py: /devices and /devices/export.csv accept q_fields; all 3 flap-report endpoints accept database param with _resolve_report_database() validation (404 unknown, empty = active DB); report metadata includes "database"
+- frontend/src.jsx (DeviceReports): 350ms debounce (qInput/q split), AbortController for in-flight list requests, search scope <select> (12 options), Enter = instant search
+- frontend/src.jsx (SmartReports): database selector from /api/databases with device counts, passes database to list+CSV URLs, source-DB badge, clears results on DB switch
+- Tests: scripts/test_search_and_db.py — 12/12 PASS via FastAPI TestClient (temp DB registered/removed from catalog, active DB switched/restored)
+- Rebuilt frontend/dist with vite (npm install + npm run build)
+- Committed b8ae262, pushed 16dff0e..b8ae262 to origin/main
+
+Stage Summary:
+- Search: debounced, cancellable, multi-term AND, per-field scope (faster than scanning all columns incl. device_log)
+- Smart reports: report generated from user-selected database; badge shows source; backend enforces validation
+- Deployment: remote server needs git pull + service restart; browser hard-refresh for new hashed assets
