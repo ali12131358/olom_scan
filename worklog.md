@@ -20,3 +20,21 @@ Stage Summary:
 - `main` is tracking `origin/main`, fully in sync, clean tree
 - `.env` remains on disk locally but is NOT in the repository (excluded via .gitignore)
 - GitHub repo: https://github.com/alipedramiau-bit/Net_Scan
+
+---
+Task ID: 2
+Agent: main (Z.ai)
+Task: Include all report fields in the interface-flap CSV export and push to GitHub
+
+Work Log:
+- Analyzed frontend/src.jsx flap table (9 columns) vs backend/smart_reports.py interface_flaps_csv (8 columns)
+- Found missing field: flap_count (تعداد تکرار لاگ) — shown in UI but absent from CSV/XLSX
+- Rewrote interface_flaps_csv: 9 columns matching UI order exactly (ردیف، نام دستگاه، آی‌پی، تگ، اینترفیس، تعداد تکرار لاگ، تاریخ میلادی، تاریخ شمسی، نوع رویداد)
+- Applied same 9-column layout to interface_flaps_xlsx for consistency
+- Verified via scripts/test_flap_csv.py: 9-col header+rows, UTF-8 BOM present, flap_count values (3,4) rendered, XLSX builds clean
+- Committed backend/smart_reports.py only (2572284), pushed 907bdd0..2572284 to origin/main
+
+Stage Summary:
+- CSV/XLSX flap exports now contain ALL report fields identical to the on-screen table
+- Commit pushed to GitHub: 2572284 "Include all report fields in interface flap CSV export"
+- Deployment note: server at 185.110.29.189:5001 needs git pull + service restart to pick up the change
