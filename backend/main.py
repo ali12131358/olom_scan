@@ -905,13 +905,17 @@ def _resolve_report_database(database: str = "") -> str:
 @app.get("/reports/interface-flaps")
 def report_interface_flaps(days: int = 5, threshold_minutes: int = 5, database: str = Query(default="", max_length=64)):
     db_name = _resolve_report_database(database)
+    error_msg = None
     try:
         devices = db.query_devices(limit=100000, db_path=str(db.db_path_for(db_name)))
-    except Exception:
+    except Exception as exc:
         devices = []
+        error_msg = f"خواندن دستگاه‌ها از دیتابیس «{db_name}» ناموفق بود: {exc}"
     rows = devices.get("devices") if isinstance(devices, dict) else devices
     report = smart_reports.interface_flap_report(rows or [], days_back=days, threshold_minutes=threshold_minutes)
     report["database"] = db_name
+    if error_msg:
+        report["error"] = error_msg
     # Keep the report metadata and provide stable names for both API clients and the UI.
     items = []
     for event in report.get("events", []):
@@ -927,9 +931,11 @@ def report_interface_flaps(days: int = 5, threshold_minutes: int = 5, database: 
 @app.get("/reports/interface-flaps/export.csv")
 def report_interface_flaps_csv(days: int = 5, threshold_minutes: int = 5, database: str = Query(default="", max_length=64)):
     db_name = _resolve_report_database(database)
-    rows = db.query_devices(limit=100000, db_path=str(db.db_path_for(db_name)))
-    if isinstance(rows, dict):
-        rows = rows.get("devices", [])
+    try:
+        fetched = db.query_devices(limit=100000, db_path=str(db.db_path_for(db_name)))
+    except Exception as exc:
+        raise HTTPException(500, f"خواندن دستگاه‌ها از دیتابیس «{db_name}» ناموفق بود: {exc}")
+    rows = fetched.get("devices", []) if isinstance(fetched, dict) else fetched
     rep = smart_reports.interface_flap_report(rows or [], days_back=days, threshold_minutes=threshold_minutes)
     rep["database"] = db_name
     csv_content = smart_reports.interface_flaps_csv(rep)
@@ -942,8 +948,8 @@ def report_interface_flaps_xlsx(days: int = 5, threshold_minutes: int = 5, datab
     db_name = _resolve_report_database(database)
     try:
         devices = db.query_devices(limit=100000, db_path=str(db.db_path_for(db_name)))
-    except Exception:
-        devices = []
+    except Exception as exc:
+        raise HTTPException(500, f"خواندن دستگاه‌ها از دیتابیس «{db_name}» ناموفق بود: {exc}")
     rows = devices.get("devices") if isinstance(devices, dict) else devices
     rep = smart_reports.interface_flap_report(rows or [], days_back=days, threshold_minutes=threshold_minutes)
     rep["database"] = db_name

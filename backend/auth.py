@@ -22,7 +22,7 @@ _SECRET_FILE = Path(
 )
 
 SESSION_DAYS = int(os.environ.get("NETSCAN_SESSION_DAYS", "7"))
-ADMIN_USER = os.environ.get("NETSCAN_ADMIN_USER", "NetAdmin")
+ADMIN_USER = os.environ.get("NETSCAN_ADMIN_USER", "admin")
 ADMIN_PASSWORD = os.environ.get("NETSCAN_ADMIN_PASSWORD", "NetAdmin")
 COOKIE_NAME = "net_scan_session"
 COOKIE_MAX_AGE = SESSION_DAYS * 86400

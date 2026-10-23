@@ -24,15 +24,15 @@ r = fresh.post("/api/databases", json={"name": "x"})
 check("anonymous POST protected -> 401", r.status_code == 401)
 
 # ---------- 2) login validation ----------
-r = fresh.post("/api/login", json={"username": "NetAdmin", "password": "wrong"})
+r = fresh.post("/api/login", json={"username": "admin", "password": "wrong"})
 check("wrong password -> 401", r.status_code == 401)
 
-r = fresh.post("/api/login", json={"username": "admin", "password": "NetAdmin"})
-check("wrong username -> 401", r.status_code == 401)
+r = fresh.post("/api/login", json={"username": "NetAdmin", "password": "NetAdmin"})
+check("legacy NetAdmin username rejected -> 401", r.status_code == 401)
 
-r = authed.post("/api/login", json={"username": "NetAdmin", "password": "NetAdmin"})
+r = authed.post("/api/login", json={"username": "admin", "password": "NetAdmin"})
 set_cookie = r.headers.get("set-cookie", "")
-check("correct credentials -> 200", r.status_code == 200 and r.json().get("username") == "NetAdmin", r.text[:80])
+check("correct credentials (admin/NetAdmin) -> 200", r.status_code == 200 and r.json().get("username") == "admin", r.text[:80])
 check("session cookie set (HttpOnly)", authm.COOKIE_NAME in set_cookie and "httponly" in set_cookie.lower())
 
 # ---------- 3) authenticated access works ----------

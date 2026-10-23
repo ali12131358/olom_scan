@@ -162,13 +162,38 @@ def parse_device_log(device, now=None, days_back=5, threshold_minutes=5):
     return found
 
 def interface_flap_report(devices, days_back=5, threshold_minutes=5, now=None):
+    now = now or datetime.now()
     events=[]
+    devices_with_logs=0
+    newest_log=None
     for device in devices:
+        log_text=device.get("device_log") or ""
+        if log_text.strip(): devices_with_logs+=1
         events.extend(parse_device_log(device, now=now, days_back=days_back, threshold_minutes=threshold_minutes))
+        # Track the newest link event in the logs regardless of the requested
+        # window, so an empty result can be explained (stale logs vs. none).
+        for line in log_text.splitlines():
+            match=_LINE.match(line)
+            if not match: continue
+            if not _LINK_EVENT.match(match.group("message")): continue
+            try: when=parse_log_datetime(match.group("stamp"), reference=now)
+            except (ValueError, OverflowError): continue
+            if newest_log is None or when>newest_log: newest_log=when
     events.sort(key=lambda e:(e["datetime"],e["device_name"],e["interface"]),reverse=True)
     for index,event in enumerate(events,1): event["row"] = index
-    return {"events":events,"device_count":len({e["ip"] for e in events}),"event_count":len(events),
-            "days":int(days_back),"threshold_minutes":int(threshold_minutes)}
+    report={"events":events,"device_count":len({e["ip"] for e in events}),"event_count":len(events),
+            "days":int(days_back),"threshold_minutes":int(threshold_minutes),
+            "devices_scanned":len(devices),"devices_with_logs":devices_with_logs}
+    if newest_log is not None:
+        report["newest_log_at"]=newest_log.isoformat(sep=" ")
+        report["newest_log_at_jalali"]=jalali_datetime_string(newest_log)
+        if not events:
+            cutoff=now-timedelta(days=max(0,int(days_back)))
+            if newest_log<cutoff:
+                report["stale_logs"]=True
+                suggested=max(int(days_back)+1, min(90, int((now-newest_log).days)+2))
+                report["suggested_days"]=suggested
+    return report
 
 def interface_flaps_csv(report):
     """Return a UTF-8-BOM CSV for Excel, populated from a flap report.

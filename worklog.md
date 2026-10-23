@@ -92,3 +92,24 @@ Work Log:
 Stage Summary:
 - origin/main now holds the complete Net_Scan project with all 4 completed tasks
 - Remote's venv-only initial commit intentionally replaced (contained no project content)
+
+---
+Task ID: 6
+Agent: main (Z.ai)
+Task: Fix "smart report stopped working" (0 results) + restore admin/NetAdmin login spec; push to GitHub
+
+Work Log:
+- Diagnosed end-to-end: backend + report logic fully functional (79 events / 53 devices on the same 2131-device default.db via real HTTP, auth included) - the "0 results" case had NO explanation in UI and silently swallowed read errors
+- backend/smart_reports.py: interface_flap_report now returns devices_scanned, devices_with_logs, newest_log_at(_jalali) and, when the window is newer than all logs, stale_logs=true + suggested_days (capped 90)
+- backend/main.py: JSON report includes "error" field when device read fails; CSV/XLSX exports now raise HTTP 500 on read failure instead of silently exporting empty files
+- frontend/src.jsx (SmartReports): loadList(days/threshold overrides) + diagnostics panel on empty results (devices scanned/with logs, newest log event in jalali+gregorian), red error box for DB read failures, one-click "report with N-day range" button for stale logs; DB switch clears diagnostics
+- backend/auth.py: ADMIN_USER default fixed to "admin" (was "NetAdmin") per original spec - login is now admin/NetAdmin; NETSCAN_ADMIN_USER/PASSWORD env overrides unchanged
+- frontend Login: username placeholder + fallback -> "admin"
+- scripts/test_report_fix.py (18 checks) + scripts/test_auth.py updated: ALL PASS
+- E2E re-verified over HTTP: login admin/NetAdmin 200, report 79 events, CSV 80 lines
+- Rebuilt frontend/dist
+
+Stage Summary:
+- Empty report now explains itself: scanned/logged device counts, newest log timestamp, stale-log banner with wider-range button; real DB errors surface instead of fake "no results"
+- Login credentials per original request: admin / NetAdmin (NetAdmin/NetAdmin no longer valid)
+- Deployment: git pull + backend restart + browser hard refresh (Ctrl+Shift+R)

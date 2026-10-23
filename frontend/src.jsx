@@ -60,7 +60,7 @@ function Login({onLogin}){
       const r=await fetch(API+"/api/login",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({username:user,password:pass})});
       const d=await readJson(r);
       if(!r.ok)throw Error(typeof d.detail==="string"?d.detail:"ورود ناموفق بود");
-      onLogin(d.username||"NetAdmin");
+      onLogin(d.username||"admin");
     }catch(e2){setErr(e2.message||"ورود ناموفق بود")}
     setBusy(false);
   }
@@ -72,7 +72,7 @@ function Login({onLogin}){
         <h1>شبکه‌بان <span className="login-en">Net_Scan</span></h1>
         <p className="login-sub">پایش، اسکن و مدیریت دستگاه‌های MikroTik</p>
         <label>نام کاربری
-          <input dir="ltr" value={user} onChange={e=>setUser(e.target.value)} autoComplete="username" autoFocus placeholder="NetAdmin"/>
+          <input dir="ltr" value={user} onChange={e=>setUser(e.target.value)} autoComplete="username" autoFocus placeholder="admin"/>
         </label>
         <label>گذرواژه
           <span className="login-pass">
@@ -1253,6 +1253,7 @@ function SmartReports(){
   const[downloadingCsv,setDownloadingCsv]=useState(false);
   const[msg,setMsg]=useState("");const[err,setErr]=useState("");
   const[dbList,setDbList]=useState([{name:"default"}]),[dbSel,setDbSel]=useState(""),[reportDb,setReportDb]=useState("");
+  const[diag,setDiag]=useState(null);
   useEffect(()=>{(async()=>{
     try{
       const r=await fetch(API+"/api/databases");const d=await readJson(r);
@@ -1263,14 +1264,21 @@ function SmartReports(){
       }
     }catch(e){/* keep fallback list */}
   })()},[]);
-  async function loadList(){
-    setLoadingList(true);setProgress(8);setErr("");setMsg("در حال بررسی لاگ‌ها و بارگذاری فهرست دستگاه‌ها...");
+  async function loadList(overrides){
+    overrides=overrides||{};
+    const dDays=overrides.days!==undefined?overrides.days:days;
+    const dThr=overrides.threshold!==undefined?overrides.threshold:thresholdMinutes;
+    setLoadingList(true);setProgress(8);setErr("");setMsg("در حال بررسی لاگ‌ها و بارگذاری فهرست دستگاه‌ها...");setDiag(null);
     const progressTimer=window.setInterval(()=>setProgress(value=>value>=86?20:value+7),300);
     try{
-      const url=API+"/reports/interface-flaps?days="+encodeURIComponent(days)+"&threshold_minutes="+encodeURIComponent(thresholdMinutes)+(dbSel?("&database="+encodeURIComponent(dbSel)):"");
+      const url=API+"/reports/interface-flaps?days="+encodeURIComponent(dDays)+"&threshold_minutes="+encodeURIComponent(dThr)+(dbSel?("&database="+encodeURIComponent(dbSel)):"");
       const response=await fetch(url);if(!response.ok)throw Error("دریافت فهرست ناموفق بود ("+response.status+")");
       const data=await readJson(response);const items=Array.isArray(data)?data:(data.items||data.events||data.results||[]);
       setFlapResults(items);setReportDb((data&&data.database)||dbSel||"");setProgress(100);setMsg("فهرست دستگاه‌ها بارگذاری شد.");
+      setDiag({error:(data&&data.error)||"",scanned:data&&data.devices_scanned,withLogs:data&&data.devices_with_logs,
+        newest:data&&data.newest_log_at_jalali,newestG:data&&data.newest_log_at,
+        stale:!!(data&&data.stale_logs),suggested:data&&data.suggested_days});
+      if(data&&data.stale_logs&&data.suggested_days){setDays(data.suggested_days);}
     }catch(e){setErr(e.message||"خطا در بارگذاری فهرست");setMsg("");}
     finally{window.clearInterval(progressTimer);setLoadingList(false);window.setTimeout(()=>setProgress(0),800);}
   }
@@ -1293,7 +1301,7 @@ function SmartReports(){
       <label>بازه (روز)<input type="number" min="1" value={days} onChange={e=>setDays(parseInt(e.target.value||"5",10))}/></label>
       <label>آستانه نوسان (دقیقه)<input type="number" min="1" value={thresholdMinutes} onChange={e=>setThresholdMinutes(parseInt(e.target.value||"5",10))}/></label>
       <label>دیتابیس گزارش
-        <select value={dbSel} onChange={e=>{setDbSel(e.target.value);setFlapResults([]);setReportDb("");setMsg("دیتابیس تغییر کرد؛ برای گزارش جدید روی «مشاهده و بارگذاری لیست دستگاه‌ها» کلیک کنید.")}}
+        <select value={dbSel} onChange={e=>{setDbSel(e.target.value);setFlapResults([]);setReportDb("");setDiag(null);setMsg("دیتابیس تغییر کرد؛ برای گزارش جدید روی «مشاهده و بارگذاری لیست دستگاه‌ها» کلیک کنید.")}}
           title="گزارش فقط از دیتابیس انتخاب‌شده گرفته می‌شود">
           {dbList.map(d=><option key={d.name} value={d.name}>{d.name+(typeof d.devices==="number"?" ("+d.devices+" دستگاه)":"")+(d.active?" — فعال":"")}</option>)}
         </select>
@@ -1310,6 +1318,19 @@ function SmartReports(){
       </div>}
       {!loadingList&&!downloadingCsv&&msg&&<div className="msg">{msg}</div>}
       {err&&<div className="error" role="alert">{err}</div>}
+      {flapResults.length===0&&diag&&(diag.error||diag.scanned!==undefined)&&<div style={{marginTop:10,borderRadius:8,padding:"10px 14px",lineHeight:2,
+        background:diag.error?"#fef2f2":"#fffbeb",border:("1px solid ")+(diag.error?"#ef4444":"#f59e0b"),color:diag.error?"#991b1b":"#92400e"}}>
+        {diag.error
+          ?<div role="alert"><b>خطا در خواندن دیتابیس:</b> {diag.error}</div>
+          :<>
+            <div>بررسی شد: <b>{diag.scanned}</b> دستگاه{typeof diag.withLogs==="number"?(" — دارای لاگ: "+diag.withLogs+" دستگاه"):""}</div>
+            {diag.newest&&<div>جدیدترین رویداد لینک ثبت‌شده در لاگ‌ها: <b>{diag.newest}</b>{diag.newestG?(" ("+diag.newestG+" میلادی)"):""}</div>}
+            {typeof diag.withLogs==="number"&&diag.withLogs===0&&<div>هیچ دستگاهی در این دیتابیس لاگ ذخیره‌شده ندارد؛ ابتدا از دستگاه‌ها لاگ تهیه کنید (اسکن یا دریافت لاگ).</div>}
+            {diag.stale&&diag.suggested&&<div style={{marginTop:8}}>هیچ نوسانی در بازه انتخابی یافت نشد، اما لاگ‌های قدیمی‌تر موجود است:<br/>
+              <button type="button" className="tool-btn" style={{marginTop:6}} onClick={()=>loadList({days:diag.suggested})}>نمایش گزارش با بازه {diag.suggested} روزه</button>
+            </div>}
+          </>}
+      </div>}
       {flapResults!==null&&flapResults.length>=0&&<div style={{marginTop:16}}>
         <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:10,flexWrap:"wrap",gap:8}}>
           <strong style={{background:"#e8f5ee",color:"#176b43",borderRadius:16,padding:"6px 12px"}}>تعداد موارد یافت‌شده: {flapResults.length}</strong>
