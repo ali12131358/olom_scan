@@ -113,3 +113,20 @@ Stage Summary:
 - Empty report now explains itself: scanned/logged device counts, newest log timestamp, stale-log banner with wider-range button; real DB errors surface instead of fake "no results"
 - Login credentials per original request: admin / NetAdmin (NetAdmin/NetAdmin no longer valid)
 - Deployment: git pull + backend restart + browser hard refresh (Ctrl+Shift+R)
+
+---
+Task ID: 7
+Agent: main (Z.ai)
+Task: Fix smart report ROOT CAUSE revealed by Task-6 error box ("نام دیتابیس نامعتبر است"); push to GitHub
+
+Work Log:
+- User screenshot showed the red error box added in Task 6: "خواندن دستگاه‌ها از دیتابیس «default» ناموفق بود: نام دیتابیس نامعتبر است (۱ تا ۶۴ کاراکتر)" - the previously silently-swallowed exception
+- Root cause: _ip_info_dir(db_path) passed a full FILESYSTEM PATH into db_path_for(), which expects a database NAME; _safe_db_name() then sanitized the whole path and raised ValueError whenever the result exceeded 64 chars (typical Windows project paths). query_devices -> enrich_devices_from_ip_info raised -> endpoints returned empty (old code) / error (Task 6)
+- backend/db.py _ip_info_dir: now detects filesystem paths (suffix .db or multi-part) and uses path.parent/ip_info directly; plain names still resolve via db_path_for(); None -> active db
+- scripts/test_ip_info_path_fix.py: 12 checks incl. >64-char sanitized path reproduction, Path/str/name/None inputs, end-to-end query_devices + ip_info enrichment + flap report on a long path, real default.db sanity - ALL PASS
+- scripts/test_search_and_db.py: repaired stale test (login after Task-4 auth middleware, cleanup ordering, leftover zz_search_test.db) - ALL PASS
+- Full regression: report_fix 18/18, auth OK, search_and_db OK
+
+Stage Summary:
+- Smart report now works regardless of project path length (fixes user's Windows deployment where C:\Users\...\Net_Scan exceeded 64 chars after sanitization)
+- Data files (catalog.json / *.db) intentionally left out of this commit to avoid overwriting user's live data on git pull

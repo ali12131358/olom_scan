@@ -8,6 +8,10 @@ import main as appm
 
 client = TestClient(appm.app)
 
+# Task 4 added auth middleware: login before hitting protected endpoints.
+_r = client.post("/api/login", json={"username": "admin", "password": "NetAdmin"})
+assert _r.status_code == 200, f"login failed: {_r.status_code} {_r.text[:100]}"
+
 # ---------- Setup: temporary test database registered in the catalog ----------
 TEST_DB = "zz_search_test"
 created = dbm.create_database(TEST_DB)          # registers + inits db file
@@ -89,6 +93,7 @@ r = client.get("/reports/interface-flaps/export.csv", params={"database": TEST_D
 check("csv export ok from selected db", r.status_code == 200 and r.text.startswith("\ufeffردیف"))
 
 # ---------- Cleanup ----------
+dbm.set_active_database(prev_active)   # ensure test DB is not active before delete
 dbm.delete_database(TEST_DB)
 print("\ncleanup done:", TEST_DB, "removed from catalog")
 print("\n" + ("ALL TESTS PASSED ✔" if ok else "SOME TESTS FAILED ✘"))

@@ -548,8 +548,21 @@ def fetch_devices_by_ips(ips, db_path=None):
 
 
 def _ip_info_dir(db_path=None):
+    """Directory of per-device ip_info files next to the given database.
+
+    `db_path` may be a filesystem path (str/Path, as taken by query_devices)
+    or a database NAME; None means the active database.
+    """
     from pathlib import Path as _P
-    return _P(db_path_for(db_path)).parent / "ip_info"
+    if db_path:
+        p = _P(str(db_path))
+        # A real filesystem path: has a suffix (.db) or spans several parts.
+        # Database names can never contain dots or path separators (they are
+        # sanitized), so this check cannot misclassify a plain name.
+        if p.suffix == ".db" or len(p.parts) > 1:
+            return p.parent / "ip_info"
+        return db_path_for(str(db_path)).parent / "ip_info"
+    return db_path_for().parent / "ip_info"
 
 
 def _parse_ip_info_file(text: str) -> dict:
