@@ -145,3 +145,22 @@ Work Log:
 Stage Summary:
 - origin/main now in sync with local main including the Task-7 fix and user screenshots
 - Deployment reminder for user: git pull on server + backend restart + Ctrl+Shift+R
+
+---
+Task ID: 9
+Agent: main (AI Studio Build)
+Task: Fix scan tab "Failed to fetch" root cause, relative API URLs, and rebuild frontend dist; push to GitHub
+
+Work Log:
+- Investigated user screenshot `upload/IMG_20261024_103007.jpg` showing the light-pink error box on the Network Scan tab: "Failed to fetch"
+- Identified root cause in `frontend/src.jsx`: `API` variable only returned relative URL `""` if hostname was strictly `"127.0.0.1"` or `"localhost"`. When accessed via remote IP (e.g. `http://185.110.29.189:5001`), it evaluated to `http://${h}:8001`. Client browsers attempting to call port 8001 directly failed due to firewall restrictions, cross-origin restrictions, or un-forwarded ports on remote servers, throwing `TypeError: Failed to fetch`.
+- Updated `API` in `frontend/src.jsx` to always return same-origin relative path `""` in the browser, allowing Vite's port 5001 proxy (`/scans`, `/devices`, `/health`, `/api`, `/reports`) or FastAPI to serve requests reliably without opening port 8001 publicly.
+- Improved `start()`, `transferScan()`, and `stopScan()` to use `readJson`, properly catching and dispatching `netscan:unauthorized` on 401 status.
+- Added retry resilience to scan status polling interval to avoid flashing errors on single transient hiccups.
+- Rebuilt production assets via `vite build` into `frontend/dist`.
+
+Stage Summary:
+- Scan tab no longer fails with "Failed to fetch" when accessed remotely via IP or custom domain.
+- Frontend dist rebuilt and synchronized.
+- Ready to push to GitHub origin/main.
+
