@@ -130,3 +130,18 @@ Work Log:
 Stage Summary:
 - Smart report now works regardless of project path length (fixes user's Windows deployment where C:\Users\...\Net_Scan exceeded 64 chars after sanitization)
 - Data files (catalog.json / *.db) intentionally left out of this commit to avoid overwriting user's live data on git pull
+
+---
+Task ID: 8
+Agent: main (Z.ai)
+Task: Commit and push the latest version to GitHub (user: «آخرین نسخه را روی گیت هاب کامیت کن»)
+
+Work Log:
+- Verified working tree clean; one local commit (auto-created with UUID message) held the user's two uploaded problem screenshots (scan tab "Failed to fetch" + smart report DB-name error)
+- Confirmed Task-7 root-cause fix 4f43e96 already on origin/main; re-ran regressions: test_ip_info_path_fix 12/12, test_report_fix 18/18 - ALL PASS
+- Amended UUID commit message to descriptive text (975959e)
+- Appended this worklog entry, committed, pushed both commits to origin/main
+
+Stage Summary:
+- origin/main now in sync with local main including the Task-7 fix and user screenshots
+- Deployment reminder for user: git pull on server + backend restart + Ctrl+Shift+R
