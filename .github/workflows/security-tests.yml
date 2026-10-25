@@ -19,7 +19,9 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install -r requirements.txt -r backend/requirements.txt
       - name: Generate ephemeral test encryption key
-        run: echo "NETSCAN_CREDENTIALS_KEY=$(python -c \"from cryptography.fernet import Fernet; print(Fernet.generate_key().decode())\")" >> "$GITHUB_ENV"
+        run: |
+          KEY=$(python -c 'from cryptography.fernet import Fernet; print(Fernet.generate_key().decode())')
+          echo "NETSCAN_CREDENTIALS_KEY=$KEY" >> "$GITHUB_ENV"
       - name: Compile Python sources
         run: python -m compileall -q backend scanner_lib tests
       - name: Run unit tests
