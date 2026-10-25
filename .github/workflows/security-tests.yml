@@ -1,0 +1,31 @@
+name: Security credential tests
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [security/encrypt-credentials]
+
+jobs:
+  python-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt -r backend/requirements.txt
+      - name: Generate ephemeral test encryption key
+        run: |
+          KEY=$(python -c 'from cryptography.fernet import Fernet; print(Fernet.generate_key().decode())')
+          echo "NETSCAN_CREDENTIALS_KEY=$KEY" >> "$GITHUB_ENV"
+      - name: Compile Python sources
+        run: python -m compileall -q backend scanner_lib tests
+      - name: Run unit tests
+        env:
+          NETSCAN_ADMIN_USER: ci-admin
+          NETSCAN_ADMIN_PASSWORD: ci-only-test-password
+        run: python -m unittest discover -s tests -v

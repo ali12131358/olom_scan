@@ -1,4 +1,4 @@
-# کتابخانه‌ها و پوشه‌های محیط مجازی پایتون که در پروژه شما ساخته شده
+# Python environments and caches
 Lib/
 lib/
 Scripts/
@@ -6,23 +6,35 @@ scripts/
 Include/
 include/
 pyvenv.cfg
-
-# کش‌های پایتون
 __pycache__/
 *.py[cod]
-*$py.class
 *.pyd
-
-# تنظیمات خود PyCharm
+.venv/
+venv/
 .idea/
+.pytest_cache/
 
-# کتابخانه‌ها و کش فرانت‌اند
+# Frontend dependencies and caches
 frontend/node_modules/
 node_modules/
 frontend/.cache/
 npm-debug.log*
 yarn-debug.log*
 
-# در صورت عدم تمایل به آپلود دیتابیس‌های تستی و کش
+# Local secrets and runtime VPN material
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+.vpn_runtime/
+vpn_profiles.json
+chap-secrets
+peer_olom
+
+# Runtime data / logs / backups
 *.log
-.pytest_cache/
+*.db
+*.db-*
+databases/.auth_secret
+databases/ip_info/
