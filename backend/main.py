@@ -88,20 +88,39 @@ try:
 except ImportError:
     import winbox_launcher
 
-app=FastAPI(title="Authorized IPv4 Scanner")
-app.add_middleware(CORSMiddleware,allow_origins=["*"],allow_methods=["*"],allow_headers=["*"],allow_credentials=False)
+# The Local Agent must not grant arbitrary websites access to local network actions.
+_LOCAL_AGENT_ORIGINS = {
+    "http://localhost:5001",
+    "http://127.0.0.1:5001",
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+}
+_LOCAL_AGENT_ORIGINS.update(
+    item.strip().rstrip("/")
+    for item in os.environ.get("LOCAL_AGENT_ALLOWED_ORIGINS", "").split(",")
+    if item.strip()
+)
 
-# Chrome/Edge "Private Network Access": public UI (e.g. http://185.x:5001) calling http://127.0.0.1:8001
-# requires Access-Control-Allow-Private-Network on preflight and responses.
+app=FastAPI(title="Authorized IPv4 Scanner")
+app.add_middleware(CORSMiddleware,allow_origins=sorted(_LOCAL_AGENT_ORIGINS),allow_methods=["*"],allow_headers=["*"],allow_credentials=False)
+
+# Chrome/Edge "Private Network Access": an explicitly approved remote UI may
+# call the Local Agent. Unlisted Origins are rejected before reaching routes.
 from starlette.middleware.base import BaseHTTPMiddleware
 from starlette.responses import Response as StarletteResponse
 
 class PrivateNetworkAccessMiddleware(BaseHTTPMiddleware):
     async def dispatch(self, request, call_next):
-        origin = request.headers.get("origin", "*")
+        origin = request.headers.get("origin")
+        if origin and origin.rstrip("/") not in _LOCAL_AGENT_ORIGINS:
+            return StarletteResponse("Origin is not allowed for Local Agent", status_code=403)
         if request.method == "OPTIONS" and request.headers.get("access-control-request-private-network", "").lower() == "true":
+            if origin and origin.rstrip("/") not in _LOCAL_AGENT_ORIGINS:
+                return StarletteResponse("Origin is not allowed for Local Agent", status_code=403)
             resp = StarletteResponse(status_code=204)
-            resp.headers["Access-Control-Allow-Origin"] = origin
+            resp.headers["Access-Control-Allow-Origin"] = origin or "null"
             resp.headers["Access-Control-Allow-Methods"] = "GET,POST,PUT,PATCH,DELETE,OPTIONS"
             resp.headers["Access-Control-Allow-Headers"] = request.headers.get("access-control-request-headers", "*")
             resp.headers["Access-Control-Allow-Private-Network"] = "true"
@@ -916,20 +935,7 @@ def _require_loopback_agent(request: Request) -> None:
     # on a visitor's computer. Add the exact UI origin to this environment
     # variable when using a remotely hosted frontend.
     origin = request.headers.get("origin")
-    allowed_origins = {
-        "http://localhost:5001",
-        "http://127.0.0.1:5001",
-        "http://localhost:5173",
-        "http://127.0.0.1:5173",
-        "http://localhost:3000",
-        "http://127.0.0.1:3000",
-    }
-    allowed_origins.update(
-        item.strip().rstrip("/")
-        for item in os.environ.get("LOCAL_AGENT_ALLOWED_ORIGINS", "").split(",")
-        if item.strip()
-    )
-    origin_allowed = not origin or origin.rstrip("/") in allowed_origins
+    origin_allowed = not origin or origin.rstrip("/") in _LOCAL_AGENT_ORIGINS
     if not is_loopback or not local_host or not origin_allowed:
         raise HTTPException(
             status_code=403,
