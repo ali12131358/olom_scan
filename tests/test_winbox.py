@@ -54,3 +54,16 @@ def test_vpn_connect_rejects_remote_client(monkeypatch):
     res = remote.post("/api/vpn/connect", json={"protocol": "pptp", "host": "192.0.2.10"})
     assert res.status_code == 403
     assert called == []
+
+
+def test_local_agent_rejects_unapproved_browser_origin(monkeypatch):
+    called = []
+    monkeypatch.setattr("backend.main.vpn_manager.connect", lambda data: called.append(data))
+    local = TestClient(app, base_url="http://127.0.0.1", client=("127.0.0.1", 50000))
+    res = local.post(
+        "/api/vpn/connect",
+        headers={"Origin": "https://malicious.example"},
+        json={"protocol": "pptp", "host": "192.0.2.10"},
+    )
+    assert res.status_code == 403
+    assert called == []
