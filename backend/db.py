@@ -507,8 +507,20 @@ def fetch_devices_by_ips(ips, db_path=None):
 
 
 def _ip_info_dir(db_path=None):
-    from pathlib import Path as _P
-    return _P(db_path_for(db_path)).parent / "ip_info"
+    """Resolve the ip_info folder next to an explicit DB path or the active DB."""
+    if db_path is None:
+        path = db_path_for()
+    elif isinstance(db_path, Path):
+        path = db_path
+    else:
+        raw = str(db_path)
+        # Explicit paths (including temporary test databases) must not be
+        # treated as database catalog names.
+        if "/" in raw or "\\" in raw or raw.lower().endswith((".db", ".sqlite", ".sqlite3")):
+            path = Path(raw)
+        else:
+            path = db_path_for(raw)
+    return Path(path).parent / "ip_info"
 
 
 def _parse_ip_info_file(text: str) -> dict:
@@ -1010,7 +1022,7 @@ def set_setting(key: str, value: str, db_path=None):
                ON CONFLICT(key) DO UPDATE SET value=excluded.value, updated_at=excluded.updated_at""",
             (key, str(value), ts),
         )
-    return {"key": key, "value": str(value), "updated_at": ts}
+    return {"key": key, "value": str(value)}
 
 
 def list_settings(db_path=None):
@@ -1111,6 +1123,100 @@ def restore_db_bytes(data: bytes, db_path=None) -> dict:
         except OSError:
             pass
 
+
+
+def export_backup_bytes(db_path=None) -> bytes:
+    """Export devices and settings as a validated, portable JSON backup."""
+    with _connect(db_path) as conn:
+        device_rows = conn.execute("SELECT * FROM devices ORDER BY ip").fetchall()
+        settings_rows = conn.execute("SELECT key, value FROM settings ORDER BY key").fetchall()
+    devices = []
+    for row in device_rows:
+        item = dict(row)
+        for key in ("ping_ok",):
+            item[key] = bool(item.get(key))
+        for key in ("open_ports", "port_states"):
+            try:
+                item[key] = json.loads(item.get(key) or ("[]" if key == "open_ports" else "{}"))
+            except (TypeError, ValueError):
+                item[key] = [] if key == "open_ports" else {}
+        devices.append(item)
+    payload = {
+        "app": "mikrotik_scanner",
+        "version": 1,
+        "created_at": _now(),
+        "devices": devices,
+        "settings": {row["key"]: row["value"] for row in settings_rows},
+    }
+    return json.dumps(payload, ensure_ascii=False, indent=2).encode("utf-8")
+
+
+def restore_backup_bytes(data: bytes, db_path=None) -> dict:
+    """Restore a portable JSON backup after validating its complete structure."""
+    if not isinstance(data, (bytes, bytearray)) or not data:
+        raise ValueError("فایل پشتیبان خالی یا نامعتبر است")
+    try:
+        payload = json.loads(bytes(data).decode("utf-8"))
+    except (UnicodeDecodeError, json.JSONDecodeError) as exc:
+        raise ValueError("ساختار JSON فایل پشتیبان معتبر نیست") from exc
+    if not isinstance(payload, dict) or payload.get("app") != "mikrotik_scanner":
+        raise ValueError("نوع فایل پشتیبان معتبر نیست")
+    devices = payload.get("devices")
+    settings = payload.get("settings")
+    if not isinstance(devices, list) or not isinstance(settings, dict):
+        raise ValueError("فایل پشتیبان باید شامل devices و settings معتبر باشد")
+    for item in devices:
+        if not isinstance(item, dict) or not isinstance(item.get("ip"), str) or not item["ip"].strip():
+            raise ValueError("رکورد دستگاه در فایل پشتیبان نامعتبر است")
+    if any(not isinstance(k, str) or not isinstance(v, (str, int, float, bool)) for k, v in settings.items()):
+        raise ValueError("تنظیمات فایل پشتیبان نامعتبر است")
+
+    path = Path(db_path) if db_path is not None else db_path_for()
+    init_db(path)
+    with _connect(path) as conn:
+        # Restore atomically from the validated payload.
+        conn.execute("DELETE FROM devices")
+        conn.execute("DELETE FROM settings")
+        columns = {r[1] for r in conn.execute("PRAGMA table_info(devices)").fetchall()}
+        device_count = 0
+        for item in devices:
+            record = dict(item)
+            record["ip"] = record["ip"].strip()
+            record["ping_ok"] = int(bool(record.get("ping_ok", False)))
+            record["open_ports"] = json.dumps(record.get("open_ports") or [], ensure_ascii=False)
+            record["port_states"] = json.dumps(record.get("port_states") or {}, ensure_ascii=False)
+            record.setdefault("classification", _normalize_classification("", bool(record["ping_ok"])))
+            record.setdefault("first_seen", _now())
+            record.setdefault("last_seen", record["first_seen"])
+            record.setdefault("seen_count", 1)
+            record.setdefault("device_name", "")
+            record.setdefault("tags", "")
+            record.setdefault("ip_addresses", "")
+            record.setdefault("ip_neighbors", "")
+            record.setdefault("interfaces", "")
+            record.setdefault("device_type", "")
+            record.setdefault("wireless_info", "")
+            record.setdefault("device_log", "")
+            record.setdefault("mac_info", "")
+            names = [key for key in record if key in columns]
+            conn.execute(
+                f"INSERT INTO devices ({','.join(names)}) VALUES ({','.join('?' for _ in names)})",
+                [record[key] for key in names],
+            )
+            device_count += 1
+        for key, value in settings.items():
+            conn.execute(
+                "INSERT INTO settings (key, value, updated_at) VALUES (?,?,?)",
+                (key, str(value), _now()),
+            )
+    return {
+        "ok": True,
+        "devices_restored": device_count,
+        "devices_total": device_count,
+        "settings_restored": len(settings),
+        "settings_total": len(settings),
+        "path": str(path),
+    }
 
 
 # ---------------- tag import + full project backup/restore ----------------
