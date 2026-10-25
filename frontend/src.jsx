@@ -159,7 +159,7 @@ function VpnManagerCard({onNotify,onRoutes}){
       <label>مسیرهای ریموت (CIDR)<input dir="ltr" value={routes} onChange={e=>setRoutes(e.target.value)} placeholder="10.10.0.0/24, 192.168.5.0/24"/></label>
       <label className="checkbox-label"><input type="checkbox" checked={saveAsNew} onChange={e=>setSaveAsNew(e.target.checked)}/> ذخیره به‌عنوان پروفایل جدید</label>
     </div>
-    <label>فایل پیکربندی (WireGuard/OpenVPN) — همراه پروفایل ذخیره می‌شود<textarea dir="ltr" rows="4" value={configContent} onChange={e=>setConfigContent(e.target.value)} placeholder="[Interface]&#10;PrivateKey = ..."/></label>
+    <label>فایل پیکربندی (WireGuard/OpenVPN) — فقط برای این اتصال؛ ذخیره نمی‌شود<textarea dir="ltr" rows="4" value={configContent} onChange={e=>setConfigContent(e.target.value)} placeholder="[Interface]&#10;PrivateKey = ..."/></label>
     <div className="vpn-actions">
       <button type="button" disabled={busy||state==="connected"} onClick={connect}>اتصال</button>
       <button type="button" className="btn-stop" disabled={busy||state==="disconnected"} onClick={disconnect}>قطع اتصال</button>
