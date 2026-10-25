@@ -83,6 +83,11 @@ try:
 except ImportError:
     import email_manager
 
+try:
+    from backend import winbox_launcher
+except ImportError:
+    import winbox_launcher
+
 app=FastAPI(title="Authorized IPv4 Scanner")
 app.add_middleware(CORSMiddleware,allow_origins=["*"],allow_methods=["*"],allow_headers=["*"],allow_credentials=False)
 
@@ -1444,3 +1449,43 @@ if __name__ == "__main__":
         reload=True,
         app_dir=str(ROOT_DIR),
     )
+
+
+# ---- local WinBox launch / protocol hand-off ----
+class WinboxLaunchRequest(BaseModel):
+    ip: str = Field(min_length=1, max_length=64)
+    port: int = Field(default=8291, ge=1, le=65535)
+
+
+def _validated_winbox_target(ip: str, port: int) -> tuple[str, int]:
+    import ipaddress
+    try:
+        normalized_ip = str(ipaddress.ip_address(str(ip).strip()))
+    except ValueError:
+        raise HTTPException(status_code=422, detail="آدرس IP نامعتبر است") from None
+    if not 1 <= int(port) <= 65535:
+        raise HTTPException(status_code=422, detail="پورت نامعتبر است")
+    return normalized_ip, int(port)
+
+
+@app.post("/devices/launch-winbox")
+def launch_winbox(body: WinboxLaunchRequest):
+    """Launch a locally installed WinBox client, or return a protocol URI fallback."""
+    ip, port = _validated_winbox_target(body.ip, body.port)
+    exe = winbox_launcher.find_winbox()
+    uri = f"winbox://{ip}"
+    if not exe:
+        return {"launched": False, "uri": uri, "method": "uri"}
+    try:
+        subprocess.Popen([exe, f"{ip}:{port}"])
+    except OSError as exc:
+        return {"launched": False, "uri": uri, "method": "uri", "error": str(exc)}
+    return {"launched": True, "uri": uri, "method": "exe"}
+
+
+@app.get("/devices/winbox-protocol")
+def winbox_protocol(ip: str = Query(..., min_length=1, max_length=64), port: int = Query(8291, ge=1, le=65535)):
+    """Redirect to the registered WinBox URI handler on the user's computer."""
+    from fastapi.responses import RedirectResponse
+    ip, port = _validated_winbox_target(ip, port)
+    return RedirectResponse(url=f"winbox://{ip}:{port}", status_code=307)
