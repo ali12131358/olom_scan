@@ -2,7 +2,7 @@ from fastapi.testclient import TestClient
 from backend.main import app
 from backend import winbox_launcher
 
-client = TestClient(app, client=("127.0.0.1", 50000))
+client = TestClient(app, base_url="http://127.0.0.1", client=("127.0.0.1", 50000))
 
 def test_winbox_launch_endpoint(monkeypatch):
     # Test when winbox is not found -> returns uri fallback
@@ -41,7 +41,7 @@ def test_winbox_launch_rejects_remote_client(monkeypatch):
     called = []
     monkeypatch.setattr(winbox_launcher, "find_winbox", lambda: "/tmp/winbox")
     monkeypatch.setattr(winbox_launcher.subprocess, "Popen", lambda *a, **k: called.append(a))
-    remote = TestClient(app, client=("198.51.100.25", 50000))
+    remote = TestClient(app, base_url="https://public.example.com", client=("198.51.100.25", 50000))
     res = remote.post("/devices/launch-winbox", json={"ip": "192.168.88.1", "port": 8291})
     assert res.status_code == 403
     assert called == []
