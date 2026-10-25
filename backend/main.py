@@ -912,10 +912,28 @@ def _require_loopback_agent(request: Request) -> None:
     # originate from 127.0.0.1 at the TCP layer. Local Agent calls use loopback
     # URLs explicitly, while public requests retain the public hostname.
     local_host = request_host in {"localhost", "127.0.0.1", "::1"}
-    if not is_loopback or not local_host:
+    # Browser pages on arbitrary sites must not be able to trigger VPN changes
+    # on a visitor's computer. Add the exact UI origin to this environment
+    # variable when using a remotely hosted frontend.
+    origin = request.headers.get("origin")
+    allowed_origins = {
+        "http://localhost:5001",
+        "http://127.0.0.1:5001",
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+        "http://localhost:3000",
+        "http://127.0.0.1:3000",
+    }
+    allowed_origins.update(
+        item.strip().rstrip("/")
+        for item in os.environ.get("LOCAL_AGENT_ALLOWED_ORIGINS", "").split(",")
+        if item.strip()
+    )
+    origin_allowed = not origin or origin.rstrip("/") in allowed_origins
+    if not is_loopback or not local_host or not origin_allowed:
         raise HTTPException(
             status_code=403,
-            detail="این عملیات فقط از Local Agent روی همین رایانه مجاز است",
+            detail="این عملیات فقط از رابط مجاز Local Agent روی همین رایانه مجاز است",
         )
 
 
