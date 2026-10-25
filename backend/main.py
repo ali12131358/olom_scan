@@ -104,7 +104,7 @@ _LOCAL_AGENT_ORIGINS.update(
 )
 
 app=FastAPI(title="Authorized IPv4 Scanner")
-app.add_middleware(CORSMiddleware,allow_origins=sorted(_LOCAL_AGENT_ORIGINS),allow_methods=["*"],allow_headers=["*"],allow_credentials=False)
+app.add_middleware(CORSMiddleware,allow_origins=["*"],allow_methods=["*"],allow_headers=["*"],allow_credentials=False)
 
 # Chrome/Edge "Private Network Access": an explicitly approved remote UI may
 # call the Local Agent. Unlisted Origins are rejected before reaching routes.
@@ -114,10 +114,14 @@ from starlette.responses import Response as StarletteResponse
 class PrivateNetworkAccessMiddleware(BaseHTTPMiddleware):
     async def dispatch(self, request, call_next):
         origin = request.headers.get("origin")
-        if origin and origin.rstrip("/") not in _LOCAL_AGENT_ORIGINS:
+        request_host = (request.url.hostname or "").lower()
+        is_local_agent_host = request_host in {"localhost", "127.0.0.1", "::1"}
+        # Public API deployments keep their normal CORS behavior. Strict
+        # origin checks apply when the browser targets a loopback Local Agent.
+        if is_local_agent_host and origin and origin.rstrip("/") not in _LOCAL_AGENT_ORIGINS:
             return StarletteResponse("Origin is not allowed for Local Agent", status_code=403)
         if request.method == "OPTIONS" and request.headers.get("access-control-request-private-network", "").lower() == "true":
-            if origin and origin.rstrip("/") not in _LOCAL_AGENT_ORIGINS:
+            if is_local_agent_host and origin and origin.rstrip("/") not in _LOCAL_AGENT_ORIGINS:
                 return StarletteResponse("Origin is not allowed for Local Agent", status_code=403)
             resp = StarletteResponse(status_code=204)
             resp.headers["Access-Control-Allow-Origin"] = origin or "null"
