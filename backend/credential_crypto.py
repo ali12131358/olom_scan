@@ -9,6 +9,13 @@ from __future__ import annotations
 
 import os
 from cryptography.fernet import Fernet, InvalidToken
+from pathlib import Path
+
+try:
+    from dotenv import load_dotenv
+    load_dotenv(Path(__file__).resolve().parent.parent / ".env")
+except ImportError:
+    pass  # Environment variables may be injected by the service manager.
 
 ENV_KEY = "NETSCAN_CREDENTIALS_KEY"
 _PREFIX = "fernet:v1:"

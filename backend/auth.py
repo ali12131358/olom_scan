@@ -14,6 +14,11 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
+try:
+    from dotenv import load_dotenv
+    load_dotenv(ROOT_DIR / ".env")
+except ImportError:
+    pass  # Environment variables may be injected by the service manager.
 _SECRET_FILE = Path(
     os.environ.get("NETSCAN_AUTH_SECRET_FILE") or (ROOT_DIR / "databases" / ".auth_secret")
 )
