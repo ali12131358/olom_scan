@@ -1031,6 +1031,13 @@ def list_settings(db_path=None):
         return [dict(r) for r in rows]
 
 
+def get_all_settings(db_path=None) -> dict:
+    """Return all application settings as a key/value mapping."""
+    with _connect(db_path) as conn:
+        rows = conn.execute("SELECT key, value FROM settings ORDER BY key").fetchall()
+        return {row["key"]: row["value"] for row in rows}
+
+
 # ---------------- backup / restore ----------------
 
 def backup_db_bytes(db_path=None) -> bytes:
