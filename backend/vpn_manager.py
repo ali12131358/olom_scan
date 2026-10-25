@@ -16,6 +16,11 @@ import threading
 import time
 from pathlib import Path
 
+try:
+    from backend.credential_crypto import protect_profile
+except ImportError:  # direct execution from backend directory
+    from credential_crypto import protect_profile
+
 ROOT = Path(__file__).resolve().parent.parent
 PROFILE_FILE = Path(os.environ.get("MIKROTIK_VPN_PROFILES", ROOT / "vpn_profiles.json"))
 LOCK = threading.RLock()
@@ -42,9 +47,17 @@ def _load():
     global PROFILES
     try:
         value = json.loads(PROFILE_FILE.read_text(encoding="utf-8"))
-        PROFILES = value if isinstance(value, dict) else {}
-    except (OSError, ValueError):
+        raw_profiles = value if isinstance(value, dict) else {}
+        # Decrypt encrypted fields only after the external key is configured.
+        PROFILES = {
+            pid: protect_profile(profile, encrypt=False)
+            if isinstance(profile, dict) else profile
+            for pid, profile in raw_profiles.items()
+        }
+    except FileNotFoundError:
         PROFILES = {}
+    except (OSError, ValueError) as exc:
+        raise RuntimeError(f"VPN profile file could not be loaded: {exc}") from exc
     # Ensure built-in defaults exist without overwriting user edits of same id
     changed = False
     for pid, meta in DEFAULT_PROFILES.items():
@@ -58,7 +71,13 @@ def _load():
 def _save():
     PROFILE_FILE.parent.mkdir(parents=True, exist_ok=True)
     tmp = PROFILE_FILE.with_suffix(PROFILE_FILE.suffix + ".tmp")
-    tmp.write_text(json.dumps(PROFILES, ensure_ascii=False, indent=2), encoding="utf-8")
+    # Encrypt secret fields on disk; plaintext exists only in process memory.
+    stored_profiles = {
+        pid: protect_profile(profile, encrypt=True)
+        if isinstance(profile, dict) else profile
+        for pid, profile in PROFILES.items()
+    }
+    tmp.write_text(json.dumps(stored_profiles, ensure_ascii=False, indent=2), encoding="utf-8")
     try:
         os.chmod(tmp, 0o600)
     except OSError:
