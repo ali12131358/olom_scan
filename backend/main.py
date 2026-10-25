@@ -18,7 +18,7 @@ from threading import Lock, Event
 from datetime import datetime, timezone
 from uuid import uuid4
 
-from fastapi import FastAPI, HTTPException, Query, UploadFile, File
+from fastapi import FastAPI, HTTPException, Query, UploadFile, File, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import Response
 from pydantic import BaseModel, Field
@@ -895,12 +895,33 @@ class VpnProfileRequest(BaseModel):
     routes: list[str] | str | None = None
     is_default: bool = False
 
+def _require_loopback_agent(request: Request) -> None:
+    """Block OS-level actions unless the caller is the local machine.
+
+    These endpoints run commands and alter routes on the host. They must never
+    be remotely callable on the public web server.
+    """
+    import ipaddress
+    host = request.client.host if request.client else ""
+    try:
+        is_loopback = ipaddress.ip_address(host).is_loopback
+    except ValueError:
+        is_loopback = False
+    if not is_loopback:
+        raise HTTPException(
+            status_code=403,
+            detail="این عملیات فقط از Local Agent روی همین رایانه مجاز است",
+        )
+
+
 @app.get("/api/vpn/status")
-def vpn_status():
+def vpn_status(request: Request):
+    _require_loopback_agent(request)
     return vpn_manager.status()
 
 @app.post("/api/vpn/connect")
-def vpn_connect(body: VpnConnectRequest):
+def vpn_connect(body: VpnConnectRequest, request: Request):
+    _require_loopback_agent(request)
     try:
         return vpn_manager.connect(body.model_dump())
     except (ValueError, RuntimeError) as e:
@@ -909,7 +930,8 @@ def vpn_connect(body: VpnConnectRequest):
         raise HTTPException(500, f"خطای داخلی VPN: {e}")
 
 @app.post("/api/vpn/disconnect")
-def vpn_disconnect():
+def vpn_disconnect(request: Request):
+    _require_loopback_agent(request)
     try:
         return vpn_manager.disconnect()
     except Exception as e:
@@ -1469,8 +1491,9 @@ def _validated_winbox_target(ip: str, port: int) -> tuple[str, int]:
 
 
 @app.post("/devices/launch-winbox")
-def launch_winbox(body: WinboxLaunchRequest):
-    """Launch a locally installed WinBox client, or return a protocol URI fallback."""
+def launch_winbox(body: WinboxLaunchRequest, request: Request):
+    """Launch WinBox only when called by the local machine."""
+    _require_loopback_agent(request)
     ip, port = _validated_winbox_target(body.ip, body.port)
     exe = winbox_launcher.find_winbox()
     uri = f"winbox://{ip}"
@@ -1484,8 +1507,9 @@ def launch_winbox(body: WinboxLaunchRequest):
 
 
 @app.get("/devices/winbox-protocol")
-def winbox_protocol(ip: str = Query(..., min_length=1, max_length=64), port: int = Query(8291, ge=1, le=65535)):
-    """Redirect to the registered WinBox URI handler on the user's computer."""
+def winbox_protocol(request: Request, ip: str = Query(..., min_length=1, max_length=64), port: int = Query(8291, ge=1, le=65535)):
+    """Redirect to the registered WinBox URI handler only for local callers."""
+    _require_loopback_agent(request)
     from fastapi.responses import RedirectResponse
     ip, port = _validated_winbox_target(ip, port)
     return RedirectResponse(url=f"winbox://{ip}:{port}", status_code=307)
