@@ -118,7 +118,7 @@ function VpnManagerCard({onNotify,onRoutes}){
   const[st,setSt]=useState(null),[profiles,setProfiles]=useState([]),[profileId,setProfileId]=useState("olom"),[protocol,setProtocol]=useState("pptp"),[host,setHost]=useState("185.110.29.205"),[port,setPort]=useState(""),[user,setUser]=useState(""),[pass,setPass]=useState(""),[routes,setRoutes]=useState(""),[configContent,setConfigContent]=useState(""),[profileName,setProfileName]=useState("Olom"),[busy,setBusy]=useState(false),[error,setError]=useState(""),[saveAsNew,setSaveAsNew]=useState(false);
   async function refreshProfiles(){try{const r=await fetch(API+"/api/vpn/profiles");const d=await r.json();if(r.ok)setProfiles(Array.isArray(d)?d:(d.profiles||[]))}catch(e){}}
   useEffect(()=>{refreshProfiles();let active=true;const t=setInterval(async()=>{try{const r=await vpnRequest("/api/vpn/status");const d=await r.json();if(active)setSt(d)}catch(e){}},2500);return()=>{active=false;clearInterval(t)}},[]);
-  useEffect(()=>{const p=(profiles||[]).find(x=>x.id==="olom"||x.is_default);if(p&&!profileId){selectProfile(p.id)}},[profiles]);
+  useEffect(()=>{const list=profiles||[];const p=list.find(x=>x.id===profileId)||list.find(x=>x.id==="olom"||x.is_default);if(p)selectProfile(p.id)},[profiles]);
   function selectProfile(id){
     setProfileId(id);setSaveAsNew(false);
     const p=(profiles||[]).find(x=>x.id===id);
