@@ -903,11 +903,16 @@ def _require_loopback_agent(request: Request) -> None:
     """
     import ipaddress
     host = request.client.host if request.client else ""
+    request_host = (request.url.hostname or "").lower()
     try:
         is_loopback = ipaddress.ip_address(host).is_loopback
     except ValueError:
         is_loopback = False
-    if not is_loopback:
+    # Also validate Host: a reverse proxy can make a remote request appear to
+    # originate from 127.0.0.1 at the TCP layer. Local Agent calls use loopback
+    # URLs explicitly, while public requests retain the public hostname.
+    local_host = request_host in {"localhost", "127.0.0.1", "::1"}
+    if not is_loopback or not local_host:
         raise HTTPException(
             status_code=403,
             detail="این عملیات فقط از Local Agent روی همین رایانه مجاز است",
