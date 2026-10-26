@@ -197,3 +197,100 @@ def interface_flaps_xlsx(report):
         letter=col[0].column_letter; width=max((len(str(c.value or "")) for c in col),default=10)
         ws.column_dimensions[letter].width=min(max(width+3,12),42)
     out=BytesIO();wb.save(out);out.seek(0);return out
+
+
+# ---------------- Smart report: wireless antenna / station disconnects ----------------
+_MAC_ADDRESS = re.compile(r"(?i)\b(?:[0-9a-f]{2}[:-]){5}[0-9a-f]{2}\b")
+_WIRELESS_ISSUE = re.compile(
+    r"(?:signal\s*(?:strength|strength\s*is)\s*[:=]?\s*-?\d+|"
+    r"(?:weak|low|lost|loss(?:\s+of)?|poor)\s+(?:wireless\s+)?signal|"
+    r"signal\s+(?:is\s+)?(?:weak|low|lost|too\s+weak|below)|"
+    r"extensive\s+data\s+loss|"
+    r"(?:disconnected|disconnect|disassoc(?:iated|iation)?|deauth(?:enticated|entication)?|"
+    r"lost\s+connection|connection\s+lost|station\s+leaving|not\s+responding))",
+    re.I,
+)
+
+def _mac_key(value):
+    return re.sub(r"[^0-9a-f]", "", str(value or "").lower())
+
+def wireless_antenna_report(devices, days_back=5, now=None):
+    """Find wireless station/link issues in saved RouterOS logs and resolve MACs against DB fields."""
+    now = now or datetime.now()
+    cutoff = now - timedelta(days=max(1, int(days_back)))
+    devices = list(devices or [])
+    # Index MACs found in saved inventory fields to their known device identity/IP.
+    mac_index = {}
+    mac_fields = ("mac_info", "wireless_info", "ip_neighbors", "interfaces", "ip_addresses")
+    for device in devices:
+        for field in mac_fields:
+            text_value = device.get(field) or ""
+            for mac in _MAC_ADDRESS.findall(text_value):
+                key = _mac_key(mac)
+                if key and key not in mac_index:
+                    mac_index[key] = {
+                        "matched_device_ip": device.get("ip") or "",
+                        "matched_device_name": device.get("device_name") or "",
+                    }
+
+    events = []
+    seen = set()
+    for device in devices:
+        raw_log = device.get("device_log") or ""
+        for line in raw_log.splitlines():
+            match = _LINE.match(line)
+            if not match:
+                continue
+            message = match.group("message").strip()
+            if not _WIRELESS_ISSUE.search(message):
+                continue
+            try:
+                when = parse_log_datetime(match.group("stamp"), reference=now)
+            except (ValueError, OverflowError):
+                continue
+            if when < cutoff or when > now + timedelta(minutes=1):
+                continue
+            macs = _MAC_ADDRESS.findall(message)
+            # Signal-strength-only records without a station MAC are still useful,
+            # but the report cannot claim a client identity without one.
+            station_mac = macs[0].upper().replace("-", ":") if macs else ""
+            resolved = mac_index.get(_mac_key(station_mac), {}) if station_mac else {}
+            key = (device.get("ip") or "", when.isoformat(), message)
+            if key in seen:
+                continue
+            seen.add(key)
+            events.append({
+                "datetime": when.isoformat(sep=" "),
+                "datetime_jalali": jalali_datetime_string(when),
+                "antenna_ip": device.get("ip") or "",
+                "antenna_name": device.get("device_name") or "",
+                "station_mac": station_mac,
+                "matched_device_ip": resolved.get("matched_device_ip", ""),
+                "matched_device_name": resolved.get("matched_device_name", ""),
+                "event": message,
+                "raw_line": line.strip(),
+            })
+    events.sort(key=lambda item: (item["datetime"], item["antenna_ip"], item["station_mac"]), reverse=True)
+    for index, event in enumerate(events, 1):
+        event["row"] = index
+    return {
+        "items": events,
+        "events": events,
+        "event_count": len(events),
+        "days": int(days_back),
+        "unmatched_mac_count": len({e["station_mac"] for e in events if e["station_mac"] and not e["matched_device_ip"]}),
+    }
+
+def wireless_antenna_csv(report):
+    output = StringIO(newline="")
+    writer = csv.writer(output)
+    writer.writerow(["ردیف", "تاریخ و زمان (میلادی)", "تاریخ و زمان (شمسی)",
+                     "نام آنتن/روتر لاگ‌دهنده", "IP آنتن/روتر", "MAC ایستگاه",
+                     "نام دستگاه متناظر با MAC", "IP دستگاه متناظر با MAC", "رویداد/علت"])
+    for event in report.get("items", []):
+        writer.writerow([
+            event.get("row", ""), event.get("datetime", ""), event.get("datetime_jalali", ""),
+            event.get("antenna_name", ""), event.get("antenna_ip", ""), event.get("station_mac", ""),
+            event.get("matched_device_name", ""), event.get("matched_device_ip", ""), event.get("event", ""),
+        ])
+    return "\ufeff" + output.getvalue()
