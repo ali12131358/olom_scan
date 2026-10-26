@@ -97,7 +97,9 @@ function BackendCard({onNotify}){
       <span className="backend-src" dir="ltr">{API||"(same-origin / proxy)"}</span>
     </div>
     <p className={"backend-msg "+(ok===true?"ok":"warn")}>{msg}</p>
-    <div className="backend-actions">      <button type="button" className="btn-stop" onClick={()=>check()} disabled={checking}>بررسی مجدد</button>    </div>
+    <div className="backend-actions">
+      <button type="button" className="btn-stop" onClick={()=>check()} disabled={checking}>بررسی مجدد</button>
+    </div>
     {ok===false&&<pre className="backend-hint" dir="ltr" style={{fontSize:".8em",background:"#0f172a",color:"#e2e8f0",padding:"10px",borderRadius:"8px",overflow:"auto"}}>{`# Terminal 1 — Backend
 cd project_root
 python -m uvicorn backend.main:app --host 0.0.0.0 --port 8001
@@ -166,15 +168,12 @@ function VpnManagerCard({onNotify,onRoutes}){
 }
 
 function formatDate(value){if(!value)return "—";const d=new Date(value);if(Number.isNaN(d.getTime()))return String(value);const p=n=>String(n).padStart(2,"0");return d.getFullYear()+"/"+p(d.getMonth()+1)+"/"+p(d.getDate())+" "+p(d.getHours())+":"+p(d.getMinutes())+":"+p(d.getSeconds())}
-// تبدیل تاریخ‌های timestamp در لاگ RouterOS به شمسی؛ فقط بخش تاریخ تغییر می‌کند.
 function gregorianToJalali(gy,gm,gd){
   const gdm=[0,31,59,90,120,151,181,212,243,273,304,334];
-  let jy=gy>1600?979:0;
-  gy-=gy>1600?1600:621;
+  let jy=gy>1600?979:0;gy-=gy>1600?1600:621;
   const gy2=gm>2?gy+1:gy;
   let days=365*gy+Math.floor((gy2+3)/4)-Math.floor((gy2+99)/100)+Math.floor((gy2+399)/400)-80+gd+gdm[gm-1];
-  jy+=33*Math.floor(days/12053);days%=12053;
-  jy+=4*Math.floor(days/1461);days%=1461;
+  jy+=33*Math.floor(days/12053);days%=12053;jy+=4*Math.floor(days/1461);days%=1461;
   if(days>365){jy+=Math.floor((days-1)/365);days=(days-1)%365;}
   const jm=days<186?1+Math.floor(days/31):7+Math.floor((days-186)/30);
   const jd=1+(days<186?days%31:(days-186)%30);
@@ -183,20 +182,20 @@ function gregorianToJalali(gy,gm,gd){
 function formatRouterLog(value){
   if(!value)return "—";
   const months={jan:1,feb:2,mar:3,apr:4,may:5,jun:6,jul:7,aug:8,sep:9,oct:10,nov:11,dec:12};
-  const persianDigits=s=>String(s).replace(/\d/g,d=>"۰۱۲۳۴۵۶۷۸۹"[Number(d)]);
+  const fa=s=>String(s).replace(/\d/g,d=>"۰۱۲۳۴۵۶۷۸۹"[Number(d)]);
   return String(value).replace(/\b(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)\/(\d{1,2})(?:\/(\d{4}))?\b/gi,(whole,mon,day,year)=>{
-    const y=year?Number(year):new Date().getFullYear();
-    const [jy,jm,jd]=gregorianToJalali(y,months[mon.toLowerCase()],Number(day));
-    return persianDigits(jy+"/"+String(jm).padStart(2,"0")+"/"+String(jd).padStart(2,"0"));
-  }).replace(/\b(20\d{2})-(\d{1,2})-(\d{1,2})\b/g,(whole,year,month,day)=>{
-    const [jy,jm,jd]=gregorianToJalali(Number(year),Number(month),Number(day));
-    return persianDigits(jy+"/"+String(jm).padStart(2,"0")+"/"+String(jd).padStart(2,"0"));
+    const [jy,jm,jd]=gregorianToJalali(year?Number(year):new Date().getFullYear(),months[mon.toLowerCase()],Number(day));
+    return fa(jy+"/"+String(jm).padStart(2,"0")+"/"+String(jd).padStart(2,"0"));
+  }).replace(/\b(20\d{2})-(\d{1,2})-(\d{1,2})\b/g,(whole,y,m,d)=>{
+    const [jy,jm,jd]=gregorianToJalali(Number(y),Number(m),Number(d));
+    return fa(jy+"/"+String(jm).padStart(2,"0")+"/"+String(jd).padStart(2,"0"));
   });
 }
 function DeviceReports({mode="devices"}={}){
   const ALL_COLS=[{id:"select",label:"انتخاب",always:true},{id:"ip",label:"IP",always:true},{id:"device_name",label:"نام دستگاه (identity)",always:true},{id:"device_type",label:"نوع دستگاه"},{id:"tags",label:"تگ"},{id:"ping",label:"پینگ"},{id:"ports",label:"پورت‌های باز"},{id:"classification",label:"دسته‌بندی"},{id:"interfaces",label:"اینترفیس‌ها"},{id:"ip_addresses",label:"آدرس‌های IP"},{id:"ip_neighbors",label:"همسایه‌ها"},{id:"wireless_info",label:"وایرلس"},{id:"device_log",label:"لاگ"},{id:"mac_info",label:"MAC"},{id:"first_seen",label:"اولین مشاهده"},{id:"last_seen",label:"آخرین مشاهده"},{id:"seen_count",label:"تعداد مشاهده"},{id:"winbox",label:"Winbox (ستون جدا)"}];
   const defaultVisible=()=>{try{const s=JSON.parse(localStorage.getItem("device_cols")||"null");if(Array.isArray(s)&&s.length)return s}catch(e){}const hide=["interfaces","ip_addresses","ip_neighbors","wireless_info","device_log","mac_info","winbox"];return ALL_COLS.map(c=>c.id).filter(id=>!hide.includes(id))};
-  const[rows,setRows]=useState([]),[total,setTotal]=useState(0),[classification,setClassification]=useState("mikrotik_candidate"),[deviceTypeFilter,setDeviceTypeFilter]=useState(""),[port,setPort]=useState(""),[q,setQ]=useState(""),[offset,setOffset]=useState(0),[pageSize,setPageSize]=useState(50),[error,setError]=useState(""),[msg,setMsg]=useState("");const[textModal,setTextModal]=useState(null);const[probeProg,setProbeProg]=useState({total:0,done:0,percent:0,current_ip:"",running:false});  const[sortBy,setSortBy]=useState("ip"),[sortOrder,setSortOrder]=useState("asc"),[newOnly,setNewOnly]=useState(false),[showAddModal,setShowAddModal]=useState(false),[newIp,setNewIp]=useState(""),[newPorts,setNewPorts]=useState("");
+  const[rows,setRows]=useState([]),[total,setTotal]=useState(0),[classification,setClassification]=useState("mikrotik_candidate"),[deviceTypeFilter,setDeviceTypeFilter]=useState(""),[port,setPort]=useState(""),[q,setQ]=useState(""),[offset,setOffset]=useState(0),[pageSize,setPageSize]=useState(50),[error,setError]=useState(""),[msg,setMsg]=useState("");const[textModal,setTextModal]=useState(null);const[probeProg,setProbeProg]=useState({total:0,done:0,percent:0,current_ip:"",running:false});
+  const[sortBy,setSortBy]=useState("ip"),[sortOrder,setSortOrder]=useState("asc"),[newOnly,setNewOnly]=useState(false),[showAddModal,setShowAddModal]=useState(false),[newIp,setNewIp]=useState(""),[newPorts,setNewPorts]=useState("");
   const[winboxItems,setWinboxItems]=useState([]),[winboxPath,setWinboxPath]=useState(""),[winboxName,setWinboxName]=useState(""),[showWinboxCfg,setShowWinboxCfg]=useState(false),[busyAction,setBusyAction]=useState(false),[toolsDir,setToolsDir]=useState("");
   const[visibleCols,setVisibleCols]=useState(defaultVisible),[showColCfg,setShowColCfg]=useState(false);
   const[selected,setSelected]=useState({}),[editTagIp,setEditTagIp]=useState(null),[editTagVal,setEditTagVal]=useState(""),[editNameIp,setEditNameIp]=useState(null),[editNameVal,setEditNameVal]=useState("");// selected: { [ip]: true } only — never store false
@@ -221,7 +220,8 @@ function DeviceReports({mode="devices"}={}){
   const selectedIps=Object.keys(selected).filter(k=>selected[k]===true);
   async function submitNewDevice(e){e.preventDefault();setError("");try{const r=await fetch(API+"/devices/manual",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({ip:newIp.trim(),open_ports:newPorts.split(",").map(x=>Number(x.trim())).filter(x=>x>=1&&x<=65535)})});const d=await r.json();if(!r.ok)throw Error(d.detail||"خطا");setShowAddModal(false);setNewIp("");setNewPorts("");setOffset(0);setMsg("دستگاه ثبت شد");reloadRows()}catch(e){setError(e.message)}}
   async function openWinbox(ip){setError("");setMsg("");try{const def=(winboxItems||[]).find(x=>x.is_default);const qid=def?("?winbox_id="+encodeURIComponent(def.id)):"";const r=await fetch(`${API}/devices/${encodeURIComponent(ip)}/winbox`+qid,{method:"POST"});const d=await r.json();if(!r.ok)throw Error(typeof d.detail==="string"?d.detail:"Winbox");setMsg("Winbox: "+ip)}catch(e){setError(e.message);setShowWinboxCfg(true)}}
-  async function addWinboxPath(){if(!winboxPath.trim()){setError("مسیر لازم است");return}setBusyAction(true);try{const r=await fetch(API+"/api/winbox/list",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({name:winboxName||"",path:winboxPath.trim(),is_default:!(winboxItems||[]).length})});const d=await r.json();if(!r.ok)throw Error(d.detail||"خطا");setWinboxItems(d.items||[]);setWinboxPath("");setWinboxName("");setMsg("مسیر اضافه شد")}catch(e){setError(e.message)}setBusyAction(false)}  async function setDefaultWinbox(id){setBusyAction(true);try{const r=await fetch(`${API}/api/winbox/list/${encodeURIComponent(id)}/default`,{method:"PUT"});const d=await r.json();if(!r.ok)throw Error(d.detail||"خطا");setWinboxItems(d.items||[])}catch(e){setError(e.message)}setBusyAction(false)}
+  async function addWinboxPath(){if(!winboxPath.trim()){setError("مسیر لازم است");return}setBusyAction(true);try{const r=await fetch(API+"/api/winbox/list",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({name:winboxName||"",path:winboxPath.trim(),is_default:!(winboxItems||[]).length})});const d=await r.json();if(!r.ok)throw Error(d.detail||"خطا");setWinboxItems(d.items||[]);setWinboxPath("");setWinboxName("");setMsg("مسیر اضافه شد")}catch(e){setError(e.message)}setBusyAction(false)}
+  async function setDefaultWinbox(id){setBusyAction(true);try{const r=await fetch(`${API}/api/winbox/list/${encodeURIComponent(id)}/default`,{method:"PUT"});const d=await r.json();if(!r.ok)throw Error(d.detail||"خطا");setWinboxItems(d.items||[])}catch(e){setError(e.message)}setBusyAction(false)}
   async function removeWinbox(id){if(!confirm("حذف؟"))return;setBusyAction(true);try{const r=await fetch(`${API}/api/winbox/list/${encodeURIComponent(id)}`,{method:"DELETE"});const d=await r.json();if(!r.ok)throw Error(d.detail||"خطا");setWinboxItems(d.items||[])}catch(e){setError(e.message)}setBusyAction(false)}
   async function doBackup(){
     setError("");
@@ -295,7 +295,8 @@ function DeviceReports({mode="devices"}={}){
       const d=await r.json();
       if(!r.ok)throw Error(typeof d.detail==="string"?d.detail:(Array.isArray(d.detail)?d.detail.map(x=>x.msg||JSON.stringify(x)).join("; "):"ورود تگ ناموفق"));
       const miss=d.missing_count||0;
-      setMsg("انتقال تگ: "+(d.updated||0)+" به‌روز شد"+(miss?("، "+miss+" IP در دیتابیس نبود"):"")+" — فایل: "+(d.source_filename||f.name));      setOffset(0);await reloadRows();
+      setMsg("انتقال تگ: "+(d.updated||0)+" به‌روز شد"+(miss?("، "+miss+" IP در دیتابیس نبود"):"")+" — فایل: "+(d.source_filename||f.name));
+      setOffset(0);await reloadRows();
     }catch(err){setError(err.message)}
     setBusyAction(false);e.target.value="";
   }
@@ -319,7 +320,8 @@ function DeviceReports({mode="devices"}={}){
             types:[{description:"ZIP backup",accept:{"application/zip":[".zip"]}}]
           });
           const writable=await handle.createWritable();
-          await writable.write(blob);          await writable.close();
+          await writable.write(blob);
+          await writable.close();
           setMsg("پشتیبان کامل ذخیره شد: "+handle.name);
           setBusyAction(false);
           return;
@@ -394,7 +396,8 @@ function DeviceReports({mode="devices"}={}){
     const rowSet=new Set(rows.map(d=>d.ip));
     const extras=selectedIps.filter(ip=>!rowSet.has(ip));
     const knownClosed=rows.filter(d=>selected[d.ip]&&!(d.open_ports||[]).includes(8728)).map(d=>d.ip);
-    // include fromRows + extras; exclude only those on this page known without 8728    return [...new Set([...fromRows,...extras])];
+    // include fromRows + extras; exclude only those on this page known without 8728
+    return [...new Set([...fromRows,...extras])];
   }
   async function pushConfig(){
     const ips=selectedMikrotikWithApi();
@@ -417,7 +420,8 @@ function DeviceReports({mode="devices"}={}){
       if(fails.length&&!d.ok)setError(msg);
     }catch(e){setError(e.message)}
     setSnmpBusy(false);
-  }  function openGroupConfig(){
+  }
+  function openGroupConfig(){
     const ips=selectedMikrotikWithApi();
     if(!ips.length){setError("هیچ دستگاهی با پورت API 8728 در انتخاب‌ها نیست");return}
     setError("");
@@ -493,7 +497,8 @@ function DeviceReports({mode="devices"}={}){
         <button type="button" className={"tool-btn"+(showSnmp?" active":"")} onClick={()=>setShowSnmp(s=>!s)}><RbIcon name="snmp"/><span>کانفیگ SNMP</span></button>
         <button type="button" className={"tool-btn"+(showWinboxCfg?" active":"")} onClick={()=>setShowWinboxCfg(s=>!s)}><RbIcon name="winbox"/><span>مسیر Winbox</span></button>
         <button type="button" className={"tool-btn"+(showColCfg?" active":"")} onClick={()=>setShowColCfg(s=>!s)}><RbIcon name="columns"/><span>نمایش فیلدها</span></button>
-        <button type="button" className={"tool-btn"+(showDbPanel?" active":"")} onClick={()=>setShowDbPanel(s=>!s)}><RbIcon name="database"/><span>دیتابیس: {activeDb}</span></button>      </div>
+        <button type="button" className={"tool-btn"+(showDbPanel?" active":"")} onClick={()=>setShowDbPanel(s=>!s)}><RbIcon name="database"/><span>دیتابیس: {activeDb}</span></button>
+      </div>
       <div className="tool-group">
         <span className="tool-label">پشتیبان</span>
         <button type="button" className="tool-btn primary" disabled={busyAction} onClick={doFullBackup}><RbIcon name="backup"/><span>پشتیبان‌گیری کامل</span></button>
@@ -515,7 +520,8 @@ function DeviceReports({mode="devices"}={}){
       <div className="tool-group">
         <span className="tool-label">خواندن</span>
         <button type="button" className="tool-btn" disabled={snmpBusy||!selectedIps.length} onClick={()=>probeSnmp(selectedIps)}><RbIcon name="read"/><span>خواندن اطلاعات ({selectedIps.length})</span></button>
-        <button type="button" className="tool-btn" disabled={snmpBusy||!selectedIps.length} onClick={pushConfig}><RbIcon name="config"/><span>انتقال کانفیگ</span></button>        <button type="button" className="tool-btn" disabled={snmpBusy||!selectedIps.length} onClick={openGroupConfig}><RbIcon name="group"/><span>کانفیگ گروهی</span></button>
+        <button type="button" className="tool-btn" disabled={snmpBusy||!selectedIps.length} onClick={pushConfig}><RbIcon name="config"/><span>انتقال کانفیگ</span></button>
+        <button type="button" className="tool-btn" disabled={snmpBusy||!selectedIps.length} onClick={openGroupConfig}><RbIcon name="group"/><span>کانفیگ گروهی</span></button>
       </div>
       <div className="tool-group">
         <span className="tool-label">نمایش</span>
@@ -592,7 +598,8 @@ function DeviceReports({mode="devices"}={}){
       <span className="probe-bar-sep"/>
       <button type="button" className="btn-action btn-probe btn-probe-main" disabled={snmpBusy||apiBusy||!selectedIps.length} onClick={()=>probeSnmp(selectedIps)}>
         {snmpBusy?"در حال خواندن SNMP…":`خواندن SNMP (${selectedIps.length})`}
-      </button>      <button type="button" className="btn-action btn-stop-probe" disabled={!snmpBusy} onClick={stopProbe}>
+      </button>
+      <button type="button" className="btn-action btn-stop-probe" disabled={!snmpBusy} onClick={stopProbe}>
         توقف SNMP
       </button>
       <span className="muted" style={{fontSize:".85em",width:"100%"}}>
@@ -613,7 +620,8 @@ function DeviceReports({mode="devices"}={}){
       <h3 style={{marginTop:0}}>{textModal.title}</h3>
       {textModal.editable
         ? <textarea className="text-view-textarea" dir="ltr" rows={12} value={textModal.text} onChange={e=>setTextModal(m=>({...m,text:e.target.value}))}/>
-        : <pre className="text-view-pre" dir="ltr">{textModal.text}</pre>}      <div className="modal-actions">
+        : <pre className="text-view-pre" dir="ltr">{textModal.text}</pre>}
+      <div className="modal-actions">
         {textModal.editable&&<button type="button" className="btn-modal-save" onClick={async()=>{
           try{
             if(textModal.field==="tags"){
@@ -691,7 +699,8 @@ function DeviceReports({mode="devices"}={}){
       {colOn("device_type")&&<td className="col-device_type">{({AP:"AP",ST:"ST",Router:"Router"}[d.device_type]||d.device_type||"—")}</td>}
       {colOn("tags")&&<td className="col-tags"><div className="tag-cell"><span className="tag-preview" title={d.tags||""}>{(d.tags||"").trim()?(d.tags.length>24?d.tags.slice(0,24)+"…":d.tags):"—"}</span><button type="button" className="btn-view-text" title="مشاهده / ویرایش تگ" onClick={()=>setTextModal({title:"تگ — "+d.ip,text:d.tags||"",editable:true,field:"tags",ip:d.ip})}>تگ</button></div></td>}
       {colOn("ping")&&<td className="col-ping">{d.ping_ok?"پاسخ‌گو":"—"}</td>}
-      {colOn("ports")&&<td className="col-ports" dir="ltr">{d.open_ports.length?d.open_ports.join(", "):"—"}</td>}      {colOn("classification")&&<td className="col-classification">{{mikrotik_candidate:"دستگاه MikroTik",non_mikrotik:"غیر MikroTik",special:"ویژه"}[d.classification]||d.classification}</td>}
+      {colOn("ports")&&<td className="col-ports" dir="ltr">{d.open_ports.length?d.open_ports.join(", "):"—"}</td>}
+      {colOn("classification")&&<td className="col-classification">{{mikrotik_candidate:"دستگاه MikroTik",non_mikrotik:"غیر MikroTik",special:"ویژه"}[d.classification]||d.classification}</td>}
       {colOn("interfaces")&&<td className="col-interfaces">{(d.interfaces)?<button type="button" className="btn-view-text" onClick={()=>setTextModal({title:"اینترفیس‌ها — "+d.ip,text:d.interfaces})}>اینترفیس‌ها</button>:"—"}</td>}
       {colOn("ip_addresses")&&<td className="col-ip_addresses">{(d.ip_addresses)?<button type="button" className="btn-view-text" onClick={()=>setTextModal({title:"آدرس‌های IP — "+d.ip,text:d.ip_addresses})}>آدرس‌های IP</button>:"—"}</td>}
       {colOn("ip_neighbors")&&<td className="col-ip_neighbors">{(d.ip_neighbors)?<button type="button" className="btn-view-text" onClick={()=>setTextModal({title:"همسایه‌ها — "+d.ip,text:d.ip_neighbors})}>همسایه‌ها</button>:"—"}</td>}
@@ -711,7 +720,8 @@ function DeviceReports({mode="devices"}={}){
 }
 
 
-function EmailServerCard(){  const[cfg,setCfg]=useState({mode:"direct",host:"smtp.gmail.com",port:587,use_tls:true,use_ssl:false,username:"",password:"",from_email:"",from_name:"شبکه‌بان",to_email:"",enabled:false,timeout:30,helo_host:"shabakeban.local",password_set:false});
+function EmailServerCard(){
+  const[cfg,setCfg]=useState({mode:"direct",host:"smtp.gmail.com",port:587,use_tls:true,use_ssl:false,username:"",password:"",from_email:"",from_name:"شبکه‌بان",to_email:"",enabled:false,timeout:30,helo_host:"shabakeban.local",password_set:false});
   const[busy,setBusy]=useState(false);
   const[msg,setMsg]=useState("");
   const[err,setErr]=useState("");
@@ -790,7 +800,8 @@ function EmailServerCard(){  const[cfg,setCfg]=useState({mode:"direct",host:"smt
     setBusy(true);setErr("");setMsg("");
     try{
       const body={...cfg};
-      if(body.password==="********")delete body.password;      const r=await fetch(API+"/api/smtp/config",{method:"PUT",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
+      if(body.password==="********")delete body.password;
+      const r=await fetch(API+"/api/smtp/config",{method:"PUT",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
       const txt=await r.text();
       let d={};
       try{d=txt?JSON.parse(txt):{}}catch(_){throw Error(txt&&txt.slice(0,200)||"پاسخ نامعتبر از سرور")}
@@ -809,7 +820,8 @@ function EmailServerCard(){  const[cfg,setCfg]=useState({mode:"direct",host:"smt
       if(body.password==="********")delete body.password;
       const sr=await fetch(API+"/api/smtp/config",{method:"PUT",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
       const stxt=await sr.text();
-      let sd={};      try{sd=stxt?JSON.parse(stxt):{}}catch(_){throw Error(stxt&&stxt.slice(0,200)||"پاسخ نامعتبر")}
+      let sd={};
+      try{sd=stxt?JSON.parse(stxt):{}}catch(_){throw Error(stxt&&stxt.slice(0,200)||"پاسخ نامعتبر")}
       if(!sr.ok)throw Error(typeof sd.detail==="string"?sd.detail:"ذخیره قبل از تست ناموفق");
       const r=await fetch(API+"/api/smtp/test",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({to_email:testTo||cfg.to_email||undefined,message:testMsg||undefined})});
       const txt=await r.text();
@@ -889,7 +901,8 @@ function EmailServerCard(){  const[cfg,setCfg]=useState({mode:"direct",host:"smt
         </label>
         <label>متن پیام (اختیاری)
           <textarea rows={3} value={testMsg} onChange={e=>setTestMsg(e.target.value)} placeholder="متن دلخواه برای تست…"/>
-        </label>      </div>
+        </label>
+      </div>
       <div className="email-actions">
         <button type="button" className="tool-btn" disabled={busy} onClick={testSend}><RbIcon name="email" size={16}/><span>ارسال ایمیل آزمایشی</span></button>
       </div>
@@ -907,7 +920,8 @@ async function stopScan(){if(!job?.scan_id||!busy)return;setStopping(true);try{c
 const isTerminal=["completed","done","canceled","error","failed"].includes(job?.status);
 const liveSummary=job?.summary&&Object.keys(job.summary).length?job.summary:
   (job?.status&&!isTerminal?{ping_responders:Number(job.progress?.ping_responders)||0,mikrotik_candidates:0,potential_non_mikrotik:0,winbox_open_api_closed:0}:job?.summary||{});
-const done=Number(job?.progress?.completed)||0,total=Number(job?.progress?.total)||Number(job?.total_targets)||0;const pct=total?Math.max(0,Math.min(100,Math.round(100*done/total))):0;const scanLabel=job?.status==="completed"||job?.status==="done"?"اسکن تکمیل شد":job?.status==="failed"||job?.status==="error"?"اسکن ناموفق بود":job?.status==="canceled"?"اسکن لغو شد":job?.status==="queued"?"در صف انتظار…":"در حال اسکن...";return (
+const done=Number(job?.progress?.completed)||0,total=Number(job?.progress?.total)||Number(job?.total_targets)||0;const pct=total?Math.max(0,Math.min(100,Math.round(100*done/total))):0;const scanLabel=job?.status==="completed"||job?.status==="done"?"اسکن تکمیل شد":job?.status==="failed"||job?.status==="error"?"اسکن ناموفق بود":job?.status==="canceled"?"اسکن لغو شد":job?.status==="queued"?"در صف انتظار…":"در حال اسکن...";
+return (
 <main>
 <header className="app-brand" dir="rtl">
   <div className="brand-mark" aria-hidden="true">
@@ -988,7 +1002,8 @@ const done=Number(job?.progress?.completed)||0,total=Number(job?.progress?.total
     <label>پورت‌ها<input value={ports} onChange={e=>setPorts(e.target.value)}/></label>
     <label>هم‌زمانی<input type="number" min="1" max="256" value={workers} onChange={e=>setWorkers(e.target.value)}/></label>
     <label>مهلت پینگ (ms)<input type="number" min="100" value={ping} onChange={e=>setPing(e.target.value)}/></label>
-    <label>مهلت پورت (ثانیه)<input type="number" min=".1" step=".1" value={timeout} onChange={e=>setTimeoutValue(e.target.value)}/></label>  </div>
+    <label>مهلت پورت (ثانیه)<input type="number" min=".1" step=".1" value={timeout} onChange={e=>setTimeoutValue(e.target.value)}/></label>
+  </div>
   <div className="vpn-actions">
     <button type="button" disabled={busy} onClick={start}>{busy?"در حال اجرا…":"شروع اسکن"}</button>
     <button type="button" className="btn-stop" disabled={!busy||stopping} onClick={stopScan}>{stopping?"در حال توقف…":"توقف اسکن"}</button>
@@ -1005,7 +1020,8 @@ const done=Number(job?.progress?.completed)||0,total=Number(job?.progress?.total
         <strong className="progress-percent" aria-live="polite">{pct}٪</strong>
       </div>
       <div className="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow={pct}>
-        <div className={"progress-fill "+(job.status==="failed"?"is-failed":"")} style={{width:pct+"%"}}/>      </div>
+        <div className={"progress-fill "+(job.status==="failed"?"is-failed":"")} style={{width:pct+"%"}}/>
+      </div>
       <div className="progress-meta">
         <span>{done.toLocaleString("fa-IR")} از {total.toLocaleString("fa-IR")} هدف</span>
         <span>پاسخ‌گو به پینگ: {(Number(job.progress?.ping_responders)||0).toLocaleString("fa-IR")}</span>
@@ -1087,7 +1103,8 @@ const done=Number(job?.progress?.completed)||0,total=Number(job?.progress?.total
                     <th>IP</th><th>دسته‌بندی</th><th>پورت‌های باز</th><th>8291 Winbox</th><th>8728 API</th><th>Winbox</th>
                   </tr>
                 </thead>
-                <tbody>                  {slice.map(x=>(
+                <tbody>
+                  {slice.map(x=>(
                     <tr key={x.ip}>
                       <td dir="ltr">{x.ip}</td>
                       <td>{labels[x.classification]||x.classification}</td>
@@ -1103,7 +1120,8 @@ const done=Number(job?.progress?.completed)||0,total=Number(job?.progress?.total
                               if(!r.ok)throw Error(d.detail||"Winbox");
                             }catch(e){setError(e.message)}
                           }}>▣ Winbox</button>
-                        ):"—"}                      </td>
+                        ):"—"}
+                      </td>
                     </tr>
                   ))}
                 </tbody>
@@ -1187,3 +1205,37 @@ function SmartReports(){
               <td style={cellStyle}>{item.datetime_jalali||item.last_flap_time_jalali||item.last_flap_jalali||"—"}</td>
               <td style={cellStyle}>{item.last_event||item.last_status||item.event||"—"}</td>
             </tr>)}</tbody>
+          </table>
+        </div>:<div style={{padding:14,color:"#64748b"}}>موردی با این بازه و آستانه یافت نشد.</div>}
+      </div>}
+
+      <AntennaIssuesReport />
+    </section>
+  );
+}
+
+function AntennaIssuesReport(){
+  const [days,setDays]=useState(5),[items,setItems]=useState([]),[busy,setBusy]=useState(false),[downloading,setDownloading]=useState(false),[msg,setMsg]=useState(""),[err,setErr]=useState("");
+  async function load(){
+    setBusy(true);setErr("");setMsg("در حال بررسی لاگ‌های وایرلس ذخیره‌شده...");
+    try{const r=await fetch(API+"/reports/wireless-antenna-issues?days="+encodeURIComponent(days));const d=await readJson(r);if(!r.ok)throw Error(d.detail||"دریافت گزارش ناموفق بود");setItems(Array.isArray(d)?d:(d.items||d.events||[]));setMsg("گزارش بارگذاری شد؛ MACهای بدون تطبیق نیز نمایش داده می‌شوند.");}
+    catch(e){setErr(e.message||"خطا در دریافت گزارش");setMsg("");}finally{setBusy(false);}
+  }
+  async function download(){
+    setDownloading(true);setErr("");try{const r=await fetch(API+"/reports/wireless-antenna-issues/export.csv?days="+encodeURIComponent(days));if(!r.ok)throw Error("دانلود گزارش ناموفق بود ("+r.status+")");const blob=await r.blob(),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="wireless_antenna_issues.csv";document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);}
+    catch(e){setErr(e.message||"خطا در دانلود");}finally{setDownloading(false);}
+  }
+  const cell={padding:"9px 10px",borderBottom:"1px solid #e5e7eb",textAlign:"right",verticalAlign:"top"};const head={...cell,background:"#f1f5f9",fontWeight:700,whiteSpace:"nowrap"};
+  return <section className="panel" dir="rtl" style={{marginTop:18}}>
+    <h3>گزارش قطع و وصل شدن آنتن‌ها</h3>
+    <p style={{color:"#64748b",marginTop:0}}>رویدادهای قطع ارتباط، ضعف یا از دست رفتن سیگنال و خطاهای ایستگاه‌های وایرلس از لاگ‌های ذخیره‌شده‌ی RouterOS استخراج می‌شوند.</p>
+    <label>بازه بررسی (روز)<input type="number" min="1" max="365" value={days} onChange={e=>setDays(Math.max(1,Math.min(365,parseInt(e.target.value||"5",10))))}/></label>
+    <div style={{display:"flex",gap:8,flexWrap:"wrap",marginTop:12}}><button type="button" className="tool-btn" disabled={busy||downloading} onClick={load}>{busy?"در حال بررسی…":"ساخت / به‌روزرسانی گزارش"}</button><button type="button" className="tool-btn" disabled={downloading} onClick={download}>{downloading?"در حال آماده‌سازی…":"دانلود CSV"}</button></div>
+    {msg&&<div className="msg" style={{marginTop:10}}>{msg}</div>}{err&&<div className="error" role="alert">{err}</div>}
+    <div style={{marginTop:14,overflowX:"auto",border:"1px solid #e5e7eb",borderRadius:8}}><table dir="rtl" style={{width:"100%",borderCollapse:"collapse",minWidth:1050}}>
+      <thead><tr>{["ردیف","تاریخ شمسی","آنتن/روتر لاگ‌دهنده","IP آنتن","MAC ایستگاه","نام دستگاه متناظر","IP دستگاه متناظر","رویداد ثبت‌شده"].map(x=><th key={x} style={head}>{x}</th>)}</tr></thead>
+      <tbody>{items.map((x,i)=><tr key={x.row||i}><td style={cell}>{x.row||i+1}</td><td style={{...cell,whiteSpace:"nowrap"}}>{x.datetime_jalali||x.datetime||"—"}</td><td style={cell}>{x.antenna_name||"—"}</td><td style={cell} dir="ltr">{x.antenna_ip||"—"}</td><td style={cell} dir="ltr">{x.station_mac||"در لاگ MAC پیدا نشد"}</td><td style={cell}>{x.matched_device_name||"در دیتابیس تطبیق نشد"}</td><td style={cell} dir="ltr">{x.matched_device_ip||"—"}</td><td style={{...cell,whiteSpace:"normal",minWidth:260}}>{x.event||x.raw_line||"—"}</td></tr>)}</tbody>
+    </table>{!items.length&&<p style={{padding:12,color:"#64748b"}}>برای تولید گزارش روی «ساخت / به‌روزرسانی گزارش» کلیک کنید.</p>}</div>
+  </section>;
+}
+createRoot(document.getElementById("root")).render(<App/>);
