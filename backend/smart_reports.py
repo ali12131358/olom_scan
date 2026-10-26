@@ -148,43 +148,79 @@ def parse_device_log(device, now=None, days_back=5, threshold_minutes=5):
         flaps=list(dict.fromkeys(flaps))
         if flaps:
             latest=max(flaps,key=lambda item:item[0])
+            raw_tags = device.get('tags') or device.get('device_tag') or device.get('tag') or ''
+            if isinstance(raw_tags, list):
+                tag_str = ', '.join(str(t).strip() for t in raw_tags if str(t).strip())
+            else:
+                tag_str = str(raw_tags).strip()
             found.append({"datetime":latest[0].isoformat(sep=" "),
                           "datetime_jalali":jalali_datetime_string(latest[0]),
                           "device_name":device.get("device_name") or "",
-                          "tags":(device.get("tags") or "").strip(),
+                          "tags":tag_str, "device_tag": tag_str,
                           "ip":device.get("ip") or "", "interface":iface, "last_status":latest[1],
                           "flap_count":len(flaps)})
     return found
 
 def interface_flap_report(devices, days_back=5, threshold_minutes=5, now=None):
+    now = now or datetime.now()
+    devices=list(devices or [])
     events=[]
+    devices_with_logs=0
+    newest_log=None
     for device in devices:
+        log_text=device.get("device_log") or ""
+        if log_text.strip(): devices_with_logs+=1
+        # Track the newest link event in the logs regardless of the requested
+        # window, so an empty result can be explained (stale logs vs. none).
+        for line in log_text.splitlines():
+            match=_LINE.match(line)
+            if not match: continue
+            if not _LINK_EVENT.match(match.group("message")): continue
+            try: when=parse_log_datetime(match.group("stamp"), reference=now)
+            except (ValueError, OverflowError): continue
+            if newest_log is None or when>newest_log: newest_log=when
         events.extend(parse_device_log(device, now=now, days_back=days_back, threshold_minutes=threshold_minutes))
     events.sort(key=lambda e:(e["datetime"],e["device_name"],e["interface"]),reverse=True)
     for index,event in enumerate(events,1): event["row"] = index
-    return {"events":events,"device_count":len({e["ip"] for e in events}),"event_count":len(events),
-            "days":int(days_back),"threshold_minutes":int(threshold_minutes)}
+    report={"events":events,"device_count":len({e["ip"] for e in events}),"event_count":len(events),
+            "days":int(days_back),"threshold_minutes":int(threshold_minutes),
+            "devices_scanned":len(devices),"devices_with_logs":devices_with_logs}
+    if newest_log is not None:
+        report["newest_log_at"]=newest_log.isoformat(sep=" ")
+        report["newest_log_at_jalali"]=jalali_datetime_string(newest_log)
+        if not events:
+            cutoff=now-timedelta(days=max(0,int(days_back)))
+            if newest_log<cutoff:
+                report["stale_logs"]=True
+                suggested=max(int(days_back)+1, min(90, int((now-newest_log).days)+2))
+                report["suggested_days"]=suggested
+    return report
 
 def interface_flaps_csv(report):
-    """Return a UTF-8-BOM CSV for Excel, populated from a flap report."""
+    """Return a UTF-8-BOM CSV for Excel, populated from a flap report.
+
+    The CSV mirrors every field shown in the on-screen report table,
+    using the same column names and order as the UI.
+    """
     output = StringIO(newline="")
     writer = csv.writer(output)
-    writer.writerow(["ردیف", "تاریخ و زمان (میلادی)", "تاریخ و زمان (شمسی)", "نام دستگاه", "تگ", "آی‌پی دستگاه", "اینترفیس", "نوع آخرین رویداد"])
+    writer.writerow(["ردیف", "نام دستگاه", "آی‌پی دستگاه", "تگ دستگاه", "اینترفیس", "تعداد تکرار لاگ", "تاریخ و زمان (میلادی)", "تاریخ و زمان (شمسی)", "نوع رویداد"])
     for event in report.get("events", []):
-        writer.writerow([event.get("row", ""), event.get("datetime", ""),
-                         event.get("datetime_jalali", ""), event.get("device_name", ""),
-                         event.get("tags", ""), event.get("ip", ""),
-                         event.get("interface", ""), event.get("last_status", "")])
+        writer.writerow([event.get("row", ""), event.get("device_name", ""),
+                         event.get("ip", ""), event.get("device_tag", event.get("tags", "")),
+                         event.get("interface", ""), event.get("flap_count", 1),
+                         event.get("datetime", ""), event.get("datetime_jalali", ""),
+                         event.get("last_status", "")])
     return "\ufeff" + output.getvalue()
 
 def interface_flaps_xlsx(report):
     from openpyxl import Workbook
     from openpyxl.styles import Font, PatternFill, Border, Side, Alignment
     wb=Workbook(); ws=wb.active; ws.title="قطع وصل اینترفیس"; ws.sheet_view.rightToLeft=True
-    headers=["ردیف","تاریخ و زمان (میلادی)","تاریخ و زمان (شمسی)","نام دستگاه","تگ","آی‌پی دستگاه","اینترفیس","نوع آخرین رویداد"]
+    headers=["ردیف","نام دستگاه","آی‌پی دستگاه","تگ دستگاه","اینترفیس","تعداد تکرار لاگ","تاریخ و زمان (میلادی)","تاریخ و زمان (شمسی)","نوع رویداد"]
     ws.append(headers)
     for event in report.get("events",[]):
-        ws.append([event["row"],event["datetime"],event["datetime_jalali"],event["device_name"],event.get("tags") or "",event["ip"],event["interface"],event["last_status"]])
+        ws.append([event["row"],event["device_name"],event["ip"],event.get("device_tag") or event.get("tags") or "",event["interface"],event.get("flap_count",1),event["datetime"],event["datetime_jalali"],event["last_status"]])
     fill=PatternFill("solid",fgColor="1F4E78"); white=Font(name="Arial",bold=True,color="FFFFFF",size=11)
     thin=Side(style="thin",color="D9E2F3")
     for cell in ws[1]:
