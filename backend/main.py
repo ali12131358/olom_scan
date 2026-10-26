@@ -867,6 +867,29 @@ def report_interface_flaps_xlsx(days: int = 5, threshold_minutes: int = 5):
         headers={"Content-Disposition": 'attachment; filename="interface_flaps.xlsx"'},
     )
 
+# ---------------- Smart report: wireless antenna / station issues ----------------
+@app.get("/reports/wireless-antenna-issues")
+def report_wireless_antenna_issues(days: int = 5):
+    try:
+        result = db.query_devices(limit=100000)
+        rows = result.get("devices", []) if isinstance(result, dict) else result
+    except Exception:
+        rows = []
+    return smart_reports.wireless_antenna_report(rows or [], days_back=days)
+
+
+@app.get("/reports/wireless-antenna-issues/export.csv")
+def report_wireless_antenna_issues_csv(days: int = 5):
+    result = db.query_devices(limit=100000)
+    rows = result.get("devices", []) if isinstance(result, dict) else result
+    report = smart_reports.wireless_antenna_report(rows or [], days_back=days)
+    return Response(
+        content=smart_reports.wireless_antenna_csv(report),
+        media_type="text/csv; charset=utf-8",
+        headers={"Content-Disposition": 'attachment; filename="wireless_antenna_issues.csv"'},
+    )
+
+
 # ---------------- VPN connection manager ----------------
 class VpnConnectRequest(BaseModel):
     protocol: str = Field(pattern="^(wireguard|openvpn|pptp|l2tp|sstp)$")
