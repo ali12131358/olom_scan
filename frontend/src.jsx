@@ -97,8 +97,7 @@ function BackendCard({onNotify}){
       <span className="backend-src" dir="ltr">{API||"(same-origin / proxy)"}</span>
     </div>
     <p className={"backend-msg "+(ok===true?"ok":"warn")}>{msg}</p>
-    <div className="backend-actions">      <button type="button" className="btn-stop" onClick={()=>check()} disabled={checking}>بررسی مجدد</button>
-    </div>
+    <div className="backend-actions">      <button type="button" className="btn-stop" onClick={()=>check()} disabled={checking}>بررسی مجدد</button>    </div>
     {ok===false&&<pre className="backend-hint" dir="ltr" style={{fontSize:".8em",background:"#0f172a",color:"#e2e8f0",padding:"10px",borderRadius:"8px",overflow:"auto"}}>{`# Terminal 1 — Backend
 cd project_root
 python -m uvicorn backend.main:app --host 0.0.0.0 --port 8001
@@ -166,7 +165,7 @@ function VpnManagerCard({onNotify,onRoutes}){
   </section>;
 }
 
-function formatDate(value){if(!value)return "—";const d=new Date(value);if(Number.isNaN(d.getTime()))return String(value);const p=n=>String(n).padStart(2,"0");return \`\${d.getFullYear()}/\${p(d.getMonth()+1)}/\${p(d.getDate())} \${p(d.getHours())}:\${p(d.getMinutes())}:\${p(d.getSeconds())}\`}
+function formatDate(value){if(!value)return "—";const d=new Date(value);if(Number.isNaN(d.getTime()))return String(value);const p=n=>String(n).padStart(2,"0");return d.getFullYear()+"/"+p(d.getMonth()+1)+"/"+p(d.getDate())+" "+p(d.getHours())+":"+p(d.getMinutes())+":"+p(d.getSeconds())}
 // تبدیل تاریخ‌های timestamp در لاگ RouterOS به شمسی؛ فقط بخش تاریخ تغییر می‌کند.
 function gregorianToJalali(gy,gm,gd){
   const gdm=[0,31,59,90,120,151,181,212,243,273,304,334];
@@ -188,17 +187,16 @@ function formatRouterLog(value){
   return String(value).replace(/\b(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)\/(\d{1,2})(?:\/(\d{4}))?\b/gi,(whole,mon,day,year)=>{
     const y=year?Number(year):new Date().getFullYear();
     const [jy,jm,jd]=gregorianToJalali(y,months[mon.toLowerCase()],Number(day));
-    return persianDigits(\`\${jy}/\${String(jm).padStart(2,"0")}/\${String(jd).padStart(2,"0")}\`);
+    return persianDigits(jy+"/"+String(jm).padStart(2,"0")+"/"+String(jd).padStart(2,"0"));
   }).replace(/\b(20\d{2})-(\d{1,2})-(\d{1,2})\b/g,(whole,year,month,day)=>{
     const [jy,jm,jd]=gregorianToJalali(Number(year),Number(month),Number(day));
-    return persianDigits(\`\${jy}/\${String(jm).padStart(2,"0")}/\${String(jd).padStart(2,"0")}\`);
+    return persianDigits(jy+"/"+String(jm).padStart(2,"0")+"/"+String(jd).padStart(2,"0"));
   });
 }
 function DeviceReports({mode="devices"}={}){
   const ALL_COLS=[{id:"select",label:"انتخاب",always:true},{id:"ip",label:"IP",always:true},{id:"device_name",label:"نام دستگاه (identity)",always:true},{id:"device_type",label:"نوع دستگاه"},{id:"tags",label:"تگ"},{id:"ping",label:"پینگ"},{id:"ports",label:"پورت‌های باز"},{id:"classification",label:"دسته‌بندی"},{id:"interfaces",label:"اینترفیس‌ها"},{id:"ip_addresses",label:"آدرس‌های IP"},{id:"ip_neighbors",label:"همسایه‌ها"},{id:"wireless_info",label:"وایرلس"},{id:"device_log",label:"لاگ"},{id:"mac_info",label:"MAC"},{id:"first_seen",label:"اولین مشاهده"},{id:"last_seen",label:"آخرین مشاهده"},{id:"seen_count",label:"تعداد مشاهده"},{id:"winbox",label:"Winbox (ستون جدا)"}];
   const defaultVisible=()=>{try{const s=JSON.parse(localStorage.getItem("device_cols")||"null");if(Array.isArray(s)&&s.length)return s}catch(e){}const hide=["interfaces","ip_addresses","ip_neighbors","wireless_info","device_log","mac_info","winbox"];return ALL_COLS.map(c=>c.id).filter(id=>!hide.includes(id))};
-  const[rows,setRows]=useState([]),[total,setTotal]=useState(0),[classification,setClassification]=useState("mikrotik_candidate"),[deviceTypeFilter,setDeviceTypeFilter]=useState(""),[port,setPort]=useState(""),[q,setQ]=useState(""),[offset,setOffset]=useState(0),[pageSize,setPageSize]=useState(50),[error,setError]=useState(""),[msg,setMsg]=useState("");const[textModal,setTextModal]=useState(null);const[probeProg,setProbeProg]=useState({total:0,done:0,percent:0,current_ip:"",running:false});
-  const[sortBy,setSortBy]=useState("ip"),[sortOrder,setSortOrder]=useState("asc"),[newOnly,setNewOnly]=useState(false),[showAddModal,setShowAddModal]=useState(false),[newIp,setNewIp]=useState(""),[newPorts,setNewPorts]=useState("");
+  const[rows,setRows]=useState([]),[total,setTotal]=useState(0),[classification,setClassification]=useState("mikrotik_candidate"),[deviceTypeFilter,setDeviceTypeFilter]=useState(""),[port,setPort]=useState(""),[q,setQ]=useState(""),[offset,setOffset]=useState(0),[pageSize,setPageSize]=useState(50),[error,setError]=useState(""),[msg,setMsg]=useState("");const[textModal,setTextModal]=useState(null);const[probeProg,setProbeProg]=useState({total:0,done:0,percent:0,current_ip:"",running:false});  const[sortBy,setSortBy]=useState("ip"),[sortOrder,setSortOrder]=useState("asc"),[newOnly,setNewOnly]=useState(false),[showAddModal,setShowAddModal]=useState(false),[newIp,setNewIp]=useState(""),[newPorts,setNewPorts]=useState("");
   const[winboxItems,setWinboxItems]=useState([]),[winboxPath,setWinboxPath]=useState(""),[winboxName,setWinboxName]=useState(""),[showWinboxCfg,setShowWinboxCfg]=useState(false),[busyAction,setBusyAction]=useState(false),[toolsDir,setToolsDir]=useState("");
   const[visibleCols,setVisibleCols]=useState(defaultVisible),[showColCfg,setShowColCfg]=useState(false);
   const[selected,setSelected]=useState({}),[editTagIp,setEditTagIp]=useState(null),[editTagVal,setEditTagVal]=useState(""),[editNameIp,setEditNameIp]=useState(null),[editNameVal,setEditNameVal]=useState("");// selected: { [ip]: true } only — never store false
@@ -297,8 +295,7 @@ function DeviceReports({mode="devices"}={}){
       const d=await r.json();
       if(!r.ok)throw Error(typeof d.detail==="string"?d.detail:(Array.isArray(d.detail)?d.detail.map(x=>x.msg||JSON.stringify(x)).join("; "):"ورود تگ ناموفق"));
       const miss=d.missing_count||0;
-      setMsg("انتقال تگ: "+(d.updated||0)+" به‌روز شد"+(miss?("، "+miss+" IP در دیتابیس نبود"):"")+" — فایل: "+(d.source_filename||f.name));
-      setOffset(0);await reloadRows();
+      setMsg("انتقال تگ: "+(d.updated||0)+" به‌روز شد"+(miss?("، "+miss+" IP در دیتابیس نبود"):"")+" — فایل: "+(d.source_filename||f.name));      setOffset(0);await reloadRows();
     }catch(err){setError(err.message)}
     setBusyAction(false);e.target.value="";
   }
@@ -397,8 +394,7 @@ function DeviceReports({mode="devices"}={}){
     const rowSet=new Set(rows.map(d=>d.ip));
     const extras=selectedIps.filter(ip=>!rowSet.has(ip));
     const knownClosed=rows.filter(d=>selected[d.ip]&&!(d.open_ports||[]).includes(8728)).map(d=>d.ip);
-    // include fromRows + extras; exclude only those on this page known without 8728
-    return [...new Set([...fromRows,...extras])];
+    // include fromRows + extras; exclude only those on this page known without 8728    return [...new Set([...fromRows,...extras])];
   }
   async function pushConfig(){
     const ips=selectedMikrotikWithApi();
@@ -497,8 +493,7 @@ function DeviceReports({mode="devices"}={}){
         <button type="button" className={"tool-btn"+(showSnmp?" active":"")} onClick={()=>setShowSnmp(s=>!s)}><RbIcon name="snmp"/><span>کانفیگ SNMP</span></button>
         <button type="button" className={"tool-btn"+(showWinboxCfg?" active":"")} onClick={()=>setShowWinboxCfg(s=>!s)}><RbIcon name="winbox"/><span>مسیر Winbox</span></button>
         <button type="button" className={"tool-btn"+(showColCfg?" active":"")} onClick={()=>setShowColCfg(s=>!s)}><RbIcon name="columns"/><span>نمایش فیلدها</span></button>
-        <button type="button" className={"tool-btn"+(showDbPanel?" active":"")} onClick={()=>setShowDbPanel(s=>!s)}><RbIcon name="database"/><span>دیتابیس: {activeDb}</span></button>
-      </div>
+        <button type="button" className={"tool-btn"+(showDbPanel?" active":"")} onClick={()=>setShowDbPanel(s=>!s)}><RbIcon name="database"/><span>دیتابیس: {activeDb}</span></button>      </div>
       <div className="tool-group">
         <span className="tool-label">پشتیبان</span>
         <button type="button" className="tool-btn primary" disabled={busyAction} onClick={doFullBackup}><RbIcon name="backup"/><span>پشتیبان‌گیری کامل</span></button>
@@ -597,8 +592,7 @@ function DeviceReports({mode="devices"}={}){
       <span className="probe-bar-sep"/>
       <button type="button" className="btn-action btn-probe btn-probe-main" disabled={snmpBusy||apiBusy||!selectedIps.length} onClick={()=>probeSnmp(selectedIps)}>
         {snmpBusy?"در حال خواندن SNMP…":`خواندن SNMP (${selectedIps.length})`}
-      </button>
-      <button type="button" className="btn-action btn-stop-probe" disabled={!snmpBusy} onClick={stopProbe}>
+      </button>      <button type="button" className="btn-action btn-stop-probe" disabled={!snmpBusy} onClick={stopProbe}>
         توقف SNMP
       </button>
       <span className="muted" style={{fontSize:".85em",width:"100%"}}>
@@ -697,8 +691,7 @@ function DeviceReports({mode="devices"}={}){
       {colOn("device_type")&&<td className="col-device_type">{({AP:"AP",ST:"ST",Router:"Router"}[d.device_type]||d.device_type||"—")}</td>}
       {colOn("tags")&&<td className="col-tags"><div className="tag-cell"><span className="tag-preview" title={d.tags||""}>{(d.tags||"").trim()?(d.tags.length>24?d.tags.slice(0,24)+"…":d.tags):"—"}</span><button type="button" className="btn-view-text" title="مشاهده / ویرایش تگ" onClick={()=>setTextModal({title:"تگ — "+d.ip,text:d.tags||"",editable:true,field:"tags",ip:d.ip})}>تگ</button></div></td>}
       {colOn("ping")&&<td className="col-ping">{d.ping_ok?"پاسخ‌گو":"—"}</td>}
-      {colOn("ports")&&<td className="col-ports" dir="ltr">{d.open_ports.length?d.open_ports.join(", "):"—"}</td>}
-      {colOn("classification")&&<td className="col-classification">{{mikrotik_candidate:"دستگاه MikroTik",non_mikrotik:"غیر MikroTik",special:"ویژه"}[d.classification]||d.classification}</td>}
+      {colOn("ports")&&<td className="col-ports" dir="ltr">{d.open_ports.length?d.open_ports.join(", "):"—"}</td>}      {colOn("classification")&&<td className="col-classification">{{mikrotik_candidate:"دستگاه MikroTik",non_mikrotik:"غیر MikroTik",special:"ویژه"}[d.classification]||d.classification}</td>}
       {colOn("interfaces")&&<td className="col-interfaces">{(d.interfaces)?<button type="button" className="btn-view-text" onClick={()=>setTextModal({title:"اینترفیس‌ها — "+d.ip,text:d.interfaces})}>اینترفیس‌ها</button>:"—"}</td>}
       {colOn("ip_addresses")&&<td className="col-ip_addresses">{(d.ip_addresses)?<button type="button" className="btn-view-text" onClick={()=>setTextModal({title:"آدرس‌های IP — "+d.ip,text:d.ip_addresses})}>آدرس‌های IP</button>:"—"}</td>}
       {colOn("ip_neighbors")&&<td className="col-ip_neighbors">{(d.ip_neighbors)?<button type="button" className="btn-view-text" onClick={()=>setTextModal({title:"همسایه‌ها — "+d.ip,text:d.ip_neighbors})}>همسایه‌ها</button>:"—"}</td>}
@@ -797,8 +790,7 @@ function EmailServerCard(){  const[cfg,setCfg]=useState({mode:"direct",host:"smt
     setBusy(true);setErr("");setMsg("");
     try{
       const body={...cfg};
-      if(body.password==="********")delete body.password;
-      const r=await fetch(API+"/api/smtp/config",{method:"PUT",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
+      if(body.password==="********")delete body.password;      const r=await fetch(API+"/api/smtp/config",{method:"PUT",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
       const txt=await r.text();
       let d={};
       try{d=txt?JSON.parse(txt):{}}catch(_){throw Error(txt&&txt.slice(0,200)||"پاسخ نامعتبر از سرور")}
@@ -897,8 +889,7 @@ function EmailServerCard(){  const[cfg,setCfg]=useState({mode:"direct",host:"smt
         </label>
         <label>متن پیام (اختیاری)
           <textarea rows={3} value={testMsg} onChange={e=>setTestMsg(e.target.value)} placeholder="متن دلخواه برای تست…"/>
-        </label>
-      </div>
+        </label>      </div>
       <div className="email-actions">
         <button type="button" className="tool-btn" disabled={busy} onClick={testSend}><RbIcon name="email" size={16}/><span>ارسال ایمیل آزمایشی</span></button>
       </div>
@@ -997,8 +988,7 @@ const done=Number(job?.progress?.completed)||0,total=Number(job?.progress?.total
     <label>پورت‌ها<input value={ports} onChange={e=>setPorts(e.target.value)}/></label>
     <label>هم‌زمانی<input type="number" min="1" max="256" value={workers} onChange={e=>setWorkers(e.target.value)}/></label>
     <label>مهلت پینگ (ms)<input type="number" min="100" value={ping} onChange={e=>setPing(e.target.value)}/></label>
-    <label>مهلت پورت (ثانیه)<input type="number" min=".1" step=".1" value={timeout} onChange={e=>setTimeoutValue(e.target.value)}/></label>
-  </div>
+    <label>مهلت پورت (ثانیه)<input type="number" min=".1" step=".1" value={timeout} onChange={e=>setTimeoutValue(e.target.value)}/></label>  </div>
   <div className="vpn-actions">
     <button type="button" disabled={busy} onClick={start}>{busy?"در حال اجرا…":"شروع اسکن"}</button>
     <button type="button" className="btn-stop" disabled={!busy||stopping} onClick={stopScan}>{stopping?"در حال توقف…":"توقف اسکن"}</button>
@@ -1097,8 +1087,7 @@ const done=Number(job?.progress?.completed)||0,total=Number(job?.progress?.total
                     <th>IP</th><th>دسته‌بندی</th><th>پورت‌های باز</th><th>8291 Winbox</th><th>8728 API</th><th>Winbox</th>
                   </tr>
                 </thead>
-                <tbody>
-                  {slice.map(x=>(
+                <tbody>                  {slice.map(x=>(
                     <tr key={x.ip}>
                       <td dir="ltr">{x.ip}</td>
                       <td>{labels[x.classification]||x.classification}</td>
@@ -1198,10 +1187,3 @@ function SmartReports(){
               <td style={cellStyle}>{item.datetime_jalali||item.last_flap_time_jalali||item.last_flap_jalali||"—"}</td>
               <td style={cellStyle}>{item.last_event||item.last_status||item.event||"—"}</td>
             </tr>)}</tbody>
-          </table>
-        </div>:<div style={{padding:14,color:"#64748b"}}>موردی با این بازه و آستانه یافت نشد.</div>}
-      </div>}
-    </section>
-  );
-}
-createRoot(document.getElementById("root")).render(<App/>);
