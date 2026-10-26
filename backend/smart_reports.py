@@ -249,16 +249,18 @@ def interface_flaps_xlsx(report):
 _MAC_ADDRESS = re.compile(r"(?i)\b(?:[0-9a-f]{2}[:-]){5}[0-9a-f]{2}\b")
 _WIRELESS_ISSUE = re.compile(
     r"(?:"
-    r"signal\s*(?:strength|strength\s*is)\s*[:=]?\s*-?\d+|"
-    r"(?:weak|low|lost|loss(?:\s+of)?|poor)\s+(?:wireless\s+)?signal|"
-    r"signal\s+(?:is\s+)?(?:weak|low|lost|too\s+weak|below)|"
     r"extensive\s+data\s+loss|"
-    r"(?:disconnected|disconnect(?:ed|ing)?|disassoc(?:iated|iation)?|"
-    r"deauth(?:enticated|entication)?|logged\s+out|"
-    r"lost\s+connection|connection\s+lost|station\s+leaving|"
-    r"not\s+responding|no\s+response|failed\s+to\s+connect|"
-    r"registration\s+timeout|auth(?:entication)?\s+timeout|"
-    r"removing\s+from\s+registration\s+table)"
+    r"lost\s+connection|connection\s+lost|"
+    r"disassoc(?:iated|iation)?|"
+    r"deauth(?:enticated|entication)?|"
+    r"station\s+leaving|"
+    r"not\s+responding|no\s+response|"
+    r"no\s+beacons?\s+received|"
+    r"failed\s+to\s+connect|"
+    r"registration\s+timeout|authentication\s+timeout|"
+    r"removing\s+from\s+registration\s+table|"
+    r"(?:weak|low|poor)\s+(?:wireless\s+)?signal|"
+    r"signal\s+(?:is\s+)?(?:weak|low|lost|too\s+weak|below)"
     r")",
     re.I,
 )
