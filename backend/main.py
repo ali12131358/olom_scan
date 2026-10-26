@@ -140,7 +140,7 @@ app.add_middleware(PrivateNetworkAccessMiddleware)
 JOBS={}; GUARD=Lock(); EXECUTOR=ThreadPoolExecutor(max_workers=4)
 PROBE_CANCEL=Event()  # cancel current SNMP probe
 API_PROBE_CANCEL=Event()
-API_PROBE_PROGRESS={"total":0,"done":0,"current_ip":"","running":False,"canceled":False}
+API_PROBE_PROGRESS={"total":0,"done":0,"current_ip":"","running":False,"canceled":False,"phase":"idle"}
 db.init_db_global()
 
 @app.on_event("startup")
@@ -1197,6 +1197,7 @@ def snmp_probe_progress():
         "current_ip": p.get("current_ip") or "",
         "running": bool(p.get("running")),
         "canceled": bool(p.get("canceled")),
+        "phase": p.get("phase") or ("reading" if p.get("running") else "idle"),
     }
 
 class PushConfigRequest(BaseModel):
@@ -1222,7 +1223,7 @@ class ApiProbeRequest(BaseModel):
 def probe_devices_api(body: ApiProbeRequest):
     """Read identity/interfaces/wireless mode/IP via RouterOS API and update DB."""
     API_PROBE_CANCEL.clear()
-    API_PROBE_PROGRESS.update({"total": 0, "done": 0, "current_ip": "", "running": True, "canceled": False})
+    API_PROBE_PROGRESS.update({"total": len(body.ips), "done": 0, "current_ip": "", "running": True, "canceled": False, "phase": "reading"})
     results = routeros_api.probe_devices_via_api_many(
         body.ips,
         username=body.username,
@@ -1233,6 +1234,9 @@ def probe_devices_api(body: ApiProbeRequest):
         progress=API_PROBE_PROGRESS,
     )
     canceled = API_PROBE_CANCEL.is_set()
+    # Network reads have finished, but persistence and per-device text files are still work.
+    # Keep the operation marked as running so the UI does not look stuck at 100%.
+    API_PROBE_PROGRESS.update({"running": True, "phase": "saving", "current_ip": "در حال ذخیره نتایج"})
     saved = 0
     active_db = db.get_active_db_name()
     from pathlib import Path as _P
@@ -1301,6 +1305,7 @@ def probe_devices_api(body: ApiProbeRequest):
             except Exception:
                 pass
     ok = sum(1 for r in results if r.get("ok"))
+    API_PROBE_PROGRESS.update({"running": False, "phase": "done", "current_ip": "", "done": len(results), "total": len(body.ips)})
     return {
         "results": results,
         "ok": ok,
