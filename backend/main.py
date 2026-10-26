@@ -18,7 +18,7 @@ from threading import Lock, Event
 from datetime import datetime, timezone
 from uuid import uuid4
 
-from fastapi import FastAPI, HTTPException, Query, UploadFile, File
+from fastapi import FastAPI, HTTPException, Query, UploadFile, File, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import Response
 from pydantic import BaseModel, Field
@@ -83,20 +83,48 @@ try:
 except ImportError:
     import email_manager
 
+try:
+    from backend import winbox_launcher
+except ImportError:
+    import winbox_launcher
+
+# The Local Agent must not grant arbitrary websites access to local network actions.
+_LOCAL_AGENT_ORIGINS = {
+    "http://localhost:5001",
+    "http://127.0.0.1:5001",
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+}
+_LOCAL_AGENT_ORIGINS.update(
+    item.strip().rstrip("/")
+    for item in os.environ.get("LOCAL_AGENT_ALLOWED_ORIGINS", "").split(",")
+    if item.strip()
+)
+
 app=FastAPI(title="Authorized IPv4 Scanner")
 app.add_middleware(CORSMiddleware,allow_origins=["*"],allow_methods=["*"],allow_headers=["*"],allow_credentials=False)
 
-# Chrome/Edge "Private Network Access": public UI (e.g. http://185.x:5001) calling http://127.0.0.1:8001
-# requires Access-Control-Allow-Private-Network on preflight and responses.
+# Chrome/Edge "Private Network Access": an explicitly approved remote UI may
+# call the Local Agent. Unlisted Origins are rejected before reaching routes.
 from starlette.middleware.base import BaseHTTPMiddleware
 from starlette.responses import Response as StarletteResponse
 
 class PrivateNetworkAccessMiddleware(BaseHTTPMiddleware):
     async def dispatch(self, request, call_next):
-        origin = request.headers.get("origin", "*")
+        origin = request.headers.get("origin")
+        request_host = (request.url.hostname or "").lower()
+        is_local_agent_host = request_host in {"localhost", "127.0.0.1", "::1"}
+        # Public API deployments keep their normal CORS behavior. Strict
+        # origin checks apply when the browser targets a loopback Local Agent.
+        if is_local_agent_host and origin and origin.rstrip("/") not in _LOCAL_AGENT_ORIGINS:
+            return StarletteResponse("Origin is not allowed for Local Agent", status_code=403)
         if request.method == "OPTIONS" and request.headers.get("access-control-request-private-network", "").lower() == "true":
+            if is_local_agent_host and origin and origin.rstrip("/") not in _LOCAL_AGENT_ORIGINS:
+                return StarletteResponse("Origin is not allowed for Local Agent", status_code=403)
             resp = StarletteResponse(status_code=204)
-            resp.headers["Access-Control-Allow-Origin"] = origin
+            resp.headers["Access-Control-Allow-Origin"] = origin or "null"
             resp.headers["Access-Control-Allow-Methods"] = "GET,POST,PUT,PATCH,DELETE,OPTIONS"
             resp.headers["Access-Control-Allow-Headers"] = request.headers.get("access-control-request-headers", "*")
             resp.headers["Access-Control-Allow-Private-Network"] = "true"
@@ -112,7 +140,7 @@ app.add_middleware(PrivateNetworkAccessMiddleware)
 JOBS={}; GUARD=Lock(); EXECUTOR=ThreadPoolExecutor(max_workers=4)
 PROBE_CANCEL=Event()  # cancel current SNMP probe
 API_PROBE_CANCEL=Event()
-API_PROBE_PROGRESS={"total":0,"done":0,"current_ip":"","running":False,"canceled":False}
+API_PROBE_PROGRESS={"total":0,"done":0,"current_ip":"","running":False,"canceled":False,"phase":"idle"}
 db.init_db_global()
 
 @app.on_event("startup")
@@ -890,12 +918,43 @@ class VpnProfileRequest(BaseModel):
     routes: list[str] | str | None = None
     is_default: bool = False
 
+def _require_loopback_agent(request: Request) -> None:
+    """Block OS-level actions unless the caller is the local machine.
+
+    These endpoints run commands and alter routes on the host. They must never
+    be remotely callable on the public web server.
+    """
+    import ipaddress
+    host = request.client.host if request.client else ""
+    request_host = (request.url.hostname or "").lower()
+    try:
+        is_loopback = ipaddress.ip_address(host).is_loopback
+    except ValueError:
+        is_loopback = False
+    # Also validate Host: a reverse proxy can make a remote request appear to
+    # originate from 127.0.0.1 at the TCP layer. Local Agent calls use loopback
+    # URLs explicitly, while public requests retain the public hostname.
+    local_host = request_host in {"localhost", "127.0.0.1", "::1"}
+    # Browser pages on arbitrary sites must not be able to trigger VPN changes
+    # on a visitor's computer. Add the exact UI origin to this environment
+    # variable when using a remotely hosted frontend.
+    origin = request.headers.get("origin")
+    origin_allowed = not origin or origin.rstrip("/") in _LOCAL_AGENT_ORIGINS
+    if not is_loopback or not local_host or not origin_allowed:
+        raise HTTPException(
+            status_code=403,
+            detail="این عملیات فقط از رابط مجاز Local Agent روی همین رایانه مجاز است",
+        )
+
+
 @app.get("/api/vpn/status")
-def vpn_status():
+def vpn_status(request: Request):
+    _require_loopback_agent(request)
     return vpn_manager.status()
 
 @app.post("/api/vpn/connect")
-def vpn_connect(body: VpnConnectRequest):
+def vpn_connect(body: VpnConnectRequest, request: Request):
+    _require_loopback_agent(request)
     try:
         return vpn_manager.connect(body.model_dump())
     except (ValueError, RuntimeError) as e:
@@ -904,7 +963,8 @@ def vpn_connect(body: VpnConnectRequest):
         raise HTTPException(500, f"خطای داخلی VPN: {e}")
 
 @app.post("/api/vpn/disconnect")
-def vpn_disconnect():
+def vpn_disconnect(request: Request):
+    _require_loopback_agent(request)
     try:
         return vpn_manager.disconnect()
     except Exception as e:
@@ -1137,6 +1197,7 @@ def snmp_probe_progress():
         "current_ip": p.get("current_ip") or "",
         "running": bool(p.get("running")),
         "canceled": bool(p.get("canceled")),
+        "phase": p.get("phase") or ("reading" if p.get("running") else "idle"),
     }
 
 class PushConfigRequest(BaseModel):
@@ -1162,7 +1223,7 @@ class ApiProbeRequest(BaseModel):
 def probe_devices_api(body: ApiProbeRequest):
     """Read identity/interfaces/wireless mode/IP via RouterOS API and update DB."""
     API_PROBE_CANCEL.clear()
-    API_PROBE_PROGRESS.update({"total": 0, "done": 0, "current_ip": "", "running": True, "canceled": False})
+    API_PROBE_PROGRESS.update({"total": len(body.ips), "done": 0, "current_ip": "", "running": True, "canceled": False, "phase": "reading"})
     results = routeros_api.probe_devices_via_api_many(
         body.ips,
         username=body.username,
@@ -1173,6 +1234,9 @@ def probe_devices_api(body: ApiProbeRequest):
         progress=API_PROBE_PROGRESS,
     )
     canceled = API_PROBE_CANCEL.is_set()
+    # Network reads have finished, but persistence and per-device text files are still work.
+    # Keep the operation marked as running so the UI does not look stuck at 100%.
+    API_PROBE_PROGRESS.update({"running": True, "phase": "saving", "current_ip": "در حال ذخیره نتایج"})
     saved = 0
     active_db = db.get_active_db_name()
     from pathlib import Path as _P
@@ -1241,6 +1305,7 @@ def probe_devices_api(body: ApiProbeRequest):
             except Exception:
                 pass
     ok = sum(1 for r in results if r.get("ok"))
+    API_PROBE_PROGRESS.update({"running": False, "phase": "done", "current_ip": "", "done": len(results), "total": len(body.ips)})
     return {
         "results": results,
         "ok": ok,
@@ -1439,8 +1504,50 @@ if __name__ == "__main__":
     # current working directory is backend/ itself; reload=True still works.
     uvicorn.run(
         "backend.main:app",
-        host="0.0.0.0",
+        host="127.0.0.1",
         port=8001,
         reload=True,
         app_dir=str(ROOT_DIR),
     )
+
+
+# ---- local WinBox launch / protocol hand-off ----
+class WinboxLaunchRequest(BaseModel):
+    ip: str = Field(min_length=1, max_length=64)
+    port: int = Field(default=8291, ge=1, le=65535)
+
+
+def _validated_winbox_target(ip: str, port: int) -> tuple[str, int]:
+    import ipaddress
+    try:
+        normalized_ip = str(ipaddress.ip_address(str(ip).strip()))
+    except ValueError:
+        raise HTTPException(status_code=422, detail="آدرس IP نامعتبر است") from None
+    if not 1 <= int(port) <= 65535:
+        raise HTTPException(status_code=422, detail="پورت نامعتبر است")
+    return normalized_ip, int(port)
+
+
+@app.post("/devices/launch-winbox")
+def launch_winbox(body: WinboxLaunchRequest, request: Request):
+    """Launch WinBox only when called by the local machine."""
+    _require_loopback_agent(request)
+    ip, port = _validated_winbox_target(body.ip, body.port)
+    exe = winbox_launcher.find_winbox()
+    uri = f"winbox://{ip}"
+    if not exe:
+        return {"launched": False, "uri": uri, "method": "uri"}
+    try:
+        subprocess.Popen([exe, f"{ip}:{port}"])
+    except OSError as exc:
+        return {"launched": False, "uri": uri, "method": "uri", "error": str(exc)}
+    return {"launched": True, "uri": uri, "method": "exe"}
+
+
+@app.get("/devices/winbox-protocol")
+def winbox_protocol(request: Request, ip: str = Query(..., min_length=1, max_length=64), port: int = Query(8291, ge=1, le=65535)):
+    """Redirect to the registered WinBox URI handler only for local callers."""
+    _require_loopback_agent(request)
+    from fastapi.responses import RedirectResponse
+    ip, port = _validated_winbox_target(ip, port)
+    return RedirectResponse(url=f"winbox://{ip}:{port}", status_code=307)

@@ -3,6 +3,8 @@ const API=(()=>{const e=import.meta.env.VITE_API_BASE_URL;if(e!==undefined&&e!==
 // Same-origin: FastAPI serves UI on 8001, or Vite (5001/5173) proxies /health /api /devices /scans
 if((h==="127.0.0.1"||h==="localhost")&&(port==="8001"||port==="5001"||port==="5173"||port==="3000"||port===""))return"";
 return `http://${h}:8001`;}return"http://127.0.0.1:8001";})();
+const VPN_API="http://127.0.0.1:8001";
+async function vpnRequest(path,options){try{return await fetch(VPN_API+path,options)}catch(e){throw new Error("برای اتصال VPN روی همین کامپیوتر، Local Agent باید روی سیستم شما اجرا باشد (127.0.0.1:8001). از بخش «دانلود Local Agent» آن را دریافت و اجرا کنید؛ سپس صفحه را تازه‌سازی کنید.")}}
 async function readJson(r){
   const text=await r.text();
   if(!text||!text.trim()){
@@ -115,8 +117,8 @@ const VPN_PROTOCOLS=["wireguard","openvpn","pptp","l2tp","sstp"];
 function VpnManagerCard({onNotify,onRoutes}){
   const[st,setSt]=useState(null),[profiles,setProfiles]=useState([]),[profileId,setProfileId]=useState("olom"),[protocol,setProtocol]=useState("pptp"),[host,setHost]=useState("185.110.29.205"),[port,setPort]=useState(""),[user,setUser]=useState(""),[pass,setPass]=useState(""),[routes,setRoutes]=useState(""),[configContent,setConfigContent]=useState(""),[profileName,setProfileName]=useState("Olom"),[busy,setBusy]=useState(false),[error,setError]=useState(""),[saveAsNew,setSaveAsNew]=useState(false);
   async function refreshProfiles(){try{const r=await fetch(API+"/api/vpn/profiles");const d=await r.json();if(r.ok)setProfiles(Array.isArray(d)?d:(d.profiles||[]))}catch(e){}}
-  useEffect(()=>{refreshProfiles();let active=true;const t=setInterval(async()=>{try{const r=await fetch(API+"/api/vpn/status");const d=await r.json();if(active)setSt(d)}catch(e){}},2500);return()=>{active=false;clearInterval(t)}},[]);
-  useEffect(()=>{const p=(profiles||[]).find(x=>x.id==="olom"||x.is_default);if(p&&!profileId){selectProfile(p.id)}},[profiles]);
+  useEffect(()=>{refreshProfiles();let active=true;const t=setInterval(async()=>{try{const r=await vpnRequest("/api/vpn/status");const d=await r.json();if(active)setSt(d)}catch(e){}},2500);return()=>{active=false;clearInterval(t)}},[]);
+  useEffect(()=>{const list=profiles||[];const p=list.find(x=>x.id===profileId)||list.find(x=>x.id==="olom"||x.is_default);if(p)selectProfile(p.id)},[profiles]);
   function selectProfile(id){
     setProfileId(id);setSaveAsNew(false);
     const p=(profiles||[]).find(x=>x.id===id);
@@ -129,8 +131,8 @@ function VpnManagerCard({onNotify,onRoutes}){
     setRoutes(Array.isArray(p.routes)?p.routes.join(", "):(p.routes||""));
     setConfigContent(p.config_content||"");
   }
-  async function connect(){setBusy(true);setError("");try{const body={protocol,routes,name:profileName||"Olom"};if(host)body.host=host;if(port)body.port=Number(port);if(user)body.username=user;if(pass)body.password=pass;if(profileName)body.profile_name=profileName;if(configContent.trim())body.config_content=configContent;const r=await fetch(API+"/api/vpn/connect",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});const d=await r.json();if(!r.ok)throw Error(typeof d.detail==="string"?d.detail:(Array.isArray(d.detail)?d.detail.map(x=>x.msg||JSON.stringify(x)).join("; "):"اتصال VPN ناموفق بود"));setSt(d.status||d);onNotify&&onNotify("")}catch(e){setError(e.message);onNotify&&onNotify(e.message)}setBusy(false)}
-  async function disconnect(){setBusy(true);setError("");try{const r=await fetch(API+"/api/vpn/disconnect",{method:"POST"});if(!r.ok)throw Error("قطع اتصال ناموفق بود");const d=await r.json();setSt(d.status||d)}catch(e){setError(e.message)}setBusy(false)}
+  async function connect(){setBusy(true);setError("");try{const body={protocol,routes,name:profileName||"Olom"};if(host)body.host=host;if(port)body.port=Number(port);if(user)body.username=user;if(pass)body.password=pass;if(profileName)body.profile_name=profileName;if(configContent.trim())body.config_content=configContent;const r=await vpnRequest("/api/vpn/connect",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});const d=await r.json();if(!r.ok)throw Error(typeof d.detail==="string"?d.detail:(Array.isArray(d.detail)?d.detail.map(x=>x.msg||JSON.stringify(x)).join("; "):"اتصال VPN ناموفق بود"));setSt(d.status||d);onNotify&&onNotify("")}catch(e){setError(e.message);onNotify&&onNotify(e.message)}setBusy(false)}
+  async function disconnect(){setBusy(true);setError("");try{const r=await vpnRequest("/api/vpn/disconnect",{method:"POST"});if(!r.ok)throw Error("قطع اتصال ناموفق بود");const d=await r.json();setSt(d.status||d)}catch(e){setError(e.message)}setBusy(false)}
   async function saveProfile(){setError("");try{const rawName=(profileName||host||"profile").trim()||"profile";let sid;if(saveAsNew||!profileId||!/^[a-zA-Z0-9_-]{1,48}$/.test(profileId)){sid=rawName.toLowerCase().replace(/[^a-z0-9_-]+/g,"-").replace(/^-+|-+$/g,"").slice(0,40);if(!sid||(profiles||[]).some(p=>p.id===sid))sid=(sid||"profile")+"-"+Date.now().toString(36).slice(-6)}else sid=profileId;const body={id:sid,name:rawName.slice(0,64),protocol,host:host||"",port:port||"",username:user||"",routes:routes||"",profile_name:profileName||rawName,config_content:configContent||"",is_default:sid==="olom"};const r=await fetch(API+"/api/vpn/profiles",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});const d=await r.json();if(!r.ok){const det=d.detail;throw Error(typeof det==="string"?det:(Array.isArray(det)?det.map(x=>x.msg||JSON.stringify(x)).join("; "):"ذخیره پروفایل ناموفق بود"))}await refreshProfiles();setProfileId(d.id);setSaveAsNew(false);onNotify&&onNotify("پروفایل «"+(d.name||d.id)+"» ذخیره شد")}catch(e){setError(e.message)}}
   async function deleteProfile(){if(!profileId)return;if(!confirm("پروفایل حذف شود؟"))return;try{const r=await fetch(`${API}/api/vpn/profiles/${encodeURIComponent(profileId)}`,{method:"DELETE"});const d=await r.json().catch(()=>({}));if(!r.ok)throw Error(d.detail||"حذف ناموفق");await refreshProfiles();setProfileId("");setHost("");setConfigContent("");setProfileName("")}catch(e){setError(e.message)}}
   function addRoutesToTargets(){const list=(routes||"").split(/[,\s]+/).map(x=>x.trim()).filter(Boolean);if(list.length&&onRoutes)onRoutes(list)}
@@ -138,6 +140,7 @@ function VpnManagerCard({onNotify,onRoutes}){
   const badgeText=state==="connected"?"متصل":state==="connecting"?"در حال اتصال":"قطع";
   return <section className="panel vpn-card" dir="rtl">
     <div className="report-heading"><h2>اتصال VPN</h2><span className={"status-badge "+state} role="status">{badgeText}</span></div>
+    <p className="muted" role="note">اتصال و قطع VPN روی همین کامپیوتر انجام می‌شود؛ لازم است Local Agent روی سیستم شما در آدرس 127.0.0.1:8001 اجرا باشد. مدیریت پروفایل‌ها همچنان از سامانه انجام می‌شود.</p>
     <span style={{fontSize:".9em",opacity:.85,marginInlineStart:"8px"}}>پیش‌فرض: Olom / PPTP / 185.110.29.205 (split-tunnel)</span>
     {st?.active&&<p className="vpn-active">فعال: <bdi dir="ltr">{st.active.protocol} - {st.active.name}</bdi></p>}
     {st?.interface_ip&&<p className="vpn-active">IP تونل: <bdi dir="ltr">{st.interface_ip}</bdi></p>}
@@ -156,7 +159,7 @@ function VpnManagerCard({onNotify,onRoutes}){
       <label>مسیرهای ریموت (CIDR)<input dir="ltr" value={routes} onChange={e=>setRoutes(e.target.value)} placeholder="10.10.0.0/24, 192.168.5.0/24"/></label>
       <label className="checkbox-label"><input type="checkbox" checked={saveAsNew} onChange={e=>setSaveAsNew(e.target.checked)}/> ذخیره به‌عنوان پروفایل جدید</label>
     </div>
-    <label>فایل پیکربندی (WireGuard/OpenVPN) — همراه پروفایل ذخیره می‌شود<textarea dir="ltr" rows="4" value={configContent} onChange={e=>setConfigContent(e.target.value)} placeholder="[Interface]&#10;PrivateKey = ..."/></label>
+    <label>فایل پیکربندی (WireGuard/OpenVPN) — فقط برای این اتصال؛ ذخیره نمی‌شود<textarea dir="ltr" rows="4" value={configContent} onChange={e=>setConfigContent(e.target.value)} placeholder="[Interface]&#10;PrivateKey = ..."/></label>
     <div className="vpn-actions">
       <button type="button" disabled={busy||state==="connected"} onClick={connect}>اتصال</button>
       <button type="button" className="btn-stop" disabled={busy||state==="disconnected"} onClick={disconnect}>قطع اتصال</button>
@@ -167,7 +170,7 @@ function VpnManagerCard({onNotify,onRoutes}){
   </section>;
 }
 
-function formatDate(value){if(!value)return "—";const d=new Date(value);if(Number.isNaN(d.getTime()))return String(value);const p=n=>String(n).padStart(2,"0");return `${d.getFullYear()}/${p(d.getMonth()+1)}/${p(d.getDate())} ${p(d.getHours())}:${p(d.getMinutes())}:${p(d.getSeconds())}`}
+function formatDate(value){if(!value)return "—";const d=new Date(value);if(Number.isNaN(d.getTime()))return String(value);try{const parts=new Intl.DateTimeFormat("fa-IR-u-ca-persian-nu-latn",{year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit",second:"2-digit",hourCycle:"h23"}).formatToParts(d);const v=Object.fromEntries(parts.filter(x=>x.type!=="literal").map(x=>[x.type,x.value]));return `${v.year}/${v.month}/${v.day} ${v.hour}:${v.minute}:${v.second}`}catch(e){return new Intl.DateTimeFormat("fa-IR-u-ca-persian",{dateStyle:"short",timeStyle:"medium"}).format(d)}}
 function DeviceReports({mode="devices"}={}){
   const ALL_COLS=[{id:"select",label:"انتخاب",always:true},{id:"ip",label:"IP",always:true},{id:"device_name",label:"نام دستگاه (identity)",always:true},{id:"device_type",label:"نوع دستگاه"},{id:"tags",label:"تگ"},{id:"ping",label:"پینگ"},{id:"ports",label:"پورت‌های باز"},{id:"classification",label:"دسته‌بندی"},{id:"interfaces",label:"اینترفیس‌ها"},{id:"ip_addresses",label:"آدرس‌های IP"},{id:"ip_neighbors",label:"همسایه‌ها"},{id:"wireless_info",label:"وایرلس"},{id:"device_log",label:"لاگ"},{id:"mac_info",label:"MAC"},{id:"first_seen",label:"اولین مشاهده"},{id:"last_seen",label:"آخرین مشاهده"},{id:"seen_count",label:"تعداد مشاهده"},{id:"winbox",label:"Winbox (ستون جدا)"}];
   const defaultVisible=()=>{try{const s=JSON.parse(localStorage.getItem("device_cols")||"null");if(Array.isArray(s)&&s.length)return s}catch(e){}const hide=["interfaces","ip_addresses","ip_neighbors","wireless_info","device_log","mac_info","winbox"];return ALL_COLS.map(c=>c.id).filter(id=>!hide.includes(id))};
@@ -589,7 +592,7 @@ function DeviceReports({mode="devices"}={}){
         <div className="progress-meta" style={{marginTop:4,fontSize:".85em"}}>
           <span>{(probeProg.done||0).toLocaleString("fa-IR")} از {(probeProg.total||0).toLocaleString("fa-IR")}</span>
           <span>{probeProg.percent||0}٪</span>
-          {probeProg.current_ip&&<span>هدف: <bdi dir="ltr">{probeProg.current_ip}</bdi></span>}
+          {probeProg.phase==="saving"&&<span role="status">در حال ذخیره نتایج در دیتابیس و فایل‌ها…</span>}{probeProg.phase==="reading"&&probeProg.current_ip&&<span>هدف: <bdi dir="ltr">{probeProg.current_ip}</bdi></span>}
         </div>
       </div>}
     </div>

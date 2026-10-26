@@ -153,7 +153,7 @@ export function localBackendPlugin() {
       lastError = resolved.error;
       return {ok: false, status: "error", error: lastError, ...state()};
     }
-    const args = [...(resolved.argsPrefix || []), "backend.main:app", "--host", "0.0.0.0", "--port", "8001"];
+    const args = [...(resolved.argsPrefix || []), "backend.main:app", "--host", "127.0.0.1", "--port", "8001"];
     try {
       const spawned = spawn(resolved.executable, args, {
         cwd: root,
@@ -248,9 +248,9 @@ export default defineConfig({
   plugins: [react(), localBackendPlugin()],
   server: {
     port: 5001,
-    host: true, // 0.0.0.0 — accessible via NAT / public IP
+    host: "127.0.0.1", // Local Agent UI must not be exposed to the LAN/public internet
     proxy: {
-      // Single public port (5001): browser talks to Vite; Vite forwards API to local FastAPI
+      // Local-only UI port (5001): browser talks to Vite; Vite forwards API to local FastAPI
       "/scans": { target: "http://127.0.0.1:8001", changeOrigin: true },
       "/devices": { target: "http://127.0.0.1:8001", changeOrigin: true },
       "/health": { target: "http://127.0.0.1:8001", changeOrigin: true },

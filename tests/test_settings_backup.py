@@ -37,6 +37,7 @@ class SettingsAndBackupTests(unittest.TestCase):
         db.set_setting("timeout", "500", db_path=self.db_path)
         all_s = db.get_all_settings(db_path=self.db_path)
         self.assertEqual(all_s, {"theme": "indigo", "timeout": "500"})
+        self.assertEqual(db.get_all_settings(db_path=self.db_path), all_s)
 
     def test_export_and_restore_backup(self):
         # Insert initial devices and settings

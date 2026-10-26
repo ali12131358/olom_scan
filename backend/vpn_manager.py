@@ -45,8 +45,16 @@ def _load():
         PROFILES = value if isinstance(value, dict) else {}
     except (OSError, ValueError):
         PROFILES = {}
-    # Ensure built-in defaults exist without overwriting user edits of same id
+    # Never keep secrets/config blobs in the persistent profile file. Older
+    # versions stored config_content, so sanitize existing profiles on load.
     changed = False
+    for profile in PROFILES.values():
+        if isinstance(profile, dict):
+            for secret_key in ("config_content", "password", "secret", "private_key"):
+                if secret_key in profile:
+                    profile.pop(secret_key, None)
+                    changed = True
+
     for pid, meta in DEFAULT_PROFILES.items():
         if pid not in PROFILES:
             PROFILES[pid] = {k: v for k, v in meta.items() if k != "note"}
@@ -655,8 +663,7 @@ def list_profiles():
                     "username": v.get("username", ""),
                     "routes": v.get("routes", []),
                     "profile_name": v.get("profile_name", ""),
-                    "config_content": v.get("config_content", ""),
-                    "has_config": bool(str(v.get("config_content") or "").strip()),
+                    "has_config": False,
                     "is_default": bool(v.get("is_default") or k in DEFAULT_PROFILES),
                 }
             )
@@ -682,7 +689,8 @@ def save_profile(data):
                 raise ValueError
         except (TypeError, ValueError):
             raise ValueError("پورت نامعتبر است") from None
-    # Password is intentionally NOT persisted to disk.
+    # Credentials and configuration blobs are intentionally session-only and
+    # must never be persisted in the profile JSON file.
     safe = {
         "name": str(data.get("name") or pid)[:64],
         "protocol": protocol,
@@ -691,7 +699,6 @@ def save_profile(data):
         "username": str(data.get("username") or "")[:128],
         "routes": _routes(data.get("routes")),
         "profile_name": str(data.get("profile_name") or "")[:128],
-        "config_content": str(data.get("config_content") or "")[:200_000],
         "is_default": bool(data.get("is_default")),
     }
     with LOCK:
