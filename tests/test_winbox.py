@@ -1,7 +1,10 @@
 from fastapi.testclient import TestClient
 from backend.main import app
+from backend import auth
 
 client = TestClient(app)
+# The API is protected by the admin session middleware; authenticate once.
+client.cookies.set(auth.COOKIE_NAME, auth.create_token(auth.ADMIN_USER))
 
 
 def test_winbox_list_endpoint():
