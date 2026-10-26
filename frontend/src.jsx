@@ -592,7 +592,7 @@ function DeviceReports({mode="devices"}={}){
         <div className="progress-meta" style={{marginTop:4,fontSize:".85em"}}>
           <span>{(probeProg.done||0).toLocaleString("fa-IR")} از {(probeProg.total||0).toLocaleString("fa-IR")}</span>
           <span>{probeProg.percent||0}٪</span>
-          {probeProg.current_ip&&<span>هدف: <bdi dir="ltr">{probeProg.current_ip}</bdi></span>}
+          {probeProg.phase==="saving"&&<span role="status">در حال ذخیره نتایج در دیتابیس و فایل‌ها…</span>}{probeProg.phase==="reading"&&probeProg.current_ip&&<span>هدف: <bdi dir="ltr">{probeProg.current_ip}</bdi></span>}
         </div>
       </div>}
     </div>
