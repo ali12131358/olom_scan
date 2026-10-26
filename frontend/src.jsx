@@ -97,8 +97,7 @@ function BackendCard({onNotify}){
       <span className="backend-src" dir="ltr">{API||"(same-origin / proxy)"}</span>
     </div>
     <p className={"backend-msg "+(ok===true?"ok":"warn")}>{msg}</p>
-    <div className="backend-actions">
-      <button type="button" className="btn-stop" onClick={()=>check()} disabled={checking}>بررسی مجدد</button>
+    <div className="backend-actions">      <button type="button" className="btn-stop" onClick={()=>check()} disabled={checking}>بررسی مجدد</button>
     </div>
     {ok===false&&<pre className="backend-hint" dir="ltr" style={{fontSize:".8em",background:"#0f172a",color:"#e2e8f0",padding:"10px",borderRadius:"8px",overflow:"auto"}}>{`# Terminal 1 — Backend
 cd project_root
@@ -167,7 +166,34 @@ function VpnManagerCard({onNotify,onRoutes}){
   </section>;
 }
 
-function formatDate(value){if(!value)return "—";const d=new Date(value);if(Number.isNaN(d.getTime()))return String(value);const p=n=>String(n).padStart(2,"0");return `${d.getFullYear()}/${p(d.getMonth()+1)}/${p(d.getDate())} ${p(d.getHours())}:${p(d.getMinutes())}:${p(d.getSeconds())}`}
+function formatDate(value){if(!value)return "—";const d=new Date(value);if(Number.isNaN(d.getTime()))return String(value);const p=n=>String(n).padStart(2,"0");return \`\${d.getFullYear()}/\${p(d.getMonth()+1)}/\${p(d.getDate())} \${p(d.getHours())}:\${p(d.getMinutes())}:\${p(d.getSeconds())}\`}
+// تبدیل تاریخ‌های timestamp در لاگ RouterOS به شمسی؛ فقط بخش تاریخ تغییر می‌کند.
+function gregorianToJalali(gy,gm,gd){
+  const gdm=[0,31,59,90,120,151,181,212,243,273,304,334];
+  let jy=gy>1600?979:0;
+  gy-=gy>1600?1600:621;
+  const gy2=gm>2?gy+1:gy;
+  let days=365*gy+Math.floor((gy2+3)/4)-Math.floor((gy2+99)/100)+Math.floor((gy2+399)/400)-80+gd+gdm[gm-1];
+  jy+=33*Math.floor(days/12053);days%=12053;
+  jy+=4*Math.floor(days/1461);days%=1461;
+  if(days>365){jy+=Math.floor((days-1)/365);days=(days-1)%365;}
+  const jm=days<186?1+Math.floor(days/31):7+Math.floor((days-186)/30);
+  const jd=1+(days<186?days%31:(days-186)%30);
+  return [jy,jm,jd];
+}
+function formatRouterLog(value){
+  if(!value)return "—";
+  const months={jan:1,feb:2,mar:3,apr:4,may:5,jun:6,jul:7,aug:8,sep:9,oct:10,nov:11,dec:12};
+  const persianDigits=s=>String(s).replace(/\d/g,d=>"۰۱۲۳۴۵۶۷۸۹"[Number(d)]);
+  return String(value).replace(/\b(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)\/(\d{1,2})(?:\/(\d{4}))?\b/gi,(whole,mon,day,year)=>{
+    const y=year?Number(year):new Date().getFullYear();
+    const [jy,jm,jd]=gregorianToJalali(y,months[mon.toLowerCase()],Number(day));
+    return persianDigits(\`\${jy}/\${String(jm).padStart(2,"0")}/\${String(jd).padStart(2,"0")}\`);
+  }).replace(/\b(20\d{2})-(\d{1,2})-(\d{1,2})\b/g,(whole,year,month,day)=>{
+    const [jy,jm,jd]=gregorianToJalali(Number(year),Number(month),Number(day));
+    return persianDigits(\`\${jy}/\${String(jm).padStart(2,"0")}/\${String(jd).padStart(2,"0")}\`);
+  });
+}
 function DeviceReports({mode="devices"}={}){
   const ALL_COLS=[{id:"select",label:"انتخاب",always:true},{id:"ip",label:"IP",always:true},{id:"device_name",label:"نام دستگاه (identity)",always:true},{id:"device_type",label:"نوع دستگاه"},{id:"tags",label:"تگ"},{id:"ping",label:"پینگ"},{id:"ports",label:"پورت‌های باز"},{id:"classification",label:"دسته‌بندی"},{id:"interfaces",label:"اینترفیس‌ها"},{id:"ip_addresses",label:"آدرس‌های IP"},{id:"ip_neighbors",label:"همسایه‌ها"},{id:"wireless_info",label:"وایرلس"},{id:"device_log",label:"لاگ"},{id:"mac_info",label:"MAC"},{id:"first_seen",label:"اولین مشاهده"},{id:"last_seen",label:"آخرین مشاهده"},{id:"seen_count",label:"تعداد مشاهده"},{id:"winbox",label:"Winbox (ستون جدا)"}];
   const defaultVisible=()=>{try{const s=JSON.parse(localStorage.getItem("device_cols")||"null");if(Array.isArray(s)&&s.length)return s}catch(e){}const hide=["interfaces","ip_addresses","ip_neighbors","wireless_info","device_log","mac_info","winbox"];return ALL_COLS.map(c=>c.id).filter(id=>!hide.includes(id))};
@@ -197,8 +223,7 @@ function DeviceReports({mode="devices"}={}){
   const selectedIps=Object.keys(selected).filter(k=>selected[k]===true);
   async function submitNewDevice(e){e.preventDefault();setError("");try{const r=await fetch(API+"/devices/manual",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({ip:newIp.trim(),open_ports:newPorts.split(",").map(x=>Number(x.trim())).filter(x=>x>=1&&x<=65535)})});const d=await r.json();if(!r.ok)throw Error(d.detail||"خطا");setShowAddModal(false);setNewIp("");setNewPorts("");setOffset(0);setMsg("دستگاه ثبت شد");reloadRows()}catch(e){setError(e.message)}}
   async function openWinbox(ip){setError("");setMsg("");try{const def=(winboxItems||[]).find(x=>x.is_default);const qid=def?("?winbox_id="+encodeURIComponent(def.id)):"";const r=await fetch(`${API}/devices/${encodeURIComponent(ip)}/winbox`+qid,{method:"POST"});const d=await r.json();if(!r.ok)throw Error(typeof d.detail==="string"?d.detail:"Winbox");setMsg("Winbox: "+ip)}catch(e){setError(e.message);setShowWinboxCfg(true)}}
-  async function addWinboxPath(){if(!winboxPath.trim()){setError("مسیر لازم است");return}setBusyAction(true);try{const r=await fetch(API+"/api/winbox/list",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({name:winboxName||"",path:winboxPath.trim(),is_default:!(winboxItems||[]).length})});const d=await r.json();if(!r.ok)throw Error(d.detail||"خطا");setWinboxItems(d.items||[]);setWinboxPath("");setWinboxName("");setMsg("مسیر اضافه شد")}catch(e){setError(e.message)}setBusyAction(false)}
-  async function setDefaultWinbox(id){setBusyAction(true);try{const r=await fetch(`${API}/api/winbox/list/${encodeURIComponent(id)}/default`,{method:"PUT"});const d=await r.json();if(!r.ok)throw Error(d.detail||"خطا");setWinboxItems(d.items||[])}catch(e){setError(e.message)}setBusyAction(false)}
+  async function addWinboxPath(){if(!winboxPath.trim()){setError("مسیر لازم است");return}setBusyAction(true);try{const r=await fetch(API+"/api/winbox/list",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({name:winboxName||"",path:winboxPath.trim(),is_default:!(winboxItems||[]).length})});const d=await r.json();if(!r.ok)throw Error(d.detail||"خطا");setWinboxItems(d.items||[]);setWinboxPath("");setWinboxName("");setMsg("مسیر اضافه شد")}catch(e){setError(e.message)}setBusyAction(false)}  async function setDefaultWinbox(id){setBusyAction(true);try{const r=await fetch(`${API}/api/winbox/list/${encodeURIComponent(id)}/default`,{method:"PUT"});const d=await r.json();if(!r.ok)throw Error(d.detail||"خطا");setWinboxItems(d.items||[])}catch(e){setError(e.message)}setBusyAction(false)}
   async function removeWinbox(id){if(!confirm("حذف؟"))return;setBusyAction(true);try{const r=await fetch(`${API}/api/winbox/list/${encodeURIComponent(id)}`,{method:"DELETE"});const d=await r.json();if(!r.ok)throw Error(d.detail||"خطا");setWinboxItems(d.items||[])}catch(e){setError(e.message)}setBusyAction(false)}
   async function doBackup(){
     setError("");
@@ -297,8 +322,7 @@ function DeviceReports({mode="devices"}={}){
             types:[{description:"ZIP backup",accept:{"application/zip":[".zip"]}}]
           });
           const writable=await handle.createWritable();
-          await writable.write(blob);
-          await writable.close();
+          await writable.write(blob);          await writable.close();
           setMsg("پشتیبان کامل ذخیره شد: "+handle.name);
           setBusyAction(false);
           return;
@@ -397,8 +421,7 @@ function DeviceReports({mode="devices"}={}){
       if(fails.length&&!d.ok)setError(msg);
     }catch(e){setError(e.message)}
     setSnmpBusy(false);
-  }
-  function openGroupConfig(){
+  }  function openGroupConfig(){
     const ips=selectedMikrotikWithApi();
     if(!ips.length){setError("هیچ دستگاهی با پورت API 8728 در انتخاب‌ها نیست");return}
     setError("");
@@ -497,8 +520,7 @@ function DeviceReports({mode="devices"}={}){
       <div className="tool-group">
         <span className="tool-label">خواندن</span>
         <button type="button" className="tool-btn" disabled={snmpBusy||!selectedIps.length} onClick={()=>probeSnmp(selectedIps)}><RbIcon name="read"/><span>خواندن اطلاعات ({selectedIps.length})</span></button>
-        <button type="button" className="tool-btn" disabled={snmpBusy||!selectedIps.length} onClick={pushConfig}><RbIcon name="config"/><span>انتقال کانفیگ</span></button>
-        <button type="button" className="tool-btn" disabled={snmpBusy||!selectedIps.length} onClick={openGroupConfig}><RbIcon name="group"/><span>کانفیگ گروهی</span></button>
+        <button type="button" className="tool-btn" disabled={snmpBusy||!selectedIps.length} onClick={pushConfig}><RbIcon name="config"/><span>انتقال کانفیگ</span></button>        <button type="button" className="tool-btn" disabled={snmpBusy||!selectedIps.length} onClick={openGroupConfig}><RbIcon name="group"/><span>کانفیگ گروهی</span></button>
       </div>
       <div className="tool-group">
         <span className="tool-label">نمایش</span>
@@ -597,8 +619,7 @@ function DeviceReports({mode="devices"}={}){
       <h3 style={{marginTop:0}}>{textModal.title}</h3>
       {textModal.editable
         ? <textarea className="text-view-textarea" dir="ltr" rows={12} value={textModal.text} onChange={e=>setTextModal(m=>({...m,text:e.target.value}))}/>
-        : <pre className="text-view-pre" dir="ltr">{textModal.text}</pre>}
-      <div className="modal-actions">
+        : <pre className="text-view-pre" dir="ltr">{textModal.text}</pre>}      <div className="modal-actions">
         {textModal.editable&&<button type="button" className="btn-modal-save" onClick={async()=>{
           try{
             if(textModal.field==="tags"){
@@ -670,7 +691,7 @@ function DeviceReports({mode="devices"}={}){
           <button type="button" className={"btn-detail"+(d.ip_neighbors?"":" is-empty")} title="همسایه‌ها" onClick={e=>{e.stopPropagation();setTextModal({title:"همسایه‌ها — "+d.ip,text:d.ip_neighbors||"(خالی)"})}}>همسایه‌ها</button>
           <button type="button" className={"btn-detail"+(d.wireless_info?"":" is-empty")} title="وایرلس" onClick={e=>{e.stopPropagation();setTextModal({title:"وایرلس — "+d.ip,text:d.wireless_info||"(خالی)"})}}>وایرلس</button>
           <button type="button" className={"btn-detail btn-mac"+(d.mac_info?"":" is-empty")} title="MAC آدرس اینترفیس‌ها" onClick={e=>{e.stopPropagation();setTextModal({title:"MAC — "+d.ip,text:d.mac_info||"(خالی — با API بخوانید)"})}}>MAC</button>
-          <button type="button" className={"btn-detail btn-log-inline"+(d.device_log?"":" is-empty")} title="لاگ" onClick={e=>{e.stopPropagation();setTextModal({title:"لاگ — "+d.ip,text:d.device_log||"(خالی — با API بخوانید)"})}}>Log</button>
+          <button type="button" className={"btn-detail btn-log-inline"+(d.device_log?"":" is-empty")} title="لاگ" onClick={e=>{e.stopPropagation();setTextModal({title:"لاگ — "+d.ip,text:formatRouterLog(d.device_log||"(خالی — با API بخوانید)")})}}>Log</button>
         </span>
       </div></td>}
       {colOn("device_type")&&<td className="col-device_type">{({AP:"AP",ST:"ST",Router:"Router"}[d.device_type]||d.device_type||"—")}</td>}
@@ -682,7 +703,7 @@ function DeviceReports({mode="devices"}={}){
       {colOn("ip_addresses")&&<td className="col-ip_addresses">{(d.ip_addresses)?<button type="button" className="btn-view-text" onClick={()=>setTextModal({title:"آدرس‌های IP — "+d.ip,text:d.ip_addresses})}>آدرس‌های IP</button>:"—"}</td>}
       {colOn("ip_neighbors")&&<td className="col-ip_neighbors">{(d.ip_neighbors)?<button type="button" className="btn-view-text" onClick={()=>setTextModal({title:"همسایه‌ها — "+d.ip,text:d.ip_neighbors})}>همسایه‌ها</button>:"—"}</td>}
       {colOn("wireless_info")&&<td className="col-wireless_info">{(d.wireless_info)?<button type="button" className="btn-view-text" onClick={()=>setTextModal({title:"وایرلس — "+d.ip,text:d.wireless_info})}>وایرلس</button>:"—"}</td>}
-      {colOn("device_log")&&<td className="col-device_log">{(d.device_log)?<button type="button" className="btn-view-text" onClick={()=>setTextModal({title:"لاگ — "+d.ip,text:d.device_log})}>Log</button>:"—"}</td>}
+      {colOn("device_log")&&<td className="col-device_log">{(d.device_log)?<button type="button" className="btn-view-text" onClick={()=>setTextModal({title:"لاگ — "+d.ip,text:formatRouterLog(d.device_log)})}>Log</button>:"—"}</td>}
       {colOn("mac_info")&&<td className="col-mac_info">{(d.mac_info)?<button type="button" className="btn-view-text" onClick={()=>setTextModal({title:"MAC — "+d.ip,text:d.mac_info})}>MAC</button>:"—"}</td>}
       {colOn("first_seen")&&<td dir="ltr" className="date-cell col-first_seen">{formatDate(d.first_seen)}</td>}
       {colOn("last_seen")&&<td dir="ltr" className="date-cell col-last_seen">{formatDate(d.last_seen)}</td>}
@@ -697,8 +718,7 @@ function DeviceReports({mode="devices"}={}){
 }
 
 
-function EmailServerCard(){
-  const[cfg,setCfg]=useState({mode:"direct",host:"smtp.gmail.com",port:587,use_tls:true,use_ssl:false,username:"",password:"",from_email:"",from_name:"شبکه‌بان",to_email:"",enabled:false,timeout:30,helo_host:"shabakeban.local",password_set:false});
+function EmailServerCard(){  const[cfg,setCfg]=useState({mode:"direct",host:"smtp.gmail.com",port:587,use_tls:true,use_ssl:false,username:"",password:"",from_email:"",from_name:"شبکه‌بان",to_email:"",enabled:false,timeout:30,helo_host:"shabakeban.local",password_set:false});
   const[busy,setBusy]=useState(false);
   const[msg,setMsg]=useState("");
   const[err,setErr]=useState("");
@@ -797,8 +817,7 @@ function EmailServerCard(){
       if(body.password==="********")delete body.password;
       const sr=await fetch(API+"/api/smtp/config",{method:"PUT",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
       const stxt=await sr.text();
-      let sd={};
-      try{sd=stxt?JSON.parse(stxt):{}}catch(_){throw Error(stxt&&stxt.slice(0,200)||"پاسخ نامعتبر")}
+      let sd={};      try{sd=stxt?JSON.parse(stxt):{}}catch(_){throw Error(stxt&&stxt.slice(0,200)||"پاسخ نامعتبر")}
       if(!sr.ok)throw Error(typeof sd.detail==="string"?sd.detail:"ذخیره قبل از تست ناموفق");
       const r=await fetch(API+"/api/smtp/test",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({to_email:testTo||cfg.to_email||undefined,message:testMsg||undefined})});
       const txt=await r.text();
@@ -897,8 +916,7 @@ async function stopScan(){if(!job?.scan_id||!busy)return;setStopping(true);try{c
 const isTerminal=["completed","done","canceled","error","failed"].includes(job?.status);
 const liveSummary=job?.summary&&Object.keys(job.summary).length?job.summary:
   (job?.status&&!isTerminal?{ping_responders:Number(job.progress?.ping_responders)||0,mikrotik_candidates:0,potential_non_mikrotik:0,winbox_open_api_closed:0}:job?.summary||{});
-const done=Number(job?.progress?.completed)||0,total=Number(job?.progress?.total)||Number(job?.total_targets)||0;const pct=total?Math.max(0,Math.min(100,Math.round(100*done/total))):0;const scanLabel=job?.status==="completed"||job?.status==="done"?"اسکن تکمیل شد":job?.status==="failed"||job?.status==="error"?"اسکن ناموفق بود":job?.status==="canceled"?"اسکن لغو شد":job?.status==="queued"?"در صف انتظار…":"در حال اسکن...";
-return (
+const done=Number(job?.progress?.completed)||0,total=Number(job?.progress?.total)||Number(job?.total_targets)||0;const pct=total?Math.max(0,Math.min(100,Math.round(100*done/total))):0;const scanLabel=job?.status==="completed"||job?.status==="done"?"اسکن تکمیل شد":job?.status==="failed"||job?.status==="error"?"اسکن ناموفق بود":job?.status==="canceled"?"اسکن لغو شد":job?.status==="queued"?"در صف انتظار…":"در حال اسکن...";return (
 <main>
 <header className="app-brand" dir="rtl">
   <div className="brand-mark" aria-hidden="true">
@@ -997,8 +1015,7 @@ return (
         <strong className="progress-percent" aria-live="polite">{pct}٪</strong>
       </div>
       <div className="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow={pct}>
-        <div className={"progress-fill "+(job.status==="failed"?"is-failed":"")} style={{width:pct+"%"}}/>
-      </div>
+        <div className={"progress-fill "+(job.status==="failed"?"is-failed":"")} style={{width:pct+"%"}}/>      </div>
       <div className="progress-meta">
         <span>{done.toLocaleString("fa-IR")} از {total.toLocaleString("fa-IR")} هدف</span>
         <span>پاسخ‌گو به پینگ: {(Number(job.progress?.ping_responders)||0).toLocaleString("fa-IR")}</span>
@@ -1097,8 +1114,7 @@ return (
                               if(!r.ok)throw Error(d.detail||"Winbox");
                             }catch(e){setError(e.message)}
                           }}>▣ Winbox</button>
-                        ):"—"}
-                      </td>
+                        ):"—"}                      </td>
                     </tr>
                   ))}
                 </tbody>
